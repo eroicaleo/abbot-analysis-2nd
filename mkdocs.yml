@@ -1,0 +1,5 @@
+site_name: Understanding Analysis by Stephen Abbot (2nd Ed)
+theme: readthedocs
+nav:
+  - Home: index.md
+  - Chapter 02: ch02.md
