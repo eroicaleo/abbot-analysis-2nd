@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 03 Notes - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 03 Notes";
+        var mkdocs_page_input_path = "ch03notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 03 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#31-discussion-the-cantor-set">3.1 Discussion: The Cantor Set</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32-open-and-closed-sets">3.2 Open and Closed Sets</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Chapter 03 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-3-basic-topology-of-r">Chapter 3 Basic Topology of R</h1>
+<h2 id="31-discussion-the-cantor-set">3.1 Discussion: The Cantor Set</h2>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display">
+C_0 = [0,1], \\
+C_1 = [0, \frac{1}{3}] \cup [\frac{2}{3}, 1], \\
+C_2 = [0, \frac{1}{9}] \cup [\frac{2}{9}, \frac{1}{3}]
+      \cup [\frac{2}{3}, \frac{7}{9}]
+      \cup [\frac{8}{9}, 1], \cdots 
+</script>
+</p>
+<p>Then we define the Cantor set <script type="math/tex">C</script> be </p>
+<p>
+<script type="math/tex; mode=display">
+C = \cap_{n=0}^\infty C_n
+</script>
+</p>
+<ol>
+<li>We notice <script type="math/tex">C</script> is not empty, because <script type="math/tex">0 \in C</script> and <script type="math/tex">1 \in C</script>.</li>
+<li>We notice if <script type="math/tex">y</script> is an endpoint in <script type="math/tex">C_n</script>, then <script type="math/tex">y \in C_n, \forall n</script>. Because endpoints are never removed.</li>
+<li>If we calculate the length that are removed from <script type="math/tex">[0,1]</script>, it's <script type="math/tex">\frac{1}{3} + 2\left( \frac{1}{9} \right) + 4 \left( \frac{1}{27} \right) + \cdots = \frac{\frac{1}{3}}{1 - \frac{2}{3}} = 1</script>. So the length of <script type="math/tex">C</script> is 0!.</li>
+<li>We can establish a 1-1 correspondence between <script type="math/tex">C</script> and <script type="math/tex">\left\{ 0, 1 \right\}</script> sequence. So <script type="math/tex">C</script> must be uncountable. The cardinality of <script type="math/tex">C</script> is as large as <script type="math/tex">\mathbb{R}</script>.</li>
+<li>What about <script type="math/tex">C</script>'s dimension? <script type="math/tex">2 = 3^x</script>, so <script type="math/tex">x = \log 2 / \log 3</script>
+</li>
+</ol>
+<h2 id="32-open-and-closed-sets">3.2 Open and Closed Sets</h2>
+<p>Given <script type="math/tex">a \in \mathbb{R}</script> and <script type="math/tex">\epsilon > 0</script>, <script type="math/tex">\epsilon</script>-<em>neighborhood</em> of <script type="math/tex">a</script> is the set</p>
+<p>
+<script type="math/tex; mode=display">
+V_{\epsilon}(a) = \{
+x \in \mathbb{R} : |x-a| < \epsilon
+\} = (a-\epsilon, a+\epsilon)
+</script>
+</p>
+<p><strong><em>Definition 3.2.1.</em></strong> A set <script type="math/tex">O \subseteq \mathbb{R}</script> is open if for all points <script type="math/tex">a \in O</script> there exists <script type="math/tex">\epsilon</script>-neighborhood <script type="math/tex">V_{\epsilon}(a) \subseteq O</script>.</p>
+<p><strong><em>Example 3.2.2.</em></strong></p>
+<ol>
+<li>
+<script type="math/tex">\mathbb{R}</script> is an open set.</li>
+<li>
+<script type="math/tex">(c,d) = \{x \in \mathbb{R} : c < x < d \}</script>
+</li>
+</ol>
+<p><strong><em>Theorem 3.2.3.</em></strong></p>
+<ol>
+<li>The union of an arbitrary collection of open sets is open.</li>
+<li>
+<p>The intersection of a finite collection of open sets is open.</p>
+</li>
+<li>
+<p>Summary of proof of 2. Assume <script type="math/tex">\left\{ O_1, O_2, \cdots, O_n \right\}</script> be a finite collection of open sets. Assume <script type="math/tex">V_{\epsilon_k} (a) \subseteq O_k</script>. Let <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\} </script>, then <script type="math/tex">V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k</script>.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch03ex/" class="btn btn-neutral float-right" title="Chapter 03 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch03ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
