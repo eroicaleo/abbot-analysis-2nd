@@ -3,6 +3,7 @@ theme: readthedocs
 
 nav:
   - Home: index.md
+  - Chapter 03 Notes: ch03notes.md
   - Chapter 03 Exercises: ch03ex.md
 
 extra_javascript: 
