@@ -5,6 +5,7 @@ nav:
   - Home: index.md
   - Chapter 03 Notes: ch03notes.md
   - Chapter 03 Exercises: ch03ex.md
+  - Misc info: misc.md
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

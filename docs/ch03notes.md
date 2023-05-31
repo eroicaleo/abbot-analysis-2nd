@@ -46,4 +46,5 @@ $$
 1. The union of an arbitrary collection of open sets is open.
 2. The intersection of a finite collection of open sets is open.
 
-* Summary of proof of 2. Assume $\left\{ O_1, O_2, \cdots, O_n \right\}$ be a finite collection of open sets. Assume $V_{\epsilon_k} (a) \subseteq O_k$. Let $\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\} $, then $V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k$.
+
+Summary of proof of 2. Assume $\left\{ O_1, O_2, \cdots, O_n \right\}$ be a finite collection of open sets. Assume $V_{\epsilon_k} (a) \subseteq O_k$. Let $\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\} $, then $V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k$.
