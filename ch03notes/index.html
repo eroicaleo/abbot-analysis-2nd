@@ -58,6 +58,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -128,13 +132,22 @@ x \in \mathbb{R} : |x-a| < \epsilon
 <p><strong><em>Theorem 3.2.3.</em></strong></p>
 <ol>
 <li>The union of an arbitrary collection of open sets is open.</li>
-<li>
-<p>The intersection of a finite collection of open sets is open.</p>
-</li>
-<li>
-<p>Summary of proof of 2. Assume <script type="math/tex">\left\{ O_1, O_2, \cdots, O_n \right\}</script> be a finite collection of open sets. Assume <script type="math/tex">V_{\epsilon_k} (a) \subseteq O_k</script>. Let <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\} </script>, then <script type="math/tex">V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k</script>.</p>
-</li>
+<li>The intersection of a finite collection of open sets is open.</li>
 </ol>
+<p>Summary of proof of 2. Assume <script type="math/tex">\left\{ O_1, O_2, \cdots, O_n \right\}</script> be a finite collection of open sets. Assume <script type="math/tex">V_{\epsilon_k} (a) \subseteq O_k</script>. Let <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\}</script>, then <script type="math/tex">V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k</script>.</p>
+<p><strong><em>Definition 3.2.4.</em></strong> A point <script type="math/tex">x</script> is a <em>limit point</em> of a set <script type="math/tex">A</script> if every ε-neighborhood <script type="math/tex">V_{\epsilon}(x)</script> of <script type="math/tex">x</script> intersects the set <script type="math/tex">A</script> at some point other than <script type="math/tex">x</script>.</p>
+<p><strong><em>Theorem 3.2.5.</em></strong> A point <script type="math/tex">x</script> is a limit point of a set <script type="math/tex">A</script> if and only if
+<script type="math/tex">x = \lim a_n</script> for some sequence <script type="math/tex">(a_n)</script> contained in <script type="math/tex">A</script> satisfying
+<script type="math/tex">a_n \ne x</script> for all <script type="math/tex">n \in \mathbb{N}</script>.</p>
+<ul>
+<li>Summary of the proof.<ul>
+<li>
+<script type="math/tex">\Rightarrow</script>  If <script type="math/tex">x</script> is a limit point of a set <script type="math/tex">A</script>, pick <script type="math/tex">a_n \in V_{\frac{1}{n}}(x)</script>. Then <script type="math/tex">x = \lim a_n</script>.</li>
+<li>
+<script type="math/tex">\Leftarrow</script> If we can find such sequence, then given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">\left| a_n - x \right| < \epsilon</script>. Then <script type="math/tex">a_n \in V_{\epsilon}(x)</script>. So <script type="math/tex">x</script> is a limit point. </li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div><footer>
