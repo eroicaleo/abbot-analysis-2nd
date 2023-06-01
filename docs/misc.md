@@ -8,7 +8,7 @@
 pip install mkdocs
 ```
 
-* Then install ``
+* Then install `python-markdown-math`
 
 ```sh
 pip install python-markdown-math
