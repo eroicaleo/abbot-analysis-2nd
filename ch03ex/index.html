@@ -57,6 +57,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#332">3.3.2</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#325">3.2.5</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -95,11 +97,13 @@
 <h3 id="321">3.2.1</h3>
 <p>(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption that the collection of open sets be finite get used?</p>
 <ul>
-<li>Solution: Yes. To obtain <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots, \epsilon_n \right\} > 0</script>. If there are infinite number of open sets, it's not guaranteed <script type="math/tex">\epsilon > 0</script>. So we might not be able to find <script type="math/tex">V_{\epsilon}(a)</script>.  </li>
+<li>Solution: Yes. To obtain <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots, \epsilon_n \right\} > 0</script>. If there are infinite number of open sets, it's not guaranteed <script type="math/tex">\epsilon > 0</script>. So we might not be able to find <script type="math/tex">V_{\epsilon}(a)</script>. <script type="math/tex">\square</script>
+</li>
 </ul>
 <p>(b) Give an example of a countable collection of open sets <script type="math/tex">\left\{ O_1,O_2,O_3, ... \right\}</script> whose intersection <script type="math/tex">\cap_{n=1}^\infty O_n</script> is closed, not empty and not all of <script type="math/tex">\mathbb{R}</script>.</p>
 <ul>
-<li>Solution: Consider <script type="math/tex">O_n = ( -\frac{1}{n}, \frac{1}{n} )</script>, then <script type="math/tex">\bigcap_{n=1}^{\infty}O_n = \left\{ 0 \right\}</script> which is a non-empty closed set.</li>
+<li>Solution: Consider <script type="math/tex">O_n = ( -\frac{1}{n}, \frac{1}{n} )</script>, then <script type="math/tex">\bigcap_{n=1}^{\infty}O_n = \left\{ 0 \right\}</script> which is a non-empty closed set. <script type="math/tex">\square</script>
+</li>
 </ul>
 <h3 id="332">3.3.2</h3>
 <p>Let</p>
@@ -113,6 +117,22 @@ A = \left\{ (-1)^n + \frac{2}{n} : n = 1, 2, 3 \right\} \text{and } B = \left\{ 
 (b) Is the set open? Closed?
 (c) Does the set contain any isolated points?
 (d) Find the closure of the set.</p>
+<h3 id="325">3.2.5</h3>
+<p>A set <script type="math/tex">F \subset \mathbb{R}</script> is closed if and only if every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script>.</p>
+<ul>
+<li>Proof:<ul>
+<li>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">F \subset \mathbb{R}</script> is closed, and <script type="math/tex">\left( a_n \right)</script> is a Cauchy sequence contained in <script type="math/tex">F</script>. Then according to Theorem 2.6.4 (Cauchy Criterion), <script type="math/tex">\left( a_n \right)</script> converges. Let <script type="math/tex">x = \lim a_n</script>.<ul>
+<li>If <script type="math/tex">\exists n, \text{such that } a_n = x</script>, then <script type="math/tex">x \in F</script>.</li>
+<li>If <script type="math/tex">x \neq a_n, \forall n</script>, then according to Theorem 3.2.5, <script type="math/tex">x</script> is a limit point of <script type="math/tex">F</script>, so <script type="math/tex">x \in F</script>.</li>
+</ul>
+</li>
+<li>
+<script type="math/tex">\Leftarrow</script> Assume every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script> and <script type="math/tex">x</script> is a limit point of <script type="math/tex">F</script>. According Theorem 3.2.5, we can find some sequence <script type="math/tex">(a_n)</script> contained in <script type="math/tex">F</script> satisfying <script type="math/tex">a_n \ne x</script> for all <script type="math/tex">n \in \mathbb{N}</script> and <script type="math/tex">x = \lim a_n</script>. Again according to Theorem 2.6.4, <script type="math/tex">(a_n)</script> is a Cauchy sequence, then <script type="math/tex">x \in F</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div><footer>
