@@ -57,4 +57,13 @@ $a_n \ne x$ for all $n \in \mathbb{N}$.
 
 * Summary of the proof.
     * $\Rightarrow$  If $x$ is a limit point of a set $A$, pick $a_n \in V_{\frac{1}{n}}(x)$. Then $x = \lim a_n$.
-    * $\Leftarrow$ If we can find such sequence, then given $\epsilon$, we can find $\left| a_n - x \right| < \epsilon$. Then $a_n \in V_{\epsilon}(x)$. So $x$ is a limit point. 
+    * $\Leftarrow$ If we can find such sequence, then given $\epsilon$, we can find $\left| a_n - x \right| < \epsilon$. Then $a_n \in V_{\epsilon}(x)$. So $x$ is a limit point.
+
+
+***Definition 3.2.6.*** A point $a ∈ A$ is an isolated point of $A$ if it is not a limit point of $A$.
+
+***Definition 3.2.7.*** A set $F ⊆ R$ is closed if it contains its limit points.
+
+***Theorem 3.2.8.*** A set $F ⊆ R$ is closed if and only if every Cauchy sequence contained in $F$ has a limit that is also an element of $F$.
+
+* Proof: See exercise 3.2.5.
