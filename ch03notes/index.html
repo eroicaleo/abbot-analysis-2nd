@@ -50,6 +50,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#31-discussion-the-cantor-set">3.1 Discussion: The Cantor Set</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#32-open-and-closed-sets">3.2 Open and Closed Sets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#closed-sets">Closed Sets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#closure">Closure</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -120,8 +126,8 @@ x \in \mathbb{R} : |x-a| < \epsilon
 \} = (a-\epsilon, a+\epsilon)
 </script>
 </p>
-<p><strong><em>Definition 3.2.1.</em></strong> A set <script type="math/tex">O \subseteq \mathbb{R}</script> is open if for all points <script type="math/tex">a \in O</script> there exists <script type="math/tex">\epsilon</script>-neighborhood <script type="math/tex">V_{\epsilon}(a) \subseteq O</script>.</p>
-<p><strong><em>Example 3.2.2.</em></strong></p>
+<p><strong><em>Definition 3.2.1</em></strong> A set <script type="math/tex">O \subseteq \mathbb{R}</script> is open if for all points <script type="math/tex">a \in O</script> there exists <script type="math/tex">\epsilon</script>-neighborhood <script type="math/tex">V_{\epsilon}(a) \subseteq O</script>.</p>
+<p><strong><em>Example 3.2.2</em></strong></p>
 <ol>
 <li>
 <script type="math/tex">\mathbb{R}</script> is an open set.</li>
@@ -129,14 +135,15 @@ x \in \mathbb{R} : |x-a| < \epsilon
 <script type="math/tex">(c,d) = \{x \in \mathbb{R} : c < x < d \}</script>
 </li>
 </ol>
-<p><strong><em>Theorem 3.2.3.</em></strong></p>
+<p><strong><em>Theorem 3.2.3</em></strong></p>
 <ol>
 <li>The union of an arbitrary collection of open sets is open.</li>
 <li>The intersection of a finite collection of open sets is open.</li>
 </ol>
 <p>Summary of proof of 2. Assume <script type="math/tex">\left\{ O_1, O_2, \cdots, O_n \right\}</script> be a finite collection of open sets. Assume <script type="math/tex">V_{\epsilon_k} (a) \subseteq O_k</script>. Let <script type="math/tex">\epsilon = \min \left\{ \epsilon_1, \cdots \epsilon_n \right\}</script>, then <script type="math/tex">V_{\epsilon}(a) \subseteq V_{\epsilon_k}(a) \subseteq O_k</script>.</p>
-<p><strong><em>Definition 3.2.4.</em></strong> A point <script type="math/tex">x</script> is a <em>limit point</em> of a set <script type="math/tex">A</script> if every ε-neighborhood <script type="math/tex">V_{\epsilon}(x)</script> of <script type="math/tex">x</script> intersects the set <script type="math/tex">A</script> at some point other than <script type="math/tex">x</script>.</p>
-<p><strong><em>Theorem 3.2.5.</em></strong> A point <script type="math/tex">x</script> is a limit point of a set <script type="math/tex">A</script> if and only if
+<h3 id="closed-sets">Closed Sets</h3>
+<p><strong><em>Definition 3.2.4</em></strong> A point <script type="math/tex">x</script> is a <em>limit point</em> of a set <script type="math/tex">A</script> if every ε-neighborhood <script type="math/tex">V_{\epsilon}(x)</script> of <script type="math/tex">x</script> intersects the set <script type="math/tex">A</script> at some point other than <script type="math/tex">x</script>.</p>
+<p><strong><em>Theorem 3.2.5</em></strong> A point <script type="math/tex">x</script> is a limit point of a set <script type="math/tex">A</script> if and only if
 <script type="math/tex">x = \lim a_n</script> for some sequence <script type="math/tex">(a_n)</script> contained in <script type="math/tex">A</script> satisfying
 <script type="math/tex">a_n \ne x</script> for all <script type="math/tex">n \in \mathbb{N}</script>.</p>
 <ul>
@@ -148,11 +155,32 @@ x \in \mathbb{R} : |x-a| < \epsilon
 </ul>
 </li>
 </ul>
-<p><strong><em>Definition 3.2.6.</em></strong> A point <script type="math/tex">a ∈ A</script> is an isolated point of <script type="math/tex">A</script> if it is not a limit point of <script type="math/tex">A</script>.</p>
-<p><strong><em>Definition 3.2.7.</em></strong> A set <script type="math/tex">F ⊆ R</script> is closed if it contains its limit points.</p>
-<p><strong><em>Theorem 3.2.8.</em></strong> A set <script type="math/tex">F ⊆ R</script> is closed if and only if every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script>.</p>
+<p><strong><em>Definition 3.2.6</em></strong> A point <script type="math/tex">a ∈ A</script> is an isolated point of <script type="math/tex">A</script> if it is not a limit point of <script type="math/tex">A</script>.</p>
+<p><strong><em>Definition 3.2.7</em></strong> A set <script type="math/tex">F ⊆ R</script> is closed if it contains its limit points.</p>
+<p><strong><em>Theorem 3.2.8</em></strong> A set <script type="math/tex">F ⊆ R</script> is closed if and only if every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script>.</p>
 <ul>
 <li>Proof: See exercise 3.2.5.</li>
+</ul>
+<p><strong><em>Example 3.2.9</em></strong></p>
+<p>(iii) The limit points of <script type="math/tex">\mathbb{Q}</script> is <script type="math/tex">\mathbb{R}</script>.</p>
+<ul>
+<li>Proof: Consider <script type="math/tex">y \in \mathbb{R}</script>, based on Theorem 1.4.3, for any <script type="math/tex">V_{\epsilon}(y) = (y - \epsilon, y + \epsilon)</script>, there exists a rational number <script type="math/tex">r</script>, such that <script type="math/tex">r \in V_{\epsilon}(y)</script>. So <script type="math/tex">y</script> is a limit point of <script type="math/tex">\mathbb{Q}</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+<p><strong><em>Theorem 3.2.10 (Density of <script type="math/tex">\mathbb{Q}</script> in <script type="math/tex">\mathbb{R}</script>)</em></strong> For every <script type="math/tex">y ∈ \mathbb{R}</script>, there exists a sequence of rational numbers that converges to <script type="math/tex">y</script>.</p>
+<ul>
+<li>Proof: Assume <script type="math/tex">y \in \mathbb{R}</script>, then based on previous example, <script type="math/tex">y</script> is a limit point of <script type="math/tex">\mathbb{Q}</script>. Then according to Theorem 3.2.5, there exists some sequence in <script type="math/tex">\mathbb{Q}</script> converges to <script type="math/tex">y</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+<h3 id="closure">Closure</h3>
+<p><strong><em>Definition 3.2.11</em></strong> Given a set <script type="math/tex">A ⊆ R</script>, let <script type="math/tex">L</script> be the set of all limit points of <script type="math/tex">A</script>. The closure of <script type="math/tex">A</script> is defined to be <script type="math/tex">\bar{A} = A ∪ L</script>.</p>
+<p><strong><em>Theorem 3.2.12</em></strong> For any <script type="math/tex">A ⊆ R</script>, the closure <script type="math/tex">\bar{A}</script> is a closed set and is the smallest closed set containing <script type="math/tex">A</script>.</p>
+<ul>
+<li>Summary of Proof: Assume <script type="math/tex">x</script> is a limit point of <script type="math/tex">\bar{A}</script>, then given <script type="math/tex">V_{\epsilon}(x)</script>, we can find <script type="math/tex">a \in \bar{A}</script> and <script type="math/tex">a \in V_{\epsilon}(x)</script>. If <script type="math/tex">a \not\in A</script>, then <script type="math/tex">a \in L</script>, then we can find <script type="math/tex">V_{\epsilon'}(a) \subseteq V_{\epsilon}(x)</script> and <script type="math/tex">V_{\epsilon'}(a) \cap A \neq \emptyset</script>. Let <script type="math/tex">a' \in V_{\epsilon'}(a) \subseteq V_{\epsilon}(x)</script>, so <script type="math/tex">x</script> is a limit point of <script type="math/tex">A</script>. Then <script type="math/tex">\bar{A}</script> is a closed set.<ul>
+<li>Assume <script type="math/tex">A \subseteq C</script> is a closed set, <script type="math/tex">c</script> is a limited point of <script type="math/tex">A</script>. Then we can find a sequence <script type="math/tex">\left\{ a_n \right\}</script> converges to <script type="math/tex">c</script>. Since <script type="math/tex">\left\{ a_n \right\}</script> is also a sequence in <script type="math/tex">C</script>, based on Theorem 3.2.8, <script type="math/tex">c \in C</script>. So <script type="math/tex">L \subseteq C</script>, then <script type="math/tex">\bar{A} \subseteq C</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+</li>
 </ul>
               
             </div>
