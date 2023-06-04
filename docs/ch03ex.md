@@ -27,6 +27,12 @@ Answer the following questions for each set:
 (c) Does the set contain any isolated points?
 (d) Find the closure of the set.
 
+* Solution:
+    * The limit points of $A$ are $\left\{ -1, 1 \right\}$. For $B$, it's $[0, 1]$.
+    * Both $A$ and $B$ are neither open nor closed. For $A$, $-1 \not\in A$. For $B$, $1 \not\in B$.
+    * All points in $A$ are isolated except $1$. $B$ does not contain any isolated points.
+    * $\overline{A} = A \cup \left\{ -1\right\} $ and $\overline{B} = [0, 1]$.$\square$  
+
 ### 3.2.5
 
 A set $F \subset \mathbb{R}$ is closed if and only if every Cauchy sequence contained in $F$ has a limit that is also an element of $F$.
