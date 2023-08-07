@@ -31,7 +31,7 @@ Answer the following questions for each set:
     * The limit points of $A$ are $\left\{ -1, 1 \right\}$. For $B$, it's $[0, 1]$.
     * Both $A$ and $B$ are neither open nor closed. For $A$, $-1 \not\in A$. For $B$, $1 \not\in B$.
     * All points in $A$ are isolated except $1$. $B$ does not contain any isolated points.
-    * $\overline{A} = A \cup \left\{ -1\right\} $ and $\overline{B} = [0, 1]$.$\square$  
+    * $\overline{A} = A \cup \left\{ -1\right\}$ and $\overline{B} = [0, 1]$.$\square$
 
 ### 3.2.5
 
