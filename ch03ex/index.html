@@ -8,7 +8,7 @@
     <title>Chapter 03 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -82,7 +81,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Chapter 03 Exercises</li>
+      <li class="breadcrumb-item active">Chapter 03 Exercises</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -123,7 +122,7 @@ A = \left\{ (-1)^n + \frac{2}{n} : n = 1, 2, 3 \right\} \text{and } B = \left\{ 
 <li>Both <script type="math/tex">A</script> and <script type="math/tex">B</script> are neither open nor closed. For <script type="math/tex">A</script>, <script type="math/tex">-1 \not\in A</script>. For <script type="math/tex">B</script>, <script type="math/tex">1 \not\in B</script>.</li>
 <li>All points in <script type="math/tex">A</script> are isolated except <script type="math/tex">1</script>. <script type="math/tex">B</script> does not contain any isolated points.</li>
 <li>
-<script type="math/tex">\overline{A} = A \cup \left\{ -1\right\} </script> and <script type="math/tex">\overline{B} = [0, 1]</script>.<script type="math/tex">\square</script>
+<script type="math/tex">\overline{A} = A \cup \left\{ -1\right\}</script> and <script type="math/tex">\overline{B} = [0, 1]</script>.<script type="math/tex">\square</script>
 </li>
 </ul>
 </li>
@@ -179,15 +178,16 @@ A = \left\{ (-1)^n + \frac{2}{n} : n = 1, 2, 3 \right\} \text{and } B = \left\{ 
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
