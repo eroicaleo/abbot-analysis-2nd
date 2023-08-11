@@ -96,10 +96,18 @@
 </ul>
 <pre><code class="language-sh">pip install python-markdown-math
 </code></pre>
+<ul>
+<li>To generate the documentation</li>
+</ul>
+<pre><code class="language-sh">mkdocs gh-deploy
+</code></pre>
+<ul>
+<li>And the updated document is available at <a href="https://eroicaleo.github.io/abbot-analysis-2nd/">https://eroicaleo.github.io/abbot-analysis-2nd/</a></li>
+</ul>
 <h2 id="vscode-extensions">VScode extensions</h2>
 <ul>
 <li>
-<p>To make typing equation easier in markdown file, the following 3 extensions have been installed:</p>
+<p>I use VScode as my IDE. To make typing equation easier in markdown file, the following 3 extensions have been installed:</p>
 <ul>
 <li><code>Markdown+Math</code></li>
 <li><code>Math Snippets</code></li>
@@ -118,6 +126,30 @@
             &quot;strings&quot;: false
         }
     }
+</code></pre>
+<ul>
+<li>Furthurmore, I would like to use Tab key to cycle through the suggestions, so I need to edit the <code>keybindings.json</code> file (control palette -&gt; "Preference: Open Keyboard Shortcuts (JSON)"). The reference is <a href="https://stackoverflow.com/questions/48097507/visual-studio-code-use-tab-instead-of-arrow-keys-to-select-intellisense-sugge">here</a>.</li>
+</ul>
+<pre><code class="language-json">{
+        &quot;key&quot;: &quot;tab&quot;,
+        &quot;command&quot;: &quot;selectNextSuggestion&quot;,
+        &quot;when&quot;: &quot;suggestWidgetMultipleSuggestions &amp;&amp; suggestWidgetVisible &amp;&amp; textInputFocus&quot;
+      },
+      {
+        &quot;key&quot;: &quot;down&quot;,
+        &quot;command&quot;: &quot;-selectNextSuggestion&quot;,
+        &quot;when&quot;: &quot;suggestWidgetMultipleSuggestions &amp;&amp; suggestWidgetVisible &amp;&amp; textInputFocus&quot;
+      },
+        {
+        &quot;key&quot;: &quot;shift+tab&quot;,
+        &quot;command&quot;: &quot;selectPrevSuggestion&quot;,
+        &quot;when&quot;: &quot;suggestWidgetMultipleSuggestions &amp;&amp; suggestWidgetVisible &amp;&amp; textInputFocus&quot;
+      },
+      {
+        &quot;key&quot;: &quot;up&quot;,
+        &quot;command&quot;: &quot;-selectPrevSuggestion&quot;,
+        &quot;when&quot;: &quot;suggestWidgetMultipleSuggestions &amp;&amp; suggestWidgetVisible &amp;&amp; textInputFocus&quot;
+      }
 </code></pre>
               
             </div>
