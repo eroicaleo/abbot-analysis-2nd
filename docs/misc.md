@@ -17,6 +17,12 @@ pip install python-markdown-math
 * To generate the documentation
 
 ```sh
+mkdocs serve
+```
+
+* To deploy to github
+
+```sh
 mkdocs gh-deploy
 ```
 
