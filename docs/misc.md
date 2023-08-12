@@ -27,11 +27,18 @@ mkdocs gh-deploy
 ```
 
 * And the updated document is available at [https://eroicaleo.github.io/abbot-analysis-2nd/](https://eroicaleo.github.io/abbot-analysis-2nd/)
+
+### `mkdocs` reference
+
+* [Official Site](https://www.mkdocs.org)
+* [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+* [Creating a beautiful documentation site with MkDocs](https://www.blimped.nl/creating-a-beautiful-documentation-site-with-mkdocs/)
+
 ## VScode extensions
 
 * I use VScode as my IDE. To make typing equation easier in markdown file, the following 3 extensions have been installed:
     * `Markdown+Math`
-    * `Math Snippets`
+    * [`Math Snippets`](https://github.com/thomanq/math-snippets/blob/master/snippets/snippets.json)
     * `Markdown All in One`
 
 * In addition, to make the intellisense work for markdown file, I need to edit the `settings.json`
