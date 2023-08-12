@@ -13,3 +13,7 @@ extra_javascript:
 markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: True
+
+repo_name: Github
+repo_url: https://github.com/eroicaleo/abbot-analysis-2nd/
+edit_uri: 'blob/main/docs/'
