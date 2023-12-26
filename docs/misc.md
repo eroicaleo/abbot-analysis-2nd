@@ -41,6 +41,12 @@ mkdocs gh-deploy
     * [`Math Snippets`](https://github.com/thomanq/math-snippets/blob/master/snippets/snippets.json)
     * `Markdown All in One`
 
+* With these 3 extensions, I can write equations easier, e.g.
+    * Use `ii` to insert inline equations.
+    * Use `dd` to insert display math.
+
+* Other latex snippet are located under `snippets/latex.json`.
+
 * In addition, to make the intellisense work for markdown file, I need to edit the `settings.json`
   (control palette -> "open user settings") by adding the following lines.
 
