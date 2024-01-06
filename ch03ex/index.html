@@ -56,7 +56,29 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#332">3.3.2</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#323">3.2.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#324">3.2.4</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#325">3.2.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#326">3.2.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#327">3.2.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#328">3.2.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3210">3.2.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3211">3.2.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3212">3.2.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3213">3.2.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3214">3.2.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3215">3.2.15</a>
     </li>
         </ul>
     </li>
@@ -128,6 +150,34 @@ A = \left\{ (-1)^n + \frac{2}{n} : n = 1, 2, 3 \right\} \text{and } B = \left\{ 
 </ul>
 </li>
 </ul>
+<h3 id="323">3.2.3</h3>
+<p>Decide whether the following sets are open, closed, or neither. If a set is not open, find a point in the set for which there is no ε-neighborhood contained in the set. If a set is not closed, find a limit point that is not contained in the set.</p>
+<p>(a) Q.</p>
+<p>Neither. Every point. <script type="math/tex">\sqrt{2}</script>.
+Also see <a href="https://math.stackexchange.com/questions/116721/are-the-rationals-a-closed-or-open-set-in-mathbbr">here</a>.</p>
+<p>(b) <script type="math/tex">\mathbb{N}</script>
+</p>
+<p>Closed. Every point.</p>
+<p>(c) <script type="math/tex">\{x \in R:x \ne 0\}</script>\</p>
+<p>Open. <script type="math/tex">0</script>.</p>
+<p>(d) <script type="math/tex">\{1+1/4+1/9+\cdots+1/n^2: n \in N\}</script>.</p>
+<p>Neither. Everypoint. It's limit.</p>
+<p>(e) <script type="math/tex">\{1 + 1/2 + 1/3 + \cdots + 1/n : n \in N\}</script>.</p>
+<p>Closed. Everypoint.</p>
+<h3 id="324">3.2.4</h3>
+<p>Let <script type="math/tex">A</script> be nonempty and bounded above so that <script type="math/tex">s = \sup A</script> exists.</p>
+<p>(a) Show that <script type="math/tex">s ∈ \overline{A}</script>.</p>
+<ul>
+<li>Proof: According to Lemma 1.3.8., <script type="math/tex">s</script> is a limited point of <script type="math/tex">A</script>. 
+So <script type="math/tex">s ∈ \overline{A}</script>.</li>
+</ul>
+<p>(b) Can an open set contain its supremum?</p>
+<ul>
+<li>Proof: No. If <script type="math/tex">V_{\epsilon}(s) = (s - \epsilon, s + \epsilon) \subset A</script>.
+Then <script type="math/tex">s < s + \epsilon/2 \in A</script>. Then <script type="math/tex">s</script> is not the supremum. We got
+a contradiction.</li>
+</ul>
+<p>See also <a href="https://math.stackexchange.com/questions/1727959/can-an-open-set-contain-its-supremum">here</a>.</p>
 <h3 id="325">3.2.5</h3>
 <p>A set <script type="math/tex">F \subset \mathbb{R}</script> is closed if and only if every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script>.</p>
 <ul>
@@ -142,6 +192,204 @@ A = \left\{ (-1)^n + \frac{2}{n} : n = 1, 2, 3 \right\} \text{and } B = \left\{ 
 <script type="math/tex">\Leftarrow</script> Assume every Cauchy sequence contained in <script type="math/tex">F</script> has a limit that is also an element of <script type="math/tex">F</script> and <script type="math/tex">x</script> is a limit point of <script type="math/tex">F</script>. According Theorem 3.2.5, we can find some sequence <script type="math/tex">(a_n)</script> contained in <script type="math/tex">F</script> satisfying <script type="math/tex">a_n \ne x</script> for all <script type="math/tex">n \in \mathbb{N}</script> and <script type="math/tex">x = \lim a_n</script>. Again according to Theorem 2.6.4, <script type="math/tex">(a_n)</script> is a Cauchy sequence, then <script type="math/tex">x \in F</script>. <script type="math/tex">\square</script>
 </li>
 </ul>
+</li>
+</ul>
+<h3 id="326">3.2.6</h3>
+<p>Decide whether the following statements are true or false. Provide counterexamples for those that are false, and supply proofs for those that are true.</p>
+<p>(a) An open set that contains every rational number must necessarily be all of R.</p>
+<p>No. Consider <script type="math/tex">\mathbb{R} - \{\pi\}</script>.</p>
+<p>(b) The Nested Interval Property remains true if the term “closed interval” is replaced by “closed set.”</p>
+<p>False. Let <script type="math/tex">I_n = [n, \infty)</script>, which is closed. Then <script type="math/tex">\cap I_n = \emptyset</script>.</p>
+<p>See discussion <a href="https://math.stackexchange.com/questions/489242/nested-sequence-of-closed-sets">here</a>.</p>
+<p>But if the "closed set" is bounded. Then assume <script type="math/tex">a_n = \inf I_n, b_n = \sup I_n</script>. Then we have <script type="math/tex">a_n, b_n \in I_n</script>. Now let <script type="math/tex">a = \sup \{a_n\}</script>, because
+<script type="math/tex">a</script> is a limit point of <script type="math/tex">I_n</script>. so <script type="math/tex">a \in I_n, \forall n</script>.</p>
+<p>(c) Every nonempty open set contains a rational number.</p>
+<p>True. <script type="math/tex">\mathbb{Q}</script> is dense.</p>
+<p>(d) Every bounded infinite closed set contains a rational number.</p>
+<p>False. Consider <script type="math/tex">A = \{\pi + (1/n) : n\in \mathbb{N} \} \cup \pi</script>.</p>
+<p>Also see <a href="https://math.stackexchange.com/questions/1440516/t-f-every-bounded-infinite-closed-set-contains-a-rational-number">here</a></p>
+<p>(e) The Cantor set is closed.</p>
+<p>True. By definition in section 3.1</p>
+<p>
+<script type="math/tex; mode=display">
+C = \cap_{n=0}^\infty C_n
+</script>
+Each <script type="math/tex">C_n</script> is the union of finite closed set so it is closed from Theorem 3.2.14. Then <script type="math/tex">C</script> is the intersection of them, so it is also closed.</p>
+<h3 id="327">3.2.7</h3>
+<p>Given <script type="math/tex">A ⊆ R</script>, let <script type="math/tex">L</script> be the set of all limit points of <script type="math/tex">A</script>.</p>
+<p>(a) Show that the set <script type="math/tex">L</script> is closed.</p>
+<ul>
+<li>Proof: Assume <script type="math/tex">x</script> is limit point of L, then for every <script type="math/tex">V_{\epsilon}(x)</script>,
+we can find <script type="math/tex">x' \in L</script> and <script type="math/tex">x' \in V_{\epsilon}(x)</script>. Then <script type="math/tex">x'</script> is a limit
+point of <script type="math/tex">A</script>, so we can find <script type="math/tex">a \in A</script>, such that <script type="math/tex">a \in V_{\epsilon}(x)</script>.
+The <script type="math/tex">x</script> itself is a limited point of <script type="math/tex">A</script>. So <script type="math/tex">x \in L</script>. So <script type="math/tex">L</script> is closed.</li>
+</ul>
+<p>(b) Argue that if <script type="math/tex">x</script> is a limit point of <script type="math/tex">A \cup L</script>, then <script type="math/tex">x</script> is a limit point of <script type="math/tex">A</script>. Use this observation to furnish a proof for Theorem 3.2.12.</p>
+<ul>
+<li>Proof. If <script type="math/tex">l \in L</script> and <script type="math/tex">l \in V_{\epsilon}(x)</script>, then we can find
+<script type="math/tex">a \in V_{\epsilon'}(l) \subset V_{\epsilon}(x)</script>. So <script type="math/tex">l</script> is a limit point
+of <script type="math/tex">A</script>. Then <script type="math/tex">l \in L \subseteq A \cup L</script>. Then <script type="math/tex">A \cup L</script> is closed.</li>
+</ul>
+<h3 id="328">3.2.8</h3>
+<p>Assume <script type="math/tex">A</script> is an open set and <script type="math/tex">B</script> is a closed set. Determine if
+the following sets are definitely open, definitely closed, both, or neither.</p>
+<p>(a) <script type="math/tex">\overline{A∪B}</script>
+</p>
+<p>Definitely closed.</p>
+<p>(b) <script type="math/tex">A - B= \{x∈A:x \notin B\}</script>
+</p>
+<p>Definitely open. Assume <script type="math/tex">x \in A - B</script>, then <script type="math/tex">x \notin B</script>, so <script type="math/tex">x</script> is not a limit point of <script type="math/tex">B</script>.
+Then we can find <script type="math/tex">V_{\epsilon_1}(x) \cap B = \emptyset</script>. Since <script type="math/tex">A</script> is open,
+we can find <script type="math/tex">V_{\epsilon_2}(x) \subset A</script>. So we can find <script type="math/tex">\epsilon = \min(\epsilon_1, \epsilon_2)</script> such that <script type="math/tex">V_{\epsilon}(x) \in A - B</script>.</p>
+<p>(c) <script type="math/tex">(A^c ∪ B)^c</script>
+</p>
+<p>
+<script type="math/tex">A^c</script> is closed, then <script type="math/tex">(A^c ∪ B)</script> is closed. Then <script type="math/tex">(A^c ∪ B)^c</script> is open.</p>
+<p>(d) <script type="math/tex">(A∩B)∪(A^c ∩B)</script>
+</p>
+<p>It's equal to <script type="math/tex">B</script>, so closed.</p>
+<p>(e) <script type="math/tex">\overline{A}^c ∩ \overline{A^c}</script>
+</p>
+<p>We prove <script type="math/tex">\overline{A^c} \supset \overline{A}^c</script>. Assume <script type="math/tex">a \in \overline{A}^c</script>, then <script type="math/tex">a \notin \overline{A}</script> so <script type="math/tex">a \notin A</script>, then
+<script type="math/tex">a \in A^c \subset \overline{A^c}</script>. So <script type="math/tex">\overline{A}^c \subset \overline{A^c}</script>.</p>
+<p>Then <script type="math/tex">\overline{A}^c ∩ \overline{A^c} = \overline{A^c}</script>. Then it is
+definitely closed.</p>
+<h3 id="3210">3.2.10</h3>
+<p>Only one of the following three descriptions can be realized. Provide an example that illustrates the viable description, and explain why the other two cannot exist.</p>
+<p>(i) A countable set contained in <script type="math/tex">[0, 1]</script> with no limit points.</p>
+<ul>
+<li>This is not possible because of Bolzano-Weierstrass Theorem.</li>
+</ul>
+<p>(ii) A countable set contained in [0, 1] with no isolated points.</p>
+<ul>
+<li>This is possible for <script type="math/tex">\mathbb{Q} \cap [0, 1]</script>.</li>
+</ul>
+<p>(iii) A set with an uncountable number of isolated points.</p>
+<ul>
+<li>Proof:</li>
+</ul>
+<p>This is impossible. Assume <script type="math/tex">A</script>  is such set,
+<script type="math/tex">x</script> is an isolated points, such that <script type="math/tex">V_{\epsilon}(x) \cap A =\{x\}</script>.
+We will show we can find 
+<script type="math/tex">V_{\epsilon_1}(x)</script> does not intersect with any <script type="math/tex">V_{\epsilon_y}(y)</script>.</p>
+<p>Assume <script type="math/tex">V_{\epsilon}(x) \cap V_{\epsilon_y}(y) \ne \emptyset</script> and
+<script type="math/tex">y > x</script>. First we will show <script type="math/tex">V_{\epsilon}(x) \cap V_{\epsilon_z}(z) = \emptyset, \forall z > x</script>.
+If this is not the case, and <script type="math/tex">y > z</script>, then <script type="math/tex">z \in V_{\epsilon_y}(y)</script> or
+<script type="math/tex">z \in V_{\epsilon}(x)</script>. This is not possible.
+If <script type="math/tex">z > y</script>, then <script type="math/tex">y \in V_{\epsilon_z}(z)</script>. This is also not possible.</p>
+<p>The same argument holds for <script type="math/tex">y < x</script>. So we can shrink <script type="math/tex">V_{\epsilon}(x)</script>
+small enough. And this can be performed for any <script type="math/tex">x \in A</script>.</p>
+<p>That means we have an uncountable set of open set and any two of them
+does not intersect with each other. But that means we can have
+uncountable many rational numbers. We have a contradiction. <script type="math/tex">\square</script>
+</p>
+<p>Also search this question in stack overflow, like
+<a href="https://math.stackexchange.com/questions/1951645/does-there-exist-an-uncountable-number-of-isolated-points">here</a></p>
+<h3 id="3211">3.2.11</h3>
+<p>(a) Prove that <script type="math/tex">\overline{A ∪ B} = \overline{A} ∪ \overline{B}</script>.</p>
+<ul>
+<li>
+<p>Proof:</p>
+<ul>
+<li>
+<p>We first prove <script type="math/tex">\overline{A ∪ B} \subset \overline{A} ∪ \overline{B}</script>. <script type="math/tex">A \subset \overline{A} ∪ \overline{B}</script> and
+<script type="math/tex">B \subset \overline{A} ∪ \overline{B}</script>, so
+<script type="math/tex">A ∪ B \subset \overline{A} ∪ \overline{B}</script>. Because <script type="math/tex">\overline{A} ∪ \overline{B}</script> is also a closed set, it must contain the closure of <script type="math/tex">A ∪ B</script> according to Theorem 3.2.12. So
+<script type="math/tex">\overline{A ∪ B} \subset \overline{A} ∪ \overline{B}</script>.</p>
+</li>
+<li>
+<p>On the other hand, <script type="math/tex">A \subset \overline{A ∪ B}</script> so
+<script type="math/tex">\overline{A} \subset \overline{A ∪ B}</script>.
+For the same reason, <script type="math/tex">\overline{B} \subset \overline{A ∪ B}</script>.
+So <script type="math/tex">\overline{A} ∪ \overline{B} \subset \overline{A ∪ B}</script>.</p>
+</li>
+<li>So we have <script type="math/tex">\overline{A ∪ B} = \overline{A} ∪ \overline{B}</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+</li>
+</ul>
+<p>(b) Does this result about closures extend to infinite unions of sets?</p>
+<ul>
+<li>Proof: No. Consider <script type="math/tex">A_1 = [1/2, 1], ..., A_n = [1/(n+1), 1/n]</script>.
+Then <script type="math/tex">\cup \overline{A_n} = (0, 1]</script>. However <script type="math/tex">\cup A_n = (0, 1]</script>, so <script type="math/tex">\overline{\cup A_n} = [0, 1]</script>.</li>
+</ul>
+<h3 id="3212">3.2.12</h3>
+<p>Let <script type="math/tex">A</script> be an uncountable set and let <script type="math/tex">B</script> be the set of real numbers that divides <script type="math/tex">A</script> into two uncountable sets; that is, <script type="math/tex">s ∈ B</script> if both <script type="math/tex">\{x : x∈A \text{ and } x<s\}</script> and <script type="math/tex">\{x:x∈A \text{ and } x>s\}</script> are uncountable. Show <script type="math/tex">B</script> is nonempty and open.</p>
+<ul>
+<li>Proof:<ul>
+<li>Define <script type="math/tex">C_s = (-\infty, s]</script> and <script type="math/tex">C = \left\{ s : A \cap C_s \text{ is countable} \right\}</script>. We can see <script type="math/tex">C \ne \mathbb{R}</script>. Otherwise, <script type="math/tex">A = \cup_{i = 1}^{\infty} (A \cap C_i)</script> is countable. This means <script type="math/tex">C</script> is upper bounded. Let <script type="math/tex">c = \sup C</script>, we will show <script type="math/tex">c \in C</script>. <script type="math/tex">A \cap C_c = \cup_{i = 1}^{\infty} (A \cap C_{c-\frac{1}{i}}) \cup (A \cap \left\{ c \right\} )</script> is countable. So <script type="math/tex">c \in C</script>. Furthurmore <script type="math/tex">C = (-\infty, c]</script>.</li>
+<li>Similarly, define <script type="math/tex">D_s = [s, \infty)</script> and <script type="math/tex">D = \left\{ s : A \cap D_s \text{ is countable} \right\}</script>. We can show <script type="math/tex">D = [d, \infty)</script> for some <script type="math/tex">d</script>.</li>
+<li>Furthur more <script type="math/tex">C \cap D = \emptyset</script>. Otherwise <script type="math/tex">A</script> is countable.</li>
+<li>So finally, we have <script type="math/tex">B = (c, d)</script> is nonempty and open.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3213">3.2.13</h3>
+<p>Prove that the only sets that are both open and closed are <script type="math/tex">\mathbb{R}</script> and the empty set <script type="math/tex">\emptyset</script>.</p>
+<ul>
+<li>Proof:</li>
+</ul>
+<p>Consider <script type="math/tex">a \in A \ne \emptyset</script> and <script type="math/tex">b \in A^c \ne \emptyset</script>.
+WLOG, assume <script type="math/tex">a < b</script>. Let <script type="math/tex">A' = A \cap [a, b]</script>. Since the intersection of 2 closed sets are closed, <script type="math/tex">A'</script> is closed. Let <script type="math/tex">s = \sup A'</script>. since <script type="math/tex">A'</script> is closed, <script type="math/tex">s \in A'</script> (Exercise 3.2.4). <script type="math/tex">b</script> is an upper bound of <script type="math/tex">A'</script>, so <script type="math/tex">s \leq b</script>.</p>
+<ul>
+<li>If <script type="math/tex">s = b</script>, then <script type="math/tex">s \in A^c</script>. We have a contradiction.</li>
+<li>If <script type="math/tex">s < b</script>, since <script type="math/tex">A</script> is open, there exists <script type="math/tex">V_{\epsilon}(s) \subset A \cap [a, b] = A'</script>, then <script type="math/tex">s</script> is not a superem of <script type="math/tex">A'</script>. We have another contradiction. <script type="math/tex">\square</script>
+</li>
+</ul>
+<p>Also see stackexchange <a href="https://math.stackexchange.com/questions/751886/if-a-nonempty-set-of-real-numbers-is-open-and-closed-is-it-mathbbr-why-wh">here</a>.</p>
+<h3 id="3214">3.2.14</h3>
+<p>A dual notion to the closure of a set is the interior of a set. The interior of <script type="math/tex">E</script> is denoted <script type="math/tex">E^o</script> and is defined as</p>
+<p>
+<script type="math/tex; mode=display">
+E^o = \{x \in E: \text{there exists } V_{\epsilon}(x)⊆E \}.
+</script>
+</p>
+<p>a. Show that <script type="math/tex">E</script> is closed if and only if <script type="math/tex">E=\overline{E}</script>. Show that <script type="math/tex">E</script> is open if and only if <script type="math/tex">E^o = E</script>.</p>
+<ul>
+<li>Proof: <script type="math/tex">E</script> is closed so it contains all its limited points, i.e. <script type="math/tex">L \subset E</script>, so <script type="math/tex">E \supset E \cup L = \overline{E}</script>. On the other hand, <script type="math/tex">E \subset \overline{E}</script>. So <script type="math/tex">E = \overline{E}</script>.</li>
+<li>
+<script type="math/tex">E</script> is open, so if <script type="math/tex">x \in E</script> then there exists <script type="math/tex">V_{\epsilon}(x) \subseteq E</script>. so <script type="math/tex">x \in E^o</script>, and <script type="math/tex">E \subseteq E^o</script>. On the other hand, <script type="math/tex">E \supseteq E^o</script>. So <script type="math/tex">E = E^o</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+<p>b. Show that <script type="math/tex">\overline{E}^c = (E^c)^o</script>, and similarly that
+<script type="math/tex">(E^o)^c = \overline{E^c}</script>.</p>
+<ul>
+<li>
+<p>Proof: First statement. Assume <script type="math/tex">x \in \overline{E}^c</script>, then <script type="math/tex">x \notin \overline{E}</script>. Then <script type="math/tex">x \notin E</script>, so <script type="math/tex">x \in E^c</script>. Furthermore <script type="math/tex">x</script> is not a
+limit point of <script type="math/tex">E</script>, so there exists <script type="math/tex">V_{\epsilon}(x)⊆ E^c</script>. Then
+<script type="math/tex">x \in (E^c)^o</script>.</p>
+</li>
+<li>
+<p>On the other hand if <script type="math/tex">x \in (E^c)^o</script>, then there exists <script type="math/tex">V_{\epsilon}(x)⊆ E^c</script>. So <script type="math/tex">x \notin \overline{E}</script>, so <script type="math/tex">x \in \overline{E}^c</script>.</p>
+</li>
+<li>
+<p>Second statement. Assume <script type="math/tex">x \in (E^o)^c</script>, then <script type="math/tex">x \notin E^o</script>. Then <script type="math/tex">x</script>
+is a limit point of <script type="math/tex">E^c</script>, so <script type="math/tex">x \in \overline{E^c}</script>.</p>
+</li>
+<li>
+<p>On the other hand, assume <script type="math/tex">x \in \overline{E^c}</script>. If <script type="math/tex">x \in E^c</script>, then
+<script type="math/tex">x \in (E^o)^c</script>. If <script type="math/tex">x \notin E^c</script>, <script type="math/tex">x</script> is a limit point of <script type="math/tex">E^c</script>. So
+there doesn't exist <script type="math/tex">V_{\epsilon}(x)⊆ E</script>, then <script type="math/tex">x \notin E^o</script>.
+So <script type="math/tex">x \in (E^o)^c</script>. <script type="math/tex">\square</script>
+</p>
+</li>
+</ul>
+<h3 id="3215">3.2.15</h3>
+<p>A set <script type="math/tex">A</script> is called an <script type="math/tex">F_σ</script> set if it can be written as the countable union of closed sets. A set <script type="math/tex">B</script> is called a <script type="math/tex">G_δ</script> set if it can be written as the countable intersection of open sets.</p>
+<p>(a) Show that a closed interval <script type="math/tex">[a, b]</script> is a <script type="math/tex">G_δ</script> set.</p>
+<ul>
+<li>Proof: Let <script type="math/tex">A_n = (a - 1/n, b + 1/n)</script>. Then <script type="math/tex">[a,b] = \cap_{i = 1}^{\infty} A_n</script>.</li>
+</ul>
+<p>(b) Show that the half-open interval <script type="math/tex">(a, b]</script> is both a <script type="math/tex">G_δ</script> and an <script type="math/tex">F_σ</script> set.</p>
+<ul>
+<li>Proof: Let <script type="math/tex">A_n = [a+\frac{1}{n}, b]</script>, then <script type="math/tex">(a, b]</script> is <script type="math/tex">F_σ</script>.
+Let <script type="math/tex">B_n = (a, b+\frac{1}{n})</script>, then <script type="math/tex">(a, b]</script> is <script type="math/tex">G_δ</script>.</li>
+</ul>
+<p>(c) Show that <script type="math/tex">Q</script> is an <script type="math/tex">F_σ</script> set, and the set of irrationals <script type="math/tex">I</script> forms a <script type="math/tex">G_δ</script> set.</p>
+<ul>
+<li>Proof: Let <script type="math/tex">A_q = \{q\}</script>. Then it's a closed set. Since <script type="math/tex">Q</script> is countable,
+the union of them is <script type="math/tex">Q</script>.</li>
+<li>Let <script type="math/tex">B_q = R - \{q\}</script>, then <script type="math/tex">B_q</script> is open. The intersection of them is <script type="math/tex">I</script>. <script type="math/tex">\square</script>
 </li>
 </ul>
               
