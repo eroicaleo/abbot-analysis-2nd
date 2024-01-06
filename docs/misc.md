@@ -84,3 +84,9 @@ mkdocs gh-deploy
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
       }
 ```
+
+## Similar Projects
+
+* [linearalgebras.com](https://linearalgebras.com/solution-understanding-analysis.html)
+* [github](https://github.com/mikinty/Understanding-Analysis-Abbott-Solutions)
+* [github UlisseMini](https://github.com/UlisseMini/understanding-analysis-solutions)

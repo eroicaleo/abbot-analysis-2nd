@@ -33,6 +33,49 @@ Answer the following questions for each set:
     * All points in $A$ are isolated except $1$. $B$ does not contain any isolated points.
     * $\overline{A} = A \cup \left\{ -1\right\}$ and $\overline{B} = [0, 1]$.$\square$
 
+### 3.2.3
+
+Decide whether the following sets are open, closed, or neither. If a set is not open, find a point in the set for which there is no ε-neighborhood contained in the set. If a set is not closed, find a limit point that is not contained in the set.
+
+(a) Q.
+
+Neither. Every point. $\sqrt{2}$.
+Also see [here](https://math.stackexchange.com/questions/116721/are-the-rationals-a-closed-or-open-set-in-mathbbr).
+
+(b) $\mathbb{N}$
+
+Closed. Every point.
+
+(c) $\{x \in R:x \ne 0\}$\
+
+Open. $0$.
+
+(d) $\{1+1/4+1/9+\cdots+1/n^2: n \in N\}$.
+
+Neither. Everypoint. It's limit.
+
+(e) $\{1 + 1/2 + 1/3 + \cdots + 1/n : n \in N\}$.
+
+Closed. Everypoint.
+
+### 3.2.4
+
+Let $A$ be nonempty and bounded above so that $s = \sup A$ exists.
+
+(a) Show that $s ∈ \overline{A}$.
+
+* Proof: According to Lemma 1.3.8., $s$ is a limited point of $A$. 
+So $s ∈ \overline{A}$.
+
+(b) Can an open set contain its supremum?
+
+* Proof: No. If $V_{\epsilon}(s) = (s - \epsilon, s + \epsilon) \subset A$.
+Then $s < s + \epsilon/2 \in A$. Then $s$ is not the supremum. We got
+a contradiction.
+
+See also [here](https://math.stackexchange.com/questions/1727959/can-an-open-set-contain-its-supremum).
+
+
 ### 3.2.5
 
 A set $F \subset \mathbb{R}$ is closed if and only if every Cauchy sequence contained in $F$ has a limit that is also an element of $F$.
@@ -42,3 +85,220 @@ A set $F \subset \mathbb{R}$ is closed if and only if every Cauchy sequence cont
         * If $\exists n, \text{such that } a_n = x$, then $x \in F$.
         * If $x \neq a_n, \forall n$, then according to Theorem 3.2.5, $x$ is a limit point of $F$, so $x \in F$.
     * $\Leftarrow$ Assume every Cauchy sequence contained in $F$ has a limit that is also an element of $F$ and $x$ is a limit point of $F$. According Theorem 3.2.5, we can find some sequence $(a_n)$ contained in $F$ satisfying $a_n \ne x$ for all $n \in \mathbb{N}$ and $x = \lim a_n$. Again according to Theorem 2.6.4, $(a_n)$ is a Cauchy sequence, then $x \in F$. $\square$
+
+### 3.2.6
+
+Decide whether the following statements are true or false. Provide counterexamples for those that are false, and supply proofs for those that are true.
+
+(a) An open set that contains every rational number must necessarily be all of R.
+
+No. Consider $\mathbb{R} - \{\pi\}$.
+
+(b) The Nested Interval Property remains true if the term “closed interval” is replaced by “closed set.”
+
+False. Let $I_n = [n, \infty)$, which is closed. Then $\cap I_n = \emptyset$.
+
+See discussion [here](https://math.stackexchange.com/questions/489242/nested-sequence-of-closed-sets).
+
+But if the "closed set" is bounded. Then assume $a_n = \inf I_n, b_n = \sup I_n$. Then we have $a_n, b_n \in I_n$. Now let $a = \sup \{a_n\}$, because
+$a$ is a limit point of $I_n$. so $a \in I_n, \forall n$.
+
+(c) Every nonempty open set contains a rational number.
+
+True. $\mathbb{Q}$ is dense.
+
+(d) Every bounded infinite closed set contains a rational number.
+
+False. Consider $A = \{\pi + (1/n) : n\in \mathbb{N} \} \cup \pi$.
+
+Also see [here](https://math.stackexchange.com/questions/1440516/t-f-every-bounded-infinite-closed-set-contains-a-rational-number)
+
+(e) The Cantor set is closed.
+
+True. By definition in section 3.1
+
+$$
+C = \cap_{n=0}^\infty C_n
+$$
+Each $C_n$ is the union of finite closed set so it is closed from Theorem 3.2.14. Then $C$ is the intersection of them, so it is also closed.
+
+### 3.2.7
+
+Given $A ⊆ R$, let $L$ be the set of all limit points of $A$.
+
+(a) Show that the set $L$ is closed.
+
+* Proof: Assume $x$ is limit point of L, then for every $V_{\epsilon}(x)$,
+we can find $x' \in L$ and $x' \in V_{\epsilon}(x)$. Then $x'$ is a limit
+point of $A$, so we can find $a \in A$, such that $a \in V_{\epsilon}(x)$.
+The $x$ itself is a limited point of $A$. So $x \in L$. So $L$ is closed.
+
+(b) Argue that if $x$ is a limit point of $A \cup L$, then $x$ is a limit point of $A$. Use this observation to furnish a proof for Theorem 3.2.12.
+
+* Proof. If $l \in L$ and $l \in V_{\epsilon}(x)$, then we can find
+$a \in V_{\epsilon'}(l) \subset V_{\epsilon}(x)$. So $l$ is a limit point
+of $A$. Then $l \in L \subseteq A \cup L$. Then $A \cup L$ is closed.
+
+
+### 3.2.8
+
+Assume $A$ is an open set and $B$ is a closed set. Determine if
+the following sets are definitely open, definitely closed, both, or neither.
+
+(a) $\overline{A∪B}$
+
+Definitely closed.
+
+(b) $A - B= \{x∈A:x \notin B\}$
+
+Definitely open. Assume $x \in A - B$, then $x \notin B$, so $x$ is not a limit point of $B$.
+Then we can find $V_{\epsilon_1}(x) \cap B = \emptyset$. Since $A$ is open,
+we can find $V_{\epsilon_2}(x) \subset A$. So we can find $\epsilon = \min(\epsilon_1, \epsilon_2)$ such that $V_{\epsilon}(x) \in A - B$.
+
+(c) $(A^c ∪ B)^c$
+
+$A^c$ is closed, then $(A^c ∪ B)$ is closed. Then $(A^c ∪ B)^c$ is open.
+
+(d) $(A∩B)∪(A^c ∩B)$
+
+It's equal to $B$, so closed.
+
+(e) $\overline{A}^c ∩ \overline{A^c}$
+
+We prove $\overline{A^c} \supset \overline{A}^c$. Assume $a \in \overline{A}^c$, then $a \notin \overline{A}$ so $a \notin A$, then
+$a \in A^c \subset \overline{A^c}$. So $\overline{A}^c \subset \overline{A^c}$.
+
+Then $\overline{A}^c ∩ \overline{A^c} = \overline{A^c}$. Then it is
+definitely closed.
+
+
+### 3.2.10
+
+Only one of the following three descriptions can be realized. Provide an example that illustrates the viable description, and explain why the other two cannot exist.
+
+(i) A countable set contained in $[0, 1]$ with no limit points.
+
+* This is not possible because of Bolzano-Weierstrass Theorem.
+
+(ii) A countable set contained in [0, 1] with no isolated points.
+
+* This is possible for $\mathbb{Q} \cap [0, 1]$.
+
+(iii) A set with an uncountable number of isolated points.
+
+* Proof:
+
+This is impossible. Assume $A$  is such set,
+$x$ is an isolated points, such that $V_{\epsilon}(x) \cap A =\{x\}$.
+We will show we can find 
+$V_{\epsilon_1}(x)$ does not intersect with any $V_{\epsilon_y}(y)$.
+
+Assume $V_{\epsilon}(x) \cap V_{\epsilon_y}(y) \ne \emptyset$ and
+$y > x$. First we will show $V_{\epsilon}(x) \cap V_{\epsilon_z}(z) = \emptyset, \forall z > x$.
+If this is not the case, and $y > z$, then $z \in V_{\epsilon_y}(y)$ or
+$z \in V_{\epsilon}(x)$. This is not possible.
+If $z > y$, then $y \in V_{\epsilon_z}(z)$. This is also not possible.
+
+The same argument holds for $y < x$. So we can shrink $V_{\epsilon}(x)$
+small enough. And this can be performed for any $x \in A$.
+
+That means we have an uncountable set of open set and any two of them
+does not intersect with each other. But that means we can have
+uncountable many rational numbers. We have a contradiction. $\square$
+
+Also search this question in stack overflow, like
+[here](https://math.stackexchange.com/questions/1951645/does-there-exist-an-uncountable-number-of-isolated-points)
+
+### 3.2.11
+
+(a) Prove that $\overline{A ∪ B} = \overline{A} ∪ \overline{B}$.
+
+* Proof:
+    * We first prove $\overline{A ∪ B} \subset \overline{A} ∪ \overline{B}$. $A \subset \overline{A} ∪ \overline{B}$ and
+$B \subset \overline{A} ∪ \overline{B}$, so
+$A ∪ B \subset \overline{A} ∪ \overline{B}$. Because $\overline{A} ∪ \overline{B}$ is also a closed set, it must contain the closure of $A ∪ B$ according to Theorem 3.2.12. So
+$\overline{A ∪ B} \subset \overline{A} ∪ \overline{B}$.
+
+    * On the other hand, $A \subset \overline{A ∪ B}$ so
+$\overline{A} \subset \overline{A ∪ B}$.
+For the same reason, $\overline{B} \subset \overline{A ∪ B}$.
+So $\overline{A} ∪ \overline{B} \subset \overline{A ∪ B}$.
+    * So we have $\overline{A ∪ B} = \overline{A} ∪ \overline{B}$. $\square$
+
+(b) Does this result about closures extend to infinite unions of sets?
+
+* Proof: No. Consider $A_1 = [1/2, 1], ..., A_n = [1/(n+1), 1/n]$.
+Then $\cup \overline{A_n} = (0, 1]$. However $\cup A_n = (0, 1]$, so $\overline{\cup A_n} = [0, 1]$.
+
+### 3.2.12
+
+Let $A$ be an uncountable set and let $B$ be the set of real numbers that divides $A$ into two uncountable sets; that is, $s ∈ B$ if both $\{x : x∈A \text{ and } x<s\}$ and $\{x:x∈A \text{ and } x>s\}$ are uncountable. Show $B$ is nonempty and open.
+
+* Proof:
+    * Define $C_s = (-\infty, s]$ and $C = \left\{ s : A \cap C_s \text{ is countable} \right\}$. We can see $C \ne \mathbb{R}$. Otherwise, $A = \cup_{i = 1}^{\infty} (A \cap C_i)$ is countable. This means $C$ is upper bounded. Let $c = \sup C$, we will show $c \in C$. $A \cap C_c = \cup_{i = 1}^{\infty} (A \cap C_{c-\frac{1}{i}}) \cup (A \cap \left\{ c \right\} )$ is countable. So $c \in C$. Furthurmore $C = (-\infty, c]$.
+    * Similarly, define $D_s = [s, \infty)$ and $D = \left\{ s : A \cap D_s \text{ is countable} \right\}$. We can show $D = [d, \infty)$ for some $d$.
+    * Furthur more $C \cap D = \emptyset$. Otherwise $A$ is countable.
+    * So finally, we have $B = (c, d)$ is nonempty and open.
+
+### 3.2.13
+
+Prove that the only sets that are both open and closed are $\mathbb{R}$ and the empty set $\emptyset$.
+
+* Proof:
+
+Consider $a \in A \ne \emptyset$ and $b \in A^c \ne \emptyset$.
+WLOG, assume $a < b$. Let $A' = A \cap [a, b]$. Since the intersection of 2 closed sets are closed, $A'$ is closed. Let $s = \sup A'$. since $A'$ is closed, $s \in A'$ (Exercise 3.2.4). $b$ is an upper bound of $A'$, so $s \leq b$.
+
+* If $s = b$, then $s \in A^c$. We have a contradiction.
+* If $s < b$, since $A$ is open, there exists $V_{\epsilon}(s) \subset A \cap [a, b] = A'$, then $s$ is not a superem of $A'$. We have another contradiction. $\square$
+
+Also see stackexchange [here](https://math.stackexchange.com/questions/751886/if-a-nonempty-set-of-real-numbers-is-open-and-closed-is-it-mathbbr-why-wh).
+
+### 3.2.14
+
+A dual notion to the closure of a set is the interior of a set. The interior of $E$ is denoted $E^o$ and is defined as
+
+$$
+E^o = \{x \in E: \text{there exists } V_{\epsilon}(x)⊆E \}.
+$$
+
+a. Show that $E$ is closed if and only if $E=\overline{E}$. Show that $E$ is open if and only if $E^o = E$.
+
+* Proof: $E$ is closed so it contains all its limited points, i.e. $L \subset E$, so $E \supset E \cup L = \overline{E}$. On the other hand, $E \subset \overline{E}$. So $E = \overline{E}$.
+* $E$ is open, so if $x \in E$ then there exists $V_{\epsilon}(x) \subseteq E$. so $x \in E^o$, and $E \subseteq E^o$. On the other hand, $E \supseteq E^o$. So $E = E^o$. $\square$
+
+b. Show that $\overline{E}^c = (E^c)^o$, and similarly that
+$(E^o)^c = \overline{E^c}$.
+
+* Proof: First statement. Assume $x \in \overline{E}^c$, then $x \notin \overline{E}$. Then $x \notin E$, so $x \in E^c$. Furthermore $x$ is not a
+limit point of $E$, so there exists $V_{\epsilon}(x)⊆ E^c$. Then
+$x \in (E^c)^o$.
+
+* On the other hand if $x \in (E^c)^o$, then there exists $V_{\epsilon}(x)⊆ E^c$. So $x \notin \overline{E}$, so $x \in \overline{E}^c$.
+
+* Second statement. Assume $x \in (E^o)^c$, then $x \notin E^o$. Then $x$
+is a limit point of $E^c$, so $x \in \overline{E^c}$.
+
+* On the other hand, assume $x \in \overline{E^c}$. If $x \in E^c$, then
+$x \in (E^o)^c$. If $x \notin E^c$, $x$ is a limit point of $E^c$. So
+there doesn't exist $V_{\epsilon}(x)⊆ E$, then $x \notin E^o$.
+So $x \in (E^o)^c$. $\square$
+
+### 3.2.15
+
+A set $A$ is called an $F_σ$ set if it can be written as the countable union of closed sets. A set $B$ is called a $G_δ$ set if it can be written as the countable intersection of open sets.
+
+(a) Show that a closed interval $[a, b]$ is a $G_δ$ set.
+
+* Proof: Let $A_n = (a - 1/n, b + 1/n)$. Then $[a,b] = \cap_{i = 1}^{\infty} A_n$.
+
+(b) Show that the half-open interval $(a, b]$ is both a $G_δ$ and an $F_σ$ set.
+
+* Proof: Let $A_n = [a+\frac{1}{n}, b]$, then $(a, b]$ is $F_σ$.
+Let $B_n = (a, b+\frac{1}{n})$, then $(a, b]$ is $G_δ$.
+
+(c) Show that $Q$ is an $F_σ$ set, and the set of irrationals $I$ forms a $G_δ$ set.
+
+* Proof: Let $A_q = \{q\}$. Then it's a closed set. Since $Q$ is countable,
+the union of them is $Q$.
+* Let $B_q = R - \{q\}$, then $B_q$ is open. The intersection of them is $I$. $\square$
