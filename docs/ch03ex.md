@@ -302,3 +302,68 @@ Let $B_n = (a, b+\frac{1}{n})$, then $(a, b]$ is $G_δ$.
 * Proof: Let $A_q = \{q\}$. Then it's a closed set. Since $Q$ is countable,
 the union of them is $Q$.
 * Let $B_q = R - \{q\}$, then $B_q$ is open. The intersection of them is $I$. $\square$
+
+## 3.3 Compact Sets
+
+### 3.3.2
+
+Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.
+
+(a) N.
+
+Not compact. Itself.
+
+(b) $Q \cap [0,1]$
+
+Not compact. A sequence converges to $\sqrt{2}/2$.
+
+(c) The Cantor set.
+
+Compact. Close and bounded.
+
+(d) $\{1+1/2^2 +1/3^2 +···+1/n^2 :n∈N\}$.
+
+Not closed. Itself.
+
+(e) $\{1,1/2,2/3,3/4,4/5,...\}.$
+
+Compact. Closed and bounded.
+It has 1 limit point which is 1, so it's closed.
+
+### 3.3.11
+
+Consider each of the sets listed in Exercise 3.3.2. For each
+one that is not compact, find an open cover for which there is no finite subcover.
+
+(a) N.
+
+$(n-1/2, n+1/2)$
+
+(b) $Q \cap [0,1]$
+
+$(q-\epsilon/2, q+\epsilon/2)$ where $\epsilon$ is distance
+between $q$ and $\sqrt{2}/2$.
+
+(d) $\{1+1/2^2 +1/3^2 +···+1/n^2 :n∈N\}$.
+
+Let $a_n = 1+1/2^2 +1/3^2 +···+1/n^2$ and let $O_n = (a-1/2(n+1)^2, a+ 1/2(n+1)^2)$
+
+### 3.3.12
+
+Using the concept of open covers (and explicitly avoiding the Bolzano–Weierstrass Theorem), prove that every bounded infinite set has a limit point.
+
+* Proof: We use contradiction. Assume $K$ is a bounded infinite set, and $K \subset [a, b]$. Assume $K$ has no limit point.
+Since none of the point in $[a,b]$ is a limit point of $K$. Then for
+any $x \in [a,b]$, we can find $V_{ε}(x) \cap K = \{x\}$. Then we can
+find a finite cover of $[a,b]$, which is also a finite cover of $K$.
+So $K$ is finite.
+
+See also [here](https://math.stackexchange.com/questions/1718788/proving-every-bounded-infinite-set-has-a-limit-point-without-using-bolzano-weier)
+
+### 3.3.13
+
+Let’s call a set clompact if it has the property that every closed cover (i.e., a cover consisting of closed sets) admits a finite subcover. Describe all of the clompact subsets of $R$.
+
+* Solution: all clompact are finite set. Because one point set $\{x\}$ is a closed set.
+
+See also [here](https://math.stackexchange.com/questions/2989359/which-sets-are-clompact)

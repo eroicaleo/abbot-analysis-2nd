@@ -89,6 +89,20 @@ $a_n \ne x$ for all $n \in \mathbb{N}$.
 * Summary of Proof: Assume $x$ is a limit point of $\bar{A}$, then given $V_{\epsilon}(x)$, we can find $a \in \bar{A}$ and $a \in V_{\epsilon}(x)$. If $a \not\in A$, then $a \in L$, then we can find $V_{\epsilon'}(a) \subseteq V_{\epsilon}(x)$ and $V_{\epsilon'}(a) \cap A \neq \emptyset$. Let $a' \in V_{\epsilon'}(a) \subseteq V_{\epsilon}(x)$, so $x$ is a limit point of $A$. Then $\bar{A}$ is a closed set.
     * Assume $A \subseteq C$ is a closed set, $c$ is a limited point of $A$. Then we can find a sequence $\left\{ a_n \right\}$ converges to $c$. Since $\left\{ a_n \right\}$ is also a sequence in $C$, based on Theorem 3.2.8, $c \in C$. So $L \subseteq C$, then $\bar{A} \subseteq C$. $\square$ 
 
+## 3.3 Compact Sets
 
+* Employing compact sets in a proof often has the effect of bringing a finite quality to the argument, thereby making it much more tractable.
 
+***Definition 3.3.1 (Compactness).*** A set $K \subseteq R$ is compact if every sequence in $K$ has a subsequence that converges to a limit that is also in $K$.
 
+***Example 3.3.2.*** The most basic example of a compact set is a closed interval.
+
+* What are the properties of closed intervals that we used in the preceding argument?
+    * The Bolzano–Weierstrass Theorem requires boundedness
+    * and we used the fact that closed sets contain their limit points.
+
+***Definition 3.3.3.*** A set $A ⊆ R$ is bounded if there exists $M > 0$ such that $|a|≤M$ for all $a∈A$.
+
+***Theorem 3.3.4 (Characterization of Compactness in R).*** A set $K \subseteq R$ is compact if and only if it is closed and bounded.
+
+* Proof: $\Rightarrow$ 
