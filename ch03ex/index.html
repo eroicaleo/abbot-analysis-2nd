@@ -82,6 +82,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#33-compact-sets">3.3 Compact Sets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#332_1">3.3.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3311">3.3.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3312">3.3.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3313">3.3.13</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -392,6 +404,53 @@ the union of them is <script type="math/tex">Q</script>.</li>
 <li>Let <script type="math/tex">B_q = R - \{q\}</script>, then <script type="math/tex">B_q</script> is open. The intersection of them is <script type="math/tex">I</script>. <script type="math/tex">\square</script>
 </li>
 </ul>
+<h2 id="33-compact-sets">3.3 Compact Sets</h2>
+<h3 id="332_1">3.3.2</h3>
+<p>Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.</p>
+<p>(a) N.</p>
+<p>Not compact. Itself.</p>
+<p>(b) <script type="math/tex">Q \cap [0,1]</script>
+</p>
+<p>Not compact. A sequence converges to <script type="math/tex">\sqrt{2}/2</script>.</p>
+<p>(c) The Cantor set.</p>
+<p>Compact. Close and bounded.</p>
+<p>(d) <script type="math/tex">\{1+1/2^2 +1/3^2 +···+1/n^2 :n∈N\}</script>.</p>
+<p>Not closed. Itself.</p>
+<p>(e) <script type="math/tex">\{1,1/2,2/3,3/4,4/5,...\}.</script>
+</p>
+<p>Compact. Closed and bounded.
+It has 1 limit point which is 1, so it's closed.</p>
+<h3 id="3311">3.3.11</h3>
+<p>Consider each of the sets listed in Exercise 3.3.2. For each
+one that is not compact, find an open cover for which there is no finite subcover.</p>
+<p>(a) N.</p>
+<p>
+<script type="math/tex">(n-1/2, n+1/2)</script>
+</p>
+<p>(b) <script type="math/tex">Q \cap [0,1]</script>
+</p>
+<p>
+<script type="math/tex">(q-\epsilon/2, q+\epsilon/2)</script> where <script type="math/tex">\epsilon</script> is distance
+between <script type="math/tex">q</script> and <script type="math/tex">\sqrt{2}/2</script>.</p>
+<p>(d) <script type="math/tex">\{1+1/2^2 +1/3^2 +···+1/n^2 :n∈N\}</script>.</p>
+<p>Let <script type="math/tex">a_n = 1+1/2^2 +1/3^2 +···+1/n^2</script> and let <script type="math/tex">O_n = (a-1/2(n+1)^2, a+ 1/2(n+1)^2)</script>
+</p>
+<h3 id="3312">3.3.12</h3>
+<p>Using the concept of open covers (and explicitly avoiding the Bolzano–Weierstrass Theorem), prove that every bounded infinite set has a limit point.</p>
+<ul>
+<li>Proof: We use contradiction. Assume <script type="math/tex">K</script> is a bounded infinite set, and <script type="math/tex">K \subset [a, b]</script>. Assume <script type="math/tex">K</script> has no limit point.
+Since none of the point in <script type="math/tex">[a,b]</script> is a limit point of <script type="math/tex">K</script>. Then for
+any <script type="math/tex">x \in [a,b]</script>, we can find <script type="math/tex">V_{ε}(x) \cap K = \{x\}</script>. Then we can
+find a finite cover of <script type="math/tex">[a,b]</script>, which is also a finite cover of <script type="math/tex">K</script>.
+So <script type="math/tex">K</script> is finite.</li>
+</ul>
+<p>See also <a href="https://math.stackexchange.com/questions/1718788/proving-every-bounded-infinite-set-has-a-limit-point-without-using-bolzano-weier">here</a></p>
+<h3 id="3313">3.3.13</h3>
+<p>Let’s call a set clompact if it has the property that every closed cover (i.e., a cover consisting of closed sets) admits a finite subcover. Describe all of the clompact subsets of <script type="math/tex">R</script>.</p>
+<ul>
+<li>Solution: all clompact are finite set. Because one point set <script type="math/tex">\{x\}</script> is a closed set.</li>
+</ul>
+<p>See also <a href="https://math.stackexchange.com/questions/2989359/which-sets-are-clompact">here</a></p>
               
             </div>
           </div><footer>
