@@ -330,6 +330,188 @@ Not closed. Itself.
 Compact. Closed and bounded.
 It has 1 limit point which is 1, so it's closed.
 
+### 3.3.6.
+
+This exercise is meant to illustrate the point made in the opening paragraph to Section 3.3. Verify that the following three statements are true if every blank is filled in with the word “finite.” Which are true if every blank is filled in with the word “compact”? Which are true if every blank is filled in with the word “closed”?
+
+(a) 
+
+* Every finite set has a maximum. True.
+* Every compact set has a maximum. True. Bounded and closed. Exercise 3.2.4.
+* Every closed set has a maximum. False. $[0, \infty)$.
+
+(b)
+
+* If $A$ and $B$ are finite, then $A+B={a+b:a∈A,b∈B}$ is also finite. True.
+* If $A$ and $B$ are compact, then $A+B={a+b:a∈A,b∈B}$ is also compact. True.
+
+proof: Assume $c$ is a limit point of $A+B$, we can find a sequence $\{a_n + b_n\} \rightarrow c$. For $\{a_n\}$, since $A$ is compact, we can find a subsequence
+$\{a_{n_k}\} \rightarrow a \in A$. Again $\{a_{n_k} + b_{n_k}\} \rightarrow c$. We can find a subsequence $b_{n_{k_l}} \rightarrow b$. So $a_{n_{k_l}} + b_{n_{k_l}} \rightarrow c$ and $a_{n_{k_l}} + b_{n_{k_l}} \rightarrow a + b$.
+So $c = a + b$. So $c \in A+B$.
+
+See also [here](https://math.stackexchange.com/questions/2432845/prove-that-the-sum-of-two-compact-sets-in-mathbb-rn-is-compact)
+
+* If $A$ and $B$ are closed, then $A+B={a+b:a∈A,b∈B}$ is also closed. False.
+
+Consdier
+
+$$
+A = \{n + \frac{1}{10^n}: n = 1, 2, \cdots\} \\
+B = \{-n : n = 1, 2, \cdots\}
+$$
+Both sets are closed. And $0$ is a limit point of $A+B$. And $0 \notin A+B$.
+
+See also [here](https://math.stackexchange.com/questions/124130/sum-of-two-closed-sets-in-mathbb-r-is-closed).
+
+(c)
+
+* If $\{A_n: n \in \mathbb{N}\}$ is a collection of ***finite*** sets with the property that every finite subcollection has a nonempty intersection,
+the $\cap A_n \ne \emptyset$.
+
+Proof: This is true. Assume otherwise. Consider
+
+$$
+B_n = \cap_{i=1}^n A_n
+$$
+
+Consider $a_1 \in A_1 = B_1$, since $a_1 \notin \cap A_n = \cap B_n$, we can find $N_1$, such
+that $a \notin B_n, \forall n > N_1$.
+We can check for all elements in $a_i \in A_1$ and find $N_{i}$ for each $a_i$. Then we choose $N = \max \left\{ N_1, N_2, \dots \right\}$. Then for any $n > N, a_i \not\in B_n$. $B_n$ is empty.
+This contradicts to every finite subcollection has a nonempty intersection. So this statement is true. $\square$ 
+
+* If $\{A_n: n \in \mathbb{N}\}$ is a collection of ***compact*** sets with the property that every finite subcollection has a nonempty intersection,
+the $\cap A_n \ne \emptyset$.
+
+Proof: This is true. Again consider
+
+$$
+B_n = \cap_{i=1}^n A_n
+$$
+
+Then we have
+
+$$
+B_1 \supseteq B_2 \supseteq \dots
+$$
+
+They are all compact. So from Theorem 3.3.5 (Nested Compact Set Property),
+$A$ is not empty.
+
+* If $\{A_n: n \in \mathbb{N}\}$ is a collection of ***closed*** sets with the property that every finite subcollection has a nonempty intersection,
+then $\cap A_n \ne \emptyset$.
+
+Proof: False. Consider $A_n = [n, \infty)$.
+
+### 3.3.7
+
+As some more evidence of the surprising nature of the Cantor set, follow these steps to show that the sum $C +C = \{x+y : x,y ∈ C\}$ is equal to the closed interval $[0, 2]$. (Keep in mind that C has zero length and contains no intervals.)
+
+Because $C ⊆ [0,1], C + C ⊆ [0,2]$, so we only need to prove the reverse inclusion $[0,2] ⊆ \{x + y : x,y ∈ C\}$. Thus, given $s ∈ [0,2]$, we must find two elements $x,y∈C$ satisfying $x+y=s$.
+
+(a) Show that there exist $x_1 , y_1 ∈ C1$ for which $x_1 + y_1 = s$. Show in general that, for an arbitrary $n ∈ N$, we can always find $x_n,y_n ∈ C_n$ for which $x_n + y_n = s$.
+
+* Proof: Let's start with $C_0 = [0, 1]$. Given any $s$ in $[0,2]$, choose any $x_0, y_0$ such that $s = x_0 + y_0$. So how do we find $x_1, y_1 \in C_1$ such that $s = x_1 + y_1$? We distinguish the following cases:
+* If both $x_0, y_0$ are in $[0, 1/3]$ or $[2/3, 1]$ then let $x_1 = x_0 \in C_1$ and $y_1 = y_0 \in C_1$.
+* If none of $x_0, y_0$ are in $[0, 1/3]$ or $[2/3, 1]$, then it means $x_0, y_0 \in (1/3, 2/3)$. Then lets $x_1 = x_0 - 1/3 \in [0, 1/3] \subset C_1$ and $y_1 = y_0 + 1/3 \in [2/3, 1] \subset C_1$.
+* If $x_0 \in [0, 1/3]$ and $y_0 \in (1/3, 2/3)$. Then let $c_l = x_0 - 0, c_r = 1/3 - x_0$ and $d_l = y_0 - 1/3, d_r = 2/3 - y_0$.
+    * if $c_l \geq d_r$, then let $x_1 = x_0 - d_r \in [0, 1/3]$, $y_1 = y_0 + d_r = 2/3 \in [2/3, 1]$, then $x_1, y_1 \in C_1$.
+    * if $c_l < d_r$, then $c_r >= d_l$. Then let $x_1 = x_0 + d_l \in [0, 1/3]$ and $y_1 = y_0 - d_r = 1/3 \in [0, 1/3]$. So $x_1, y_1 \in C_1$.
+* Similar argument can be applied when $x_0 \in [2/3, 1]$ and $y_0 \in (1/3, 2/3)$.
+* In conclusion, we proved we can find there exist $x_1 , y_1 ∈ C1$ for which $x_1 + y_1 = s$. Use induction and the similar argument, we can show for an arbitrary $n ∈ N$, we can always find $x_n,y_n ∈ C_n$ for which $x_n + y_n = s$. $\square$ 
+
+(b) Keeping in mind that the sequences $(x_n)$ and $(y_n)$ do not necessarily converge, show how they can nevertheless be used to produce the desired $x$ and $y$ in $C$ satisfying $x + y = s$.
+
+* Proof: Assume $x_n \in C_n$ and $x_n \in I_n$. $|I_n| = 1/3^n$. Using the method in (a) to find $x_{n+1}$, we know $x_{n+1} \in I_n$, and it's either in the left $1/3$ or in the right $1/3$ part of $I_n$, call it $I_{n+1}$. Then
+we produce $I_1 \supset I_2 \supset \dots$, such that $x_n \in I_n$. According to NIP, there exists
+$x$ in all of them, that's $(x_n)$ converge to.
+* Next, we prove $x \in C$. Because $x_1, x_2, \dots \in I_1$ which is closed, so $x \in I_1$. For the same reason, $x \in I_n \subset C_n, \forall n$. So $x \in C$. Simiarly, we can find the $y$ we need.
+* Finally, we also have $x + y = \lim x_n + \lim y_n = \lim (x_n + y_n) = s$. $\square$
+
+See also the [stackoverflow discussion](https://math.stackexchange.com/questions/309080/cantor-set-cantor-set-0-2).
+
+
+### 3.3.8
+
+Let $K$ and $L$ be nonempty compact sets, and define
+
+$$
+d = \inf \{ |x − y| : x ∈ K \text{ and } y ∈ L \}.
+$$
+
+This turns out to be a reasonable definition for the distance between $K$ and $L$.
+
+(a) If $K$ and $L$ are disjoint,show $d>0$ and that $d=|x_0−y_0|$ for some $x_0 ∈K$ and $y_0 ∈ L$.
+
+Proof: Consider sequence $x_n - y_n \rightarrow d$, since $K$ and $L$ are compact, we can find subsequence
+$\{x_{n_k}\} \rightarrow x$, from there we can find another subsequence
+$\{y_{n_{k_{l}} }\} \rightarrow y$, then $x - y = d$. Since $x \in X$ and
+$y \in Y$, then $x - y \ne 0$.
+
+(b) Show that it’s possible to have $d = 0$ if we assume only that the disjoint sets $K$ and $L$ are closed.
+
+Consider
+
+$$
+K = \{1-\frac{1}{10}, 2-\frac{1}{100},\dots\} \\
+L = \{1, 2, \dots\}
+$$
+Then the distance can be 0.
+
+See also two stackexchange discussions:
+
+* [Q&A 1](https://math.stackexchange.com/questions/48714/a-and-b-disjoint-a-compact-and-b-closed-implies-there-is-positive-distance-bet)
+* [Q&A 2](https://math.stackexchange.com/questions/391396/for-two-disjoint-compact-subsets-a-and-b-of-a-metric-space-x-d-show-that)
+
+### 3.3.9
+
+Follow these steps to prove the final implication in Theorem 3.3.8.
+
+Assume $K$ satisfies (i) and (ii), and let $\left\{ O_{\lambda}(x) : \lambda \in \Lambda \right\}$ be an open cover for
+$K$. For contradiction, let’s assume that no finite subcover exists. Let $I_0$ be a closed interval containing $K$.
+
+(a) Show that there exists a nested sequence of closed intervals
+$I_0 \supseteq I_1 \supseteq I_2 \cdots$ with the property that, for each $n$, $I_n \cap K$ cannot be finitely covered and $\lim |I_0| = 0$.
+
+Proof: Because $I_0 \cap K = K$, so $I_0 \cap K$ cannot be finitely covered. Let $I_0 = [a_0, b_0]$. Now consider $[a_0, (a_0+b_0)/2]$ and $[(a_0+b_0)/2, b_0]$. One of them intersecting with $K$ must not be finitely covered. So we found $I_1$. We can continue this process to find $I_n$. They satisfy the property. $\square$ 
+
+(b) Argue that there exists an $x ∈ K$ such that $x ∈ I_n$ for all $n$.
+
+Proof: $I_n \cap K$ is non empty since it cannot be finitely covered. It is also closed set since both $I_0$ and $K$ are closed. Then based on Theorem 3.3.5 (Nested Compact Set Property), the intersection is non-empty. $\square$ 
+
+(c) Because $x ∈ K$, there must exist an open set $O_{\lambda_0}$ from the original collection that contains $x$ as an element. Explain how this leads to the desired contradiction.
+
+Proof: Since $O_{\lambda_0}$ covers $x$, we can find
+$V_{\epsilon}(x) \subset O_{\lambda_0}$. Then as long as $|I_n| < \epsilon/2$, $I_n$ is covered by  $V_{\epsilon}(x) \subset O_{\lambda_0}$. However, $I_n$ cannot be finitely covered. We have a contradiction. $\square$
+
+### 3.3.10
+
+Here is an alternate proof to the one given in Exercise 3.3.9 for the final implication in the Heine–Borel Theorem.
+
+Consider the special case where $K$ is a closed interval. Let $\{O_λ : λ ∈ Λ\}$ be an open cover for $[a,b]$ and define $S$ to be the set of all $x ∈ [a,b]$ such that $[a,x]$ has a finite subcover from $\{O_λ : λ ∈ Λ\}$.
+
+(a) Argue that $S$ is nonempty and bounded, and thus $s = \sup S$ exists.
+
+Proof. Consider $a$ is cover by $O_a$, then we can find $V_{\epsilon}(a) \subset O_a$, then $[a, a+\epsilon/2] \subset V_{\epsilon}(a)$. So $S$ is
+nonempty.
+
+Furthermore, we will prove $s \in S$. Assume $O_s$ covers $s$. Then we can find $V_{\epsilon}(s) \subset O_s$, the $[s, s-\epsilon/2] \subset V_{\epsilon}(s)$. And $[a, s-\epsilon/2]$ has a finite subcover.
+So $[a, s]$ has a finite subcover. $\square$
+
+(b) Now show $s = b$, which implies $[a, b]$ has a finite subcover.
+
+Proof. Assume $s = c < b$. Then $c$ is covered by $O_c$. Since $O_c$ is
+open, then we can find $c < c' \in O_c$, then $[a, c']$ has a finite subcover. We have a contradiction. $\square$
+
+(c) Finally, prove the theorem for an arbitrary closed and bounded set $K$.
+
+Proof. Since $K$ is bounded, then we can assume $K \subseteq [a,b]$.
+Assume $O_\lambda$ is an open cover of $K$. And assume $c \notin K, c \in [a,b]$. Since $K$ is closed, we know $c$ is not a limit point of $K$.
+Then we can find $V_{\epsilon}(c) \cap K = \emptyset$.
+This way, we can construct an open cover of $[a, b]$, i.e 
+$O_\lambda \cup V_{\epsilon}(c)$.
+Then we can find a finite cover. From that finite cover, we can find
+a sub finite cover which is in $O_\lambda$. $\square$ 
+
 ### 3.3.11
 
 Consider each of the sets listed in Exercise 3.3.2. For each
