@@ -305,6 +305,12 @@ the union of them is $Q$.
 
 ## 3.3 Compact Sets
 
+### 3.3.1
+Show that if $K$ is compact and nonempty, then $\sup K$ and $\inf K$ both exist and are elements of $K$.
+
+* Proof: Since $K$ is compact, then it's bounded and closed.
+So $\sup K$ and $\inf K$ both exist. Because it's closed. According to Exercise 3.2.4., $\sup K \in S, \inf K \in S$.
+
 ### 3.3.2
 
 Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.
@@ -330,7 +336,61 @@ Not closed. Itself.
 Compact. Closed and bounded.
 It has 1 limit point which is 1, so it's closed.
 
-### 3.3.6.
+### 3.3.3
+
+Prove the converse of Theorem 3.3.4 by showing that if a set
+$K ⊆ R$ is closed and bounded, then it is compact.
+
+* Proof: If $K$ is closed and bounded. And $(a_n)$ is a sequence in $K$.
+Then since $(a_n)$ is bounded, according to Bolzano–Weierstrass Theorem,
+there is a subsequence $a_{n_k} \rightarrow x$. Then $x$ is a limit point
+of $K$, then $x \in K$.
+
+### 3.3.4
+
+Assume $K$ is compact and $F$ is closed. Decide if the following
+sets are definitely compact, definitely closed, both, or neither.
+
+(a) $K \cap F$
+
+* Proof: It's compact. $K$ is bounded, so $K \cap F$ is also bounded. And it's also closed. So it's compact.
+
+(b) $\overline{F^c \cup K^c}$
+
+* Proof: It's closed not compact. $F^c$ is unbounded.
+
+(c) $\left\{ K \backslash F = { x ∈ K : x \notin F }  \right\}$
+
+* Proof: It can be neither, e.g. let $K = [-1, 1]$ and $F = [0, \infty]$.
+
+(d) $\overline{K \cap F^c}$
+
+* Proof: It's compact. $K \cap F^c \subseteq K$, so $\overline{K \cap F^c} \subseteq K$. So it's bounded closed set.
+
+### 3.3.5
+
+Decide whether the following propositions are true or false. If the claim is valid, supply a short proof, and if the claim is false, provide a counterexample.
+
+(a) The arbitrary intersection of compact sets is compact.
+
+* Proof: True. compact set is closed and bounded.
+The arbitrary intersection of closed set is closed.
+The arbitrary intersection of bounded set is bounded.
+So it's closed and bounded. As long as it's not empty, then it's compact.
+
+(b) The arbitrary union of compact sets is compact.
+
+* Proof: False. counterexample. Let $A_n = [n, n+1]$.
+
+(c) Let $A$ be arbitrary, and let K be compact. Then, the intersection $A ∩ K$ is compact.
+
+* Proof: False. Let $A = (0, 1), K = [0, 1]$.
+
+(d) If $F1 ⊇ F2 ⊇ F3 ⊇ F4 ⊇ ···$ is a nested sequence of nonempty closed sets, then the intersection $\cap_{n=1}^{\infty} F_n \not= \emptyset$.
+
+* Proof: False. Let $F_n = [n, \infty)$.
+
+### 3.3.6
 
 This exercise is meant to illustrate the point made in the opening paragraph to Section 3.3. Verify that the following three statements are true if every blank is filled in with the word “finite.” Which are true if every blank is filled in with the word “compact”? Which are true if every blank is filled in with the word “closed”?
 
