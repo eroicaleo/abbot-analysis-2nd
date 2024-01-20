@@ -84,7 +84,25 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#33-compact-sets">3.3 Compact Sets</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#331">3.3.1</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#332_1">3.3.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#333">3.3.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#334">3.3.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#335">3.3.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#336">3.3.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#337">3.3.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#338">3.3.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#339">3.3.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3310">3.3.10</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3311">3.3.11</a>
     </li>
@@ -405,6 +423,12 @@ the union of them is <script type="math/tex">Q</script>.</li>
 </li>
 </ul>
 <h2 id="33-compact-sets">3.3 Compact Sets</h2>
+<h3 id="331">3.3.1</h3>
+<p>Show that if <script type="math/tex">K</script> is compact and nonempty, then <script type="math/tex">\sup K</script> and <script type="math/tex">\inf K</script> both exist and are elements of <script type="math/tex">K</script>.</p>
+<ul>
+<li>Proof: Since <script type="math/tex">K</script> is compact, then it's bounded and closed.
+So <script type="math/tex">\sup K</script> and <script type="math/tex">\inf K</script> both exist. Because it's closed. According to Exercise 3.2.4., <script type="math/tex">\sup K \in S, \inf K \in S</script>.</li>
+</ul>
 <h3 id="332_1">3.3.2</h3>
 <p>Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.</p>
 <p>(a) N.</p>
@@ -420,6 +444,216 @@ the union of them is <script type="math/tex">Q</script>.</li>
 </p>
 <p>Compact. Closed and bounded.
 It has 1 limit point which is 1, so it's closed.</p>
+<h3 id="333">3.3.3</h3>
+<p>Prove the converse of Theorem 3.3.4 by showing that if a set
+<script type="math/tex">K ⊆ R</script> is closed and bounded, then it is compact.</p>
+<ul>
+<li>Proof: If <script type="math/tex">K</script> is closed and bounded. And <script type="math/tex">(a_n)</script> is a sequence in <script type="math/tex">K</script>.
+Then since <script type="math/tex">(a_n)</script> is bounded, according to Bolzano–Weierstrass Theorem,
+there is a subsequence <script type="math/tex">a_{n_k} \rightarrow x</script>. Then <script type="math/tex">x</script> is a limit point
+of <script type="math/tex">K</script>, then <script type="math/tex">x \in K</script>.</li>
+</ul>
+<h3 id="334">3.3.4</h3>
+<p>Assume <script type="math/tex">K</script> is compact and <script type="math/tex">F</script> is closed. Decide if the following
+sets are definitely compact, definitely closed, both, or neither.</p>
+<p>(a) <script type="math/tex">K \cap F</script>
+</p>
+<ul>
+<li>Proof: It's compact. <script type="math/tex">K</script> is bounded, so <script type="math/tex">K \cap F</script> is also bounded. And it's also closed. So it's compact.</li>
+</ul>
+<p>(b) <script type="math/tex">\overline{F^c \cup K^c}</script>
+</p>
+<ul>
+<li>Proof: It's closed not compact. <script type="math/tex">F^c</script> is unbounded.</li>
+</ul>
+<p>(c) <script type="math/tex">\left\{ K \backslash F = { x ∈ K : x \notin F }  \right\}</script>
+</p>
+<ul>
+<li>Proof: It can be neither, e.g. let <script type="math/tex">K = [-1, 1]</script> and <script type="math/tex">F = [0, \infty]</script>.</li>
+</ul>
+<p>(d) <script type="math/tex">\overline{K \cap F^c}</script>
+</p>
+<ul>
+<li>Proof: It's compact. <script type="math/tex">K \cap F^c \subseteq K</script>, so <script type="math/tex">\overline{K \cap F^c} \subseteq K</script>. So it's bounded closed set.</li>
+</ul>
+<h3 id="335">3.3.5</h3>
+<p>Decide whether the following propositions are true or false. If the claim is valid, supply a short proof, and if the claim is false, provide a counterexample.</p>
+<p>(a) The arbitrary intersection of compact sets is compact.</p>
+<ul>
+<li>Proof: True. compact set is closed and bounded.
+The arbitrary intersection of closed set is closed.
+The arbitrary intersection of bounded set is bounded.
+So it's closed and bounded. As long as it's not empty, then it's compact.</li>
+</ul>
+<p>(b) The arbitrary union of compact sets is compact.</p>
+<ul>
+<li>Proof: False. counterexample. Let <script type="math/tex">A_n = [n, n+1]</script>.</li>
+</ul>
+<p>(c) Let <script type="math/tex">A</script> be arbitrary, and let K be compact. Then, the intersection <script type="math/tex">A ∩ K</script> is compact.</p>
+<ul>
+<li>Proof: False. Let <script type="math/tex">A = (0, 1), K = [0, 1]</script>.</li>
+</ul>
+<p>(d) If <script type="math/tex">F1 ⊇ F2 ⊇ F3 ⊇ F4 ⊇ ···</script> is a nested sequence of nonempty closed sets, then the intersection <script type="math/tex">\cap_{n=1}^{\infty} F_n \not= \emptyset</script>.</p>
+<ul>
+<li>Proof: False. Let <script type="math/tex">F_n = [n, \infty)</script>.</li>
+</ul>
+<h3 id="336">3.3.6</h3>
+<p>This exercise is meant to illustrate the point made in the opening paragraph to Section 3.3. Verify that the following three statements are true if every blank is filled in with the word “finite.” Which are true if every blank is filled in with the word “compact”? Which are true if every blank is filled in with the word “closed”?</p>
+<p>(a) </p>
+<ul>
+<li>Every finite set has a maximum. True.</li>
+<li>Every compact set has a maximum. True. Bounded and closed. Exercise 3.2.4.</li>
+<li>Every closed set has a maximum. False. <script type="math/tex">[0, \infty)</script>.</li>
+</ul>
+<p>(b)</p>
+<ul>
+<li>If <script type="math/tex">A</script> and <script type="math/tex">B</script> are finite, then <script type="math/tex">A+B={a+b:a∈A,b∈B}</script> is also finite. True.</li>
+<li>If <script type="math/tex">A</script> and <script type="math/tex">B</script> are compact, then <script type="math/tex">A+B={a+b:a∈A,b∈B}</script> is also compact. True.</li>
+</ul>
+<p>proof: Assume <script type="math/tex">c</script> is a limit point of <script type="math/tex">A+B</script>, we can find a sequence <script type="math/tex">\{a_n + b_n\} \rightarrow c</script>. For <script type="math/tex">\{a_n\}</script>, since <script type="math/tex">A</script> is compact, we can find a subsequence
+<script type="math/tex">\{a_{n_k}\} \rightarrow a \in A</script>. Again <script type="math/tex">\{a_{n_k} + b_{n_k}\} \rightarrow c</script>. We can find a subsequence <script type="math/tex">b_{n_{k_l}} \rightarrow b</script>. So <script type="math/tex">a_{n_{k_l}} + b_{n_{k_l}} \rightarrow c</script> and <script type="math/tex">a_{n_{k_l}} + b_{n_{k_l}} \rightarrow a + b</script>.
+So <script type="math/tex">c = a + b</script>. So <script type="math/tex">c \in A+B</script>.</p>
+<p>See also <a href="https://math.stackexchange.com/questions/2432845/prove-that-the-sum-of-two-compact-sets-in-mathbb-rn-is-compact">here</a></p>
+<ul>
+<li>If <script type="math/tex">A</script> and <script type="math/tex">B</script> are closed, then <script type="math/tex">A+B={a+b:a∈A,b∈B}</script> is also closed. False.</li>
+</ul>
+<p>Consdier</p>
+<p>
+<script type="math/tex; mode=display">
+A = \{n + \frac{1}{10^n}: n = 1, 2, \cdots\} \\
+B = \{-n : n = 1, 2, \cdots\}
+</script>
+Both sets are closed. And <script type="math/tex">0</script> is a limit point of <script type="math/tex">A+B</script>. And <script type="math/tex">0 \notin A+B</script>.</p>
+<p>See also <a href="https://math.stackexchange.com/questions/124130/sum-of-two-closed-sets-in-mathbb-r-is-closed">here</a>.</p>
+<p>(c)</p>
+<ul>
+<li>If <script type="math/tex">\{A_n: n \in \mathbb{N}\}</script> is a collection of <strong><em>finite</em></strong> sets with the property that every finite subcollection has a nonempty intersection,
+the <script type="math/tex">\cap A_n \ne \emptyset</script>.</li>
+</ul>
+<p>Proof: This is true. Assume otherwise. Consider</p>
+<p>
+<script type="math/tex; mode=display">
+B_n = \cap_{i=1}^n A_n
+</script>
+</p>
+<p>Consider <script type="math/tex">a_1 \in A_1 = B_1</script>, since <script type="math/tex">a_1 \notin \cap A_n = \cap B_n</script>, we can find <script type="math/tex">N_1</script>, such
+that <script type="math/tex">a \notin B_n, \forall n > N_1</script>.
+We can check for all elements in <script type="math/tex">a_i \in A_1</script> and find <script type="math/tex">N_{i}</script> for each <script type="math/tex">a_i</script>. Then we choose <script type="math/tex">N = \max \left\{ N_1, N_2, \dots \right\}</script>. Then for any <script type="math/tex">n > N, a_i \not\in B_n</script>. <script type="math/tex">B_n</script> is empty.
+This contradicts to every finite subcollection has a nonempty intersection. So this statement is true. <script type="math/tex">\square</script>
+</p>
+<ul>
+<li>If <script type="math/tex">\{A_n: n \in \mathbb{N}\}</script> is a collection of <strong><em>compact</em></strong> sets with the property that every finite subcollection has a nonempty intersection,
+the <script type="math/tex">\cap A_n \ne \emptyset</script>.</li>
+</ul>
+<p>Proof: This is true. Again consider</p>
+<p>
+<script type="math/tex; mode=display">
+B_n = \cap_{i=1}^n A_n
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display">
+B_1 \supseteq B_2 \supseteq \dots
+</script>
+</p>
+<p>They are all compact. So from Theorem 3.3.5 (Nested Compact Set Property),
+<script type="math/tex">A</script> is not empty.</p>
+<ul>
+<li>If <script type="math/tex">\{A_n: n \in \mathbb{N}\}</script> is a collection of <strong><em>closed</em></strong> sets with the property that every finite subcollection has a nonempty intersection,
+then <script type="math/tex">\cap A_n \ne \emptyset</script>.</li>
+</ul>
+<p>Proof: False. Consider <script type="math/tex">A_n = [n, \infty)</script>.</p>
+<h3 id="337">3.3.7</h3>
+<p>As some more evidence of the surprising nature of the Cantor set, follow these steps to show that the sum <script type="math/tex">C +C = \{x+y : x,y ∈ C\}</script> is equal to the closed interval <script type="math/tex">[0, 2]</script>. (Keep in mind that C has zero length and contains no intervals.)</p>
+<p>Because <script type="math/tex">C ⊆ [0,1], C + C ⊆ [0,2]</script>, so we only need to prove the reverse inclusion <script type="math/tex">[0,2] ⊆ \{x + y : x,y ∈ C\}</script>. Thus, given <script type="math/tex">s ∈ [0,2]</script>, we must find two elements <script type="math/tex">x,y∈C</script> satisfying <script type="math/tex">x+y=s</script>.</p>
+<p>(a) Show that there exist <script type="math/tex">x_1 , y_1 ∈ C1</script> for which <script type="math/tex">x_1 + y_1 = s</script>. Show in general that, for an arbitrary <script type="math/tex">n ∈ N</script>, we can always find <script type="math/tex">x_n,y_n ∈ C_n</script> for which <script type="math/tex">x_n + y_n = s</script>.</p>
+<ul>
+<li>Proof: Let's start with <script type="math/tex">C_0 = [0, 1]</script>. Given any <script type="math/tex">s</script> in <script type="math/tex">[0,2]</script>, choose any <script type="math/tex">x_0, y_0</script> such that <script type="math/tex">s = x_0 + y_0</script>. So how do we find <script type="math/tex">x_1, y_1 \in C_1</script> such that <script type="math/tex">s = x_1 + y_1</script>? We distinguish the following cases:</li>
+<li>If both <script type="math/tex">x_0, y_0</script> are in <script type="math/tex">[0, 1/3]</script> or <script type="math/tex">[2/3, 1]</script> then let <script type="math/tex">x_1 = x_0 \in C_1</script> and <script type="math/tex">y_1 = y_0 \in C_1</script>.</li>
+<li>If none of <script type="math/tex">x_0, y_0</script> are in <script type="math/tex">[0, 1/3]</script> or <script type="math/tex">[2/3, 1]</script>, then it means <script type="math/tex">x_0, y_0 \in (1/3, 2/3)</script>. Then lets <script type="math/tex">x_1 = x_0 - 1/3 \in [0, 1/3] \subset C_1</script> and <script type="math/tex">y_1 = y_0 + 1/3 \in [2/3, 1] \subset C_1</script>.</li>
+<li>If <script type="math/tex">x_0 \in [0, 1/3]</script> and <script type="math/tex">y_0 \in (1/3, 2/3)</script>. Then let <script type="math/tex">c_l = x_0 - 0, c_r = 1/3 - x_0</script> and <script type="math/tex">d_l = y_0 - 1/3, d_r = 2/3 - y_0</script>.<ul>
+<li>if <script type="math/tex">c_l \geq d_r</script>, then let <script type="math/tex">x_1 = x_0 - d_r \in [0, 1/3]</script>, <script type="math/tex">y_1 = y_0 + d_r = 2/3 \in [2/3, 1]</script>, then <script type="math/tex">x_1, y_1 \in C_1</script>.</li>
+<li>if <script type="math/tex">c_l < d_r</script>, then <script type="math/tex">c_r >= d_l</script>. Then let <script type="math/tex">x_1 = x_0 + d_l \in [0, 1/3]</script> and <script type="math/tex">y_1 = y_0 - d_r = 1/3 \in [0, 1/3]</script>. So <script type="math/tex">x_1, y_1 \in C_1</script>.</li>
+</ul>
+</li>
+<li>Similar argument can be applied when <script type="math/tex">x_0 \in [2/3, 1]</script> and <script type="math/tex">y_0 \in (1/3, 2/3)</script>.</li>
+<li>In conclusion, we proved we can find there exist <script type="math/tex">x_1 , y_1 ∈ C1</script> for which <script type="math/tex">x_1 + y_1 = s</script>. Use induction and the similar argument, we can show for an arbitrary <script type="math/tex">n ∈ N</script>, we can always find <script type="math/tex">x_n,y_n ∈ C_n</script> for which <script type="math/tex">x_n + y_n = s</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+<p>(b) Keeping in mind that the sequences <script type="math/tex">(x_n)</script> and <script type="math/tex">(y_n)</script> do not necessarily converge, show how they can nevertheless be used to produce the desired <script type="math/tex">x</script> and <script type="math/tex">y</script> in <script type="math/tex">C</script> satisfying <script type="math/tex">x + y = s</script>.</p>
+<ul>
+<li>Proof: Assume <script type="math/tex">x_n \in C_n</script> and <script type="math/tex">x_n \in I_n</script>. <script type="math/tex">|I_n| = 1/3^n</script>. Using the method in (a) to find <script type="math/tex">x_{n+1}</script>, we know <script type="math/tex">x_{n+1} \in I_n</script>, and it's either in the left <script type="math/tex">1/3</script> or in the right <script type="math/tex">1/3</script> part of <script type="math/tex">I_n</script>, call it <script type="math/tex">I_{n+1}</script>. Then
+we produce <script type="math/tex">I_1 \supset I_2 \supset \dots</script>, such that <script type="math/tex">x_n \in I_n</script>. According to NIP, there exists
+<script type="math/tex">x</script> in all of them, that's <script type="math/tex">(x_n)</script> converge to.</li>
+<li>Next, we prove <script type="math/tex">x \in C</script>. Because <script type="math/tex">x_1, x_2, \dots \in I_1</script> which is closed, so <script type="math/tex">x \in I_1</script>. For the same reason, <script type="math/tex">x \in I_n \subset C_n, \forall n</script>. So <script type="math/tex">x \in C</script>. Simiarly, we can find the <script type="math/tex">y</script> we need.</li>
+<li>Finally, we also have <script type="math/tex">x + y = \lim x_n + \lim y_n = \lim (x_n + y_n) = s</script>. <script type="math/tex">\square</script>
+</li>
+</ul>
+<p>See also the <a href="https://math.stackexchange.com/questions/309080/cantor-set-cantor-set-0-2">stackoverflow discussion</a>.</p>
+<h3 id="338">3.3.8</h3>
+<p>Let <script type="math/tex">K</script> and <script type="math/tex">L</script> be nonempty compact sets, and define</p>
+<p>
+<script type="math/tex; mode=display">
+d = \inf \{ |x − y| : x ∈ K \text{ and } y ∈ L \}.
+</script>
+</p>
+<p>This turns out to be a reasonable definition for the distance between <script type="math/tex">K</script> and <script type="math/tex">L</script>.</p>
+<p>(a) If <script type="math/tex">K</script> and <script type="math/tex">L</script> are disjoint,show <script type="math/tex">d>0</script> and that <script type="math/tex">d=|x_0−y_0|</script> for some <script type="math/tex">x_0 ∈K</script> and <script type="math/tex">y_0 ∈ L</script>.</p>
+<p>Proof: Consider sequence <script type="math/tex">x_n - y_n \rightarrow d</script>, since <script type="math/tex">K</script> and <script type="math/tex">L</script> are compact, we can find subsequence
+<script type="math/tex">\{x_{n_k}\} \rightarrow x</script>, from there we can find another subsequence
+<script type="math/tex">\{y_{n_{k_{l}} }\} \rightarrow y</script>, then <script type="math/tex">x - y = d</script>. Since <script type="math/tex">x \in X</script> and
+<script type="math/tex">y \in Y</script>, then <script type="math/tex">x - y \ne 0</script>.</p>
+<p>(b) Show that it’s possible to have <script type="math/tex">d = 0</script> if we assume only that the disjoint sets <script type="math/tex">K</script> and <script type="math/tex">L</script> are closed.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+K = \{1-\frac{1}{10}, 2-\frac{1}{100},\dots\} \\
+L = \{1, 2, \dots\}
+</script>
+Then the distance can be 0.</p>
+<p>See also two stackexchange discussions:</p>
+<ul>
+<li><a href="https://math.stackexchange.com/questions/48714/a-and-b-disjoint-a-compact-and-b-closed-implies-there-is-positive-distance-bet">Q&amp;A 1</a></li>
+<li><a href="https://math.stackexchange.com/questions/391396/for-two-disjoint-compact-subsets-a-and-b-of-a-metric-space-x-d-show-that">Q&amp;A 2</a></li>
+</ul>
+<h3 id="339">3.3.9</h3>
+<p>Follow these steps to prove the final implication in Theorem 3.3.8.</p>
+<p>Assume <script type="math/tex">K</script> satisfies (i) and (ii), and let <script type="math/tex">\left\{ O_{\lambda}(x) : \lambda \in \Lambda \right\}</script> be an open cover for
+<script type="math/tex">K</script>. For contradiction, let’s assume that no finite subcover exists. Let <script type="math/tex">I_0</script> be a closed interval containing <script type="math/tex">K</script>.</p>
+<p>(a) Show that there exists a nested sequence of closed intervals
+<script type="math/tex">I_0 \supseteq I_1 \supseteq I_2 \cdots</script> with the property that, for each <script type="math/tex">n</script>, <script type="math/tex">I_n \cap K</script> cannot be finitely covered and <script type="math/tex">\lim |I_0| = 0</script>.</p>
+<p>Proof: Because <script type="math/tex">I_0 \cap K = K</script>, so <script type="math/tex">I_0 \cap K</script> cannot be finitely covered. Let <script type="math/tex">I_0 = [a_0, b_0]</script>. Now consider <script type="math/tex">[a_0, (a_0+b_0)/2]</script> and <script type="math/tex">[(a_0+b_0)/2, b_0]</script>. One of them intersecting with <script type="math/tex">K</script> must not be finitely covered. So we found <script type="math/tex">I_1</script>. We can continue this process to find <script type="math/tex">I_n</script>. They satisfy the property. <script type="math/tex">\square</script>
+</p>
+<p>(b) Argue that there exists an <script type="math/tex">x ∈ K</script> such that <script type="math/tex">x ∈ I_n</script> for all <script type="math/tex">n</script>.</p>
+<p>Proof: <script type="math/tex">I_n \cap K</script> is non empty since it cannot be finitely covered. It is also closed set since both <script type="math/tex">I_0</script> and <script type="math/tex">K</script> are closed. Then based on Theorem 3.3.5 (Nested Compact Set Property), the intersection is non-empty. <script type="math/tex">\square</script>
+</p>
+<p>(c) Because <script type="math/tex">x ∈ K</script>, there must exist an open set <script type="math/tex">O_{\lambda_0}</script> from the original collection that contains <script type="math/tex">x</script> as an element. Explain how this leads to the desired contradiction.</p>
+<p>Proof: Since <script type="math/tex">O_{\lambda_0}</script> covers <script type="math/tex">x</script>, we can find
+<script type="math/tex">V_{\epsilon}(x) \subset O_{\lambda_0}</script>. Then as long as <script type="math/tex">|I_n| < \epsilon/2</script>, <script type="math/tex">I_n</script> is covered by  <script type="math/tex">V_{\epsilon}(x) \subset O_{\lambda_0}</script>. However, <script type="math/tex">I_n</script> cannot be finitely covered. We have a contradiction. <script type="math/tex">\square</script>
+</p>
+<h3 id="3310">3.3.10</h3>
+<p>Here is an alternate proof to the one given in Exercise 3.3.9 for the final implication in the Heine–Borel Theorem.</p>
+<p>Consider the special case where <script type="math/tex">K</script> is a closed interval. Let <script type="math/tex">\{O_λ : λ ∈ Λ\}</script> be an open cover for <script type="math/tex">[a,b]</script> and define <script type="math/tex">S</script> to be the set of all <script type="math/tex">x ∈ [a,b]</script> such that <script type="math/tex">[a,x]</script> has a finite subcover from <script type="math/tex">\{O_λ : λ ∈ Λ\}</script>.</p>
+<p>(a) Argue that <script type="math/tex">S</script> is nonempty and bounded, and thus <script type="math/tex">s = \sup S</script> exists.</p>
+<p>Proof. Consider <script type="math/tex">a</script> is cover by <script type="math/tex">O_a</script>, then we can find <script type="math/tex">V_{\epsilon}(a) \subset O_a</script>, then <script type="math/tex">[a, a+\epsilon/2] \subset V_{\epsilon}(a)</script>. So <script type="math/tex">S</script> is
+nonempty.</p>
+<p>Furthermore, we will prove <script type="math/tex">s \in S</script>. Assume <script type="math/tex">O_s</script> covers <script type="math/tex">s</script>. Then we can find <script type="math/tex">V_{\epsilon}(s) \subset O_s</script>, the <script type="math/tex">[s, s-\epsilon/2] \subset V_{\epsilon}(s)</script>. And <script type="math/tex">[a, s-\epsilon/2]</script> has a finite subcover.
+So <script type="math/tex">[a, s]</script> has a finite subcover. <script type="math/tex">\square</script>
+</p>
+<p>(b) Now show <script type="math/tex">s = b</script>, which implies <script type="math/tex">[a, b]</script> has a finite subcover.</p>
+<p>Proof. Assume <script type="math/tex">s = c < b</script>. Then <script type="math/tex">c</script> is covered by <script type="math/tex">O_c</script>. Since <script type="math/tex">O_c</script> is
+open, then we can find <script type="math/tex">c < c' \in O_c</script>, then <script type="math/tex">[a, c']</script> has a finite subcover. We have a contradiction. <script type="math/tex">\square</script>
+</p>
+<p>(c) Finally, prove the theorem for an arbitrary closed and bounded set <script type="math/tex">K</script>.</p>
+<p>Proof. Since <script type="math/tex">K</script> is bounded, then we can assume <script type="math/tex">K \subseteq [a,b]</script>.
+Assume <script type="math/tex">O_\lambda</script> is an open cover of <script type="math/tex">K</script>. And assume <script type="math/tex">c \notin K, c \in [a,b]</script>. Since <script type="math/tex">K</script> is closed, we know <script type="math/tex">c</script> is not a limit point of <script type="math/tex">K</script>.
+Then we can find <script type="math/tex">V_{\epsilon}(c) \cap K = \emptyset</script>.
+This way, we can construct an open cover of <script type="math/tex">[a, b]</script>, i.e 
+<script type="math/tex">O_\lambda \cup V_{\epsilon}(c)</script>.
+Then we can find a finite cover. From that finite cover, we can find
+a sub finite cover which is in <script type="math/tex">O_\lambda</script>. <script type="math/tex">\square</script>
+</p>
 <h3 id="3311">3.3.11</h3>
 <p>Consider each of the sets listed in Exercise 3.3.2. For each
 one that is not compact, find an open cover for which there is no finite subcover.</p>
