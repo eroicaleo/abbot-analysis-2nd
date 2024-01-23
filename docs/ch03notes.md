@@ -105,4 +105,59 @@ $a_n \ne x$ for all $n \in \mathbb{N}$.
 
 ***Theorem 3.3.4 (Characterization of Compactness in R).*** A set $K \subseteq R$ is compact if and only if it is closed and bounded.
 
-* Proof: $\Rightarrow$ 
+* Proof: $\Rightarrow$
+
+## 3.4 Perfect Sets and Connected Sets
+
+* One of the underlying goals of topology is to strip away all of the extraneous
+information that comes with our intuitive picture of the real numbers and isolate
+just those properties that are responsible for the phenomenon we are studying.
+
+***Definition 3.4.1.*** A set $P ⊆ \mathbb{R}$ is perfect if it is closed and contains no isolated points.
+
+***Example 3.4.2 (Cantor Set).*** It is not too hard to see that the Cantor set is perfect. See exercise  3.4.3.
+
+***Theorem 3.4.3.*** A nonempty perfect set is uncountable.
+
+* Summary of proof: Assume $P$ is countable, and $P = \{x_1, x_2, \dots\}$. Let $I_1$ be
+an interval such that $x_1$ in the interior of $I_1$. Since $x_1$ is not
+isolated, we can find $y_2$ in the interior of $I_1$. Then we can construct $I_2$ such that $y_2$ is in the middle of $I_2$ and 
+$I_2 \subset I_1$ and $x_1 \notin I_2$.
+
+We can continue this process and they satisfy:
+
+1. $I_{n+1} \subseteq I_n$
+2. $x_n \notin I_{n+1}$
+3. $x_{n-1} \neq y_n\in I_n \cap P \neq \emptyset$.
+
+And let $K_n = I_n \cap P$. Then based on Nested Compact Set Property,
+$\cap K_n$ is not empty. However, since $x_n \notin K_{n+1}$, $\cap K_n = \emptyset$. We got a contradiction.
+
+### Connected Sets
+
+***Definition 3.4.4.*** Two nonempty sets $A, B ⊆ R$ are separated if $\overline{A} ∩ B$ and $A ∩ \overline{B}$ are both empty. A set $E ⊆ R$ is disconnected if it can be written as $E = A ∪ B$, where $A$ and $B$ are nonempty separated sets.
+
+A set that is not disconnected is called a connected set.
+
+***Example 3.4.5.*** the set of rational numbers is disconnected. Just need
+to consider $A = (-\infty, \sqrt{2})$ and $B = (\sqrt{2}, \infty)$.
+
+***Theorem 3.4.6.*** A set $E ⊆ R$ is connected if and only if, for all nonempty disjoint sets $A$ and $B$ satisfying $E = A ∪ B$, there always exists a convergent sequence $(x_n) → x$ with $(x_n)$ contained in one of $A$ or $B$, and $x$ an element of the other.
+
+* Proof:
+* $\Rightarrow$ Assume $E ⊆ R$ is connected and nonempty disjoint sets $A$ and $B$ satisfying $E = A ∪ B$. Assume there is no such sequence in both $A$ and $B$. It means $A$ has no limit points of $B$ and $B$ has no limit points of $A$. So $A \cap \overline{B} = \emptyset$ and $B \cap \overline{A} = \emptyset$. Then $E$ is not connected.
+* $\Leftarrow$ Assume for all nonempty disjoint sets $A$ and $B$ satisfying $E = A ∪ B$, there always exists a convergent sequence $(x_n) → x$ with $(x_n)$ contained in one of $A$ or $B$, and $x$ an element of the other. Then it means $A \cap \overline{B} \neq \emptyset$ or $B \cap \overline{A} \neq \emptyset$.
+
+***Theorem 3.4.7.*** A set $E ⊆ R$ is connected if and only if whenever $a < c < b$ with $a, b ∈ E$, it follows that $c ∈ E$ as well.
+
+* Proof:
+    * $\Rightarrow$: Assume $E \subseteq R$ is connected. Given $a < c < b$ with $a, b ∈ E$,
+and assume $c \notin E$. Consider $A = \{a \in E | a < c\}$, $B = \{b \in E | b > c\}$. For any $(x_n) \in A$, since $x_n < c$, then $(x_n) \rightarrow x \le c$. So $x \notin B$. Similarly, if $(x_n) \rightarrow x \in B$ ,then $x \notin A$. Then from Theorem 3.4.6, $E$ is not connected. We have a contradiction.
+    * $\Leftarrow$: Conversely assume $a < c < b$ with $a, b ∈ E$, it follows that $c ∈ E$. Assume $E = A \cup B, a \in A, b \in B, a < b$. Let $A' = A \cap (-\infty, b), c = \sup A'$. So we have $a \le c \le b, c \in E$.
+        * If $c \in B$, then $\overline{A} \cap B \ne \emptyset$.
+        * If $c \in A$, then $c \neq b$, then $(c, b] \subseteq E$. So $c$ is a limit point of  $(c, b]$, thus a limit point of $B$. So $\overline{B} \cap A \ne \emptyset$.
+    * Textbook method to prove $\Leftarrow$ (more elegant): assume $a < c < b$ with $a, b ∈ E$, it follows that $c ∈ E$. Assume $E = A \cup B, a_0 \in A, b_0 \in B, a_0 < b_0, I_0 = [a_0, b_0]$. Let $c = (a_0 + b_0)/2$:
+        * if $c \in A$, then $a_1 = c, b_1 = b_0$.  
+        * if $c \in B$, then $a_1 = a_0, b_1 = c, I_1 = [a_1, b_1]$.
+    * Then we have $I_0 \supset I_1 \supset \cdots$. From Nested Interval Property, we have $\lim a_n = \lim b_n = x \in \cap I_n$.  
+

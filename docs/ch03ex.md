@@ -609,3 +609,110 @@ Let’s call a set clompact if it has the property that every closed cover (i.e.
 * Solution: all clompact are finite set. Because one point set $\{x\}$ is a closed set.
 
 See also [here](https://math.stackexchange.com/questions/2989359/which-sets-are-clompact)
+
+## 3.4 Perfect Sets and Connected Sets
+
+### 3.4.1
+
+If $P$ is a perfect set and $K$ is compact, is the intersection $P \cap K$ always compact? Always perfect?
+
+* Proof: It's always compact. Bounded and closed. Let $P = [0, 1]$ and $K = \left\{ 0, 1 \right\}$.
+
+### 3.4.2
+
+Does there exist a perfect set consisting of only rational numbers?
+
+Proof: No. This set must be countable, but a perfect set is uncountable.
+
+### 3.4.3
+
+Review the portion of the proof given in Example 3.4.2 and follow these steps to complete the argument.
+
+(a) Because $x ∈ C_1$, argue that there exists an $x_1 ∈ C \cap C_1$ with $x_1 \ne x$ satisfying $|x − x_1| ≤ 1/3$.
+
+Proof: Let $x_1 = 0, 1/3, 2/3, 1$.
+
+(b) Finish the proof by showing that for each $n ∈ N$, there exists $x_n ∈ C \cap C_n$, different from $x$, satisfying $|x − x_n| ≤ 1/3^n$.
+
+Proof: pick either boundary.
+
+### 3.4.4
+
+Repeat the Cantor construction from Section 3.1 starting with the interval $[0, 1]$. This time, however, remove the open middle fourth from each component.
+
+(a) Is the resulting set compact? Perfect?
+
+Proof: It's compact. Since it's closed and bounded. It's also perfect we can follow the same argument as 3.4.3.
+
+### 3.4.5
+
+Let $A$ and $B$ be nonempty subsets of R. Show that if there exist disjoint open sets $U$ and $V$  with $A⊆U$ and $B⊆V$,then $A$ and $B$ are separated.
+
+Proof: Since $V$ is open, $V$ has no limit point of $U$, so $\overline{U} \cap V = \emptyset$. Simiarly $\overline{V} \cap U = \emptyset$. Then $\overline{A} \cap B \subseteq \overline{V} \cap U =\emptyset$ and $\overline{B} \cap A \subseteq \overline{U} \cap V=\emptyset$.
+
+### 3.4.6
+
+Prove Theorem 3.4.6
+
+Proof:
+* $\Rightarrow$ Assume $E ⊆ R$ is connected and nonempty disjoint sets $A$ and $B$ satisfying $E = A ∪ B$. Assume there is no such sequence in both $A$ and $B$. It means $A$ has no limit points of $B$ and $B$ has no limit points of $A$. So $A \cap \overline{B} = \emptyset$ and $B \cap \overline{A} = \emptyset$. Then $E$ is not connected.
+* $\Leftarrow$ Assume for all nonempty disjoint sets $A$ and $B$ satisfying $E = A ∪ B$, there always exists a convergent sequence $(x_n) → x$ with $(x_n)$ contained in one of $A$ or $B$, and $x$ an element of the other. Then it means $A \cap \overline{B} \neq \emptyset$ or $B \cap \overline{A} \neq \emptyset$.
+
+### 3.4.7
+
+A set $E$ is totally disconnected if, given any two distinct points
+$x,y ∈ E$, there exist separated sets $A$ and $B$ with $x ∈ A$, $y ∈ B$, and $E = A∪B$.
+
+(a) Show that Q is totally disconnected.
+
+Proof. Assume $a, b \in Q$ and $a < b$. Then we can find an irrational number $r$ such that $a < r < b$, so
+let $A = (-\infty, r) \cap Q$ and $B = (r, \infty) \cap Q$.
+
+(b) Is the set of irrational numbers totally disconnected?
+
+Proof. Yes. The same argument in (a) can also be applied here.
+
+See also [stackoverflow](https://math.stackexchange.com/questions/3431757/is-irrational-number-set-on-mathbbr-disconnected).
+
+### 3.4.8
+
+Follow these steps to show that the Cantor set is totally disconnected in the sense described in Exercise 3.4.7.
+
+Let $C = \cap^∞_{n=0} C_n$, as defined in Section 3.1.
+
+(a) Given $x,y∈C$,with $x<y$, set $\epsilon = y−x$. For each $n=0,1,2,...,$
+the set $C_n$ consists of a finite number of closed intervals. Explain why there must exist an $N$ large enough so that it is impossible for $x$ and $y$ both to belong to the same closed interval of $C_N$.
+
+Proof. This is because the length of the internals $C_n$ is $1/3^n$. So we can find $N$ large enough so $1/3^N < \epsilon$.
+
+(b) Show that $C$ is totally disconnected.
+
+Proof. Since $x,y∈C$ will not be in the same closed interval of $C_N$, and assume $x < y$, we can find $z \not\in C_N$ such that $x < z < y$. Let $A = (-\infty, z)$ and $B = (z, \infty)$. Using exercise 3.4.5, we know $A \cap C$ and $B \cap C$ are separated. So $C$ is totally disconnected.
+
+### 3.4.9
+
+Let $\{r1, r2, r3, . . .\}$ be an enumeration of the rational numbers, and for each $n \in N$, set $\epsilon_n = 1/2^n$.
+Define $O = \cup_{n=1}^\infty V_{\epsilon_n}(r_n)$ and let $F = O^c$.
+
+(a) Argue that F is a closed, nonempty set consisting only of irrational
+numbers.
+
+Proof: $O$ is an union of open set, so it's open. Then $F$ is closed.
+$O$ contains all rational numbers, so $F$ only contains irrational numbers.
+Now we need to prove $F$ is not empty.
+
+Assume $F$ is empty. Then consider $[0, 1]$ and $O$ is an open cover of it.
+Since it's compact, then we can find an finite sub cover of it.
+Then the total length of subcover is strictly less than $1$, then we
+must have some points not covered by this subcover. We got a contradiction.
+
+(b) Does F contain any nonempty open intervals? Is F totally disconnected?
+
+Proof. It's not possible. Because $\mathbb{Q}$ is dense. It's totally disconnected.
+
+(c) Is it possible to know whether F is perfect? If not, can we modify this
+construction to produce a nonempty perfect set of irrational numbers?
+
+Proof: I am inclined to think $F$ is not perfect. But I cannot prove it for now.
+* I can prove $F$ must have infinite elements for any given interval with length $\ge 2$. The way is pretty much the same as how we prove $F$ is not empty.
+ 
