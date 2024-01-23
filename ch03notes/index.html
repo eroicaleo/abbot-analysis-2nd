@@ -58,6 +58,12 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#33-compact-sets">3.3 Compact Sets</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#34-perfect-sets-and-connected-sets">3.4 Perfect Sets and Connected Sets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#connected-sets">Connected Sets</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -67,6 +73,10 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
                 </li>
               </ul>
       </div>
@@ -201,6 +211,68 @@ x \in \mathbb{R} : |x-a| < \epsilon
 <p><strong><em>Theorem 3.3.4 (Characterization of Compactness in R).</em></strong> A set <script type="math/tex">K \subseteq R</script> is compact if and only if it is closed and bounded.</p>
 <ul>
 <li>Proof: <script type="math/tex">\Rightarrow</script>
+</li>
+</ul>
+<h2 id="34-perfect-sets-and-connected-sets">3.4 Perfect Sets and Connected Sets</h2>
+<ul>
+<li>One of the underlying goals of topology is to strip away all of the extraneous
+information that comes with our intuitive picture of the real numbers and isolate
+just those properties that are responsible for the phenomenon we are studying.</li>
+</ul>
+<p><strong><em>Definition 3.4.1.</em></strong> A set <script type="math/tex">P ⊆ \mathbb{R}</script> is perfect if it is closed and contains no isolated points.</p>
+<p><strong><em>Example 3.4.2 (Cantor Set).</em></strong> It is not too hard to see that the Cantor set is perfect. See exercise  3.4.3.</p>
+<p><strong><em>Theorem 3.4.3.</em></strong> A nonempty perfect set is uncountable.</p>
+<ul>
+<li>Summary of proof: Assume <script type="math/tex">P</script> is countable, and <script type="math/tex">P = \{x_1, x_2, \dots\}</script>. Let <script type="math/tex">I_1</script> be
+an interval such that <script type="math/tex">x_1</script> in the interior of <script type="math/tex">I_1</script>. Since <script type="math/tex">x_1</script> is not
+isolated, we can find <script type="math/tex">y_2</script> in the interior of <script type="math/tex">I_1</script>. Then we can construct <script type="math/tex">I_2</script> such that <script type="math/tex">y_2</script> is in the middle of <script type="math/tex">I_2</script> and 
+<script type="math/tex">I_2 \subset I_1</script> and <script type="math/tex">x_1 \notin I_2</script>.</li>
+</ul>
+<p>We can continue this process and they satisfy:</p>
+<ol>
+<li>
+<script type="math/tex">I_{n+1} \subseteq I_n</script>
+</li>
+<li>
+<script type="math/tex">x_n \notin I_{n+1}</script>
+</li>
+<li>
+<script type="math/tex">x_{n-1} \neq y_n\in I_n \cap P \neq \emptyset</script>.</li>
+</ol>
+<p>And let <script type="math/tex">K_n = I_n \cap P</script>. Then based on Nested Compact Set Property,
+<script type="math/tex">\cap K_n</script> is not empty. However, since <script type="math/tex">x_n \notin K_{n+1}</script>, <script type="math/tex">\cap K_n = \emptyset</script>. We got a contradiction.</p>
+<h3 id="connected-sets">Connected Sets</h3>
+<p><strong><em>Definition 3.4.4.</em></strong> Two nonempty sets <script type="math/tex">A, B ⊆ R</script> are separated if <script type="math/tex">\overline{A} ∩ B</script> and <script type="math/tex">A ∩ \overline{B}</script> are both empty. A set <script type="math/tex">E ⊆ R</script> is disconnected if it can be written as <script type="math/tex">E = A ∪ B</script>, where <script type="math/tex">A</script> and <script type="math/tex">B</script> are nonempty separated sets.</p>
+<p>A set that is not disconnected is called a connected set.</p>
+<p><strong><em>Example 3.4.5.</em></strong> the set of rational numbers is disconnected. Just need
+to consider <script type="math/tex">A = (-\infty, \sqrt{2})</script> and <script type="math/tex">B = (\sqrt{2}, \infty)</script>.</p>
+<p><strong><em>Theorem 3.4.6.</em></strong> A set <script type="math/tex">E ⊆ R</script> is connected if and only if, for all nonempty disjoint sets <script type="math/tex">A</script> and <script type="math/tex">B</script> satisfying <script type="math/tex">E = A ∪ B</script>, there always exists a convergent sequence <script type="math/tex">(x_n) → x</script> with <script type="math/tex">(x_n)</script> contained in one of <script type="math/tex">A</script> or <script type="math/tex">B</script>, and <script type="math/tex">x</script> an element of the other.</p>
+<ul>
+<li>Proof:</li>
+<li>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">E ⊆ R</script> is connected and nonempty disjoint sets <script type="math/tex">A</script> and <script type="math/tex">B</script> satisfying <script type="math/tex">E = A ∪ B</script>. Assume there is no such sequence in both <script type="math/tex">A</script> and <script type="math/tex">B</script>. It means <script type="math/tex">A</script> has no limit points of <script type="math/tex">B</script> and <script type="math/tex">B</script> has no limit points of <script type="math/tex">A</script>. So <script type="math/tex">A \cap \overline{B} = \emptyset</script> and <script type="math/tex">B \cap \overline{A} = \emptyset</script>. Then <script type="math/tex">E</script> is not connected.</li>
+<li>
+<script type="math/tex">\Leftarrow</script> Assume for all nonempty disjoint sets <script type="math/tex">A</script> and <script type="math/tex">B</script> satisfying <script type="math/tex">E = A ∪ B</script>, there always exists a convergent sequence <script type="math/tex">(x_n) → x</script> with <script type="math/tex">(x_n)</script> contained in one of <script type="math/tex">A</script> or <script type="math/tex">B</script>, and <script type="math/tex">x</script> an element of the other. Then it means <script type="math/tex">A \cap \overline{B} \neq \emptyset</script> or <script type="math/tex">B \cap \overline{A} \neq \emptyset</script>.</li>
+</ul>
+<p><strong><em>Theorem 3.4.7.</em></strong> A set <script type="math/tex">E ⊆ R</script> is connected if and only if whenever <script type="math/tex">a < c < b</script> with <script type="math/tex">a, b ∈ E</script>, it follows that <script type="math/tex">c ∈ E</script> as well.</p>
+<ul>
+<li>Proof:<ul>
+<li>
+<script type="math/tex">\Rightarrow</script>: Assume <script type="math/tex">E \subseteq R</script> is connected. Given <script type="math/tex">a < c < b</script> with <script type="math/tex">a, b ∈ E</script>,
+and assume <script type="math/tex">c \notin E</script>. Consider <script type="math/tex">A = \{a \in E | a < c\}</script>, <script type="math/tex">B = \{b \in E | b > c\}</script>. For any <script type="math/tex">(x_n) \in A</script>, since <script type="math/tex">x_n < c</script>, then <script type="math/tex">(x_n) \rightarrow x \le c</script>. So <script type="math/tex">x \notin B</script>. Similarly, if <script type="math/tex">(x_n) \rightarrow x \in B</script> ,then <script type="math/tex">x \notin A</script>. Then from Theorem 3.4.6, <script type="math/tex">E</script> is not connected. We have a contradiction.</li>
+<li>
+<script type="math/tex">\Leftarrow</script>: Conversely assume <script type="math/tex">a < c < b</script> with <script type="math/tex">a, b ∈ E</script>, it follows that <script type="math/tex">c ∈ E</script>. Assume <script type="math/tex">E = A \cup B, a \in A, b \in B, a < b</script>. Let <script type="math/tex">A' = A \cap (-\infty, b), c = \sup A'</script>. So we have <script type="math/tex">a \le c \le b, c \in E</script>.<ul>
+<li>If <script type="math/tex">c \in B</script>, then <script type="math/tex">\overline{A} \cap B \ne \emptyset</script>.</li>
+<li>If <script type="math/tex">c \in A</script>, then <script type="math/tex">c \neq b</script>, then <script type="math/tex">(c, b] \subseteq E</script>. So <script type="math/tex">c</script> is a limit point of  <script type="math/tex">(c, b]</script>, thus a limit point of <script type="math/tex">B</script>. So <script type="math/tex">\overline{B} \cap A \ne \emptyset</script>.</li>
+</ul>
+</li>
+<li>Textbook method to prove <script type="math/tex">\Leftarrow</script> (more elegant): assume <script type="math/tex">a < c < b</script> with <script type="math/tex">a, b ∈ E</script>, it follows that <script type="math/tex">c ∈ E</script>. Assume <script type="math/tex">E = A \cup B, a_0 \in A, b_0 \in B, a_0 < b_0, I_0 = [a_0, b_0]</script>. Let <script type="math/tex">c = (a_0 + b_0)/2</script>:<ul>
+<li>if <script type="math/tex">c \in A</script>, then <script type="math/tex">a_1 = c, b_1 = b_0</script>.  </li>
+<li>if <script type="math/tex">c \in B</script>, then <script type="math/tex">a_1 = a_0, b_1 = c, I_1 = [a_1, b_1]</script>.</li>
+</ul>
+</li>
+<li>Then we have <script type="math/tex">I_0 \supset I_1 \supset \cdots</script>. From Nested Interval Property, we have <script type="math/tex">\lim a_n = \lim b_n = x \in \cap I_n</script>.  </li>
+</ul>
 </li>
 </ul>
               

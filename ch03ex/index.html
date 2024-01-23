@@ -112,11 +112,37 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#34-perfect-sets-and-connected-sets">3.4 Perfect Sets and Connected Sets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#341">3.4.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#342">3.4.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#343">3.4.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#344">3.4.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#345">3.4.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#346">3.4.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#347">3.4.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#348">3.4.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#349">3.4.9</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
                 </li>
               </ul>
       </div>
@@ -685,6 +711,68 @@ So <script type="math/tex">K</script> is finite.</li>
 <li>Solution: all clompact are finite set. Because one point set <script type="math/tex">\{x\}</script> is a closed set.</li>
 </ul>
 <p>See also <a href="https://math.stackexchange.com/questions/2989359/which-sets-are-clompact">here</a></p>
+<h2 id="34-perfect-sets-and-connected-sets">3.4 Perfect Sets and Connected Sets</h2>
+<h3 id="341">3.4.1</h3>
+<p>If <script type="math/tex">P</script> is a perfect set and <script type="math/tex">K</script> is compact, is the intersection <script type="math/tex">P \cap K</script> always compact? Always perfect?</p>
+<ul>
+<li>Proof: It's always compact. Bounded and closed. Let <script type="math/tex">P = [0, 1]</script> and <script type="math/tex">K = \left\{ 0, 1 \right\}</script>.</li>
+</ul>
+<h3 id="342">3.4.2</h3>
+<p>Does there exist a perfect set consisting of only rational numbers?</p>
+<p>Proof: No. This set must be countable, but a perfect set is uncountable.</p>
+<h3 id="343">3.4.3</h3>
+<p>Review the portion of the proof given in Example 3.4.2 and follow these steps to complete the argument.</p>
+<p>(a) Because <script type="math/tex">x ∈ C_1</script>, argue that there exists an <script type="math/tex">x_1 ∈ C \cap C_1</script> with <script type="math/tex">x_1 \ne x</script> satisfying <script type="math/tex">|x − x_1| ≤ 1/3</script>.</p>
+<p>Proof: Let <script type="math/tex">x_1 = 0, 1/3, 2/3, 1</script>.</p>
+<p>(b) Finish the proof by showing that for each <script type="math/tex">n ∈ N</script>, there exists <script type="math/tex">x_n ∈ C \cap C_n</script>, different from <script type="math/tex">x</script>, satisfying <script type="math/tex">|x − x_n| ≤ 1/3^n</script>.</p>
+<p>Proof: pick either boundary.</p>
+<h3 id="344">3.4.4</h3>
+<p>Repeat the Cantor construction from Section 3.1 starting with the interval <script type="math/tex">[0, 1]</script>. This time, however, remove the open middle fourth from each component.</p>
+<p>(a) Is the resulting set compact? Perfect?</p>
+<p>Proof: It's compact. Since it's closed and bounded. It's also perfect we can follow the same argument as 3.4.3.</p>
+<h3 id="345">3.4.5</h3>
+<p>Let <script type="math/tex">A</script> and <script type="math/tex">B</script> be nonempty subsets of R. Show that if there exist disjoint open sets <script type="math/tex">U</script> and <script type="math/tex">V</script>  with <script type="math/tex">A⊆U</script> and <script type="math/tex">B⊆V</script>,then <script type="math/tex">A</script> and <script type="math/tex">B</script> are separated.</p>
+<p>Proof: Since <script type="math/tex">V</script> is open, <script type="math/tex">V</script> has no limit point of <script type="math/tex">U</script>, so <script type="math/tex">\overline{U} \cap V = \emptyset</script>. Simiarly <script type="math/tex">\overline{V} \cap U = \emptyset</script>. Then <script type="math/tex">\overline{A} \cap B \subseteq \overline{V} \cap U =\emptyset</script> and <script type="math/tex">\overline{B} \cap A \subseteq \overline{U} \cap V=\emptyset</script>.</p>
+<h3 id="346">3.4.6</h3>
+<p>Prove Theorem 3.4.6</p>
+<p>Proof:
+* <script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">E ⊆ R</script> is connected and nonempty disjoint sets <script type="math/tex">A</script> and <script type="math/tex">B</script> satisfying <script type="math/tex">E = A ∪ B</script>. Assume there is no such sequence in both <script type="math/tex">A</script> and <script type="math/tex">B</script>. It means <script type="math/tex">A</script> has no limit points of <script type="math/tex">B</script> and <script type="math/tex">B</script> has no limit points of <script type="math/tex">A</script>. So <script type="math/tex">A \cap \overline{B} = \emptyset</script> and <script type="math/tex">B \cap \overline{A} = \emptyset</script>. Then <script type="math/tex">E</script> is not connected.
+* <script type="math/tex">\Leftarrow</script> Assume for all nonempty disjoint sets <script type="math/tex">A</script> and <script type="math/tex">B</script> satisfying <script type="math/tex">E = A ∪ B</script>, there always exists a convergent sequence <script type="math/tex">(x_n) → x</script> with <script type="math/tex">(x_n)</script> contained in one of <script type="math/tex">A</script> or <script type="math/tex">B</script>, and <script type="math/tex">x</script> an element of the other. Then it means <script type="math/tex">A \cap \overline{B} \neq \emptyset</script> or <script type="math/tex">B \cap \overline{A} \neq \emptyset</script>.</p>
+<h3 id="347">3.4.7</h3>
+<p>A set <script type="math/tex">E</script> is totally disconnected if, given any two distinct points
+<script type="math/tex">x,y ∈ E</script>, there exist separated sets <script type="math/tex">A</script> and <script type="math/tex">B</script> with <script type="math/tex">x ∈ A</script>, <script type="math/tex">y ∈ B</script>, and <script type="math/tex">E = A∪B</script>.</p>
+<p>(a) Show that Q is totally disconnected.</p>
+<p>Proof. Assume <script type="math/tex">a, b \in Q</script> and <script type="math/tex">a < b</script>. Then we can find an irrational number <script type="math/tex">r</script> such that <script type="math/tex">a < r < b</script>, so
+let <script type="math/tex">A = (-\infty, r) \cap Q</script> and <script type="math/tex">B = (r, \infty) \cap Q</script>.</p>
+<p>(b) Is the set of irrational numbers totally disconnected?</p>
+<p>Proof. Yes. The same argument in (a) can also be applied here.</p>
+<p>See also <a href="https://math.stackexchange.com/questions/3431757/is-irrational-number-set-on-mathbbr-disconnected">stackoverflow</a>.</p>
+<h3 id="348">3.4.8</h3>
+<p>Follow these steps to show that the Cantor set is totally disconnected in the sense described in Exercise 3.4.7.</p>
+<p>Let <script type="math/tex">C = \cap^∞_{n=0} C_n</script>, as defined in Section 3.1.</p>
+<p>(a) Given <script type="math/tex">x,y∈C</script>,with <script type="math/tex">x<y</script>, set <script type="math/tex">\epsilon = y−x</script>. For each <script type="math/tex">n=0,1,2,...,</script>
+the set <script type="math/tex">C_n</script> consists of a finite number of closed intervals. Explain why there must exist an <script type="math/tex">N</script> large enough so that it is impossible for <script type="math/tex">x</script> and <script type="math/tex">y</script> both to belong to the same closed interval of <script type="math/tex">C_N</script>.</p>
+<p>Proof. This is because the length of the internals <script type="math/tex">C_n</script> is <script type="math/tex">1/3^n</script>. So we can find <script type="math/tex">N</script> large enough so <script type="math/tex">1/3^N < \epsilon</script>.</p>
+<p>(b) Show that <script type="math/tex">C</script> is totally disconnected.</p>
+<p>Proof. Since <script type="math/tex">x,y∈C</script> will not be in the same closed interval of <script type="math/tex">C_N</script>, and assume <script type="math/tex">x < y</script>, we can find <script type="math/tex">z \not\in C_N</script> such that <script type="math/tex">x < z < y</script>. Let <script type="math/tex">A = (-\infty, z)</script> and <script type="math/tex">B = (z, \infty)</script>. Using exercise 3.4.5, we know <script type="math/tex">A \cap C</script> and <script type="math/tex">B \cap C</script> are separated. So <script type="math/tex">C</script> is totally disconnected.</p>
+<h3 id="349">3.4.9</h3>
+<p>Let <script type="math/tex">\{r1, r2, r3, . . .\}</script> be an enumeration of the rational numbers, and for each <script type="math/tex">n \in N</script>, set <script type="math/tex">\epsilon_n = 1/2^n</script>.
+Define <script type="math/tex">O = \cup_{n=1}^\infty V_{\epsilon_n}(r_n)</script> and let <script type="math/tex">F = O^c</script>.</p>
+<p>(a) Argue that F is a closed, nonempty set consisting only of irrational
+numbers.</p>
+<p>Proof: <script type="math/tex">O</script> is an union of open set, so it's open. Then <script type="math/tex">F</script> is closed.
+<script type="math/tex">O</script> contains all rational numbers, so <script type="math/tex">F</script> only contains irrational numbers.
+Now we need to prove <script type="math/tex">F</script> is not empty.</p>
+<p>Assume <script type="math/tex">F</script> is empty. Then consider <script type="math/tex">[0, 1]</script> and <script type="math/tex">O</script> is an open cover of it.
+Since it's compact, then we can find an finite sub cover of it.
+Then the total length of subcover is strictly less than <script type="math/tex">1</script>, then we
+must have some points not covered by this subcover. We got a contradiction.</p>
+<p>(b) Does F contain any nonempty open intervals? Is F totally disconnected?</p>
+<p>Proof. It's not possible. Because <script type="math/tex">\mathbb{Q}</script> is dense. It's totally disconnected.</p>
+<p>(c) Is it possible to know whether F is perfect? If not, can we modify this
+construction to produce a nonempty perfect set of irrational numbers?</p>
+<p>Proof: I am inclined to think <script type="math/tex">F</script> is not perfect. But I cannot prove it for now.
+* I can prove <script type="math/tex">F</script> must have infinite elements for any given interval with length <script type="math/tex">\ge 2</script>. The way is pretty much the same as how we prove <script type="math/tex">F</script> is not empty.</p>
               
             </div>
           </div><footer>
