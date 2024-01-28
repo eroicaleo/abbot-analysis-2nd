@@ -161,3 +161,130 @@ and assume $c \notin E$. Consider $A = \{a \in E | a < c\}$, $B = \{b \in E | b 
         * if $c \in B$, then $a_1 = a_0, b_1 = c, I_1 = [a_1, b_1]$.
     * Then we have $I_0 \supset I_1 \supset \cdots$. From Nested Interval Property, we have $\lim a_n = \lim b_n = x \in \cap I_n$.  
 
+## 3.5 Baire’s Theorem
+
+***Definition 3.5.1.*** A set $A ⊆ R$ is called an $F_σ$ set if it can be written as the countable union of closed sets. A set $B ⊆ R$ is called a $G_δ$ set if it can be written as the countable intersection of open sets.
+
+***Exercise 3.5.1.***  Argue that a set A is a $G_δ$ set if and only if its complement is an $F_σ$ set.
+
+Proof. Use De Morgan’s Laws.
+
+***Exercise 3.5.2.*** Replace each underscore with the word finite or countable, depending on which is more appropriate.
+
+(a) The finite/countable union of $F_σ$ sets is an $F_σ$ set.
+
+Both are correct. This is because countable union of countable sets is still countable union of sets.
+See also [here](https://math.stackexchange.com/questions/2255466/proof-the-countable-union-of-f-sigma-sets-is-an-f-sigma-set).
+
+(b) The finite/countable intersection of $F_σ$ sets is an $F_σ$ set.
+
+Proof: First, countable intersection of $F_σ$ sets might not be an $F_σ$ set. Consider $U_r = \left\{ x | x \neq r \right\}$ where $r$ is an rational number. Then $U_r$ is $F_σ$ set. But their intersection is $I$, which is all irrational numbers. As shown in Exercise 3.5.6, $I$ cannot be $F_σ$ set.
+
+Then finite intersection of $F_σ$ sets might not be an $F_σ$ set. Assume $U = \cup U_i$ and $V = \cup V_j$. Then $U \cap V = \cup U_i \cap V_j$. Since $U_i \cap V_j$ is closed. And there are countable of them, so $U \cap V$ is $F_σ$.
+
+(c) The finite/countable union of $G_δ$ sets is a $G_δ$ set.
+
+See (b) and De Morgan's law.
+
+(d) The finite/countable intersection of $G_δ$ sets is a $G_δ$ set.
+
+See (a) and De Morgan's law.
+
+Recall that a set $G ⊆ \mathbb{R}$ is dense in $\mathbb{R}$ if, given any two real numbers $a<b$,
+it is possible to find a point $x ∈ G$ with $a<x<b$.
+
+***Theorem 3.5.2.*** If ${G_1, G_2, G_3,...}$ is a countable collection of dense, open sets, then the intersection $\cap_{n=1}^\infty G_n$  is not empty.
+
+***Exercise 3.5.4.*** Prove Theorem 3.5.2.
+
+Proof: Since $G_1$ is open, we can find $[a_1, b_1] \subseteq G_1$. Since $G_2$ is dense, we can find $[a_2, b_2] \subseteq [a_1, b_1]$ and $[a_2, b_2] \subseteq G_2$. Then we construct a nested sequence
+of closed intervals $I_1 ⊇ I_2 ⊇ I_3 ⊇···$ satisfying $I_n ⊆ G_n$.
+
+***Exercise 3.5.5.*** Show that it is impossible to write
+
+$$
+R = \cup_{n=1}^{\infty} F_n
+$$
+
+where for each $n ∈ N$, $F_n$ is a closed set containing no nonempty open intervals.
+
+Proof: Consider $G_n = (F_n)^c$, so $G_n$ is open, and it's also dense.
+Then from 3.5.4, the intersection of $G_n$ is not empty. So the union of $F_n$
+cannot be the whole $R$.
+
+***Exercise 3.5.6.*** Show how the previous exercise implies that the set $I$ of irrationals cannot be an $F_σ$ set, and $Q$ cannot be a $G_δ$ set.
+
+Proof: Assume $I$ is an $F_{\sigma}$ set.
+
+$$
+I = \cup_{n=1}^{\infty} F_n
+$$
+
+$F_n$ is a closed set containing no nonempty open intervals. And $Q$ can be
+written as
+
+$$
+Q = \cup_{n=1}^{\infty} \{q_n | q_n \in Q\}
+$$
+
+$Q_n$ is a closed set containing no nonempty open intervals.
+
+And $R = I \cup Q$. We have a contradiction.
+
+***Exercise 3.5.7.*** Using Exercise 3.5.6 and versions of the statements in
+Exercise 3.5.2, construct a set that is neither in $F_σ$ nor in $G_δ$.
+
+Solution: Let $A = \left\{ x | x \in [-1, 0] \cap \mathbf{I}\right\}$ and $B = \left\{ x | x \in [0, 1] \cap \mathbf{Q}\right\}$. Let $C = A \cup B$.
+
+Assume $C$ is $F_σ$. We have $C \cap [-1, 0] = (A \cup B) \cap [-1, 0] = (A \cap [-1, 0]) \cup (B \cap [-1, 0]) = A \cup \emptyset = A$. So $A$ is $F_σ$. But then $\mathbf{I}$ will be $F_σ$. We have a contradiction.
+
+Assume $C$ is $G_δ$. $C \cap [0, 1] = (A \cup B) \cap [0, 1] = (A \cap [0, 1]) \cup (B \cap [0, 1]) = \emptyset \cup B = B$. We want to show $B$ is not $G_δ$ set. Assume otherwise. Consider $B^c = (-\infty, 0) \cup ([0, 1] \cap \mathbf{I}) \cup (1, \infty)$, which has to be $F_σ$. Then $([0, 1] \cap \mathbf{I})$ has to be $F_σ$, which is impossible.
+
+So $C$ is neither in $F_σ$ nor in $G_δ$.
+
+***Definition 3.5.3.*** A set $E$ is nowhere-dense if $\overline{E}$ contains no nonempty open intervals.
+
+***Definition*** $G$ is dense in $\mathbb{R}$  if and only if $\overline{G} = \mathbb{R}$.
+
+***Exercise 3.5.8.*** Show that a set $E$ is nowhere-dense in $\mathbb{R}$ if and only if the complement of $\overline{E}$ is dense in R.
+
+Proof. 
+
+* $\Leftarrow$ Assume the complement of $\overline{E}$ is dense in $\mathbb{R}$, also assume
+$(a, b) \subset \overline{E}$. Further assume $a < c < b$. Since $(a, b) \cap \overline{E}^c = \emptyset$. $c$ cannot be a limit point of $\overline{E}^c$, so
+$\overline{\overline{E}^c} \ne \mathbb{R}$, so it's not dense, we have a contradiction.
+
+* $\Rightarrow$ Conversely, assume $E$ is nowhere-dense in $\mathbb{R}$ and $a \in \overline{E}$, because $\overline{E}$ does not contain
+open interval, in every $V_{\epsilon}(a)$, we can find $b \in \overline{E}^c$, it means
+$a$ is a limit point of $\overline{E}^c$. So $\overline{\overline{E}^c} = \mathbb{R}$. So the complement of $\overline{E}$ is dense in $\mathbb{R}$.
+
+***Exercise 3.5.9.*** Decide whether the following sets are dense in $\mathbb{R}$, nowhere-dense in $\mathbb{R}$, or somewhere in between.
+
+(a) $A=Q∩[0,5]$.
+
+Some where is between. Apparently, $\overline{A} = [0,5]$ which contains open interval.
+So it's not nowhere-dense. But it's not $\mathbb{R}$, so it's not dense. But it's dense in $[0,5]$. 
+
+(b) $B =\{1/n:n∈N\}$.
+
+nowhere-dense.
+
+(c) the set of irrationals.
+
+dense, since it's closure is $\mathbb{R}$
+
+(d) the Cantor set.
+
+nowhere-dense. Since itself is a closed set. And it does not contain open interval.
+See exercise 3.4.8.
+
+***Theorem 3.5.4 (Baire’s Theorem).*** The set of real numbers R cannot be written as the countable union of nowhere-dense sets.
+
+Proof. For contradiction, assume that $E_1,E_2,E_3,...$ are each nowhere-dense and satisfy $\mathbb{R} = \cup^{∞}_{n=1} E_n$.
+
+***Exercise 3.5.10.*** Finish the proof by finding a contradiction to the results in this section.
+
+Proof. We consider $\cup^{∞}_{n=1} \overline{E_n}$, then diretly apply 
+Exercise 3.5.5. We can prove it. Since the closure of them cannot cover $R$, let alone
+themselves.
+
