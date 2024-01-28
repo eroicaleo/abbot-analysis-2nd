@@ -134,6 +134,28 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#35-baires-theorem">3.5 Baire’s Theorem</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#351">3.5.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#352">3.5.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#354">3.5.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#355">3.5.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#356">3.5.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#357">3.5.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#358">3.5.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#359">3.5.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3510">3.5.10</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -773,6 +795,98 @@ must have some points not covered by this subcover. We got a contradiction.</p>
 construction to produce a nonempty perfect set of irrational numbers?</p>
 <p>Proof: I am inclined to think <script type="math/tex">F</script> is not perfect. But I cannot prove it for now.
 * I can prove <script type="math/tex">F</script> must have infinite elements for any given interval with length <script type="math/tex">\ge 2</script>. The way is pretty much the same as how we prove <script type="math/tex">F</script> is not empty.</p>
+<h2 id="35-baires-theorem">3.5 Baire’s Theorem</h2>
+<h3 id="351">3.5.1</h3>
+<p>Argue that a set A is a <script type="math/tex">G_δ</script> set if and only if its complement is an <script type="math/tex">F_σ</script> set.</p>
+<p>Proof. Use De Morgan’s Laws.</p>
+<h3 id="352">3.5.2</h3>
+<p>Replace each underscore with the word finite or countable, depending on which is more appropriate.</p>
+<p>(a) The finite/countable union of <script type="math/tex">F_σ</script> sets is an <script type="math/tex">F_σ</script> set.</p>
+<p>Both are correct. This is because countable union of countable sets is still countable union of sets.
+See also <a href="https://math.stackexchange.com/questions/2255466/proof-the-countable-union-of-f-sigma-sets-is-an-f-sigma-set">here</a>.</p>
+<p>(b) The finite/countable intersection of <script type="math/tex">F_σ</script> sets is an <script type="math/tex">F_σ</script> set.</p>
+<p>Proof: First, countable intersection of <script type="math/tex">F_σ</script> sets might not be an <script type="math/tex">F_σ</script> set. Consider <script type="math/tex">U_r = \left\{ x | x \neq r \right\}</script> where <script type="math/tex">r</script> is an rational number. Then <script type="math/tex">U_r</script> is <script type="math/tex">F_σ</script> set. But their intersection is <script type="math/tex">I</script>, which is all irrational numbers. As shown in Exercise 3.5.6, <script type="math/tex">I</script> cannot be <script type="math/tex">F_σ</script> set.</p>
+<p>Then finite intersection of <script type="math/tex">F_σ</script> sets might not be an <script type="math/tex">F_σ</script> set. Assume <script type="math/tex">U = \cup U_i</script> and <script type="math/tex">V = \cup V_j</script>. Then <script type="math/tex">U \cap V = \cup U_i \cap V_j</script>. Since <script type="math/tex">U_i \cap V_j</script> is closed. And there are countable of them, so <script type="math/tex">U \cap V</script> is <script type="math/tex">F_σ</script>.</p>
+<p>(c) The finite/countable union of <script type="math/tex">G_δ</script> sets is a <script type="math/tex">G_δ</script> set.</p>
+<p>See (b) and De Morgan's law.</p>
+<p>(d) The finite/countable intersection of <script type="math/tex">G_δ</script> sets is a <script type="math/tex">G_δ</script> set.</p>
+<p>See (a) and De Morgan's law.</p>
+<h3 id="354">3.5.4</h3>
+<p>Prove Theorem 3.5.2.</p>
+<p>Proof: Since <script type="math/tex">G_1</script> is open, we can find <script type="math/tex">[a_1, b_1] \subseteq G_1</script>. Since <script type="math/tex">G_2</script> is dense, we can find <script type="math/tex">[a_2, b_2] \subseteq [a_1, b_1]</script> and <script type="math/tex">[a_2, b_2] \subseteq G_2</script>. Then we construct a nested sequence
+of closed intervals <script type="math/tex">I_1 ⊇ I_2 ⊇ I_3 ⊇···</script> satisfying <script type="math/tex">I_n ⊆ G_n</script>.</p>
+<h3 id="355">3.5.5</h3>
+<p>Show that it is impossible to write</p>
+<p>
+<script type="math/tex; mode=display">
+R = \cup_{n=1}^{\infty} F_n
+</script>
+</p>
+<p>where for each <script type="math/tex">n ∈ N</script>, <script type="math/tex">F_n</script> is a closed set containing no nonempty open intervals.</p>
+<p>Proof: Consider <script type="math/tex">G_n = (F_n)^c</script>, so <script type="math/tex">G_n</script> is open, and it's also dense.
+Then from 3.5.4, the intersection of <script type="math/tex">G_n</script> is not empty. So the union of <script type="math/tex">F_n</script>
+cannot be the whole <script type="math/tex">R</script>.</p>
+<h3 id="356">3.5.6</h3>
+<p>Show how the previous exercise implies that the set <script type="math/tex">I</script> of irrationals cannot be an <script type="math/tex">F_σ</script> set, and <script type="math/tex">Q</script> cannot be a <script type="math/tex">G_δ</script> set.</p>
+<p>Proof: Assume <script type="math/tex">I</script> is an <script type="math/tex">F_{\sigma}</script> set.</p>
+<p>
+<script type="math/tex; mode=display">
+I = \cup_{n=1}^{\infty} F_n
+</script>
+</p>
+<p>
+<script type="math/tex">F_n</script> is a closed set containing no nonempty open intervals. And <script type="math/tex">Q</script> can be
+written as</p>
+<p>
+<script type="math/tex; mode=display">
+Q = \cup_{n=1}^{\infty} \{q_n | q_n \in Q\}
+</script>
+</p>
+<p>
+<script type="math/tex">Q_n</script> is a closed set containing no nonempty open intervals.</p>
+<p>And <script type="math/tex">R = I \cup Q</script>. We have a contradiction.</p>
+<h3 id="357">3.5.7</h3>
+<p>Using Exercise 3.5.6 and versions of the statements in
+Exercise 3.5.2, construct a set that is neither in <script type="math/tex">F_σ</script> nor in <script type="math/tex">G_δ</script>.</p>
+<p>Solution: Let <script type="math/tex">A = \left\{ x | x \in [-1, 0] \cap \mathbf{I}\right\}</script> and <script type="math/tex">B = \left\{ x | x \in [0, 1] \cap \mathbf{Q}\right\}</script>. Let <script type="math/tex">C = A \cup B</script>.</p>
+<p>Assume <script type="math/tex">C</script> is <script type="math/tex">F_σ</script>. We have <script type="math/tex">C \cap [-1, 0] = (A \cup B) \cap [-1, 0] = (A \cap [-1, 0]) \cup (B \cap [-1, 0]) = A \cup \emptyset = A</script>. So <script type="math/tex">A</script> is <script type="math/tex">F_σ</script>. But then <script type="math/tex">\mathbf{I}</script> will be <script type="math/tex">F_σ</script>. We have a contradiction.</p>
+<p>Assume <script type="math/tex">C</script> is <script type="math/tex">G_δ</script>. <script type="math/tex">C \cap [0, 1] = (A \cup B) \cap [0, 1] = (A \cap [0, 1]) \cup (B \cap [0, 1]) = \emptyset \cup B = B</script>. We want to show <script type="math/tex">B</script> is not <script type="math/tex">G_δ</script> set. Assume otherwise. Consider <script type="math/tex">B^c = (-\infty, 0) \cup ([0, 1] \cap \mathbf{I}) \cup (1, \infty)</script>, which has to be <script type="math/tex">F_σ</script>. Then <script type="math/tex">([0, 1] \cap \mathbf{I})</script> has to be <script type="math/tex">F_σ</script>, which is impossible.</p>
+<p>So <script type="math/tex">C</script> is neither in <script type="math/tex">F_σ</script> nor in <script type="math/tex">G_δ</script>.</p>
+<h3 id="358">3.5.8</h3>
+<p>Show that a set <script type="math/tex">E</script> is nowhere-dense in <script type="math/tex">\mathbb{R}</script> if and only if the complement of <script type="math/tex">\overline{E}</script> is dense in R.</p>
+<p>Proof. </p>
+<ul>
+<li>
+<p>
+<script type="math/tex">\Leftarrow</script> Assume the complement of <script type="math/tex">\overline{E}</script> is dense in <script type="math/tex">\mathbb{R}</script>, also assume
+<script type="math/tex">(a, b) \subset \overline{E}</script>. Further assume <script type="math/tex">a < c < b</script>. Since <script type="math/tex">(a, b) \cap \overline{E}^c = \emptyset</script>. <script type="math/tex">c</script> cannot be a limit point of <script type="math/tex">\overline{E}^c</script>, so
+<script type="math/tex">\overline{\overline{E}^c} \ne \mathbb{R}</script>, so it's not dense, we have a contradiction.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\Rightarrow</script> Conversely, assume <script type="math/tex">E</script> is nowhere-dense in <script type="math/tex">\mathbb{R}</script> and <script type="math/tex">a \in \overline{E}</script>, because <script type="math/tex">\overline{E}</script> does not contain
+open interval, in every <script type="math/tex">V_{\epsilon}(a)</script>, we can find <script type="math/tex">b \in \overline{E}^c</script>, it means
+<script type="math/tex">a</script> is a limit point of <script type="math/tex">\overline{E}^c</script>. So <script type="math/tex">\overline{\overline{E}^c} = \mathbb{R}</script>. So the complement of <script type="math/tex">\overline{E}</script> is dense in <script type="math/tex">\mathbb{R}</script>.</p>
+</li>
+</ul>
+<h3 id="359">3.5.9</h3>
+<p>Decide whether the following sets are dense in <script type="math/tex">\mathbb{R}</script>, nowhere-dense in <script type="math/tex">\mathbb{R}</script>, or somewhere in between.</p>
+<p>(a) <script type="math/tex">A=Q∩[0,5]</script>.</p>
+<p>Some where is between. Apparently, <script type="math/tex">\overline{A} = [0,5]</script> which contains open interval.
+So it's not nowhere-dense. But it's not <script type="math/tex">\mathbb{R}</script>, so it's not dense. But it's dense in <script type="math/tex">[0,5]</script>. </p>
+<p>(b) <script type="math/tex">B =\{1/n:n∈N\}</script>.</p>
+<p>nowhere-dense.</p>
+<p>(c) the set of irrationals.</p>
+<p>dense, since it's closure is <script type="math/tex">\mathbb{R}</script>
+</p>
+<p>(d) the Cantor set.</p>
+<p>nowhere-dense. Since itself is a closed set. And it does not contain open interval.
+See exercise 3.4.8.</p>
+<h3 id="3510">3.5.10</h3>
+<p>Finish the proof by finding a contradiction to the results in this section.</p>
+<p>Proof. We consider <script type="math/tex">\cup^{∞}_{n=1} \overline{E_n}</script>, then diretly apply 
+Exercise 3.5.5. We can prove it. Since the closure of them cannot cover <script type="math/tex">R</script>, let alone
+themselves.</p>
               
             </div>
           </div><footer>
