@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 04 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 04 Exercises";
+        var mkdocs_page_input_path = "ch04ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 04 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#42-functional-limits">4.2 Functional Limits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#423">4.2.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#424">4.2.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#426">4.2.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#427">4.2.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#428">4.2.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#429-infinite-limits">4.2.9 (Infinite Limits)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4210-right-and-left-limits">4.2.10 (Right and Left Limits)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4211-squeeze-theorem">4.2.11 (Squeeze Theorem).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 04 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch04ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-04-functional-limits-and-continuity">Chapter 04 Functional Limits and Continuity</h1>
+<h2 id="42-functional-limits">4.2 Functional Limits</h2>
+<h3 id="423">4.2.3</h3>
+<p>Review the definition of Thomae’s function <script type="math/tex">t(x)</script> from Section 4.1.</p>
+<p>a. Construct three different sequences <script type="math/tex">(x_n)</script>, <script type="math/tex">(y_n)</script> and <script type="math/tex">(z_n)</script> , each of which
+converges to 1 without using the number 1 as a term in the sequence.</p>
+<p>Solution: consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_n = \left\{ 1 + (1/2)^n \right\} \\
+y_n = \left\{ 1 + (1/3)^n \right\} \\
+z_n = \left\{ 1 + (1/4)^n \right\} \\
+</script>
+</p>
+<p>b. Now, compute <script type="math/tex">\lim t(x_n)</script>, <script type="math/tex">\lim t(y_n)</script>, and <script type="math/tex">\lim t(z_n)</script>.</p>
+<p>Solution:</p>
+<p>
+<script type="math/tex; mode=display">
+\lim t(x_n) = (1/2)^n \\
+\lim t(y_n) = (1/3)^n \\
+\lim t(z_n) = (1/4)^n \\
+</script>
+</p>
+<p>c. Make an educated conjecture for <script type="math/tex">\lim_{x→1} t(x)</script>, and use Definition 4.2.1B to verify the claim. (Given <script type="math/tex">\epsilon > 0</script>, consider the set of points <script type="math/tex">\{x ∈ R : t(x) ≥ \epsilon \}</script>.
+Argue that all the points in this set are isolated.)</p>
+<p>Proof: For any <script type="math/tex">x</script>, if <script type="math/tex">x</script> is irrational, then <script type="math/tex">t(x) = 0 < \epsilon</script>. If <script type="math/tex">x</script> is rational, then assume <script type="math/tex">x = p/q</script> and <script type="math/tex">1/N < \epsilon</script>. Then for any <script type="math/tex">n</script>, <script type="math/tex">p/q</script> lies between <script type="math/tex">[k_n/n, (k_n+1)/n]</script>. For <script type="math/tex">n = 1, \dots, N</script>, we obtain <script type="math/tex">2n</script> points. Let </p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta = \min \left\{ |\frac{k_n}{n} - x| \ne 0, |\frac{k_{n}+1}{n} - x| \ne 0,
+n = 1 \dots N
+\right\}
+</script>
+</p>
+<p>And for any rational <script type="math/tex">y \in V_{\delta }(x), y \neq x</script>, it's denominator must be bigger than <script type="math/tex">N</script>, so <script type="math/tex">t(y) < \epsilon</script>. So <script type="math/tex">x</script> is an isolated point.</p>
+<h3 id="424">4.2.4</h3>
+<p>Consider the reasonable but erroneous claim that</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{x→10}
+\frac{1}{[[x]]} = 
+\frac{1}{10}.
+</script>
+</p>
+<p>a. Find the largest <script type="math/tex">δ</script> that represents a proper response to the challenge of <script type="math/tex">\epsilon = 1/2</script>.</p>
+<p>Solution:</p>
+<p>
+<script type="math/tex; mode=display"> 
+1/10 + 1/2 = 3/5 \\
+1/10 - 1/2 = -2/5 \\
+</script>
+</p>
+<p>So in this case if <script type="math/tex">\delta =8</script>, then <script type="math/tex">10 - 8 = 2</script>, <script type="math/tex">f(2) = 1/2 < 3/5</script>. And <script type="math/tex">10 + 8 = 18, f(18) = 1/17 < 3/5</script>.</p>
+<p>b. Find the largest <script type="math/tex">δ</script> that represents a proper response to <script type="math/tex">\epsilon = 1/50</script>.</p>
+<p>Solution: <script type="math/tex">\delta = 1</script>. <script type="math/tex">1/10 - 1/9 = 1/90, 1/10 - 1/10 = 0</script>.</p>
+<p>(c) Find the largest <script type="math/tex">\epsilon</script> challenge for which there is no suitable <script type="math/tex">\delta</script> response possible.</p>
+<p>Solution: <script type="math/tex">1/90</script>.</p>
+<h3 id="426">4.2.6</h3>
+<p>Decide if the following claims are true or false, and give short
+justifications for each conclusion.</p>
+<p>(a) If a particular <script type="math/tex">δ</script> has been constructed as a suitable response to a particular <script type="math/tex">\epsilon</script> challenge, then any smaller positive <script type="math/tex">δ</script> will also suffice.</p>
+<p>Solution: Yes. Assume <script type="math/tex">\delta_0 < \delta</script> then <script type="math/tex">V_{\delta_0}(x) \subset V_{\delta}(x)</script>, so any smaller positive <script type="math/tex">δ</script> will also suffice.</p>
+<p>(b) If <script type="math/tex">\lim_{x→a} f(x) = L</script> and <script type="math/tex">a</script> happens to be in the domain of <script type="math/tex">f</script>, then <script type="math/tex">L = f(a)</script>.</p>
+<p>False: Consider Thomae’s function, <script type="math/tex">\lim_{x→1} f(x) = 0</script>, but <script type="math/tex">f(1) = 1</script>.</p>
+<p>(c) If <script type="math/tex">\lim_{x→a} f(x) = L</script>, the If <script type="math/tex">\lim_{x→a} 3[f(x)-2]^2 = 3(L-2)^2</script>.</p>
+<p>True: Corollary 4.2.4 (Algebraic Limit Theorem for Functional Limits).</p>
+<p>(d) If <script type="math/tex">\lim_{x→a} f(x) = 0</script>, then <script type="math/tex">\lim_{x→a} f(x)g(x) = 0</script> for any function <script type="math/tex">g</script> (with domain equal to the domain of <script type="math/tex">f</script>.)</p>
+<p>False: consider <script type="math/tex">f(x) = x - 1, g(x) = \frac{1}{x-1}</script>, then <script type="math/tex">\lim_{x→1} f(x)g(x) = 1</script>.</p>
+<h3 id="427">4.2.7</h3>
+<p>Let <script type="math/tex">g : A \rightarrow \mathbb{R}</script> and assume <script type="math/tex">f</script> is a bounded function on <script type="math/tex">A</script> in the sense that there exists <script type="math/tex">M > 0</script> satisfying <script type="math/tex">|f(x)| ≤ M</script> for all <script type="math/tex">x ∈ A</script>. Show that if <script type="math/tex">\lim_{x→c} g(x) = 0</script>, then <script type="math/tex">\lim_{x→c} g(x)f(x) = 0</script> as well.</p>
+<p>Proof: Given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">\delta</script> such that <script type="math/tex">\forall x \in V_{\delta}(c), g(x) < \frac{\epsilon}{M}</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x)g(x) - 0| = |f(x)g(x)| = |f(x)| |g(x)|
+< M \frac{epsilon}{M} = \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">\lim_{x→c} g(x)f(x) = 0</script>.</p>
+<h3 id="428">4.2.8</h3>
+<p>Compute each limit or state that it does not exist. Use the tools developed in this section to justify each conclusion.</p>
+<p>(a)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 2} \frac{|x-2|}{x-2}
+</script>
+</p>
+<p>Solution: dose not exist. Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_n = 2 + \frac{1}{n} \\
+y_n = 2 - \frac{1}{n}
+</script>
+</p>
+<p>Then <script type="math/tex">\lim_{n \to \infty} x_n = 1</script> and <script type="math/tex">\lim_{n \to \infty} y_n - -1</script>. Based on Corollary 4.2.5, the limit does not exist.</p>
+<p>(b)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to \frac{7}{4}} \frac{|x-2|}{x-2} </script>
+</p>
+<p>Solution: -1.</p>
+<p>(c)</p>
+<p>
+<script type="math/tex; mode=display"> \lim_{x \to 0} (-1)^{[[1/x]]} </script>
+</p>
+<p>Solution: consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_n = \frac{1}{2n}\\
+y_n = \frac{1}{2n+1} </script>
+</p>
+<p>Then <script type="math/tex">\lim_{n \to \infty} x_n = 1</script> and <script type="math/tex">\lim_{n \to \infty} y_n - -1</script>. Based on Corollary 4.2.5, the limit does not exist.</p>
+<p>(d)</p>
+<p>
+<script type="math/tex; mode=display"> \lim_{x \to 0} \sqrt[3]{x} (-1)^{[[1/x]]}</script>
+</p>
+<p>Solution: 0. <script type="math/tex">\lim_{x \to 0} \sqrt[3]{x} = 0</script>. and <script type="math/tex">|(-1)^{[[1/x]]}| \leq 1</script>. Based on exercise 4.2.7, it's 0.</p>
+<h3 id="429-infinite-limits">4.2.9 (Infinite Limits)</h3>
+<p>Definition: <script type="math/tex">\lim_{x \to c} f(x) = \infty</script> means that for all <script type="math/tex">M > 0</script> we can find a <script type="math/tex">δ > 0</script> such that whenever <script type="math/tex">0 < |x − c| < δ</script>, it follows that <script type="math/tex">f(x) > M</script>.</p>
+<p>(a) Show <script type="math/tex">\lim_{x \to 0} 1/x^2 = \infty</script> in the sense described in the previous definition.</p>
+<p>Proof: Given <script type="math/tex">M > 0</script>, let <script type="math/tex">\delta = 1/\sqrt{M}</script>, then when <script type="math/tex">0 < |x| < 1/\sqrt{M}</script>, <script type="math/tex">1/x^2 > M</script>.</p>
+<p>(b) Now, construct a definition for the statement <script type="math/tex">\lim_{x \to \infty} f(x) = L</script>. Show <script type="math/tex">\lim_{x \to \infty} 1/x = 0</script>.</p>
+<p>Solution: for all <script type="math/tex">\epsilon > 0</script>, we can find a <script type="math/tex">N</script> such that whenever <script type="math/tex">x > N</script>, <script type="math/tex">f(x) \in V_{\epsilon}(L)</script>.</p>
+<p>To prove <script type="math/tex">\lim_{x \to \infty} 1/x = 0</script>, given <script type="math/tex">\epsilon > 0</script>, let <script type="math/tex">N = 1/\epsilon</script>.</p>
+<p>(c) What would a rigorous definition for <script type="math/tex">\lim_{x \to \infty} f(x) = \infty</script>  look like? Give an example of such a limit.</p>
+<p>Solution: It means that for all <script type="math/tex">M > 0</script> we can find a <script type="math/tex">N > 0</script> such that whenever <script type="math/tex">x > N</script>, it follows that <script type="math/tex">f(x) > M</script>. One example is <script type="math/tex">f(x) = x</script>.</p>
+<h3 id="4210-right-and-left-limits">4.2.10 (Right and Left Limits)</h3>
+<p>(a) Give a proper definition in the style of Definition 4.2.1 for the right-hand and left-hand limit statements:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a^+} f(x) = L
+\text{ and}
+\lim_{x \to a^-} f(x) = L
+</script>
+</p>
+<p>Solution: <script type="math/tex">\lim_{x \to a^+} f(x) = L</script> means for all <script type="math/tex">\epsilon > 0</script>, we can find <script type="math/tex">\delta</script>, such that whenever <script type="math/tex">0 < x - a < \delta</script>, <script type="math/tex">|f(x) - L| < \epsilon</script>.</p>
+<p>(b) Prove that <script type="math/tex">\lim_{x \to a} f(x) = L</script> if and only if both the right and left-hand limits equal <script type="math/tex">L</script>.</p>
+<p>Proof:</p>
+<ul>
+<li>
+<script type="math/tex">\Rightarrow</script> if <script type="math/tex">\lim_{x \to a} f(x) = L</script>, then for any <script type="math/tex">\epsilon > 0</script>, we can find <script type="math/tex">\delta</script>, such that whenever <script type="math/tex">|x-a| < \delta</script>, <script type="math/tex">|f(x)- L| < \epsilon</script>. Then, we find <script type="math/tex">\delta</script> such that whenever <script type="math/tex">0 < x - a < \delta</script>, <script type="math/tex">|f(x) - L| < \epsilon</script>. So <script type="math/tex">\lim_{x \to a^+} f(x) = L</script>.</li>
+<li>
+<script type="math/tex">\Leftarrow</script> if <script type="math/tex">\lim_{x \to a^+} f(x) = L</script> and <script type="math/tex">\lim_{x \to a^-} f(x) = L</script>. Then given <script type="math/tex">\epsilon > 0</script>, we can find <script type="math/tex">\delta^+, \delta^-</script> such that as long as <script type="math/tex">0 < x - a < \delta^+</script> or <script type="math/tex">0 < a - x < \delta^-</script>, <script type="math/tex">|f(x) - L| < \epsilon</script>. Let <script type="math/tex">\delta = \min \left\{ \delta^+, \delta^- \right\}</script>. </li>
+</ul>
+<h3 id="4211-squeeze-theorem">4.2.11 (Squeeze Theorem).</h3>
+<p>Let <script type="math/tex">f, g, h</script> satisfy <script type="math/tex">f(x) \leq g(x) \leq h(x)</script> for all <script type="math/tex">x</script> in some common domain <script type="math/tex">A</script>. if <script type="math/tex">\lim_{x \to c} f(x) = L</script> and <script type="math/tex">\lim_{x \to c} h(x) = L</script> at some limit point <script type="math/tex">c</script> of <script type="math/tex">A</script>, show <script type="math/tex">\lim_{x \to c} g(x) = L</script>.</p>
+<p>Proof: Given any sequence <script type="math/tex">(x_n) \rightarrow c</script>, <script type="math/tex">f(x_n) \leq g(x_n) \leq h(x_n)</script>, so <script type="math/tex">\lim_{n \to \infty} g(x_n) = L</script>. According to Theorem 4.2.3, <script type="math/tex">\lim_{x \to c} g(x) = L</script>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch04notes/" class="btn btn-neutral float-left" title="Chapter 04 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../misc/" class="btn btn-neutral float-right" title="Misc info">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch04notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
