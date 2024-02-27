@@ -54,6 +54,10 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 04 Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#42-functional-limits">4.2 Functional Limits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#43-continuous-functions">4.3 Continuous Functions</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -94,6 +98,40 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="chapter-04-functional-limits-and-continuity">Chapter 04 Functional Limits and Continuity</h1>
+<h2 id="42-functional-limits">4.2 Functional Limits</h2>
+<p><strong><em>Definition 4.2.1 (Functional Limit).</em></strong> Let <script type="math/tex">f : A \rightarrow \mathbb{R}</script>, and let <script type="math/tex">c</script> be a limit point of the domain <script type="math/tex">A</script>. We say that <script type="math/tex">\lim_{x \to c} f(x) = L</script> provided that, for all <script type="math/tex">\epsilon > 0</script>, there exists a <script type="math/tex">\delta > 0</script> such that whenever <script type="math/tex">0 < |x - c| < \delta</script> and <script type="math/tex">x \in A</script> it follows that <script type="math/tex">|f(x) - L| < \epsilon</script>.</p>
+<p><strong><em>Definition 4.2.1B (Functional Limit: Topological Version).</em></strong> Let <script type="math/tex">f : A \rightarrow \mathbb{R}</script>, and let <script type="math/tex">c</script> be a limit point of the domain <script type="math/tex">A</script>. We say that <script type="math/tex">\lim_{x \to c} f(x) = L</script> provided that, for every <script type="math/tex">\epsilon</script>-neighborhood <script type="math/tex">V_{\epsilon}(L)</script>, there exists a <script type="math/tex">\delta</script>-neighborhood <script type="math/tex">V_{\delta}(c)</script> around <script type="math/tex">c</script> with the property that for all <script type="math/tex">x \in V_{\delta}(c)</script> different from <script type="math/tex">c</script> with <script type="math/tex">x \in A</script> it follows that <script type="math/tex">f(x) \in V_{\epsilon}(L)</script>.</p>
+<p><strong><em>Theorem 4.2.3 (Sequential Criterion for Functional Limits).</em></strong> Given a function <script type="math/tex">f : A \rightarrow \mathbb{R}</script>, and a limit point <script type="math/tex">c</script> of <script type="math/tex">A</script>, the following two statements are equivalent:</p>
+<p>(i) <script type="math/tex">\lim_{x \to c} f(x) = L</script>
+</p>
+<p>(ii) For all sequences <script type="math/tex">(x_n) \subseteq A</script> satisfying <script type="math/tex">x_n \neq c</script> and <script type="math/tex">(x_n) \rightarrow c</script>, it follows <script type="math/tex">f(x_n) \rightarrow L</script>.</p>
+<p>Summry of proof:</p>
+<ul>
+<li>
+<script type="math/tex">\Rightarrow</script>: Given <script type="math/tex">(x_n) \rightarrow c</script>, and <script type="math/tex">\epsilon > 0</script>.
+Since <script type="math/tex">\lim_{x \to c} f(x) = L</script>, we can find <script type="math/tex">V_{\delta}(c)</script>, as long as <script type="math/tex">x \in V_{\delta}(c)</script>, <script type="math/tex">|f(x) - L| < \epsilon</script>. Since <script type="math/tex">(x_n) \rightarrow c</script>, we can find <script type="math/tex">N</script>, when <script type="math/tex">n > N</script>, <script type="math/tex">x_n \in V_{\delta}(c)</script>. So <script type="math/tex">|f(x_n) - L| < \epsilon</script>. Then <script type="math/tex">f(x_n) \rightarrow L</script>.</li>
+<li>
+<script type="math/tex">\Leftarrow</script>: Use contradiction. Assume ii holds, but <script type="math/tex">\lim_{x \to c} f(x) \ne L</script>. Then we can find an <script type="math/tex">\epsilon</script>, given any <script type="math/tex">\delta</script>, we can find <script type="math/tex">x_{\delta}</script>, such that <script type="math/tex">f(x_{\delta}) \notin V_{\epsilon}(L)</script>. Now let <script type="math/tex">\delta_n = 1/n</script>. Then we can construct <script type="math/tex">(x_n) \rightarrow c</script>, and <script type="math/tex">f(x_n) \not\rightarrow L</script>, so we have an contradiction.</li>
+</ul>
+<p><strong><em>Corollary 4.2.4 (Algebraic Limit Theorem for Functional Limits).</em></strong></p>
+<p><strong><em>Corollary 4.2.5 (Divergence Criterion for Functional Limits).</em></strong> Let <script type="math/tex">f</script> be a function defined on <script type="math/tex">A</script>, and let <script type="math/tex">c</script> be a limit point of <script type="math/tex">A</script>. If there exist two
+sequences <script type="math/tex">(x_n)</script> and <script type="math/tex">(y_n)</script> in <script type="math/tex">A</script> with <script type="math/tex">x_n \neq c</script> and <script type="math/tex">y_n \neq c</script> and <script type="math/tex">\lim x_n = \lim y_n = c</script> but <script type="math/tex">\lim f(x_n) \neq \lim f(y_n)</script>, then we can conclude that functional limit <script type="math/tex">\lim_{x \to c} f(x)</script> does not exist. </p>
+<h2 id="43-continuous-functions">4.3 Continuous Functions</h2>
+<p><strong><em>Definition 4.3.1 (Continuity).</em></strong> A function <script type="math/tex">f: A \rightarrow \mathbb{R}</script>
+<em>is continuous at a point</em> <script type="math/tex">c \in A</script> if for all <script type="math/tex">\epsilon > 0</script>, there exists a <script type="math/tex">\delta > 0</script> such that whenever <script type="math/tex">|x-c| < \delta</script> (and <script type="math/tex">x \in A</script>) it follows that <script type="math/tex">|f(x) - f(x)| < \epsilon</script>.</p>
+<p>If f is continuous at every point in the domain <script type="math/tex">A</script>, then we say that <script type="math/tex">f</script> is continuous on <script type="math/tex">A</script>.</p>
+<p><strong><em>Theorem 4.3.2 (Characterizations of Continuity).</em></strong> Let <script type="math/tex">f: A \rightarrow \mathbb{R}</script> and <script type="math/tex">c \in A</script>. A function <script type="math/tex">f</script> is continuous at a point <script type="math/tex">c</script> if and only if any one of the following
+three conditions is met:</p>
+<p>i. for all <script type="math/tex">\epsilon > 0</script>, there exists a <script type="math/tex">\delta > 0</script> such that whenever <script type="math/tex">|x-c| < \delta</script> (and <script type="math/tex">x \in A</script>) it follows that <script type="math/tex">|f(x) - f(c)| < \epsilon</script>.</p>
+<p>ii. for all <script type="math/tex">V_{\epsilon}(f(c))</script>, there exists a <script type="math/tex">V_{\delta}(c)</script> such that <script type="math/tex">x \in V_{\delta}(c)</script> and <script type="math/tex">x \in A</script> then <script type="math/tex">f(x) \in V_{\epsilon}(f(c))</script>.</p>
+<p>iii. For all <script type="math/tex">(x_n) \rightarrow c</script> with <script type="math/tex">x_n \in A</script>, it follows <script type="math/tex">f(x_n) \rightarrow f(c)</script>.</p>
+<p>If <script type="math/tex">c</script> is a limit point of <script type="math/tex">A</script>, then the above conditions are equivalent to</p>
+<p>iv. <script type="math/tex">\lim_{x \to c} f(x) = f(c)</script>.</p>
+<p>Summary of proof:</p>
+<ul>
+<li>The equivalence of (i) and (iii). Use similar argument in theorem 4.2.3.</li>
+</ul>
+<p><strong><em>Corollary 4.3.3 (Criterion for Discontinuity).</em></strong> Let <script type="math/tex">f: A \rightarrow \mathbb{R}</script> and <script type="math/tex">c \in A</script> be a limit point of <script type="math/tex">A</script>. If there exists a sequence <script type="math/tex">(x_n) \subseteq A</script> where <script type="math/tex">(x_n) \rightarrow c</script> but such that <script type="math/tex">f(x_n)</script> does not converge to <script type="math/tex">f(x)</script>, we may conclude that <script type="math/tex">f</script> is not continuous at <script type="math/tex">c</script>.</p>
               
             </div>
           </div><footer>
