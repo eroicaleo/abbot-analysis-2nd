@@ -90,3 +90,4 @@ mkdocs gh-deploy
 * [linearalgebras.com](https://linearalgebras.com/solution-understanding-analysis.html)
 * [github](https://github.com/mikinty/Understanding-Analysis-Abbott-Solutions)
 * [github UlisseMini](https://github.com/UlisseMini/understanding-analysis-solutions)
+* [solverer.com](https://solverer.com/library/stephen_abbott/understanding_analysis)

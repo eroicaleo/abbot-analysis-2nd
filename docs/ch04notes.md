@@ -23,3 +23,27 @@ Since $\lim_{x \to c} f(x) = L$, we can find $V_{\delta}(c)$, as long as $x \in 
 ***Corollary 4.2.5 (Divergence Criterion for Functional Limits).*** Let $f$ be a function defined on $A$, and let $c$ be a limit point of $A$. If there exist two
 sequences $(x_n)$ and $(y_n)$ in $A$ with $x_n \neq c$ and $y_n \neq c$ and $\lim x_n = \lim y_n = c$ but $\lim f(x_n) \neq \lim f(y_n)$, then we can conclude that functional limit $\lim_{x \to c} f(x)$ does not exist. 
 
+## 4.3 Continuous Functions
+
+***Definition 4.3.1 (Continuity).*** A function $f: A \rightarrow \mathbb{R}$ *is continuous at a point* $c \in A$ if for all $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $|x-c| < \delta$ (and $x \in A$) it follows that $|f(x) - f(x)| < \epsilon$.
+
+If f is continuous at every point in the domain $A$, then we say that $f$ is continuous on $A$.
+
+***Theorem 4.3.2 (Characterizations of Continuity).*** Let $f: A \rightarrow \mathbb{R}$ and $c \in A$. A function $f$ is continuous at a point $c$ if and only if any one of the following
+three conditions is met:
+
+i. for all $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $|x-c| < \delta$ (and $x \in A$) it follows that $|f(x) - f(c)| < \epsilon$.
+
+ii. for all $V_{\epsilon}(f(c))$, there exists a $V_{\delta}(c)$ such that $x \in V_{\delta}(c)$ and $x \in A$ then $f(x) \in V_{\epsilon}(f(c))$.
+
+iii. For all $(x_n) \rightarrow c$ with $x_n \in A$, it follows $f(x_n) \rightarrow f(c)$.
+
+If $c$ is a limit point of $A$, then the above conditions are equivalent to
+
+iv. $\lim_{x \to c} f(x) = f(c)$.
+
+Summary of proof:
+
+* The equivalence of (i) and (iii). Use similar argument in theorem 4.2.3.
+
+***Corollary 4.3.3 (Criterion for Discontinuity).*** Let $f: A \rightarrow \mathbb{R}$ and $c \in A$ be a limit point of $A$. If there exists a sequence $(x_n) \subseteq A$ where $(x_n) \rightarrow c$ but such that $f(x_n)$ does not converge to $f(x)$, we may conclude that $f$ is not continuous at $c$.
