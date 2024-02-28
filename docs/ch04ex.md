@@ -189,3 +189,14 @@ Proof:
 Let $f, g, h$ satisfy $f(x) \leq g(x) \leq h(x)$ for all $x$ in some common domain $A$. if $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} h(x) = L$ at some limit point $c$ of $A$, show $\lim_{x \to c} g(x) = L$.
 
 Proof: Given any sequence $(x_n) \rightarrow c$, $f(x_n) \leq g(x_n) \leq h(x_n)$, so $\lim_{n \to \infty} g(x_n) = L$. According to Theorem 4.2.3, $\lim_{x \to c} g(x) = L$.
+
+## 4.3 Continuous Functions
+
+### 4.3.3 
+
+(a) Supply a proof for Theorem 4.3.9 using the $\epsilon–δ$ characterization of continuity.
+
+Proof: Let $d = f(c)$. Since $g$ is continuous at $d$, then given any $\epsilon > 0$, we can find 
+$V_{\delta }(d)$, as long as $x \in V_{\delta }(d)$, $g(x) \in V_{\epsilon }(g(d))$.
+
+And since $f$ is continuous at $c$, then we can find $\zeta > 0$, as long as $x \in V_{\zeta }(c)$, $f(x) \in V_{\delta }(d)$. And in turn, $g(f(x)) \in V_{\epsilon}(g(f(c))$. So $g \circ f$ is continuous at $c$.  

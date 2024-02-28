@@ -47,3 +47,31 @@ Summary of proof:
 * The equivalence of (i) and (iii). Use similar argument in theorem 4.2.3.
 
 ***Corollary 4.3.3 (Criterion for Discontinuity).*** Let $f: A \rightarrow \mathbb{R}$ and $c \in A$ be a limit point of $A$. If there exists a sequence $(x_n) \subseteq A$ where $(x_n) \rightarrow c$ but such that $f(x_n)$ does not converge to $f(x)$, we may conclude that $f$ is not continuous at $c$.
+
+***Theorem 4.3.4 (Algebraic Continuity Theorem).***
+
+* $kf(x)$ is continuous at $c$ for all $k ∈ R$;
+* $f(x) + g(x)$ is continuous at $c$.
+* $f(x)g(x)$
+* $f(x)/g(x)$
+
+***Example 4.3.5.*** All polynomials are continuous on $\mathbb{R}$.
+
+***Example 4.3.6.*** 
+
+$$ g(x) = 
+\begin{cases}
+    x \sin (1/x) &\text{if } x \neq 0\\
+    0            &\text{if } x = 0\\
+\end{cases}  $$
+
+* To see $g(x)$ is continuous at 0, we can see $|g(x) - 0| = |x \sin (1/x)| \leq |x|$. So given $\epsilon$, we just need to set $\delta = \epsilon$.
+
+***Example 4.3.7.*** The greatest integer function $h(x) = [[x]]$.
+
+* When $m \in \mathbf{Z}$, consider the sequence $(x_n) = m-1/n$. Then $(x_n) \rightarrow m-1 \neq m = h(m)$.
+* When $c \not\in \mathbf{Z}$, let $\delta = \min \left\{ c - n, (n+1) - c \right\}$, then $h(x) = h(c) = n$.
+
+***Theorem 4.3.9 (Composition of Continuous Functions).*** Given $f : A→R$ and $g : B → R$, assume that the range $f(A) = {f(x) : x ∈ A}$ is contained in the domain $B$ so that the composition $g ◦ f(x) = g(f(x))$ is defined on $A$.
+
+If $f$ is continuous at $c ∈ A$, and if $g$ is continuous at $f(c) ∈ B$, then $g ◦ f$ is continuous at $c$.

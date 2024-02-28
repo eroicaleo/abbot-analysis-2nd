@@ -45,7 +45,7 @@ mkdocs gh-deploy
     * Use `ii` to insert inline equations.
     * Use `dd` to insert display math.
 
-* Other latex snippet are located under `snippets/latex.json`.
+* Other user defined latex snippet are located under `snippets/latex.json`. It's better to create a global user snippet and copy over the contents to there: (control palette -> "Snippets" -> "New Global").
 
 * In addition, to make the intellisense work for markdown file, I need to edit the `settings.json`
   (control palette -> "open user settings") by adding the following lines.

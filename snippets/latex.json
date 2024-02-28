@@ -19,4 +19,16 @@
 		"body": ["V_{${1:\\epsilon}}(${2:x}) $0"]
 	},
 
+	"LaTeX User - sequence": {
+		"scope": "",
+		"prefix": "seq",
+		"body": ["(${1:x}_${2:n})$0"]
+	},
+
+	"LaTeX User - sequence converges to": {
+		"scope": "",
+		"prefix": "seqcov",
+		"body": ["(${1:x}_${2:n}) \\rightarrow ${3:c}$0"]
+	},
+
 }
