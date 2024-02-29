@@ -199,4 +199,15 @@ Proof: Given any sequence $(x_n) \rightarrow c$, $f(x_n) \leq g(x_n) \leq h(x_n)
 Proof: Let $d = f(c)$. Since $g$ is continuous at $d$, then given any $\epsilon > 0$, we can find 
 $V_{\delta }(d)$, as long as $x \in V_{\delta }(d)$, $g(x) \in V_{\epsilon }(g(d))$.
 
-And since $f$ is continuous at $c$, then we can find $\zeta > 0$, as long as $x \in V_{\zeta }(c)$, $f(x) \in V_{\delta }(d)$. And in turn, $g(f(x)) \in V_{\epsilon}(g(f(c))$. So $g \circ f$ is continuous at $c$.  
+And since $f$ is continuous at $c$, then we can find $\zeta > 0$, as long as $x \in V_{\zeta }(c)$, $f(x) \in V_{\delta }(d)$. And in turn, $g(f(x)) \in V_{\epsilon}(g(f(c))$. So $g \circ f$ is continuous at $c$.
+
+### 4.3.12
+
+Let $F ⊆ R$ be a nonempty closed set and define
+$g(x) = \inf\{|x − a| : a ∈ F\}$.
+Show that $g$ is continuous on all of $\mathbf{R}$ and $g(x) \neq 0$ for all $x \not\in F$.
+
+Proof:
+
+* If $c \in F$, then $g(c) = 0$, $|g(x) - g(c)| = |g(x)| \leq |x - c|$. So $g$ is continuous at $c$. 
+* If $c \not\in F$, then we can find $x_1, x_2 \in F$ such that $c \in (x1, x2) \cap F = \emptyset$. So $g(c) = \min \left\{ c - x1, x2 - c \right\} \neq 0$. Choose $\delta < \min \left\{ c - x1, x2 - c \right\}$, then $|g(x) - g(c)| \leq  |x - c|$, so $g(x)$ is also continuous at $c \not\in F$.  
