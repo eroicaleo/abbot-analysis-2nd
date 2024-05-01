@@ -239,6 +239,70 @@ $\lim_{x \to p} g(f(x))$ does not exist at all.
 
 Proof: This is Theorem 4.3.9.
 
+(c) Does the result in (a) hold if we only assume $f$ is continuous? How about if we only assume that $g$ is continuous?
+
+Proof: if only $f$ is continuous, then (a) does not hold. Let
+
+$$ 
+f(x) = x \\
+g(x) =
+\begin{cases}
+    1 &\text{if } x = 0 \\
+    0 &\text{if } x \neq 0 \\
+\end{cases} 
+$$
+
+Then $\lim_{x \to 0} g(f(x)) = 0$, but $g(f(0)) = 1$. So $g(f(x))$ is not continuous at $0$.
+
+The above just proves a different thing.
+
+Now if only $g$ is continuous. Let
+
+$$ 
+f(x) = 
+\begin{cases}
+    1 &\text{if } x = 0 \\
+    0 &\text{if } x \neq 0 \\
+\end{cases} \\
+g(x) = x
+$$
+
+Then $\lim_{x \to 0} g(f(x)) = 0$, but $g(f(0)) = 1$. So $g(f(x))$ is not continuous at $0$.
+
+### 4.3.5
+
+Show using Definition 4.3.1 that if $c$ is an isolated point of $A ⊆ \mathbf{R}$, then $f : A → \mathbf{R}$ is continuous at $c$.
+
+Proof: Since $c$ is an isolated point of $A$, there is a $\delta$, such that $V_{\delta_0}(c) \cap A = \left\{ c \right\}$. Given any $\epsilon > 0$, as long as $|x - c| < \delta_0$,
+$|f(x) - f(c)| = |f(c) - f(c)| = 0 < \epsilon$ $\square$.
+
+### 4.3.6
+
+Provide an example of each or explain why the request is impossible.
+
+(a) Two functions $f$ and $g$, neither of which is continuous at $0$ but such that $f(x)g(x)$ and $f(x) + g(x)$ are continuous at $0$.
+
+Solution: Consider
+
+$$f(x) = 
+\begin{cases}
+    1 &\text{if } x = 0 \\
+    0 &\text{if } x \neq 0 \\
+\end{cases} \\
+$$
+
+and
+
+$$ 
+g(x) = 
+\begin{cases}
+    1 &\text{if } x \neq 0 \\
+    0 &\text{if } x = 0 \\
+\end{cases} \\
+$$
+
+Then $f(x)g(x) = 0$ and $f(x) + g(x) = 1$ are continuous everywhere. 
+
 ### 4.3.10
 
 Observe that if $a$ and $b$ are real numbers, then
@@ -290,11 +354,11 @@ $$ \left| f(x) - f(y) \right| \leq c|x-y| $$
 
 for all $x, y \in \mathbf{R}$.
 
-1. Show that $f(x)$ is continuous on $\mathbf{R}$.
+i. Show that $f(x)$ is continuous on $\mathbf{R}$.
 
 Proof: Given $\epsilon$, let $\delta = \epsilon / c$. Then $\left| f(x) - f(y) \right| \leq c|x-y| < c (\epsilon / c) = \epsilon$.
 
-2. Pick some point $y_1 ∈ \mathbf{R}$ and construct the sequence
+ii. Pick some point $y_1 ∈ \mathbf{R}$ and construct the sequence
 
 $$ (y_1, f(y_1), f(f(y_1)), \dots)$$
 
@@ -316,11 +380,11 @@ $$
 
 So $(y_n)$ is Cauchy sequence.
 
-3. Prove that $y$ is a fixed point of $f$ (i.e., $f(y) = y$) and that it is unique in this regard.
+iii. Prove that $y$ is a fixed point of $f$ (i.e., $f(y) = y$) and that it is unique in this regard.
 
 Proof: Assume $f(y) \neq y$. Since $(y_n) \rightarrow y$, we can find $y_1$ and $y_2 = f(y_1)$, which are close enough to $y$. And $|y_1 - y| < \epsilon$, $|y_2 - y| < \epsilon$ but $|y_2 - f(y)| > \epsilon$. Then $\epsilon < |y_2 - f(y)| = |f(y_1)-f(y)| \leq c|y_1-y| < |y_1 - y| < \epsilon$, we have a contradiction.
 
-4. Finally, prove that if $x$ is any arbitrary point in , then the sequence
+iv. Finally, prove that if $x$ is any arbitrary point in , then the sequence
 $(x, f(x), f(f(x)),...)$ converges to $y$ defined in (2).
 
 Proof: Assume $(x_n) \rightarrow x$ and $(y_n) \rightarrow y$, then

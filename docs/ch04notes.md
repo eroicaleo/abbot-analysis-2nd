@@ -25,7 +25,7 @@ sequences $(x_n)$ and $(y_n)$ in $A$ with $x_n \neq c$ and $y_n \neq c$ and $\li
 
 ## 4.3 Continuous Functions
 
-***Definition 4.3.1 (Continuity).*** A function $f: A \rightarrow \mathbb{R}$ *is continuous at a point* $c \in A$ if for all $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $|x-c| < \delta$ (and $x \in A$) it follows that $|f(x) - f(x)| < \epsilon$.
+***Definition 4.3.1 (Continuity).*** A function $f: A \rightarrow \mathbb{R}$ *is continuous at a point* $c \in A$ if for all $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $|x-c| < \delta$ (and $x \in A$) it follows that $|f(x) - f(c)| < \epsilon$.
 
 If f is continuous at every point in the domain $A$, then we say that $f$ is continuous on $A$.
 
