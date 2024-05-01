@@ -201,6 +201,132 @@ $V_{\delta }(d)$, as long as $x \in V_{\delta }(d)$, $g(x) \in V_{\epsilon }(g(d
 
 And since $f$ is continuous at $c$, then we can find $\zeta > 0$, as long as $x \in V_{\zeta }(c)$, $f(x) \in V_{\delta }(d)$. And in turn, $g(f(x)) \in V_{\epsilon}(g(f(c))$. So $g \circ f$ is continuous at $c$.
 
+### 4.3.4
+
+Assume $f$ and $g$ are defined on all of $\mathbf{R}$ and that
+$\lim_{x \to p} f(x) = q$ and $\lim_{x \to q} g(x) = r$.
+
+(a) Give an example to show that it may not be true that
+
+$$ \lim_{x \to p} g(f(x)) = r. $$
+
+Let $f$ be the Modified Dirichlet Function, i.e.
+
+$$ f(x) =
+\begin{cases}
+    x &\text{if } x \in \mathbf{Q} \\
+    0 &\text{if } x \not\in \mathbf{Q} \\
+\end{cases}  $$
+
+Let $g(x)$ be
+
+$$ 
+g(x) =
+\begin{cases}
+    1 &\text{if } x = 0 \\
+    0 &\text{if } x \neq 0 \\
+\end{cases} 
+$$
+
+Assume $(x_n) \rightarrow 0$ and $x_n$ are all irrational numbers.
+Then $g(f(x_n)) \rightarrow 1$.
+
+On the other hand, $(y_n) \rightarrow 0$ and $y_n$ are all rational numbers, so $g(f(y_n)) \rightarrow 0$.
+
+$\lim_{x \to p} g(f(x))$ does not exist at all.
+
+(b) Show that the result in (a) does follow if we assume $f$ and $g$ are continuous.
+
+Proof: This is Theorem 4.3.9.
+
+### 4.3.10
+
+Observe that if $a$ and $b$ are real numbers, then
+
+$$\max \left\{ a, b \right\} = \frac{1}{2} [(a+b)+|a-b|].$$
+
+
+1. show that if $f_1, f_2, \dots, f_n$ are continuous functions, then $g(x) = \max \left\{ f_1(x), f_2(x), \dots f_n(x) \right\}$ is a continuous function.
+
+Proof: If $f(x)$ is a continuous function and given $c$, and $\epsilon > 0$, we can find $\delta > 0$, if $x \in V_{\delta }(c)$, then $|f(x) - f(c)| < \epsilon$. Since $||f(x)| - |f(c)|| \le |f(x) - f(c)| < \epsilon$, so $|f(x)|$ is also continuous function.
+
+Then $g(x) = \max \left\{ f_1(x), f_2(x) \right\}= \frac{1}{2} [(f_1(x) + f_2(x)) + |f_1(x) - f_2(x)|]$ is also continuous.
+
+Then we can use induction to see it's true for any $n$.
+
+* another approach
+
+For $c$, assume $g(c) = \max \left\{ f_1(c), f_2(c), \dots f_n(c) \right\} = f_1(c)$. Assume $(x_n) \rightarrow c$, and assume $(x_{n_k})$ is a subsequence and $g(x_{n_k}) = f_2(x_{n_k})$. Since $f_2$ is continuous, we have $(f_2(x_{n_k})) \rightarrow f_2(c)$. Since $\max \left\{ f_1(c), f_2(c), \dots f_n(c) \right\} = f_1(c)$, we have $f_1(c) \geq f_2(c)$. Since $f_1(x_{n_k}) \leq f_2(x_{n_k})$ and $(f_1(x_{n_k})) \rightarrow f_1(c)$, we have $f_1(c) \leq f_2(c)$. So $f_1(c) = f_2(c)$. This means $g(x_n) \rightarrow g(c)$. So $g(x)$ is continuous. 
+
+2. Let’s explore whether the result in (a) extends to the infinite case. For each $n ∈ \mathbf{N}$, define $f_n$ on $\mathbf{R}$ by
+
+$$ 
+f_n(x) =
+\begin{cases}
+    1 &\text{if } |x| \geq 1/n \\
+    n|x| &\text{if } |x| < 1/n \\
+\end{cases}
+$$
+
+Now explicitly compute $h(x) = \sup \left\{f_1(x), f_2(x), f_3(x), \dots\right\}$.
+
+Solution:
+
+$$ 
+h(x) = 
+\begin{cases}
+    1 &\text{if } x \neq 0 \\
+    0 &\text{if } x = 0 \\
+\end{cases}
+$$
+
+So $h(x)$ is not continuous at $0$.
+
+### 4.3.11 (Contraction Mapping Theorem).
+
+Let $f$ be a function defined on all of $\mathbf{R}$, and assume there is a constant $c$ such that $0 <c< 1$ and
+
+$$ \left| f(x) - f(y) \right| \leq c|x-y| $$
+
+for all $x, y \in \mathbf{R}$.
+
+1. Show that $f(x)$ is continuous on $\mathbf{R}$.
+
+Proof: Given $\epsilon$, let $\delta = \epsilon / c$. Then $\left| f(x) - f(y) \right| \leq c|x-y| < c (\epsilon / c) = \epsilon$.
+
+2. Pick some point $y_1 ∈ \mathbf{R}$ and construct the sequence
+
+$$ (y_1, f(y_1), f(f(y_1)), \dots)$$
+
+In general, if $y_{n+1} = f(y_n)$, show that the resulting sequence $(y_n)$ is a Cauchy sequence. Hence we may let $y = \lim y_n$.
+
+Proof: First, we prove $(y_n)$ is bounded. Assume $|y_2 - y_1| = M$, then $|y_2| \leq \left| y_1 \right| + M$.
+
+$$ 
+\left| y_3 - y_2 \right| \leq c |y_2 - y_1| = cM \\
+|y_3| \leq |y_2| + cM \leq |y_1| + (1 + c)M \\
+|y_n| \leq |y_1| + \frac{1}{1 - c}M = K
+$$
+
+So assume $n > m$, 
+
+$$ 
+|y_n - y_m| = c^{m-1} | y_{n-m+1} - y_1| \leq c^{m-1} 2K
+$$
+
+So $(y_n)$ is Cauchy sequence.
+
+3. Prove that $y$ is a fixed point of $f$ (i.e., $f(y) = y$) and that it is unique in this regard.
+
+Proof: Assume $f(y) \neq y$. Since $(y_n) \rightarrow y$, we can find $y_1$ and $y_2 = f(y_1)$, which are close enough to $y$. And $|y_1 - y| < \epsilon$, $|y_2 - y| < \epsilon$ but $|y_2 - f(y)| > \epsilon$. Then $\epsilon < |y_2 - f(y)| = |f(y_1)-f(y)| \leq c|y_1-y| < |y_1 - y| < \epsilon$, we have a contradiction.
+
+4. Finally, prove that if $x$ is any arbitrary point in , then the sequence
+$(x, f(x), f(f(x)),...)$ converges to $y$ defined in (2).
+
+Proof: Assume $(x_n) \rightarrow x$ and $(y_n) \rightarrow y$, then
+$|x - y| \le |x - x_n | + |x_n - y_n | + | y_n - y | < \epsilon +
+c^n|x - y| + \epsilon$ and can be arbitrarily small. So $x = y$. 
+
 ### 4.3.12
 
 Let $F ⊆ R$ be a nonempty closed set and define
@@ -210,4 +336,20 @@ Show that $g$ is continuous on all of $\mathbf{R}$ and $g(x) \neq 0$ for all $x 
 Proof:
 
 * If $c \in F$, then $g(c) = 0$, $|g(x) - g(c)| = |g(x)| \leq |x - c|$. So $g$ is continuous at $c$. 
-* If $c \not\in F$, then we can find $x_1, x_2 \in F$ such that $c \in (x1, x2) \cap F = \emptyset$. So $g(c) = \min \left\{ c - x1, x2 - c \right\} \neq 0$. Choose $\delta < \min \left\{ c - x1, x2 - c \right\}$, then $|g(x) - g(c)| \leq  |x - c|$, so $g(x)$ is also continuous at $c \not\in F$.  
+* If $c \not\in F$, then we can find $x_1, x_2 \in F$ such that $c \in (x1, x2) \cap F = \emptyset$. So $g(c) = \min \left\{ c - x1, x2 - c \right\} \neq 0$. Choose $\delta < \min \left\{ c - x_1, x_2 - c \right\}$, then $|g(x) - g(c)| \leq  |x - c|$, so $g(x)$ is also continuous at $c \not\in F$.
+
+### 4.3.14
+
+(a) Let $F$ be a closed set. Construct a function $f : \mathbf{R} \mapsto \mathbf{R}$, such that the set of points where $f$ fails to be continuous is precisely $F$. (The concept of the interior of a set, discussed in Exercise 3.2.14, may be useful.)
+
+Solution: consider
+
+$$ f(x) = 
+\begin{cases}
+    0 &\text{if } x \not\in F\\
+    1 &\text{if } x \in F \cap \mathbf{Q}\\
+    -1 &\text{if } x \in F \cap \overline{\mathbf{Q}}\\
+\end{cases}
+$$
+
+If $x \in E^o$, then we can find $(x-\epsilon , x+\epsilon) \subset F$, since both $\mathbf{Q}$ and  
