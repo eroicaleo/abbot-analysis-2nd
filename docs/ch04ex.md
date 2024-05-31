@@ -241,10 +241,10 @@ Proof: This is Theorem 4.3.9.
 
 (c) Does the result in (a) hold if we only assume $f$ is continuous? How about if we only assume that $g$ is continuous?
 
-Proof: if only $f$ is continuous, then (a) does not hold. Let
+Proof: if only $f$ is continuous, then (a) might not hold. Let
 
 $$ 
-f(x) = x \\
+f(x) = x \sin \frac{1}{x} \\
 g(x) =
 \begin{cases}
     1 &\text{if } x = 0 \\
@@ -252,22 +252,11 @@ g(x) =
 \end{cases} 
 $$
 
-Then $\lim_{x \to 0} g(f(x)) = 0$, but $g(f(0)) = 1$. So $g(f(x))$ is not continuous at $0$.
+Then $f(x)$ is continuous. Consider $(x_n) = \frac{1}{(2n \pi )}$, then $(x_n) \rightarrow 0$, and $\lim_{n \to \infty} g(f(x_n)) = \lim_{n \to \infty} 1 = 1$.
 
-The above just proves a different thing.
+Now consider $(y_n) = \frac{1}{(2n + 1/2) \pi}$, then $(y_n) \rightarrow 0$, and $\lim_{n \to \infty} g(f(y_n)) = \lim_{n \to \infty} 0 = 0$. So $\lim_{x \to 0} g(f(x)) = 0$ does not exist.
 
-Now if only $g$ is continuous. Let
-
-$$ 
-f(x) = 
-\begin{cases}
-    1 &\text{if } x = 0 \\
-    0 &\text{if } x \neq 0 \\
-\end{cases} \\
-g(x) = x
-$$
-
-Then $\lim_{x \to 0} g(f(x)) = 0$, but $g(f(0)) = 1$. So $g(f(x))$ is not continuous at $0$.
+Now if only $g$ is continuous. Let $\lim_{x \to q} g(x) = r = g(q)$. Then if $x \in V_{\delta}(q)$, then $g(x) \in V_{\epsilon}(r)$. Since $\lim_{x \to p} f(x) = q$, then we can find $\sigma$, such that $x \in V_{\sigma}(p)$, $f(x) \in V_{\delta}(q)$.
 
 ### 4.3.5
 
@@ -301,7 +290,93 @@ g(x) =
 \end{cases} \\
 $$
 
-Then $f(x)g(x) = 0$ and $f(x) + g(x) = 1$ are continuous everywhere. 
+Then $f(x)g(x) = 0$ and $f(x) + g(x) = 1$ are continuous everywhere.
+
+(b) A function $f(x)$ continuous at 0 and $g(x)$ not continuous at $0$ such that $f(x) + g(x)$ is continuous at $0$.
+
+Solution: it's not possible. Let $h(x) = f(x) + g(x)$. If $h(x), f(x)$ are continuous. Then $h(x) - f(x)$ will be continuous.
+
+(c) A function $f(x)$ continuous at $0$ and $g(x)$ not continuous at $0$ such that $f(x)g(x)$ is continuous at $0$.
+
+Solution: Let $f(x) = 0$, and
+
+$$ 
+g(x) = 
+\begin{cases}
+    1 &\text{if } x \neq 0 \\
+    0 &\text{if } x = 0 \\
+\end{cases} \\
+$$
+
+$\square$
+
+(d) A function $f(x)$ not continuous at $0$ such that $f(x) + \frac{1}{f(x)}$ is continuous at $0$.
+
+$$
+f(x) = 
+\begin{cases}
+    x + 2 &\text{if } x \neq 0 \\
+    \frac{1}{2} &\text{if } x = 0 \\
+\end{cases} 
+$$
+
+$\square$
+
+(e) A function $f(x)$ not continuous at 0 such that $[f(x)]^3$ is continuous at $0$.
+
+Solution: this is not possible.
+
+If $f(0) = 0$, then since $f^3(x)$ is continuous, we can find
+$\delta$ such that $|f^3(x)| < \epsilon^3$, then $|f(x)| < \epsilon$. 
+
+If $f(0) = c \neq 0$, then
+
+$$
+|f(x) - f(0)| = |\frac{f^3(x) - f^3(0)}{f^2(x) + f(x)f(0) + f^2(0)}| \\
+= |\frac{f^3(x) - f^3(0)}{(f(x) + f(0)/2)^2+3/4f^2(0)}| \\
+\leq |\frac{f^3(x) - f^3(0)}{3/4f^2(0)}|
+$$
+
+So $|f(x) - f(0)| < \epsilon$.
+
+### 4.3.7
+
+(a) Referring to the proper theorems, give a formal argument that Dirichlet’s function from Section 4.1 is nowhere-continuous on R.
+
+Proof:
+
+$$ 
+g(x) =
+\begin{cases}
+    1 &\text{if } x \in \mathbf{Q}\\
+    0 &\text{if } x \not\in \mathbf{Q}\\
+\end{cases} 
+$$
+
+Given any $x$, one sequence $(a_n) \rightarrow x$, where they are all rational numbers. Given $(b_n) \rightarrow x$, where they are all irrational numbers. According to Corollary 4.3.3, Dirichlet’s function from is nowhere-continuous on $\mathbf{R}$. $\square$
+
+(b) Review the definition of Thomae’s function in Section 4.1 and demonstrate that it fails to be continuous at every rational point.
+
+Proof: Given $(b_n) \rightarrow x$, where they are all irrational numbers.
+
+(c) Use the characterization of continuity in Theorem 4.3.2 (iii) to show that Thomae’s function is continuous at every irrational point in $\mathbf{R}$. (Given $ε > 0$, consider the set of points $\{x ∈ R : t(x) ≥ ε\}$.)
+
+Proof: For any irrational point, and any natural number $n$, we can find integer $m$, such that $m/n < x < (m+1)/n$.
+Let $\epsilon < 1/N$, and find $\delta$ such that none of the $2N$ points are in the $V_{\delta}(x)$. $\square$
+
+### 4.3.8
+
+Decide if the following claims are true or false, providing either a short proof or counterexample to justify each conclusion. Assume throughout that $g$ is defined and continuous on all of $\mathbf{R}$.
+
+(a) If $g(x)≥0$ for all $x<1$ ,then $g(1)≥0$ as well.
+
+Proof: True. Given $(x_n) \rightarrow 1$. Since $g(x_n) \geq 0$,
+then $g(1) = \lim_{n \to \infty} g(x_n) \geq 0$. $\square$.
+
+(b) If $g(r)=0$ for all $r∈ \mathbf{Q}$ ,then $g(x)=0$ for all $x∈R$.
+
+Proof: True. Given $(x_n) \rightarrow a$, where $a$ is an irrational number. $g(a) = \lim_{n \to \infty} g(x_n) = 0$.
+
 
 ### 4.3.10
 
@@ -402,6 +477,25 @@ Proof:
 * If $c \in F$, then $g(c) = 0$, $|g(x) - g(c)| = |g(x)| \leq |x - c|$. So $g$ is continuous at $c$. 
 * If $c \not\in F$, then we can find $x_1, x_2 \in F$ such that $c \in (x1, x2) \cap F = \emptyset$. So $g(c) = \min \left\{ c - x1, x2 - c \right\} \neq 0$. Choose $\delta < \min \left\{ c - x_1, x_2 - c \right\}$, then $|g(x) - g(c)| \leq  |x - c|$, so $g(x)$ is also continuous at $c \not\in F$.
 
+### 4.3.13
+
+Let $f$ be a function defined on all of $\mathbf{R}$ that satisfies the additive condition $f (x + y) = f (x) + f (y)$ for all $x, y ∈ \mathbf{R}$.
+
+(a) Show that $f(0)=0$ and that $f(−x)=−f(x)$ for all $x∈\mathbf{R}$.
+
+Proof: $f(0) = f(0+0) = f(0) + f(0)$, so $f(0) = 0$. $f(x) + f(-x) = f(x-x) = f(0) = 0$, so $f(-x) = -f(x)$.
+
+(b) Let $k=f(1)$. Show that $f(n)=kn$ for all $n∈N$,and then prove that $f(z) = kz$ for all $z ∈ Z$. Now, prove that $f(r) = kr$ for any rational number $r$.
+
+Proof: let $r = p/q$. $f(1) = f(1/q + \dots+1/q) = qf(1/q)$, so
+$f(q) = f(1)/q$. So $f(r) = kr$.
+
+(c) Show that if $f$ is continuous at $x = 0$, then $f$ is continuous at every point in $\mathbf{R}$ and conclude that $f(x) = kx$ for all $x ∈ R$.
+
+Proof: $|f(x) - f(y)| = |f(x-y)|$, since $f(0)$ is continuous at 0, then $|f(x-y)| < \epsilon$. So $f$ is continuous at every point in $\mathbf{R}$. We can find a rational sequence converges to $x$,
+so $f(x) = kx$. 
+
+
 ### 4.3.14
 
 (a) Let $F$ be a closed set. Construct a function $f : \mathbf{R} \mapsto \mathbf{R}$, such that the set of points where $f$ fails to be continuous is precisely $F$. (The concept of the interior of a set, discussed in Exercise 3.2.14, may be useful.)
@@ -416,4 +510,23 @@ $$ f(x) =
 \end{cases}
 $$
 
-If $x \in E^o$, then we can find $(x-\epsilon , x+\epsilon) \subset F$, since both $\mathbf{Q}$ and  
+If $x \in E^o$, then we can find $(x-\epsilon , x+\epsilon) \subset F$, since both $\mathbf{Q}$ and
+
+(b) Now consider an open set $O$. Construct a function $g : R → R$ whose set of discontinuous points is precisely $O$. (For this problem, the function in Exercise 4.3.12 may be useful.)
+
+Solution: consider $F = \mathbf{R} - O$ and $g(x)$ is in Exercise 4.3.12.
+
+$$
+f(x) =
+\begin{cases}
+    0 &\text{if } x \in O \cap I \\
+    g(x) &\text{otherwise} \\
+\end{cases}
+$$
+
+First, $f(x)$ is continuous at $c \in F$. It can be proved the same
+way in 4.3.12.
+
+Next if $x \in O$ is rational, then $g(x) > 0$. But we can find a sequence of irrational numbers $(x_n) \rightarrow x$ and $f(x_n) = 0$. So $\lim_{n \to \infty} f(x_n) = 0 \neq f(x)$.
+
+Finally if $x \in O$ is irrational, and assume $x_1 < y_1 < x < y_2 < x_2$ where $x_1, x_2 \in F$, $y_1, y_2 \in O \cap \mathbf{Q}$. Given any $y_1 < y < y_2 \in \mathbf{Q}$, $g(y) > \min \left\{ y_1-x_1, x_2-y_2\right\} > 0$. Since $f(x) = 0$, then $f(x)$ is not continuous at $x$.   
