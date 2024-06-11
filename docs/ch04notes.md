@@ -75,3 +75,17 @@ $$ g(x) =
 ***Theorem 4.3.9 (Composition of Continuous Functions).*** Given $f : A→R$ and $g : B → R$, assume that the range $f(A) = {f(x) : x ∈ A}$ is contained in the domain $B$ so that the composition $g ◦ f(x) = g(f(x))$ is defined on $A$.
 
 If $f$ is continuous at $c ∈ A$, and if $g$ is continuous at $f(c) ∈ B$, then $g ◦ f$ is continuous at $c$.
+
+## 4.4 Continuous Functions on Compact Sets
+
+***Theorem 4.4.1 (Preservation of Compact Sets).*** Let $f : A → R$ be continuous on $A$. If $K ⊆ A$ is compact, then $f(K)$ is compact as well.
+
+* Proof: Assume $(y_n)$ is a sequence in $f(K)$. We can find $(x_n)$ such that $f(x_n) = y_n$. Since $K$ is compact, there is a subsequence $(x_{n_k}) \rightarrow x$. Because $f$ is continuous at $x$, then $\lim_{n_k \to \infty} y_{n_k} = f(x) \in f(K)$. So
+we find subsequence $(y_{k_n}) \rightarrow f(x)$. So $f(K)$ is compact.
+
+***Theorem 4.4.2 (Extreme Value Theorem).*** If $f : K → R$ is continuous on a compact set $K ⊆ R$, then $f$ attains a maximum and minimum value. In other words, there exist $x_0,x_1 ∈ K$ such that $f(x_0) ≤ f(x) ≤ f(x_1)$ for all $x ∈ K$.
+
+***Definition 4.4.4 (Uniform Continuity).*** A function $f : A → R$ is uniformly continuous on $A$ if for every $ε > 0$ there exists a $δ > 0$ such that for all $x, y ∈ A$, $|x−y|<δ$ implies $|f(x)−f(y)|<ε$.
+
+***Theorem 4.4.5 (Sequential Criterion for Absence of Uniform Continuity).*** A function $f : A → R$ fails to be uniformly continuous on $A$ if and only if there exists a particular $ε_0 > 0$ and two sequences $(x_n)$ and $(y_n)$ in A satisfying
+$|x_n − y_n|→0$ but $|f(x_n)−f(y_n)|≥ε_0$.

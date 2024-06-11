@@ -530,3 +530,76 @@ way in 4.3.12.
 Next if $x \in O$ is rational, then $g(x) > 0$. But we can find a sequence of irrational numbers $(x_n) \rightarrow x$ and $f(x_n) = 0$. So $\lim_{n \to \infty} f(x_n) = 0 \neq f(x)$.
 
 Finally if $x \in O$ is irrational, and assume $x_1 < y_1 < x < y_2 < x_2$ where $x_1, x_2 \in F$, $y_1, y_2 \in O \cap \mathbf{Q}$. Given any $y_1 < y < y_2 \in \mathbf{Q}$, $g(y) > \min \left\{ y_1-x_1, x_2-y_2\right\} > 0$. Since $f(x) = 0$, then $f(x)$ is not continuous at $x$.   
+
+## 4.4 Continuous Functions on Compact Sets
+
+### 4.4.4
+
+Decide whether each of the following statements is true or false, justifying each conclusion.
+
+(a) If $f$ is continuous on $[a,b]$ with $f(x) > 0$ for all $a ≤ x ≤ b$, then $1/f$ is bounded on $[a, b]$ (meaning $1/f$ has bounded range).
+
+Solution: True. Since $f$ is continuous on $[a,b]$. then $f(x)$ attains maximum and minimum value, say $c$ and $d$ which are all $> 0$. Then $1/f$ is bounded by $[1/c, 1/d]$.
+
+(b) If $f$ is uniformly continuous on a bounded set $A$, then $f(A)$ is bounded.
+
+Solution: True. Assume otherwise, we can find a sequence $(x_n)$ such that $\lim_{n \to \infty} f(x_n) = \infty$. Since $A$ is bounded,
+we can assume $(x_n) \rightarrow x$. Given $\epsilon_0$ and any $\delta$, we can find $\delta' < \delta/2$, such that $x_1, x_2 \in V_{\delta /2}(x)$ and $|f(x_1) - f(x_2)| > \epsilon$. So $f$ is
+not uniformly continuous. We have a contradiction.
+
+(c) If $f$ is defined on $\mathbf{R}$ and $f(K)$ is compact whenever $K$ is compact, then $f$ is continuous on $\mathbf{R}$.
+
+Solution: False. Consdier Dirichlet function. $f(K) = \{0, 1\}$ is always compact. 
+
+### 4.4.6
+
+Give an example of each of the following, or state that such a request is impossible. For any that are impossible, supply a short explanation for why this is the case.
+
+(a) A continuous function $f : (0,1) → R$ and a Cauchy sequence $(x_n)$  such that $f(x_n)$ is not a Cauchy sequence.
+
+Solution: Consdier $f(x) = 1/x$ and $x_n = 1/n$.
+
+(b) A uniformly continuous function $f : (0, 1) → R$ and a Cauchy sequence $(x_n)$ such that $f(x_n)$ is not a Cauchy sequence;
+
+Solution: This is impossible. Given $\epsilon$, we can find $\delta$, such that $|x_n - x_m| < \delta$, $|f(x_n) - f(x_m)| < \epsilon$. We can also find $N$, as long as $n, m > N$ then $|x_n - x_m| < \delta$。 Then we have $|f(x_n) - f(x_m)| < \epsilon$.
+
+(c) A continuous function $f : [0,∞) → \mathbf{R}$ and a Cauchy sequence $(x_n)$ such that $f (x_n)$ is not a Cauchy sequence.
+
+Solution: This is impossible. Since $(x_n)$ is Cauchy sequence, then it's bounded. Assume $x_n \in [0, M]$, then $f$ is uniformly
+continuous. So $f (x_n)$ must be Cauchy.
+
+### 4.4.7.
+Prove that $f (x) = \sqrt[]{x}$ is uniformly continuous on $[0, ∞)$.
+
+Proof: If $x_1, x_2 \geq 1$, then
+
+$$ 
+|\sqrt[]{x_1} - \sqrt[]{x_2}| =
+|(x_1 - x_2)/(\sqrt[]{x_1} + \sqrt[]{x_2})| \leq
+|(x_1 - x_2)/2|
+$$
+
+So $f(x)$ is uniformly continuous on $[1, \infty ]$. It's also uniformly continuous on $[0,1]$ since $[0,1]$ is a closed set. Similar to Exercise 4.4.5, $f(x)$
+is uniformly continuous on $[0, ∞)$.
+
+### 4.4.12.
+
+Review Exercise 4.4.11, and then determine which of the
+following statements is true about a continuous function defined on R:
+
+(a) $f^{-1}(B)$ is finite whenever $B$ is finite.
+
+Solution: False. Consider a constant function: $f(x) = 0$.
+
+(b) $f^{−1}(K)$ is compact whenever $K$ is compact.
+
+Solution: False. Consider $f(x) = \sin x$. When $K = [-1, 1]$, then $f^{−1}(K) = \mathbf{R}$ which is not compact.
+
+(c) $f^{−1}(A)$ is bounded whenever $A$ is bounded.
+
+Solution: Same example from (b).
+
+(d) $f^{−1}(F)$ is closed whenever $F$ is closed.
+
+Solution: False. Consider $f(x) = \ln x$, and $F = \mathbf{R}$.
+Then $f^{−1}(F) = (0, +\infty)$ which is open.
