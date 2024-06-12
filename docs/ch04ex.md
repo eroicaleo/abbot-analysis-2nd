@@ -582,6 +582,44 @@ $$
 So $f(x)$ is uniformly continuous on $[1, \infty ]$. It's also uniformly continuous on $[0,1]$ since $[0,1]$ is a closed set. Similar to Exercise 4.4.5, $f(x)$
 is uniformly continuous on $[0, ∞)$.
 
+### 4.4.8
+
+Give an example of each of the following, or provide a short argument for why the request is impossible.
+
+(a) A continuous function defined on $[0, 1]$ with range $(0, 1)$.
+
+Solution: this is impossible. According to Theorem 4.4.1, $f(K)$ must be compact. But $(0,1)$ is not.
+
+(b) A continuous function defined on $(0, 1)$ with range $[0, 1]$.
+
+Solution: Consider $f(x) = |\sin 2 \pi x|$
+
+(c) A continuous function defined on $(0, 1]$ with range $(0, 1)$.
+
+Solution: Consdier
+
+$$ 
+f(x) = \frac{1}{2} + \frac{(1-x)}{2} \sin \frac{1}{x}
+$$
+
+### 4.4.9
+
+(Lipschitz Functions). A function $f : A → R$ is called Lipschitz if there exists a bound $M > 0$ such that
+
+$$ 
+|\frac{f(x) - f(y)}{x - y}| \leq M
+$$
+
+for all $x \neq y ∈ A$. Geometrically speaking, a function $f$ is Lipschitz if there is a uniform bound on the magnitude of the slopes of lines drawn through any two points on the graph of $f$.
+
+(a) Show that if $f : A → \mathbf{R}$ is Lipschitz, then it is uniformly continuous on $A$.
+
+Proof: Given $\epsilon$, we can find $\delta  = \epsilon / M$. 
+
+(b) Is the converse statement true? Are all uniformly continuous functions necessarily Lipschitz?
+
+Solution: False. Consider $f(x) = x^2 : \mathbf{N} \rightarrow \mathbf{R}$. It's uniformly continuous. But it's not Lipschitz.
+
 ### 4.4.12.
 
 Review Exercise 4.4.11, and then determine which of the
