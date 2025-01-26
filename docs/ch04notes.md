@@ -89,3 +89,28 @@ we find subsequence $(y_{k_n}) \rightarrow f(x)$. So $f(K)$ is compact.
 
 ***Theorem 4.4.5 (Sequential Criterion for Absence of Uniform Continuity).*** A function $f : A → R$ fails to be uniformly continuous on $A$ if and only if there exists a particular $ε_0 > 0$ and two sequences $(x_n)$ and $(y_n)$ in A satisfying
 $|x_n − y_n|→0$ but $|f(x_n)−f(y_n)|≥ε_0$.
+
+## 4.5 The Intermediate Value Theorem
+
+***Theorem 4.5.1 (Intermediate Value Theorem).*** Let $f : [a,b] → R$ be continuous. If $L$ is a real number satisfying $f(a) < L < f(b)$ or $f(a) > L > f(b)$, then there exists a point $c ∈ (a,b)$ where $f(c) = L$.
+
+***Theorem 4.5.2 (Preservation of Connected Sets).*** Let f : G → R be continuous. If E ⊆ G is connected, then f(E) is connected as well.
+
+Proof: Let $f(E) = A ∪ B$ where $A$ and $B$ are disjoint and nonempty.
+
+Let
+
+$$ 
+C=\{x∈E:f(x)∈A\} \text{ and }
+D=\{x∈E:f(x)∈B\}
+$$
+
+* Because $A, B$ are nonempty, so $C, D$ are nonempty.
+* Because $A, B$ are disjoint, so $C, D$ are disjoint.
+* Also $E = C \cup D$.
+
+Since $E$ is connected, we can assume there is a sequence $(x_n) \in C$ such that $\lim x_n = x \in D$.
+Since $f$ is continuous, then $f(x_n) \in A$ and $\lim f(x_n) = f(x) \in B$. So $f(E)$ is also connected.
+$\square$ 
+
+***Definition 4.5.3.*** A function $f$ has the intermediate value property on an interval $[a,b]$ if for all $x < y$ in $[a,b]$ and all $L$ between $f(x)$ and $f(y)$, it is always possible to find a point $c ∈ (x,y)$ where $f(c) = L$.

@@ -620,6 +620,43 @@ Proof: Given $\epsilon$, we can find $\delta  = \epsilon / M$.
 
 Solution: False. Consider $f(x) = x^2 : \mathbf{N} \rightarrow \mathbf{R}$. It's uniformly continuous. But it's not Lipschitz.
 
+### 4.4.10
+
+Assume that $f$ and $g$ are uniformly continuous functions defined on a common domain $A$. Which of the following combinations are necessarily uniformly continuous on $A$:
+
+(a) $f(x) + g(x)$
+
+Solution: yes.
+
+(b) $f(x)g(x)$
+
+Solution: No. Consider $f(x) = g(x) = x$.
+
+(c) $f(x)/g(x)$
+
+Solution: No. Consider $f(x) = x, g(x) = 1/x, A = [1, \infty ]$.
+
+(d) $f(g(x))$
+
+Solution: Yes. Given $\epsilon$, since $f$ is uniformly continuous,
+we can find $\zeta$, as long as $|y_1 - y_2| < \zeta$, $|f(y_1) - f(y_2)| < \epsilon$. Since $g$ is also uniformly continuous, we can find $\delta$, as long as $|x_1 - x_2| < \delta$, $|g(x_1) - g(x_2)| < \zeta$, so $|f(g(x_1)) - f(g(x_2))| < \epsilon$.
+
+### 4.4.11 (Topological Characterization of Continuity)
+
+Let $g$ be defined on all of $\mathbf{R}$. If $B$ is a subset of $\mathbf{R}$, define the set $g^{−1}(B)$ by
+
+$$ 
+g^{−1}(B)= \left\{ 
+    x \in \mathbf{R} : g(x) \in B
+ \right\} 
+$$
+
+Show that $g$ is continuous if and only if $g^{−1}(O)$ is open whenever $O ⊆ \mathbf{R}$ is an open set.
+
+Proof: $\Rightarrow$ Assume $g$ is continuous, and $O \subseteq \mathbf{R}$ is open. $x \in g^{−1}(O)$, so $y = f(x) \in O$. Since $O$ is open, we can find $V_{\epsilon}(y) \subseteq O$. Since $g$ is continuous, we can find $U_{\delta}(x)$ such that $f(U) \subseteq O$, so $U \subseteq g^{−1}(O)$. Which means $g^{−1}(O)$ is open.
+
+$\Leftarrow$: Assume $f(x) = y$, then $V_{\epsilon}(y)$ is open, so $x \in g^{-1}(V_{\epsilon}(y))$ is open. Then we can fine $V_{\delta }(x) \subset g^{-1}(V_{\epsilon}(y))$, so $f(V_{\delta }(x)) \subseteq V_{\epsilon}(y)$. So $g$ is continuous.  
+
 ### 4.4.12.
 
 Review Exercise 4.4.11, and then determine which of the
@@ -641,3 +678,188 @@ Solution: Same example from (b).
 
 Solution: False. Consider $f(x) = \ln x$, and $F = \mathbf{R}$.
 Then $f^{−1}(F) = (0, +\infty)$ which is open.
+
+### 4.4.13 (Continuous Extension Theorem)
+
+(a) Show that a uniformly continuous function preserves Cauchy sequences; that is, if $f : A → R$ is uniformly continuous and $(x_n) ⊆ A$ is a Cauchy sequence, then show $f(x_n)$ is a Cauchy sequence.
+
+## 4.5 The Intermediate Value Theorem
+
+### 4.5.1
+
+Show how the Intermediate Value Theorem follows as a corol- lary to Theorem 4.5.2.
+
+Proof: Let $C = f([a, b])$, since $[a, b]$ is connected and $f$ is continuous, then according to Theorem 4.5.2 $C$ is connected also. Since $f(a), f(b) \in C$,
+then $[f(a), f(b)] \subseteq C$, then $L \in C$. Then there exists a point $c ∈ (a,b)$ where $f(c) = L$.
+$\square$
+
+### 4.5.2
+
+Provide an example of each of the following, or explain why the request is impossible.
+
+(a) A continuous function defined on an open interval with range equal to a closed interval.
+
+Solution: Consider $\sin x$ defined on $(-100 \pi , +100 \pi )$.
+The range of it is $[-1, +1]$ 
+
+(b) A continuous function defined on a closed interval with range equal to an open interval.
+
+Solution: If the closed interval is bounded, then it's compact.
+Then the range has to be compact, which is closed and bounded.
+So it's impossible for the range to be open.
+
+On the other hand, if the closed interval is unbounded, e.g. $[0, +\infty)$,
+then consider $x \sin x$. Then range is $\mathbf{R}$, which is open.
+
+(c) A continuous function defined on an open interval with range equal to an unbounded closed set different from $\mathbf{R}$.
+
+Solution: Consider $f(x) = \frac{1}{x^2 - 1}$ defined on $(-1, 1)$.
+The range is $(-\infty, -1]$.
+
+(d) A continuous function defined on all of $\mathbf{R}$ with range equal to $\mathbf{Q}$.
+
+Solution: this is impossible. According to theorem 4.5.2, $f(\mathbf{R})$ is connected. But $\mathbf{Q}$ is not connected.
+
+### 4.5.3
+
+A function $f$ is *increasing* on $A$ if $f(x) ≤ f(y)$ for all $x < y$ in $A$. Show that if $f$ is increasing on $[a, b]$ and satisfies the intermediate value property (Definition 4.5.3), then $f$ is continuous on $[a, b]$.
+
+Proof: Let $c \in (a, b)$ and any $\epsilon$ such that
+$f(a) \leq f(c) - \epsilon < f(c) \leq f(c) + \epsilon \leq f(b)$. Since $f(x)$ satisfies intermediate value property,
+we can find $c_0, c_1$ such that $f(c_0) = f(c) - \epsilon$ and $f(c_1) = f(c) + \epsilon$. Since $f$ is increasing,
+we have $c_0 < c < c_1$.
+
+Let $\delta = \min \left\{ c - c_0, c_1 - c \right\}$.
+If $x \in V_{\delta}(c)$, $x \in (c_0, c_1)$ and $f(x) \in (f(c_0), f(c_1))$. So $\left| f(c) - f(x) \right| < \epsilon$.
+
+$\square$
+
+### 4.5.4
+
+Let $g$ be continuous on an interval $A$ and let $F$ be the set of points where $g$ fails to be one-to-one; that is,
+
+$$ 
+F = \left\{ 
+    x \in A:
+    f(x) = f(y) \text{ for some } y \neq x \text{ and }
+    y \in A
+ \right\}
+$$
+
+Show $F$ is either empty or uncountable.
+
+Proof: 
+If $F$ is not empty, then let $a, b \in F$ and $a < b$.
+
+If $f(x)$ is the same for all $x \in [a, b]$, then $F \supseteq [a, b]$, which is uncountable.
+
+If $c \in [a, b]$ and $f(c) \neq f(a)$.
+Assume $f(c) > f(a)$, then using (IVF), for every $k \in (f(a), f(c))$  we can find $d \in (a, c)$ and $e \in (c, b)$, such that $f(d) = f(e) = k$. Since $(f(a), f(c))$ is uncountable, then $F$ is uncountable. $
+\square$.
+
+### 4.5.5
+
+(a) Finish the proof of the Intermediate Value Theorem using 
+the Axiom of Completeness started previously.
+
+Proof: continue with where we left. We first show $f(c) \not > 0$.
+If $f(c) = a > 0$, then since $f(x)$ is continuous,
+there is a $V_{\epsilon}(c)$, such that as long as $x \in V_{\epsilon}(c)$,
+$f(x) > 0$. Then $c$ is not $\sup K$. So $f(c) \not > 0$.
+
+Next we show $f(c) \not < 0$. The same argument above can be applied
+to this scenario.
+
+So $f(c) = 0$. $\square$ 
+
+(b) Finish the proof of the Intermediate Value Theorem using
+the Nested Interval Property started previously.
+
+Proof: $(a_n) \rightarrow c$. Since $f$ is continuous,
+$f(a_n) \rightarrow f(c)$. Since $f(a_n) < 0$, then $f(c) \leq 0$.
+For the same reason, $f(c) \geq 0$. So $f(c) = 0$. $\square$
+
+### 4.5.6
+
+Let $f : [0, 1] → \mathbf{R}$ be continuous with $f(0) = f (1)$.
+
+(a) Show that there must exist $x, y ∈ [0, 1]$ satisfying $|x − y| = 1/2$ and $f(x) = f(y)$.
+
+Proof: define $g(x) = f(x - \frac{1}{2}), x \in [\frac{1}{2}, 1]$.
+And $h(x) = f(x) - g(x)$.
+
+If $f(1/2) = f(0)$ we already found the desired $x, y$.
+
+If $f(1/2) > f(0)$, then $h(1/2) > 0, h(1) < 0$. Since $h(x)$ is continuous,
+according to IVF, we can find $c$ such that $h(c) = 0$.
+
+The same argument can be applied when $f(1/2) < f(0)$. $\square$
+
+(b) Show that for each $n ∈ N$ there exist $x_n,y_n ∈ [0,1]$ with $|x_n − y_n| = 1/n$
+and $f(x_n) = f(y_n)$.
+
+Proof: Define $h(x) = f(x) - f(x - \frac{1}{n}), x \in [\frac{1}{n}, 1]$.
+
+If $f(\frac{1}{n}) > f(0)$, we can find $1 \leq k \lt n$,
+such that $h(\frac{k}{n}) > 0$ and $h(\frac{k+1}{n}) < 0$.
+Then we find $c \in (\frac{k}{n}, \frac{k+1}{n})$, such that $h(c) = 0$.
+
+The same argument can be applied when $f(1/n) < f(0)$. $\square$
+
+(c) If $h ∈ (0,1/2)$ is not of the form $1/n$, there does not necessarily exist $|x − y| = h$ satisfying $f(x) = f(y)$. Provide an example that illustrates this using $h = 2/5$.
+
+Solution: Consider the following piecewise linear function.
+
+$$ 
+f(0) = 0 \\
+f(\frac{1}{5}) = -2 \\
+f(\frac{2}{5}) = +1 \\
+f(\frac{3}{5}) = -1 \\
+f(\frac{4}{5}) = +2 \\
+f(1) = 0 \\
+$$
+
+Think about this way, the $g(x) = f(x - h)$ is a $f(x)$ right shift by $h$. If $g(x)$ and $f(x)$ does not have intersection, then there does not exist $|x − y| = h$ satisfying $f(x) = f(y)$.
+
+So we can construct a zig-zag piecewise linear function. Assume
+$\frac{1}{n+1} < h < \frac{1}{n}$ and $nh + \delta = 1$ and
+$\delta < h$.
+
+$$
+f(0) = 0 \\
+f(\delta) = -n \\
+f(h) = +1 \\
+f(h + \delta ) = -(n-1) \\
+f(2h) = +2 \\
+\cdots \\
+f(nh) = n \\
+f(nh + \delta) = f(1) = 0 \\
+$$
+
+$\square$
+
+### 4.5.7
+
+Let $f$ be a continuous function on the closed interval $[0,1]$ with range also contained in $[0, 1]$. Prove that f must have a fixed point; that is, show $f(x) = x$ for at least one value of $x ∈ [0,1]$.
+
+Proof: If $f(0) = 0$, then we found it. If $f(1) = 1$, we also found it. Assume $f(0) > 0, f(1) < 1$, consider
+$g(x) = f(x) - x$, which is continuous and $g(0) > 0, g(1) < 0$. Then according to IVT, $\exists c$ such that $g(c) = 0$. Then $f(c) = c$.
+
+### 4.5.8 (Inverse functions).
+
+If a function $f : A → R$ is one-to-one, then we can define the inverse function $f^{−1}$ on the range of $f$ in the natural way: $f^{−1}(y) = x$ where $y = f(x)$.
+Show that if $f$ is continuous on an interval $[a, b]$ and one-to-one, then $f^{−1}$ is also continuous.
+
+Proof: Assume $f(a) < f(b)$, we first prove $f$ is an increasing function. Assume otherwise, then we can find
+$c < d$ with $f(c) > f(d)$.
+* If $f(a) < f(c)$, then we find $a < c < d$ with $f(a) < f(c) > f(d)$.
+* If $f(a) > f(c)$, then we find $c < d < b$ with $f(c) > f(d) < f(b)$.
+
+In both cases, we will find $f$ is not one-to-one.
+So $f$ has to be increasing function.
+
+If $x < y$ and $f(c) = x, f(d) = y$, then $c < d$. That means $f^{-1}(x) < f^{-1}(y)$. So $f^{-1}$ is also increasing.
+
+And $f^{-1}$ satisfies intermediate value property. Based on
+exercise 4.5.3, $f^{-1}$ is also continuous. 
+$\square$
