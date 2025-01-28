@@ -863,3 +863,131 @@ If $x < y$ and $f(c) = x, f(d) = y$, then $c < d$. That means $f^{-1}(x) < f^{-1
 And $f^{-1}$ satisfies intermediate value property. Based on
 exercise 4.5.3, $f^{-1}$ is also continuous. 
 $\square$
+
+## 4.6 The Intermediate Value Theorem
+
+### 4.6.1.
+
+Using modifications of these functions, construct a function $f : \mathbf{R} → \mathbf{R}$ so that
+
+(a) $D_f = \mathbf{Z}^c$
+
+Solution: we can modify the modified Dirichlet's function
+
+$$ 
+f(x) = \begin{cases}
+    x & x \text{ is rational}\\
+    k & x \text{ is irrational and } x \in
+    (\frac{2k-1}{2}, \frac{2k+1}{2}) \\
+\end{cases} 
+$$
+$\square$
+
+(b) $D_f = \{ x: 0 < x \leq 1\}$
+
+Solution: Consdier
+
+$$ 
+f(x) = \begin{cases}
+    0 & x < 0 \text{ or } x > 1\\
+    h(x) & x \in [0, 1]\\
+\end{cases}
+$$
+$\square$
+
+### 4.6.2.
+
+Given a countable set $A = \{a_1,a_2,a_3,...\}$, define $f(a_n) = 1/n$
+and $f(x)=0$ for all $x \not ∈A$. Find $D_f$.
+
+Solution: $D_f = A$.
+If $b \not \in A$, then $f(b) = 0$. If $b$ is a limit point of $A$, then given $\epsilon$,
+we can find $N$ such that $n > N, 1/n < \epsilon$.
+Then we can find $\delta$, such that for $n \leq N$,
+$a_n \not \in V_{\delta}(b)$.
+
+Then for any $x \in V_{\delta}(b)$, $f(x) < \epsilon$.
+So $f$ is continuous at $b$.
+
+It's easier to see $f$ is continuous at $b$ if $b$ is not a limit point of $A$.
+
+For any $a_n$ there always exists $x \in V_{\delta}(a_n)$
+but $x \not \in A$ for any $\delta$, so $f$ is not
+continuous at $a_n$.
+$\square$
+
+### 4.6.3
+
+State a similar definition for the left-hand limit
+
+$$ 
+\lim_{x \to c^-} f(x) = L
+$$
+
+Solution:
+if for all $ε > 0$ there exists a $δ > 0$ such that $|f(x)−L| < ε$ whenever $-δ < x−c < 0$.
+
+Equivalently, in terms of sequences, $\lim_{x \to c^-} f(x) = L$ if $\lim f(x_n) = L$ for all sequences $(x_n)$ satisfying $x_n < c$ and $\lim (x_n) = c$.
+
+### 4.6.4
+
+Supply a proof for Theorem 4.6.3: Given $f : A → R$ and a limit point $c$ of $A$, $\lim_{x \to c} f(x) = L$ if and only if
+
+$$
+\lim_{x \to c^+} f(x) = L
+\text{ and }
+\lim_{x \to c^-} f(x) = L.
+$$
+
+Proof: $\Rightarrow$ Given any sequence $(x_n)$ satisfying $x_n > c$ and $\lim (x_n) = c$, $f$ is continuous,
+then $\lim_{x \to c} f(x_n) = L$. That proves $\lim_{x \to c^+} f(x) = L$.
+
+Same thing when $x_n < c$.
+
+$\Leftarrow$: Given any sequence $(x_n)$ such that $\lim (x_n) = c$. Then we can divide it into 2 subsequences $(x^+_n) > c$ and $(x^-_n) < c$.
+
+We have the following:
+* $\lim (x^+_n) = c$, so $\lim f(x^+_n) = L$.
+* $\lim (x^-_n) = c$, so $\lim f(x^-_n) = L$.
+
+That means $\lim f(x_n) = L$.
+$\square$
+
+### 4.6.5.
+
+Prove that the only type of discontinuity a monotone
+function can have is a jump discontinuity.
+
+Proof: Assume $f$ is a monotonous increasing function
+and it's not continuous at $c$.
+* Let $A = \{f(x)|x < c\}$. $f(x)$ is upper bounded by $f(c)$.
+Let $L^- = \sup A$, then $L^- = \lim f(x^-_n)$.
+* Let $B = \{f(x)|x > c\}$. $f(x)$ is lower bounded by $f(c)$.
+Let $L^+ = \inf B$, then $L^+ = \lim f(x^+_n)$.
+
+That proves $f(x)$ can only have jump discontinuity.
+
+### 4.6.6.
+
+Construct a bijection between the set of jump discontinuities of a monotone function f and a subset of $\mathbf{Q}$. Conclude that $D_f$ for a monotone function $f$ must either be finite or countable, but not uncountable.
+
+Proof: For any discontinuited point $c$, let
+$a = \lim_{x \to c^+} f(x)$ and $b = \lim_{x \to c^-} f(x)$.
+Since $a \not = b$, we can find a rational number $q \in (a, b)$. That means this mapping is surjective.
+
+Assume $c_0 < c_1$, since $f$ is monotone increasing, we have
+
+$$ 
+\lim_{x \to c^-_0} f(x)
+<
+\lim_{x \to c^+_0} f(x)
+\le
+\lim_{x \to c^-_1} f(x)
+<
+\lim_{x \to c^+_1} f(x)
+$$
+
+So basically $(a_{c_i}, b_{c_i})$ does not intersect with each other. Then we find a one-to-one mapping between the set of jump discontinuities and a subset of $\mathbf{Q}$.
+So this is bijection.
+
+We proved this problem. $\square$

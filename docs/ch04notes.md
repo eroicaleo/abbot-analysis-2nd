@@ -114,3 +114,37 @@ Since $f$ is continuous, then $f(x_n) \in A$ and $\lim f(x_n) = f(x) \in B$. So 
 $\square$ 
 
 ***Definition 4.5.3.*** A function $f$ has the intermediate value property on an interval $[a,b]$ if for all $x < y$ in $[a,b]$ and all $L$ between $f(x)$ and $f(y)$, it is always possible to find a point $c ∈ (x,y)$ where $f(c) = L$.
+
+## 4.6 The Intermediate Value Theorem
+
+Given a function $f: \mathbf{R} → \mathbf{R}$, define
+$D_f ⊆R$ to be the set of points where the function $f$ fails to be continuous.
+
+* Dirichlet’s function: $D_f = \mathbf{R}$.
+* Modified Dirichlet’s function: $D_h = \mathbf{R} \backslash \{0\}$.
+* Thomae function: $D_t = \mathbf{Q}$.
+
+***Definition 4.6.2.*** Given a limit point $c$ of a set $A$ and a function $f : A → R$, we write
+
+$$ 
+\lim_{x \to c^+} f(x) = L
+$$
+
+if for all $ε > 0$ there exists a $δ > 0$ such that $|f(x)−L| < ε$ whenever $0 < x−c < δ$.
+
+Equivalently, in terms of sequences, $\lim_{x \to c^+} f(x) = L$ if $\lim f(x_n) = L$ for all sequences $(x_n)$ satisfying $x_n > c$ and $\lim (x_n) = c$.
+
+***Theorem 4.6.3.*** Given $f : A → R$ and a limit point $c$ of $A$, $\lim_{x \to c} f(x) = L$ if and only if
+
+$$
+\lim_{x \to c^+} f(x) = L
+\text{ and }
+\lim_{x \to c^-} f(x) = L.
+$$
+
+Generally speaking, discontinuities can be divided into three categories:
+
+* If $\lim_{x \to c}f(x)$ exists but has a value different from $f(c)$, the discontinuity at $c$ is called removable.
+* If $\lim_{x \to c^+}f(x) \not = \lim_{x \to c^-} f(x)$ then $f$ has a jump discontinuity at $c$.
+* If $\lim_{x \to c}f(x)$ does not exist for some other reason, then the discontinuity at $c$ is called an essential discontinuity.
+
