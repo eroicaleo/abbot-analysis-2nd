@@ -991,3 +991,39 @@ So basically $(a_{c_i}, b_{c_i})$ does not intersect with each other. Then we fi
 So this is bijection.
 
 We proved this problem. $\square$
+
+### 4.6.7.
+
+In Section 4.1 we constructed functions where the set of discontinuity was $\mathbf{R}$ (Dirichlet’s function),
+$\mathbf{R} \setminus \{0\}$ (modified Dirichlet function), and $\mathbf{Q}$ (Thomae’s function).
+
+(a) Show that in each of the above cases we get an $F_σ$ set as the set where the function is discontinuous.
+
+Proof:
+
+* Dirichlet’s function: $\mathbf{R}$ it self is a closed set.
+* modified Dirichlet function: $\mathbf{R} \setminus \{0\}$
+    * Consider $A_n = (-\infty, -1/n] \cup [1/n, \infty)$. $A_n$ is closed. $\cup_{n = 1}^{\infty}A_n = \mathbf{R} \setminus \{0\}$.
+* $\mathbf{Q}$ (Thomae’s function): A set contains a single rational number is a closed set. And $\mathbf{Q}$ is countable.
+
+(b) Show that the two sets of discontinuity in Exercise 4.6.1 are $F_σ$ sets.
+
+* $\mathbf{Z}^c$: Consider
+
+$$ 
+A_n = \{\cup_i [i+1/n, (i+1)-1/n] | n > 2\}
+$$
+
+$A_n$ is countable union of closed set, so $A_n$ is a closed
+set. Also $\cup A_n = \mathbf{Z}^c$.
+
+* $D_f = \{ x: 0 < x \leq 1\}$
+
+Consider
+
+$$ 
+A_n = \{(-\infty, -1/n]\} \\
+B = [1, \infty)
+$$
+
+So $D_f = B \cup (\cup A_n)$.

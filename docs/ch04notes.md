@@ -115,7 +115,7 @@ $\square$
 
 ***Definition 4.5.3.*** A function $f$ has the intermediate value property on an interval $[a,b]$ if for all $x < y$ in $[a,b]$ and all $L$ between $f(x)$ and $f(y)$, it is always possible to find a point $c ∈ (x,y)$ where $f(c) = L$.
 
-## 4.6 The Intermediate Value Theorem
+## 4.6 Sets of Discontinuity
 
 Given a function $f: \mathbf{R} → \mathbf{R}$, define
 $D_f ⊆R$ to be the set of points where the function $f$ fails to be continuous.
@@ -147,4 +147,8 @@ Generally speaking, discontinuities can be divided into three categories:
 * If $\lim_{x \to c}f(x)$ exists but has a value different from $f(c)$, the discontinuity at $c$ is called removable.
 * If $\lim_{x \to c^+}f(x) \not = \lim_{x \to c^-} f(x)$ then $f$ has a jump discontinuity at $c$.
 * If $\lim_{x \to c}f(x)$ does not exist for some other reason, then the discontinuity at $c$ is called an essential discontinuity.
+
+### $D_f$ for an Arbitrary Function
+
+***Definition 4.6.4.*** A set that can be written as the countable union of closed sets is in the class $F_σ$. (This definition also appeared in Section 3.5.)
 
