@@ -152,3 +152,8 @@ Generally speaking, discontinuities can be divided into three categories:
 
 ***Definition 4.6.4.*** A set that can be written as the countable union of closed sets is in the class $F_σ$. (This definition also appeared in Section 3.5.)
 
+***Definition 4.6.5.*** Let $f$ be defined on $\mathbf{R}$, and let $α > 0$. The function $f$ is $α$-continuous at $x ∈ \mathbf{R}$ if there exists a $δ > 0$ such that for all $y,z ∈ (x−δ,x+δ)$ it follows that $|f(y) − f(z)| < α$.
+
+Given a function $f$ on $\mathbf{R}$, define $D_f^α$ to be the set of points where the function $f$ fails to be $α$-continuous. In other words,
+
+$$D_f^α = \{ x∈ \mathbf{R}:f \text{ is not α-continuous at x} \}$$.

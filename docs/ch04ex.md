@@ -1027,3 +1027,51 @@ B = [1, \infty)
 $$
 
 So $D_f = B \cup (\cup A_n)$.
+
+### 4.6.8.
+
+Prove that, for a fixed $α > 0$, the set $D_f^α$ is closed.
+
+Proof: Let $x$ be a limit point of $D_f^α$. Given any $\delta$, we can find $a \in U_{\delta}(x)$ such that $a \in D_f^α$, since $U_{\delta}(x)$ is open, we can find
+$U_{\zeta}(a) \subset U_{\delta}(x)$. Since $a \in D_f^α$, we can find $y, z \in U_{\zeta}(a)$ with $|f(y) − f(z)| \ge α$. Since $y, z \in U_{\delta}(x)$, $x$ is also not
+$α$-continuous.
+$\square$
+
+### 4.6.9.
+
+If $α < α'$, show that $D_f^{α'} ⊆ D_f^{α}$.
+
+Proof: If $x \in D_f^{α'}$, then given $\delta$, we can 
+find $y, z \in V_{\delta}(x)$ such that $|f(y) - f(z)| > \alpha' > \alpha$. So $x \in D_f^{α}$. Then $D_f^{α'} ⊆ D_f^{α}$.
+$\square$
+
+### 4.6.10.
+
+Let $α > 0$ be given. Show that if $f$ is continuous at $x$, then it is $α$-continuous at $x$ as well. Explain how it follows that $D_f^α ⊆ D_f$.
+
+Proof: If $f$ is continuous at $x$, then we can find a $U_{\delta}(x) = (x−δ, x+δ)$ such that $|y-x| < \alpha /2$ and $|z-x| < \alpha /2$. Then $|y-z| < \alpha$. So $f$ is $α$-continuous at $x$ as well.
+
+Then given $x \in D_f^{α'}$, $f$ has to be discontinuous at $x$, so $x \in D_f^{α}$. Then $D_f^{α'} ⊆ D_f^{α}$.
+
+### 4.6.11.
+
+Show that if $f$ is not continuous at $x$, then $f$ is not $α$-continuous for some $α$ > 0. Now explain why this guarantees that
+
+$$ 
+D_f = \displaystyle \cup_{n = 1}^{\infty} D_f^{\alpha_n}
+$$
+
+where $α_n = 1/n$.
+
+Proof: If $f$ is not continuous at $x$, then exists $\epsilon$, given any $\delta$, we can find $y \in U_{\delta}(x)$ such that $|f(y)-f(x)| >= \epsilon$. So $f$
+is not $\epsilon$-continuous at $x$. We can find
+$n$ such that $1/n < \epsilon$.
+
+According to 4.6.9, $x \in D_f^{\epsilon} ⊆ D_f^{1/n}$.
+Then it follows:
+
+$$ 
+D_f = \displaystyle \cup_{n = 1}^{\infty} D_f^{\alpha_n}
+$$
+
+$\square$
