@@ -573,8 +573,12 @@ $\square$
 (c) If $f$ is differentiable on an interval containing zero and if $\lim_{x \to 0} f'(x) = L$, then it must be that
 $L = f'(0)$.
 
-Proof: Assume
-
+Proof: This proof is not correrct. I think I miss this part.
+* I want to prove $f(x)$ is uniformly differentiable around
+$0$, i.e. given $\epsilon$ we can find $U_{\delta}(0)$ such that
+$\left| \frac{f(x+h) - f(x)}{h} - f'(x) \right| < \epsilon, \forall
+x \in U_{\delta}(0)$.
+ 
 $$ 
 f'(0) = \lim_{x \to 0} \frac{f(x) - f(0)}{x} = L'
 $$
@@ -604,3 +608,540 @@ As long as $x, h$ is small enough, $\frac{f(x) - f(0)}{x}$
 can be arbitrarily close $L'$.
 
 So it's impossible that $L \not = L'$.
+
+### 5.2.10.
+
+Recall that a function $f : (a, b) → R$ is increasing on $(a, b) \text{ if } f (x) ≤ f (y)$ whenever $x < y$ in $(a, b)$. A familiar mantra from calculus is that a differentiable function is increasing if its derivative is positive, but this statement requires some sharpening in order to be completely accurate.
+
+Show that the function
+
+$$ 
+f(x) =
+\begin{cases}
+    0.5x + x^2 \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases}
+$$
+
+is differentiable on $\mathbf{R}$ and satisfies $g'(0) > 0$. Now, prove that $g$ is not increasing over any open interval containing $0$.
+
+Proof: from 5.2.9 (b), we have
+
+$$
+f'(x) =
+\begin{cases}
+    0.5 + 2 x \sin(1/x) - \cos (1/x) &\text{if }  x \not = 0\\
+    0.5 &\text{if } x = 0\\
+\end{cases}
+$$
+
+So $g'(0) = 0.5 > 0$. Consider $x = \frac{1}{n \pi}$, $g'(x) < 0$. So $g(x - h) > g(x)$ for small $h$.
+
+### 5.2.11.
+
+Assume that $g$ is differentiable on $[a, b]$ and satisfies $g'(a) < 0 < g'(b)$.
+
+(a) Show that there exists a point $x ∈ (a, b)$ where $g(a) > g(x)$, and a point $y ∈ (a, b)$ where $g(y) < g(b)$.
+
+Proof: See my proof of Theorem 5.2.7.
+
+(b) Now complete the proof of Darboux’s Theorem started earlier.
+
+Proof: See my proof of Theorem 5.2.7.
+
+### 5.2.12 (Inverse functions).
+
+If $f : [a, b] → \mathbf{R}$ is one-to-one, then there exists an inverse function $f^{−1}$ defined on the range of $f$ given by $f^{−1}(y) = x$ where $y = f(x)$.
+In Exercise 4.5.8 we saw that if f is continuous on $[a,b]$, then $f^{−1}$ is continuous on its domain. Let’s add the assumption that $f$ is differentiable on $[a,b]$
+with $f'(x) \not = 0$ for all $x ∈ [a,b]$. Show $f^{−1}$ is differentiable with
+
+$$ 
+(f^{-1})'(y) = \frac{1}{f'(x)} \text{ where } y = f(x).
+$$
+
+Proof: Let $f^{-1} = g$, and assume $f(x_0) = y_0$ and
+$g(y_0) = x_0$. We want to prove $g'(y_0) = 1 / f'(x_0)$,
+i.e. 
+
+$$ 
+1/f'(y_0) = \lim_{y \to y_0}
+\frac{g(y) - g(y_0)}{y - y_0} 
+$$
+
+First we show give $\delta$, we can find $\zeta$, if
+$y \in V_{\zeta}(y_0)$, then $x \in V_{\delta }(x_0)$. We can refer to Exercise 4.5.8 to show $f$ and
+$g$ is monotone function first.
+We can prove this directly. Given sequence $(y_n) \rightarrow y_0$, and $g(y_n) = x_n \not \in V_{\delta }(x_0)$, since $(x_n)$ is bounded, we can
+find subsequence that converges to $x_1 \not = x_0$.
+Since $f$ is continuous, $f(x_1) = y_0$, $f$ is
+not 1 to 1, we have a contradiction.
+
+Next, given $\epsilon$, we show we can find $\delta$, such that,
+$x \in U_{\delta}(x_0)$,
+
+$$ 
+\left| 
+\frac{x - x_0}{f(x) - f(x_0)}
+-
+\frac{1}{f'(x_0)}
+\right| < \epsilon
+$$
+$\square$
+
+## 5.3 The Mean Value Theorems
+
+### 5.3.1.
+
+Recall from Exercise 4.4.9 that a function $f : A → \mathbf{R}$ is Lipschitz on $A$ if there exists an $M > 0$ such that
+
+$$ 
+\left| 
+\frac{f(x) - f(y)}{x-y}
+\right| \leq M
+$$
+
+for all $x \leq y$ in $A$.
+
+(a) show $f$ is differentiable on a closed interval
+$[a, b]$ and if $f'$ is continuous on $[a, b]$, then
+$f$ is Lipschitz on $[a, b]$.
+
+Proof: Since $f'(x)$ is continuous on $[a, b]$,
+based on Extreme Value Theorem, let $f'(c) = M$ is the maximum of $|f'(x)|$.
+
+Then apply the Mean Value Theorem, we have
+
+$$ 
+\left| 
+\frac{f(x) - f(y)}{x-y}
+\right| = |f'(c)| \leq M
+$$
+
+$\square$
+
+(b) Review the definition of a contractive function in Exercise 4.3.11. If we add the assumption that $|f'(x)| < 1$ on $[a,b]$, does it follow that $f$ is contractive on this set?
+
+Proof: Since $f'(x)$ is continuous on $[a, b]$,
+we have $f'(c) = M < 1$, then $f$ is contractive on this set.
+
+Furthermore, we can even remove the assumption that
+$f'(x)$ is continuous. Assume given any $n$, we
+can find 
+
+### 5.3.2.
+
+Let $f$ be differentiable on an interval $A$. If $f'(x) \not = 0$ on $A$, show that $f$ is one-to-one on $A$. Provide an example to show that the converse statement need not be true.
+
+Proof: If $f(a) = f(b)$, then we can find $c \in (a,b)$ such that
+
+$$ 
+0 = \frac{
+f(b) - f(a)
+}{
+b - a
+} = f'(c)
+$$
+
+then we have a contradiction, so $f$ is one-to-one on
+$A$.
+
+A example is $f(x) = \cos x, x \in [0, \pi]$.
+We have $f'(0) = f'(\pi) = 0$. But $f$ is still
+one-to-one on $A$.
+
+### 5.3.3.
+
+Let $h$ be a differentiable function defined on the interval $[0, 3]$, and assume that $h(0) = 1, h(1) = 2$, and $h(3) = 2$.
+
+(a) Argue that there exists a point $d ∈ [0, 3]$
+where $h(d) = d$.
+
+Proof: let $f(x) = h(x) - x$, $f$ is continuous 
+function on $[0, 3]$. $f(1) = -1 < 0$ and $f(3) = 1 > 0$, according to Intermediate Value Property, we
+can find $d \in (1, 3)$ such that $f(d) = 0$, so
+$h(d) = d$.
+
+(b) Argue that at some point $c$ we have $h'(c) = 1/3$
+
+Proof: Based on Mean Value theorem, we can find $c$
+such that
+
+$$ 
+h'(c) = \frac{h(3) - h(0)}{3 - 0} = \frac{1}{3}
+$$
+
+$\square$
+
+(c) Argue that $h'(x) = 1/4$ at some point in the domain.
+
+Proof: Let $g(x) = h(x) - h(x - 1), x \in [1, 3]$.
+We don't know what $h(2)$.
+* $h(2) > 2$, then $g(3) = h(3) - h(2) < 0$.  
+* $h(2) = 2$, then $g(2) = h(2) - h(1) = 0$.  
+* $h(2) < 2$, then $g(2) = h(2) - h(1) < 0$.
+
+Whatever the case, we can find some $d$ such that
+$g(1) = 1, g(d) \leq 0$. Since $g(x)$ is continuous,
+we can find $g(c) = 1/4$.
+
+Then
+
+$$ 
+g'(e) = \frac{h(c) - h(c-1)}{1} = \frac{1}{4} 
+$$
+
+$\square$
+
+### 5.3.4.
+
+Let $f$ be differentiable on an interval $A$ containing zero, and
+assume $(x_n)$ is a sequence in $A$ with $(x_n) → 0$ and $x_n  \not = 0$.
+
+(a) If $f(x_n)=0$ for all $n∈N$,show $f(0)=0$ and $f'(0)=0$.
+
+Proof: Since $f(x)$ is continuous, we have
+$\lim_{x_n \to 0} f(x_n) = f(0)$, so $f(0) = 0$.
+
+We also have
+
+$$ 
+f'(0) = \lim_{x_n \to 0} 
+\frac{f(x_n) - f(0)}{x_n - 0}
+= 0
+$$
+
+$\square$
+
+(b) Add the assumption that $f$ is twice-differentiable at zero and show that
+$f''(0)=0$ as well.
+
+Proof:
+
+For $x_n$, according to mean value theorem, we can
+find $y_n \in (0, x_n)$, such that
+
+$$ 
+0 = \frac{f(x_n) - f(0)}{x_n - 0} = f'(y_n)
+$$
+
+As a result, we can find $(y_n) \rightarrow 0$ such
+that $f'(y_n) = 0$. So we use (a) and we can conclude
+$f''(0) = 0$ as well.
+
+### 5.3.5.
+
+(a) Supply the details for the proof of Cauchy’s Generalized Mean Value Theorem (Theorem 5.3.5).
+
+Proof: Let
+
+$$ 
+h(x) = (f(b) - f(a))g(x) - (g(b) - g(a))f(x)
+$$
+
+Then
+
+$$ 
+h(b) = (f(b) - f(a))g(b) - (g(b) - g(a))f(b)\\
+=f(b)g(a) - f(a)g(b)\\
+$$
+and
+$$
+h(a) = (f(b) - f(a))g(a) - (g(b) - g(a))f(a) \\
+=
+$$
+
+So $h(a) = h(b)$, so we can find $c$,
+such that $h'(c) = 0$, i.e.
+
+$$ 
+h'(c) = (f(b) - f(a))g'(c) - (g(b) - g(a))f'(c) = 0
+$$
+
+Then
+
+$$ 
+\frac{f(b) - f(a)}{g(b)-g(a)} =
+\frac{f'(c)}{g'(c)}
+$$
+
+$\square$
+
+(b) Give a graphical interpretation of the Generalized Mean Value Theorem analogous to the one given for the Mean Value Theorem at the beginning of Section 5.3. (Consider $f$ and $g$ as parametric equations for a curve.)
+
+Solution: Consdier a curve $(g(x), f(x))$. At
+a point $c$, the derivative is
+
+$$ 
+\lim_{x \to c}
+\frac{f(x) - f(c)}{g(x) - g(c)}
+= \lim_{x \to \infty} 
+\frac{
+\frac{f(x) - f(c)}{x-c}
+}{
+\frac{g(x) - g(c)}{x-c}
+} =
+\frac{f'(c)}{g'(c)}
+$$
+$\square$
+
+### 5.3.6.
+
+(a) Let $g : [0,a] → \mathbf{R}$ be differentiable, $g(0) = 0$, and $|g'(x)| ≤ M$ for all $x ∈ [0,a]$. Show $|g(x)| ≤ Mx$ for all $x ∈ [0,a]$.
+
+Proof: When $x = 0$, $g(0) = 0 \le M \cdot 0$.
+
+When $x \not = 0$, from Mean value theorem
+
+$$ 
+\left|
+\frac{g(x)-g(0)}{x-0}
+\right| = |g'(c)| \le M 
+$$
+
+So
+
+$$ 
+|g(x)| \le Mx
+$$ 
+
+$\square$
+
+(b) Let $h : [0, a] → \mathbf{R}$ be twice differentiable, $h'(0) = h(0) = 0$ and $|h''(x)| ≤ M$ for all $x ∈ [0,a]$. Show $|h(x)| ≤ Mx^2/2$ for all $x ∈ [0,a]$.
+
+Proof: This time we need to use Generalized Mean
+Value Theorem. Let $f(x) = Mx^2/2$ 
+
+From (a) we know $|h'(x)| \le Mx$.
+
+$$ 
+\left|\frac{h(x)}{f(x)}\right| = 
+\left|
+\frac{
+h(x) - h(0)
+}{
+f(x) - f(0)
+}
+\right| 
+=
+\left|
+\frac{
+    h'(c)
+}{f'(c)}
+\right| \le
+\left| 
+\frac{Mx}{Mx}
+\right| = 1
+$$
+
+So $|h(x)| \leq f(x) = Mx^2/2$
+
+$\square$
+
+(c) Conjecture and prove an analogous result for a function that is differentiable three times on $[0, a]$.
+
+Solution: the conjecture should be like this:
+
+Let $h : [0, a] → \mathbf{R}$ be three times differentiable, $h''(0) = h'(0) = h(0) = 0$ and $|h'''(x)| ≤ M$ for all $x ∈ [0,a]$. Show $|h(x)| ≤ Mx^3/6$ for all $x ∈ [0,a]$.
+
+Proof: We already know $|h'(x)| \leq Mx^2/2$.
+And let $f(x) = Mx^3/6$.
+
+$$ 
+\left|\frac{h(x)}{f(x)}\right| = 
+\left|
+\frac{
+h(x) - h(0)
+}{
+f(x) - f(0)
+}
+\right| 
+=
+\left|
+\frac{
+    h'(c)
+}{f'(c)}
+\right| \le
+\left| 
+\frac{Mx^2/2}{Mx^2/2}
+\right| = 1
+$$
+
+So $|h(x)| \leq f(x) = Mx^3/6$.
+
+$\square$
+
+### 5.3.7.
+
+A fixed point of a function $f$ is a value $x$ where $f(x) = x$. Show that if $f$ is differentiable on an interval with $f'(x) \not = 1$, then $f$ can have at most one fixed point.
+
+Proof: If $f(x) = x, f(y) = y, x \not = y$.
+Then
+
+$$ 
+\frac{f(x) - f(y)}{x - y} =
+\frac{x - y}{x - y} = 1 
+$$
+
+We have a contradiction.
+
+$\square$
+
+### 5.3.8.
+
+Assume $f$ is continuous on an interval containing zero and differentiable for all $x \not = 0$. If $\lim_{x \to 0} f'(x) = L$, show $f'(0)$ exists and equals $L$.
+
+Proof:
+
+$$ 
+f'(0) = \lim_{x \to 0}
+\frac{f(x)-f(0)}{x - 0} \\
+= \lim_{x \to 0} \frac{f'(c)}{g'(c)}\\
+= L
+$$
+
+### 5.3.9.
+
+Assume $f$ and $g$ are as described in Theorem 5.3.6, but now
+add the assumption that $f$ and $g$ are differentiable at $a$, and $f'$ and $g'$ are continuous at $a$ with $g'(a)\not = 0$. Find a short proof for the $0/0$ case of L’Hospital’s Rule under this stronger hypothesis.
+
+Proof:
+
+$$ 
+\lim_{x \to a}
+\frac{f(x)}{g(x)}\\
+= \lim_{x \to a}
+\frac{f(x)-f(a)}{g(x)-g(a)}\\
+= \lim_{x \to a}
+\frac{\frac{f(x)-f(a)}{x-a}}
+{\frac{g(x)-g(a)}{x-a}}\\
+= \frac{
+\lim_{x \to a} \frac{f(x)-f(a)}{x-a}   
+}{
+\lim_{x \to a} \frac{g(x)-g(a)}{x-a}
+}\\
+=\frac{f'(a)}{g'(a)}
+$$
+
+### 5.3.10.
+
+Let $f(x) = x \sin(1/x^4) e^{−1/x^2}$ and $g(x) = e^{−1/x^2}$. Using the familiar properties of these 
+functions, compute the limit as $x$ approaches zero of $f(x), g(x), f(x)/g(x), f'(x)/g'(x)$.
+
+Solution: Let $h(x) = x \sin(1/x^4)$. For $x \not = 0$, we have
+
+$$ 
+h'(x) =
+\sin (1/x^4) + x \cos (1/x^4) \cdot (-4)\cdot 1/x^5
+= \sin (1/x^4) - 4 /x^{4} \cos (1/x^4)
+\\
+g'(x) = -2 x^{-3} e^{−1/x^2}
+$$
+
+$$ 
+\lim_{x \to 0} f(x) = 0\\
+\lim_{x \to 0} g(x) = 0\\
+\lim_{x \to 0} f(x)/g(x) =
+\lim_{x \to 0} h(x) = 0\\
+$$
+
+See the [stackexchange](https://math.stackexchange.com/questions/2055368/counterexample-to-lhopitals-rule-as-an-exercise-in-understanding-analysis) discussion.
+
+$\square$
+
+### 5.3.11.
+
+(a) Use the Generalized Mean Value Theorem to furnish a proof of the $0/0$ case of L’Hospital’s Rule (Theorem 5.3.6).
+
+Proof:
+
+$$ 
+\frac{f(x)}{g(x)} =
+\frac{f(x) - f(0)}{g(x) - g(0)}
+= \frac{f'(c_x)}{g'(c_x)}
+$$
+
+Given $\epsilon > 0$, we can find $\delta$,
+if $x \in V_{\delta}(0)$,
+
+$$ 
+\left| 
+\frac{f'(x)}{g'(x)} - L
+ \right| < \epsilon
+$$
+
+So we have
+
+$$ 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = L
+$$
+
+$\square$
+
+(b) If we keep the first part of the hypothesis of Theorem 5.3.6 the same but
+we assume that
+
+$$ 
+\lim_{x \to a}
+\frac{f'(x)}{g'(x)} = \infty
+$$
+
+does it necessarily follow that
+
+$$ 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = \infty
+$$
+
+Proof:
+
+$$ 
+\frac{f(x)}{g(x)} =
+\frac{f(x) - f(0)}{g(x) - g(0)}
+\\
+= \frac{f'(c)}{g'(c)}, c \in (0, x) 
+$$
+
+Since $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \infty$,
+then give $N$, we can find $V_{\delta}(a)$, if $x \in V_{\delta}(a)$, $\lim_{x \to a} \frac{f'(x)}{g'(x)} > N$, so $\frac{f(x)}{g(x)} > N$.
+
+That means 
+
+$$ 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = \infty
+$$
+
+### 5.3.12.
+
+If $f$ is twice differentiable on an open interval containing $a$ and $f''$ is continuous at $a$, show
+
+$$ 
+\lim_{h \to 0}
+\frac{
+f(a+h) - 2 f(a) + f(a-h)
+}{
+h^2
+} = f''(a)
+$$
+
+Proof: Let $g(h) = f(a+h) - 2 f(a) + f(a-h)$,
+then $g(0) = 0$,
+
+$$
+\lim_{h \to 0}
+\frac{
+g'(h)
+}{2h}
+= \lim_{h \to 0}
+\frac{
+f'(a+h) - f'(a-h)
+}{2h} = f''(a)
+$$
+
+Another approach:
+
+
+
+$\square$
+

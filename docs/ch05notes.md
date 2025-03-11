@@ -126,3 +126,14 @@ $$
   So $g'(c) = 0$ and $f'(c) = \alpha$.
 
 $\square$
+
+## 5.3 The Mean Value Theorems
+
+* The ease of the proof, however, is misleading,
+as it is built on top of some hard-fought accomplishments from the study of limits and continuity.
+* The Mean Value Theorem is the cornerstone of the proof for almost every major theorem pertaining to differentiation.
+    * We will use it to prove L’Hospital’s rules regarding limits of quotients of differentiable functions.
+    * A rigorous analysis of how infinite series of functions behave when differentiated requires the Mean Value Theorem (Theorem 6.4.3)
+    * It is the crucial step in the proof of the Fundamental Theorem of Calculus (Theorem 7.5.1)
+    * It is also the fundamental concept underlying Lagrange’s Remainder Theorem (Theorem 6.6.3) which approximates the error between a Taylor polynomial and the func- tion that generates it.
+
