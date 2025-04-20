@@ -13,11 +13,17 @@ nav:
   - Unsolved Problems: unsolved.md
 
 extra_javascript: 
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# extra_javascript:
+#   - javascripts/mathjax.js
+#   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: True
+    # - pymdownx.arithmatex:
+    #     generic: true
 
 repo_name: Github
 repo_url: https://github.com/eroicaleo/abbot-analysis-2nd/

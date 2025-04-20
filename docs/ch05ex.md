@@ -847,7 +847,7 @@ $$
 and
 $$
 h(a) = (f(b) - f(a))g(a) - (g(b) - g(a))f(a) \\
-=
+= f(b)g(a) - f(a)g(b)
 $$
 
 So $h(a) = h(b)$, so we can find $c$,
@@ -1145,3 +1145,404 @@ Another approach:
 
 $\square$
 
+## 5.4 A Continuous Nowhere-Differentiable Function
+
+### 5.4.1.
+
+$h(x) = |x|, x \in [-1, 1]$ and $h(x+2) = h(x)$.
+Sketch a graph of $(1/2)h(2x)$ on $[−2, 3]$.
+Give a qualitative description of the functions
+
+$$ 
+h_n(x) =
+\frac{1}{2^n}
+h(2^nx)
+$$
+
+Solution: the shape of $h_1(x)$ is similar to $h(x)$, it's just
+that the triangle edge is only $1/2$ of the $h(x)$.
+For $h_n(x)$, they are still similar to $h(x)$,
+with the edge is only $\frac{1}{2^n}$ of it.
+
+### 5.4.2.
+
+Fix $x ∈ \mathbf{R}$. Argue that the series
+
+$$ 
+\sum_{n=0}^{\infty}
+\frac{1}{2^n}
+h(2^nx)
+$$
+
+converges and thus $g(x)$ is properly defined.
+
+Proof: Let
+
+$$ 
+g_n(x) = \sum_{i=0}^{n}
+\frac{1}{2^i}
+h(2^ix)
+$$
+
+When $x$ is fixed, $h(2^ix) \leq 1$, so
+$g_n(x) \leq 1 - \frac{1}{2^n}$. $g_n(x)$ is 
+increasing and has upper bound, so $g_n(x)$ 
+converges.
+
+$\square$
+
+### 5.4.3.
+
+Taking the continuity of $h(x)$ as given, reference the proper theorems from Chapter 4 that imply that the finite sum
+
+$$ 
+g_m(x) = \sum_{n=0}^{m}
+\frac{1}{2^n}
+h(2^nx)
+$$
+
+is continuous on $\mathbf{R}$.
+
+Proof: First we use Theorem 4.3.9 (Composition of Continuous Functions) to derive $h(2^nx)$ is
+continuous. Next we use Theorem 4.3.4 (Algebraic Continuity Theorem) to derive $g_m(x)$ is continuous.
+
+$\square$
+
+### 5.4.4.
+
+As the graph in Figure 5.7 suggests, the structure of $g(x)$ is quite intricate. Answer the following questions, assuming that $g(x)$ is indeed continuous.
+
+(a) How do we know $g$ attains a maximum value $M$ on $[0, 2]$? What is this value?
+
+Solution: It's a continuous function on a closed interval, so $g$ attains a maximum value $M$. Let's calculate some values for $x$ in
+the following format. 
+
+$$ 
+x = \frac{p}{2^{2m+1}}, p \text{ is odd}
+$$
+
+The reason is for such $x$, $g(x)$ has only finite terms.
+Because when $n \geq 2m+2$, $2^nx$ is an even integer, so $h(2^nx) = 0$.
+
+We first prove some properties of $h(x)$ that will
+be handy.
+
+(a) for $x = \frac{p}{2^{k}}$, $p$ is odd, we can
+find $0 < q < 2^k$, such that
+
+$$
+h(\frac{p}{2^{k}}) = h(\frac{q}{2^{k}})
+$$
+
+For example $h(5/4) = h(3/4), h(9/4) = h(1/4)$.
+
+Proof: Assume $2N+1 < \frac{p}{2^{k}} < 2(N+1)$,
+let $\frac{q}{2^{k}} = 2(N+1) - \frac{p}{2^{k}}$.
+Note that $h(x)$ is even function and $h(x + 2k) = h(x)$, then we have
+$$ 
+h(\frac{q}{2^{k}}) =
+h(2(N+1) - \frac{p}{2^{k}}) =
+h(- \frac{p}{2^{k}}) = h(\frac{p}{2^{k}})
+$$ 
+
+Assume $2N < \frac{p}{2^{k}} < 2N+1$,
+let $\frac{q}{2^{k}} = \frac{p}{2^{k}} - 2N$
+then
+
+$$ 
+h(\frac{q}{2^{k}}) =
+h(\frac{p}{2^{k}} - 2N) =
+h(\frac{p}{2^{k}})
+$$ 
+
+In both cases, we have $0 < q < 2^k$.
+
+$\square$
+
+(b) If $h(\frac{p}{2^{k}}) = h(\frac{q}{2^{k}})$, $p, q$ are odd, then $h(\frac{p}{2^{l}}) = h(\frac{q}{2^{l}})$ for $0 \leq l \leq k$.
+
+Proof: Assume $2M+1 < \frac{p}{2^{k}} < 2(M+1)$,
+$2N < \frac{q}{2^{k}} < 2N+1$, we can find
+$0 < \delta, \zeta < 1$ such that
+
+$$ 
+\frac{p}{2^{k}} = 2M + 1 + \delta \\
+\frac{q}{2^{k}} = 2N +\zeta  
+$$
+
+So we have $h(1+\delta) = h(\zeta )$. Then
+we must have $\zeta = 1 - \delta$.
+
+$$ 
+h(\frac{p}{2^{l}}) =\\
+h(2^{k-l}(2M+1+\delta )) = h(2^{k-l}\delta )\\
+h(\frac{q}{2^{l}}) =\\
+h(2^{k-l}(2N+\zeta )) = h(2^{k-l}\zeta )\\
+=h(2^{k-l}(1-\delta)) = h(-2^{k-l}\delta)
+$$
+
+Since $h$ is a even function, we proved this property.
+
+$\square$
+
+So
+
+$$
+\tag{1}
+g(x) = \sum_{i = 0}^{2m+1}
+\frac{1}{2^i} h(\frac{p}{2^{2m+1-i}})\\
+= \sum_{i = 0}^{m}
+\frac{1}{2^{2i}} h(\frac{p}{2^{2m+1-2i}}) +
+\frac{1}{2^{2i + 1}} h\left( \frac{p}{2^{2m+1-(2i+1)}} \right)
+$$
+
+Let's first evaluate
+
+$$ 
+l = h \left( \frac{p}{2^{k+1}} \right) +
+\frac{1}{2} h \left( \frac{p}{2^{k}} \right)
+$$
+
+Assume $2N < \frac{p}{2^{k+1}} < 2N+1$, let
+$p = q + (2N \cdot 2^{k+1}), q < 2^{k+1}$.
+
+* If $q < 2^k$
+
+$$ 
+l = h\left( \frac{q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} + \frac{1}{2} \frac{q}{2^{k}}\\
+= \frac{q}{2^{k}} < 1
+$$
+
+* If $2^k < q < 2^{k+1}$
+
+$$ 
+l = h\left( \frac{q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} h\left( 2 - \frac{q}{2^{k}} \right)\\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} \frac{2^{k+1} - q}{2^{k}} = 1
+$$
+
+Assume $2N-1 < \frac{p}{2^{k+1}} < 2N$, let
+$p = (2N \cdot 2^{k+1}) - q, q < 2^{k+1}$.
+
+* If $q < 2^k$, knowing $h$ is even, we have
+
+$$ 
+l = h\left( \frac{-q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{-q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} + \frac{1}{2} \frac{q}{2^{k}}\\
+= \frac{q}{2^{k}} < 1
+$$
+
+* If $2^k < q < 2^{k+1}$, knowing $h$ is even, we have
+
+$$ 
+l = h\left( \frac{-q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{-q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} h\left( 2 - \frac{q}{2^{k}} \right)\\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} \frac{2^{k+1} - q}{2^{k}} = 1
+$$
+
+Equation (1) is bounded by
+
+$$ 
+\frac{1}{4^0} + \frac{1}{4^1} + \cdots +
+\frac{1}{4^m} = \frac{1-\frac{1}{4^{m+1}}}{1-1/4} 
+$$
+
+We can really achive this number by setting
+
+$$ 
+p = 2^{2m+1} - 2^{2m} + 2^{2m-1} - 2^{2m-2} + \cdots + 2^1 - 2^0
+$$
+
+In fact, we can have multiple $p$ achive the maximum value.
+Consdier
+
+* $m = 1$, we can have $p = 5, 7$.  
+* $m = 2$, we first can have $q = 5, 7, 9, 11$, because
+    * $h(\frac{11}{8})= h(\frac{16-11}{8}) = h(\frac{5}{8})$ 
+    * $h(\frac{9}{8})= h(\frac{16-9}{8}) = h(\frac{7}{8})$
+    * Then we have $p = 32 - q = 21, 23, 25, 27$.
+* $m = 3$, we first get $q_3 = 2^{2 \times 3}-p_2$, then we get
+$p_3 = 2^{2 \times 3 + 1}-q_3$. This is because
+
+$$ 
+h(\frac{2^{2m}-p_{m-1}}{2^{2{m-1}}}) = 
+h(2 - \frac{2^{2m}-p_{m-1}}{2^{2{m-1}}}) =
+h(\frac{p_{m-1}}{2^{2{m-1}}})
+$$
+
+So overall, we can find $2^m$ numbers to achieve $\frac{1-\frac{1}{4^{m+1}}}{1-1/4}$. The maximum value should be $4/3$.
+$\square$
+
+(b) Let $D$ be the set of points in $[0,2]$ where $g$ attains its maximum. That is
+$D= {x ∈ [0,2] : g(x) = M}$. Find one point in $D$.
+
+Solution: Consider $x_m = \frac{p}{2^{2m+1}}$ where
+
+$$ 
+p = 2^{2m+1} - 2^{2m} + 2^{2m-1} - 2^{2m-2} + \cdots + 2^1 - 2^0
+=2^{2m} + 2^{2m-2} + \cdots + 1 \\
+\frac{2^{2m+2} - 1}{3}
+$$
+
+So $\lim_{m \to \infty} x_m = 2/3$. We can verify it
+
+$$ 
+g(2/3) = h(\frac{2}{3}) + 1/2 h(\frac{4}{3}) + 1/4 h(\frac{8}{3}) + \cdots
+= \frac{2}{3} + \frac{1}{2} \cdot \frac{2}{3} + \frac{1}{4} \cdot \frac{2}{3} + \cdots \\
+= \frac{2}{3} (1 + \frac{1}{2} + \frac{1}{4} + \cdots )
+= \frac{4}{3}
+$$
+
+$\square$
+
+(c) Is $D$ finite, countable, or uncountable?
+
+Solution: I think it is uncountable. Because we can find $2^m$ numbers to achieve $\frac{1-\frac{1}{4^{m+1}}}{1-1/4}$.
+
+### 5.4.6.
+
+(a) Modify the previous argument to show that $g'(1)$ does
+not exist. Show that $g'(1/2)$ does not exist.
+
+Proof:
+
+$$ 
+h(2^{i}(1+\frac{1}{2^m})) - h(2^i) = h(\frac{1}{2^{m-i}}) =
+\frac{1}{2^{m-i}}
+$$
+
+So
+
+$$ 
+\frac{g(1+x_m) - g(1)}{(1+x_m)-1} =\\
+\frac{
+\sum_{i=0}^{\infty} \frac{1}{2^i} \left( 
+h(2^{i}(1+x_m)) - h(2^i)
+ \right) 
+}{x_m} =\\
+\frac{
+\sum_{i=0}^{m} \frac{1}{2^i} \frac{1}{2^{m-i}}
+}{
+x_m
+} = m + 1
+$$
+
+$\square$
+
+(b) Show that $g'(x)$ does not exist for any rational number of the form $x = p/2^k$ where $p ∈ Z$ and $k ∈ N∪\{0\}$.
+
+Proof: The idea is to choose $m$ big enough such that
+$2^i(x+\frac{1}{2^m})$ and $2^ix$ are at the same segment of $h(x)$.
+
+$$ 
+h_i(x) = h(2^i(x+\frac{1}{2^m})) - h(2^ix)\\
+= h(\frac{p}{2^{k-i}} + \frac{1}{2^{m-i}}) - h(\frac{p}{2^{k-i}})\\
+$$
+
+This value depends on $i$. So when $0 \leq i \leq k$, $h_i(x)$ can be $\pm x_{m-i}$, but when
+$k < i \leq m$, $h_i(x) = x_{m-i}$. So
+
+$$
+\frac{
+g(x+x_m) - g(x)
+}{
+x_m
+} \geq m - 2(k+1)
+$$
+
+$\square$
+
+### 5.4.7.
+
+(a) First prove the following general lemma: Let $f$ be defined
+on an open interval $J$ and assume $f$ is diﬀerentiable at $a ∈ J$. If $(a_n)$ and $(b_n)$
+are sequences satisfying $a_n < a < b_n$ and $\lim a_n = \lim b_n = a$, show
+
+$$ 
+f'(a) = \lim_{n \to \infty}
+\frac{
+f(b_n) - f(a_n)
+}{
+b_n - a_n
+}
+$$
+
+Proof: 
+
+$$
+\left|   \frac{
+f(b_n) - f(a_n)
+}{
+b_n - a_n
+} - f'(a) \right| 
+=
+\\
+\left| \frac{b_n - a}{b_n - a_n}
+\frac{f(b_n) - f(a)}{b_n - a} -
+\frac{b_n - a}{b_n - a_n} f'(a)
+\\
++\\
+\frac{a - a_n}{b_n - a_n}
+\frac{f(a) - f(a_n)}{a - a_n} -
+\frac{a - a_n}{b_n - a_n} f'(a) \right| \leq \\
+\left| 
+\frac{b_n - a}{b_n - a_n}
+\left( 
+\frac{f(b_n) - f(a)}{b_n - a} - f'(a)
+ \right) 
+\right| +
+\left| 
+\frac{a - a_n}{b_n - a_n}
+\left( 
+\frac{f(a) - f(a_n)}{a - a_n} - f'(a)
+\right) 
+\right| \leq \\
+\left| 
+\frac{f(b_n) - f(a)}{b_n - a} - f'(a)
+\right| +
+\left| 
+\frac{f(a) - f(a_n)}{a - a_n} - f'(a)
+\right| < \epsilon + \epsilon
+$$
+
+$\square$
+
+(b) Now use this lemma to show that $g'(x)$ does not exist.
+
+Proof: We first check some values, say $x = \frac{2}{3}$.
+$\frac{5}{8} < \frac{2}{3} < \frac{6}{8}$.  
+
+$$ 
+8 \times (g(\frac{6}{8}) - g(\frac{5}{8}))
+= 1 - 1 + 1 - 1 = 0
+$$
+
+Then we also have $\frac{10}{16} < \frac{2}{3} < \frac{11}{16}$, so
+
+$$ 
+16 \times (g(\frac{11}{16}) - g(\frac{10}{16})) =
+1 - 1 + 1 - 1 + 1 = 5
+$$
+
+As we can see
+$$ 
+\frac{1}{2^n}\left( g(\frac{ p_n+1 }{2^n}) -
+g(\frac{
+    p_n
+}{2^n})
+\right)
+$$
+
+is a even number when $n$ is odd, and an odd number when
+$n$ is even.
+So this sequence does not converges. Then given any $c$,
+$g(x)$ is not differentiable at $c$.

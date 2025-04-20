@@ -135,5 +135,135 @@ as it is built on top of some hard-fought accomplishments from the study of limi
     * We will use it to prove L’Hospital’s rules regarding limits of quotients of differentiable functions.
     * A rigorous analysis of how infinite series of functions behave when differentiated requires the Mean Value Theorem (Theorem 6.4.3)
     * It is the crucial step in the proof of the Fundamental Theorem of Calculus (Theorem 7.5.1)
-    * It is also the fundamental concept underlying Lagrange’s Remainder Theorem (Theorem 6.6.3) which approximates the error between a Taylor polynomial and the func- tion that generates it.
+    * It is also the fundamental concept underlying Lagrange’s Remainder Theorem (Theorem 6.6.3) which approximates the error between a Taylor polynomial and the function that generates it.
 
+### Theorem 5.3.1 (Rolle’s Theorem).
+
+Let $f : [a, b] → \mathbf{R}$ be continuous on $[a, b]$ and differentiable on $(a,b)$. If $f(a) = f(b)$, then there exists a point $c ∈ (a,b)$ where $f'(c) = 0$.
+
+Sketch of Proof: $f$ is a continuous, so it attains
+its maximum or minimum value at some point $c ∈ (a,b)$. Then $f'(c) = 0$ from
+the Interior Extremum Theorem (Theorem 5.2.6).
+
+### Theorem 5.3.2 (Mean Value Theorem).
+
+If $f : [a, b] → \mathbf{R}$ is continuous on
+$[a, b]$ and differentiable on $(a, b)$, then there exists a point $c ∈ (a, b)$ where
+
+$$ 
+f'(c)=
+\frac{f(b)-f(a)}{b-a}
+$$
+
+Sketch of Proof: Let
+
+$$ 
+g(x) = \frac{f(b)-f(a)}{b-a} (x-a) - f(x)
+$$
+
+Then $g(a) = -f(a)$, $g(b) = -f(a)$. Then we can
+apply Rolle theorem:
+
+$$ 
+g'(c) = \frac{f(b)-f(a)}{b-a} - f'(c) = 0
+$$
+
+So
+
+$$ 
+f'(c)=
+\frac{f(b)-f(a)}{b-a}
+$$
+
+### Theorem 5.3.5 (Generalized Mean Value Theorem). 
+
+If $f$ and $g$ are continuous on the closed interval $[a, b]$ and differentiable on the open interval
+$(a, b)$, then there exists a point $c ∈ (a, b)$ where
+
+$$ 
+[f (b) − f (a)]g' (c) = [g(b) − g(a)]f' (c)
+$$
+
+If $g'$ is never zero on $(a, b)$, then the conclusion can be stated as
+
+$$ 
+\frac{f(b) - f(a)}{g(b)-g(a)} =
+\frac{f'(c)}{g'(c)}
+$$
+
+Proof: See exercise 5.3.5.
+
+$\square$
+
+### Theorem 5.3.6 (L’Hospital’s Rule: 0/0 case).
+
+Let $f$ and $g$ be continuous on an interval containing $a$, and assume $f$ and $g$ are differentiable on this interval with the possible exception of the point $a$. If $f(a) = g(a) = 0$ and $g'(x) \not =0$ for all $x \not =a$, then
+
+$$ 
+\lim_{x \to a} 
+\frac{f'(x)}{g'(x)} = L \text{ implies }
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+$$
+
+Proof: See Exercise 5.3.11.
+
+### Theorem 5.3.8 (L’Hospital’s Rule: $∞/∞$ case).
+
+Assume $f$ and $g$ are differentiable on $(a, b)$ and that $g'(x) \not = 0$ for all $x ∈ (a, b)$. If $\lim_{x→a} g(x) = ∞$ (or $−∞$), then
+
+$$ 
+\lim_{x \to a} 
+\frac{f'(x)}{g'(x)} = L \text{ implies }
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+$$
+
+Proof: We can find $\delta_1$ such that
+
+$$
+\left| 
+\frac{f'(x)}{g'(x)} - L
+\right| < \epsilon /2
+$$
+
+Let $t = a + \delta_1$, for any $x \in (a, t)$, we
+have
+
+$$ 
+L - \epsilon / 2 <
+\frac{ f(x) - f(t) }{g(x) - g(t)}
+< L + \epsilon / 2
+$$
+
+We times $1 - \frac{g(t)}{g(x)}$ and get
+
+$$ 
+(1 - \frac{g(t)}{g(x)})(L - \epsilon / 2) <
+(1 - \frac{g(t)}{g(x)})(\frac{ f(x) - f(t) }{g(x) - g(t)})
+< (1 - \frac{g(t)}{g(x)})(L + \epsilon / 2) \\
+L - \epsilon / 2 - \frac{
+L g(t) - \epsilon / 2 g(t) - f(t)
+}{g(x)}
+< \frac{g(x)}{f(x)} <
+L + \epsilon / 2 + \frac{
+-L g(t) - \epsilon / 2 g(t) + f(t)
+}{g(x)}
+$$
+
+As long as $x$ is close to $a$ enough,
+
+$$ 
+L - \epsilon <
+\frac{ f(x) }{g(x)}
+< L + \epsilon
+$$ 
+
+So
+
+$$ 
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+$$
+
+$\square$

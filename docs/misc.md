@@ -34,6 +34,30 @@ mkdocs gh-deploy
 * [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 * [Creating a beautiful documentation site with MkDocs](https://www.blimped.nl/creating-a-beautiful-documentation-site-with-mkdocs/)
 
+### How to display math properly
+
+* I follow [this instructions](https://squidfunk.github.io/mkdocs-material/reference/math/).
+    * I need to create a `docs/javascripts/mathjax.js`
+    * I also need to do the following in `mkdocs.yml`
+    * About mathjax version: see [here](https://www.mathjax.org/#gettingstarted).
+```ymal
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+```
+
+* If I just need to use 2.7.7, then I can simply do:
+    * See [here](https://docs.mathjax.org/en/v2.7-latest/configuration.html)
+
+```ymal
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML
+```
+
 ## VScode extensions
 
 * I use VScode as my IDE. To make typing equation easier in markdown file, the following 3 extensions have been installed:
