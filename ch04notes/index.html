@@ -58,11 +58,33 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#43-continuous-functions">4.3 Continuous Functions</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#44-continuous-functions-on-compact-sets">4.4 Continuous Functions on Compact Sets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#45-the-intermediate-value-theorem">4.5 The Intermediate Value Theorem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#46-sets-of-discontinuity">4.6 Sets of Discontinuity</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#d_f-for-an-arbitrary-function">D_f for an Arbitrary Function</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -118,7 +140,7 @@ Since <script type="math/tex">\lim_{x \to c} f(x) = L</script>, we can find <scr
 sequences <script type="math/tex">(x_n)</script> and <script type="math/tex">(y_n)</script> in <script type="math/tex">A</script> with <script type="math/tex">x_n \neq c</script> and <script type="math/tex">y_n \neq c</script> and <script type="math/tex">\lim x_n = \lim y_n = c</script> but <script type="math/tex">\lim f(x_n) \neq \lim f(y_n)</script>, then we can conclude that functional limit <script type="math/tex">\lim_{x \to c} f(x)</script> does not exist. </p>
 <h2 id="43-continuous-functions">4.3 Continuous Functions</h2>
 <p><strong><em>Definition 4.3.1 (Continuity).</em></strong> A function <script type="math/tex">f: A \rightarrow \mathbb{R}</script>
-<em>is continuous at a point</em> <script type="math/tex">c \in A</script> if for all <script type="math/tex">\epsilon > 0</script>, there exists a <script type="math/tex">\delta > 0</script> such that whenever <script type="math/tex">|x-c| < \delta</script> (and <script type="math/tex">x \in A</script>) it follows that <script type="math/tex">|f(x) - f(x)| < \epsilon</script>.</p>
+<em>is continuous at a point</em> <script type="math/tex">c \in A</script> if for all <script type="math/tex">\epsilon > 0</script>, there exists a <script type="math/tex">\delta > 0</script> such that whenever <script type="math/tex">|x-c| < \delta</script> (and <script type="math/tex">x \in A</script>) it follows that <script type="math/tex">|f(x) - f(c)| < \epsilon</script>.</p>
 <p>If f is continuous at every point in the domain <script type="math/tex">A</script>, then we say that <script type="math/tex">f</script> is continuous on <script type="math/tex">A</script>.</p>
 <p><strong><em>Theorem 4.3.2 (Characterizations of Continuity).</em></strong> Let <script type="math/tex">f: A \rightarrow \mathbb{R}</script> and <script type="math/tex">c \in A</script>. A function <script type="math/tex">f</script> is continuous at a point <script type="math/tex">c</script> if and only if any one of the following
 three conditions is met:</p>
@@ -132,6 +154,106 @@ three conditions is met:</p>
 <li>The equivalence of (i) and (iii). Use similar argument in theorem 4.2.3.</li>
 </ul>
 <p><strong><em>Corollary 4.3.3 (Criterion for Discontinuity).</em></strong> Let <script type="math/tex">f: A \rightarrow \mathbb{R}</script> and <script type="math/tex">c \in A</script> be a limit point of <script type="math/tex">A</script>. If there exists a sequence <script type="math/tex">(x_n) \subseteq A</script> where <script type="math/tex">(x_n) \rightarrow c</script> but such that <script type="math/tex">f(x_n)</script> does not converge to <script type="math/tex">f(x)</script>, we may conclude that <script type="math/tex">f</script> is not continuous at <script type="math/tex">c</script>.</p>
+<p><strong><em>Theorem 4.3.4 (Algebraic Continuity Theorem).</em></strong></p>
+<ul>
+<li>
+<script type="math/tex">kf(x)</script> is continuous at <script type="math/tex">c</script> for all <script type="math/tex">k ∈ R</script>;</li>
+<li>
+<script type="math/tex">f(x) + g(x)</script> is continuous at <script type="math/tex">c</script>.</li>
+<li>
+<script type="math/tex">f(x)g(x)</script>
+</li>
+<li>
+<script type="math/tex">f(x)/g(x)</script>
+</li>
+</ul>
+<p><strong><em>Example 4.3.5.</em></strong> All polynomials are continuous on <script type="math/tex">\mathbb{R}</script>.</p>
+<p><strong><em>Example 4.3.6.</em></strong> </p>
+<p>
+<script type="math/tex; mode=display"> g(x) = 
+\begin{cases}
+    x \sin (1/x) &\text{if } x \neq 0\\
+    0            &\text{if } x = 0\\
+\end{cases}  </script>
+</p>
+<ul>
+<li>To see <script type="math/tex">g(x)</script> is continuous at 0, we can see <script type="math/tex">|g(x) - 0| = |x \sin (1/x)| \leq |x|</script>. So given <script type="math/tex">\epsilon</script>, we just need to set <script type="math/tex">\delta = \epsilon</script>.</li>
+</ul>
+<p><strong><em>Example 4.3.7.</em></strong> The greatest integer function <script type="math/tex">h(x) = [[x]]</script>.</p>
+<ul>
+<li>When <script type="math/tex">m \in \mathbf{Z}</script>, consider the sequence <script type="math/tex">(x_n) = m-1/n</script>. Then <script type="math/tex">(x_n) \rightarrow m-1 \neq m = h(m)</script>.</li>
+<li>When <script type="math/tex">c \not\in \mathbf{Z}</script>, let <script type="math/tex">\delta = \min \left\{ c - n, (n+1) - c \right\}</script>, then <script type="math/tex">h(x) = h(c) = n</script>.</li>
+</ul>
+<p><strong><em>Theorem 4.3.9 (Composition of Continuous Functions).</em></strong> Given <script type="math/tex">f : A→R</script> and <script type="math/tex">g : B → R</script>, assume that the range <script type="math/tex">f(A) = {f(x) : x ∈ A}</script> is contained in the domain <script type="math/tex">B</script> so that the composition <script type="math/tex">g ◦ f(x) = g(f(x))</script> is defined on <script type="math/tex">A</script>.</p>
+<p>If <script type="math/tex">f</script> is continuous at <script type="math/tex">c ∈ A</script>, and if <script type="math/tex">g</script> is continuous at <script type="math/tex">f(c) ∈ B</script>, then <script type="math/tex">g ◦ f</script> is continuous at <script type="math/tex">c</script>.</p>
+<h2 id="44-continuous-functions-on-compact-sets">4.4 Continuous Functions on Compact Sets</h2>
+<p><strong><em>Theorem 4.4.1 (Preservation of Compact Sets).</em></strong> Let <script type="math/tex">f : A → R</script> be continuous on <script type="math/tex">A</script>. If <script type="math/tex">K ⊆ A</script> is compact, then <script type="math/tex">f(K)</script> is compact as well.</p>
+<ul>
+<li>Proof: Assume <script type="math/tex">(y_n)</script> is a sequence in <script type="math/tex">f(K)</script>. We can find <script type="math/tex">(x_n)</script> such that <script type="math/tex">f(x_n) = y_n</script>. Since <script type="math/tex">K</script> is compact, there is a subsequence <script type="math/tex">(x_{n_k}) \rightarrow x</script>. Because <script type="math/tex">f</script> is continuous at <script type="math/tex">x</script>, then <script type="math/tex">\lim_{n_k \to \infty} y_{n_k} = f(x) \in f(K)</script>. So
+we find subsequence <script type="math/tex">(y_{k_n}) \rightarrow f(x)</script>. So <script type="math/tex">f(K)</script> is compact.</li>
+</ul>
+<p><strong><em>Theorem 4.4.2 (Extreme Value Theorem).</em></strong> If <script type="math/tex">f : K → R</script> is continuous on a compact set <script type="math/tex">K ⊆ R</script>, then <script type="math/tex">f</script> attains a maximum and minimum value. In other words, there exist <script type="math/tex">x_0,x_1 ∈ K</script> such that <script type="math/tex">f(x_0) ≤ f(x) ≤ f(x_1)</script> for all <script type="math/tex">x ∈ K</script>.</p>
+<p><strong><em>Definition 4.4.4 (Uniform Continuity).</em></strong> A function <script type="math/tex">f : A → R</script> is uniformly continuous on <script type="math/tex">A</script> if for every <script type="math/tex">ε > 0</script> there exists a <script type="math/tex">δ > 0</script> such that for all <script type="math/tex">x, y ∈ A</script>, <script type="math/tex">|x−y|<δ</script> implies <script type="math/tex">|f(x)−f(y)|<ε</script>.</p>
+<p><strong><em>Theorem 4.4.5 (Sequential Criterion for Absence of Uniform Continuity).</em></strong> A function <script type="math/tex">f : A → R</script> fails to be uniformly continuous on <script type="math/tex">A</script> if and only if there exists a particular <script type="math/tex">ε_0 > 0</script> and two sequences <script type="math/tex">(x_n)</script> and <script type="math/tex">(y_n)</script> in A satisfying
+<script type="math/tex">|x_n − y_n|→0</script> but <script type="math/tex">|f(x_n)−f(y_n)|≥ε_0</script>.</p>
+<h2 id="45-the-intermediate-value-theorem">4.5 The Intermediate Value Theorem</h2>
+<p><strong><em>Theorem 4.5.1 (Intermediate Value Theorem).</em></strong> Let <script type="math/tex">f : [a,b] → R</script> be continuous. If <script type="math/tex">L</script> is a real number satisfying <script type="math/tex">f(a) < L < f(b)</script> or <script type="math/tex">f(a) > L > f(b)</script>, then there exists a point <script type="math/tex">c ∈ (a,b)</script> where <script type="math/tex">f(c) = L</script>.</p>
+<p><strong><em>Theorem 4.5.2 (Preservation of Connected Sets).</em></strong> Let f : G → R be continuous. If E ⊆ G is connected, then f(E) is connected as well.</p>
+<p>Proof: Let <script type="math/tex">f(E) = A ∪ B</script> where <script type="math/tex">A</script> and <script type="math/tex">B</script> are disjoint and nonempty.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+C=\{x∈E:f(x)∈A\} \text{ and }
+D=\{x∈E:f(x)∈B\}
+</script>
+</p>
+<ul>
+<li>Because <script type="math/tex">A, B</script> are nonempty, so <script type="math/tex">C, D</script> are nonempty.</li>
+<li>Because <script type="math/tex">A, B</script> are disjoint, so <script type="math/tex">C, D</script> are disjoint.</li>
+<li>Also <script type="math/tex">E = C \cup D</script>.</li>
+</ul>
+<p>Since <script type="math/tex">E</script> is connected, we can assume there is a sequence <script type="math/tex">(x_n) \in C</script> such that <script type="math/tex">\lim x_n = x \in D</script>.
+Since <script type="math/tex">f</script> is continuous, then <script type="math/tex">f(x_n) \in A</script> and <script type="math/tex">\lim f(x_n) = f(x) \in B</script>. So <script type="math/tex">f(E)</script> is also connected.
+<script type="math/tex">\square</script>
+</p>
+<p><strong><em>Definition 4.5.3.</em></strong> A function <script type="math/tex">f</script> has the intermediate value property on an interval <script type="math/tex">[a,b]</script> if for all <script type="math/tex">x < y</script> in <script type="math/tex">[a,b]</script> and all <script type="math/tex">L</script> between <script type="math/tex">f(x)</script> and <script type="math/tex">f(y)</script>, it is always possible to find a point <script type="math/tex">c ∈ (x,y)</script> where <script type="math/tex">f(c) = L</script>.</p>
+<h2 id="46-sets-of-discontinuity">4.6 Sets of Discontinuity</h2>
+<p>Given a function <script type="math/tex">f: \mathbf{R} → \mathbf{R}</script>, define
+<script type="math/tex">D_f ⊆R</script> to be the set of points where the function <script type="math/tex">f</script> fails to be continuous.</p>
+<ul>
+<li>Dirichlet’s function: <script type="math/tex">D_f = \mathbf{R}</script>.</li>
+<li>Modified Dirichlet’s function: <script type="math/tex">D_h = \mathbf{R} \backslash \{0\}</script>.</li>
+<li>Thomae function: <script type="math/tex">D_t = \mathbf{Q}</script>.</li>
+</ul>
+<p><strong><em>Definition 4.6.2.</em></strong> Given a limit point <script type="math/tex">c</script> of a set <script type="math/tex">A</script> and a function <script type="math/tex">f : A → R</script>, we write</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c^+} f(x) = L
+</script>
+</p>
+<p>if for all <script type="math/tex">ε > 0</script> there exists a <script type="math/tex">δ > 0</script> such that <script type="math/tex">|f(x)−L| < ε</script> whenever <script type="math/tex">0 < x−c < δ</script>.</p>
+<p>Equivalently, in terms of sequences, <script type="math/tex">\lim_{x \to c^+} f(x) = L</script> if <script type="math/tex">\lim f(x_n) = L</script> for all sequences <script type="math/tex">(x_n)</script> satisfying <script type="math/tex">x_n > c</script> and <script type="math/tex">\lim (x_n) = c</script>.</p>
+<p><strong><em>Theorem 4.6.3.</em></strong> Given <script type="math/tex">f : A → R</script> and a limit point <script type="math/tex">c</script> of <script type="math/tex">A</script>, <script type="math/tex">\lim_{x \to c} f(x) = L</script> if and only if</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{x \to c^+} f(x) = L
+\text{ and }
+\lim_{x \to c^-} f(x) = L.
+</script>
+</p>
+<p>Generally speaking, discontinuities can be divided into three categories:</p>
+<ul>
+<li>If <script type="math/tex">\lim_{x \to c}f(x)</script> exists but has a value different from <script type="math/tex">f(c)</script>, the discontinuity at <script type="math/tex">c</script> is called removable.</li>
+<li>If <script type="math/tex">\lim_{x \to c^+}f(x) \not = \lim_{x \to c^-} f(x)</script> then <script type="math/tex">f</script> has a jump discontinuity at <script type="math/tex">c</script>.</li>
+<li>If <script type="math/tex">\lim_{x \to c}f(x)</script> does not exist for some other reason, then the discontinuity at <script type="math/tex">c</script> is called an essential discontinuity.</li>
+</ul>
+<h3 id="d_f-for-an-arbitrary-function">
+<script type="math/tex">D_f</script> for an Arbitrary Function</h3>
+<p><strong><em>Definition 4.6.4.</em></strong> A set that can be written as the countable union of closed sets is in the class <script type="math/tex">F_σ</script>. (This definition also appeared in Section 3.5.)</p>
+<p><strong><em>Definition 4.6.5.</em></strong> Let <script type="math/tex">f</script> be defined on <script type="math/tex">\mathbf{R}</script>, and let <script type="math/tex">α > 0</script>. The function <script type="math/tex">f</script> is <script type="math/tex">α</script>-continuous at <script type="math/tex">x ∈ \mathbf{R}</script> if there exists a <script type="math/tex">δ > 0</script> such that for all <script type="math/tex">y,z ∈ (x−δ,x+δ)</script> it follows that <script type="math/tex">|f(y) − f(z)| < α</script>.</p>
+<p>Given a function <script type="math/tex">f</script> on <script type="math/tex">\mathbf{R}</script>, define <script type="math/tex">D_f^α</script> to be the set of points where the function <script type="math/tex">f</script> fails to be <script type="math/tex">α</script>-continuous. In other words,</p>
+<p>
+<script type="math/tex; mode=display">D_f^α = \{ x∈ \mathbf{R}:f \text{ is not α-continuous at x} \}</script>.</p>
               
             </div>
           </div><footer>
@@ -171,7 +293,7 @@ three conditions is met:</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

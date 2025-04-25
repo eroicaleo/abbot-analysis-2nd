@@ -59,12 +59,26 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Misc info</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#project-page-generation">Project page generation</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#mkdocs-reference">mkdocs reference</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-display-math-properly">How to display math properly</a>
     </li>
         </ul>
     </li>
@@ -134,6 +148,32 @@
 <li><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></li>
 <li><a href="https://www.blimped.nl/creating-a-beautiful-documentation-site-with-mkdocs/">Creating a beautiful documentation site with MkDocs</a></li>
 </ul>
+<h3 id="how-to-display-math-properly">How to display math properly</h3>
+<ul>
+<li>I follow <a href="https://squidfunk.github.io/mkdocs-material/reference/math/">this instructions</a>.<ul>
+<li>I need to create a <code>docs/javascripts/mathjax.js</code></li>
+<li>I also need to do the following in <code>mkdocs.yml</code></li>
+<li>About mathjax version: see <a href="https://www.mathjax.org/#gettingstarted">here</a>.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-ymal">markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+</code></pre>
+<ul>
+<li>If I just need to use 2.7.7, then I can simply do:<ul>
+<li>See <a href="https://docs.mathjax.org/en/v2.7-latest/configuration.html">here</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-ymal">extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML
+</code></pre>
 <h2 id="vscode-extensions">VScode extensions</h2>
 <ul>
 <li>
@@ -152,7 +192,7 @@
 </ul>
 </li>
 <li>
-<p>Other latex snippet are located under <code>snippets/latex.json</code>.</p>
+<p>Other user defined latex snippet are located under <code>snippets/latex.json</code>. It's better to create a global user snippet and copy over the contents to there: (control palette -&gt; "Snippets" -&gt; "New Global").</p>
 </li>
 <li>
 <p>In addition, to make the intellisense work for markdown file, I need to edit the <code>settings.json</code>
@@ -202,7 +242,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ch04ex/" class="btn btn-neutral float-left" title="Chapter 04 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch06ex/" class="btn btn-neutral float-left" title="Chapter 06 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../unsolved/" class="btn btn-neutral float-right" title="Unsolved Problems">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -226,7 +266,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../ch04ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../ch06ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -237,7 +277,7 @@
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

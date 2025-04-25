@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 05 Notes - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 05 Notes";
+        var mkdocs_page_input_path = "ch05notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 05 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#52-derivatives-and-the-intermediate-value-property">5.2 Derivatives and the Intermediate Value Property</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#darbouxs-theorem">Darboux’s Theorem</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#53-the-mean-value-theorems">5.3 The Mean Value Theorems</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-531-rolles-theorem">Theorem 5.3.1 (Rolle’s Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-532-mean-value-theorem">Theorem 5.3.2 (Mean Value Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-535-generalized-mean-value-theorem">Theorem 5.3.5 (Generalized Mean Value Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-536-lhospitals-rule-00-case">Theorem 5.3.6 (L’Hospital’s Rule: 0/0 case).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-538-lhospitals-rule-case">Theorem 5.3.8 (L’Hospital’s Rule: ∞/∞ case).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 05 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch05notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-05-the-derivative">Chapter 05 The Derivative</h1>
+<h2 id="52-derivatives-and-the-intermediate-value-property">5.2 Derivatives and the Intermediate Value Property</h2>
+<p><strong><em>Definition 5.2.1 (Differentiability).</em></strong>
+Let <script type="math/tex">g : A → \mathbf{R}</script> be a function defined on an interval <script type="math/tex">A</script>. Given <script type="math/tex">c ∈ A</script>, the derivative of <script type="math/tex">g</script> at <script type="math/tex">c</script> is defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = \lim_{x \to c}  \frac{
+    g(x) − g(c)
+}{
+    x−c
+}
+</script>
+</p>
+<p>Provided this limit exists.
+In this case we say <script type="math/tex">g</script> is differentiable at <script type="math/tex">c</script>.
+If <script type="math/tex">g</script> exists for all points <script type="math/tex">c ∈ A</script>, we say that <script type="math/tex">g</script> is differentiable on <script type="math/tex">A</script>.</p>
+<p><strong><em>Theorem 5.2.3.</em></strong> If <script type="math/tex">g : A → \mathbf{R}</script> is differentiable at a point <script type="math/tex">c ∈ A</script>, then <script type="math/tex">g</script> is continuous at <script type="math/tex">c</script> as well.</p>
+<p>Proof: Assume <script type="math/tex">g'(c) = d</script>, that means given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">\delta</script>, if <script type="math/tex">x \in U_{\delta}(c)</script>, then <script type="math/tex">\left| \frac{g(x) - g(c)}{x - c} \right| < \epsilon</script>. let <script type="math/tex">\delta' = \min \{1, \delta\}</script>. Then if <script type="math/tex">x \in U_{\delta'}(c)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| g(x) - g(c) \right| <
+\left| \frac{g(x) - g(c)}{x - c} \right| <
+\epsilon
+</script>
+</p>
+<p>So <script type="math/tex">g</script> is continuous at <script type="math/tex">c</script> as well.
+<script type="math/tex">\square</script>
+</p>
+<p><strong><em>Theorem 5.2.5 (Chain Rule).</em></strong>
+Let <script type="math/tex">f : A → R</script> and <script type="math/tex">g : B → R</script> satisfy <script type="math/tex">f(A) ⊆ B</script>
+so that the composition <script type="math/tex">g ◦ f</script> is defined. If <script type="math/tex">f</script>
+is differentiable at <script type="math/tex">c∈A</script> and if <script type="math/tex">g</script> is differentiable
+at <script type="math/tex">f(c)∈B</script>,then <script type="math/tex">g◦f</script> is differentiable at <script type="math/tex">c</script>
+with <script type="math/tex">(g ◦ f)'(c) = g'(f(c)) · f'(c)</script>.</p>
+<p>Proof: </p>
+<p>
+<script type="math/tex; mode=display"> 
+(g ◦ f)'(c) = \lim_{x \to c}
+\frac{(g ◦ f)(x)- (g ◦ f)(c)}{x - c} \\
+= \lim_{x \to c} \frac{g(f(x))- g(f(c))}{f(x) - f(c)}
+\cdot \frac{f(x) - f(c)}{x - c} \\
+</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(y) = \frac{g(y) - g(f(c))}{y - f(c)}
+</script>
+</p>
+<p>Define <script type="math/tex">d(y) = g'(f(c))</script>. So <script type="math/tex">d</script> is continuous at <script type="math/tex">f(c)</script>.
+So we have <script type="math/tex">g(y) - g(f(c)) = d(y)(y - c)</script>, <script type="math/tex">\forall y \in B</script>.</p>
+<p>So we have <script type="math/tex">g(f(t)) - g(f(c)) = d(f(t))(f(t) - c)</script>,
+<script type="math/tex">\forall t \in A</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{g(f(t))- g(f(c))}{t - c}\\
+= \frac{d(f(t))(f(t) - c)}{t - c}\\
+= d(f(t))\frac{(f(t) - c)}{t - c}
+</script>
+</p>
+<p>Because <script type="math/tex">f(t)</script> is continuous at <script type="math/tex">c</script>, <script type="math/tex">d(y)</script> is continuous
+at <script type="math/tex">f(c)</script>, so <script type="math/tex">d(f(t))</script> is continuous at <script type="math/tex">t</script> based on Theorem 4.3.9.
+<script type="math/tex">\frac{(f(t) - c)}{t - c}</script> is also continuous at <script type="math/tex">t</script>.
+With Corollary 4.2.4 (Algebraic Limit Theorem for Functional Limits).</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{t \to c} d(f(t))\frac{(f(t) - c)}{t - c} \\
+= \lim_{t \to c}d(f(t)) \cdot \lim_{t \to c} \frac{(f(t) - c)}{t - c}\\
+= g'(f(c)) \cdot f'(c)
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="darbouxs-theorem">Darboux’s Theorem</h3>
+<p><strong><em>Theorem 5.2.6 (Interior Extremum Theorem).</em></strong>
+Let <script type="math/tex">f</script> be differentiable on an open interval <script type="math/tex">(a, b)</script>.
+If <script type="math/tex">f</script> attains a maximum value at some point <script type="math/tex">c ∈ (a, b)</script>
+(i.e., <script type="math/tex">f(c) ≥ f(x)</script> for all <script type="math/tex">x ∈ (a,b)</script>), then
+<script type="math/tex">f'(c) = 0</script>. The same is true if <script type="math/tex">f(c)</script> is a minimum value.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{x \to c}
+\frac{f(x) - f(c)}{x - c} =
+\lim_{x \to c^+}
+\frac{f(x) - f(c)}{x - c} \le 0 \\
+\lim_{x \to c}
+\frac{f(x) - f(c)}{x - c} =
+\lim_{x \to c^-}
+\frac{f(x) - f(c)}{x - c} \ge 0 \\
+</script>
+</p>
+<p>So <script type="math/tex">f'(c) = 0</script>.
+<script type="math/tex">\square</script>
+</p>
+<p><strong><em>Theorem 5.2.7 (Darboux's Theorem).</em></strong>
+If <script type="math/tex">f</script> is differentiable on an interval
+<script type="math/tex">[a,b]</script>, and if <script type="math/tex">\alpha</script> satisfies <script type="math/tex">f'(a) < \alpha < f'(b)</script>
+(or <script type="math/tex">f'(a) > \alpha > f'(b)</script>), then there exists a point
+<script type="math/tex">c ∈ (a, b)</script> where <script type="math/tex">f'(c) = \alpha</script>.</p>
+<p>Proof: Consider <script type="math/tex">g(x) = f(x) - \alpha x</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(a) = f'(a) - \alpha < 0
+\text{ and }
+g'(b) = f'(b) - \alpha > 0
+</script>
+</p>
+<ul>
+<li>If <script type="math/tex">g(a) >= g(b)</script>, since <script type="math/tex">g'(b) > 0</script>, then exists <script type="math/tex">\delta</script>,
+  such that if <script type="math/tex">x \in (b-\delta , b)</script>, <script type="math/tex">g(x) < g(b)</script>. Then
+  <script type="math/tex">g</script> attains a minimum value at some point <script type="math/tex">c ∈ (a, b)</script>.
+  So <script type="math/tex">g'(c) = 0</script> and <script type="math/tex">f'(c) = \alpha</script>.</li>
+<li>If <script type="math/tex">g(a) < g(b)</script>, since <script type="math/tex">g'(a) < 0</script>, then exists <script type="math/tex">\delta</script>,
+  such that if <script type="math/tex">x \in (a, a+\delta)</script>, <script type="math/tex">g(x) < g(a)</script>. Then
+  <script type="math/tex">g</script> attains a minimum value at some point <script type="math/tex">c ∈ (a, b)</script>.
+  So <script type="math/tex">g'(c) = 0</script> and <script type="math/tex">f'(c) = \alpha</script>.</li>
+</ul>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="53-the-mean-value-theorems">5.3 The Mean Value Theorems</h2>
+<ul>
+<li>The ease of the proof, however, is misleading,
+as it is built on top of some hard-fought accomplishments from the study of limits and continuity.</li>
+<li>The Mean Value Theorem is the cornerstone of the proof for almost every major theorem pertaining to differentiation.<ul>
+<li>We will use it to prove L’Hospital’s rules regarding limits of quotients of differentiable functions.</li>
+<li>A rigorous analysis of how infinite series of functions behave when differentiated requires the Mean Value Theorem (Theorem 6.4.3)</li>
+<li>It is the crucial step in the proof of the Fundamental Theorem of Calculus (Theorem 7.5.1)</li>
+<li>It is also the fundamental concept underlying Lagrange’s Remainder Theorem (Theorem 6.6.3) which approximates the error between a Taylor polynomial and the function that generates it.</li>
+</ul>
+</li>
+</ul>
+<h3 id="theorem-531-rolles-theorem">Theorem 5.3.1 (Rolle’s Theorem).</h3>
+<p>Let <script type="math/tex">f : [a, b] → \mathbf{R}</script> be continuous on <script type="math/tex">[a, b]</script> and differentiable on <script type="math/tex">(a,b)</script>. If <script type="math/tex">f(a) = f(b)</script>, then there exists a point <script type="math/tex">c ∈ (a,b)</script> where <script type="math/tex">f'(c) = 0</script>.</p>
+<p>Sketch of Proof: <script type="math/tex">f</script> is a continuous, so it attains
+its maximum or minimum value at some point <script type="math/tex">c ∈ (a,b)</script>. Then <script type="math/tex">f'(c) = 0</script> from
+the Interior Extremum Theorem (Theorem 5.2.6).</p>
+<h3 id="theorem-532-mean-value-theorem">Theorem 5.3.2 (Mean Value Theorem).</h3>
+<p>If <script type="math/tex">f : [a, b] → \mathbf{R}</script> is continuous on
+<script type="math/tex">[a, b]</script> and differentiable on <script type="math/tex">(a, b)</script>, then there exists a point <script type="math/tex">c ∈ (a, b)</script> where</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(c)=
+\frac{f(b)-f(a)}{b-a}
+</script>
+</p>
+<p>Sketch of Proof: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = \frac{f(b)-f(a)}{b-a} (x-a) - f(x)
+</script>
+</p>
+<p>Then <script type="math/tex">g(a) = -f(a)</script>, <script type="math/tex">g(b) = -f(a)</script>. Then we can
+apply Rolle theorem:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = \frac{f(b)-f(a)}{b-a} - f'(c) = 0
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(c)=
+\frac{f(b)-f(a)}{b-a}
+</script>
+</p>
+<h3 id="theorem-535-generalized-mean-value-theorem">Theorem 5.3.5 (Generalized Mean Value Theorem).</h3>
+<p>If <script type="math/tex">f</script> and <script type="math/tex">g</script> are continuous on the closed interval <script type="math/tex">[a, b]</script> and differentiable on the open interval
+<script type="math/tex">(a, b)</script>, then there exists a point <script type="math/tex">c ∈ (a, b)</script> where</p>
+<p>
+<script type="math/tex; mode=display"> 
+[f (b) − f (a)]g' (c) = [g(b) − g(a)]f' (c)
+</script>
+</p>
+<p>If <script type="math/tex">g'</script> is never zero on <script type="math/tex">(a, b)</script>, then the conclusion can be stated as</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f(b) - f(a)}{g(b)-g(a)} =
+\frac{f'(c)}{g'(c)}
+</script>
+</p>
+<p>Proof: See exercise 5.3.5.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-536-lhospitals-rule-00-case">Theorem 5.3.6 (L’Hospital’s Rule: 0/0 case).</h3>
+<p>Let <script type="math/tex">f</script> and <script type="math/tex">g</script> be continuous on an interval containing <script type="math/tex">a</script>, and assume <script type="math/tex">f</script> and <script type="math/tex">g</script> are differentiable on this interval with the possible exception of the point <script type="math/tex">a</script>. If <script type="math/tex">f(a) = g(a) = 0</script> and <script type="math/tex">g'(x) \not =0</script> for all <script type="math/tex">x \not =a</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a} 
+\frac{f'(x)}{g'(x)} = L \text{ implies }
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+</script>
+</p>
+<p>Proof: See Exercise 5.3.11.</p>
+<h3 id="theorem-538-lhospitals-rule-case">Theorem 5.3.8 (L’Hospital’s Rule: <script type="math/tex">∞/∞</script> case).</h3>
+<p>Assume <script type="math/tex">f</script> and <script type="math/tex">g</script> are differentiable on <script type="math/tex">(a, b)</script> and that <script type="math/tex">g'(x) \not = 0</script> for all <script type="math/tex">x ∈ (a, b)</script>. If <script type="math/tex">\lim_{x→a} g(x) = ∞</script> (or <script type="math/tex">−∞</script>), then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a} 
+\frac{f'(x)}{g'(x)} = L \text{ implies }
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+</script>
+</p>
+<p>Proof: We can find <script type="math/tex">\delta_1</script> such that</p>
+<p>
+<script type="math/tex; mode=display">
+\left| 
+\frac{f'(x)}{g'(x)} - L
+\right| < \epsilon /2
+</script>
+</p>
+<p>Let <script type="math/tex">t = a + \delta_1</script>, for any <script type="math/tex">x \in (a, t)</script>, we
+have</p>
+<p>
+<script type="math/tex; mode=display"> 
+L - \epsilon / 2 <
+\frac{ f(x) - f(t) }{g(x) - g(t)}
+< L + \epsilon / 2
+</script>
+</p>
+<p>We times <script type="math/tex">1 - \frac{g(t)}{g(x)}</script> and get</p>
+<p>
+<script type="math/tex; mode=display"> 
+(1 - \frac{g(t)}{g(x)})(L - \epsilon / 2) <
+(1 - \frac{g(t)}{g(x)})(\frac{ f(x) - f(t) }{g(x) - g(t)})
+< (1 - \frac{g(t)}{g(x)})(L + \epsilon / 2) \\
+L - \epsilon / 2 - \frac{
+L g(t) - \epsilon / 2 g(t) - f(t)
+}{g(x)}
+< \frac{g(x)}{f(x)} <
+L + \epsilon / 2 + \frac{
+-L g(t) - \epsilon / 2 g(t) + f(t)
+}{g(x)}
+</script>
+</p>
+<p>As long as <script type="math/tex">x</script> is close to <script type="math/tex">a</script> enough,</p>
+<p>
+<script type="math/tex; mode=display"> 
+L - \epsilon <
+\frac{ f(x) }{g(x)}
+< L + \epsilon
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a} 
+\frac{f(x)}{g(x)} = L
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch04ex/" class="btn btn-neutral float-left" title="Chapter 04 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch05ex/" class="btn btn-neutral float-right" title="Chapter 05 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch04ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch05ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

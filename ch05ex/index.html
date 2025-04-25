@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 05 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 05 Exercises";
+        var mkdocs_page_input_path = "ch05ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 05 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#52-derivatives-and-the-intermediate-value-property">5.2 Derivatives and the Intermediate Value Property</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#521">5.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#522">5.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#523">5.2.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#524">5.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#525">5.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#526">5.2.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#527">5.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#528">5.2.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#529">5.2.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5210">5.2.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5211">5.2.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5212-inverse-functions">5.2.12 (Inverse functions).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#53-the-mean-value-theorems">5.3 The Mean Value Theorems</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#531">5.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#532">5.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#533">5.3.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#534">5.3.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#535">5.3.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#536">5.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#537">5.3.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#538">5.3.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#539">5.3.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5310">5.3.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5311">5.3.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5312">5.3.12.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#54-a-continuous-nowhere-differentiable-function">5.4 A Continuous Nowhere-Differentiable Function</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#541">5.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#542">5.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#543">5.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#544">5.4.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#546">5.4.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#547">5.4.7.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 05 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch05ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-05-the-derivative">Chapter 05 The Derivative</h1>
+<h2 id="52-derivatives-and-the-intermediate-value-property">5.2 Derivatives and the Intermediate Value Property</h2>
+<h3 id="521">5.2.1.</h3>
+<p>Supply proofs for parts (i) and (ii) of Theorem 5.2.4.</p>
+<p>(i) <script type="math/tex">(f+g)'(c)=f'(c)+g'(c)</script>
+</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display">
+(f+g)'(c) = \lim_{x \to c}
+\frac{
+    (f(x)+g(x)) - (f(c)+g(c))
+}{
+    x - c
+} \\
+= \lim_{x \to c} \frac{
+    (f(x)-f(c)) + (g(x)-g(c))
+}{
+    x - c
+} \\
+= \lim_{x \to c} \frac{ (f(x)-f(c)) }{ x - c } +
+\frac{ (g(x)-g(c)) }{ x - c } \\
+= \lim_{x \to c} \frac{ (f(x)-f(c)) }{ x - c } +
+\lim_{x \to c} \frac{ (g(x)-g(c)) }{ x - c } \\
+= f'(c) + g'(c)
+</script>
+<script type="math/tex">\square</script>
+</p>
+<p>(ii) <script type="math/tex">(kf)'(c) = kf'(c), \text{ for all } k ∈ R</script>
+</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(kf)′(c) = \lim_{x \to c} \frac{
+    kf(x) - kf(c)
+}{
+    x - c
+} = \lim_{x \to c} k \cdot \frac{
+    f(x) - f(c)
+}{x - c}\\
+= k \cdot \lim_{x \to c} \frac{
+    f(x) - f(c)
+}{x - c} = k \cdot f'(c)
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="522">5.2.2.</h3>
+<p>Exactly one of the following requests is impossible. Decide which it is, and provide examples for the other three. In each case, let’s assume the functions are defined on all of <script type="math/tex">\mathbf{R}</script>.</p>
+<p>(a) Functions <script type="math/tex">f</script> and <script type="math/tex">g</script> not differentiable at zero but where <script type="math/tex">fg</script> is differentiable at zero.</p>
+<p>Solution: Consider <script type="math/tex">f = g = \left| x \right|</script>.</p>
+<p>(b) A function <script type="math/tex">f</script> not differentiable at zero and a function <script type="math/tex">g</script> differentiable at zero where <script type="math/tex">fg</script> is differentiable at zero.</p>
+<p>Solution: Consider <script type="math/tex">f = \left| x \right|</script>, and <script type="math/tex">g = 0</script>.</p>
+<p>(c) A function <script type="math/tex">f</script> not differentiable at zero and a function <script type="math/tex">g</script> differentiable at zero where <script type="math/tex">f + g</script> is differentiable at zero.</p>
+<p>Solution: this is not possible. <script type="math/tex">f = (f+g) - g</script>.</p>
+<p>(d) A function <script type="math/tex">f</script> differentiable at zero but not differentiable at any other point.</p>
+<p>Solution: Consider a modified version of modified Dirichlet function.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    x^2 & x \in \mathbf{Q}\\
+    0   & x \in \mathbf{I}\\
+\end{cases} 
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="523">5.2.3.</h3>
+<p>(a) Use Definition 5.2.1 to produce the proper formula for
+the derivative of h(x) = 1/x.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+h'(c) = \lim_{x \to c} \frac{
+    1/x - 1/c
+}{x - c}\\
+= \lim_{x \to c} -\frac{1}{xc}\\
+= -\frac{1}{c^2}
+</script>
+</p>
+<p>So <script type="math/tex">h'(x) = -\frac{1}{x^2}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Combine the result in part (a) with the Chain Rule
+(Theorem 5.2.5) to
+supply a proof for part (iv) of Theorem 5.2.4.</p>
+<p>Proof: the part (iv) of Theorem 5.2.4 is this:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f /g)' (c) = \frac{
+    g(c)f'(c)−f(c)g'(c) 
+}{[g(c)]^2}, \text{ provided that }g(c) \neq 0
+</script>
+</p>
+<p>Here is the proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f /g)(c) = f(c) \cdot \frac{1}{g(c)}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f /g)'(c) = f'(c) \cdot \frac{1}{g(c)} + f(c) (\frac{1}{g(c)})'\\
+= f'(c) \cdot \frac{1}{g(c)} -
+f(c) (\frac{1}{[g(c)]^2})g'(c)\\
+= \frac{
+    g(c)f'(c)−f(c)g'(c) 
+}{[g(c)]^2}
+</script>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Supply a direct proof of Theorem 5.2.4 (iv) by 
+algebraically manipulating the difference quotient for
+<script type="math/tex">(f/g)</script> in a style similar to the proof of Theorem 5.2.4 (iii).</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f /g)(c) = \frac{f(c) }{g(c)}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f /g)'(c) = \lim_{x \to c}
+\frac{
+    \frac{f(x) }{g(x)} - \frac{f(c) }{g(c)}
+}{
+    x - c
+}\\
+= \lim_{x \to c}
+\frac{
+    \frac{f(x)g(c) - g(x)f(c) }{g(x)g(c)}
+}{
+    x - c
+}\\
+= \lim_{x \to c} \frac{1}{g(x)g(c)} \cdot
+\lim_{x \to c} \frac{
+    (f(x) - f(c))g(c) - (g(x) - g(c))f(c)
+}{
+    x - c
+}\\
+= \frac{
+    g(c)f'(c)−f(c)g'(c) 
+}{[g(c)]^2}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="524">5.2.4.</h3>
+<p>Follow these steps to provide a slightly modified proof of the Chain Rule.</p>
+<p>(a) Show that a function <script type="math/tex">h:A→\mathbf{R}</script> is differentiable
+at <script type="math/tex">a∈A</script> if and only if there exists a function
+<script type="math/tex">l : A → \mathbf{R}</script> which is continuous at <script type="math/tex">a</script>
+and satisfies</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) − h(a) = l(x)(x − a) \text{ for all } x ∈ A.
+</script>
+</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">h</script> is differentiable at <script type="math/tex">a</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+l(x) = \begin{cases}
+    \frac{ h(x) - h(a) }{x - a} &\text{if } x \not = a\\
+    h'(a) &\text{if } x = a\\
+\end{cases} 
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a} l(x) = \lim_{x \to a} 
+\frac{ h(x) - h(a) }{x - a} = h'(a) = l(a)
+</script>
+</p>
+<p>So <script type="math/tex">l(x)</script> is continuous at <script type="math/tex">a</script>.</p>
+<ul>
+<li>When <script type="math/tex">x = a</script>, <script type="math/tex">h(a) - h(a) = 0 = l(a)(a-a)</script>.</li>
+<li>When <script type="math/tex">x \not = a</script>,
+<script type="math/tex">l(x)(x-a)=\frac{ h(x) - h(a) }{x - a}(x-a)=h(x)-h(a)</script>.</li>
+</ul>
+<p>
+<script type="math/tex">\Leftarrow</script> If there exists a function
+<script type="math/tex">l : A → \mathbf{R}</script> which is continuous at <script type="math/tex">a</script>
+and satisfies</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) − h(a) = l(x)(x − a) \text{ for all } x ∈ A.
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a} 
+\frac{ h(x) - h(a) }{x - a} = 
+\lim_{x \to a} l(x) = l(a)
+</script>
+</p>
+<p>So <script type="math/tex">h</script> is differentiable at <script type="math/tex">a∈A</script>. <script type="math/tex">\square</script>
+</p>
+<p>(b) Use this criterion for differentiability (in both directions) to prove Theorem 5.2.5.</p>
+<p>Proof: <script type="math/tex">g</script> is differentiable at <script type="math/tex">f(c)</script>, we can find a function <script type="math/tex">l</script> such that <script type="math/tex">g(f(x)) - g(f(c)) = l(f(x))(f(x) - f(c)) = l(f(x))m(x)(x - c)</script> where</p>
+<p>
+<script type="math/tex; mode=display"> 
+l(y) = \begin{cases}
+    \frac{ g(y) - g(f(c)) }{y - f(c)} &\text{if } y \not = f(c)\\
+    g'(f(c)) &\text{if } y = f(c)\\
+\end{cases} \\
+m(x) = \begin{cases}
+    \frac{ f(x) - f(c) }{x - c} &\text{if } x \not = c\\
+    f'(c) &\text{if } x = c\\
+\end{cases} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c} l(f(x))m(x) =\\
+\lim_{x \to c} l(f(x)) \lim_{x \to c} m(x) =\\
+l(f(c))m(c) = g'(f(c))f'(c)
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="525">5.2.5.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    x^a &\text{if } x > 0\\
+    0   &\text{if } x \le 0\\
+\end{cases} 
+</script>
+</p>
+<p>For which values of <script type="math/tex">a</script> is <script type="math/tex">f</script> continuous at zero?</p>
+<p>Solution:</p>
+<ul>
+<li>For <script type="math/tex">a > 0</script>, <script type="math/tex">\lim_{x \to 0} f(x) = 0</script>, so <script type="math/tex">f</script> is continuous at zero.</li>
+<li>For <script type="math/tex">a = 0</script>, <script type="math/tex">\lim_{x \to 0} f(x) = 1</script>, so <script type="math/tex">f</script> is not continuous at zero.</li>
+<li>For <script type="math/tex">a < 0</script>, <script type="math/tex">\lim_{x \to 0} f(x) = +\infty</script>, so <script type="math/tex">f</script> is not continuous at zero.</li>
+</ul>
+<p>(b) For which values of <script type="math/tex">a</script> is <script type="math/tex">f</script> differentiable at zero? In this case, is the derivative function continuous?</p>
+<p>Solution:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 0^+} \frac{x^a - 0}{x - 0} = x^{a - 1} \\
+\lim_{x \to 0^-} \frac{0 - 0}{x - 0} = 0 \\
+</script>
+</p>
+<p>So
+* For <script type="math/tex">a > 1</script>, <script type="math/tex">\lim_{x \to 0} x^{a-1} = 0</script>, so <script type="math/tex">f</script> is differentiable at zero. Further more, the derivative function
+is also continuous.
+* For <script type="math/tex">a <= 1</script>, <script type="math/tex">\lim_{x \to 0} x^{a-1} \not = 0</script>, so <script type="math/tex">f</script> is not differentiable at zero.</p>
+<p>(c) For which values of <script type="math/tex">a</script> is <script type="math/tex">f</script> twice-differentiable?</p>
+<p>Solution: we can use the same analysis and see <script type="math/tex">a > 2</script>, then
+<script type="math/tex">f</script> is twice-differentiable.</p>
+<h3 id="526">5.2.6.</h3>
+<p>Let <script type="math/tex">g</script> be defined on an interval <script type="math/tex">A</script>, and let <script type="math/tex">c ∈ A</script>.</p>
+<p>(a) Explain why <script type="math/tex">g'(c)</script> in Definition 5.2.1 could have
+been given by</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = \lim_{h \to 0} 
+\frac{g(c+h) - g(c)}{h}
+</script>
+</p>
+<p>Proof: the Definition 5.2.1 is</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = \lim_{x \to c} 
+\frac{g(x) - g(c)}{x - c}
+</script>
+</p>
+<p>For any given <script type="math/tex">x</script> we can find <script type="math/tex">h</script> such that <script type="math/tex">x = c+h</script>,
+so</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{g(x) - g(c)}{x - c} =
+\frac{g(c+h) - g(c)}{(c+h)-c} = 
+\frac{g(c+h) - g(c)}{h}
+</script>
+</p>
+<p>when <script type="math/tex">(x) \rightarrow c</script>, we have <script type="math/tex">(h) \rightarrow 0</script>.
+So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c} 
+\frac{g(x) - g(c)}{x - c} =
+\lim_{h \to 0} 
+\frac{g(c+h) - g(c)}{h}
+</script>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Assume <script type="math/tex">A</script> is open. If <script type="math/tex">g</script> is differentiable at
+<script type="math/tex">c ∈ A</script>, show</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = \lim_{h \to 0}
+\frac{g(c+h)-g(c-h)}{2h} 
+</script>
+</p>
+<p>Proof: Similar to (a), we can show</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(c) = 
+\lim_{h \to 0} 
+\frac{g(c) - g(c-h)}{h}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+2g'(c) = \lim_{h \to 0} 
+\frac{g(c+h) - g(c)}{h}
++
+\lim_{h \to 0} 
+\frac{g(c) - g(c-h)}{h} \\
+=
+\lim_{h \to 0} 
+\frac{(g(c+h) - g(c))+(g(c) - g(c-h))}{h}\\
+=
+\lim_{h \to 0} 
+\frac{g(c+h) - g(c-h)}{h}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="527">5.2.7.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_a(x) =
+\begin{cases}
+    x^a \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases} 
+</script>
+</p>
+<p>Find a particular (potentially noninteger)
+value for a so that </p>
+<p>(a) <script type="math/tex">g_a</script> is differentiable on <script type="math/tex">\mathbf{R}</script> but such that
+<script type="math/tex">g_a</script> is unbounded on <script type="math/tex">[0, 1]</script>.</p>
+<p>Solution:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(0) = \lim_{x \to 0} 
+\frac{x^a \sin (1/x)}{x}
+= \lim_{x \to 0}  x^{a-1} \sin (1/x) \\
+g'(c) = ac^{a-1} \sin(1/c) - c^{a-2} \cos (1/c)
+</script>
+</p>
+<p>Then <script type="math/tex">a = 1.5</script> will be good for this case.</p>
+<p>(b) <script type="math/tex">g_a</script> is differentiable on <script type="math/tex">\mathbf{R}</script> with
+<script type="math/tex">g'_a</script> continuous but not differentiable at zero.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(x) =
+\begin{cases}
+    \lim_{x \to 0}  x^{a-1} \sin (1/x) &\text{if } x = 0\\
+    ax^{a-1} \sin(1/x) - x^{a-2} \cos (1/x) &\text{if } x \not = 0\\
+\end{cases}
+</script>
+</p>
+<p>When <script type="math/tex">a = 2.5</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_{2.5}'(x) =
+\begin{cases}
+    0 &\text{if } x = 0\\
+    2.5x^{1.5} \sin(1/x) - x^{0.5} \cos (1/x) &\text{if } x \not = 0\\
+\end{cases}
+</script>
+</p>
+<p>So, <script type="math/tex">g_{2.5}'(x)</script> is continuous at 0 because    </p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 0} g_{2.5}'(x) = 0 = g_{2.5}'(0) 
+</script>
+</p>
+<p>But</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 0}
+\frac{g_{2.5}'(x)}{x} =
+\frac{2.5x^{1.5} \sin(1/x) - x^{0.5} \cos (1/x)}{x}\\
+= 2.5x^{0.5} \sin(1/x) - x^{-0.5} \cos (1/x) \rightarrow -\infty
+</script>
+</p>
+<p>So <script type="math/tex">g_{2.5}'(x)</script> is not differentiable at 0.</p>
+<p>(c) <script type="math/tex">g_a</script> is differentiable on <script type="math/tex">\mathbf{R}</script> and
+<script type="math/tex">g'_a</script> is differentiable on <script type="math/tex">\mathbf{R}</script> but
+<script type="math/tex">g''_a</script> is not continuous at zero.</p>
+<p>When <script type="math/tex">a = 3.5</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_{3.5}'(x) =
+\begin{cases}
+    0 &\text{if } x = 0\\
+    3.5x^{2.5} \sin(1/x) - x^{1.5} \cos (1/x) &\text{if } x \not = 0\\
+\end{cases}\\
+g_{3.5}''(x) =
+\begin{cases}
+    0 &\text{if } x = 0\\
+    h(x) - x^{-0.5}\sin (1/x) &\text{if } x \not = 0\\
+\end{cases}\\
+</script>
+</p>
+<p>Then <script type="math/tex">\lim_{x \to 0} g_{3.5}''(x)</script> does not exist.</p>
+<h3 id="528">5.2.8.</h3>
+<p>Review the definition of uniform continuity (Definition 4.4.4).
+Given a differentiable function <script type="math/tex">f : A → \mathbf{R}</script>,
+let’s say that <script type="math/tex">f</script> is uniformly differentiable on <script type="math/tex">A</script> if,
+given <script type="math/tex">ε > 0</script> there exists a <script type="math/tex">δ > 0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(y)}{x - y}
+-
+f'(y)
+ \right| < \epsilon
+</script>
+</p>
+<p>whenever <script type="math/tex">0 < |x-y| < \delta</script>.</p>
+<p>(a) Is <script type="math/tex">f(x) = x^2</script> uniformly differentiable on <script type="math/tex">\mathbf{R}</script>?
+How about <script type="math/tex">g(x) = x^3</script>?</p>
+<p>Solution:
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{x^2 - y^2}{x - y} - 2x
+\right|
+= |x - y|
+</script>
+</p>
+<p>So <script type="math/tex">x^2</script> is uniformly differentiable.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{x^3 - y^3}{x-y} - 3y^2
+ \right| =
+ \left| 
+    x^2 + xy + y^2 - 3y^2
+  \right| =
+  \left| 
+    x^2+xy-2y^2
+   \right|\\
+   = |(x + 2y)(x - y)|
+</script>
+</p>
+<p>So <script type="math/tex">x^3</script> is not uniformly differentiable.</p>
+<p>(b) Show that if a function is uniformly differentiable
+on an interval <script type="math/tex">A</script>, then the derivative must be continuous
+on <script type="math/tex">A</script>.</p>
+<p>Proof: Assume <script type="math/tex">f</script> is uniformly differentiable
+on an interval <script type="math/tex">A</script>, then for any <script type="math/tex">\epsilon</script>, we can find
+<script type="math/tex">\delta</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(y)}{x - y}
+-
+f'(y)
+ \right| < \epsilon / 2 \text{ and }
+\left| 
+\frac{f(x) - f(y)}{x - y}
+-
+f'(x)
+ \right| < \epsilon / 2
+</script>
+</p>
+<p>So <script type="math/tex">|f'(x) - f'(y)| < \epsilon</script>, then <script type="math/tex">f'(x)</script> is continuous
+on <script type="math/tex">A</script>.</p>
+<p>(c) Is there a theorem analogous to Theorem 4.4.7 for
+differentiation? Are functions that are differentiable
+on a closed interval <script type="math/tex">[a, b]</script> necessarily uniformly
+differentiable?</p>
+<p>Proof: Again we consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_{1.5}(x) =
+\begin{cases}
+    x^{1.5} \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases}
+</script>
+</p>
+<p>and</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(x) =
+\begin{cases}
+    \lim_{x \to 0}  x^{0.5} \sin (1/x) = 0&\text{if } x = 0\\
+    1.5x^{1.5-1} \sin(1/x) - x^{1.5-2} \cos (1/x) &\text{if } x \not = 0\\
+\end{cases}
+</script>
+</p>
+<p>
+<script type="math/tex">g'(x)</script> is not continuous at 0, so <script type="math/tex">g(x)</script> is not uniformly
+differentiable.</p>
+<h3 id="529">5.2.9.</h3>
+<p>Decide whether each conjecture is true or false.
+Provide an argument for those that are true and a
+counterexample for each one that is false.</p>
+<p>(a) If <script type="math/tex">f'</script> exists on an interval and is not constant,
+then <script type="math/tex">f</script> must take on some irrational values.</p>
+<p>Proof: True. It's theorem 5.2.7 (Darboux's Theorem).</p>
+<p>(b) If <script type="math/tex">f'</script> exists on an open interval and there is some point <script type="math/tex">c</script> where <script type="math/tex">f'(c) > 0</script>,
+then there exists a <script type="math/tex">δ</script>-neighborhood <script type="math/tex">V_{\delta}(c)</script> around <script type="math/tex">c</script> in which <script type="math/tex">f'(x) > 0</script> for all <script type="math/tex">x ∈ V_δ(c)</script>.</p>
+<p>Solution: False. Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    0.5x + x^2 \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases}
+\\
+f'(x) =
+\begin{cases}
+    0.5 + 2 x \sin(1/x) - \cos (1/x) &\text{if }  x \not = 0\\
+    0.5 &\text{if } x = 0\\
+\end{cases}
+</script>
+</p>
+<p>So when <script type="math/tex">x = \frac{1}{n \pi }</script>, <script type="math/tex">f'(x) = -0.5 < 0</script>.  </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) If <script type="math/tex">f</script> is differentiable on an interval containing zero and if <script type="math/tex">\lim_{x \to 0} f'(x) = L</script>, then it must be that
+<script type="math/tex">L = f'(0)</script>.</p>
+<p>Proof: This proof is not correrct. I think I miss this part.
+* I want to prove <script type="math/tex">f(x)</script> is uniformly differentiable around
+<script type="math/tex">0</script>, i.e. given <script type="math/tex">\epsilon</script> we can find <script type="math/tex">U_{\delta}(0)</script> such that
+<script type="math/tex">\left| \frac{f(x+h) - f(x)}{h} - f'(x) \right| < \epsilon, \forall
+x \in U_{\delta}(0)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(0) = \lim_{x \to 0} \frac{f(x) - f(0)}{x} = L'
+</script>
+</p>
+<p>And <script type="math/tex">L' \not = L</script>. We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|  \frac{f(x+h) - f(x)}{h} -
+\frac{f(h) - f(0)}{h} \right| \\
+=\frac{x}{h} \left| 
+\frac{f(x+h) - f(h)}{x} -
+\frac{f(x) - f(0)}{x}
+\right|\\
+\leq \frac{x}{h} \left|
+\frac{f(x+h) - f(h)}{x} \right| +
+\left| \frac{f(x) - f(0)}{x} \right|
+</script>
+</p>
+<p>Then as long as <script type="math/tex">x, h</script> is small enough,
+<script type="math/tex">\frac{f(x+h) - f(x)}{h}</script> and
+<script type="math/tex">\frac{f(h) - f(0)}{h}</script> can be arbitrarily close.</p>
+<p>We also have as long as <script type="math/tex">x, h</script> is small enough,
+<script type="math/tex">\frac{f(x+h) - f(x)}{h}</script> can be arbitrarily close <script type="math/tex">L</script>.</p>
+<p>As long as <script type="math/tex">x, h</script> is small enough, <script type="math/tex">\frac{f(x) - f(0)}{x}</script>
+can be arbitrarily close <script type="math/tex">L'</script>.</p>
+<p>So it's impossible that <script type="math/tex">L \not = L'</script>.</p>
+<h3 id="5210">5.2.10.</h3>
+<p>Recall that a function <script type="math/tex">f : (a, b) → R</script> is increasing on <script type="math/tex">(a, b) \text{ if } f (x) ≤ f (y)</script> whenever <script type="math/tex">x < y</script> in <script type="math/tex">(a, b)</script>. A familiar mantra from calculus is that a differentiable function is increasing if its derivative is positive, but this statement requires some sharpening in order to be completely accurate.</p>
+<p>Show that the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    0.5x + x^2 \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases}
+</script>
+</p>
+<p>is differentiable on <script type="math/tex">\mathbf{R}</script> and satisfies <script type="math/tex">g'(0) > 0</script>. Now, prove that <script type="math/tex">g</script> is not increasing over any open interval containing <script type="math/tex">0</script>.</p>
+<p>Proof: from 5.2.9 (b), we have</p>
+<p>
+<script type="math/tex; mode=display">
+f'(x) =
+\begin{cases}
+    0.5 + 2 x \sin(1/x) - \cos (1/x) &\text{if }  x \not = 0\\
+    0.5 &\text{if } x = 0\\
+\end{cases}
+</script>
+</p>
+<p>So <script type="math/tex">g'(0) = 0.5 > 0</script>. Consider <script type="math/tex">x = \frac{1}{n \pi}</script>, <script type="math/tex">g'(x) < 0</script>. So <script type="math/tex">g(x - h) > g(x)</script> for small <script type="math/tex">h</script>.</p>
+<h3 id="5211">5.2.11.</h3>
+<p>Assume that <script type="math/tex">g</script> is differentiable on <script type="math/tex">[a, b]</script> and satisfies <script type="math/tex">g'(a) < 0 < g'(b)</script>.</p>
+<p>(a) Show that there exists a point <script type="math/tex">x ∈ (a, b)</script> where <script type="math/tex">g(a) > g(x)</script>, and a point <script type="math/tex">y ∈ (a, b)</script> where <script type="math/tex">g(y) < g(b)</script>.</p>
+<p>Proof: See my proof of Theorem 5.2.7.</p>
+<p>(b) Now complete the proof of Darboux’s Theorem started earlier.</p>
+<p>Proof: See my proof of Theorem 5.2.7.</p>
+<h3 id="5212-inverse-functions">5.2.12 (Inverse functions).</h3>
+<p>If <script type="math/tex">f : [a, b] → \mathbf{R}</script> is one-to-one, then there exists an inverse function <script type="math/tex">f^{−1}</script> defined on the range of <script type="math/tex">f</script> given by <script type="math/tex">f^{−1}(y) = x</script> where <script type="math/tex">y = f(x)</script>.
+In Exercise 4.5.8 we saw that if f is continuous on <script type="math/tex">[a,b]</script>, then <script type="math/tex">f^{−1}</script> is continuous on its domain. Let’s add the assumption that <script type="math/tex">f</script> is differentiable on <script type="math/tex">[a,b]</script>
+with <script type="math/tex">f'(x) \not = 0</script> for all <script type="math/tex">x ∈ [a,b]</script>. Show <script type="math/tex">f^{−1}</script> is differentiable with</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f^{-1})'(y) = \frac{1}{f'(x)} \text{ where } y = f(x).
+</script>
+</p>
+<p>Proof: Let <script type="math/tex">f^{-1} = g</script>, and assume <script type="math/tex">f(x_0) = y_0</script> and
+<script type="math/tex">g(y_0) = x_0</script>. We want to prove <script type="math/tex">g'(y_0) = 1 / f'(x_0)</script>,
+i.e. </p>
+<p>
+<script type="math/tex; mode=display"> 
+1/f'(y_0) = \lim_{y \to y_0}
+\frac{g(y) - g(y_0)}{y - y_0} 
+</script>
+</p>
+<p>First we show give <script type="math/tex">\delta</script>, we can find <script type="math/tex">\zeta</script>, if
+<script type="math/tex">y \in V_{\zeta}(y_0)</script>, then <script type="math/tex">x \in V_{\delta }(x_0)</script>. We can refer to Exercise 4.5.8 to show <script type="math/tex">f</script> and
+<script type="math/tex">g</script> is monotone function first.
+We can prove this directly. Given sequence <script type="math/tex">(y_n) \rightarrow y_0</script>, and <script type="math/tex">g(y_n) = x_n \not \in V_{\delta }(x_0)</script>, since <script type="math/tex">(x_n)</script> is bounded, we can
+find subsequence that converges to <script type="math/tex">x_1 \not = x_0</script>.
+Since <script type="math/tex">f</script> is continuous, <script type="math/tex">f(x_1) = y_0</script>, <script type="math/tex">f</script> is
+not 1 to 1, we have a contradiction.</p>
+<p>Next, given <script type="math/tex">\epsilon</script>, we show we can find <script type="math/tex">\delta</script>, such that,
+<script type="math/tex">x \in U_{\delta}(x_0)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{x - x_0}{f(x) - f(x_0)}
+-
+\frac{1}{f'(x_0)}
+\right| < \epsilon
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="53-the-mean-value-theorems">5.3 The Mean Value Theorems</h2>
+<h3 id="531">5.3.1.</h3>
+<p>Recall from Exercise 4.4.9 that a function <script type="math/tex">f : A → \mathbf{R}</script> is Lipschitz on <script type="math/tex">A</script> if there exists an <script type="math/tex">M > 0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(y)}{x-y}
+\right| \leq M
+</script>
+</p>
+<p>for all <script type="math/tex">x \leq y</script> in <script type="math/tex">A</script>.</p>
+<p>(a) show <script type="math/tex">f</script> is differentiable on a closed interval
+<script type="math/tex">[a, b]</script> and if <script type="math/tex">f'</script> is continuous on <script type="math/tex">[a, b]</script>, then
+<script type="math/tex">f</script> is Lipschitz on <script type="math/tex">[a, b]</script>.</p>
+<p>Proof: Since <script type="math/tex">f'(x)</script> is continuous on <script type="math/tex">[a, b]</script>,
+based on Extreme Value Theorem, let <script type="math/tex">f'(c) = M</script> is the maximum of <script type="math/tex">|f'(x)|</script>.</p>
+<p>Then apply the Mean Value Theorem, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(y)}{x-y}
+\right| = |f'(c)| \leq M
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Review the definition of a contractive function in Exercise 4.3.11. If we add the assumption that <script type="math/tex">|f'(x)| < 1</script> on <script type="math/tex">[a,b]</script>, does it follow that <script type="math/tex">f</script> is contractive on this set?</p>
+<p>Proof: Since <script type="math/tex">f'(x)</script> is continuous on <script type="math/tex">[a, b]</script>,
+we have <script type="math/tex">f'(c) = M < 1</script>, then <script type="math/tex">f</script> is contractive on this set.</p>
+<p>Furthermore, we can even remove the assumption that
+<script type="math/tex">f'(x)</script> is continuous. Assume given any <script type="math/tex">n</script>, we
+can find </p>
+<h3 id="532">5.3.2.</h3>
+<p>Let <script type="math/tex">f</script> be differentiable on an interval <script type="math/tex">A</script>. If <script type="math/tex">f'(x) \not = 0</script> on <script type="math/tex">A</script>, show that <script type="math/tex">f</script> is one-to-one on <script type="math/tex">A</script>. Provide an example to show that the converse statement need not be true.</p>
+<p>Proof: If <script type="math/tex">f(a) = f(b)</script>, then we can find <script type="math/tex">c \in (a,b)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = \frac{
+f(b) - f(a)
+}{
+b - a
+} = f'(c)
+</script>
+</p>
+<p>then we have a contradiction, so <script type="math/tex">f</script> is one-to-one on
+<script type="math/tex">A</script>.</p>
+<p>A example is <script type="math/tex">f(x) = \cos x, x \in [0, \pi]</script>.
+We have <script type="math/tex">f'(0) = f'(\pi) = 0</script>. But <script type="math/tex">f</script> is still
+one-to-one on <script type="math/tex">A</script>.</p>
+<h3 id="533">5.3.3.</h3>
+<p>Let <script type="math/tex">h</script> be a differentiable function defined on the interval <script type="math/tex">[0, 3]</script>, and assume that <script type="math/tex">h(0) = 1, h(1) = 2</script>, and <script type="math/tex">h(3) = 2</script>.</p>
+<p>(a) Argue that there exists a point <script type="math/tex">d ∈ [0, 3]</script>
+where <script type="math/tex">h(d) = d</script>.</p>
+<p>Proof: let <script type="math/tex">f(x) = h(x) - x</script>, <script type="math/tex">f</script> is continuous 
+function on <script type="math/tex">[0, 3]</script>. <script type="math/tex">f(1) = -1 < 0</script> and <script type="math/tex">f(3) = 1 > 0</script>, according to Intermediate Value Property, we
+can find <script type="math/tex">d \in (1, 3)</script> such that <script type="math/tex">f(d) = 0</script>, so
+<script type="math/tex">h(d) = d</script>.</p>
+<p>(b) Argue that at some point <script type="math/tex">c</script> we have <script type="math/tex">h'(c) = 1/3</script>
+</p>
+<p>Proof: Based on Mean Value theorem, we can find <script type="math/tex">c</script>
+such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+h'(c) = \frac{h(3) - h(0)}{3 - 0} = \frac{1}{3}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Argue that <script type="math/tex">h'(x) = 1/4</script> at some point in the domain.</p>
+<p>Proof: Let <script type="math/tex">g(x) = h(x) - h(x - 1), x \in [1, 3]</script>.
+We don't know what <script type="math/tex">h(2)</script>.
+* <script type="math/tex">h(2) > 2</script>, then <script type="math/tex">g(3) = h(3) - h(2) < 0</script>.<br />
+<em> <script type="math/tex">h(2) = 2</script>, then <script type="math/tex">g(2) = h(2) - h(1) = 0</script>.<br />
+</em> <script type="math/tex">h(2) < 2</script>, then <script type="math/tex">g(2) = h(2) - h(1) < 0</script>.</p>
+<p>Whatever the case, we can find some <script type="math/tex">d</script> such that
+<script type="math/tex">g(1) = 1, g(d) \leq 0</script>. Since <script type="math/tex">g(x)</script> is continuous,
+we can find <script type="math/tex">g(c) = 1/4</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(e) = \frac{h(c) - h(c-1)}{1} = \frac{1}{4} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="534">5.3.4.</h3>
+<p>Let <script type="math/tex">f</script> be differentiable on an interval <script type="math/tex">A</script> containing zero, and
+assume <script type="math/tex">(x_n)</script> is a sequence in <script type="math/tex">A</script> with <script type="math/tex">(x_n) → 0</script> and <script type="math/tex">x_n  \not = 0</script>.</p>
+<p>(a) If <script type="math/tex">f(x_n)=0</script> for all <script type="math/tex">n∈N</script>,show <script type="math/tex">f(0)=0</script> and <script type="math/tex">f'(0)=0</script>.</p>
+<p>Proof: Since <script type="math/tex">f(x)</script> is continuous, we have
+<script type="math/tex">\lim_{x_n \to 0} f(x_n) = f(0)</script>, so <script type="math/tex">f(0) = 0</script>.</p>
+<p>We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(0) = \lim_{x_n \to 0} 
+\frac{f(x_n) - f(0)}{x_n - 0}
+= 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Add the assumption that <script type="math/tex">f</script> is twice-differentiable at zero and show that
+<script type="math/tex">f''(0)=0</script> as well.</p>
+<p>Proof:</p>
+<p>For <script type="math/tex">x_n</script>, according to mean value theorem, we can
+find <script type="math/tex">y_n \in (0, x_n)</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = \frac{f(x_n) - f(0)}{x_n - 0} = f'(y_n)
+</script>
+</p>
+<p>As a result, we can find <script type="math/tex">(y_n) \rightarrow 0</script> such
+that <script type="math/tex">f'(y_n) = 0</script>. So we use (a) and we can conclude
+<script type="math/tex">f''(0) = 0</script> as well.</p>
+<h3 id="535">5.3.5.</h3>
+<p>(a) Supply the details for the proof of Cauchy’s Generalized Mean Value Theorem (Theorem 5.3.5).</p>
+<p>Proof: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = (f(b) - f(a))g(x) - (g(b) - g(a))f(x)
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(b) = (f(b) - f(a))g(b) - (g(b) - g(a))f(b)\\
+=f(b)g(a) - f(a)g(b)\\
+</script>
+and
+<script type="math/tex; mode=display">
+h(a) = (f(b) - f(a))g(a) - (g(b) - g(a))f(a) \\
+= f(b)g(a) - f(a)g(b)
+</script>
+</p>
+<p>So <script type="math/tex">h(a) = h(b)</script>, so we can find <script type="math/tex">c</script>,
+such that <script type="math/tex">h'(c) = 0</script>, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h'(c) = (f(b) - f(a))g'(c) - (g(b) - g(a))f'(c) = 0
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f(b) - f(a)}{g(b)-g(a)} =
+\frac{f'(c)}{g'(c)}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Give a graphical interpretation of the Generalized Mean Value Theorem analogous to the one given for the Mean Value Theorem at the beginning of Section 5.3. (Consider <script type="math/tex">f</script> and <script type="math/tex">g</script> as parametric equations for a curve.)</p>
+<p>Solution: Consdier a curve <script type="math/tex">(g(x), f(x))</script>. At
+a point <script type="math/tex">c</script>, the derivative is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c}
+\frac{f(x) - f(c)}{g(x) - g(c)}
+= \lim_{x \to \infty} 
+\frac{
+\frac{f(x) - f(c)}{x-c}
+}{
+\frac{g(x) - g(c)}{x-c}
+} =
+\frac{f'(c)}{g'(c)}
+</script>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="536">5.3.6.</h3>
+<p>(a) Let <script type="math/tex">g : [0,a] → \mathbf{R}</script> be differentiable, <script type="math/tex">g(0) = 0</script>, and <script type="math/tex">|g'(x)| ≤ M</script> for all <script type="math/tex">x ∈ [0,a]</script>. Show <script type="math/tex">|g(x)| ≤ Mx</script> for all <script type="math/tex">x ∈ [0,a]</script>.</p>
+<p>Proof: When <script type="math/tex">x = 0</script>, <script type="math/tex">g(0) = 0 \le M \cdot 0</script>.</p>
+<p>When <script type="math/tex">x \not = 0</script>, from Mean value theorem</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|
+\frac{g(x)-g(0)}{x-0}
+\right| = |g'(c)| \le M 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g(x)| \le Mx
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Let <script type="math/tex">h : [0, a] → \mathbf{R}</script> be twice differentiable, <script type="math/tex">h'(0) = h(0) = 0</script> and <script type="math/tex">|h''(x)| ≤ M</script> for all <script type="math/tex">x ∈ [0,a]</script>. Show <script type="math/tex">|h(x)| ≤ Mx^2/2</script> for all <script type="math/tex">x ∈ [0,a]</script>.</p>
+<p>Proof: This time we need to use Generalized Mean
+Value Theorem. Let <script type="math/tex">f(x) = Mx^2/2</script>
+</p>
+<p>From (a) we know <script type="math/tex">|h'(x)| \le Mx</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|\frac{h(x)}{f(x)}\right| = 
+\left|
+\frac{
+h(x) - h(0)
+}{
+f(x) - f(0)
+}
+\right| 
+=
+\left|
+\frac{
+    h'(c)
+}{f'(c)}
+\right| \le
+\left| 
+\frac{Mx}{Mx}
+\right| = 1
+</script>
+</p>
+<p>So <script type="math/tex">|h(x)| \leq f(x) = Mx^2/2</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Conjecture and prove an analogous result for a function that is differentiable three times on <script type="math/tex">[0, a]</script>.</p>
+<p>Solution: the conjecture should be like this:</p>
+<p>Let <script type="math/tex">h : [0, a] → \mathbf{R}</script> be three times differentiable, <script type="math/tex">h''(0) = h'(0) = h(0) = 0</script> and <script type="math/tex">|h'''(x)| ≤ M</script> for all <script type="math/tex">x ∈ [0,a]</script>. Show <script type="math/tex">|h(x)| ≤ Mx^3/6</script> for all <script type="math/tex">x ∈ [0,a]</script>.</p>
+<p>Proof: We already know <script type="math/tex">|h'(x)| \leq Mx^2/2</script>.
+And let <script type="math/tex">f(x) = Mx^3/6</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|\frac{h(x)}{f(x)}\right| = 
+\left|
+\frac{
+h(x) - h(0)
+}{
+f(x) - f(0)
+}
+\right| 
+=
+\left|
+\frac{
+    h'(c)
+}{f'(c)}
+\right| \le
+\left| 
+\frac{Mx^2/2}{Mx^2/2}
+\right| = 1
+</script>
+</p>
+<p>So <script type="math/tex">|h(x)| \leq f(x) = Mx^3/6</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="537">5.3.7.</h3>
+<p>A fixed point of a function <script type="math/tex">f</script> is a value <script type="math/tex">x</script> where <script type="math/tex">f(x) = x</script>. Show that if <script type="math/tex">f</script> is differentiable on an interval with <script type="math/tex">f'(x) \not = 1</script>, then <script type="math/tex">f</script> can have at most one fixed point.</p>
+<p>Proof: If <script type="math/tex">f(x) = x, f(y) = y, x \not = y</script>.
+Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f(x) - f(y)}{x - y} =
+\frac{x - y}{x - y} = 1 
+</script>
+</p>
+<p>We have a contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="538">5.3.8.</h3>
+<p>Assume <script type="math/tex">f</script> is continuous on an interval containing zero and differentiable for all <script type="math/tex">x \not = 0</script>. If <script type="math/tex">\lim_{x \to 0} f'(x) = L</script>, show <script type="math/tex">f'(0)</script> exists and equals <script type="math/tex">L</script>.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(0) = \lim_{x \to 0}
+\frac{f(x)-f(0)}{x - 0} \\
+= \lim_{x \to 0} \frac{f'(c)}{g'(c)}\\
+= L
+</script>
+</p>
+<h3 id="539">5.3.9.</h3>
+<p>Assume <script type="math/tex">f</script> and <script type="math/tex">g</script> are as described in Theorem 5.3.6, but now
+add the assumption that <script type="math/tex">f</script> and <script type="math/tex">g</script> are differentiable at <script type="math/tex">a</script>, and <script type="math/tex">f'</script> and <script type="math/tex">g'</script> are continuous at <script type="math/tex">a</script> with <script type="math/tex">g'(a)\not = 0</script>. Find a short proof for the <script type="math/tex">0/0</script> case of L’Hospital’s Rule under this stronger hypothesis.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a}
+\frac{f(x)}{g(x)}\\
+= \lim_{x \to a}
+\frac{f(x)-f(a)}{g(x)-g(a)}\\
+= \lim_{x \to a}
+\frac{\frac{f(x)-f(a)}{x-a}}
+{\frac{g(x)-g(a)}{x-a}}\\
+= \frac{
+\lim_{x \to a} \frac{f(x)-f(a)}{x-a}   
+}{
+\lim_{x \to a} \frac{g(x)-g(a)}{x-a}
+}\\
+=\frac{f'(a)}{g'(a)}
+</script>
+</p>
+<h3 id="5310">5.3.10.</h3>
+<p>Let <script type="math/tex">f(x) = x \sin(1/x^4) e^{−1/x^2}</script> and <script type="math/tex">g(x) = e^{−1/x^2}</script>. Using the familiar properties of these 
+functions, compute the limit as <script type="math/tex">x</script> approaches zero of <script type="math/tex">f(x), g(x), f(x)/g(x), f'(x)/g'(x)</script>.</p>
+<p>Solution: Let <script type="math/tex">h(x) = x \sin(1/x^4)</script>. For <script type="math/tex">x \not = 0</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+h'(x) =
+\sin (1/x^4) + x \cos (1/x^4) \cdot (-4)\cdot 1/x^5
+= \sin (1/x^4) - 4 /x^{4} \cos (1/x^4)
+\\
+g'(x) = -2 x^{-3} e^{−1/x^2}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 0} f(x) = 0\\
+\lim_{x \to 0} g(x) = 0\\
+\lim_{x \to 0} f(x)/g(x) =
+\lim_{x \to 0} h(x) = 0\\
+</script>
+</p>
+<p>See the <a href="https://math.stackexchange.com/questions/2055368/counterexample-to-lhopitals-rule-as-an-exercise-in-understanding-analysis">stackexchange</a> discussion.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5311">5.3.11.</h3>
+<p>(a) Use the Generalized Mean Value Theorem to furnish a proof of the <script type="math/tex">0/0</script> case of L’Hospital’s Rule (Theorem 5.3.6).</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f(x)}{g(x)} =
+\frac{f(x) - f(0)}{g(x) - g(0)}
+= \frac{f'(c_x)}{g'(c_x)}
+</script>
+</p>
+<p>Given <script type="math/tex">\epsilon > 0</script>, we can find <script type="math/tex">\delta</script>,
+if <script type="math/tex">x \in V_{\delta}(0)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f'(x)}{g'(x)} - L
+ \right| < \epsilon
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = L
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If we keep the first part of the hypothesis of Theorem 5.3.6 the same but
+we assume that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a}
+\frac{f'(x)}{g'(x)} = \infty
+</script>
+</p>
+<p>does it necessarily follow that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = \infty
+</script>
+</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f(x)}{g(x)} =
+\frac{f(x) - f(0)}{g(x) - g(0)}
+\\
+= \frac{f'(c)}{g'(c)}, c \in (0, x) 
+</script>
+</p>
+<p>Since <script type="math/tex">\lim_{x \to a} \frac{f'(x)}{g'(x)} = \infty</script>,
+then give <script type="math/tex">N</script>, we can find <script type="math/tex">V_{\delta}(a)</script>, if <script type="math/tex">x \in V_{\delta}(a)</script>, <script type="math/tex">\lim_{x \to a} \frac{f'(x)}{g'(x)} > N</script>, so <script type="math/tex">\frac{f(x)}{g(x)} > N</script>.</p>
+<p>That means </p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to a}
+\frac{f(x)}{g(x)} = \infty
+</script>
+</p>
+<h3 id="5312">5.3.12.</h3>
+<p>If <script type="math/tex">f</script> is twice differentiable on an open interval containing <script type="math/tex">a</script> and <script type="math/tex">f''</script> is continuous at <script type="math/tex">a</script>, show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{h \to 0}
+\frac{
+f(a+h) - 2 f(a) + f(a-h)
+}{
+h^2
+} = f''(a)
+</script>
+</p>
+<p>Proof: Let <script type="math/tex">g(h) = f(a+h) - 2 f(a) + f(a-h)</script>,
+then <script type="math/tex">g(0) = 0</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{h \to 0}
+\frac{
+g'(h)
+}{2h}
+= \lim_{h \to 0}
+\frac{
+f'(a+h) - f'(a-h)
+}{2h} = f''(a)
+</script>
+</p>
+<p>Another approach:</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="54-a-continuous-nowhere-differentiable-function">5.4 A Continuous Nowhere-Differentiable Function</h2>
+<h3 id="541">5.4.1.</h3>
+<p>
+<script type="math/tex">h(x) = |x|, x \in [-1, 1]</script> and <script type="math/tex">h(x+2) = h(x)</script>.
+Sketch a graph of <script type="math/tex">(1/2)h(2x)</script> on <script type="math/tex">[−2, 3]</script>.
+Give a qualitative description of the functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) =
+\frac{1}{2^n}
+h(2^nx)
+</script>
+</p>
+<p>Solution: the shape of <script type="math/tex">h_1(x)</script> is similar to <script type="math/tex">h(x)</script>, it's just
+that the triangle edge is only <script type="math/tex">1/2</script> of the <script type="math/tex">h(x)</script>.
+For <script type="math/tex">h_n(x)</script>, they are still similar to <script type="math/tex">h(x)</script>,
+with the edge is only <script type="math/tex">\frac{1}{2^n}</script> of it.</p>
+<h3 id="542">5.4.2.</h3>
+<p>Fix <script type="math/tex">x ∈ \mathbf{R}</script>. Argue that the series</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n=0}^{\infty}
+\frac{1}{2^n}
+h(2^nx)
+</script>
+</p>
+<p>converges and thus <script type="math/tex">g(x)</script> is properly defined.</p>
+<p>Proof: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = \sum_{i=0}^{n}
+\frac{1}{2^i}
+h(2^ix)
+</script>
+</p>
+<p>When <script type="math/tex">x</script> is fixed, <script type="math/tex">h(2^ix) \leq 1</script>, so
+<script type="math/tex">g_n(x) \leq 1 - \frac{1}{2^n}</script>. <script type="math/tex">g_n(x)</script> is 
+increasing and has upper bound, so <script type="math/tex">g_n(x)</script> 
+converges.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="543">5.4.3.</h3>
+<p>Taking the continuity of <script type="math/tex">h(x)</script> as given, reference the proper theorems from Chapter 4 that imply that the finite sum</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_m(x) = \sum_{n=0}^{m}
+\frac{1}{2^n}
+h(2^nx)
+</script>
+</p>
+<p>is continuous on <script type="math/tex">\mathbf{R}</script>.</p>
+<p>Proof: First we use Theorem 4.3.9 (Composition of Continuous Functions) to derive <script type="math/tex">h(2^nx)</script> is
+continuous. Next we use Theorem 4.3.4 (Algebraic Continuity Theorem) to derive <script type="math/tex">g_m(x)</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="544">5.4.4.</h3>
+<p>As the graph in Figure 5.7 suggests, the structure of <script type="math/tex">g(x)</script> is quite intricate. Answer the following questions, assuming that <script type="math/tex">g(x)</script> is indeed continuous.</p>
+<p>(a) How do we know <script type="math/tex">g</script> attains a maximum value <script type="math/tex">M</script> on <script type="math/tex">[0, 2]</script>? What is this value?</p>
+<p>Solution: It's a continuous function on a closed interval, so <script type="math/tex">g</script> attains a maximum value <script type="math/tex">M</script>. Let's calculate some values for <script type="math/tex">x</script> in
+the following format. </p>
+<p>
+<script type="math/tex; mode=display"> 
+x = \frac{p}{2^{2m+1}}, p \text{ is odd}
+</script>
+</p>
+<p>The reason is for such <script type="math/tex">x</script>, <script type="math/tex">g(x)</script> has only finite terms.
+Because when <script type="math/tex">n \geq 2m+2</script>, <script type="math/tex">2^nx</script> is an even integer, so <script type="math/tex">h(2^nx) = 0</script>.</p>
+<p>We first prove some properties of <script type="math/tex">h(x)</script> that will
+be handy.</p>
+<p>(a) for <script type="math/tex">x = \frac{p}{2^{k}}</script>, <script type="math/tex">p</script> is odd, we can
+find <script type="math/tex">0 < q < 2^k</script>, such that</p>
+<p>
+<script type="math/tex; mode=display">
+h(\frac{p}{2^{k}}) = h(\frac{q}{2^{k}})
+</script>
+</p>
+<p>For example <script type="math/tex">h(5/4) = h(3/4), h(9/4) = h(1/4)</script>.</p>
+<p>Proof: Assume <script type="math/tex">2N+1 < \frac{p}{2^{k}} < 2(N+1)</script>,
+let <script type="math/tex">\frac{q}{2^{k}} = 2(N+1) - \frac{p}{2^{k}}</script>.
+Note that <script type="math/tex">h(x)</script> is even function and <script type="math/tex">h(x + 2k) = h(x)</script>, then we have
+<script type="math/tex; mode=display"> 
+h(\frac{q}{2^{k}}) =
+h(2(N+1) - \frac{p}{2^{k}}) =
+h(- \frac{p}{2^{k}}) = h(\frac{p}{2^{k}})
+</script>
+</p>
+<p>Assume <script type="math/tex">2N < \frac{p}{2^{k}} < 2N+1</script>,
+let <script type="math/tex">\frac{q}{2^{k}} = \frac{p}{2^{k}} - 2N</script>
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(\frac{q}{2^{k}}) =
+h(\frac{p}{2^{k}} - 2N) =
+h(\frac{p}{2^{k}})
+</script>
+</p>
+<p>In both cases, we have <script type="math/tex">0 < q < 2^k</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If <script type="math/tex">h(\frac{p}{2^{k}}) = h(\frac{q}{2^{k}})</script>, <script type="math/tex">p, q</script> are odd, then <script type="math/tex">h(\frac{p}{2^{l}}) = h(\frac{q}{2^{l}})</script> for <script type="math/tex">0 \leq l \leq k</script>.</p>
+<p>Proof: Assume <script type="math/tex">2M+1 < \frac{p}{2^{k}} < 2(M+1)</script>,
+<script type="math/tex">2N < \frac{q}{2^{k}} < 2N+1</script>, we can find
+<script type="math/tex">0 < \delta, \zeta < 1</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{p}{2^{k}} = 2M + 1 + \delta \\
+\frac{q}{2^{k}} = 2N +\zeta  
+</script>
+</p>
+<p>So we have <script type="math/tex">h(1+\delta) = h(\zeta )</script>. Then
+we must have <script type="math/tex">\zeta = 1 - \delta</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(\frac{p}{2^{l}}) =\\
+h(2^{k-l}(2M+1+\delta )) = h(2^{k-l}\delta )\\
+h(\frac{q}{2^{l}}) =\\
+h(2^{k-l}(2N+\zeta )) = h(2^{k-l}\zeta )\\
+=h(2^{k-l}(1-\delta)) = h(-2^{k-l}\delta)
+</script>
+</p>
+<p>Since <script type="math/tex">h</script> is a even function, we proved this property.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{1}
+g(x) = \sum_{i = 0}^{2m+1}
+\frac{1}{2^i} h(\frac{p}{2^{2m+1-i}})\\
+= \sum_{i = 0}^{m}
+\frac{1}{2^{2i}} h(\frac{p}{2^{2m+1-2i}}) +
+\frac{1}{2^{2i + 1}} h\left( \frac{p}{2^{2m+1-(2i+1)}} \right)
+</script>
+</p>
+<p>Let's first evaluate</p>
+<p>
+<script type="math/tex; mode=display"> 
+l = h \left( \frac{p}{2^{k+1}} \right) +
+\frac{1}{2} h \left( \frac{p}{2^{k}} \right)
+</script>
+</p>
+<p>Assume <script type="math/tex">2N < \frac{p}{2^{k+1}} < 2N+1</script>, let
+<script type="math/tex">p = q + (2N \cdot 2^{k+1}), q < 2^{k+1}</script>.</p>
+<ul>
+<li>If <script type="math/tex">q < 2^k</script>
+</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+l = h\left( \frac{q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} + \frac{1}{2} \frac{q}{2^{k}}\\
+= \frac{q}{2^{k}} < 1
+</script>
+</p>
+<ul>
+<li>If <script type="math/tex">2^k < q < 2^{k+1}</script>
+</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+l = h\left( \frac{q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} h\left( 2 - \frac{q}{2^{k}} \right)\\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} \frac{2^{k+1} - q}{2^{k}} = 1
+</script>
+</p>
+<p>Assume <script type="math/tex">2N-1 < \frac{p}{2^{k+1}} < 2N</script>, let
+<script type="math/tex">p = (2N \cdot 2^{k+1}) - q, q < 2^{k+1}</script>.</p>
+<ul>
+<li>If <script type="math/tex">q < 2^k</script>, knowing <script type="math/tex">h</script> is even, we have</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+l = h\left( \frac{-q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{-q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} + \frac{1}{2} \frac{q}{2^{k}}\\
+= \frac{q}{2^{k}} < 1
+</script>
+</p>
+<ul>
+<li>If <script type="math/tex">2^k < q < 2^{k+1}</script>, knowing <script type="math/tex">h</script> is even, we have</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+l = h\left( \frac{-q}{2^{k+1}} \right) +
+\frac{1}{2} h\left( \frac{-q}{2^{k}} \right) \\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} h\left( 2 - \frac{q}{2^{k}} \right)\\
+= \frac{q}{2^{k+1}} +
+\frac{1}{2} \frac{2^{k+1} - q}{2^{k}} = 1
+</script>
+</p>
+<p>Equation (1) is bounded by</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{4^0} + \frac{1}{4^1} + \cdots +
+\frac{1}{4^m} = \frac{1-\frac{1}{4^{m+1}}}{1-1/4} 
+</script>
+</p>
+<p>We can really achive this number by setting</p>
+<p>
+<script type="math/tex; mode=display"> 
+p = 2^{2m+1} - 2^{2m} + 2^{2m-1} - 2^{2m-2} + \cdots + 2^1 - 2^0
+</script>
+</p>
+<p>In fact, we can have multiple <script type="math/tex">p</script> achive the maximum value.
+Consdier</p>
+<ul>
+<li>
+<script type="math/tex">m = 1</script>, we can have <script type="math/tex">p = 5, 7</script>.  </li>
+<li>
+<script type="math/tex">m = 2</script>, we first can have <script type="math/tex">q = 5, 7, 9, 11</script>, because<ul>
+<li>
+<script type="math/tex">h(\frac{11}{8})= h(\frac{16-11}{8}) = h(\frac{5}{8})</script>
+</li>
+<li>
+<script type="math/tex">h(\frac{9}{8})= h(\frac{16-9}{8}) = h(\frac{7}{8})</script>
+</li>
+<li>Then we have <script type="math/tex">p = 32 - q = 21, 23, 25, 27</script>.</li>
+</ul>
+</li>
+<li>
+<script type="math/tex">m = 3</script>, we first get <script type="math/tex">q_3 = 2^{2 \times 3}-p_2</script>, then we get
+<script type="math/tex">p_3 = 2^{2 \times 3 + 1}-q_3</script>. This is because</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+h(\frac{2^{2m}-p_{m-1}}{2^{2{m-1}}}) = 
+h(2 - \frac{2^{2m}-p_{m-1}}{2^{2{m-1}}}) =
+h(\frac{p_{m-1}}{2^{2{m-1}}})
+</script>
+</p>
+<p>So overall, we can find <script type="math/tex">2^m</script> numbers to achieve <script type="math/tex">\frac{1-\frac{1}{4^{m+1}}}{1-1/4}</script>. The maximum value should be <script type="math/tex">4/3</script>.
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Let <script type="math/tex">D</script> be the set of points in <script type="math/tex">[0,2]</script> where <script type="math/tex">g</script> attains its maximum. That is
+<script type="math/tex">D= {x ∈ [0,2] : g(x) = M}</script>. Find one point in <script type="math/tex">D</script>.</p>
+<p>Solution: Consider <script type="math/tex">x_m = \frac{p}{2^{2m+1}}</script> where</p>
+<p>
+<script type="math/tex; mode=display"> 
+p = 2^{2m+1} - 2^{2m} + 2^{2m-1} - 2^{2m-2} + \cdots + 2^1 - 2^0
+=2^{2m} + 2^{2m-2} + \cdots + 1 \\
+\frac{2^{2m+2} - 1}{3}
+</script>
+</p>
+<p>So <script type="math/tex">\lim_{m \to \infty} x_m = 2/3</script>. We can verify it</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(2/3) = h(\frac{2}{3}) + 1/2 h(\frac{4}{3}) + 1/4 h(\frac{8}{3}) + \cdots
+= \frac{2}{3} + \frac{1}{2} \cdot \frac{2}{3} + \frac{1}{4} \cdot \frac{2}{3} + \cdots \\
+= \frac{2}{3} (1 + \frac{1}{2} + \frac{1}{4} + \cdots )
+= \frac{4}{3}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Is <script type="math/tex">D</script> finite, countable, or uncountable?</p>
+<p>Solution: I think it is uncountable. Because we can find <script type="math/tex">2^m</script> numbers to achieve <script type="math/tex">\frac{1-\frac{1}{4^{m+1}}}{1-1/4}</script>.</p>
+<h3 id="546">5.4.6.</h3>
+<p>(a) Modify the previous argument to show that <script type="math/tex">g'(1)</script> does
+not exist. Show that <script type="math/tex">g'(1/2)</script> does not exist.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(2^{i}(1+\frac{1}{2^m})) - h(2^i) = h(\frac{1}{2^{m-i}}) =
+\frac{1}{2^{m-i}}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{g(1+x_m) - g(1)}{(1+x_m)-1} =\\
+\frac{
+\sum_{i=0}^{\infty} \frac{1}{2^i} \left( 
+h(2^{i}(1+x_m)) - h(2^i)
+ \right) 
+}{x_m} =\\
+\frac{
+\sum_{i=0}^{m} \frac{1}{2^i} \frac{1}{2^{m-i}}
+}{
+x_m
+} = m + 1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">g'(x)</script> does not exist for any rational number of the form <script type="math/tex">x = p/2^k</script> where <script type="math/tex">p ∈ Z</script> and <script type="math/tex">k ∈ N∪\{0\}</script>.</p>
+<p>Proof: The idea is to choose <script type="math/tex">m</script> big enough such that
+<script type="math/tex">2^i(x+\frac{1}{2^m})</script> and <script type="math/tex">2^ix</script> are at the same segment of <script type="math/tex">h(x)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_i(x) = h(2^i(x+\frac{1}{2^m})) - h(2^ix)\\
+= h(\frac{p}{2^{k-i}} + \frac{1}{2^{m-i}}) - h(\frac{p}{2^{k-i}})\\
+</script>
+</p>
+<p>This value depends on <script type="math/tex">i</script>. So when <script type="math/tex">0 \leq i \leq k</script>, <script type="math/tex">h_i(x)</script> can be <script type="math/tex">\pm x_{m-i}</script>, but when
+<script type="math/tex">k < i \leq m</script>, <script type="math/tex">h_i(x) = x_{m-i}</script>. So</p>
+<p>
+<script type="math/tex; mode=display">
+\frac{
+g(x+x_m) - g(x)
+}{
+x_m
+} \geq m - 2(k+1)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="547">5.4.7.</h3>
+<p>(a) First prove the following general lemma: Let <script type="math/tex">f</script> be defined
+on an open interval <script type="math/tex">J</script> and assume <script type="math/tex">f</script> is diﬀerentiable at <script type="math/tex">a ∈ J</script>. If <script type="math/tex">(a_n)</script> and <script type="math/tex">(b_n)</script>
+are sequences satisfying <script type="math/tex">a_n < a < b_n</script> and <script type="math/tex">\lim a_n = \lim b_n = a</script>, show</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(a) = \lim_{n \to \infty}
+\frac{
+f(b_n) - f(a_n)
+}{
+b_n - a_n
+}
+</script>
+</p>
+<p>Proof: </p>
+<p>
+<script type="math/tex; mode=display">
+\left|   \frac{
+f(b_n) - f(a_n)
+}{
+b_n - a_n
+} - f'(a) \right| 
+=
+\\
+\left| \frac{b_n - a}{b_n - a_n}
+\frac{f(b_n) - f(a)}{b_n - a} -
+\frac{b_n - a}{b_n - a_n} f'(a)
+\\
++\\
+\frac{a - a_n}{b_n - a_n}
+\frac{f(a) - f(a_n)}{a - a_n} -
+\frac{a - a_n}{b_n - a_n} f'(a) \right| \leq \\
+\left| 
+\frac{b_n - a}{b_n - a_n}
+\left( 
+\frac{f(b_n) - f(a)}{b_n - a} - f'(a)
+ \right) 
+\right| +
+\left| 
+\frac{a - a_n}{b_n - a_n}
+\left( 
+\frac{f(a) - f(a_n)}{a - a_n} - f'(a)
+\right) 
+\right| \leq \\
+\left| 
+\frac{f(b_n) - f(a)}{b_n - a} - f'(a)
+\right| +
+\left| 
+\frac{f(a) - f(a_n)}{a - a_n} - f'(a)
+\right| < \epsilon + \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now use this lemma to show that <script type="math/tex">g'(x)</script> does not exist.</p>
+<p>Proof: We first check some values, say <script type="math/tex">x = \frac{2}{3}</script>.
+<script type="math/tex">\frac{5}{8} < \frac{2}{3} < \frac{6}{8}</script>.  </p>
+<p>
+<script type="math/tex; mode=display"> 
+8 \times (g(\frac{6}{8}) - g(\frac{5}{8}))
+= 1 - 1 + 1 - 1 = 0
+</script>
+</p>
+<p>Then we also have <script type="math/tex">\frac{10}{16} < \frac{2}{3} < \frac{11}{16}</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+16 \times (g(\frac{11}{16}) - g(\frac{10}{16})) =
+1 - 1 + 1 - 1 + 1 = 5
+</script>
+</p>
+<p>As we can see
+<script type="math/tex; mode=display"> 
+\frac{1}{2^n}\left( g(\frac{ p_n+1 }{2^n}) -
+g(\frac{
+    p_n
+}{2^n})
+\right)
+</script>
+</p>
+<p>is a even number when <script type="math/tex">n</script> is odd, and an odd number when
+<script type="math/tex">n</script> is even.
+So this sequence does not converges. Then given any <script type="math/tex">c</script>,
+<script type="math/tex">g(x)</script> is not differentiable at <script type="math/tex">c</script>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch05notes/" class="btn btn-neutral float-left" title="Chapter 05 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch06ex/" class="btn btn-neutral float-right" title="Chapter 06 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch05notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch06ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
