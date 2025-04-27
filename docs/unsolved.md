@@ -25,6 +25,12 @@ the condition that $f'(x)$ needs to be continuous?
 ### Ex 5.4.4 (c)
 ### Ex 5.4.8
 
+### Ex 6.2.6(e)
+
+If each $f_n$ has at most a countable number of discontinuities,
+and $(f_n(x)) \rightarrow f(x)$ uniformly,
+then $f$ has at most a countable number of discontinuities.
+
 # Open Question
 
 1. This is related chapter 5. $f(x)$ is a differentiable on $[a, b]$, $(x_n) \rightarrow c$,

@@ -14,6 +14,12 @@ pip install mkdocs
 pip install python-markdown-math
 ```
 
+* To initialize the directory
+
+```sh
+mkdocs new .
+```
+
 * To generate the documentation
 
 ```sh

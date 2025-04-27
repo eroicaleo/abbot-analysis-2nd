@@ -2,6 +2,360 @@
 
 ## 6.2 Uniform Convergence of a Sequence of Functions
 
+### 6.2.1.
+
+Let
+
+$$ 
+f_n(x) = \frac{nx}{1+ nx^2}
+$$
+
+Anwser
+
+(a) Find the pointwise limit of $(f_n)$ for all $x ∈ (0,∞)$.
+
+Solution:
+
+$$ 
+f_n(x) = \frac{nx}{1+ nx^2} \\
+= \frac{x}{1/n + x^2}
+$$
+
+So
+
+$$ 
+f(x) = \frac{1}{x}
+$$
+
+$\square$
+
+(b) Is the convergence uniform on $(0,∞)$
+
+**Solution**:
+
+$$ 
+\frac{nx}{1+ nx^2} - \frac{1}{x}\\
+=\frac{nx^2-1-nx^2}{x + nx^3} \\
+= - \frac{1}{x + nx^3}
+$$
+
+So the convergence is not uniform.
+
+(c) Is the convergence uniform on $(0,1)$?
+
+**Solution**: No.
+
+(d) Is the convergence uniform on $(1,∞)$?
+
+**Solution**: Yes.
+
+$$ 
+\left| \frac{1}{x + nx^3} \right|
+< \left| \frac{1}{1 + n} \right| 
+$$
+
+$\square$
+
+### 6.2.2.
+
+(a) Define a sequence of functions on $\mathbf{R}$ by
+
+$$ 
+f_n(x) =
+\begin{cases}
+    1 &\text{if } x = 1, 1/2, 1/3, \dots, 1/n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+and let $f$ be the pointwise limit of $f_n$.
+Is each $f_n$ continuous at zero? Does $f_n → f$ uniformly on $\mathbf{R}$? Is $f$ continuous at zero?
+
+**Solution**:
+
+$$ 
+f(x) =
+\begin{cases}
+    1 &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+Each $f_n$ is continuous at zero. $f_n$ does not converge to
+$f$ uniformly. $f$ is not continuous at zero.
+
+(b) Repeat this exercise using the sequence of functions
+
+$$ 
+g_n(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots, 1/n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+**Solution**:
+
+$$ 
+g(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+Each $g_n$ is continuous at zero. $g_n$ converges to
+$g$ uniformly. $g$ is continuous at zero.
+
+(c) Repeat this exercise using the sequence of functions
+
+$$ 
+h_n(x) =
+\begin{cases}
+    1 &\text{if } x = 1/n \\
+    x &\text{if } x = 1, 1/2, 1/3, \dots, 1/(n-1) \\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+**Solution**:
+
+$$ 
+h(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+Each $h_n$ is continuous at zero. $h_n$ does not converge to
+$h$ uniformly. $h$ is continuous at zero.
+
+$\square$
+
+### 6.2.3.
+
+For each $n ∈ \mathbf{N}$ and $x ∈ [0,∞)$, let
+
+$$
+g_n(x) = \frac{x}{1 + x^n} \text{ and }
+h_n(x) = 
+\begin{cases}
+    1  &\text{if } x \geq 1/n\\
+    nx &\text{if } 0 \leq x  < 1/n\\
+\end{cases} 
+$$
+
+Answer the following questions for the sequences $(g_n)$ and $(h_n)$:
+
+(a) Find the pointwise limit on $x ∈ [0,∞)$
+
+$$ 
+g(x) =
+\begin{cases}
+    x &\text{if } 0 \leq x < 1 \\
+    1/2 &\text{if } x = 1\\
+    0 &\text{if } x > 1\\
+\end{cases}
+\\
+h(x) =
+\begin{cases}
+    0 &\text{if } x = 0\\
+    1 &\text{if } x > 0\\
+\end{cases} 
+$$
+
+$\square$
+
+(b) Explain how we know that the convergence cannot be uniform on $[0,∞)$.
+
+Proof: Both $g(x)$ and $h(x)$ are not continuous in $[0, \infty)$.
+So the convergence cannot be uniform.
+
+$\square$
+
+(c) Choose a smaller set over which the convergence is uniform
+and supply an argument to show that this is indeed the case.
+
+**Solution**: For $g_n(x)$ choose $[0, 1/2]$
+
+$$ 
+|g_n(x) - g(x)| = |\frac{x}{1 + x^n} - x| \\
+= \left| \frac{-x^{n+1}}{1 + x^n} \right| \\
+< |x^{n+1}| \leq \frac{1}{2^{n+1}}
+$$
+
+For $h_n(x)$, choose $[1/2, \infty)$, when $n > 2$, $h_n(x) = h(x) = 1$.
+
+$\square$
+
+### 6.2.4.
+
+Review Exercise 5.2.8 which includes the definition for a
+uniformly diﬀerentiable function. Use the results discussed in Section 6.2 to
+show that if $f$ is uniformly diﬀerentiable, then $f'$ is continuous.
+
+**Proof**: Given $ε > 0$ there exists a $δ > 0$ such that
+
+$$ 
+\left| 
+\frac{f(x) - f(y)}{x - y}
+-
+f'(y)
+ \right| < \epsilon
+$$
+
+$$ 
+|f'(x) - f'(y) |
+= \left| f'(x) - \frac{f(x) - f(y)}{x - y} +
+\frac{f(x) - f(y)}{x - y} - f'(y) \right| \\
+\leq
+\left| f'(x) - \frac{f(x) - f(y)}{x - y} \right| +
+\left| \frac{f(x) - f(y)}{x - y} - f'(y) \right| \\
+< 2 \epsilon
+$$
+
+So $f'(x)$ is continuous.
+
+$\square$
+
+### 6.2.5.
+
+Using the Cauchy Criterion for convergent sequences of real
+numbers (Theorem 2.6.4), supply a proof for Theorem 6.2.5. (First, define a candidate for $f(x)$, and then argue that $f_n → f$ uniformly.)
+
+Proof:
+
+$\Rightarrow$ Since $(f_n(x)) \rightarrow f(x)$ uniformly for $x \in A$.
+Then given $\epsilon$, we can find $N$, for all $n > N$ and $x \in A$, $|f_n(x) - f(x)| < \epsilon/2$. So
+
+$$ 
+\left| f_n(x) - f_m(x) \right| \\
+= \left| f_n(x) - f(x) + f(x) - f_m(x) \right| \\
+\leq \left| f_n(x) - f(x) \right| + \left| f(x) - f_m(x) \right| \\
+< \epsilon
+$$
+
+for all $m, n > N$ and $x \in A$.
+
+$\Leftarrow$ if given any $\epsilon$, we can find $N$, for all $m, n > N$ and $x \in A$, $|f_n(x) - f_m(x)| < \epsilon$, then
+$(f_n(x))$ is a Cauchy sequence, so it must converge to some
+$c_x$, then define $f(x) = c_x$.
+
+We can find another $N_1$, for all $m, n > N_1$ and $x \in A$, $|f_n(x) - f_m(x)| < \epsilon/2$. We can show that $|f_n(x) - f(x)| < \epsilon$. This is because for any given $x \in A$, since $(f_n(x)) \rightarrow f(x)$, we can find $k$, such that $k > N_1$ and
+$|f_k(x) - f(x)| < \epsilon/2$. So
+
+$$ 
+\left| f_n(x) - f(x) \right| \\
+\leq \left| f_n(x) - f_k(x) \right| + \left| f_k(x) - f(x) \right| \\
+< \epsilon
+$$
+
+Thus, $f_n → f$ uniformly.
+
+$\square$
+
+### 6.2.6.
+
+Assume $f_n → f$ on a set $A$.
+
+(c) If each $f_n$ has a finite number ofdiscontinuities, then $f$ has a finite number of discontinuities.
+
+Proof: If the convergence is uniform, consider the following $f_n$
+defined on $[0, 1]$ .
+
+$$ 
+f_n(x) =
+\begin{cases}
+    0 &\text{if } x \not \in \mathbf{Q}  \\
+    1/p - 1/n &\text{if } x = q/p, p < n \\
+    0 &\text{if } x = q/p, p \geq n      \\
+\end{cases} 
+$$
+
+So we have
+
+$$ 
+f(x) =
+\begin{cases}
+    0 &\text{if } x \not \in \mathbf{Q}  \\
+    1/p &\text{if } x = q/p \\
+\end{cases} 
+$$
+
+each $f_n(x)$ has a finite number of discontinuities, but $f(x)$ is not continuous at all rational numbers.
+
+Also note $|f_n(x) - f(x)| \leq 1/n$, so the convergence is uniform.
+
+$\square$
+
+(d) If each $f_n$ has fewer than $M$ discontinuities (where $M ∈ N$ is fixed), then
+$f$ has fewer than M discontinuities.
+
+**Solution**:
+
+Consider $f_n(x) = x^n$ defined on $[0, 1]$, it has no discontinuities on $[0, 1]$. However, $f(x)$ is discontinueous at
+$1$, so it has one discontinuity.
+
+When $f_n(x) \rightarrow f(x)$ uniformly, and $f(x)$ has more
+than $M$ discontinuities.
+
+We first choose a fixed $n$ such that
+$|f_n(x) - f(x) | < \epsilon / 3$ for all $x \in A$. 
+Assume $c$ is continuous in $f_n(x)$
+but is discontinueous in $f(x)$.
+
+Then we can find a $\delta$ such that $x \in U_{\delta}(c)$,
+$|f_n(x) - f_n(c) | < \epsilon / 3$.
+
+Finally, since $f(x)$ is not continuous at $c$, then we can find
+$x_0 \in U_{\delta}(c)$ and $|f(x) - f(c)| \geq \epsilon$.
+
+But on the other hand,
+
+$$ 
+|f(c) - f(x_0)| \\
+< |f(c) - f_n(c) | + | f_n(c) - f_n(x_0) | + | f_n(x_0) - f(x_0) | \\
+< \epsilon / 3 + \epsilon / 3 + \epsilon / 3 \\
+= \epsilon
+$$
+
+We have a contradiction. So $f(x)$ has fewer than M discontinuities.
+
+$\square$
+
+(e) If each $f_n$ has at most a countable number of discontinuities, then $f$ has
+at most a countable number of discontinuities.
+
+**Solution**:
+
+Consdier the process of constructing the Cantor set, and define
+
+$$ 
+f_n(x) =
+\begin{cases}
+    1 &\text{if } x \in C_n\\
+    0 &\text{otherwise }\\
+\end{cases} 
+$$
+
+Then
+
+$$ 
+f(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+Each $f_n$ has $2^n$ discontinuities, but $f$ is discontinueous
+at all $x \in C$ which is an uncountable set.
+
+I cannot figure out the results when the convergence is uniform.
+
+$\square$
+
 ### 6.2.10.
 
 This exercise and the next explore partial converses of the
