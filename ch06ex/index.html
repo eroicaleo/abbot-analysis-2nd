@@ -72,6 +72,24 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#62-uniform-convergence-of-a-sequence-of-functions">6.2 Uniform Convergence of a Sequence of Functions</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#621">6.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#622">6.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#623">6.2.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#624">6.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#625">6.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#626">6.2.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#627">6.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#628">6.2.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#629">6.2.9.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#6210">6.2.10.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#6211-dinis-theorem">6.2.11 (Dini’s Theorem).</a>
@@ -123,6 +141,422 @@
               
                 <h1 id="chapter-06-sequences-and-series-of-functions">Chapter 06 Sequences and Series of Functions</h1>
 <h2 id="62-uniform-convergence-of-a-sequence-of-functions">6.2 Uniform Convergence of a Sequence of Functions</h2>
+<h3 id="621">6.2.1.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \frac{nx}{1+ nx^2}
+</script>
+</p>
+<p>Anwser</p>
+<p>(a) Find the pointwise limit of <script type="math/tex">(f_n)</script> for all <script type="math/tex">x ∈ (0,∞)</script>.</p>
+<p>Solution:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \frac{nx}{1+ nx^2} \\
+= \frac{x}{1/n + x^2}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \frac{1}{x}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Is the convergence uniform on <script type="math/tex">(0,∞)</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{nx}{1+ nx^2} - \frac{1}{x}\\
+=\frac{nx^2-1-nx^2}{x + nx^3} \\
+= - \frac{1}{x + nx^3}
+</script>
+</p>
+<p>So the convergence is not uniform.</p>
+<p>(c) Is the convergence uniform on <script type="math/tex">(0,1)</script>?</p>
+<p><strong>Solution</strong>: No.</p>
+<p>(d) Is the convergence uniform on <script type="math/tex">(1,∞)</script>?</p>
+<p><strong>Solution</strong>: Yes.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \frac{1}{x + nx^3} \right|
+< \left| \frac{1}{1 + n} \right| 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="622">6.2.2.</h3>
+<p>(a) Define a sequence of functions on <script type="math/tex">\mathbf{R}</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) =
+\begin{cases}
+    1 &\text{if } x = 1, 1/2, 1/3, \dots, 1/n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>and let <script type="math/tex">f</script> be the pointwise limit of <script type="math/tex">f_n</script>.
+Is each <script type="math/tex">f_n</script> continuous at zero? Does <script type="math/tex">f_n → f</script> uniformly on <script type="math/tex">\mathbf{R}</script>? Is <script type="math/tex">f</script> continuous at zero?</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    1 &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>Each <script type="math/tex">f_n</script> is continuous at zero. <script type="math/tex">f_n</script> does not converge to
+<script type="math/tex">f</script> uniformly. <script type="math/tex">f</script> is not continuous at zero.</p>
+<p>(b) Repeat this exercise using the sequence of functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots, 1/n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>Each <script type="math/tex">g_n</script> is continuous at zero. <script type="math/tex">g_n</script> converges to
+<script type="math/tex">g</script> uniformly. <script type="math/tex">g</script> is continuous at zero.</p>
+<p>(c) Repeat this exercise using the sequence of functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) =
+\begin{cases}
+    1 &\text{if } x = 1/n \\
+    x &\text{if } x = 1, 1/2, 1/3, \dots, 1/(n-1) \\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) =
+\begin{cases}
+    x &\text{if } x = 1, 1/2, 1/3, \dots\\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>Each <script type="math/tex">h_n</script> is continuous at zero. <script type="math/tex">h_n</script> does not converge to
+<script type="math/tex">h</script> uniformly. <script type="math/tex">h</script> is continuous at zero.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="623">6.2.3.</h3>
+<p>For each <script type="math/tex">n ∈ \mathbf{N}</script> and <script type="math/tex">x ∈ [0,∞)</script>, let</p>
+<p>
+<script type="math/tex; mode=display">
+g_n(x) = \frac{x}{1 + x^n} \text{ and }
+h_n(x) = 
+\begin{cases}
+    1  &\text{if } x \geq 1/n\\
+    nx &\text{if } 0 \leq x  < 1/n\\
+\end{cases} 
+</script>
+</p>
+<p>Answer the following questions for the sequences <script type="math/tex">(g_n)</script> and <script type="math/tex">(h_n)</script>:</p>
+<p>(a) Find the pointwise limit on <script type="math/tex">x ∈ [0,∞)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) =
+\begin{cases}
+    x &\text{if } 0 \leq x < 1 \\
+    1/2 &\text{if } x = 1\\
+    0 &\text{if } x > 1\\
+\end{cases}
+\\
+h(x) =
+\begin{cases}
+    0 &\text{if } x = 0\\
+    1 &\text{if } x > 0\\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Explain how we know that the convergence cannot be uniform on <script type="math/tex">[0,∞)</script>.</p>
+<p>Proof: Both <script type="math/tex">g(x)</script> and <script type="math/tex">h(x)</script> are not continuous in <script type="math/tex">[0, \infty)</script>.
+So the convergence cannot be uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Choose a smaller set over which the convergence is uniform
+and supply an argument to show that this is indeed the case.</p>
+<p><strong>Solution</strong>: For <script type="math/tex">g_n(x)</script> choose <script type="math/tex">[0, 1/2]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g_n(x) - g(x)| = |\frac{x}{1 + x^n} - x| \\
+= \left| \frac{-x^{n+1}}{1 + x^n} \right| \\
+< |x^{n+1}| \leq \frac{1}{2^{n+1}}
+</script>
+</p>
+<p>For <script type="math/tex">h_n(x)</script>, choose <script type="math/tex">[1/2, \infty)</script>, when <script type="math/tex">n > 2</script>, <script type="math/tex">h_n(x) = h(x) = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="624">6.2.4.</h3>
+<p>Review Exercise 5.2.8 which includes the definition for a
+uniformly diﬀerentiable function. Use the results discussed in Section 6.2 to
+show that if <script type="math/tex">f</script> is uniformly diﬀerentiable, then <script type="math/tex">f'</script> is continuous.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">ε > 0</script> there exists a <script type="math/tex">δ > 0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(y)}{x - y}
+-
+f'(y)
+ \right| < \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f'(x) - f'(y) |
+= \left| f'(x) - \frac{f(x) - f(y)}{x - y} +
+\frac{f(x) - f(y)}{x - y} - f'(y) \right| \\
+\leq
+\left| f'(x) - \frac{f(x) - f(y)}{x - y} \right| +
+\left| \frac{f(x) - f(y)}{x - y} - f'(y) \right| \\
+< 2 \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">f'(x)</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="625">6.2.5.</h3>
+<p>Using the Cauchy Criterion for convergent sequences of real
+numbers (Theorem 2.6.4), supply a proof for Theorem 6.2.5. (First, define a candidate for <script type="math/tex">f(x)</script>, and then argue that <script type="math/tex">f_n → f</script> uniformly.)</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> Since <script type="math/tex">(f_n(x)) \rightarrow f(x)</script> uniformly for <script type="math/tex">x \in A</script>.
+Then given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">N</script>, for all <script type="math/tex">n > N</script> and <script type="math/tex">x \in A</script>, <script type="math/tex">|f_n(x) - f(x)| < \epsilon/2</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f_n(x) - f_m(x) \right| \\
+= \left| f_n(x) - f(x) + f(x) - f_m(x) \right| \\
+\leq \left| f_n(x) - f(x) \right| + \left| f(x) - f_m(x) \right| \\
+< \epsilon
+</script>
+</p>
+<p>for all <script type="math/tex">m, n > N</script> and <script type="math/tex">x \in A</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> if given any <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">N</script>, for all <script type="math/tex">m, n > N</script> and <script type="math/tex">x \in A</script>, <script type="math/tex">|f_n(x) - f_m(x)| < \epsilon</script>, then
+<script type="math/tex">(f_n(x))</script> is a Cauchy sequence, so it must converge to some
+<script type="math/tex">c_x</script>, then define <script type="math/tex">f(x) = c_x</script>.</p>
+<p>We can find another <script type="math/tex">N_1</script>, for all <script type="math/tex">m, n > N_1</script> and <script type="math/tex">x \in A</script>, <script type="math/tex">|f_n(x) - f_m(x)| < \epsilon/2</script>. We can show that <script type="math/tex">|f_n(x) - f(x)| < \epsilon</script>. This is because for any given <script type="math/tex">x \in A</script>, since <script type="math/tex">(f_n(x)) \rightarrow f(x)</script>, we can find <script type="math/tex">k</script>, such that <script type="math/tex">k > N_1</script> and
+<script type="math/tex">|f_k(x) - f(x)| < \epsilon/2</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f_n(x) - f(x) \right| \\
+\leq \left| f_n(x) - f_k(x) \right| + \left| f_k(x) - f(x) \right| \\
+< \epsilon
+</script>
+</p>
+<p>Thus, <script type="math/tex">f_n → f</script> uniformly.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="626">6.2.6.</h3>
+<p>Assume <script type="math/tex">f_n → f</script> on a set <script type="math/tex">A</script>.</p>
+<p>(c) If each <script type="math/tex">f_n</script> has a finite number ofdiscontinuities, then <script type="math/tex">f</script> has a finite number of discontinuities.</p>
+<p>Proof: If the convergence is uniform, consider the following <script type="math/tex">f_n</script>
+defined on <script type="math/tex">[0, 1]</script> .</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) =
+\begin{cases}
+    0 &\text{if } x \not \in \mathbf{Q}  \\
+    1/p - 1/n &\text{if } x = q/p, p < n \\
+    0 &\text{if } x = q/p, p \geq n      \\
+\end{cases} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    0 &\text{if } x \not \in \mathbf{Q}  \\
+    1/p &\text{if } x = q/p \\
+\end{cases} 
+</script>
+</p>
+<p>each <script type="math/tex">f_n(x)</script> has a finite number of discontinuities, but <script type="math/tex">f(x)</script> is not continuous at all rational numbers.</p>
+<p>Also note <script type="math/tex">|f_n(x) - f(x)| \leq 1/n</script>, so the convergence is uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) If each <script type="math/tex">f_n</script> has fewer than <script type="math/tex">M</script> discontinuities (where <script type="math/tex">M ∈ N</script> is fixed), then
+<script type="math/tex">f</script> has fewer than M discontinuities.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">f_n(x) = x^n</script> defined on <script type="math/tex">[0, 1]</script>, it has no discontinuities on <script type="math/tex">[0, 1]</script>. However, <script type="math/tex">f(x)</script> is discontinueous at
+<script type="math/tex">1</script>, so it has one discontinuity.</p>
+<p>When <script type="math/tex">f_n(x) \rightarrow f(x)</script> uniformly, and assume <script type="math/tex">f(x)</script> has <script type="math/tex">M</script> or more than <script type="math/tex">M</script> discontinuities.</p>
+<p>We first need to choose <script type="math/tex">\epsilon</script>. Since we can find at least
+<script type="math/tex">M</script> discontinuities, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\epsilon = \min
+\left\{ 
+\epsilon_1, \epsilon_2, \cdots, \epsilon_M
+ \right\} 
+</script>
+</p>
+<p>We then choose a fixed <script type="math/tex">n</script> such that
+<script type="math/tex">|f_n(x) - f(x) | < \epsilon / 3</script> for all <script type="math/tex">x \in A</script>. 
+Assume <script type="math/tex">c</script> is continuous in <script type="math/tex">f_n(x)</script>
+but is discontinueous in <script type="math/tex">f(x)</script>.</p>
+<p>Then we can find a <script type="math/tex">\delta</script> such that <script type="math/tex">x \in U_{\delta}(c)</script>,
+<script type="math/tex">|f_n(x) - f_n(c) | < \epsilon / 3</script>.</p>
+<p>Finally, since <script type="math/tex">f(x)</script> is not continuous at <script type="math/tex">c</script>, then we can find
+<script type="math/tex">x_0 \in U_{\delta}(c)</script> and <script type="math/tex">|f(x) - f(c)| \geq \epsilon</script>.</p>
+<p>But on the other hand,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(c) - f(x_0)| \\
+< |f(c) - f_n(c) | + | f_n(c) - f_n(x_0) | + | f_n(x_0) - f(x_0) | \\
+< \epsilon / 3 + \epsilon / 3 + \epsilon / 3 \\
+= \epsilon
+</script>
+</p>
+<p>We have a contradiction. So <script type="math/tex">f(x)</script> has fewer than M discontinuities.</p>
+<p>Now looking back to (c), the arguments in (d) does not hold
+because, we cannot find such <script type="math/tex">\epsilon</script>. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(e) If each <script type="math/tex">f_n</script> has at most a countable number of discontinuities, then <script type="math/tex">f</script> has
+at most a countable number of discontinuities.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consdier the process of constructing the Cantor set, and define</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) =
+\begin{cases}
+    1 &\text{if } x \in C_n\\
+    0 &\text{otherwise }\\
+\end{cases} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>Each <script type="math/tex">f_n</script> has <script type="math/tex">2^n</script> discontinuities, but <script type="math/tex">f</script> is discontinueous
+at all <script type="math/tex">x \in C</script> which is an uncountable set.</p>
+<p>I cannot figure out the results when the convergence is uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="627">6.2.7.</h3>
+<p>Let <script type="math/tex">f</script> be uniformly continuous on all of <script type="math/tex">\mathbf{R}</script>, and define a sequence of functions by <script type="math/tex">f_n(x) = f(x+ 1/n)</script>. Show that <script type="math/tex">f_n → f</script> uniformly. Give an
+example to show that this proposition fails if <script type="math/tex">f</script> is only assumed to be continuous and not uniformly continuous on <script type="math/tex">\mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">f</script> is uniformly continuous on all of <script type="math/tex">\mathbf{R}</script>, then given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">\delta</script>, if <script type="math/tex">|x - y| < \delta</script>, <script type="math/tex">|f(x) - f(y)| < \epsilon</script>.</p>
+<p>So take <script type="math/tex">1/n < \delta</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n(x) - f(x)| \\
+= |f(x+1/n) - f(x) | < \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">f_n → f</script> uniformly.</p>
+<p>Let <script type="math/tex">f(x) = x^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x + 1/n)^2 - x^2 = \frac{2}{n}x + \frac{1}{n^2}
+</script>
+</p>
+<p>So <script type="math/tex">f_n → f</script> is not uniformly.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="628">6.2.8.</h3>
+<p>Let <script type="math/tex">(g_n)</script> be a sequence of continuous functions that converges
+uniformly to <script type="math/tex">g</script> on a compact set <script type="math/tex">K</script>. If <script type="math/tex">g(x) \not = 0</script> on <script type="math/tex">K</script>, show <script type="math/tex">(1/g_n)</script> converges uniformly on <script type="math/tex">K</script> to <script type="math/tex">1/g</script>.</p>
+<p>Proof: since <script type="math/tex">(g_n) \rightarrow g</script> uniformly, and <script type="math/tex">g_n</script> is
+continuous, then <script type="math/tex">g</script> is a continuous function on a compact
+set <script type="math/tex">K</script>, that means we can find <script type="math/tex">c \in K</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(c) = \inf \left\{ |g(x)| : x \in K \right\} > 0
+</script>
+</p>
+<p>Again, since <script type="math/tex">(g_n) \rightarrow g</script> uniformly, given <script type="math/tex">\epsilon < g(c)/2</script>, we can find <script type="math/tex">N</script>, such that <script type="math/tex">n > N</script>, <script type="math/tex">|g_n(x) - g(x)| < \epsilon</script>. That is <script type="math/tex">|g_n(x)| > g(c)/2</script>.</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\frac{1}{g_n(x)} - \frac{1}{g(x)}|\\
+= |\frac{g(x) - g_n(x)}{g(x)g_n(x)}| < \frac{4}{g^2(c)} | g(x) - g_n(x)|
+</script>
+</p>
+<p>So <script type="math/tex">(1/g_n)</script> converges uniformly on <script type="math/tex">K</script> to <script type="math/tex">1/g</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="629">6.2.9.</h3>
+<p>Assume <script type="math/tex">(f_n)</script> and <script type="math/tex">(g_n)</script> are uniformly convergent sequences of
+functions.</p>
+<p>(a) Show that <script type="math/tex">(f_n +g_n)</script> is a uniformly convergent sequence of functions.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+f_n(x) + g_n(x) - (f(x) + g(x))
+ \right| \\
+< |f_n(x) - f(x)| + |g_n(x) - g(x)| \\
+< 2 \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">(f_n +g_n)</script> is a uniformly convergent sequence of functions.</p>
+<p>(b) Give an example to show that the product <script type="math/tex">(f_ng_n)</script> may not converge uniformly.</p>
+<p><strong>Solution</strong>: Let <script type="math/tex">f_n(x) = g_n(x) = x + 1/n</script>,
+<script type="math/tex">(f_ng_n) \rightarrow x^2</script>, but is not uniformly.</p>
+<p>(c) Prove that if there exists an <script type="math/tex">M > 0</script> such that <script type="math/tex">|f_n| ≤ M</script> and <script type="math/tex">|g_n| ≤ M</script> for
+all <script type="math/tex">n ∈ N</script>, then <script type="math/tex">(f_ng_n)</script> does converge uniformly.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_ng_n - fg|\\
+=|f_ng_n - f g_n + f g_n - fg|\\
+=|f_n - f| |g_n| + |f| |g_n - g|\\
+\leq M(|fn - f| + |g_n - g|)
+</script>
+</p>
+<p>So <script type="math/tex">(f_ng_n)</script> does converge uniformly.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="6210">6.2.10.</h3>
 <p>This exercise and the next explore partial converses of the
 Continuous Limit Theorem (Theorem 6.2.6). Assume <script type="math/tex">f_n → f</script> pointwise on <script type="math/tex">[a,b]</script>
