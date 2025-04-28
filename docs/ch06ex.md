@@ -297,10 +297,19 @@ $f$ has fewer than M discontinuities.
 Consider $f_n(x) = x^n$ defined on $[0, 1]$, it has no discontinuities on $[0, 1]$. However, $f(x)$ is discontinueous at
 $1$, so it has one discontinuity.
 
-When $f_n(x) \rightarrow f(x)$ uniformly, and $f(x)$ has more
-than $M$ discontinuities.
+When $f_n(x) \rightarrow f(x)$ uniformly, and assume $f(x)$ has $M$ or more than $M$ discontinuities.
 
-We first choose a fixed $n$ such that
+We first need to choose $\epsilon$. Since we can find at least
+$M$ discontinuities, let
+
+$$ 
+\epsilon = \min
+\left\{ 
+\epsilon_1, \epsilon_2, \cdots, \epsilon_M
+ \right\} 
+$$
+
+We then choose a fixed $n$ such that
 $|f_n(x) - f(x) | < \epsilon / 3$ for all $x \in A$. 
 Assume $c$ is continuous in $f_n(x)$
 but is discontinueous in $f(x)$.
@@ -321,6 +330,9 @@ $$
 $$
 
 We have a contradiction. So $f(x)$ has fewer than M discontinuities.
+
+Now looking back to (c), the arguments in (d) does not hold
+because, we cannot find such $\epsilon$. 
 
 $\square$
 
@@ -353,6 +365,98 @@ Each $f_n$ has $2^n$ discontinuities, but $f$ is discontinueous
 at all $x \in C$ which is an uncountable set.
 
 I cannot figure out the results when the convergence is uniform.
+
+$\square$
+
+### 6.2.7.
+
+Let $f$ be uniformly continuous on all of $\mathbf{R}$, and define a sequence of functions by $f_n(x) = f(x+ 1/n)$. Show that $f_n → f$ uniformly. Give an
+example to show that this proposition fails if $f$ is only assumed to be continuous and not uniformly continuous on $\mathbf{R}$.
+
+**Proof**: Since $f$ is uniformly continuous on all of $\mathbf{R}$, then given $\epsilon$, we can find $\delta$, if $|x - y| < \delta$, $|f(x) - f(y)| < \epsilon$.
+
+So take $1/n < \delta$, we have
+
+$$ 
+|f_n(x) - f(x)| \\
+= |f(x+1/n) - f(x) | < \epsilon
+$$
+
+So $f_n → f$ uniformly.
+
+Let $f(x) = x^2$
+
+$$ 
+(x + 1/n)^2 - x^2 = \frac{2}{n}x + \frac{1}{n^2}
+$$
+
+So $f_n → f$ is not uniformly.
+
+$\square$
+
+### 6.2.8.
+
+Let $(g_n)$ be a sequence of continuous functions that converges
+uniformly to $g$ on a compact set $K$. If $g(x) \not = 0$ on $K$, show $(1/g_n)$ converges uniformly on $K$ to $1/g$.
+
+Proof: since $(g_n) \rightarrow g$ uniformly, and $g_n$ is
+continuous, then $g$ is a continuous function on a compact
+set $K$, that means we can find $c \in K$, such that
+
+$$ 
+g(c) = \inf \left\{ |g(x)| : x \in K \right\} > 0
+$$
+
+Again, since $(g_n) \rightarrow g$ uniformly, given $\epsilon < g(c)/2$, we can find $N$, such that $n > N$, $|g_n(x) - g(x)| < \epsilon$. That is $|g_n(x)| > g(c)/2$.
+
+So we have
+
+$$ 
+|\frac{1}{g_n(x)} - \frac{1}{g(x)}|\\
+= |\frac{g(x) - g_n(x)}{g(x)g_n(x)}| < \frac{4}{g^2(c)} | g(x) - g_n(x)|
+$$
+
+So $(1/g_n)$ converges uniformly on $K$ to $1/g$.
+
+$\square$
+
+### 6.2.9.
+
+Assume $(f_n)$ and $(g_n)$ are uniformly convergent sequences of
+functions.
+
+(a) Show that $(f_n +g_n)$ is a uniformly convergent sequence of functions.
+
+**Proof**:
+
+$$ 
+\left| 
+f_n(x) + g_n(x) - (f(x) + g(x))
+ \right| \\
+< |f_n(x) - f(x)| + |g_n(x) - g(x)| \\
+< 2 \epsilon
+$$
+
+So $(f_n +g_n)$ is a uniformly convergent sequence of functions.
+
+(b) Give an example to show that the product $(f_ng_n)$ may not converge uniformly.
+
+**Solution**: Let $f_n(x) = g_n(x) = x + 1/n$,
+$(f_ng_n) \rightarrow x^2$, but is not uniformly.
+
+(c) Prove that if there exists an $M > 0$ such that $|f_n| ≤ M$ and $|g_n| ≤ M$ for
+all $n ∈ N$, then $(f_ng_n)$ does converge uniformly.
+
+**Proof**:
+
+$$ 
+|f_ng_n - fg|\\
+=|f_ng_n - f g_n + f g_n - fg|\\
+=|f_n - f| |g_n| + |f| |g_n - g|\\
+\leq M(|fn - f| + |g_n - g|)
+$$
+
+So $(f_ng_n)$ does converge uniformly.
 
 $\square$
 
