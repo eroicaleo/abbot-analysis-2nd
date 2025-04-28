@@ -259,6 +259,37 @@ $\square$
 
 Assume $f_n → f$ on a set $A$.
 
+(a) If each $f_n$ is uniformly continuous, then $f$ is uniformly continuous.
+
+**Solution**: Consider the example of 6.2.2 (ii), each $f_n$ is
+uniformly continuous on $[0, 1]$, but $f$ is not a continuous
+function.
+
+Now assume $(f_n) \rightarrow f$ uniformly. We can find
+$n$ such that $|f_n(x) - f(x)| < \epsilon / 3$ for $x \in A$.
+For this $f_n$, since it's uniformly continuous, we can find $\delta$, if $|x - y| < \delta$, then $|f_n(x) - f_n(y)| < \epsilon / 3$. Then we have
+
+$$ 
+|f(x) - f(y)| \leq \\
+|f(x) - f_n(x)| + |f_n(x) - f_n(y)| + |f_n(y) - f(y)| \lt \\
+\epsilon / 3 + \epsilon / 3 + \epsilon / 3 = \epsilon
+$$
+
+So $f$ is uniformly continuous.
+
+$\square$
+
+(b) If each $f_n$ is bounded, then $f$ is bounded.
+
+**Solution**: Consider $f_n = \frac{1}{1/n + x}$, $A = (0, 1]$. Then
+$f(x) = \frac{1}{x}$ on $A = (0, 1]$ which is not bounded.
+
+If $(f_n) \rightarrow f$ uniformly. We can find $n$,
+$|f_n(x) - f(x) | < 1$, since $|f_n(x)| \leq M$, then
+$|f(x)| \leq M + 1$.
+
+$\square$
+
 (c) If each $f_n$ has a finite number ofdiscontinuities, then $f$ has a finite number of discontinuities.
 
 Proof: If the convergence is uniform, consider the following $f_n$
@@ -688,3 +719,124 @@ $$
 $$
 
 $\square$
+
+## 6.3. Uniform Convergence and Diﬀerentiation
+
+### 6.3.1.
+
+Consider the sequence of functions defined by
+
+$$
+g_n(x) = \frac{x^n}{n}
+$$
+
+Anwser:
+
+(a) Show $(g_n)$ converges uniformly on $[0,1]$ and find $g = \lim g_n$. Show that $g$ is diﬀerentiable and compute $g'(x)$ for all $x ∈ [0,1]$.
+
+**Solution**: Given $x \in [0, 1]$,
+
+$$ 
+\lim_{n \to \infty} \frac{x^n}{n} = 0
+$$
+
+So $g(x) = 0$.
+
+$$ 
+|g_n(x) - g(x)| =
+\left| \frac{x^n}{n} \right| < \left| 1/n \right|
+$$
+
+So $(g_n) \rightarrow g$ uniformly.
+
+$g$ is a constant function so it's differentiable and $g'(x) = 0$.
+
+$\square$
+
+(b) Now, show that $(g_n')$ converges on $[0,1]$.
+Is the convergence uniform? Set $h = \lim g_n'$ and compare $h$ and $g'$. Are they the same?
+
+**Solution**:
+
+We have
+
+$$ 
+g'_n(x) = x^{n-1} \\
+h(x) = \begin{cases}
+    0 &\text{if } x < 1\\
+    1 &\text{if } x = 1\\
+\end{cases} 
+$$
+
+The converge is not uniform. $h$ and $g'(x)$ are not the same.
+
+$\square$
+
+### 6.3.2.
+
+Consider the sequence of functions
+
+$$ 
+h_n(x) = \sqrt[]{x^2 + \frac{1}{n}}
+$$
+
+Answer:
+
+(a) Compute the pointwise limit of $(h_n)$ and then prove that the convergence is uniform on $\mathbf{R}$.
+
+**Solution**: Given $x$
+
+$$ 
+h(x) = \lim_{n \to \infty} h_n(x) = \sqrt[]{x^2} = |x|
+$$
+
+And also
+
+$$ 
+|h_n(x) - h(x)| =\\
+\left| 
+\frac{1/n}{\sqrt[]{x^2 + \frac{1}{n}} + |x|}
+\right| <
+\left| \frac{1/n}{\sqrt[]{1/n}} \right| =
+\left| \frac{1}{\sqrt[]{n}} \right|
+$$
+
+So the convergence is uniform.
+
+$\square$
+
+(b) Note that each $h_n$ is diﬀerentiable. Show $g(x) = \lim h'_
+n(x)$ exists for all $x$, and explain how we can be certain that the convergence is not uniform on any neighborhood of zero.
+
+**Solution**:
+
+$$ 
+h_n'(x) = \left(  \sqrt[]{x^2 + \frac{1}{n}} \right) ' \\
+= \frac{1}{2} \frac{1}{\sqrt[]{x^2 + \frac{1}{n}}} 2x \\
+= \frac{x}{\sqrt[]{x^2 + \frac{1}{n}}}
+$$
+
+Then we have
+
+$$ 
+g(x) =
+\begin{cases}
+    0  &\text{if } x = 0\\
+    1  &\text{if } x > 0\\
+    -1 &\text{if } x < 0\\
+\end{cases} 
+$$
+
+If the convergence is uniform on a neighborhood of zero,
+then we must have
+
+$$ 
+h'(x) = g(x)
+$$
+
+But $h(x)$ is not differentiable at $0$. So the convergence
+is not uniform.
+
+$\square$
+
+
