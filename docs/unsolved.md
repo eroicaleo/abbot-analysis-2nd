@@ -31,6 +31,16 @@ If each $f_n$ has at most a countable number of discontinuities,
 and $(f_n(x)) \rightarrow f(x)$ uniformly,
 then $f$ has at most a countable number of discontinuities.
 
+### Ex 6.4.7 (b)
+
+Let
+
+$$ 
+f(x) = \sum_{k = 1}^{\infty } \frac{\sin (kx)}{k^3} 
+$$
+
+Can we determine if f is twice-diﬀerentiable?
+
 # Open Question
 
 1. This is related chapter 5. $f(x)$ is a differentiable on $[a, b]$, $(x_n) \rightarrow c$,

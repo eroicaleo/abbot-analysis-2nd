@@ -839,4 +839,503 @@ is not uniform.
 
 $\square$
 
+### 6.3.3.
 
+Consider the sequence of functions
+
+$$ 
+f_n(x) =
+\frac{x}{1 + nx^2}
+$$
+
+Answer:
+
+(a) Find the points on $\mathbf{R}$ where each $f_n(x)$ attains its maximum and minimum value. Use this to prove $(f_n)$ converges uniformly on $\mathbf{R}$. What is the limit function?
+
+**Solution**:
+
+Fix $n$, and assume $x > 0$. 
+
+$$ 
+f_n(x) =
+\frac{1}{\frac{1}{x} + nx} \\
+= \frac{1}{(\frac{1}{\sqrt[]{x}} - \sqrt[]{nx})^2 + 2 \sqrt[]{n}} \\
+\leq \frac{1}{2 \sqrt[]{n}}
+$$
+
+When $x = 1/\sqrt[]{n}$. Since $f_n(x)$ is odd function, it
+attains it's minimum value at $x = -1/\sqrt[]{n}$.
+
+The limit function is $f(x) = 0$.
+
+$$ 
+|f_n(x) - f(x)| =
+\left| \frac{1}{\frac{1}{x} + nx} - 0 \right| \leq \frac{1}{2 \sqrt[]{n}}
+$$
+
+So the convergence is uniform.
+
+(b) Let $f = \lim f_n$. Compute $f'_n(x)$ and find all the values of $x$ for which $f'(x) = \lim f'_n(x)$.
+
+**Solution**:
+
+$$
+f_n(x) = \frac{x}{1 + nx^2} \\
+f_n'(x) = \frac{
+(1+nx^2) - x(2nx)
+}{
+(1 + nx^2)^2
+} \\
+= \frac{1 - nx^2}{(1 + nx^2)^2} \\
+= \frac{1}{1 + nx^2} \frac{1 - nx^2}{1+nx^2}
+$$
+
+Let $g(x) = \lim_{n \to \infty} f_n'(x)$,
+
+$$ 
+g(x) =
+\begin{cases}
+    1 &\text{if } x \not = 0 \\
+    0 &\text{if } x = 0 \\
+\end{cases}
+$$
+
+So $f'(x) = g(x)$ when $x \not = 0$.
+
+### 6.3.4.
+
+Let
+
+$$ 
+h_n(x) = 
+\frac{\sin (nx)}{\sqrt[]{n}}
+$$
+
+Show that $h_n → 0$ uniformly on $\mathbf{R}$ but that the sequence of derivatives $(h_n')$ diverges for every
+$x ∈ \mathbf{R}$.
+
+**Proof**:
+
+$$ 
+|h_n(x) - 0| \leq \frac{1}{\sqrt[]{n}}
+$$
+
+So the converge is uniform.
+
+$$ 
+h_n'(x) = \frac{n \cos (nx)}{\sqrt[]{n}} = \sqrt[]{n} \cos (nx)
+$$
+
+Since $\cos (nx)$ can be either positive or negtive, then
+$h_n'(x)$ diverges for every $x \in \mathbf{R}$.
+
+$\square$
+
+### 6.3.5.
+
+Let
+
+$$ 
+g_n(x) = \frac{nx + x^2}{2n}
+$$
+
+and set $g(x) = \lim g_n(x)$.
+Show that $g$ is diﬀerentiable in two ways:
+
+(a) Compute $g(x)$ by algebraically taking the limit as $n → ∞$ and then find $g'(x)$.
+
+**Solution**:
+
+$$ 
+g(x) = \lim g_n(x) = \frac{x}{2} \\
+g'(x) = \frac{1}{2}
+$$
+
+$\square$
+
+(b) Compute $g'_n(x)$ for each $n ∈ N$ and show that the sequence of derivatives $(g'_n)$ converges uniformly on every interval $[−M,M]$.
+
+**Solution**:
+
+$$ 
+g_n'(x) = \frac{n + 2x}{2n} = \frac{1}{2} + \frac{x}{n}
+$$
+
+We can see $\lim_{n \to \infty} g_n'(x) = \frac{1}{2}$ for $x \in \mathbf{R}$.
+
+$$ 
+|g_n'(x) - \frac{1}{2}| = |x/n| \leq M/n.
+$$
+
+So it converges uniformly on every interval $[−M,M]$.
+
+$\square$
+
+(c) Repeat parts (a) and (b) for the sequence
+$f_n(x) = (nx^2 +1)/(2n+x)$.
+
+**Solution**:
+
+$$ 
+f(x) = \lim_{n \to \infty} f_n(x) = \frac{x^2}{2}
+$$
+
+Then we have $f'(x) = x$.
+
+Then we compute $f_n'(x)$.
+
+$$ 
+f_n(x) = \frac{nx^2 +1}{2n + x} \\
+f_n'(x) = \frac{(2n+x)(2nx) - (nx^2+1)}{(2n+x)^2} \\
+= \frac{nx^2 + 4n^2x - 1}{(2n+x)^2} \\
+= \frac{nx^2 + 4n^2x - 1}{x^2 + 4nx + 4n^2}
+$$
+
+Let $h(x) = \lim_{n \to \infty} f_n'(x)$, then $h(x) = x$.
+
+$$ 
+|f_n'(x) - h(x)| =\\
+\left| \frac{
+(nx^2 + 4n^2x - 1) - (x^2 + 4nx + 4n^2)x
+}{
+x^2 + 4nx + 4n^2
+} \right| = \\
+\left| \frac{
+3nx^2 + x^3 + 1
+}{
+x^2 + 4nx + 4n^2
+} \right| <
+\frac{3nM^2 + M^3 + 1}{(2n - M)^2}
+$$
+
+So it converges uniformly on every interval $[−M,M]$.
+
+$\square$
+
+### 6.3.7.
+
+Use the Mean Value Theorem to supply a proof for Theorem 6.3.2. To get started, observe that the triangle inequality implies that, for any $x ∈ [a,b]$ and $m,n ∈ \mathbf{N}$,
+
+$$ 
+|f_n(x) - f_m(x)| \leq 
+|(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0))|
++ |(f_n(x_0) - f_m(x_0))|
+$$
+
+**Proof**:
+
+Fix $x$, since $f_n$ are all differentiable, from MVT,
+we can find $c \in (x, x_0)$ such that
+
+$$ 
+|(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0))| =\\
+|(f_n'(c) - f_m'(c))(x - x_0)| \\
+\leq |(f_n'(c) - f_m'(c))| (b-a)
+$$
+
+Let $g(x) = \lim_{n \to \infty} f_n'(x)$, since we $(f'_n) \rightarrow g$ uniformly, we can find $N_1$, for $n, m > N_1$,
+$|f_n'(x) - f_m'(x)| < \frac{\epsilon}{2 (b-a)}$.
+
+We can also find $N_2$, for $n, m > N_2$, $|f_n(x_0) - f_m(x_0)| < \epsilon /2$.
+
+Let $N = \max \left\{ N_1, N_2 \right\}$, then
+$|f_n(x) - f_m(x)| < \epsilon$.
+
+$\square$
+
+## 6.4 Series of Functions
+
+### 6.4.6.
+
+Let
+
+$$ 
+f(x) = \frac{1}{x} - \frac{1}{x + 1} + \frac{1}{x + 2}
+- \frac{1}{x + 3} + \frac{1}{x + 4} - \cdots
+$$
+
+Show $f$ is defined for all $x > 0$. Is $f$ continuous on
+$(0, +\infty)$? How about diﬀerentiable?
+
+**Proof**:
+
+Let
+
+$$
+f_1(x) = \frac{1}{x} - \frac{1}{x + 1} \\
+f_2(x) = \frac{1}{x + 2} - \frac{1}{x + 3} \\
+f_3(x) = \frac{1}{x + 4} - \frac{1}{x + 5} \\
+\cdots \\
+f_n(x) = \frac{1}{x + 2n - 2} - \frac{1}{x + 2n - 1} \\
+\cdots \\
+$$
+
+Given $x$, $\sum_{i = 0}^{n} f_i(x)$ is increasing, and we have
+
+$$ 
+\sum_{i = 0}^{n} f_i(x) <
+\sum_{i = 0}^{n} \frac{1}{x + i - 1} - \frac{1}{x + i}\\
+< \frac{1}{x} - \frac{1}{x + n} < \frac{1}{x}
+$$
+
+So it's upper bounded. So $f(x)$ converges.
+
+Then let's check
+
+$$ 
+|f_{m+1}(x) + \cdots + f_n(x)| \\
+= 
+\sum_{i = m+1}^{n}\frac{1}{x + 2i - 2} - \frac{1}{x + 2i - 1} \\
+< \sum_{i = m+1}^{n} \frac{1}{x + i - 1} - \frac{1}{x + i} \\
+= \frac{1}{x + m} - \frac{1}{x + n} < \frac{1}{m}
+$$
+
+That means $\sum_{n = 0}^{\infty} f_n(x)$ converges uniformly
+from Theorem 6.4.4. So $f(x)$ is continuous.
+
+Now, let's examine the if it's differentiable.
+
+$$ 
+f_n'(x) =
+\frac{1}{(x+2n-1)^2} - \frac{1}{(x + 2n - 2)^2}
+$$
+
+Then we have
+
+$$ 
+|\sum_{i = m+1}^{n} f_i'(x)| \\
+= \left| \sum_{i = m+1}^{n} \frac{1}{(x+2i-2)^2} - \frac{1}{(x + 2i - 1)^2} \right| \\
+< \left| \sum_{i = m+1}^{n} \frac{1}{(x+2i-2)^2} + \frac{1}{(x + 2i - 1)^2} \right| \\
+< \left| \sum_{i = m+1}^{n} \frac{1}{x + 2i - 2} - \frac{1}{x + 2i} \right| \\
+= \left| \frac{1}{x + 2m} - \frac{1}{x + 2n} \right| \\
+< \frac{1}{2m}
+$$
+
+That means $\sum_{n = 0}^{\infty} f_n'(x)$ converges uniformly
+from Theorem 6.4.4. So $f(x)$ is differentiable.
+
+$\square$
+
+### 6.4.7.
+
+Let
+
+$$ 
+f(x) = \sum_{k = 1}^{\infty } \frac{\sin (kx)}{k^3} 
+$$
+
+Anwser:
+
+(a) Show that $f(x)$ is diﬀerentiable and that the
+derivative $f'(x)$ is continuous.
+
+**Proof**: We have
+
+$$ 
+f_k(x) = \frac{\sin (kx)}{k^3} \\
+f_k'(x) = \frac{\cos (kx)}{k^2}
+$$
+
+Then we have $|f_k'(x)| \leq \frac{1}{k^2}$, and
+$\sum_{k = 1}^{\infty} \frac{1}{k^2}$ converges. So
+based on Corollary 6.4.5, $\sum_{k = 1}^{\infty} f_k'(x) \rightarrow g(x)$ converges uniformly. That means $f$ is differentiable, and $f'(x) = g(x)$.
+Each $\sum_{k = 1}^{n} f_k'(x)$ is continuous, so $g(x)$ is
+also continuous.
+
+$\square$
+
+(b) Can we determine if f is twice-diﬀerentiable?
+
+**Solution**: Consdier
+
+$$ 
+g_k(x) = -f_k''(x) = \frac{\sin (kx)}{k}
+$$
+
+Consider $x = \pi / 2$
+
+$$ 
+\sum_{n = 1}^{\infty}
+\frac{\sin (n \frac{pi}{2})}{n} \\
+= 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots
+$$
+
+I cannot evne figure out if
+$\sum_{n = 1}^{\infty} g_k(x)$ converges. 
+
+$\square$
+
+### 6.4.8.
+
+Consider the function
+
+$$ 
+f(x) = \sum_{k = 1}^{\infty } \frac{\sin (x/k)}{k} 
+$$
+
+Where is $f$ defined? Continuous? Diﬀerentiable? Twice-diﬀerentiable?
+
+**Solution**:
+
+We will need this fact: $\sin x \leq x$ for $x \geq 0$.
+Let $g(x) = x - \sin x$, $g'(x) = 1 - \cos x \geq 0$.
+Therefore, $g(x) - g(0) = g(x) = g'(c)x \geq 0$.
+So $x \geq \sin x$.
+
+Let $f_n(x) = \frac{\sin (x/k)}{k}$. Given $x$, consider
+
+$$ 
+|f_{m+1}(x) + \cdots + f_n(x)| \leq \\
+|f_{m+1}(x)| + \cdots + |f_n(x)| \leq \\
+\frac{|x|}{(m+1)^2} + \cdots \frac{|x|}{n^2} < \\
+\frac{|x|}{m} - \frac{|x|}{n} < \frac{|x|}{m}
+$$
+
+So $\sum_{n = 1}^{\infty}f_n(x)$ converges for all $x \in \mathbf{R}$.
+So $f(x)$ is defined for $x \in \mathbf{R}$.
+
+Let
+
+$$ 
+g_n(x) = f_n'(x) = \frac{\cos (x/n)}{n^2} \\
+$$
+
+Then we have
+
+$$ 
+|g_{m+1}(x) + \cdots + g_n(x)| \leq \\
+|g_{m+1}(x)| + \cdots + |g_n(x)| \leq \\
+\frac{1}{(m+1)^2} + \cdots \frac{1}{n^2} < \\
+\frac{1}{m} - \frac{1}{n} < \frac{1}{m}
+$$
+
+That means $\sum_{n = 1}^{\infty} g_n(x) \rightarrow g(x)$
+uniformly. We also know $\sum_{n = 1}^{\infty}f_n(x)$ converges for all $x \in \mathbf{R}$. Then $f$ is differentiable,
+and $f' = g$.
+
+Since it's differentiable, it has to be continuous.
+
+Let
+
+$$ 
+h_n(x) = g_n'(x) = -\frac{\sin (x/n)}{n^3}
+$$
+
+Since $|h_n(x)| < \frac{1}{n^2}$ and $\sum_{n = 1}^{\infty}\frac{1}{n^2}$ converges, then $\sum_{n = 1}^{\infty}h_n(x)$ converges uniformly. 
+
+Also since $\sum_{n = 1}^{\infty}g_n(0)$ converges, then we know
+$g(x)$ is differentiable and $g'(x) = h(x)$. So $f$ is Twice-diﬀerentiable everywhere.
+
+$\square$
+
+### 6.4.9.
+
+Let
+
+$$ 
+h(x) = \sum_{n = 1}^{\infty}
+\frac{1}{x^2 + n^2}
+$$
+
+Answer:
+
+(a) Show that $h$ is a continuous function defined on all of $\mathbf{R}$.
+
+**Proof**: let
+
+$$ 
+h_n(x) = \frac{1}{x^2 + n^2}
+$$
+
+Then $h_n(x)$ is continuous. Also $h_n(x) \leq \frac{1}{n^2}$,
+and we know $\sum_{n = 1}^{\infty} \frac{1}{n^2}$ converges.
+
+So $h$ converges uniformly on $\mathbf{R}$. Based on Theorem 6.4.2, $h$ is continuous on $\mathbf{R}$.
+
+$\square$
+
+(b) Is $h$ diﬀerentiable? If so, is the derivative function $h'$ continuous?
+
+**Proof**: Let
+
+$$ 
+g_n(x) = -h_n'(x) = \frac{2x}{(x^2 + n^2)^2}
+$$
+
+If we plot the $g_n(x)$, we can see $g_n(x)$ reaches its
+maximum value some where. We want to find this maximum value.
+So we get derivative of $g_n(x)$.
+
+$$ 
+g_n'(x) = \frac{2(x^2 + n^2)^2 - 2x2(x^2+n^2)2x}{(x^2 + n^2)^2}\\
+= \frac{(2x^4 + 4x^2n^2+2n^4) - (8x^4+8x^2n^2)}{(x^2 + n^2)^2}\\
+= \frac{-6x^4 - 4x^2n^2 + 2n^4}{(x^2 + n^2)^2}
+$$
+
+If we set $g_n'(x) = 0$, we have $x^2 = \frac{1}{3}n^2$.
+And then
+
+$$ 
+\sup g_n(x) = g_n(\sqrt[]{1/3}n) \\
+= \frac{\frac{2}{\sqrt[]{3}}n}{\frac{16}{9}n^4} < \frac{1}{n^3}
+$$
+
+Then we can see $\sum_{n = 1}^{\infty}g_n'(x)$ converges
+uniformly. So $h$ is differentiable and since each $g_n(x)$ is
+continuous, $h'$ is continuous.
+
+$\square$
+
+### 6.4.10.
+
+Let $\{r_1,r_2,r_3,...\}$ be an enumeration of the set of
+rational numbers. For each $r_n ∈ \mathbf{Q}$, define
+
+$$ 
+u_n(x) =
+\begin{cases}
+    1/2^n &\text{for } x > r_n   \\
+    0     &\text{for } x \leq r_n\\
+\end{cases}
+$$
+
+Now let $h(x) = \sum_{n = 1}^{\infty}u_n(x)$.
+Prove that $h$ is a monotone function defined on
+all of $\mathbf{R}$ that is continuous at every irrational point.
+
+Proof: First $u_n(x) \leq 1/2^n$, based on Corollary 6.4.5 (Weierstrass M-Test), $\sum_{n = 1}^{\infty}u_n(x)$ converges
+to $h(x)$ uniformly. So $h(x)$ is well-defined.
+
+Assume $x < y$, then $u_n(x) < u_n(y)$ for all $n$.
+Thus $h(x) \leq h(y)$.
+
+Given $x \not \in \mathbf{Q}$, and $\epsilon > 0$.
+We want to find $\delta$, if $|x - y| < \delta$, then
+$|h(y) - h(x)| < \epsilon$.
+
+Let $h_n(x) = \sum_{k = 1}^{n}u_n(x)$. We can find $N$, such that $|h_n(x) - h(x)| < \epsilon / 2$
+for $n > N$.
+
+Pick any $n > N$. Since $x$ is
+an irrational number, we can find $U_{\delta}(x)$, such that
+$r_1, r_2, \cdots, r_n \notin U_{\delta}(x)$.
+
+Let $y \in U_{\delta}(x)$, note $u_k(x) = u_k(y)$ for
+all $k \leq n$. 
+
+$$ 
+h_n(x) - h_n(y) =
+\sum_{k = 1}^{n} u_k(x) - u_k(y) = 0
+$$
+
+Finally we have
+
+$$ 
+|h(x) - h(y)| =
+|h(x) - h_n(x)| + |h_n(x) - h_n(y)| + |h_n(y) - h(y)| <
+\epsilon / 2 + 0 + \epsilon / 2 = \epsilon
+$$
+
+So $h(x)$ is continuous at every irrational point.
+
+$\square$
