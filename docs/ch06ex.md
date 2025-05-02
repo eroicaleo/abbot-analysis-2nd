@@ -1045,6 +1045,216 @@ $\square$
 
 ## 6.4 Series of Functions
 
+### 6.4.1.
+Supply the details for the proof of the Weierstrass M-Test
+(Corollary 6.4.5):
+
+For each $n ∈ N$, let $f_n$ be a function
+defined on a set $A ⊆ R$, and let $M_n > 0$ be a real
+number satisfying
+
+$$ 
+|f_n(x)| \leq M_n
+$$
+
+for all $x \in A$. If $\sum_{n = 1}^{\infty}M_n$ converges,
+then $\sum_{n = 1}^{\infty}f_n(x)$ converges uniformly on
+$A$.
+
+**Proof**: Given $\epsilon$, since $\sum_{n = 1}^{\infty}M_n$ converges, based on Cauchy Criterion, we can find $N$, if
+$n > m > N$, then
+
+$$ 
+\left| M_{m+1} + \cdots + M_{n} \right| =\\
+M_{m+1} + \cdots + M_{n} < \epsilon
+$$
+
+We also have
+
+$$ 
+\left| f_{m+1} + \cdots + f_{n} \right| \leq
+\left| M_{m+1} \right| + \cdots + \left| M_{n} \right| =\\
+M_{m+1} + \cdots + M_{n} < \epsilon
+$$
+
+So based on Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series),
+$\sum_{n = 1}^{\infty}f_n(x)$ converges uniformly on
+$A$.
+
+$\square$
+
+### 6.4.2.
+
+Decide whether each proposition is true or false, providing a
+short justification or counterexample as appropriate.
+
+(a) If $\sum_{n = 1}^{\infty} g_n$ converges uniformly,
+then $(g_n)$ converges uniformly to zero.
+
+**Proof**: True. Based on Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series), we know
+$\left| g_n(x) \right| < \epsilon$.
+
+$\square$
+
+(b) If $0 \leq f_n(x) \leq g_n(x)$ and $\sum_{n = 1}^{\infty}g_n$
+converges uniformly, then $\sum_{n = 1}^{\infty}f_n(x)$ converges uniformly.
+
+**Proof**: True, again, use Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series)
+
+$$ 
+\left| 
+f_{m+1} (x) + \cdots + f_n(x)
+ \right| =\\
+f_{m+1} (x) + \cdots + f_n(x) \\
+\leq 
+g_{m+1} (x) + \cdots + g_n(x) \\
+= | g_{m+1} (x) + \cdots + g_n(x) | < \epsilon
+$$
+
+$\square$
+
+(c) If $\sum_{n = 1}^{\infty} f_n$ converges uniformly on $A$,
+then there exist constants $M_n$ such that
+$|f_n(x)| \leq M_n$ for all $x \in A$ and $\sum_{n = 1}^{\infty}M_n$ converges.
+
+**Solution**: Let $f_1(x) = x$, for $n > 1, f_n(x) = 0$.
+$\sum_{n = 1}^{\infty} f_n$ converges to $x$, but we cannot
+find $M_1$ such that $|f_1(x)| \leq M_1$ for all $x \in A$.
+
+This is a boring example, a more interested example is presented
+[here](https://solverer.com/library/stephen_abbott/understanding_analysis/exercise_6-4-2).
+
+It constructs $M_n$ like this:
+
+$$ 
+M_1 = 1 \\
+M_2 = M_3 = 1/2 \\
+M_4 = M_5 = M_6 = M_7 = 1/4 \\
+\cdots
+$$
+
+Then $\sum_{n = 1}^{\infty}M_n$ does not converge.
+
+### 6.4.3.
+
+(a) Show that
+
+$$ 
+g(x) = \sum_{n = 0}^{\infty}
+\frac{\cos (2^nx)}{2^n}
+$$
+
+is continuous on all of $\mathbf{R}$.
+
+**Proof**: Given any $[-M, M]$, apply Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series),
+
+$$ 
+\left| g_{m+1} + \cdots + g_{n} \right| \leq
+\frac{1}{2^{m+1}} + \cdots + \frac{1}{2^n} \\
+< \frac{1}{2^m}
+$$
+
+$\square$
+
+(b) The function $g$ was cited in Section 5.4 as an example of a continuous
+nowhere diﬀerentiable function. What happens if we try to use Theorem
+6.4.3 to explore whether $g$ is diﬀerentiable?
+
+**Solution**: Let
+
+$$ 
+h_n(x) = g_n'(x) = - \sin (2^n x).
+$$
+
+We can see $\sum_{n = 1}^{\infty} h_n(x)$ is not uniformly converging.
+
+Because $|h_n(1/2^{n+1}\pi)| = \sin (\pi / 2) = 1$.
+Then apply Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series), we prove this.
+
+So we cannot use Theorem 6.4.3 to explore whether $g$ is diﬀerentiable.
+
+$\square$
+
+### 6.4.4.
+
+Define
+
+$$ 
+g(x) = \sum_{n = 1}^{\infty}
+\frac{x^{2n}}{1 + x^{2n}}
+$$
+
+Find the values of $x$ where the series converges and show that we get a continuous function on this set.
+
+**Solution**: Let
+
+$$ 
+g_n(x) = \frac{x^{2n}}{1 + x^{2n}}
+$$
+
+When $|x| \geq 1$, $g_n(x) \geq \frac{1}{2}$, so $g(x)$ does
+not converge.
+
+When $|x| < 1$, $g_n(x) < x^{2n}$. Then given $x$,
+
+$$ 
+\left| g_{m+1} + \cdots + g_{n} \right| < \\
+x^{2(m+1)} + x^{2n} = \\
+\frac{x^{2(m+1)} - x^{2(n+1)}}{1 - x^2} < \\
+\frac{x^{2(m+1)}}{1 - x^2} \rightarrow 0
+$$
+
+For any $|x| < 1$, we can get $|x| < M < 1$. Then we have
+
+$$ 
+\frac{x^{2(m+1)}}{1 - x^2} \leq \frac{M^{2(m+1)}}{1-M^2}
+$$
+
+So $g(x)$ converges uniformly on $[-M, M]$. $g(x)$ is continuous
+at $x$.
+
+$\square$
+
+### 6.4.5.
+
+(a) Prove that
+
+$$ 
+h(x) = \sum_{n = 1}^{\infty} \frac{x^n}{n^2}
+$$
+
+is continuous on $[-1, 1]$.
+
+**Proof**: $\left| \frac{x^n}{n^2} \right| \leq \frac{1}{n^2}$
+and $\sum_{n = 1}^{\infty} \frac{1}{n^2}$ converges.
+So based on Corollary 6.4.5 (Weierstrass M-Test), $h(x)$ converges
+uniformly. So $h(x)$ is continuous.
+
+$\square$
+
+(b) The series
+
+$$ 
+h(x) = \sum_{n = 1}^{\infty} \frac{x^n}{n}
+$$
+
+converges for every $x$ in the half-open interval $[−1,1)$ but does not converge when $x = 1$. For a fixed $x_0 ∈ (−1,1)$, explain how we can still use the Weierstrass M-Test to
+prove that $f$ is continuous at $x_0$.
+
+**Proof**:
+
+Given $x_0 \in (-1, 1)$, we can find $0 < M < 1$ such that
+$x_0 \in [-M, M]$, we prove $h(x)$ converges uniformly on
+this interval.
+
+$$ 
+|h_n(x)| = |\frac{x^n}{n}| \leq |x|^n \leq M^n
+$$
+
+And $\sum_{n = 1}^{\infty} M^n = \frac{M}{1 - M}$.
+So $h(x)$ converges uniformly on $[-M, M]$. Then $h(x)$ is
+continuous at $x_0$.
+
 ### 6.4.6.
 
 Let
