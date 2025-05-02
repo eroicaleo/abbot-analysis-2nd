@@ -104,6 +104,46 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#63-uniform-convergence-and-differentiation">6.3. Uniform Convergence and Diﬀerentiation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#631">6.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#632">6.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#633">6.3.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#634">6.3.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#635">6.3.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#637">6.3.7.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#64-series-of-functions">6.4 Series of Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#641">6.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#642">6.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#643">6.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#644">6.4.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#645">6.4.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#646">6.4.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#647">6.4.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#648">6.4.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#649">6.4.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6410">6.4.10.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -382,6 +422,33 @@ Then given <script type="math/tex">\epsilon</script>, we can find <script type="
 </p>
 <h3 id="626">6.2.6.</h3>
 <p>Assume <script type="math/tex">f_n → f</script> on a set <script type="math/tex">A</script>.</p>
+<p>(a) If each <script type="math/tex">f_n</script> is uniformly continuous, then <script type="math/tex">f</script> is uniformly continuous.</p>
+<p><strong>Solution</strong>: Consider the example of 6.2.2 (ii), each <script type="math/tex">f_n</script> is
+uniformly continuous on <script type="math/tex">[0, 1]</script>, but <script type="math/tex">f</script> is not a continuous
+function.</p>
+<p>Now assume <script type="math/tex">(f_n) \rightarrow f</script> uniformly. We can find
+<script type="math/tex">n</script> such that <script type="math/tex">|f_n(x) - f(x)| < \epsilon / 3</script> for <script type="math/tex">x \in A</script>.
+For this <script type="math/tex">f_n</script>, since it's uniformly continuous, we can find <script type="math/tex">\delta</script>, if <script type="math/tex">|x - y| < \delta</script>, then <script type="math/tex">|f_n(x) - f_n(y)| < \epsilon / 3</script>. Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - f(y)| \leq \\
+|f(x) - f_n(x)| + |f_n(x) - f_n(y)| + |f_n(y) - f(y)| \lt \\
+\epsilon / 3 + \epsilon / 3 + \epsilon / 3 = \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">f</script> is uniformly continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If each <script type="math/tex">f_n</script> is bounded, then <script type="math/tex">f</script> is bounded.</p>
+<p><strong>Solution</strong>: Consider <script type="math/tex">f_n = \frac{1}{1/n + x}</script>, <script type="math/tex">A = (0, 1]</script>. Then
+<script type="math/tex">f(x) = \frac{1}{x}</script> on <script type="math/tex">A = (0, 1]</script> which is not bounded.</p>
+<p>If <script type="math/tex">(f_n) \rightarrow f</script> uniformly. We can find <script type="math/tex">n</script>,
+<script type="math/tex">|f_n(x) - f(x) | < 1</script>, since <script type="math/tex">|f_n(x)| \leq M</script>, then
+<script type="math/tex">|f(x)| \leq M + 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <p>(c) If each <script type="math/tex">f_n</script> has a finite number ofdiscontinuities, then <script type="math/tex">f</script> has a finite number of discontinuities.</p>
 <p>Proof: If the convergence is uniform, consider the following <script type="math/tex">f_n</script>
 defined on <script type="math/tex">[0, 1]</script> .</p>
@@ -743,6 +810,758 @@ Cauchy criterion, we can find <script type="math/tex">N_i</script> such that <sc
 < 3 \times \epsilon / 3 = \epsilon 
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="63-uniform-convergence-and-differentiation">6.3. Uniform Convergence and Diﬀerentiation</h2>
+<h3 id="631">6.3.1.</h3>
+<p>Consider the sequence of functions defined by</p>
+<p>
+<script type="math/tex; mode=display">
+g_n(x) = \frac{x^n}{n}
+</script>
+</p>
+<p>Anwser:</p>
+<p>(a) Show <script type="math/tex">(g_n)</script> converges uniformly on <script type="math/tex">[0,1]</script> and find <script type="math/tex">g = \lim g_n</script>. Show that <script type="math/tex">g</script> is diﬀerentiable and compute <script type="math/tex">g'(x)</script> for all <script type="math/tex">x ∈ [0,1]</script>.</p>
+<p><strong>Solution</strong>: Given <script type="math/tex">x \in [0, 1]</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} \frac{x^n}{n} = 0
+</script>
+</p>
+<p>So <script type="math/tex">g(x) = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g_n(x) - g(x)| =
+\left| \frac{x^n}{n} \right| < \left| 1/n \right|
+</script>
+</p>
+<p>So <script type="math/tex">(g_n) \rightarrow g</script> uniformly.</p>
+<p>
+<script type="math/tex">g</script> is a constant function so it's differentiable and <script type="math/tex">g'(x) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now, show that <script type="math/tex">(g_n')</script> converges on <script type="math/tex">[0,1]</script>.
+Is the convergence uniform? Set <script type="math/tex">h = \lim g_n'</script> and compare <script type="math/tex">h</script> and <script type="math/tex">g'</script>. Are they the same?</p>
+<p><strong>Solution</strong>:</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'_n(x) = x^{n-1} \\
+h(x) = \begin{cases}
+    0 &\text{if } x < 1\\
+    1 &\text{if } x = 1\\
+\end{cases} 
+</script>
+</p>
+<p>The converge is not uniform. <script type="math/tex">h</script> and <script type="math/tex">g'(x)</script> are not the same.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="632">6.3.2.</h3>
+<p>Consider the sequence of functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = \sqrt[]{x^2 + \frac{1}{n}}
+</script>
+</p>
+<p>Answer:</p>
+<p>(a) Compute the pointwise limit of <script type="math/tex">(h_n)</script> and then prove that the convergence is uniform on <script type="math/tex">\mathbf{R}</script>.</p>
+<p><strong>Solution</strong>: Given <script type="math/tex">x</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \lim_{n \to \infty} h_n(x) = \sqrt[]{x^2} = |x|
+</script>
+</p>
+<p>And also</p>
+<p>
+<script type="math/tex; mode=display"> 
+|h_n(x) - h(x)| =\\
+\left| 
+\frac{1/n}{\sqrt[]{x^2 + \frac{1}{n}} + |x|}
+\right| <
+\left| \frac{1/n}{\sqrt[]{1/n}} \right| =
+\left| \frac{1}{\sqrt[]{n}} \right|
+</script>
+</p>
+<p>So the convergence is uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Note that each <script type="math/tex">h_n</script> is diﬀerentiable. Show <script type="math/tex">g(x) = \lim h'_
+n(x)</script> exists for all <script type="math/tex">x</script>, and explain how we can be certain that the convergence is not uniform on any neighborhood of zero.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n'(x) = \left(  \sqrt[]{x^2 + \frac{1}{n}} \right) ' \\
+= \frac{1}{2} \frac{1}{\sqrt[]{x^2 + \frac{1}{n}}} 2x \\
+= \frac{x}{\sqrt[]{x^2 + \frac{1}{n}}}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) =
+\begin{cases}
+    0  &\text{if } x = 0\\
+    1  &\text{if } x > 0\\
+    -1 &\text{if } x < 0\\
+\end{cases} 
+</script>
+</p>
+<p>If the convergence is uniform on a neighborhood of zero,
+then we must have</p>
+<p>
+<script type="math/tex; mode=display"> 
+h'(x) = g(x)
+</script>
+</p>
+<p>But <script type="math/tex">h(x)</script> is not differentiable at <script type="math/tex">0</script>. So the convergence
+is not uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="633">6.3.3.</h3>
+<p>Consider the sequence of functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) =
+\frac{x}{1 + nx^2}
+</script>
+</p>
+<p>Answer:</p>
+<p>(a) Find the points on <script type="math/tex">\mathbf{R}</script> where each <script type="math/tex">f_n(x)</script> attains its maximum and minimum value. Use this to prove <script type="math/tex">(f_n)</script> converges uniformly on <script type="math/tex">\mathbf{R}</script>. What is the limit function?</p>
+<p><strong>Solution</strong>:</p>
+<p>Fix <script type="math/tex">n</script>, and assume <script type="math/tex">x > 0</script>. </p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) =
+\frac{1}{\frac{1}{x} + nx} \\
+= \frac{1}{(\frac{1}{\sqrt[]{x}} - \sqrt[]{nx})^2 + 2 \sqrt[]{n}} \\
+\leq \frac{1}{2 \sqrt[]{n}}
+</script>
+</p>
+<p>When <script type="math/tex">x = 1/\sqrt[]{n}</script>. Since <script type="math/tex">f_n(x)</script> is odd function, it
+attains it's minimum value at <script type="math/tex">x = -1/\sqrt[]{n}</script>.</p>
+<p>The limit function is <script type="math/tex">f(x) = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n(x) - f(x)| =
+\left| \frac{1}{\frac{1}{x} + nx} - 0 \right| \leq \frac{1}{2 \sqrt[]{n}}
+</script>
+</p>
+<p>So the convergence is uniform.</p>
+<p>(b) Let <script type="math/tex">f = \lim f_n</script>. Compute <script type="math/tex">f'_n(x)</script> and find all the values of <script type="math/tex">x</script> for which <script type="math/tex">f'(x) = \lim f'_n(x)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+f_n(x) = \frac{x}{1 + nx^2} \\
+f_n'(x) = \frac{
+(1+nx^2) - x(2nx)
+}{
+(1 + nx^2)^2
+} \\
+= \frac{1 - nx^2}{(1 + nx^2)^2} \\
+= \frac{1}{1 + nx^2} \frac{1 - nx^2}{1+nx^2}
+</script>
+</p>
+<p>Let <script type="math/tex">g(x) = \lim_{n \to \infty} f_n'(x)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) =
+\begin{cases}
+    1 &\text{if } x \not = 0 \\
+    0 &\text{if } x = 0 \\
+\end{cases}
+</script>
+</p>
+<p>So <script type="math/tex">f'(x) = g(x)</script> when <script type="math/tex">x \not = 0</script>.</p>
+<h3 id="634">6.3.4.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = 
+\frac{\sin (nx)}{\sqrt[]{n}}
+</script>
+</p>
+<p>Show that <script type="math/tex">h_n → 0</script> uniformly on <script type="math/tex">\mathbf{R}</script> but that the sequence of derivatives <script type="math/tex">(h_n')</script> diverges for every
+<script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+|h_n(x) - 0| \leq \frac{1}{\sqrt[]{n}}
+</script>
+</p>
+<p>So the converge is uniform.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n'(x) = \frac{n \cos (nx)}{\sqrt[]{n}} = \sqrt[]{n} \cos (nx)
+</script>
+</p>
+<p>Since <script type="math/tex">\cos (nx)</script> can be either positive or negtive, then
+<script type="math/tex">h_n'(x)</script> diverges for every <script type="math/tex">x \in \mathbf{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="635">6.3.5.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = \frac{nx + x^2}{2n}
+</script>
+</p>
+<p>and set <script type="math/tex">g(x) = \lim g_n(x)</script>.
+Show that <script type="math/tex">g</script> is diﬀerentiable in two ways:</p>
+<p>(a) Compute <script type="math/tex">g(x)</script> by algebraically taking the limit as <script type="math/tex">n → ∞</script> and then find <script type="math/tex">g'(x)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = \lim g_n(x) = \frac{x}{2} \\
+g'(x) = \frac{1}{2}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Compute <script type="math/tex">g'_n(x)</script> for each <script type="math/tex">n ∈ N</script> and show that the sequence of derivatives <script type="math/tex">(g'_n)</script> converges uniformly on every interval <script type="math/tex">[−M,M]</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n'(x) = \frac{n + 2x}{2n} = \frac{1}{2} + \frac{x}{n}
+</script>
+</p>
+<p>We can see <script type="math/tex">\lim_{n \to \infty} g_n'(x) = \frac{1}{2}</script> for <script type="math/tex">x \in \mathbf{R}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g_n'(x) - \frac{1}{2}| = |x/n| \leq M/n.
+</script>
+</p>
+<p>So it converges uniformly on every interval <script type="math/tex">[−M,M]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Repeat parts (a) and (b) for the sequence
+<script type="math/tex">f_n(x) = (nx^2 +1)/(2n+x)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \lim_{n \to \infty} f_n(x) = \frac{x^2}{2}
+</script>
+</p>
+<p>Then we have <script type="math/tex">f'(x) = x</script>.</p>
+<p>Then we compute <script type="math/tex">f_n'(x)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \frac{nx^2 +1}{2n + x} \\
+f_n'(x) = \frac{(2n+x)(2nx) - (nx^2+1)}{(2n+x)^2} \\
+= \frac{nx^2 + 4n^2x - 1}{(2n+x)^2} \\
+= \frac{nx^2 + 4n^2x - 1}{x^2 + 4nx + 4n^2}
+</script>
+</p>
+<p>Let <script type="math/tex">h(x) = \lim_{n \to \infty} f_n'(x)</script>, then <script type="math/tex">h(x) = x</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n'(x) - h(x)| =\\
+\left| \frac{
+(nx^2 + 4n^2x - 1) - (x^2 + 4nx + 4n^2)x
+}{
+x^2 + 4nx + 4n^2
+} \right| = \\
+\left| \frac{
+3nx^2 + x^3 + 1
+}{
+x^2 + 4nx + 4n^2
+} \right| <
+\frac{3nM^2 + M^3 + 1}{(2n - M)^2}
+</script>
+</p>
+<p>So it converges uniformly on every interval <script type="math/tex">[−M,M]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="637">6.3.7.</h3>
+<p>Use the Mean Value Theorem to supply a proof for Theorem 6.3.2. To get started, observe that the triangle inequality implies that, for any <script type="math/tex">x ∈ [a,b]</script> and <script type="math/tex">m,n ∈ \mathbf{N}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n(x) - f_m(x)| \leq 
+|(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0))|
++ |(f_n(x_0) - f_m(x_0))|
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Fix <script type="math/tex">x</script>, since <script type="math/tex">f_n</script> are all differentiable, from MVT,
+we can find <script type="math/tex">c \in (x, x_0)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0))| =\\
+|(f_n'(c) - f_m'(c))(x - x_0)| \\
+\leq |(f_n'(c) - f_m'(c))| (b-a)
+</script>
+</p>
+<p>Let <script type="math/tex">g(x) = \lim_{n \to \infty} f_n'(x)</script>, since we <script type="math/tex">(f'_n) \rightarrow g</script> uniformly, we can find <script type="math/tex">N_1</script>, for <script type="math/tex">n, m > N_1</script>,
+<script type="math/tex">|f_n'(x) - f_m'(x)| < \frac{\epsilon}{2 (b-a)}</script>.</p>
+<p>We can also find <script type="math/tex">N_2</script>, for <script type="math/tex">n, m > N_2</script>, <script type="math/tex">|f_n(x_0) - f_m(x_0)| < \epsilon /2</script>.</p>
+<p>Let <script type="math/tex">N = \max \left\{ N_1, N_2 \right\}</script>, then
+<script type="math/tex">|f_n(x) - f_m(x)| < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="64-series-of-functions">6.4 Series of Functions</h2>
+<h3 id="641">6.4.1.</h3>
+<p>Supply the details for the proof of the Weierstrass M-Test
+(Corollary 6.4.5):</p>
+<p>For each <script type="math/tex">n ∈ N</script>, let <script type="math/tex">f_n</script> be a function
+defined on a set <script type="math/tex">A ⊆ R</script>, and let <script type="math/tex">M_n > 0</script> be a real
+number satisfying</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n(x)| \leq M_n
+</script>
+</p>
+<p>for all <script type="math/tex">x \in A</script>. If <script type="math/tex">\sum_{n = 1}^{\infty}M_n</script> converges,
+then <script type="math/tex">\sum_{n = 1}^{\infty}f_n(x)</script> converges uniformly on
+<script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">\epsilon</script>, since <script type="math/tex">\sum_{n = 1}^{\infty}M_n</script> converges, based on Cauchy Criterion, we can find <script type="math/tex">N</script>, if
+<script type="math/tex">n > m > N</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| M_{m+1} + \cdots + M_{n} \right| =\\
+M_{m+1} + \cdots + M_{n} < \epsilon
+</script>
+</p>
+<p>We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f_{m+1} + \cdots + f_{n} \right| \leq
+\left| M_{m+1} \right| + \cdots + \left| M_{n} \right| =\\
+M_{m+1} + \cdots + M_{n} < \epsilon
+</script>
+</p>
+<p>So based on Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series),
+<script type="math/tex">\sum_{n = 1}^{\infty}f_n(x)</script> converges uniformly on
+<script type="math/tex">A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="642">6.4.2.</h3>
+<p>Decide whether each proposition is true or false, providing a
+short justification or counterexample as appropriate.</p>
+<p>(a) If <script type="math/tex">\sum_{n = 1}^{\infty} g_n</script> converges uniformly,
+then <script type="math/tex">(g_n)</script> converges uniformly to zero.</p>
+<p><strong>Proof</strong>: True. Based on Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series), we know
+<script type="math/tex">\left| g_n(x) \right| < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If <script type="math/tex">0 \leq f_n(x) \leq g_n(x)</script> and <script type="math/tex">\sum_{n = 1}^{\infty}g_n</script>
+converges uniformly, then <script type="math/tex">\sum_{n = 1}^{\infty}f_n(x)</script> converges uniformly.</p>
+<p><strong>Proof</strong>: True, again, use Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+f_{m+1} (x) + \cdots + f_n(x)
+ \right| =\\
+f_{m+1} (x) + \cdots + f_n(x) \\
+\leq 
+g_{m+1} (x) + \cdots + g_n(x) \\
+= | g_{m+1} (x) + \cdots + g_n(x) | < \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) If <script type="math/tex">\sum_{n = 1}^{\infty} f_n</script> converges uniformly on <script type="math/tex">A</script>,
+then there exist constants <script type="math/tex">M_n</script> such that
+<script type="math/tex">|f_n(x)| \leq M_n</script> for all <script type="math/tex">x \in A</script> and <script type="math/tex">\sum_{n = 1}^{\infty}M_n</script> converges.</p>
+<p><strong>Solution</strong>: Let <script type="math/tex">f_1(x) = x</script>, for <script type="math/tex">n > 1, f_n(x) = 0</script>.
+<script type="math/tex">\sum_{n = 1}^{\infty} f_n</script> converges to <script type="math/tex">x</script>, but we cannot
+find <script type="math/tex">M_1</script> such that <script type="math/tex">|f_1(x)| \leq M_1</script> for all <script type="math/tex">x \in A</script>.</p>
+<p>This is a boring example, a more interested example is presented
+<a href="https://solverer.com/library/stephen_abbott/understanding_analysis/exercise_6-4-2">here</a>.</p>
+<p>It constructs <script type="math/tex">M_n</script> like this:</p>
+<p>
+<script type="math/tex; mode=display"> 
+M_1 = 1 \\
+M_2 = M_3 = 1/2 \\
+M_4 = M_5 = M_6 = M_7 = 1/4 \\
+\cdots
+</script>
+</p>
+<p>Then <script type="math/tex">\sum_{n = 1}^{\infty}M_n</script> does not converge.</p>
+<h3 id="643">6.4.3.</h3>
+<p>(a) Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = \sum_{n = 0}^{\infty}
+\frac{\cos (2^nx)}{2^n}
+</script>
+</p>
+<p>is continuous on all of <script type="math/tex">\mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: Given any <script type="math/tex">[-M, M]</script>, apply Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series),</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| g_{m+1} + \cdots + g_{n} \right| \leq
+\frac{1}{2^{m+1}} + \cdots + \frac{1}{2^n} \\
+< \frac{1}{2^m}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) The function <script type="math/tex">g</script> was cited in Section 5.4 as an example of a continuous
+nowhere diﬀerentiable function. What happens if we try to use Theorem
+6.4.3 to explore whether <script type="math/tex">g</script> is diﬀerentiable?</p>
+<p><strong>Solution</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = g_n'(x) = - \sin (2^n x).
+</script>
+</p>
+<p>We can see <script type="math/tex">\sum_{n = 1}^{\infty} h_n(x)</script> is not uniformly converging.</p>
+<p>Because <script type="math/tex">|h_n(1/2^{n+1}\pi)| = \sin (\pi / 2) = 1</script>.
+Then apply Theorem 6.4.4 (Cauchy Criterion for Uniform Convergence of Series), we prove this.</p>
+<p>So we cannot use Theorem 6.4.3 to explore whether <script type="math/tex">g</script> is diﬀerentiable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="644">6.4.4.</h3>
+<p>Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = \sum_{n = 1}^{\infty}
+\frac{x^{2n}}{1 + x^{2n}}
+</script>
+</p>
+<p>Find the values of <script type="math/tex">x</script> where the series converges and show that we get a continuous function on this set.</p>
+<p><strong>Solution</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = \frac{x^{2n}}{1 + x^{2n}}
+</script>
+</p>
+<p>When <script type="math/tex">|x| \geq 1</script>, <script type="math/tex">g_n(x) \geq \frac{1}{2}</script>, so <script type="math/tex">g(x)</script> does
+not converge.</p>
+<p>When <script type="math/tex">|x| < 1</script>, <script type="math/tex">g_n(x) < x^{2n}</script>. Then given <script type="math/tex">x</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| g_{m+1} + \cdots + g_{n} \right| < \\
+x^{2(m+1)} + x^{2n} = \\
+\frac{x^{2(m+1)} - x^{2(n+1)}}{1 - x^2} < \\
+\frac{x^{2(m+1)}}{1 - x^2} \rightarrow 0
+</script>
+</p>
+<p>For any <script type="math/tex">|x| < 1</script>, we can get <script type="math/tex">|x| < M < 1</script>. Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{x^{2(m+1)}}{1 - x^2} \leq \frac{M^{2(m+1)}}{1-M^2}
+</script>
+</p>
+<p>So <script type="math/tex">g(x)</script> converges uniformly on <script type="math/tex">[-M, M]</script>. <script type="math/tex">g(x)</script> is continuous
+at <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="645">6.4.5.</h3>
+<p>(a) Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \sum_{n = 1}^{\infty} \frac{x^n}{n^2}
+</script>
+</p>
+<p>is continuous on <script type="math/tex">[-1, 1]</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">\left| \frac{x^n}{n^2} \right| \leq \frac{1}{n^2}</script>
+and <script type="math/tex">\sum_{n = 1}^{\infty} \frac{1}{n^2}</script> converges.
+So based on Corollary 6.4.5 (Weierstrass M-Test), <script type="math/tex">h(x)</script> converges
+uniformly. So <script type="math/tex">h(x)</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) The series</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \sum_{n = 1}^{\infty} \frac{x^n}{n}
+</script>
+</p>
+<p>converges for every <script type="math/tex">x</script> in the half-open interval <script type="math/tex">[−1,1)</script> but does not converge when <script type="math/tex">x = 1</script>. For a fixed <script type="math/tex">x_0 ∈ (−1,1)</script>, explain how we can still use the Weierstrass M-Test to
+prove that <script type="math/tex">f</script> is continuous at <script type="math/tex">x_0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">x_0 \in (-1, 1)</script>, we can find <script type="math/tex">0 < M < 1</script> such that
+<script type="math/tex">x_0 \in [-M, M]</script>, we prove <script type="math/tex">h(x)</script> converges uniformly on
+this interval.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|h_n(x)| = |\frac{x^n}{n}| \leq |x|^n \leq M^n
+</script>
+</p>
+<p>And <script type="math/tex">\sum_{n = 1}^{\infty} M^n = \frac{M}{1 - M}</script>.
+So <script type="math/tex">h(x)</script> converges uniformly on <script type="math/tex">[-M, M]</script>. Then <script type="math/tex">h(x)</script> is
+continuous at <script type="math/tex">x_0</script>.</p>
+<h3 id="646">6.4.6.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \frac{1}{x} - \frac{1}{x + 1} + \frac{1}{x + 2}
+- \frac{1}{x + 3} + \frac{1}{x + 4} - \cdots
+</script>
+</p>
+<p>Show <script type="math/tex">f</script> is defined for all <script type="math/tex">x > 0</script>. Is <script type="math/tex">f</script> continuous on
+<script type="math/tex">(0, +\infty)</script>? How about diﬀerentiable?</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display">
+f_1(x) = \frac{1}{x} - \frac{1}{x + 1} \\
+f_2(x) = \frac{1}{x + 2} - \frac{1}{x + 3} \\
+f_3(x) = \frac{1}{x + 4} - \frac{1}{x + 5} \\
+\cdots \\
+f_n(x) = \frac{1}{x + 2n - 2} - \frac{1}{x + 2n - 1} \\
+\cdots \\
+</script>
+</p>
+<p>Given <script type="math/tex">x</script>, <script type="math/tex">\sum_{i = 0}^{n} f_i(x)</script> is increasing, and we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 0}^{n} f_i(x) <
+\sum_{i = 0}^{n} \frac{1}{x + i - 1} - \frac{1}{x + i}\\
+< \frac{1}{x} - \frac{1}{x + n} < \frac{1}{x}
+</script>
+</p>
+<p>So it's upper bounded. So <script type="math/tex">f(x)</script> converges.</p>
+<p>Then let's check</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_{m+1}(x) + \cdots + f_n(x)| \\
+= 
+\sum_{i = m+1}^{n}\frac{1}{x + 2i - 2} - \frac{1}{x + 2i - 1} \\
+< \sum_{i = m+1}^{n} \frac{1}{x + i - 1} - \frac{1}{x + i} \\
+= \frac{1}{x + m} - \frac{1}{x + n} < \frac{1}{m}
+</script>
+</p>
+<p>That means <script type="math/tex">\sum_{n = 0}^{\infty} f_n(x)</script> converges uniformly
+from Theorem 6.4.4. So <script type="math/tex">f(x)</script> is continuous.</p>
+<p>Now, let's examine the if it's differentiable.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n'(x) =
+\frac{1}{(x+2n-1)^2} - \frac{1}{(x + 2n - 2)^2}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\sum_{i = m+1}^{n} f_i'(x)| \\
+= \left| \sum_{i = m+1}^{n} \frac{1}{(x+2i-2)^2} - \frac{1}{(x + 2i - 1)^2} \right| \\
+< \left| \sum_{i = m+1}^{n} \frac{1}{(x+2i-2)^2} + \frac{1}{(x + 2i - 1)^2} \right| \\
+< \left| \sum_{i = m+1}^{n} \frac{1}{x + 2i - 2} - \frac{1}{x + 2i} \right| \\
+= \left| \frac{1}{x + 2m} - \frac{1}{x + 2n} \right| \\
+< \frac{1}{2m}
+</script>
+</p>
+<p>That means <script type="math/tex">\sum_{n = 0}^{\infty} f_n'(x)</script> converges uniformly
+from Theorem 6.4.4. So <script type="math/tex">f(x)</script> is differentiable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="647">6.4.7.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{k = 1}^{\infty } \frac{\sin (kx)}{k^3} 
+</script>
+</p>
+<p>Anwser:</p>
+<p>(a) Show that <script type="math/tex">f(x)</script> is diﬀerentiable and that the
+derivative <script type="math/tex">f'(x)</script> is continuous.</p>
+<p><strong>Proof</strong>: We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_k(x) = \frac{\sin (kx)}{k^3} \\
+f_k'(x) = \frac{\cos (kx)}{k^2}
+</script>
+</p>
+<p>Then we have <script type="math/tex">|f_k'(x)| \leq \frac{1}{k^2}</script>, and
+<script type="math/tex">\sum_{k = 1}^{\infty} \frac{1}{k^2}</script> converges. So
+based on Corollary 6.4.5, <script type="math/tex">\sum_{k = 1}^{\infty} f_k'(x) \rightarrow g(x)</script> converges uniformly. That means <script type="math/tex">f</script> is differentiable, and <script type="math/tex">f'(x) = g(x)</script>.
+Each <script type="math/tex">\sum_{k = 1}^{n} f_k'(x)</script> is continuous, so <script type="math/tex">g(x)</script> is
+also continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Can we determine if f is twice-diﬀerentiable?</p>
+<p><strong>Solution</strong>: Consdier</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_k(x) = -f_k''(x) = \frac{\sin (kx)}{k}
+</script>
+</p>
+<p>Consider <script type="math/tex">x = \pi / 2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty}
+\frac{\sin (n \frac{pi}{2})}{n} \\
+= 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots
+</script>
+</p>
+<p>I cannot evne figure out if
+<script type="math/tex">\sum_{n = 1}^{\infty} g_k(x)</script> converges. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="648">6.4.8.</h3>
+<p>Consider the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{k = 1}^{\infty } \frac{\sin (x/k)}{k} 
+</script>
+</p>
+<p>Where is <script type="math/tex">f</script> defined? Continuous? Diﬀerentiable? Twice-diﬀerentiable?</p>
+<p><strong>Solution</strong>:</p>
+<p>We will need this fact: <script type="math/tex">\sin x \leq x</script> for <script type="math/tex">x \geq 0</script>.
+Let <script type="math/tex">g(x) = x - \sin x</script>, <script type="math/tex">g'(x) = 1 - \cos x \geq 0</script>.
+Therefore, <script type="math/tex">g(x) - g(0) = g(x) = g'(c)x \geq 0</script>.
+So <script type="math/tex">x \geq \sin x</script>.</p>
+<p>Let <script type="math/tex">f_n(x) = \frac{\sin (x/k)}{k}</script>. Given <script type="math/tex">x</script>, consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_{m+1}(x) + \cdots + f_n(x)| \leq \\
+|f_{m+1}(x)| + \cdots + |f_n(x)| \leq \\
+\frac{|x|}{(m+1)^2} + \cdots \frac{|x|}{n^2} < \\
+\frac{|x|}{m} - \frac{|x|}{n} < \frac{|x|}{m}
+</script>
+</p>
+<p>So <script type="math/tex">\sum_{n = 1}^{\infty}f_n(x)</script> converges for all <script type="math/tex">x \in \mathbf{R}</script>.
+So <script type="math/tex">f(x)</script> is defined for <script type="math/tex">x \in \mathbf{R}</script>.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = f_n'(x) = \frac{\cos (x/n)}{n^2} \\
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g_{m+1}(x) + \cdots + g_n(x)| \leq \\
+|g_{m+1}(x)| + \cdots + |g_n(x)| \leq \\
+\frac{1}{(m+1)^2} + \cdots \frac{1}{n^2} < \\
+\frac{1}{m} - \frac{1}{n} < \frac{1}{m}
+</script>
+</p>
+<p>That means <script type="math/tex">\sum_{n = 1}^{\infty} g_n(x) \rightarrow g(x)</script>
+uniformly. We also know <script type="math/tex">\sum_{n = 1}^{\infty}f_n(x)</script> converges for all <script type="math/tex">x \in \mathbf{R}</script>. Then <script type="math/tex">f</script> is differentiable,
+and <script type="math/tex">f' = g</script>.</p>
+<p>Since it's differentiable, it has to be continuous.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = g_n'(x) = -\frac{\sin (x/n)}{n^3}
+</script>
+</p>
+<p>Since <script type="math/tex">|h_n(x)| < \frac{1}{n^2}</script> and <script type="math/tex">\sum_{n = 1}^{\infty}\frac{1}{n^2}</script> converges, then <script type="math/tex">\sum_{n = 1}^{\infty}h_n(x)</script> converges uniformly. </p>
+<p>Also since <script type="math/tex">\sum_{n = 1}^{\infty}g_n(0)</script> converges, then we know
+<script type="math/tex">g(x)</script> is differentiable and <script type="math/tex">g'(x) = h(x)</script>. So <script type="math/tex">f</script> is Twice-diﬀerentiable everywhere.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="649">6.4.9.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \sum_{n = 1}^{\infty}
+\frac{1}{x^2 + n^2}
+</script>
+</p>
+<p>Answer:</p>
+<p>(a) Show that <script type="math/tex">h</script> is a continuous function defined on all of <script type="math/tex">\mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = \frac{1}{x^2 + n^2}
+</script>
+</p>
+<p>Then <script type="math/tex">h_n(x)</script> is continuous. Also <script type="math/tex">h_n(x) \leq \frac{1}{n^2}</script>,
+and we know <script type="math/tex">\sum_{n = 1}^{\infty} \frac{1}{n^2}</script> converges.</p>
+<p>So <script type="math/tex">h</script> converges uniformly on <script type="math/tex">\mathbf{R}</script>. Based on Theorem 6.4.2, <script type="math/tex">h</script> is continuous on <script type="math/tex">\mathbf{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Is <script type="math/tex">h</script> diﬀerentiable? If so, is the derivative function <script type="math/tex">h'</script> continuous?</p>
+<p><strong>Proof</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = -h_n'(x) = \frac{2x}{(x^2 + n^2)^2}
+</script>
+</p>
+<p>If we plot the <script type="math/tex">g_n(x)</script>, we can see <script type="math/tex">g_n(x)</script> reaches its
+maximum value some where. We want to find this maximum value.
+So we get derivative of <script type="math/tex">g_n(x)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n'(x) = \frac{2(x^2 + n^2)^2 - 2x2(x^2+n^2)2x}{(x^2 + n^2)^2}\\
+= \frac{(2x^4 + 4x^2n^2+2n^4) - (8x^4+8x^2n^2)}{(x^2 + n^2)^2}\\
+= \frac{-6x^4 - 4x^2n^2 + 2n^4}{(x^2 + n^2)^2}
+</script>
+</p>
+<p>If we set <script type="math/tex">g_n'(x) = 0</script>, we have <script type="math/tex">x^2 = \frac{1}{3}n^2</script>.
+And then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sup g_n(x) = g_n(\sqrt[]{1/3}n) \\
+= \frac{\frac{2}{\sqrt[]{3}}n}{\frac{16}{9}n^4} < \frac{1}{n^3}
+</script>
+</p>
+<p>Then we can see <script type="math/tex">\sum_{n = 1}^{\infty}g_n'(x)</script> converges
+uniformly. So <script type="math/tex">h</script> is differentiable and since each <script type="math/tex">g_n(x)</script> is
+continuous, <script type="math/tex">h'</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="6410">6.4.10.</h3>
+<p>Let <script type="math/tex">\{r_1,r_2,r_3,...\}</script> be an enumeration of the set of
+rational numbers. For each <script type="math/tex">r_n ∈ \mathbf{Q}</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+u_n(x) =
+\begin{cases}
+    1/2^n &\text{for } x > r_n   \\
+    0     &\text{for } x \leq r_n\\
+\end{cases}
+</script>
+</p>
+<p>Now let <script type="math/tex">h(x) = \sum_{n = 1}^{\infty}u_n(x)</script>.
+Prove that <script type="math/tex">h</script> is a monotone function defined on
+all of <script type="math/tex">\mathbf{R}</script> that is continuous at every irrational point.</p>
+<p>Proof: First <script type="math/tex">u_n(x) \leq 1/2^n</script>, based on Corollary 6.4.5 (Weierstrass M-Test), <script type="math/tex">\sum_{n = 1}^{\infty}u_n(x)</script> converges
+to <script type="math/tex">h(x)</script> uniformly. So <script type="math/tex">h(x)</script> is well-defined.</p>
+<p>Assume <script type="math/tex">x < y</script>, then <script type="math/tex">u_n(x) < u_n(y)</script> for all <script type="math/tex">n</script>.
+Thus <script type="math/tex">h(x) \leq h(y)</script>.</p>
+<p>Given <script type="math/tex">x \not \in \mathbf{Q}</script>, and <script type="math/tex">\epsilon > 0</script>.
+We want to find <script type="math/tex">\delta</script>, if <script type="math/tex">|x - y| < \delta</script>, then
+<script type="math/tex">|h(y) - h(x)| < \epsilon</script>.</p>
+<p>Let <script type="math/tex">h_n(x) = \sum_{k = 1}^{n}u_n(x)</script>. We can find <script type="math/tex">N</script>, such that <script type="math/tex">|h_n(x) - h(x)| < \epsilon / 2</script>
+for <script type="math/tex">n > N</script>.</p>
+<p>Pick any <script type="math/tex">n > N</script>. Since <script type="math/tex">x</script> is
+an irrational number, we can find <script type="math/tex">U_{\delta}(x)</script>, such that
+<script type="math/tex">r_1, r_2, \cdots, r_n \notin U_{\delta}(x)</script>.</p>
+<p>Let <script type="math/tex">y \in U_{\delta}(x)</script>, note <script type="math/tex">u_k(x) = u_k(y)</script> for
+all <script type="math/tex">k \leq n</script>. </p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) - h_n(y) =
+\sum_{k = 1}^{n} u_k(x) - u_k(y) = 0
+</script>
+</p>
+<p>Finally we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|h(x) - h(y)| =
+|h(x) - h_n(x)| + |h_n(x) - h_n(y)| + |h_n(y) - h(y)| <
+\epsilon / 2 + 0 + \epsilon / 2 = \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">h(x)</script> is continuous at every irrational point.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
