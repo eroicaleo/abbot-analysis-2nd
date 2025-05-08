@@ -1549,3 +1549,219 @@ $$
 So $h(x)$ is continuous at every irrational point.
 
 $\square$
+
+## 6.5. Power Series
+
+### 6.5.7.
+
+Let $\sum_{n = 1}^{\infty} a_nx_n$ be a power series with
+$a_n  \not = 0$, and assume
+
+$$ 
+L = \lim_{n \to \infty} 
+\left| \frac{a_{n+1}}{a_n} \right|
+$$
+
+exists.
+
+(a) Show that if $L \not = 0$, then the series converges for
+all $x$ in $(-1/L, 1/L)$.
+(The advice in Exercise 2.7.9 may be helpful.)
+
+**Proof**: fix $x \in (-1/L, 1/L)$, we can find $\epsilon, r > 0$ such that
+$0 \leq |x| < r < \frac{1}{L + \epsilon}$.
+
+So when $n$ is large enough, we have
+
+$$ 
+|x| < r  < \frac{1}{L + \epsilon} < \left| \frac{a_n}{a_{n+1}} \right| \leq 1/L \\
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n | \\
+< r (L +\epsilon) |a_n x^n|
+$$
+
+And note $r (L + \epsilon ) < 1$, so the series converges at $x$.
+
+$\square$
+
+(b) Show that if $L = 0$, then the series converges for all
+$x ∈ \mathbf{R}$.
+
+**Proof**: Given any $x \in \mathbf{R}$, we can find $|x| < M$.
+When $n$ is large enough, $\left| \frac{a_{n+1}}{a_n} \right| < \frac{1}{2M}$. So
+
+$$ 
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n |\\
+< \frac{1}{2} |a_{n} x|
+$$
+
+the series converges for all $x ∈ \mathbf{R}$.
+
+$\square$
+
+(c) Show that (a) and (b) continue to hold if $L$ is replaced by the limit
+
+$$ 
+L' = \lim_{n \to \infty} s_n \text{ when }
+s_n = \sup \left\{
+\left| 
+    \frac{a_{k+1}}{a_k}
+\right| : k \geq n
+\right\}.
+$$
+
+**Proof**: if $L' = 0$, then $L = 0$, it becomes (b).
+If $L' > 0$, let $L_n = \left| \frac{a_{n+1}}{a_n} \right|$ 
+
+fix $x \in (-1/L', 1/L')$, we can find $N, r > 0$
+such that $0 \leq |x| < r < \frac{1}{L'_N} \leq \frac{1}{L}$.
+
+So, for $n > N$,
+
+$$ 
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n | \\
+< r L_N |a_n x^n|
+$$
+
+And note $r L_N < 1$, so the series converges at $x$.
+
+$\square$
+
+### 6.5.8.
+
+(a) Show that power series representations are unique.
+If we have
+
+$$ 
+\sum_{n = 0}^{\infty} a_n x^n = 
+\sum_{n = 0}^{\infty} b_n x^n
+$$
+
+for all $x$ in an interval $(−R,R)$, prove that $a_n = b_n$ for
+all $n = 0,1,2, \cdots$
+
+**Proof**: Set $x = 0$, then we have $a_0 = b_0$.
+Consider
+
+$$ 
+f(x) = \sum_{n = 0}^{\infty} (a_n - b_n) x^n
+$$
+
+$f(x)$ converges to $0$ in the interval $(−R,R)$.
+From Theorem 6.5.7, $f$ is infinitely diﬀerentiable on $(−R,R)$.
+Also note $f^{(n)}(x) = 0$.
+
+On the other hand
+
+$$ 
+f^{(n)}(0) = a_n - b_n 
+$$
+
+So $a_n = b_n$ for all $n = 0,1,2, \cdots$.
+
+(b) Let $f(x) = \sum_{n = 0}^{\infty}a_nx^n$, converge on $(−R,R)$, and assume $f'(x) = f(x)$ for all $x ∈ (−R,R)$ and $f(0) = 1$. Deduce the values of $a_n$.
+
+**Solution**: $a_0 = f(0) = 1$.
+
+$$ 
+f'(x) = \sum_{n = 1}^{\infty} na_n x^{n-1}
+$$
+
+Based on (a), we have
+
+$$ 
+na_n = a_{n-1}
+$$
+
+$\square$
+
+### 6.5.9.
+
+Review the definitions and results from Section 2.8 concerning
+products of series and Cauchy products in particular.
+At the end of Section 2.9, we mentioned the following result:
+If $\sum_{}^{}a_n$ and $\sum_{}^{}b_n$ converge conditionally
+to $A$ and $B$ respectively, then it is possible for the Cauchy product,
+
+$$ 
+\sum_{}^{}d_n \text{ where } d_n = a_0 b_n + a_1 b_{n-1} +
+\cdots + a_n b_0,
+$$
+
+to diverge. However, if $\sum_{}^{}d_n$ does converge, then
+it must converge to $AB$. To prove this, set
+
+$$ 
+f(x) = \sum a_n x^n, 
+g(x) = \sum b_n x^n,
+\text{ and }
+h(x) = \sum d_n x^n
+$$
+
+Use Abel’s Theorem and the result in Exercise 2.8.7 to establish this result.
+
+**Proof**: Let $x_m = \frac{m}{m+1}$, since $f(1), g(1)$ 
+converges.
+$\sum a_n x^n_m$ and $\sum b_n x^n_m$ converges absolutely.
+From Exercise 2.8.7, we have $f(x_m)g(x_m) = h(x_m)$.
+
+Since $f(1), g(1), h(1)$ converges, these 3 functions are
+continuous at $1$.
+
+Then we have
+
+$$ 
+AB = f(1)g(1) = \lim_{m \to \infty} f(x_m)g(x_m) =
+\lim_{m \to \infty} h(x_m) = h(1) = \sum d_n
+$$
+
+$\square$
+
+### 6.5.10
+Let $g(x) = \sum_{n = 0}^{\infty}b_nx^n$ converge on $(−R,R)$, and assume $(x_n) \rightarrow 0$ with $x_n \not = 0$. If $g(x_n) = 0$ for all $n ∈ \mathbf{N}$, show that $g(x)$ must be
+identically zero on all of $(−R,R)$.
+
+**Proof**: $g(x)$ is continuous, so $g(0)$ = 0, that means $b_0 = 0$.
+Compare to exercise 5.3.4 and with Mean value theorem, we know
+we can find $(y_n) \rightarrow 0$ such that $g'(y_n) = 0$.
+So $g'(0) = 0$, that means $b_1$.
+
+For the same reason, $b_2 = b_3 = \cdots = 0$.
+
+$\square$
+
+### 6.5.11
+
+A series $\sum_{n = 0}^{\infty}a_n$ is said to be Abel-summable
+to $L$ if the power series
+
+$$ 
+f(x) = \sum_{n = 0}^{\infty}a_n x^n
+$$
+
+converges for all $x \in [0, 1)$ and $L = \lim_{x \to 1^{-1}} f(x)$.
+
+(a) Show that any series that converges to a limit $L$ is also Abel-summable to $L$.
+
+**Proof**: $\sum_{n = 0}^{\infty}a_n = L$, then we can directly
+apply Abel's theorem, $f(x)$ is continuous at $1$, and
+$L = \lim_{x \to 1^{-1}} f(x)$.
+
+$\square$
+
+(b) Show that $\sum_{n = 0}^{\infty} (-1)^n$ is Abel-summable and find the sum.
+
+**Proof**: Let
+
+$$ 
+f(x) = \sum_{n = 0}^{\infty} (-x)^n
+$$
+
+$f(x)$ converges for all $x \in [0, 1)$ and it converges to
+
+$$ 
+\frac{1}{1 + x}
+$$
+
+So the Abel sum is $1/2$.
+
+$\square$
