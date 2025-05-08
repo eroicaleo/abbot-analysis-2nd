@@ -104,11 +104,391 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="chapter-6-sequences-and-series-of-functions">Chapter 6. Sequences and Series of Functions</h1>
+<h2 id="61-discussion-the-power-of-power-series">6.1 Discussion: The Power of Power Series</h2>
+<ul>
+<li>Bernoulli wanted to find the precise value of the series</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty} 1 + \frac{1}{4} + \frac{1}{9} +
+\frac{1}{16} + \cdots 
+</script>
+</p>
+<ul>
+<li>He was wable to handle the follow 2 series</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty} \frac{n^2}{2^n} \text{ and }
+\sum_{n = 1}^{\infty} \frac{1}{n(n+1)}
+</script>
+</p>
+<ul>
+<li>Geometric series have long been known</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\tag{1}
+\frac{1}{1 - x} = 1 + x + x^2 + x^3 + \cdots 
+</script>
+</p>
+<ul>
+<li>Bernoulli was operating on infinite series such as the
+  Geometric series with tools from the budding theory of calculus.
+  E.g. take the derivative on each side of equation (1) and we
+  have:</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\tag{2}
+\frac{1}{(1-x)^2} = 0+1+2x+3x^2 +4x^3 + \cdots
+</script>
+</p>
+<ul>
+<li>
+<p>Our question is this a valid formula, at least for values of <script type="math/tex">x \in (-1, 1)</script>.</p>
+</li>
+<li>
+<p>Substituting <script type="math/tex">−x^2</script> for x in (1) gives</p>
+</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\tag{3}
+\frac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 - \cdots
+</script>
+</p>
+<ul>
+<li>When we take antiderivatives and use the fact that</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+(\arctan (x))' = \frac{1}{1 + x^2} \text{ and }
+\arctan (0) = 0,
+</script>
+</p>
+<ul>
+<li>equation (3) becomes</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\tag{4}
+\arctan (x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7}
++ \cdots.
+</script>
+</p>
+<ul>
+<li>Plugging <script type="math/tex">x = 1</script> into equation (4) yields the striking 
+  relationship:</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\tag{5}
+\frac{\pi }{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7}
++ \frac{1}{9} - \cdots 
+</script>
+</p>
+<ul>
+<li>The constant <script type="math/tex">π</script>, which arises from the geometry of circles, has somehow found its way into an equation involving the reciprocals of the odd integers.<ul>
+<li>Is this a valid formula?</li>
+<li>Can we really treat the infinite series in (3) like a
+  finite polynomial?</li>
+<li>Plugging <script type="math/tex">x = 1</script> into equations (1), (2), or (3) yields mathematical gibberish, so is it prudent to anticipate something meaningful arising from equation (4) at this
+same value?</li>
+</ul>
+</li>
+</ul>
+<h2 id="62-uniform-convergence-of-a-sequence-of-functions">6.2 Uniform Convergence of a Sequence of Functions</h2>
+<h3 id="definition-621">Definition 6.2.1.</h3>
+<p>For each <script type="math/tex">n ∈ N</script>, let <script type="math/tex">f_n</script> be a function defined on a set <script type="math/tex">A ⊆ R</script>.
+The sequence <script type="math/tex">(f_n)</script> of functions converges pointwise on <script type="math/tex">A</script> to a function <script type="math/tex">f</script> if, for
+all <script type="math/tex">x ∈ A</script>, the sequence of real numbers <script type="math/tex">f_n(x)</script> converges to <script type="math/tex">f(x)</script>.</p>
+<h3 id="definition-623-uniform-convergence">Definition 6.2.3 (Uniform Convergence).</h3>
+<p>Let <script type="math/tex">(f_n)</script> be a sequence of functions defined on a set <script type="math/tex">A ⊆ R</script>. Then, <script type="math/tex">(f_n)</script> converges uniformly on <script type="math/tex">A</script> to a limit
+function <script type="math/tex">f</script> defined on <script type="math/tex">A</script> if, for every <script type="math/tex">ϵ > 0</script>, there exists an <script type="math/tex">N ∈ \mathbf{N}</script> such that
+<script type="math/tex">|f_n(x)−f(x)| < ϵ</script> whenever <script type="math/tex">n ≥ N</script> and <script type="math/tex">x ∈ A</script>.</p>
+<h3 id="definition-621b">Definition 6.2.1B.</h3>
+<p>Let <script type="math/tex">(f_n)</script> be a sequence of functions defined on a set <script type="math/tex">A ⊆ R</script>. Then, <script type="math/tex">(f_n)</script> converges pointwise on <script type="math/tex">A</script> to a limit
+function <script type="math/tex">f</script> defined on <script type="math/tex">A</script> if, for every <script type="math/tex">ϵ > 0</script> and <script type="math/tex">x \in A</script>, there exists an <script type="math/tex">N ∈ \mathbf{N}</script> (perhaps dependent on <script type="math/tex">x</script>) such that
+<script type="math/tex">|f_n(x)−f(x)| < ϵ</script> whenever <script type="math/tex">n ≥ N</script> and <script type="math/tex">x ∈ A</script>.</p>
+<h3 id="625-cauchy-criterion-for-uniform-convergence">6.2.5 (Cauchy Criterion for Uniform Convergence).</h3>
+<p>A sequence of functions <script type="math/tex">(f_n)</script> defined on a set <script type="math/tex">A ⊆ R</script> converges uniformly on <script type="math/tex">A</script> if
+and only if for every <script type="math/tex">ϵ > 0</script> there exists an <script type="math/tex">N ∈ \mathbf{N}</script> such that <script type="math/tex">|f_n(x)−f_m(x)| < ϵ</script> whenever <script type="math/tex">m,n ≥ N</script> and <script type="math/tex">x ∈ A</script>.</p>
+<h3 id="626-continuous-limit-theorem">6.2.6 (Continuous Limit Theorem).</h3>
+<p>Let <script type="math/tex">(f_n)</script> be a sequence of
+functions defined on <script type="math/tex">A ⊆ R</script> that converges uniformly on <script type="math/tex">A</script> to a function <script type="math/tex">f</script>. If each <script type="math/tex">f_n</script> is continuous at <script type="math/tex">c ∈ A</script>, then <script type="math/tex">f</script> is continuous at <script type="math/tex">c</script>.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">N</script>, <script type="math/tex">n > N</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_n(x) - f(x)| < \epsilon
+</script>
+</p>
+<p>Fix <script type="math/tex">n</script>, Since <script type="math/tex">f_n(x)</script> is continuous at <script type="math/tex">c</script>, we can find
+<script type="math/tex">U_{\delta}(c)</script>, <script type="math/tex">|f_n(x) - f_n(c)| < \epsilon / 3</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - f(x) | \leq \\
+|f(x) - f_n(x) | + |f_n(x) - f_n(c)| + |f_n(c) - f(c)| \leq \\
+\epsilon / 3 + \epsilon / 3 + \epsilon / 3 = \epsilon
+</script>
+</p>
 <h2 id="63-uniform-convergence-and-differentiation">6.3. Uniform Convergence and Diﬀerentiation</h2>
+<h3 id="theorem-631-differentiable-limit-theorem">Theorem 6.3.1 (Diﬀerentiable Limit Theorem).</h3>
+<p>Let <script type="math/tex">f_n → f</script> pointwise
+on the closed interval <script type="math/tex">[a,b]</script>, and assume that each <script type="math/tex">f_n</script> is diﬀerentiable. If <script type="math/tex">(f_n')</script>
+converges uniformly on <script type="math/tex">[a,b]</script> to a function <script type="math/tex">g</script>, then the function <script type="math/tex">f</script> is diﬀerentiable and <script type="math/tex">f' = g</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given a point <script type="math/tex">c \in [a,b]</script>, we want to estimate</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|
+\frac{f(x) - f(c)}{x - c} - g(c)
+\right|
+</script>
+</p>
+<p>We can have 
+<script type="math/tex; mode=display">
+\tag{a}
+\left|
+\frac{f(x) - f(c)}{x - c} - g(c)
+\right| \leq \\
+\left| 
+\frac{f(x) - f(c)}{x - c} - \frac{f_N(x) - f_N(c)}{x - c}
+\right| +
+\left| \frac{f_N(x) - f_N(c)}{x - c} - g_N(c) \right| +
+\left| g_N(c) - g(c) \right| 
+</script>
+</p>
+<p>Since <script type="math/tex">(g_n) \rightarrow g</script> uniformly, we can find <script type="math/tex">N</script>, such that
+<script type="math/tex">n \leq N, |g_n(x) - g(x)| < \epsilon / 3</script>. Then fix this <script type="math/tex">N</script>.
+Sine <script type="math/tex">f_N</script> is differentiable, we can find <script type="math/tex">U_{\delta}(c)</script>,
+<script type="math/tex">x \in U_{\delta}(c)</script>,
+<script type="math/tex">\left| \frac{f_N(x) - f_N(c)}{x - c} - g_N(c) \right| <
+\epsilon / 3</script>.</p>
+<p>So given this <script type="math/tex">N</script> and <script type="math/tex">\delta</script>, let's estimate</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x) - f(c)}{x - c} - \frac{f_N(x) - f_N(c)}{x - c}
+\right|
+</script>
+</p>
+<p>Consider the following and use Mean Value Theorem</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f_m(x) - f_m(c)}{x - c} - \frac{f_n(x) - f_n(c)}{x - c}
+\right| = \\
+|g_m(\alpha_m) - g_n(\alpha_m)| < \epsilon / 3
+</script>
+</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{m \to \infty} 
+\left| 
+    \frac{f_m(x) - f_m(c)}{x - c} - \frac{f_n(x) - f_n(c)}{x - c}
+\right| =
+\lim_{m \to \infty} 
+|g_m(\alpha_m) - g_n(\alpha_m)| = |g(\alpha) - g_n(\alpha)|
+\leq \epsilon / 3 \\
+\lim_{m \to \infty} 
+\left| 
+    \frac{f_m(x) - f_m(c)}{x - c} - \frac{f_n(x) - f_n(c)}{x - c}
+\right| =
+\left| 
+    \frac{f(x) - f(c)}{x - c} - \frac{f_n(x) - f_n(c)}{x - c}
+\right| 
+</script>
+</p>
+<p>In summary, <script type="math/tex">(a) < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="theorem-632">Theorem 6.3.2.</h3>
 <p>Let <script type="math/tex">(f_n)</script> be a sequence of diﬀerentiable functions defined on
 the closed interval <script type="math/tex">[a,b]</script>, and assume <script type="math/tex">(f'_n)</script> converges uniformly on <script type="math/tex">[a,b]</script>. If there exists a point <script type="math/tex">x_0 ∈ [a,b]</script> where <script type="math/tex">f_n(x_0)</script> is convergent, then <script type="math/tex">(f_n)</script> converges uniformly on <script type="math/tex">[a,b]</script>.</p>
 <p>Proof. Exercise 6.3.7.</p>
+<h2 id="65-power-series">6.5 Power Series</h2>
+<h3 id="lemma-653-abels-lemma">Lemma 6.5.3 (Abel’s Lemma).</h3>
+<p>Review exercise 2.7.13 (Abel’s Test) Abel’s Test for convergence states that if the series <script type="math/tex">\sum_{n = 1}^{\infty}x_n</script> converges, and if <script type="math/tex">(y_k)</script> is a sequence satisfying</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_1 \geq y_2 \geq y_3 \geq \cdots \geq 0,
+</script>
+</p>
+<p>then the series <script type="math/tex">\sum_{k = 1}^{\infty}x_k y_k</script> converges.</p>
+<p>(a) Use Exercise 2.7.12 to show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k = 1}^{n} x_k y_k = s_n y_{n+1} +
+\sum_{k = 1}^{n} s_k (y_k - y_{k+1})
+</script>
+</p>
+<p>where <script type="math/tex">s_n = x_1 + x_2 + x_3 + \cdots + x_n</script>.</p>
+<p><strong>Proof</strong>: Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k = 1}^{n} s_k (y_k - y_{k+1}) =
+(s_1 y_1 - s_1 y_2) + (s_2 y_2 - s_2 y_3) + \cdots +
+(s_n y_n - s_n y_{n+1}) = \\
+s_1 y_1 + (s_2 - s_1) y_2 + (s_3 - s_2) y_3 + \cdots +
+(s_n - s_{n-1}) y_n - s_n y_{n+1} = \\
+x_1 y_1 + x_2 y_2 + \cdots + x_n y_n - s_n y_{n+1}
+</script>
+</p>
+<p>This proves the claim.</p>
+<p>(b) Use the Comparison Test to argue that <script type="math/tex">\sum_{k = 1}^{\infty}s_k (y_k - y_{k+1})</script>  converges absolutely, and show how this
+leads directly to a proof of Abel’s Test.</p>
+<p>Proof: <script type="math/tex">s_k</script> is bounded, so assume <script type="math/tex">|s_k| < M</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k = 1}^{n} |s_k (y_k - y_{k+1})| <
+\sum_{k = 1}^{n} M (y_k - y_{k+1}) < M y_1
+</script>
+</p>
+<p>So <script type="math/tex">\sum_{k = 1}^{\infty}s_k (y_k - y_{k+1})</script>  converges absolutely.</p>
+<p>Also note <script type="math/tex">(y_n) \rightarrow y</script> for some <script type="math/tex">y \geq 0</script>, so
+<script type="math/tex">\lim_{n \to \infty} s_n y_{n+1}</script> converges.
+Thus <script type="math/tex">\sum_{k = 1}^{\infty}x_k y_k</script> converges.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>(Abel’s Lemma)</strong> Let <script type="math/tex">b_n</script> satisfy <script type="math/tex">b_1 \geq  b_2 \geq  b_3 \geq  \cdots \geq  0</script>, and let <script type="math/tex">\sum_{n = 1}^{\infty}a_n</script>
+be a series for which the partial sums are bounded. In other words,
+assume there exists <script type="math/tex">A > 0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| a_1 + a_2 + a_3 + \cdots + a_n \right| \leq A
+</script>
+</p>
+<p>for all <script type="math/tex">n \in \mathbf{N}</script>, then, for all <script type="math/tex">n \in \mathbf{N}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| a_1b_1 + a_2b_2 + a_3b_3 + \cdots + a_nb_n \right|
+\leq A b_1
+</script>
+</p>
+<p>Let <script type="math/tex">s_n = a_1 + a_2 + a_3 + \cdots + a_n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \sum_{k = 1}^{n} a_k b_k \right|  = \\
+\left| s_n b_{n+1} +
+\sum_{k = 1}^{n} s_k (b_k - b_{k+1}) \right| \leq \\
+\left| s_n b_{n+1} \right| +
+\left| \sum_{k = 1}^{n} s_k (b_k - b_{k+1}) \right| \leq \\
+A b_{n+1} + \sum_{k = 1}^{n} A (b_k - b_{k+1}) = A b_1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="654-abels-theorem">6.5.4 (Abel’s Theorem).</h3>
+<p>Let <script type="math/tex">g(x) = \sum_{n = 0}^{\infty} a_n x^n</script> be a power series
+that converges at the point <script type="math/tex">x = R > 0</script>, Then the series
+converges uniformly on the interval <script type="math/tex">[0,R]</script>.
+A similar result holds if the series converges at <script type="math/tex">x =−R</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">c_n = a_n R^n</script>, <script type="math/tex">|c_1 + c_2 + c_3 + \cdots + c_n| \leq C</script>. Let <script type="math/tex">b_n = \left( \frac{x}{R} \right)^n</script>,
+so <script type="math/tex">b_1 \geq  b_2 \geq  b_3 \geq  \cdots \geq 0</script>.</p>
+<p>Since <script type="math/tex">\sum_{n = 1}^{\infty}c_n</script> converges, we can find <script type="math/tex">N</script>,
+for <script type="math/tex">n > m > N</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\left| c_{m+1} + \cdots + c_n \right| < \epsilon
+</script>
+</p>
+<p>Then for other <script type="math/tex">0 \leq x < R</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| g_{m+1}(x) + \cdots + g_n(x) \right| =\\
+\left| c_{m+1}b_{m+1} + \cdots + c_n b_n \right| \leq
+\epsilon b_{m+1} < \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">g(x)</script> converges uniformly on the interval <script type="math/tex">[0,R]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-655">Theorem 6.5.5.</h3>
+<p>If a power series converges pointwise on the set <script type="math/tex">A ⊆ R</script>, then
+it converges uniformly on any compact set <script type="math/tex">K ⊆ A</script>.</p>
+<p>Proof: Since <script type="math/tex">K</script> is compact, we can find <script type="math/tex">K \subseteq [a, b]</script>,
+and <script type="math/tex">a, b \in K</script>. Assume <script type="math/tex">a < 0 < b</script>, the based on 6.5.4 (Abel’s Theorem), this power series converges on <script type="math/tex">[a, 0]</script> and <script type="math/tex">[0, b]</script>, 
+so converges on <script type="math/tex">[a, b] \supseteq K</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-656">Theorem 6.5.6.</h3>
+<p>If <script type="math/tex">\sum_{n = 0}^{\infty}a_n x^n</script> converges for all <script type="math/tex">x ∈ (−R,R)</script>,
+then the diﬀerentiated series <script type="math/tex">\sum_{n = 1}^{\infty}na_n x^{n-1}</script> converges at each <script type="math/tex">x ∈ (−R,R)</script> as well. Consequently, the convergence is uniform on compact sets contained in <script type="math/tex">(−R,R)</script>.</p>
+<p>(a) If <script type="math/tex">s</script> satisfies <script type="math/tex">0 < s < 1</script>, show <script type="math/tex">ns^{n−1}</script> is bounded for
+all <script type="math/tex">n ≥ 1</script>.</p>
+<p><strong>Proof</strong>: </p>
+<p>We compare <script type="math/tex">ns^{n-1}</script> and <script type="math/tex">(n+1)s^n</script> and we have <script type="math/tex">ns^{n-1} > (n+1)s^n</script>, when <script type="math/tex">\frac{n}{n+1} > s</script>. So <script type="math/tex">ns^{n-1}</script> is bounded.</p>
+<p>(b) Given an arbitrary <script type="math/tex">x ∈ (−R,R)</script>, pick <script type="math/tex">t</script> to satisfy <script type="math/tex">|x| < t < R</script>. Use this start to construct a proof for Theorem 6.5.6.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty} n a_n x^{n-1} =
+\sum_{n = 1}^{\infty}
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+</script>
+</p>
+<p>Since <script type="math/tex">t < R</script>, then <script type="math/tex">\sum_{n = 1}^{\infty} a_n t^{n-1}</script> converges
+absolutely. Let <script type="math/tex">|n \left( \frac{x}{t} \right) ^ {n-1}| \leq M</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\left| 
+(m+1) \left( \frac{x}{t} \right) ^ {m} a_{m+1} t^{m} + \cdots +
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+\right|
+< \\ 
+\left| 
+(m+1) \left( \frac{x}{t} \right) ^ {m} a_{m+1} t^{m}
+\right| + \cdots +
+\left| 
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+\right|
+< \\
+M (|a_{m+1} t^{m}| + \cdots + |a_n t^{n-1}|) < \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">\sum_{n = 1}^{\infty}na_n x^{n-1}</script> converges at each
+<script type="math/tex">x ∈ (−R,R)</script> as well.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="66-taylor-series">6.6. Taylor Series</h2>
+<h3 id="theorem-663-lagranges-remainder-theorem">Theorem 6.6.3 (Lagrange’s Remainder Theorem).</h3>
+<p>Let <script type="math/tex">f</script> be diﬀerentiable <script type="math/tex">N +1</script> times on <script type="math/tex">(−R,R)</script>, define
+<script type="math/tex">a_n = f^{(n)}(0)/n!</script>  for <script type="math/tex">n = 0, 1, \dots, N,</script> and let</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_N(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_N x^N
+</script>
+</p>
+<p>Given <script type="math/tex">x \not = 0</script> in <script type="math/tex">(−R,R)</script>, there exists a point <script type="math/tex">c</script> satisfying
+<script type="math/tex">|c| < |x|</script> where the error function <script type="math/tex">E_N(x) = f(x) - S_N(x)</script>
+satisfies</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x) = \frac{
+  f^{(N+1)}(c)
+}{(N+1)!} x^{N+1}
+</script>
+</p>
+<p>Proof: From the mean value theorem, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x) - E_N(0) = E_N^{(1)}(c_1)x =\\
+f^{(1)}(c) - S_N^{(1)}(c) = \\
+f^{(1)}(c) - (a_1 + 2 a_2 c + 3 a_3 c^2 + \cdots + N a_N c^N) \\
+= f^{(1)}(0) + f^{(2)}(0)c
+</script>
+</p>
               
             </div>
           </div><footer>

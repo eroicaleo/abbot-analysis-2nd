@@ -144,6 +144,20 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#65-power-series">6.5. Power Series</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#657">6.5.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#658">6.5.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#659">6.5.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6510">6.5.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6511">6.5.11</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1562,6 +1576,205 @@ h_n(x) - h_n(y) =
 </script>
 </p>
 <p>So <script type="math/tex">h(x)</script> is continuous at every irrational point.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="65-power-series">6.5. Power Series</h2>
+<h3 id="657">6.5.7.</h3>
+<p>Let <script type="math/tex">\sum_{n = 1}^{\infty} a_nx_n</script> be a power series with
+<script type="math/tex">a_n  \not = 0</script>, and assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+L = \lim_{n \to \infty} 
+\left| \frac{a_{n+1}}{a_n} \right|
+</script>
+</p>
+<p>exists.</p>
+<p>(a) Show that if <script type="math/tex">L \not = 0</script>, then the series converges for
+all <script type="math/tex">x</script> in <script type="math/tex">(-1/L, 1/L)</script>.
+(The advice in Exercise 2.7.9 may be helpful.)</p>
+<p><strong>Proof</strong>: fix <script type="math/tex">x \in (-1/L, 1/L)</script>, we can find <script type="math/tex">\epsilon, r > 0</script> such that
+<script type="math/tex">0 \leq |x| < r < \frac{1}{L + \epsilon}</script>.</p>
+<p>So when <script type="math/tex">n</script> is large enough, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|x| < r  < \frac{1}{L + \epsilon} < \left| \frac{a_n}{a_{n+1}} \right| \leq 1/L \\
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n | \\
+< r (L +\epsilon) |a_n x^n|
+</script>
+</p>
+<p>And note <script type="math/tex">r (L + \epsilon ) < 1</script>, so the series converges at <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">L = 0</script>, then the series converges for all
+<script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: Given any <script type="math/tex">x \in \mathbf{R}</script>, we can find <script type="math/tex">|x| < M</script>.
+When <script type="math/tex">n</script> is large enough, <script type="math/tex">\left| \frac{a_{n+1}}{a_n} \right| < \frac{1}{2M}</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n |\\
+< \frac{1}{2} |a_{n} x|
+</script>
+</p>
+<p>the series converges for all <script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that (a) and (b) continue to hold if <script type="math/tex">L</script> is replaced by the limit</p>
+<p>
+<script type="math/tex; mode=display"> 
+L' = \lim_{n \to \infty} s_n \text{ when }
+s_n = \sup \left\{
+\left| 
+    \frac{a_{k+1}}{a_k}
+\right| : k \geq n
+\right\}.
+</script>
+</p>
+<p><strong>Proof</strong>: if <script type="math/tex">L' = 0</script>, then <script type="math/tex">L = 0</script>, it becomes (b).
+If <script type="math/tex">L' > 0</script>, let <script type="math/tex">L_n = \left| \frac{a_{n+1}}{a_n} \right|</script>
+</p>
+<p>fix <script type="math/tex">x \in (-1/L', 1/L')</script>, we can find <script type="math/tex">N, r > 0</script>
+such that <script type="math/tex">0 \leq |x| < r < \frac{1}{L'_N} \leq \frac{1}{L}</script>.</p>
+<p>So, for <script type="math/tex">n > N</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|a_{n+1} x^{n+1}| = |\frac{a_{n+1}}{a_{n}} x | | a_n x^n | \\
+< r L_N |a_n x^n|
+</script>
+</p>
+<p>And note <script type="math/tex">r L_N < 1</script>, so the series converges at <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="658">6.5.8.</h3>
+<p>(a) Show that power series representations are unique.
+If we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 0}^{\infty} a_n x^n = 
+\sum_{n = 0}^{\infty} b_n x^n
+</script>
+</p>
+<p>for all <script type="math/tex">x</script> in an interval <script type="math/tex">(−R,R)</script>, prove that <script type="math/tex">a_n = b_n</script> for
+all <script type="math/tex">n = 0,1,2, \cdots</script>
+</p>
+<p><strong>Proof</strong>: Set <script type="math/tex">x = 0</script>, then we have <script type="math/tex">a_0 = b_0</script>.
+Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{n = 0}^{\infty} (a_n - b_n) x^n
+</script>
+</p>
+<p>
+<script type="math/tex">f(x)</script> converges to <script type="math/tex">0</script> in the interval <script type="math/tex">(−R,R)</script>.
+From Theorem 6.5.7, <script type="math/tex">f</script> is infinitely diﬀerentiable on <script type="math/tex">(−R,R)</script>.
+Also note <script type="math/tex">f^{(n)}(x) = 0</script>.</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+f^{(n)}(0) = a_n - b_n 
+</script>
+</p>
+<p>So <script type="math/tex">a_n = b_n</script> for all <script type="math/tex">n = 0,1,2, \cdots</script>.</p>
+<p>(b) Let <script type="math/tex">f(x) = \sum_{n = 0}^{\infty}a_nx^n</script>, converge on <script type="math/tex">(−R,R)</script>, and assume <script type="math/tex">f'(x) = f(x)</script> for all <script type="math/tex">x ∈ (−R,R)</script> and <script type="math/tex">f(0) = 1</script>. Deduce the values of <script type="math/tex">a_n</script>.</p>
+<p><strong>Solution</strong>: <script type="math/tex">a_0 = f(0) = 1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(x) = \sum_{n = 1}^{\infty} na_n x^{n-1}
+</script>
+</p>
+<p>Based on (a), we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+na_n = a_{n-1}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="659">6.5.9.</h3>
+<p>Review the definitions and results from Section 2.8 concerning
+products of series and Cauchy products in particular.
+At the end of Section 2.9, we mentioned the following result:
+If <script type="math/tex">\sum_{}^{}a_n</script> and <script type="math/tex">\sum_{}^{}b_n</script> converge conditionally
+to <script type="math/tex">A</script> and <script type="math/tex">B</script> respectively, then it is possible for the Cauchy product,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{}^{}d_n \text{ where } d_n = a_0 b_n + a_1 b_{n-1} +
+\cdots + a_n b_0,
+</script>
+</p>
+<p>to diverge. However, if <script type="math/tex">\sum_{}^{}d_n</script> does converge, then
+it must converge to <script type="math/tex">AB</script>. To prove this, set</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum a_n x^n, 
+g(x) = \sum b_n x^n,
+\text{ and }
+h(x) = \sum d_n x^n
+</script>
+</p>
+<p>Use Abel’s Theorem and the result in Exercise 2.8.7 to establish this result.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">x_m = \frac{m}{m+1}</script>, since <script type="math/tex">f(1), g(1)</script> 
+converges.
+<script type="math/tex">\sum a_n x^n_m</script> and <script type="math/tex">\sum b_n x^n_m</script> converges absolutely.
+From Exercise 2.8.7, we have <script type="math/tex">f(x_m)g(x_m) = h(x_m)</script>.</p>
+<p>Since <script type="math/tex">f(1), g(1), h(1)</script> converges, these 3 functions are
+continuous at <script type="math/tex">1</script>.</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+AB = f(1)g(1) = \lim_{m \to \infty} f(x_m)g(x_m) =
+\lim_{m \to \infty} h(x_m) = h(1) = \sum d_n
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="6510">6.5.10</h3>
+<p>Let <script type="math/tex">g(x) = \sum_{n = 0}^{\infty}b_nx^n</script> converge on <script type="math/tex">(−R,R)</script>, and assume <script type="math/tex">(x_n) \rightarrow 0</script> with <script type="math/tex">x_n \not = 0</script>. If <script type="math/tex">g(x_n) = 0</script> for all <script type="math/tex">n ∈ \mathbf{N}</script>, show that <script type="math/tex">g(x)</script> must be
+identically zero on all of <script type="math/tex">(−R,R)</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">g(x)</script> is continuous, so <script type="math/tex">g(0)</script> = 0, that means <script type="math/tex">b_0 = 0</script>.
+Compare to exercise 5.3.4 and with Mean value theorem, we know
+we can find <script type="math/tex">(y_n) \rightarrow 0</script> such that <script type="math/tex">g'(y_n) = 0</script>.
+So <script type="math/tex">g'(0) = 0</script>, that means <script type="math/tex">b_1</script>.</p>
+<p>For the same reason, <script type="math/tex">b_2 = b_3 = \cdots = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="6511">6.5.11</h3>
+<p>A series <script type="math/tex">\sum_{n = 0}^{\infty}a_n</script> is said to be Abel-summable
+to <script type="math/tex">L</script> if the power series</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{n = 0}^{\infty}a_n x^n
+</script>
+</p>
+<p>converges for all <script type="math/tex">x \in [0, 1)</script> and <script type="math/tex">L = \lim_{x \to 1^{-1}} f(x)</script>.</p>
+<p>(a) Show that any series that converges to a limit <script type="math/tex">L</script> is also Abel-summable to <script type="math/tex">L</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">\sum_{n = 0}^{\infty}a_n = L</script>, then we can directly
+apply Abel's theorem, <script type="math/tex">f(x)</script> is continuous at <script type="math/tex">1</script>, and
+<script type="math/tex">L = \lim_{x \to 1^{-1}} f(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">\sum_{n = 0}^{\infty} (-1)^n</script> is Abel-summable and find the sum.</p>
+<p><strong>Proof</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{n = 0}^{\infty} (-x)^n
+</script>
+</p>
+<p>
+<script type="math/tex">f(x)</script> converges for all <script type="math/tex">x \in [0, 1)</script> and it converges to</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{1 + x}
+</script>
+</p>
+<p>So the Abel sum is <script type="math/tex">1/2</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
