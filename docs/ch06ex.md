@@ -1998,6 +1998,14 @@ $\square$
 
 ## 6.6. Taylor Series
 
+### 6.6.2.
+
+Starting from one of the previously generated series in this
+section, use manipulations similar to those in Example 6.6.1 to find Taylor
+series representations for each of the following functions. For precisely what
+values of x is each series representation valid?
+
+(a)
 ### 6.6.3.
 
 Derive the formula for the Taylor coeﬃcients given in
@@ -2346,19 +2354,19 @@ $$
 **Proof**:
 
 $$
-E_N'(x, a) = f'(x) - S_N'(x, a) = f'
+E_N'(x, a) = f'(x) - S_N'(x, a) = - S_N'(x, a) \\
+S_N'(x, a) = c_0' + (c_1'(c-a) - c_1) + (c_2'(c-a)^2 - 2 c_2 (c -a)) + \cdots \\
+= f'(a) + (f''(a)(x-a)-f'(a)) +
+(\frac{1}{2!}f'''(a)(x-a) -f''(a)(x-a)) + \cdots +
+(\frac{1}{N!}f^{(N+1)}(x-a)^N - \frac{1}{(N-1)!}f^{(N)}(x-a)^{N-1}) \\
+= \frac{1}{N!}f^{(N+1)}(x-a)^N \\
 $$
 
-$$
-\frac{
-E_N'(x, a) - E_N'(a, a)
-}{
-(x-a)^N - (a-a)^N
-}
+So
 
+$$ 
+S_N'(x, a) = \frac{-f^{(N+1)}(a)}{N!}(x - a)^N
 $$
-
-I cannot prove it for now.
 
 $\square$
 
@@ -2369,6 +2377,13 @@ E_N(x) = E_N(x, 0) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
 $$
 
 **Proof**:
+
+First
+
+$$ 
+E_N(x, 0) = f(x) - S_N(x, 0) =
+\sum_{n = 0}^{N}c_{n} (x-0)^{n} = E_N(x)
+$$
 
 $$ 
 \frac{
