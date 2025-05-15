@@ -374,6 +374,43 @@ $\square$
 
 ## 6.6. Taylor Series
 
+### Theorem 6.6.2 (Taylor’s Formula).
+
+Let
+
+$$
+\tag{3}
+f(x) = a_0 + a_1 x^1 + a_2 x^2 + a_3 x^3 + \cdots + a_n x^n + \cdots
+$$
+
+be defined on some nontrivial interval centered at zero. Then,
+
+$$ 
+a_n = \frac{f^{(n)}(0)}{n!}.
+$$
+
+Proof: First note, $a_0 = f(0) = 0 = \frac{f^{(1)}}{0!}$.
+
+Since $\sum_{n = 0}^{\infty}a_{n} x^{n}$ converges on $(-R, R)$ to
+$f(x)$, then based on Theorem 6.5.7, we have
+
+$$ 
+f'(x) = a_1 + 2 a_2 x + 3 a_3 x^2 + \cdots \\
+f^{(2)}(x) = 2 a_2  + 6 a_3 x + \cdots \\
+f^{(3)}(x) = 6 a_3 + (4!) a_4 x + \cdots \\
+$$
+
+Then set $x = 0$, we have
+
+$$ 
+a_1 = \frac{f^{(1)}}{1!} (0)\\
+a_2 = \frac{f^{(2)}}{2!} (0)\\
+a_3 = \frac{f^{(3)}}{3!} (0)\\
+\cdots
+$$
+
+$\square$
+
 ### Theorem 6.6.3 (Lagrange’s Remainder Theorem).
 
 Let $f$ be diﬀerentiable $N +1$ times on $(−R,R)$, define
@@ -393,11 +430,51 @@ E_N(x) = \frac{
 }{(N+1)!} x^{N+1}
 $$
 
-Proof: From the mean value theorem, we have
+Proof: Note that
 
 $$ 
-E_N(x) - E_N(0) = E_N^{(1)}(c_1)x =\\
-f^{(1)}(c) - S_N^{(1)}(c) = \\
-f^{(1)}(c) - (a_1 + 2 a_2 c + 3 a_3 c^2 + \cdots + N a_N c^N) \\
-= f^{(1)}(0) + f^{(2)}(0)c
+E_N(0) = f(0) - S_N(0) = f(0) - f(0) = 0 \\
+E_N'(0) = f'(0) - S_N'(0) = f'(0) - a_1 = f'(0) - f'(0) = 0 \\
+E_N^{(2)}(0) = f''(0) - S_N''(0) =
+f''(0) - 2 a_2 = f''(0) - 2 f''(0)/2 = 0 \\
+\cdots \\
+E_N^{(N)}(0) = f^{(N)}(0) - S_N^{(N)}(0) =
+f^{(N)}(0) - (N!) a_N = f^{(N)}(0) - (N!) f^{(N)}(0)/(N!) = 0 \\
 $$
+
+So we can use Generalized Mean Value Theorem (Theorem 5.3.5)
+
+$$ 
+\frac{
+E_N(x) - 0
+}{
+x^{N+1} - 0
+} =
+\frac{
+E_N^{(1)}(x_1)
+}{
+(N+1)x_1^N
+} =
+\frac{
+E_N^{(2)}(x_2)
+}{
+(N+1)Nx_2^{N-1}
+} = \cdots =
+\frac{
+E_N^{(N+1)}(x_{N+1})
+}{
+(N+1)!
+}
+$$
+
+So we have
+
+$$ 
+E_N(x) = \frac{
+f^{(N+1)}(c)
+}{
+(N+1)!
+} x^{N+1}
+$$
+
+$\square$

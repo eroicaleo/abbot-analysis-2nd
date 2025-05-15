@@ -41,6 +41,8 @@ $$
 
 Can we determine if f is twice-diﬀerentiable?
 
+### Ex 6.6.9 (b)
+
 # Open Question
 
 1. This is related chapter 5. $f(x)$ is a differentiable on $[a, b]$, $(x_n) \rightarrow c$,

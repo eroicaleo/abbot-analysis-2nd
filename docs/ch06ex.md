@@ -372,7 +372,7 @@ at most a countable number of discontinuities.
 
 **Solution**:
 
-Consdier the process of constructing the Cantor set, and define
+Consider the process of constructing the Cantor set, and define
 
 $$ 
 f_n(x) =
@@ -1356,7 +1356,7 @@ $\square$
 
 (b) Can we determine if f is twice-diﬀerentiable?
 
-**Solution**: Consdier
+**Solution**: Consider
 
 $$ 
 g_k(x) = -f_k''(x) = \frac{\sin (kx)}{k}
@@ -1551,6 +1551,236 @@ So $h(x)$ is continuous at every irrational point.
 $\square$
 
 ## 6.5. Power Series
+
+### 6.5.1
+
+Consider the function $g$ defined by the power series
+
+$$ 
+g(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}
+$$
+
+### 6.5.2
+
+Find suitable coeﬃcients $(a_n)$ so that the resulting power
+series $\sum_{n = 0}^{\infty}a_n x^n$ has the given
+properties, or explain why such a request is impossible
+
+(a) Converges for every value of $x ∈ R$.
+
+**Solution**: Let $a_n = 0$ for all $n$.
+
+$\square$
+
+(b) Diverges for every value of $x ∈ R$.
+
+**Solution**: It converges at 0.
+
+$\square$
+
+(c) Converges absolutely for all $x ∈ [−1,1]$ and diverges oﬀ of this set.
+
+**Solution**: Consider
+
+$$ 
+\sum_{n = 1}^{\infty} \frac{x^n}{n^2}
+$$
+
+Because $\lim_{n \to \infty} \frac{x^n}{n^2} = \infty$ so it is
+not bounded.
+
+$\square$
+
+(d) Converges conditionally at $x =−1$ and converges absolutely
+at $x = 1$.
+
+**Proof**: This is not impossible. Because
+$|a_n(-1)^n| = |a_n (1)^n|$.
+
+$\square$
+
+(e) Converges conditionally at both $x =−1$ and $x = 1$.
+
+**Solution**: Consider
+
+$$ 
+\sum_{n = 0}^{\infty} a_n x^n = 1 - \frac{x^2}{2} + \frac{x^4}{4}
+-\frac{x^6}{6} + \cdots 
+$$
+
+When $x =−1$ and $x = 1$, the power series becomes
+
+$$ 
+1 - \frac{1}{2} + \frac{1}{4} -\frac{1}{6} + \cdots
+$$
+
+Using Cauchy Criterion, we can see it converges.
+But is is not absolute converging, because
+
+$$ 
+1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{6} + \cdots
+$$
+
+does not converge.
+
+$\square$
+
+### 6.5.3
+
+Use the Weierstrass M-Test to prove Theorem 6.5.2.
+
+Theorem 6.5.2 states If a power series $\sum_{n = 0}^{\infty}a_nx^n$ converges absolutely at a point
+$x_0$, then it converges uniformly on the closed interval $[−c,c]$, where $c = |x_0|$.
+
+**Proof**: Let $M_n = |a_nc^n|$, and $\sum M_n$ converges.
+
+For $x \in [-c, c]$, $|a_nx^n| < |a_nc^n|$. So
+it converges uniformly on the closed interval $[−c,c]$.
+
+$\square$
+
+### 6.5.4 (Term-by-term Antidiﬀerentiation).
+
+Assume $f(x) = \sum_{n = 0}^{\infty}a_{n} x^{n}$ converges on
+$(-R, R)$.
+
+(a) Show
+
+$$ 
+F(x) = \sum_{n = 0}^{\infty}\frac{a_{n}}{n+1} x^{n+1}
+$$
+
+is defined on $(-R, R)$ and satisfies $F'(x) = f(x)$.
+
+Proof: Given $x \in (-R, R)$, $\sum_{n = 0}^{\infty}a_{n} x^{n}$
+converges absolutely. We can find $n$ such that $n+1 > x$.
+So
+
+$$ 
+\left| \frac{a_n}{n+1} x^{n+1} \right| =
+\left| \frac{x}{n+1} a_{n}x^n\right| <
+\left| a_{n} x^n \right|
+$$
+
+So $F(x)$ is defined on $(-R, R)$.
+
+Given $c \in (-R, R)$, $f(c)$ converges. From Abel's theorem,
+$f(x)$ converges uniformly on $[0,c]$.
+From Theorem 6.3.1, $F(x)$ is differentiable on $[0, c]$ and
+$F'(x) = f(x)$.
+
+$\square$
+
+(b) Antiderivatives are not unique. If $g$ is an arbitrary
+function satisfying $g'(x) = f(x)$ on $(-R, R)$.
+Find a power series representation for $g$.
+
+**Proof**: Consider $h(x) = g(x) - F(x)$.
+
+See the exercise 6.5.8, we can prove $g(x) = F(x) + c$.
+
+$\square$
+
+### 6.5.5.
+
+(a) If $s$ satisfies $0 < s < 1$, show $ns^{n−1}$ is bounded for
+all $n ≥ 1$.
+
+**Proof**: 
+
+We compare $ns^{n-1}$ and $(n+1)s^n$ and we have $ns^{n-1} > (n+1)s^n$, when $\frac{n}{n+1} > s$. So $ns^{n-1}$ is bounded.
+
+$\square$
+
+(b) Given an arbitrary $x ∈ (−R,R)$, pick $t$ to satisfy $|x| < t < R$. Use this start to construct a proof for Theorem 6.5.6.
+
+**Proof**:
+
+Consider
+
+$$ 
+\sum_{n = 1}^{\infty} n a_n x^{n-1} =
+\sum_{n = 1}^{\infty}
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+$$
+
+Since $t < R$, then $\sum_{n = 1}^{\infty} a_n t^{n-1}$ converges
+absolutely. Let $|n \left( \frac{x}{t} \right) ^ {n-1}| \leq M$,
+
+$$
+\left| 
+(m+1) \left( \frac{x}{t} \right) ^ {m} a_{m+1} t^{m} + \cdots +
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+\right|
+< \\ 
+\left| 
+(m+1) \left( \frac{x}{t} \right) ^ {m} a_{m+1} t^{m}
+\right| + \cdots +
+\left| 
+n \left( \frac{x}{t} \right) ^ {n-1} a_n t^{n-1}
+\right|
+< \\
+M (|a_{m+1} t^{m}| + \cdots + |a_n t^{n-1}|) < \epsilon
+$$
+
+So $\sum_{n = 1}^{\infty}na_n x^{n-1}$ converges at each
+$x ∈ (−R,R)$ as well.
+
+$\square$
+
+### 6.5.6.
+
+Previous work on geometric series (Example 2.7.5) justifies
+the formula
+
+$$ 
+\frac{1}{1 - x} =
+1 + x + x^2 + x^3 + x^4 + \cdots , \text{ for all } |x| < 1.
+$$
+
+Find the following 2 sums:
+
+(a) $\sum_{n = 1}^{\infty} n/2^n$
+
+**Solution**: we take derivative on the right side
+
+$$ 
+1 + 2x + 3x^2 + \cdots =\\
+(1 + x + x^2 + x^3 + \cdots ) + \sum_{n = 1}^{\infty} n/2^n
+$$
+
+So
+
+$$ 
+\sum_{n = 1}^{\infty} n/2^n = \frac{1}{(1-x)^2} - \frac{1}{1-x}\\
+=\frac{x}{(1-x)^2} = 2
+$$
+
+$\square$
+
+(b) $\sum_{n = 1}^{\infty} n^2/2^n$
+
+**Solution**: Consider
+
+$$ 
+\sum_{n = 1}^{\infty} (nx^n)' =
+\sum_{n = 1}^{\infty} n^2 x^{n-1} = \\
+1 + \sum_{n = 1}^{\infty} (n+1)^2x^n = \\
+1 + \sum_{n = 1}^{\infty} n^2 x^n + 2 \sum_{n = 1}^{\infty} nx^n
++ \sum_{n = 1}^{\infty}x^n
+$$
+
+So
+
+$$ 
+\frac{(1-x)^2 +2 x (1-x)}{(1-x)^4} =\\
+\frac{1+x}{(1-x)^3} =\\
+1 + S + \frac{2x}{(1-x)^2} + \frac{x}{1 - x}\\
+S = 12 - 1 - 4 - 1 = 6
+$$
+
+$\square$
+
 
 ### 6.5.7.
 
@@ -1763,5 +1993,450 @@ $$
 $$
 
 So the Abel sum is $1/2$.
+
+$\square$
+
+## 6.6. Taylor Series
+
+### 6.6.3.
+
+Derive the formula for the Taylor coeﬃcients given in
+Theorem 6.6.2.
+
+Proof: First note, $a_0 = f(0) = 0 = \frac{f^{(1)}}{0!}$.
+
+Since $\sum_{n = 0}^{\infty}a_{n} x^{n}$ converges on $(-R, R)$ to
+$f(x)$, then based on Theorem 6.5.7, we have
+
+$$ 
+f'(x) = a_1 + 2 a_2 x + 3 a_3 x^2 + \cdots \\
+f^{(2)}(x) = 2 a_2  + 6 a_3 x + \cdots \\
+f^{(3)}(x) = 6 a_3 + (4!) a_4 x + \cdots \\
+$$
+
+Then set $x = 0$, we have
+
+$$ 
+a_1 = \frac{f^{(1)}}{1!} (0)\\
+a_2 = \frac{f^{(2)}}{2!} (0)\\
+a_3 = \frac{f^{(3)}}{3!} (0)\\
+\cdots
+$$
+
+$\square$
+
+### 6.6.4.
+
+Explain how Lagrange’s Remainder Theorem can be modified
+to prove
+
+$$ 
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} +
+\frac{1}{5} - \frac{1}{6} + \cdots = \log_{} (2)
+$$
+
+**Proof**: Consider $f(x) = \log_{} (x)$.
+
+$$ 
+S_N(x) = f(1) + \frac{f'(1)}{1} (x - 1) + \frac{f''(1)}{2!}(x-1)^2
++ \cdots + \frac{f^{(N)}(x)}{N!} (x - 1)^N
+$$
+
+Let $E_N(x) = f(x) - S_N(x)$.
+
+$$ 
+E_N(1) = f(1) - S_N(1) = 0 \\
+E_N^{(1)}(1) = f'(1) - f'(1) = 0 \\
+\cdots \\
+E_N^{(N)}(1) = f^{(N)}(1) - f^{(N)}(1) = 0 \\
+$$
+
+Then we have
+
+$$ 
+\frac{E_N(x) - E_N(1)}{(x - 1)^{N+1} - 0} =\\
+\frac{E_N(x) - E_N(1)}{(x - 1)^{N+1} - 0} =\\
+\frac{f^{(N+1)}(c)}{(N+1)!}(x-1)^{N+1} =\\
+\pm \frac{(x-1)^{N+1}}{c^{N+1}(N+1)!}
+$$
+
+Plug $x = 2$, then note $c \in (1, 2)$ 
+
+$$ 
+E_N(2) = \frac{1}{c^{N+1} (N+1)!} \rightarrow 0
+$$
+
+$\square$
+
+### 6.6.5.
+
+(a) Generate the Taylor coeﬃcients for the exponential
+function $f(x) = e^x$, and then prove that the corresponding Taylor series converges uniformly to $e^x$ on any interval of the form $[−R,R]$.
+
+**Proof**:
+
+$$ 
+f^{(1)}(0) = e^0 = 1 \\
+f^{(2)}(0) = e^0 = 1 \\
+\cdots \\
+f^{(N+1)}(0) = e^0 = 1 \\
+$$
+
+So we have
+
+$$ 
+f(x) = 1 + \frac{1}{1} x + \frac{1}{2!} x^2 + \frac{1}{3!} x^3 +
+\cdots
+$$
+
+Based on theorem 6.6.3 (Lagrange’s Remainder Theorem),
+
+$$ 
+E_N(x) = \frac{f^{(N+1)}(c) x^{N+1}}{(N+1)!} 
+$$
+
+So 
+
+$$
+\left| \frac{f^{(N+1)}(c) x^{N+1}}{(N+1)!} \right| \leq
+\frac{e^R R^{N+1}}{(N+1)!} \rightarrow 0
+$$
+
+So $E_N(R) \rightarrow 0$, then based on Abel's theorem,
+Taylor series converges uniformly to $e^x$ on any interval of the form $[−R,R]$.
+
+$\square$
+
+(b) Verify the formula $f'(x) = e^x$.
+
+**Proof**: If we take derivative item by item, we get
+
+$$ 
+f'(x) = 1 + x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \cdots
+= f(x) = e^x
+$$
+
+$\square$
+
+(c) Use a substitution to generate the series for $e^{−x}$, and then informally calculate $e^x \cdot e^{−x}$ by multiplying 
+together the two series and collecting common powers of $x$.
+
+Proof:
+
+$$ 
+e^{-x} = 1 - x + \frac{1}{2!}x^2 - \frac{1}{3!}x^3 + \cdots
+$$
+
+So the coeﬃcient for $x^4$ is
+
+$$
+\frac{1}{4!} - \frac{1}{3!} + \frac{1}{(2!)^2} - \frac{1}{3!}
++\frac{1}{4!} = \frac{1 - 4 + 6 - 4 + 1}{24} = 0
+$$
+
+So the coeﬃcient for $x^5$ is
+
+$$ 
+\frac{1}{5!} - \frac{1}{4!1!} + \frac{1}{3!2!} - \frac{1}{2!3!}
++ \frac{1}{1!4!} - \frac{1}{0!5!}
+$$
+
+So the coeﬃcient for $x^6$ is
+
+$$ 
+\frac{1}{6!0!} - \frac{1}{5!1!} + \frac{1}{4!2!} - \frac{1}{3!3!}
++\frac{1}{2!4!} - \frac{1}{1!5!} + \frac{1}{0!6!}
+$$
+
+To summarize, the coefficient is the following when $n$ is even
+
+$$ 
+a_n = \frac{1}{n!} ( C_n^0-C_n^{1} + ... - C_n^{n-1} + C_n^n)
+$$
+
+So positive item in the above equation is to choose even number
+of elements from $n$ elements. Consider when $n$ is odd,
+then the number of ways to choose even number of elements is
+the same as the ways to choose odd number of elements.
+
+Now when $n$ is even, if want to choose even number of elements,
+there are 2 ways:
+* Choose odd number of elements then plus the new element.
+* Choose even number of elements from previous $n-1$ elements.
+
+So the above equation is still $0$.
+
+$\square$
+
+### 6.6.6.
+
+Review the proof that $g'(0) = 0$ for the function
+
+$$ 
+g(x) =
+\begin{cases}
+    e^{-1/x^2} &\text{for } x \not = 0 \\
+    0 &\text{for } x = 0\\
+\end{cases} 
+$$
+
+introduced at the end of this section.
+
+(a) Compute $g'(x)$ for $x \not = 0$. Then use the definition of the derivative to find $g''(0)$.
+
+**Solution**: 
+
+$$ 
+g'(x) = e^{-1/x^2} \cdot \frac{2}{x^3}
+$$
+
+Then we have
+
+$$ 
+g''(0) = \lim_{x \to 0} \frac{e^{-1/x^2} \cdot \frac{2}{x^3} - 0}
+{x - 0} =\\
+\lim_{x \to 0} e^{-1/x^2} \cdot \frac{2}{x^4} = \\
+\lim_{x \to 0}
+\frac{
+1/x^4
+}{
+e^{1/x^2}
+} =
+\lim_{x \to 0} \frac{
+-4/x^5
+}{
+e^{1/x^2} \cdot \frac{-2}{x^3}
+} = \\
+\lim_{x \to 0} \frac{
+2/x^2
+}{e^{1/x^2}} = \\
+\lim_{x \to 0} \frac{
+-4/x^3
+}{e^{1/x^2} \cdot \frac{-2}{x^3} } = \\
+\lim_{x \to 0} \frac{
+2
+}{e^{1/x^2}} = 0
+$$
+
+$\square$
+
+(b) Compute $g''(x)$ and $g'''(x)$ for $x \not = 0$. Use these observations and invent whatever notation is needed to give a general description for the nth derivative $g^{(n)}(x)$
+at points diﬀerent from zero.
+
+$$ 
+g'(x) = e^{-1/x^2} \cdot \frac{2}{x^3} \\
+g''(x) = e^{-1/x^2} \cdot \frac{2}{x^6} - e^{-1/x^2} \frac{6}{x^4} \\
+g'''(x) = e^{-1/x^2} \frac{4}{x^9} - e^{-1/x^2} \frac{12}{x^7} -
+e^{-1/x^2} \frac{12}{x^7} + e^{-1/x^2} \frac{24}{x^5} =\\
+e^{-1/x^2} \frac{4}{x^9} - e^{-1/x^2} \frac{24}{x^7} +
+e^{-1/x^2} \frac{24}{x^5}
+$$
+
+The general description is 
+
+$$ 
+g^{(n)}(x) = e^{-1/x^2}
+(
+\frac{a_n}{x^{3n}} + \frac{a_{n-1}}{x^{3n-2}} + \cdots 
++ \frac{a_1}{x^{n+2}}
+)
+$$
+
+$\square$
+
+(c) Construct a general argument for why $g^{(0)} = 0$ for
+all $n \in \mathbf{N}$.
+
+**Solution**: In general
+
+$$ 
+\lim_{x \to 0} \frac{1/x^n}{e^{1/x^2}} = \\
+\lim_{x \to 0} \frac{n/x^{n-2}}{2e^{1/x^2}} = \\
+\lim_{x \to 0} \frac{n(n-2)/x^{n-4}}{2^2e^{1/x^2}} = \\
+\cdots \\
+= 0
+$$
+
+$\square$
+
+### 6.6.8.
+
+Here is a weaker form of Lagrange’s Remainder Theorem whose
+proof is arguably more illuminating than the one for the stronger result.
+
+(a) First establish a lemma: If $g$ and $h$ are diﬀerentiable on $[0,x]$ with $g(0) = h(0)$ and $g'(h) \leq h'(x)$ for all
+$g(t) ≤ h(t)$ for all $t \in [0, x]$.
+
+**Proof**:
+
+Let
+
+$$ 
+f(x) = h(x) - g(x)
+$$
+
+Then $f(x) - f(0) = f'(c)x$, since $f'(c) = h'(c) - g'(c) \geq 0$,
+$f(x) = f(0) + f'(c)x = f'(c) x \geq 0$
+
+$\square$
+
+(b) Let $f$, $S_N$, and $E_N$ be as Theorem 6.6.3,
+and take 0 < x < R. If $\left| f^{(N+1)} (t) \right| \leq M$
+for all $t \in [0, x]$, show
+
+$$ 
+|E_N(x)| \leq \frac{M x^{N+1}}{(N+1)!}
+$$
+
+**Proof**: based on (a), $E_N^{(N)}(0) = M 0 = 0$, and
+$E_N^{(N+1)} = f^{(N+1)}(x)$ and 
+$-M \leq f^{(N+1)}(x) \leq M$, so
+
+$$
+-Mx \leq E_N^{(N)}(x) \leq Mx \\
+\text{i.e. }, |E_N^{(N)}(x)| \leq Mx
+$$
+
+Furthermore $E_N^{(N-1)}(0) = \frac{1}{2} M 0^2 = 0$,
+So
+
+$$ 
+-\frac{1}{2}M x^2 \leq E_N^{(N-1)}(x) \leq \frac{1}{2} M x^2
+$$
+
+We continue this process for $N-2, N-3, \cdots, 0$, we have
+
+$$
+-\frac{1}{(N+1)!}M x^{N+1} \leq
+E_N(x) \leq
+\frac{1}{(N+1)!}M x^{N+1}
+$$
+
+So we proved (b).
+
+$\square$
+
+### 6.6.9 (Cauchy’s Remainder Theorem).
+
+Let $f$ be diﬀerentiable
+$N+1$ times on $(−R,R)$. For each $a ∈ (−R,R)$, let $S_N(x,a)$ be the partial sum
+of the Taylor series for $f$ centered at $a$; in other words, define
+
+$$ 
+S_N(x, a) = \sum_{n = 0}^{N}c_{n} (x - a)^{n} \text{ where }
+c_n = \frac{f^{(n)}(a)}{n!}
+$$
+
+Let $E_N(x, a) = f(x) - S_N(x, a)$. Now fix $x \not = 0$ in
+$(-R, R)$ and consider $E_N(x, a)$ as a function of $a$.
+
+(a) Find $E_N(x, x)$.
+
+**Solution**: $E_N(x, x) = f(x) - S_N(x, x) = f(x) - f(x) = 0$.
+
+$\square$
+
+(b) Explain why $E_N(x,a)$ is differentiable with respect to
+$a$, and show
+
+$$ 
+E_N(x, a)' = \frac{-f^{(N+1)}(a)}{N!}(x - a)^N
+$$
+
+**Proof**:
+
+$$
+E_N'(x, a) = f'(x) - S_N'(x, a) = f'
+$$
+
+$$
+\frac{
+E_N'(x, a) - E_N'(a, a)
+}{
+(x-a)^N - (a-a)^N
+}
+
+$$
+
+I cannot prove it for now.
+
+$\square$
+
+(c) Show
+
+$$ 
+E_N(x) = E_N(x, 0) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
+$$
+
+**Proof**:
+
+$$ 
+\frac{
+    E_N(x, x) - E(x, 0)
+}{x - 0}
+= E'(x, c) = \frac{-f^{(N+1)}(c)}{N!}(x - c)^N
+$$
+
+So we have
+
+$$ 
+E_N(x, 0) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
+$$
+
+$\square$
+
+### 6.6.10.
+
+Consider $f(x) = 1/ \sqrt[]{1−x}$.
+
+Generate the Taylor series for $f$ centered at zero, and use Lagrange’s
+Remainder Theorem to show the series converges to $f$ on $[0,1/2]$. (The
+case $x < 1/2$ is more straightforward while $x = 1/2$ requires some extra
+care.) What happens when we attempt this with $x > 1/2$?
+
+$$ 
+f'(0) = \frac{1}{2} (1 - x)^{-3/2} = \frac{1}{2} \\
+f''(0) = \frac{3}{4} (1-x)^{-5/2} = \frac{3}{4} \\
+\cdots \\
+f^{(n)}(0) = \frac{1 \cdot 3 \cdots(2n-1)}{2^n}
+(1 - x)^{-\frac{2n+1}{2}}
+$$
+
+Then the Lagrange's Remainder is
+
+$$ 
+\frac{f^{(N+1)}(c)}{(N+1)!}x^{N+1} =
+\frac{1 \cdot 3 \cdots (2N+1) }{2^{N+1} (N+1)!}
+\frac{x^{N+1}}{(1-c)^{N+1} \sqrt[]{1-c}}
+$$
+
+Because $c < x \leq 1/2$, then $1 - c > 1/2 \geq x$, so
+
+$$ 
+\frac{x}{1 - c} < 1
+$$
+
+Then the Lagrange's Remainder converges to 0.
+
+When $x > 1/2$, we cannot establish $\frac{x}{1 - c} < 1$.
+So Lagrange's Remainder theorem is not applicable in this case.
+
+$\square$
+
+(b) Use Cauchy’s Remainder Theorem proved in Exercise 6.6.9 to show the series representation for $f$ holds on $[0,1)$.
+
+**Proof**: the Cauchy’s Remainder
+
+$$ 
+E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x \\
+= \frac{1 \cdot 3 \cdots (2N+1) }{2^{N+1} N!}
+\frac{(x-c)^{N}x}{(1-c)^{N+1} \sqrt[]{1-c}}
+$$
+
+Given any $0 < c < x < 1$, so $x-c < 1-c$, so
+
+$$ 
+\lim_{N \to \infty} \frac{(2N+1)(x-c)^N}{(1-c)^{N+1}} \rightarrow 0
+$$
 
 $\square$
