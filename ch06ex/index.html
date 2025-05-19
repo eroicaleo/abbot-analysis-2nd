@@ -172,6 +172,10 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#66-taylor-series">6.6. Taylor Series</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#661">6.6.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#662">6.6.2.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#663">6.6.3.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#664">6.6.4.</a>
@@ -179,6 +183,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#665">6.6.5.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#666">6.6.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#667">6.6.7.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#668">6.6.8.</a>
     </li>
@@ -2015,6 +2021,205 @@ f(x) = \sum_{n = 0}^{\infty} (-x)^n
 <script type="math/tex">\square</script>
 </p>
 <h2 id="66-taylor-series">6.6. Taylor Series</h2>
+<h3 id="661">6.6.1.</h3>
+<p>The derivation in Example 6.6.1 shows the Taylor series for
+<script type="math/tex">\arctan(x)</script> is valid for all <script type="math/tex">x ∈ (−1,1)</script>. Notice, however,
+that the series also
+converges when <script type="math/tex">x = 1</script>. Assuming that <script type="math/tex">\arctan(x)</script> is continuous, explain why the value of the series at <script type="math/tex">x = 1</script> must necessarily
+be <script type="math/tex">\arctan(1)</script>. What interesting identity do we get in this
+case?</p>
+<p>Proof: When <script type="math/tex">x \in (-1, 1)</script>, <script type="math/tex">1 - x^2 + x^4 - x^6 + x^8 - \cdots</script>
+converges to <script type="math/tex">\frac{1}{1 + x^2}</script>. Then based on Exercise 6.5.4 (Term-by-term Antidiﬀerentiation).</p>
+<p>
+<script type="math/tex; mode=display">
+F(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots
+</script>
+</p>
+<p>is defined on <script type="math/tex">(-1, 1)</script> and <script type="math/tex">F'(x) = \frac{1}{1 + x^2}</script>.</p>
+<p>So <script type="math/tex">F(x) = c + \arctan x</script> for some <script type="math/tex">c</script>. Then since <script type="math/tex">F(0) = 0</script>
+we have <script type="math/tex">c = 0</script>. So <script type="math/tex">F(x) = \arctan x, x \in (-1, 1)</script>.</p>
+<p>Since <script type="math/tex">F(x)</script> converges, then based on Abel's theorem,
+<script type="math/tex">F(x)</script> is uniformly converging on <script type="math/tex">[0, 1]</script>, then <script type="math/tex">F(x)</script> is
+continuous at <script type="math/tex">1</script>. Since we assume <script type="math/tex">\arctan (x)</script> is also
+continuous, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(1) = \lim_{x \to 1} F(x) = \lim_{x \to 1} \arctan (x) = 
+\arctan (1) = \frac{\pi }{4}
+</script>
+</p>
+<p>So the interesting part is <script type="math/tex">F(x)</script> is defined at <script type="math/tex">1</script>, but
+<script type="math/tex">f(x)</script> is not. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="662">6.6.2.</h3>
+<p>Starting from one of the previously generated series in this
+section, use manipulations similar to those in Example 6.6.1 to find Taylor
+series representations for each of the following functions. For precisely what
+values of x is each series representation valid?</p>
+<p>(a) <script type="math/tex">x \cos(x^2)</script>
+</p>
+<p><strong>Solution</strong>: We stard from <script type="math/tex">\sin x</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sin x = x - \frac{x^3}{3!}  + \frac{x^5}{5!} - \frac{x^7}{7!}
+</script>
+</p>
+<p>First we get derivative on both side</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}
++ \cdots
+</script>
+</p>
+<p>Then we replace <script type="math/tex">x</script> with <script type="math/tex">x^2</script> and multiply by <script type="math/tex">x</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+x \cos x^2 = x - \frac{x^5}{2!} + \frac{x^9}{4!} - \frac{x^{13}}{6!}
+</script>
+</p>
+<p>The Lagrange Remainder of it is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{f^{(N+1)}(c) x^{N+1}}{(N+1)!}
+</script>
+</p>
+<p>We can compute <script type="math/tex">f^{(n)}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(x) = \cos x^2 - 2 x^2 \sin x^2 \\
+f''(x) = 2x \cos x^2 - 4x \sin x^2 -4x^3 \cos x^2 \\
+f^{(n)} = 2^nx^{n+1} + \delta
+</script>
+</p>
+<p>The Taylor series converges for <script type="math/tex">\mathbf{R}</script>.</p>
+<p>(b) <script type="math/tex">x/(1+4x^2)^2</script>
+</p>
+<p><strong>Solution</strong>: We start with</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots
+</script>
+</p>
+<p>Replace <script type="math/tex">x</script> with <script type="math/tex">-4x^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{1 + 4x^2} = 
+1 - 4x^2 + 4^2x^4 - 4^3x^{6} + \cdots
+</script>
+</p>
+<p>Then we take derivative on both sides</p>
+<p>
+<script type="math/tex; mode=display"> 
+-\frac{8x}{(1 + 4x^2)^2} = 0 - 2 \cdot 4 x + 4 \cdot 4^2x^3
+- 6 \cdot 4^3 x^5 + \cdots \\
+x/(1+4x^2)^2 = x - 2 \cdot 4 x^3 + 3 \cdot 4^2 x^5 + \cdots
+= \sum_{n = 0}^{\infty} (-1)^n (n+1) 2^{2n} x^{2n+1}
+</script>
+</p>
+<p>If <script type="math/tex">|x| \geq \frac{1}{2}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| (-1)^n (n+1) 2^{2n} x^{2n+1} \right| \geq 
+\left| (n+1)2^{2n} (\frac{1}{2})^{2n+1} \right| = \frac{n+1}{2}
+</script>
+</p>
+<p>So it's not bounded. So it converges on <script type="math/tex">(-1/2, 1/2)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) <script type="math/tex">\log(1+x^2)</script>
+</p>
+<p>Solution:</p>
+<p>First take derivative we get <script type="math/tex">\frac{2x}{1 + x^2}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{2x}{1 + x^2} = 2x(1 - x^2 + x^4 - x^6 + \cdots)
+= 2x - 2x^3 + 2x^5 - 2x^7 + \cdots = g(x)
+</script>
+</p>
+<p>Then we take antiderivatives</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{x^2}{1} - \frac{x^4}{2} + \frac{x^6}{3}
+- \frac{x^8}{4} + \cdots
+</script>
+</p>
+<p>We can see this series converges on <script type="math/tex">[-1, 1]</script>, but
+we are not sure about if it converges to <script type="math/tex">f(x)</script>.</p>
+<p>We can use the same argument in the 6.6.1, <script type="math/tex">g(x)</script> is defined
+in <script type="math/tex">(-1, 1)</script>, so <script type="math/tex">G(x) = f(x)</script> for <script type="math/tex">x \in (-1, 1)</script>. Also
+<script type="math/tex">G(1)</script> is defined, so <script type="math/tex">G(x)</script> is continuous at <script type="math/tex">1</script>, also
+<script type="math/tex">f(x)</script> is continuous at <script type="math/tex">1</script>, so <script type="math/tex">G(1) = f(1)</script>, same thing
+for <script type="math/tex">G(-1) = f(-1)</script>.</p>
+<p>If We want to calculate the Lagrange Remainder, it's complex.</p>
+<p>The first derivatives is
+<script type="math/tex; mode=display"> 
+f'(x) = \frac{2x}{1 + x^2}
+</script>
+</p>
+<p>The 2nd derivative is
+<script type="math/tex; mode=display">
+f''(x) = \frac{- 2x^2 + 2}{(1 + x^2)^2}
+</script>
+</p>
+<p>The 3rd derivative is</p>
+<p>
+<script type="math/tex; mode=display">
+f'''(x) = \frac{-4x(1+x^2)^2 - 2(1-x^2)2(1+x^2)2x}{(1 + x^2)^4} \\
+= \frac{-4x(1+x^2) - 8x(1-x^2)}{(1 + x^2)^3} \\
+= \frac{4x^3 - 12x}{(1 + x^2)^3} \\
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+f^{(4)}(x) = 
+\frac{(12x^2-12)(1+x^2)^3 - (4x^3-12x)3(1+x^2)^22x}{(1 + x^2)^6}\\
+\\
+\frac{12(x^2-1)(x^2+1)-(4x^3-12x)6x}{(1+x^2)^4} \\
+\frac{12(x^2-1)(x^2+1)-(4x^3-12x)6x}{(1+x^2)^4} \\
+\frac{-12x^4 + 72x^2 - 12}{(1+x^2)^4} \\
+</script>
+</p>
+<p>In genenal, assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+f^{(n)} = \frac{f_n(x)}{(1+x^2)^n} \text{ and } \\
+f_n(x) = a^{(n)}_n x^n + a^{(n)}_{n-2} x^{n-2} +
+a^{(n)}_{n-4} x^{n-4} + \cdots \\
+</script>
+</p>
+<p>We want to compute</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_{n+1}(x) = a^{(n+1)}_{n+1} x^{n+1}
++ a^{(n+1)}_{n-1} x^{n-1} +
+a^{(n+1)}_{n-3} x^{n-3} + \cdots 
+</script>
+</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_{n+1}(x) = f'_n(x) (1 + x^2) - 2nxf_n(x)
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+a^{(n+1)}_{n+1} = n a^{(n)}_n - 2n a^{(n)}_n = - na^{(n)}_n \\
+a^{(n+1)}_{n-1} = n a^{(n)}_n + (n-2)a^{(n)}_{n-2} - 2n a^{(n)}_{n-2} = n a^{(n)}_n - (n+2) a^{(n)}_{n-2} \\
+a^{(n+1)}_{n-3} = (n-2)a^{(n)}_{n-2} + (n-4)a^{(n)}_{n-4} -
+2n a^{(n)}_{n-4} = (n-2)a^{(n)}_{n-2} - (n+4) a^{(n)}_{n-4} 
+</script>
+</p>
+<p>So we cannot tell from Lagrange Remainder theorem.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="663">6.6.3.</h3>
 <p>Derive the formula for the Taylor coeﬃcients given in
 Theorem 6.6.2.</p>
@@ -2254,7 +2459,7 @@ g^{(n)}(x) = e^{-1/x^2}
 <p>
 <script type="math/tex">\square</script>
 </p>
-<p>(c) Construct a general argument for why <script type="math/tex">g^{(0)} = 0</script> for
+<p>(c) Construct a general argument for why <script type="math/tex">g^{(n)}(0) = 0</script> for
 all <script type="math/tex">n \in \mathbf{N}</script>.</p>
 <p><strong>Solution</strong>: In general</p>
 <p>
@@ -2266,6 +2471,40 @@ all <script type="math/tex">n \in \mathbf{N}</script>.</p>
 = 0
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="667">6.6.7.</h3>
+<p>Find an example of each of the following or explain why no
+such function exists.</p>
+<p>(a) An infinitely diﬀerentiable function <script type="math/tex">g(x)</script> on all of <script type="math/tex">\mathbf{R}</script> with a Taylor series that converges to
+<script type="math/tex">g(x)</script> only for <script type="math/tex">x ∈ (−1,1)</script>.</p>
+<p><strong>Solution</strong>: Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + \cdots
+</script>
+</p>
+<p>It only converges on <script type="math/tex">(-1, 1)</script>.</p>
+<p>(b) An infinitely diﬀerentiable function <script type="math/tex">h(x)</script> with the same Taylor series as
+<script type="math/tex">\sin(x)</script> but such that <script type="math/tex">h(x) \not = \sin(x)</script> for all <script type="math/tex">x \not = 0</script>.</p>
+<p><strong>Solution</strong>: Yes, it's possible. Consider the <script type="math/tex">g(x)</script> defined
+in exercise 6.6.6. And let <script type="math/tex">h(x) = \sin (x) + g(x)</script>.
+Since <script type="math/tex">h^{(n)}(0) = \sin ^{(n)} (0) + g^{(n)} (0) = \sin ^{(n)} (0)</script>, but <script type="math/tex">g(x) \not = 0</script> for <script type="math/tex">x \not = 0</script>.
+So <script type="math/tex">h(x) \not = \sin (x), x \not = 0</script>.</p>
+<p>(c) An infinitely diﬀerentiable function <script type="math/tex">f(x)</script> on all of <script type="math/tex">\mathbf{R}</script> with a Taylor series
+that converges to <script type="math/tex">f(x)</script> if and only if <script type="math/tex">x ≤ 0</script>.</p>
+<p><strong>Solution</strong>: consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    g(x) &\text{if } x > 0 \\
+    0    &\text{if } x \leq 0 \\
+\end{cases} 
+</script>
+</p>
+<p>Its Taylor series converges to <script type="math/tex">0</script>, which equals to <script type="math/tex">f(x)</script> for
+<script type="math/tex">x \leq 0</script>. But when <script type="math/tex">f(x) \not = 0</script> when <script type="math/tex">x > 0</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
@@ -2350,17 +2589,20 @@ E_N(x, a)' = \frac{-f^{(N+1)}(a)}{N!}(x - a)^N
 <p><strong>Proof</strong>:</p>
 <p>
 <script type="math/tex; mode=display">
-E_N'(x, a) = f'(x) - S_N'(x, a) = f'
+E_N'(x, a) = f'(x) - S_N'(x, a) = - S_N'(x, a) \\
+S_N'(x, a) = c_0' + (c_1'(c-a) - c_1) + (c_2'(c-a)^2 - 2 c_2 (c -a)) + \cdots \\
+= f'(a) + (f''(a)(x-a)-f'(a)) +
+(\frac{1}{2!}f'''(a)(x-a) -f''(a)(x-a)) + \cdots +
+(\frac{1}{N!}f^{(N+1)}(x-a)^N - \frac{1}{(N-1)!}f^{(N)}(x-a)^{N-1}) \\
+= \frac{1}{N!}f^{(N+1)}(x-a)^N \\
 </script>
 </p>
-<p>$$
-\frac{
-E_N'(x, a) - E_N'(a, a)
-}{
-(x-a)^N - (a-a)^N
-}</p>
-<p>$$</p>
-<p>I cannot prove it for now.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_N'(x, a) = \frac{-f^{(N+1)}(a)}{N!}(x - a)^N
+</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
@@ -2371,6 +2613,13 @@ E_N(x) = E_N(x, 0) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
 </script>
 </p>
 <p><strong>Proof</strong>:</p>
+<p>First</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x, 0) = f(x) - S_N(x, 0) =
+\sum_{n = 0}^{N}c_{n} (x-0)^{n} = E_N(x)
+</script>
+</p>
 <p>
 <script type="math/tex; mode=display"> 
 \frac{
