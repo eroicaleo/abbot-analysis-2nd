@@ -1998,6 +1998,42 @@ $\square$
 
 ## 6.6. Taylor Series
 
+### 6.6.1.
+
+The derivation in Example 6.6.1 shows the Taylor series for
+$\arctan(x)$ is valid for all $x ∈ (−1,1)$. Notice, however,
+that the series also
+converges when $x = 1$. Assuming that $\arctan(x)$ is continuous, explain why the value of the series at $x = 1$ must necessarily
+be $\arctan(1)$. What interesting identity do we get in this
+case?
+
+Proof: When $x \in (-1, 1)$, $1 - x^2 + x^4 - x^6 + x^8 - \cdots$
+converges to $\frac{1}{1 + x^2}$. Then based on Exercise 6.5.4 (Term-by-term Antidiﬀerentiation).
+
+$$
+F(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots
+$$
+
+is defined on $(-1, 1)$ and $F'(x) = \frac{1}{1 + x^2}$.
+
+So $F(x) = c + \arctan x$ for some $c$. Then since $F(0) = 0$
+we have $c = 0$. So $F(x) = \arctan x, x \in (-1, 1)$.
+
+Since $F(x)$ converges, then based on Abel's theorem,
+$F(x)$ is uniformly converging on $[0, 1]$, then $F(x)$ is
+continuous at $1$. Since we assume $\arctan (x)$ is also
+continuous, we have
+
+$$ 
+F(1) = \lim_{x \to 1} F(x) = \lim_{x \to 1} \arctan (x) = 
+\arctan (1) = \frac{\pi }{4}
+$$
+
+So the interesting part is $F(x)$ is defined at $1$, but
+$f(x)$ is not. 
+
+$\square$
+
 ### 6.6.2.
 
 Starting from one of the previously generated series in this
@@ -2005,7 +2041,169 @@ section, use manipulations similar to those in Example 6.6.1 to find Taylor
 series representations for each of the following functions. For precisely what
 values of x is each series representation valid?
 
-(a)
+(a) $x \cos(x^2)$
+
+**Solution**: We stard from $\sin x$
+
+$$ 
+\sin x = x - \frac{x^3}{3!}  + \frac{x^5}{5!} - \frac{x^7}{7!}
+$$
+
+First we get derivative on both side
+
+$$ 
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}
++ \cdots
+$$
+
+Then we replace $x$ with $x^2$ and multiply by $x$,
+
+$$ 
+x \cos x^2 = x - \frac{x^5}{2!} + \frac{x^9}{4!} - \frac{x^{13}}{6!}
+$$
+
+The Lagrange Remainder of it is
+
+$$ 
+\frac{f^{(N+1)}(c) x^{N+1}}{(N+1)!}
+$$
+
+We can compute $f^{(n)}$ 
+
+$$ 
+f'(x) = \cos x^2 - 2 x^2 \sin x^2 \\
+f''(x) = 2x \cos x^2 - 4x \sin x^2 -4x^3 \cos x^2 \\
+f^{(n)} = 2^nx^{n+1} + \delta
+$$
+
+The Taylor series converges for $\mathbf{R}$.
+
+(b) $x/(1+4x^2)^2$
+
+**Solution**: We start with
+
+$$ 
+\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots
+$$
+
+Replace $x$ with $-4x^2$
+
+$$ 
+\frac{1}{1 + 4x^2} = 
+1 - 4x^2 + 4^2x^4 - 4^3x^{6} + \cdots
+$$
+
+Then we take derivative on both sides
+
+$$ 
+-\frac{8x}{(1 + 4x^2)^2} = 0 - 2 \cdot 4 x + 4 \cdot 4^2x^3
+- 6 \cdot 4^3 x^5 + \cdots \\
+x/(1+4x^2)^2 = x - 2 \cdot 4 x^3 + 3 \cdot 4^2 x^5 + \cdots
+= \sum_{n = 0}^{\infty} (-1)^n (n+1) 2^{2n} x^{2n+1}
+$$
+
+If $|x| \geq \frac{1}{2}$,
+
+$$ 
+\left| (-1)^n (n+1) 2^{2n} x^{2n+1} \right| \geq 
+\left| (n+1)2^{2n} (\frac{1}{2})^{2n+1} \right| = \frac{n+1}{2}
+$$
+
+So it's not bounded. So it converges on $(-1/2, 1/2)$.
+
+$\square$
+
+(c) $\log(1+x^2)$
+
+Solution:
+
+First take derivative we get $\frac{2x}{1 + x^2}$.
+
+$$ 
+\frac{2x}{1 + x^2} = 2x(1 - x^2 + x^4 - x^6 + \cdots)
+= 2x - 2x^3 + 2x^5 - 2x^7 + \cdots = g(x)
+$$
+
+Then we take antiderivatives
+
+$$ 
+\frac{x^2}{1} - \frac{x^4}{2} + \frac{x^6}{3}
+- \frac{x^8}{4} + \cdots
+$$
+
+We can see this series converges on $[-1, 1]$, but
+we are not sure about if it converges to $f(x)$.
+
+We can use the same argument in the 6.6.1, $g(x)$ is defined
+in $(-1, 1)$, so $G(x) = f(x)$ for $x \in (-1, 1)$. Also
+$G(1)$ is defined, so $G(x)$ is continuous at $1$, also
+$f(x)$ is continuous at $1$, so $G(1) = f(1)$, same thing
+for $G(-1) = f(-1)$.
+
+If We want to calculate the Lagrange Remainder, it's complex.
+
+The first derivatives is
+$$ 
+f'(x) = \frac{2x}{1 + x^2}
+$$
+
+The 2nd derivative is
+$$
+f''(x) = \frac{- 2x^2 + 2}{(1 + x^2)^2}
+$$
+
+The 3rd derivative is
+
+$$
+f'''(x) = \frac{-4x(1+x^2)^2 - 2(1-x^2)2(1+x^2)2x}{(1 + x^2)^4} \\
+= \frac{-4x(1+x^2) - 8x(1-x^2)}{(1 + x^2)^3} \\
+= \frac{4x^3 - 12x}{(1 + x^2)^3} \\
+$$
+
+$$
+f^{(4)}(x) = 
+\frac{(12x^2-12)(1+x^2)^3 - (4x^3-12x)3(1+x^2)^22x}{(1 + x^2)^6}\\
+\\
+\frac{12(x^2-1)(x^2+1)-(4x^3-12x)6x}{(1+x^2)^4} \\
+\frac{12(x^2-1)(x^2+1)-(4x^3-12x)6x}{(1+x^2)^4} \\
+\frac{-12x^4 + 72x^2 - 12}{(1+x^2)^4} \\
+$$
+
+In genenal, assume
+
+$$ 
+f^{(n)} = \frac{f_n(x)}{(1+x^2)^n} \text{ and } \\
+f_n(x) = a^{(n)}_n x^n + a^{(n)}_{n-2} x^{n-2} +
+a^{(n)}_{n-4} x^{n-4} + \cdots \\
+$$
+
+We want to compute
+
+$$ 
+f_{n+1}(x) = a^{(n+1)}_{n+1} x^{n+1}
++ a^{(n+1)}_{n-1} x^{n-1} +
+a^{(n+1)}_{n-3} x^{n-3} + \cdots 
+$$
+
+We have
+
+$$ 
+f_{n+1}(x) = f'_n(x) (1 + x^2) - 2nxf_n(x)
+$$
+
+So we have
+
+$$ 
+a^{(n+1)}_{n+1} = n a^{(n)}_n - 2n a^{(n)}_n = - na^{(n)}_n \\
+a^{(n+1)}_{n-1} = n a^{(n)}_n + (n-2)a^{(n)}_{n-2} - 2n a^{(n)}_{n-2} = n a^{(n)}_n - (n+2) a^{(n)}_{n-2} \\
+a^{(n+1)}_{n-3} = (n-2)a^{(n)}_{n-2} + (n-4)a^{(n)}_{n-4} -
+2n a^{(n)}_{n-4} = (n-2)a^{(n)}_{n-2} - (n+4) a^{(n)}_{n-4} 
+$$
+
+So we cannot tell from Lagrange Remainder theorem.
+
+$\square$
+
 ### 6.6.3.
 
 Derive the formula for the Taylor coeﬃcients given in
@@ -2252,7 +2450,7 @@ $$
 
 $\square$
 
-(c) Construct a general argument for why $g^{(0)} = 0$ for
+(c) Construct a general argument for why $g^{(n)}(0) = 0$ for
 all $n \in \mathbf{N}$.
 
 **Solution**: In general
@@ -2264,6 +2462,47 @@ $$
 \cdots \\
 = 0
 $$
+
+$\square$
+
+### 6.6.7.
+
+Find an example of each of the following or explain why no
+such function exists.
+
+(a) An infinitely diﬀerentiable function $g(x)$ on all of $\mathbf{R}$ with a Taylor series that converges to
+$g(x)$ only for $x ∈ (−1,1)$.
+
+**Solution**: Consider
+
+$$ 
+\frac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + \cdots
+$$
+
+It only converges on $(-1, 1)$.
+
+(b) An infinitely diﬀerentiable function $h(x)$ with the same Taylor series as
+$\sin(x)$ but such that $h(x) \not = \sin(x)$ for all $x \not = 0$.
+
+**Solution**: Yes, it's possible. Consider the $g(x)$ defined
+in exercise 6.6.6. And let $h(x) = \sin (x) + g(x)$.
+Since $h^{(n)}(0) = \sin ^{(n)} (0) + g^{(n)} (0) = \sin ^{(n)} (0)$, but $g(x) \not = 0$ for $x \not = 0$.
+So $h(x) \not = \sin (x), x \not = 0$.
+
+(c) An infinitely diﬀerentiable function $f(x)$ on all of $\mathbf{R}$ with a Taylor series
+that converges to $f(x)$ if and only if $x ≤ 0$.
+
+**Solution**: consider
+
+$$ 
+f(x) = \begin{cases}
+    g(x) &\text{if } x > 0 \\
+    0    &\text{if } x \leq 0 \\
+\end{cases} 
+$$
+
+Its Taylor series converges to $0$, which equals to $f(x)$ for
+$x \leq 0$. But when $f(x) \not = 0$ when $x > 0$.
 
 $\square$
 
