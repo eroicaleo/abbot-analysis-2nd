@@ -1560,6 +1560,52 @@ $$
 g(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}
 $$
 
+Anwser:
+
+(a) Is $g$ defined on $(−1,1)$? Is it continuous on this set?
+Is $g$ defined on $(−1,1]$? Is it continuous on this set?
+What happens on $[−1,1]$? Can
+the power series for $g(x)$ possibly converge for any
+other points $|x| > 1$?
+
+Solution: Given any $|x| < 1$, $g(x)$ converges absolutely.
+In addition $g(x)$ converges when $x = 1$.
+
+$$ 
+g(x) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots
+$$
+
+converges. Given any $n, m$,
+
+$$ 
+\left| 
+x_{m+1} + \cdots + x_n
+ \right| < |x_{m+1}| = \frac{1}{m + 1}
+$$
+
+On the other hand $g(-1)$ does not converge.
+
+For any $|x| > 1$, $|\frac{x^n}{n}|$ is not bounded.
+So $g(x)$ does not converge for $|x| > 1$.
+
+$\square$
+
+(b) For what values of $x$ is $g'(x)$ defined? Find a formula for g'.
+
+**Solution**:
+
+$$ 
+\frac{g(1) - g(x)}{1 - x} =\\
+1 - \frac{1 + x}{2} + \frac{1 + x + x^2}{3}
+- \frac{1 + x + x^2 + x^3}{4} + \cdots
+$$
+
+So I think $g(x)$ does not exists.
+
+So $g'(x)$ is defined on $(-1, 1)$.
+
+$\square$
+
 ### 6.5.2
 
 Find suitable coeﬃcients $(a_n)$ so that the resulting power
@@ -2692,5 +2738,656 @@ Given any $0 < c < x < 1$, so $x-c < 1-c$, so
 $$ 
 \lim_{N \to \infty} \frac{(2N+1)(x-c)^N}{(1-c)^{N+1}} \rightarrow 0
 $$
+
+$\square$
+
+## 6.7 The Weierstrass Approximation Theorem
+
+### 6.7.1
+
+Assuming WAT, show that if $f$ is continuous on $[a,b]$, then
+there exists a sequence $(p_n)$ of polynomials such that $p_n → f$ uniformly on $[a,b]$.
+
+**Proof**:
+
+Given $\epsilon = \frac{1}{n}$, we can find polynomial $p_n(x)$ such that
+
+$$ 
+\left| p_n(x) - f(x) \right| < \frac{1}{n} = \epsilon
+$$
+
+So we found a sequence $(p_n)$ of polynomials such that $p_n → f$ uniformly on $[a,b]$.
+
+$\square$
+
+### Definition 6.7.2.
+
+A continuous function $\phi : [a,b] → \mathbf{R}$ is polygonal if there is a partition
+
+$$ 
+a = x_0 < x_1 < x_2 < \cdots < x_{n} = b
+$$
+
+of $[a,b]$ such that $\phi$ is linear on each subinterval $[x_{i−1}, x_i]$, where $i = 1,...n$.
+
+### Theorem 6.7.3.
+
+Let $f : [a,b] → R$ be continuous. Given $ϵ > 0$, there exists a
+polygonal function $\phi$  satisfying
+
+$$ 
+\left| f(x) - \phi (x) \right| < \epsilon 
+$$
+
+for all $x \in [a, b]$.
+
+### Exercise 6.7.2.
+
+Prove Theorem 6.7.3.
+
+Proof: Since $f$ is continuous on $[a, b]$, then $f$ is uniformly
+continuous on $[a,b]$, so we can find $\delta$, as long as
+$\left| x - y \right| < \delta$, $\left| f(x) - f(y) \right| < \epsilon/2$.
+
+Then we can find 
+
+$$ 
+a = x_0 < x_1 < x_2 < \cdots < x_{n} = b
+$$
+
+such that $x_{i+1} - x_i < \delta$
+
+Assume $c \in [x_{i}, x_{i+1}]$
+
+$$ 
+\left| f(c) - \phi (c) \right| \leq 
+|f(c) - f(x_i)| + |f(x_i) - \phi (x_i)| + |\phi (x_i) - \phi (c)|
+\leq 
+|f(c) - f(x_i)| + |f(x_i) - \phi (x_i)| + |\phi (x_i) - \phi (x_{i+1})| \\
+|f(c) - f(x_i)| + 0 + |f(x_i) - f(x_{i+1})|
+< \epsilon /2 + 0 + \epsilon / 2 = \epsilon 
+$$
+
+$\square$
+
+### 6.7.3.
+
+(a) Find the second degree polynomial $p(x) = q_0+q_1x+q_2x^2$
+that interpolates the three points $(−1,1),(0,0)$, and $(1,1)$ on the graph of
+$g(x) = |x|$. Sketch $g(x)$ and $p(x)$ over $[−1,1]$ on the same set of axes.
+
+**Solution**:
+
+$$ 
+p(-1) = q_0 - q_1 + q_2 = 1 \\
+p(0)  = q_0 = 0 \\
+p(+1) = q_0 + q_1 + q_2 = 1 \\
+$$
+
+So $p(x) = x^2$.
+
+(b) Find the fourth degree polynomial that interpolates
+$g(x) = |x|$ at the points
+$x =−1,−1/2,0,1/2$, and $1$. Add a sketch of this polynomial to
+the graph from (a).
+
+**Solution**
+
+Let $p(x) = p_0 + p_1 x + p_2 x^2 + p_3 x^3 + p_4 x^4$,
+then $p(0) = 0$, so $p_0 = 0$.
+
+$$
+-p_1 + p_2 - p_3 + p_4 = p_1 + p_2 + p_3 + p_4 = 1 \\
+-8 p_1 + 4 p_2 - 2 p_3 + p_4 = 8 p_1 + 4 p_2 + 2 p_3 + p_4 = 8 \\
+p_2 + p_4 = 1\\
+p_1 + p_3 = 0\\
+16 p_1 + 4 p_3 = 0\\
+8 p_2 + 2 p_4 = 16 \\
+p_1 = p3 = 0 \\
+p_2 = 7 / 3 \\
+p_4 = -4 / 3
+$$
+
+$\square$
+
+### 6.7.4.
+
+Show that $f(x) = \sqrt[]{1−x}$ has Taylor series coeﬃcients an
+where $a_0 = 1$ and
+
+$$ 
+a_n =
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+$$
+
+**Solution**:
+
+$$ 
+f'(x) = - \frac{1}{2} (1-x)^{-\frac{1}{2}} \\
+f''(x) = - \frac{1 }{2^2} (1-x)^{-\frac{3}{2}} \\
+f'''(x) = - \frac{1 \cdot 3 }{2^3}
+(1-x)^{-\frac{5}{2}} \\
+$$
+
+So
+
+$$ 
+a_n = \frac{f^{(n)}(0)}{n!} =
+-\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3)}{2^n n!} (1-0)^{\frac{-(2n-1)}{2}} \\
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+$$
+
+$\square$
+
+### 6.7.5.
+(a) Follow the advice in Exercise 6.6.9 to prove the Cauchy
+form of the remainder:
+
+$$ 
+E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
+$$
+
+for some $c$ between $0$ and $x$.
+
+**Proof**: See the 6.6.9.
+
+(b) Use this result to prove equation (1) is valid for all $x ∈ (−1,1)$.
+
+**Proof**: 
+
+$$ 
+E_N(x) = -\frac{-1 \cdot 3 \cdot 5 \cdots (2N-1)}{2^{N+1}N!}
+(1 - c)^{\frac{-(2N+1)}{2}} (x-c)^N x \\
+= - \frac{1}{2} \cdot \frac{1 \cdot 3 \cdot 5 \cdots (2N-1)}
+{2 \cdot 4 \cdot 6 \cdots (2N)}
+\left( \frac{x - c}{1 - c} \right)^N \frac{x}{\sqrt{1 - c}}
+$$
+
+Note that $x < 1$ and $x - c < 1 - c$, so $x - c < x - xc$.
+that means $\frac{x - c}{1-c} < x$, also
+
+$$ 
+\frac{x}{\sqrt[]{1-c}} < \frac{x}{\sqrt[]{1-x}}
+$$
+
+So $E_N(x) < \frac{1}{2}x^N \frac{x}{\sqrt[]{1-x}} \rightarrow 0$.
+
+If $-1 < x < c < 0$, then
+
+$$ 
+cx > c \\
+x - cx < x-c \\
+0 > \frac{x-c}{1-c} > x > -1 \\
+\left| \frac{x-c}{1-c} \right|  < \left| x \right|
+$$
+
+Also 
+
+$$ 
+\left| \frac{x}{\sqrt[]{1-c}} \right|  < \left| x \right| 
+$$
+
+So
+
+$$ 
+\left| E_N(x) \right|  < \frac{1}{2} |x|^N \rightarrow 0
+$$
+
+$\square$
+
+### 6.7.6.
+
+(a) Let
+
+$$ 
+c_n =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}
+{2 \cdot 4 \cdot 6 \cdots 2n}
+$$
+
+for $n \geq 1$. Show $c_n < \frac{2}{\sqrt[]{2n+1}}$.
+
+**Proof**: We use induction $c_1 = \frac{1}{2} < \frac{2}{\sqrt[]{3}}$. And assume it holds for $k = n$. When $k = n + 1$ 
+
+$$ 
+c_{n+1} =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n+1)}
+{2 \cdot 4 \cdot 6 \cdots 2(n+1)} \\
+< \frac{2}{\sqrt[]{2n+1}} \frac{2n+1}{2(n+1)} \\
+= 2 \frac{\sqrt[]{2n + 1}}{2 (n + 1)} \\
+$$
+
+Because
+
+$$ 
+(2n + 1) (2n + 3) = 4n^2 + 8n + 3 < 4n^2 + 8n + 4 = (2n + 2)^2
+$$
+
+So
+
+$$ 
+2 \frac{\sqrt[]{2n + 1}}{2 (n + 1)} <\\
+2 \frac{\sqrt[]{2n + 1}}{\sqrt[]{2n + 1} \sqrt[]{2n + 3}} \\
+= \frac{2}{\sqrt[]{2n + 3}}
+$$
+
+So it holds for $k = n + 1$.
+
+$\square$
+
+(b) Use (a) to show that $\sum_{n = 0}^{\infty}a_{n}$
+converges (absolutely, in fact) where an is
+the sequence of Taylor coeﬃcients generated in Exercise 6.7.4.
+
+**Proof**:
+
+$$ 
+\sum_{n = 0}^{\infty}
+\left| 
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+ \right| =\\
+\sum_{n = 0}^{\infty}
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}
+{2 \cdot 4 \cdot 6 \cdots 2n}
+\cdot \frac{1}{2n-1} \\
+< \sum_{n = 0}^{\infty}
+\frac{2}{\sqrt[]{2n+1}} \cdot \frac{1}{2n-1} \\
+< \sum_{n = 0}^{\infty}
+\frac{2}{(2n-1)^{\frac{3}{2}}} \\
+\sum_{n = 0}^{\infty}
+\frac{1}{(2n-2)^{\frac{3}{2}}}
++ \frac{1}{(2n-1)^{\frac{3}{2}}}
+$$
+
+So it converges.
+
+(c) Carefully explain how this verifies that equation (1) holds for all $x ∈[-1, 1]$.
+
+**Proof**: $f(x) = \sum_{n = 0}^{\infty}a_{n} x^{n}$ converges
+at $[-1, 1]$, then according to Abel's Theorem, $f(x)$ is continuous on $[-1, 1]$.
+
+Let $g(x) = \sqrt[]{1-x}$, it's also continuous on
+$[-1, 1]$. Furthermore, $g(x) = f(x)$ on $(-1, 1)$.
+So
+
+$$ 
+f(1) = \lim_{x \to 1} f(x) = \lim_{x \to 1} g(x) = g(1)
+$$
+
+For the same reason, $f(-1) = g(-1)$.
+
+$\square$
+
+### 6.7.7.
+
+(a) Use the fact that $|a| = \sqrt[]{a^2}$ to prove that, given
+$\epsilon > 0$ there exists a polynomial $q(x)$ satisfying
+
+$$ 
+\left| |x| - q(x) \right| < \epsilon
+$$
+
+for all $x \in [-1, 1]$.
+
+**Proof**:
+
+Let $f_m(x) = \sum_{n = 0}^{m}a_{n} x^{n}$ be the partial
+sum of the Taylor series of $g(x) = \sqrt[]{1-x}$.
+
+We have proved $f_m(x) \rightarrow g(x)$ on $[-1. 1]$.
+From Abel's theorem, this converge is uniform.
+
+So give $\epsilon$, we can find $f_N(x)$ such that
+
+$$ 
+\left| 
+f_N(x) - \sqrt[]{1-x}
+ \right| < \epsilon
+$$
+
+for all $x \in [-1, 1]$.
+
+Now replace the $x$ with $1-t^2$.
+Note if $t \in [-1, 1]$, then $1 - t^2 \in [0, 1]$.
+Then we get
+
+$$ 
+\left| 
+f_N(1-t^2) - \sqrt[]{t^2} < \epsilon
+ \right| 
+$$
+
+for all $t \in [-1, 1]$. Also note that
+$f_N(1-t^2)$ is a polynomial of $t$.
+So we found this polynomial $q(t)$.
+
+$\square$
+
+(b) Generalize this conclusion to an arbitrary interval [a,b].
+
+**Proof**:
+
+We can find $R$ such that $[a, b] \subseteq [-R, R]$.
+From (a), we can find a polynomial $q(x)$ such that
+
+$$ 
+\left| q(x) - |x| \right|  < \epsilon / R
+$$
+
+For any $t \in [-R, R]$, let $p(t) = Rq(t/R)$.
+
+So
+
+$$ 
+\left| |t/R| - q(t/R) \right| < \epsilon/R\\
+$$
+
+So
+
+$R \left| |t/R| - q(t/R) \right| < \epsilon / R * R = \epsilon$
+
+So
+
+$$ 
+\left| |t| - p(t) \right|  < \epsilon
+$$
+
+For $t \in [-R, R]$.
+
+$\square$
+
+### 6.7.8.
+
+(a) Fix $a ∈ [−1,1]$ and sketch
+
+$$ 
+h_a(x) = \frac{1}{2} (|x-a| + (x-a))
+$$
+
+over $[-1,1]$. Note that $h_a$ is polygonal and satisfies
+$h_a(x) = 0$ for all $x ∈ [−1,a]$.
+
+**Solution**:
+
+$$ 
+h_a(x) =
+\begin{cases}
+    x - a &\text{if } a \leq x \leq 1\\
+    0 &\text{if } -1 \leq x < a\\
+\end{cases} 
+$$
+
+The shape is like this:
+
+```python
+          /
+         /
+        /
+ ______/
+-1     a    1
+```
+
+(b) Explain why we know $h_a(x)$ can be uniformly approximated with a polynomial on $[−1,1]$.
+
+**Proof**: We have proved that given $\epsilon$, for $|t|$, we can find a polynomial $f(t) = \sum_{n = 0}^{k}a_{n} t^{n}$ such
+that
+
+$$ 
+|f(t) - |t|| < \epsilon
+$$
+
+for $t \in [-2, 2]$. If $x, a \in [-1, 1]$, then
+$x - a \in [-2, 2]$. So
+
+$$ 
+|f(x - a) - |x - a| | < \epsilon
+$$
+
+For $x \in [-1, 1]$. Let $g(x) = f(x - a)$, then $g(x)$ is
+a polynomial of $x$. Now let
+
+$$ 
+l(x) = \frac{1}{2} (g(x) + (x - a)) \\
+|l(x) - h_a(x)| = \frac{1}{2} |(g(x) + (x - a)) - (|x-a| + (x-a))| \\
+= \frac{1}{2} | g(x) - |x-a|| < \epsilon / 2
+$$
+
+for $x \in [-1, 1]$.
+
+So $h_a(x)$ can be uniformly approximated with a polynomial
+$l(x)$ on $[−1,1]$.
+
+(c) Let $\phi$  be a polygonal function that is linear on each subinterval of the partition.
+
+$$ 
+-1 = a_0 < a_1 < a_2 < a_3 < \cdots < a_n = 1.
+$$
+
+Show there exist constants $b_0, b_1, b_2, b_3, \cdots, b_{n-1}$  so that
+
+$$ 
+\phi (x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x)
++ \cdots + b_{n-1} h_{a_{n-1}} (x)
+$$
+
+for all $x \in [-1, 1]$.
+
+**Solution**:
+
+We know
+
+$$
+\phi (a_1) = \phi (-1) + b_0 h_{a_0} (a_1) \\
+b_0 = \frac{\phi (a_1) - \phi (a_0)}{(a_1 - a_0)}
+$$
+
+Now plug $a_2$ 
+
+$$ 
+\phi (a_2) = \phi (-1) + b_0 h_{a_0} (a_2) + b_1 h_{a_1} (a_2)\\
+= \phi (a_0) +
+\frac{\phi (a_1) - \phi (a_0)}{(a_1 - a_0)} (a_2 - a_0) + b_1 (a_2 - a_1) \\
+= \frac{\phi (a_0) a_1 - \phi (a_0) a_0 + 
+\phi (a_1) a_2 - \phi (a_0) a_2 - \phi (a_1) a_0 + \phi (a_0) a_0}{a_1 - a0} + b_1(a_2 - a_1) \\
+= \frac{
+\phi (a_0) (a_1 - a_2) + \phi (a_1) (a_2 - a0)
+}{
+a_1 - a_0
+} + b_1(a_2 - a_1)\\
+$$
+
+So we can solve $b_1$. We can continue this process to solve
+all $b_n$.
+
+Let $j(x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x) + \cdots + b_{n-1} h_{a_{n-1}} (x)$.
+
+We know $j(x)$ is piecewise linear and $j(a_i) = \phi (a_i)$.
+So $j(x) = \phi (x)$.
+
+$\square$
+
+(d) Complete the proof of WAT for the interval $[−1,1]$, and then generalize to an arbitrary interval $[a,b]$.
+
+Proof: Given a continuous function $f(x)$ defined on $[−1,1]$ and
+$\epsilon$. Based on Theorem 6.7.3, we can find a polygonal
+function $\phi (x)$ defined on $[−1,1]$, such that
+
+$$ 
+\left| f(x) - \phi (x) \right| < \epsilon / 2
+$$
+
+for $x \in [−1,1]$. Since
+
+$$ 
+\phi (x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x)
++ \cdots + b_{n-1} h_{a_{n-1}} (x)
+$$
+
+And for each $h_{a_i}(x)$ we can find a polynomial $j_i(x)$,
+such that $|h_{a_i}(x) - j_i(x)| < \frac{\epsilon}{2 b_i n}$
+for $x \in [−1,1]$.
+
+Let
+
+$$ 
+J(x) = \phi (-1) + b_0 j_0 (x) + \cdots + b_{n-1} j_{n-1}(x)
+$$
+
+So
+
+$$ 
+\left| f(x) - J(x) \right| <
+|f(x) - \phi (x) | + | \phi (x) - J(x) |
+< \epsilon / 2 +
+\left| 
+\sum_{i = 0}^{n - 1} b_i (h_{a_i}(x) - j_i(x))
+ \right|
+< \epsilon / 2 + n \frac{\epsilon }{2n} = \epsilon
+$$
+
+To generalize to $[a, b]$, we consider the function
+
+$$ 
+H_a(x) = \frac{1}{2} (|x-a| + (x-a))
+$$
+
+defined on $[-R, R]$ and fix $a \in [-R, R]$.
+Then consider
+
+$$
+\frac{1}{R}H_a(x) = \frac{1}{2}
+(|x/R-a/R| + (x/R-a/R))
+$$ 
+
+Let $t = x/R, b = a/R$, we have $t, b \in [-1, 1]$, and
+
+$$ 
+H_a(x) = \frac{R}{2} (|t-b| + (t-b)) = R h_b(t)
+$$
+
+Then we can find polynomial $f(t) = \sum_{k = 0}^{n}a_{k} t^{k}$ 
+such that $|f(t) - h_b(t)| < \epsilon / R$, i.e.
+
+$$ 
+R|f(t) - h_b(t)| = 
+\left| 
+R \sum_{k = 0}^{n}a_{k} (x/R)^{k} - R h_b(t)
+ \right| \\
+\left| 
+= \sum_{k = 0}^{n} \frac{a_{k}}{R^{k-1}}  x^{k}
+- H_a(x)
+\right| < \epsilon
+$$
+
+for $x \in [-R, R]$.
+
+Then we can use exactly the same argument for $[-1, 1]$ to
+prove $[-R, R]$.
+
+$\square$
+
+### 6.7.9.
+
+(a) Find a counterexample which shows that WAT is not
+true if we replace the closed interval $[a,b]$ with the open interval $(a,b)$.
+
+**Solution**:
+
+Consider $f(x) = \frac{1}{x}$ defined on $(0, 1)$. Given
+$\epsilon = 1$, and assume we can find
+$g(x) = \sum_{k = 0}^{n}a_{k} x^{k}$ such that
+
+$$ 
+|f(x) - g(x)| < 1
+$$
+
+for all $x \in (0, 1)$.
+
+Note that $\lim_{x \to 0} g(x) = a_0$. So we can find
+a $U_{\delta}(0)$ such that $x \in U_{\delta}(0)$, then
+$|g(x) - a_0| < \epsilon$. So $|g(x)| < a_0 + \epsilon$.
+
+On the other hand, $\lim_{x \to 0} \frac{1}{x} = \infty$,
+so $|f(x) - g(x)|$ cannot be less than 1.
+
+$\square$
+
+(b) What happens if we replace $[a,b]$ with the closed set
+$[a,∞)$. Does the theorem still hold?
+
+**Solution**: No it does not.
+Consider $f(x) = e^x$ defined on $[0, \infty)$. Given any polynomial
+$g(x) = \sum_{k = 0}^{n}a_{k} x^{k}$, then we can find
+$M$ such that $|a_k| < M$.
+
+Then we have $|g(x)| < M \sum_{k = 0}^{n} x^k < M (n+1) x^n$ for
+$x \geq 1$.
+
+But $e^x > Kx^n$ for any $K, n$ as long as $x$ is large enough.
+
+$\square$
+
+### 6.7.10.
+
+Is there a countable subset of polynomials $C$ with the
+property that every continuous function on $[a,b]$ can be uniformly approximated by polynomials from $C$?
+
+**Proof**: Consider all polynomials only with rational number
+coefficients. This set is countable.
+
+Given a continuous function $f(x)$, and $\epsilon > 0$, we can find a polynomial $g(x) = \sum_{n = 0}^{k}a_{n} x^{n}$ such that
+$|f(x) - g(x)| < \epsilon / 2$.
+
+On the other hand we can find $h(x) = \sum_{n = 0}^{k}b_{n} x^{n} \in C$ and let $M = \max \left\{ 1, |b|^k, |a|^k \right\}$ 
+
+$$ 
+|g(x) - h(x)|
+< \sum_{n = 0}^{k}| a_{n} - b_n| |x^{n}| \\
+< M \sum_{n = 0}^{k}| a_{n} - b_n|
+$$
+
+We can select $b_n \in \mathbf{Q}$ such that $|a_n - b_n| < \epsilon /(2(k+1)M)$
+
+So $|g(x) - h(x)| < \epsilon  / 2$.
+
+Then $|f(x) - h(x)| < \epsilon$
+
+$\square$
+
+### 6.7.11
+
+Assume that $f$ has a continuous derivative on $[a,b]$. Show
+that there exists a polynomial $p(x)$ such that
+
+$$ 
+|f(x) - p(x) | < \epsilon \text{ and }
+|f'(x) - p'(x) | < \epsilon
+$$
+
+**Proof**: Given $\epsilon$, from WAT, we know we can find
+$q(x)$ subh that $|f'(x) - q(x)| < \frac{\epsilon}{b - a}$.
+
+Take the antiderivative of $q(x)$ and call it $p_0(x)$, note
+$p_0'(x) = q(x)$. Let $c = f(a) - p_0(a)$, and let
+$p(x) = p_0(x) + c$. We have
+
+$$ 
+p'(x) = q(x) \\
+p(a) = f(a)
+$$
+
+Now we can use mean value theorem and let $g(x) = f(x) - p(x)$:
+
+$$ 
+\frac{g(x) - g(a)}{x - a} = g'(c) \\
+|g(x) - g(a)| = |g'(c)| \cdot (x - a) =\\
+|f'(x) - q(c)| (x - a) < \frac{\epsilon}{b - a} \cdot (x - a) \\
+< \epsilon
+$$
+
+So we have $|f(x) - p(x) | < \epsilon$.
 
 $\square$

@@ -114,7 +114,7 @@ $U_{\delta}(c)$, $|f_n(x) - f_n(c)| < \epsilon / 3$.
 Then
 
 $$ 
-|f(x) - f(x) | \leq \\
+|f(x) - f(c) | \leq \\
 |f(x) - f_n(x) | + |f_n(x) - f_n(c)| + |f_n(c) - f(c)| \leq \\
 \epsilon / 3 + \epsilon / 3 + \epsilon / 3 = \epsilon
 $$
