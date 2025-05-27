@@ -67,6 +67,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06notes/">Chapter 06 Notes</a>
+                </li>
+              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 06 Exercises</a>
     <ul class="current">
@@ -191,6 +195,36 @@
     <li class="toctree-l3"><a class="reference internal" href="#669-cauchys-remainder-theorem">6.6.9 (Cauchy’s Remainder Theorem).</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#6610">6.6.10.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#67-the-weierstrass-approximation-theorem">6.7 The Weierstrass Approximation Theorem</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#671">6.7.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-672">Definition 6.7.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-673">Theorem 6.7.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-672">Exercise 6.7.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#673">6.7.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#674">6.7.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#675">6.7.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#676">6.7.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#677">6.7.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#678">6.7.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#679">6.7.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6710">6.7.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6711">6.7.11</a>
     </li>
         </ul>
     </li>
@@ -1623,6 +1657,47 @@ h_n(x) - h_n(y) =
 g(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}
 </script>
 </p>
+<p>Anwser:</p>
+<p>(a) Is <script type="math/tex">g</script> defined on <script type="math/tex">(−1,1)</script>? Is it continuous on this set?
+Is <script type="math/tex">g</script> defined on <script type="math/tex">(−1,1]</script>? Is it continuous on this set?
+What happens on <script type="math/tex">[−1,1]</script>? Can
+the power series for <script type="math/tex">g(x)</script> possibly converge for any
+other points <script type="math/tex">|x| > 1</script>?</p>
+<p>Solution: Given any <script type="math/tex">|x| < 1</script>, <script type="math/tex">g(x)</script> converges absolutely.
+In addition <script type="math/tex">g(x)</script> converges when <script type="math/tex">x = 1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots
+</script>
+</p>
+<p>converges. Given any <script type="math/tex">n, m</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+x_{m+1} + \cdots + x_n
+ \right| < |x_{m+1}| = \frac{1}{m + 1}
+</script>
+</p>
+<p>On the other hand <script type="math/tex">g(-1)</script> does not converge.</p>
+<p>For any <script type="math/tex">|x| > 1</script>, <script type="math/tex">|\frac{x^n}{n}|</script> is not bounded.
+So <script type="math/tex">g(x)</script> does not converge for <script type="math/tex">|x| > 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) For what values of <script type="math/tex">x</script> is <script type="math/tex">g'(x)</script> defined? Find a formula for g'.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{g(1) - g(x)}{1 - x} =\\
+1 - \frac{1 + x}{2} + \frac{1 + x + x^2}{3}
+- \frac{1 + x + x^2 + x^3}{4} + \cdots
+</script>
+</p>
+<p>So I think <script type="math/tex">g(x)</script> does not exists.</p>
+<p>So <script type="math/tex">g'(x)</script> is defined on <script type="math/tex">(-1, 1)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="652">6.5.2</h3>
 <p>Find suitable coeﬃcients <script type="math/tex">(a_n)</script> so that the resulting power
 series <script type="math/tex">\sum_{n = 0}^{\infty}a_n x^n</script> has the given
@@ -2690,11 +2765,605 @@ E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x \\
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="67-the-weierstrass-approximation-theorem">6.7 The Weierstrass Approximation Theorem</h2>
+<h3 id="671">6.7.1</h3>
+<p>Assuming WAT, show that if <script type="math/tex">f</script> is continuous on <script type="math/tex">[a,b]</script>, then
+there exists a sequence <script type="math/tex">(p_n)</script> of polynomials such that <script type="math/tex">p_n → f</script> uniformly on <script type="math/tex">[a,b]</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">\epsilon = \frac{1}{n}</script>, we can find polynomial <script type="math/tex">p_n(x)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| p_n(x) - f(x) \right| < \frac{1}{n} = \epsilon
+</script>
+</p>
+<p>So we found a sequence <script type="math/tex">(p_n)</script> of polynomials such that <script type="math/tex">p_n → f</script> uniformly on <script type="math/tex">[a,b]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-672">Definition 6.7.2.</h3>
+<p>A continuous function <script type="math/tex">\phi : [a,b] → \mathbf{R}</script> is polygonal if there is a partition</p>
+<p>
+<script type="math/tex; mode=display"> 
+a = x_0 < x_1 < x_2 < \cdots < x_{n} = b
+</script>
+</p>
+<p>of <script type="math/tex">[a,b]</script> such that <script type="math/tex">\phi</script> is linear on each subinterval <script type="math/tex">[x_{i−1}, x_i]</script>, where <script type="math/tex">i = 1,...n</script>.</p>
+<h3 id="theorem-673">Theorem 6.7.3.</h3>
+<p>Let <script type="math/tex">f : [a,b] → R</script> be continuous. Given <script type="math/tex">ϵ > 0</script>, there exists a
+polygonal function <script type="math/tex">\phi</script>  satisfying</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(x) - \phi (x) \right| < \epsilon 
+</script>
+</p>
+<p>for all <script type="math/tex">x \in [a, b]</script>.</p>
+<h3 id="exercise-672">Exercise 6.7.2.</h3>
+<p>Prove Theorem 6.7.3.</p>
+<p>Proof: Since <script type="math/tex">f</script> is continuous on <script type="math/tex">[a, b]</script>, then <script type="math/tex">f</script> is uniformly
+continuous on <script type="math/tex">[a,b]</script>, so we can find <script type="math/tex">\delta</script>, as long as
+<script type="math/tex">\left| x - y \right| < \delta</script>, <script type="math/tex">\left| f(x) - f(y) \right| < \epsilon/2</script>.</p>
+<p>Then we can find </p>
+<p>
+<script type="math/tex; mode=display"> 
+a = x_0 < x_1 < x_2 < \cdots < x_{n} = b
+</script>
+</p>
+<p>such that <script type="math/tex">x_{i+1} - x_i < \delta</script>
+</p>
+<p>Assume <script type="math/tex">c \in [x_{i}, x_{i+1}]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(c) - \phi (c) \right| \leq 
+|f(c) - f(x_i)| + |f(x_i) - \phi (x_i)| + |\phi (x_i) - \phi (c)|
+\leq 
+|f(c) - f(x_i)| + |f(x_i) - \phi (x_i)| + |\phi (x_i) - \phi (x_{i+1})| \\
+|f(c) - f(x_i)| + 0 + |f(x_i) - f(x_{i+1})|
+< \epsilon /2 + 0 + \epsilon / 2 = \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="673">6.7.3.</h3>
+<p>(a) Find the second degree polynomial <script type="math/tex">p(x) = q_0+q_1x+q_2x^2</script>
+that interpolates the three points <script type="math/tex">(−1,1),(0,0)</script>, and <script type="math/tex">(1,1)</script> on the graph of
+<script type="math/tex">g(x) = |x|</script>. Sketch <script type="math/tex">g(x)</script> and <script type="math/tex">p(x)</script> over <script type="math/tex">[−1,1]</script> on the same set of axes.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(-1) = q_0 - q_1 + q_2 = 1 \\
+p(0)  = q_0 = 0 \\
+p(+1) = q_0 + q_1 + q_2 = 1 \\
+</script>
+</p>
+<p>So <script type="math/tex">p(x) = x^2</script>.</p>
+<p>(b) Find the fourth degree polynomial that interpolates
+<script type="math/tex">g(x) = |x|</script> at the points
+<script type="math/tex">x =−1,−1/2,0,1/2</script>, and <script type="math/tex">1</script>. Add a sketch of this polynomial to
+the graph from (a).</p>
+<p><strong>Solution</strong></p>
+<p>Let <script type="math/tex">p(x) = p_0 + p_1 x + p_2 x^2 + p_3 x^3 + p_4 x^4</script>,
+then <script type="math/tex">p(0) = 0</script>, so <script type="math/tex">p_0 = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+-p_1 + p_2 - p_3 + p_4 = p_1 + p_2 + p_3 + p_4 = 1 \\
+-8 p_1 + 4 p_2 - 2 p_3 + p_4 = 8 p_1 + 4 p_2 + 2 p_3 + p_4 = 8 \\
+p_2 + p_4 = 1\\
+p_1 + p_3 = 0\\
+16 p_1 + 4 p_3 = 0\\
+8 p_2 + 2 p_4 = 16 \\
+p_1 = p3 = 0 \\
+p_2 = 7 / 3 \\
+p_4 = -4 / 3
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="674">6.7.4.</h3>
+<p>Show that <script type="math/tex">f(x) = \sqrt[]{1−x}</script> has Taylor series coeﬃcients an
+where <script type="math/tex">a_0 = 1</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n =
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f'(x) = - \frac{1}{2} (1-x)^{-\frac{1}{2}} \\
+f''(x) = - \frac{1 }{2^2} (1-x)^{-\frac{3}{2}} \\
+f'''(x) = - \frac{1 \cdot 3 }{2^3}
+(1-x)^{-\frac{5}{2}} \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n = \frac{f^{(n)}(0)}{n!} =
+-\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3)}{2^n n!} (1-0)^{\frac{-(2n-1)}{2}} \\
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="675">6.7.5.</h3>
+<p>(a) Follow the advice in Exercise 6.6.9 to prove the Cauchy
+form of the remainder:</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x
+</script>
+</p>
+<p>for some <script type="math/tex">c</script> between <script type="math/tex">0</script> and <script type="math/tex">x</script>.</p>
+<p><strong>Proof</strong>: See the 6.6.9.</p>
+<p>(b) Use this result to prove equation (1) is valid for all <script type="math/tex">x ∈ (−1,1)</script>.</p>
+<p><strong>Proof</strong>: </p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x) = -\frac{-1 \cdot 3 \cdot 5 \cdots (2N-1)}{2^{N+1}N!}
+(1 - c)^{\frac{-(2N+1)}{2}} (x-c)^N x \\
+= - \frac{1}{2} \cdot \frac{1 \cdot 3 \cdot 5 \cdots (2N-1)}
+{2 \cdot 4 \cdot 6 \cdots (2N)}
+\left( \frac{x - c}{1 - c} \right)^N \frac{x}{\sqrt{1 - c}}
+</script>
+</p>
+<p>Note that <script type="math/tex">x < 1</script> and <script type="math/tex">x - c < 1 - c</script>, so <script type="math/tex">x - c < x - xc</script>.
+that means <script type="math/tex">\frac{x - c}{1-c} < x</script>, also</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{x}{\sqrt[]{1-c}} < \frac{x}{\sqrt[]{1-x}}
+</script>
+</p>
+<p>So <script type="math/tex">E_N(x) < \frac{1}{2}x^N \frac{x}{\sqrt[]{1-x}} \rightarrow 0</script>.</p>
+<p>If <script type="math/tex">-1 < x < c < 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+cx > c \\
+x - cx < x-c \\
+0 > \frac{x-c}{1-c} > x > -1 \\
+\left| \frac{x-c}{1-c} \right|  < \left| x \right|
+</script>
+</p>
+<p>Also </p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \frac{x}{\sqrt[]{1-c}} \right|  < \left| x \right| 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| E_N(x) \right|  < \frac{1}{2} |x|^N \rightarrow 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="676">6.7.6.</h3>
+<p>(a) Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+c_n =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}
+{2 \cdot 4 \cdot 6 \cdots 2n}
+</script>
+</p>
+<p>for <script type="math/tex">n \geq 1</script>. Show <script type="math/tex">c_n < \frac{2}{\sqrt[]{2n+1}}</script>.</p>
+<p><strong>Proof</strong>: We use induction <script type="math/tex">c_1 = \frac{1}{2} < \frac{2}{\sqrt[]{3}}</script>. And assume it holds for <script type="math/tex">k = n</script>. When <script type="math/tex">k = n + 1</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+c_{n+1} =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n+1)}
+{2 \cdot 4 \cdot 6 \cdots 2(n+1)} \\
+< \frac{2}{\sqrt[]{2n+1}} \frac{2n+1}{2(n+1)} \\
+= 2 \frac{\sqrt[]{2n + 1}}{2 (n + 1)} \\
+</script>
+</p>
+<p>Because</p>
+<p>
+<script type="math/tex; mode=display"> 
+(2n + 1) (2n + 3) = 4n^2 + 8n + 3 < 4n^2 + 8n + 4 = (2n + 2)^2
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+2 \frac{\sqrt[]{2n + 1}}{2 (n + 1)} <\\
+2 \frac{\sqrt[]{2n + 1}}{\sqrt[]{2n + 1} \sqrt[]{2n + 3}} \\
+= \frac{2}{\sqrt[]{2n + 3}}
+</script>
+</p>
+<p>So it holds for <script type="math/tex">k = n + 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use (a) to show that <script type="math/tex">\sum_{n = 0}^{\infty}a_{n}</script>
+converges (absolutely, in fact) where an is
+the sequence of Taylor coeﬃcients generated in Exercise 6.7.4.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 0}^{\infty}
+\left| 
+\frac{-1 \cdot 3 \cdot 5 \cdots (2n-3) }
+{2 \cdot 4 \cdot 6 \cdots 2n}
+ \right| =\\
+\sum_{n = 0}^{\infty}
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}
+{2 \cdot 4 \cdot 6 \cdots 2n}
+\cdot \frac{1}{2n-1} \\
+< \sum_{n = 0}^{\infty}
+\frac{2}{\sqrt[]{2n+1}} \cdot \frac{1}{2n-1} \\
+< \sum_{n = 0}^{\infty}
+\frac{2}{(2n-1)^{\frac{3}{2}}} \\
+\sum_{n = 0}^{\infty}
+\frac{1}{(2n-2)^{\frac{3}{2}}}
++ \frac{1}{(2n-1)^{\frac{3}{2}}}
+</script>
+</p>
+<p>So it converges.</p>
+<p>(c) Carefully explain how this verifies that equation (1) holds for all <script type="math/tex">x ∈[-1, 1]</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">f(x) = \sum_{n = 0}^{\infty}a_{n} x^{n}</script> converges
+at <script type="math/tex">[-1, 1]</script>, then according to Abel's Theorem, <script type="math/tex">f(x)</script> is continuous on <script type="math/tex">[-1, 1]</script>.</p>
+<p>Let <script type="math/tex">g(x) = \sqrt[]{1-x}</script>, it's also continuous on
+<script type="math/tex">[-1, 1]</script>. Furthermore, <script type="math/tex">g(x) = f(x)</script> on <script type="math/tex">(-1, 1)</script>.
+So</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(1) = \lim_{x \to 1} f(x) = \lim_{x \to 1} g(x) = g(1)
+</script>
+</p>
+<p>For the same reason, <script type="math/tex">f(-1) = g(-1)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="677">6.7.7.</h3>
+<p>(a) Use the fact that <script type="math/tex">|a| = \sqrt[]{a^2}</script> to prove that, given
+<script type="math/tex">\epsilon > 0</script> there exists a polynomial <script type="math/tex">q(x)</script> satisfying</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| |x| - q(x) \right| < \epsilon
+</script>
+</p>
+<p>for all <script type="math/tex">x \in [-1, 1]</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">f_m(x) = \sum_{n = 0}^{m}a_{n} x^{n}</script> be the partial
+sum of the Taylor series of <script type="math/tex">g(x) = \sqrt[]{1-x}</script>.</p>
+<p>We have proved <script type="math/tex">f_m(x) \rightarrow g(x)</script> on <script type="math/tex">[-1. 1]</script>.
+From Abel's theorem, this converge is uniform.</p>
+<p>So give <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">f_N(x)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+f_N(x) - \sqrt[]{1-x}
+ \right| < \epsilon
+</script>
+</p>
+<p>for all <script type="math/tex">x \in [-1, 1]</script>.</p>
+<p>Now replace the <script type="math/tex">x</script> with <script type="math/tex">1-t^2</script>.
+Note if <script type="math/tex">t \in [-1, 1]</script>, then <script type="math/tex">1 - t^2 \in [0, 1]</script>.
+Then we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+f_N(1-t^2) - \sqrt[]{t^2} < \epsilon
+ \right| 
+</script>
+</p>
+<p>for all <script type="math/tex">t \in [-1, 1]</script>. Also note that
+<script type="math/tex">f_N(1-t^2)</script> is a polynomial of <script type="math/tex">t</script>.
+So we found this polynomial <script type="math/tex">q(t)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Generalize this conclusion to an arbitrary interval [a,b].</p>
+<p><strong>Proof</strong>:</p>
+<p>We can find <script type="math/tex">R</script> such that <script type="math/tex">[a, b] \subseteq [-R, R]</script>.
+From (a), we can find a polynomial <script type="math/tex">q(x)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| q(x) - |x| \right|  < \epsilon / R
+</script>
+</p>
+<p>For any <script type="math/tex">t \in [-R, R]</script>, let <script type="math/tex">p(t) = Rq(t/R)</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| |t/R| - q(t/R) \right| < \epsilon/R\\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex">R \left| |t/R| - q(t/R) \right| < \epsilon / R * R = \epsilon</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| |t| - p(t) \right|  < \epsilon
+</script>
+</p>
+<p>For <script type="math/tex">t \in [-R, R]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="678">6.7.8.</h3>
+<p>(a) Fix <script type="math/tex">a ∈ [−1,1]</script> and sketch</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_a(x) = \frac{1}{2} (|x-a| + (x-a))
+</script>
+</p>
+<p>over <script type="math/tex">[-1,1]</script>. Note that <script type="math/tex">h_a</script> is polygonal and satisfies
+<script type="math/tex">h_a(x) = 0</script> for all <script type="math/tex">x ∈ [−1,a]</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_a(x) =
+\begin{cases}
+    x - a &\text{if } a \leq x \leq 1\\
+    0 &\text{if } -1 \leq x < a\\
+\end{cases} 
+</script>
+</p>
+<p>The shape is like this:</p>
+<pre><code class="language-python">          /
+         /
+        /
+ ______/
+-1     a    1
+</code></pre>
+<p>(b) Explain why we know <script type="math/tex">h_a(x)</script> can be uniformly approximated with a polynomial on <script type="math/tex">[−1,1]</script>.</p>
+<p><strong>Proof</strong>: We have proved that given <script type="math/tex">\epsilon</script>, for <script type="math/tex">|t|</script>, we can find a polynomial <script type="math/tex">f(t) = \sum_{n = 0}^{k}a_{n} t^{n}</script> such
+that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(t) - |t|| < \epsilon
+</script>
+</p>
+<p>for <script type="math/tex">t \in [-2, 2]</script>. If <script type="math/tex">x, a \in [-1, 1]</script>, then
+<script type="math/tex">x - a \in [-2, 2]</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x - a) - |x - a| | < \epsilon
+</script>
+</p>
+<p>For <script type="math/tex">x \in [-1, 1]</script>. Let <script type="math/tex">g(x) = f(x - a)</script>, then <script type="math/tex">g(x)</script> is
+a polynomial of <script type="math/tex">x</script>. Now let</p>
+<p>
+<script type="math/tex; mode=display"> 
+l(x) = \frac{1}{2} (g(x) + (x - a)) \\
+|l(x) - h_a(x)| = \frac{1}{2} |(g(x) + (x - a)) - (|x-a| + (x-a))| \\
+= \frac{1}{2} | g(x) - |x-a|| < \epsilon / 2
+</script>
+</p>
+<p>for <script type="math/tex">x \in [-1, 1]</script>.</p>
+<p>So <script type="math/tex">h_a(x)</script> can be uniformly approximated with a polynomial
+<script type="math/tex">l(x)</script> on <script type="math/tex">[−1,1]</script>.</p>
+<p>(c) Let <script type="math/tex">\phi</script>  be a polygonal function that is linear on each subinterval of the partition.</p>
+<p>
+<script type="math/tex; mode=display"> 
+-1 = a_0 < a_1 < a_2 < a_3 < \cdots < a_n = 1.
+</script>
+</p>
+<p>Show there exist constants <script type="math/tex">b_0, b_1, b_2, b_3, \cdots, b_{n-1}</script>  so that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\phi (x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x)
++ \cdots + b_{n-1} h_{a_{n-1}} (x)
+</script>
+</p>
+<p>for all <script type="math/tex">x \in [-1, 1]</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>We know</p>
+<p>
+<script type="math/tex; mode=display">
+\phi (a_1) = \phi (-1) + b_0 h_{a_0} (a_1) \\
+b_0 = \frac{\phi (a_1) - \phi (a_0)}{(a_1 - a_0)}
+</script>
+</p>
+<p>Now plug <script type="math/tex">a_2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\phi (a_2) = \phi (-1) + b_0 h_{a_0} (a_2) + b_1 h_{a_1} (a_2)\\
+= \phi (a_0) +
+\frac{\phi (a_1) - \phi (a_0)}{(a_1 - a_0)} (a_2 - a_0) + b_1 (a_2 - a_1) \\
+= \frac{\phi (a_0) a_1 - \phi (a_0) a_0 + 
+\phi (a_1) a_2 - \phi (a_0) a_2 - \phi (a_1) a_0 + \phi (a_0) a_0}{a_1 - a0} + b_1(a_2 - a_1) \\
+= \frac{
+\phi (a_0) (a_1 - a_2) + \phi (a_1) (a_2 - a0)
+}{
+a_1 - a_0
+} + b_1(a_2 - a_1)\\
+</script>
+</p>
+<p>So we can solve <script type="math/tex">b_1</script>. We can continue this process to solve
+all <script type="math/tex">b_n</script>.</p>
+<p>Let <script type="math/tex">j(x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x) + \cdots + b_{n-1} h_{a_{n-1}} (x)</script>.</p>
+<p>We know <script type="math/tex">j(x)</script> is piecewise linear and <script type="math/tex">j(a_i) = \phi (a_i)</script>.
+So <script type="math/tex">j(x) = \phi (x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Complete the proof of WAT for the interval <script type="math/tex">[−1,1]</script>, and then generalize to an arbitrary interval <script type="math/tex">[a,b]</script>.</p>
+<p>Proof: Given a continuous function <script type="math/tex">f(x)</script> defined on <script type="math/tex">[−1,1]</script> and
+<script type="math/tex">\epsilon</script>. Based on Theorem 6.7.3, we can find a polygonal
+function <script type="math/tex">\phi (x)</script> defined on <script type="math/tex">[−1,1]</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(x) - \phi (x) \right| < \epsilon / 2
+</script>
+</p>
+<p>for <script type="math/tex">x \in [−1,1]</script>. Since</p>
+<p>
+<script type="math/tex; mode=display"> 
+\phi (x) = \phi (-1) + b_0 h_{a_0} (x) + b_1 h_{a_1} (x)
++ \cdots + b_{n-1} h_{a_{n-1}} (x)
+</script>
+</p>
+<p>And for each <script type="math/tex">h_{a_i}(x)</script> we can find a polynomial <script type="math/tex">j_i(x)</script>,
+such that <script type="math/tex">|h_{a_i}(x) - j_i(x)| < \frac{\epsilon}{2 b_i n}</script>
+for <script type="math/tex">x \in [−1,1]</script>.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+J(x) = \phi (-1) + b_0 j_0 (x) + \cdots + b_{n-1} j_{n-1}(x)
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(x) - J(x) \right| <
+|f(x) - \phi (x) | + | \phi (x) - J(x) |
+< \epsilon / 2 +
+\left| 
+\sum_{i = 0}^{n - 1} b_i (h_{a_i}(x) - j_i(x))
+ \right|
+< \epsilon / 2 + n \frac{\epsilon }{2n} = \epsilon
+</script>
+</p>
+<p>To generalize to <script type="math/tex">[a, b]</script>, we consider the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+H_a(x) = \frac{1}{2} (|x-a| + (x-a))
+</script>
+</p>
+<p>defined on <script type="math/tex">[-R, R]</script> and fix <script type="math/tex">a \in [-R, R]</script>.
+Then consider</p>
+<p>
+<script type="math/tex; mode=display">
+\frac{1}{R}H_a(x) = \frac{1}{2}
+(|x/R-a/R| + (x/R-a/R))
+</script>
+</p>
+<p>Let <script type="math/tex">t = x/R, b = a/R</script>, we have <script type="math/tex">t, b \in [-1, 1]</script>, and</p>
+<p>
+<script type="math/tex; mode=display"> 
+H_a(x) = \frac{R}{2} (|t-b| + (t-b)) = R h_b(t)
+</script>
+</p>
+<p>Then we can find polynomial <script type="math/tex">f(t) = \sum_{k = 0}^{n}a_{k} t^{k}</script> 
+such that <script type="math/tex">|f(t) - h_b(t)| < \epsilon / R</script>, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+R|f(t) - h_b(t)| = 
+\left| 
+R \sum_{k = 0}^{n}a_{k} (x/R)^{k} - R h_b(t)
+ \right| \\
+\left| 
+= \sum_{k = 0}^{n} \frac{a_{k}}{R^{k-1}}  x^{k}
+- H_a(x)
+\right| < \epsilon
+</script>
+</p>
+<p>for <script type="math/tex">x \in [-R, R]</script>.</p>
+<p>Then we can use exactly the same argument for <script type="math/tex">[-1, 1]</script> to
+prove <script type="math/tex">[-R, R]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="679">6.7.9.</h3>
+<p>(a) Find a counterexample which shows that WAT is not
+true if we replace the closed interval <script type="math/tex">[a,b]</script> with the open interval <script type="math/tex">(a,b)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">f(x) = \frac{1}{x}</script> defined on <script type="math/tex">(0, 1)</script>. Given
+<script type="math/tex">\epsilon = 1</script>, and assume we can find
+<script type="math/tex">g(x) = \sum_{k = 0}^{n}a_{k} x^{k}</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - g(x)| < 1
+</script>
+</p>
+<p>for all <script type="math/tex">x \in (0, 1)</script>.</p>
+<p>Note that <script type="math/tex">\lim_{x \to 0} g(x) = a_0</script>. So we can find
+a <script type="math/tex">U_{\delta}(0)</script> such that <script type="math/tex">x \in U_{\delta}(0)</script>, then
+<script type="math/tex">|g(x) - a_0| < \epsilon</script>. So <script type="math/tex">|g(x)| < a_0 + \epsilon</script>.</p>
+<p>On the other hand, <script type="math/tex">\lim_{x \to 0} \frac{1}{x} = \infty</script>,
+so <script type="math/tex">|f(x) - g(x)|</script> cannot be less than 1.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) What happens if we replace <script type="math/tex">[a,b]</script> with the closed set
+<script type="math/tex">[a,∞)</script>. Does the theorem still hold?</p>
+<p><strong>Solution</strong>: No it does not.
+Consider <script type="math/tex">f(x) = e^x</script> defined on <script type="math/tex">[0, \infty)</script>. Given any polynomial
+<script type="math/tex">g(x) = \sum_{k = 0}^{n}a_{k} x^{k}</script>, then we can find
+<script type="math/tex">M</script> such that <script type="math/tex">|a_k| < M</script>.</p>
+<p>Then we have <script type="math/tex">|g(x)| < M \sum_{k = 0}^{n} x^k < M (n+1) x^n</script> for
+<script type="math/tex">x \geq 1</script>.</p>
+<p>But <script type="math/tex">e^x > Kx^n</script> for any <script type="math/tex">K, n</script> as long as <script type="math/tex">x</script> is large enough.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="6710">6.7.10.</h3>
+<p>Is there a countable subset of polynomials <script type="math/tex">C</script> with the
+property that every continuous function on <script type="math/tex">[a,b]</script> can be uniformly approximated by polynomials from <script type="math/tex">C</script>?</p>
+<p><strong>Proof</strong>: Consider all polynomials only with rational number
+coefficients. This set is countable.</p>
+<p>Given a continuous function <script type="math/tex">f(x)</script>, and <script type="math/tex">\epsilon > 0</script>, we can find a polynomial <script type="math/tex">g(x) = \sum_{n = 0}^{k}a_{n} x^{n}</script> such that
+<script type="math/tex">|f(x) - g(x)| < \epsilon / 2</script>.</p>
+<p>On the other hand we can find <script type="math/tex">h(x) = \sum_{n = 0}^{k}b_{n} x^{n} \in C</script> and let <script type="math/tex">M = \max \left\{ 1, |b|^k, |a|^k \right\}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g(x) - h(x)|
+< \sum_{n = 0}^{k}| a_{n} - b_n| |x^{n}| \\
+< M \sum_{n = 0}^{k}| a_{n} - b_n|
+</script>
+</p>
+<p>We can select <script type="math/tex">b_n \in \mathbf{Q}</script> such that <script type="math/tex">|a_n - b_n| < \epsilon /(2(k+1)M)</script>
+</p>
+<p>So <script type="math/tex">|g(x) - h(x)| < \epsilon  / 2</script>.</p>
+<p>Then <script type="math/tex">|f(x) - h(x)| < \epsilon</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="6711">6.7.11</h3>
+<p>Assume that <script type="math/tex">f</script> has a continuous derivative on <script type="math/tex">[a,b]</script>. Show
+that there exists a polynomial <script type="math/tex">p(x)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - p(x) | < \epsilon \text{ and }
+|f'(x) - p'(x) | < \epsilon
+</script>
+</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">\epsilon</script>, from WAT, we know we can find
+<script type="math/tex">q(x)</script> subh that <script type="math/tex">|f'(x) - q(x)| < \frac{\epsilon}{b - a}</script>.</p>
+<p>Take the antiderivative of <script type="math/tex">q(x)</script> and call it <script type="math/tex">p_0(x)</script>, note
+<script type="math/tex">p_0'(x) = q(x)</script>. Let <script type="math/tex">c = f(a) - p_0(a)</script>, and let
+<script type="math/tex">p(x) = p_0(x) + c</script>. We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+p'(x) = q(x) \\
+p(a) = f(a)
+</script>
+</p>
+<p>Now we can use mean value theorem and let <script type="math/tex">g(x) = f(x) - p(x)</script>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{g(x) - g(a)}{x - a} = g'(c) \\
+|g(x) - g(a)| = |g'(c)| \cdot (x - a) =\\
+|f'(x) - q(c)| (x - a) < \frac{\epsilon}{b - a} \cdot (x - a) \\
+< \epsilon
+</script>
+</p>
+<p>So we have <script type="math/tex">|f(x) - p(x) | < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ch05ex/" class="btn btn-neutral float-left" title="Chapter 05 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch06notes/" class="btn btn-neutral float-left" title="Chapter 06 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../misc/" class="btn btn-neutral float-right" title="Misc info">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -2718,7 +3387,7 @@ E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x \\
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../ch05ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../ch06notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>

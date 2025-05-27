@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Chapter 6. Sequences and Series of Functions - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <title>Chapter 06 Notes - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Chapter 6. Sequences and Series of Functions";
+        var mkdocs_page_name = "Chapter 06 Notes";
         var mkdocs_page_input_path = "ch06notes.md";
         var mkdocs_page_url = null;
       </script>
@@ -67,6 +67,56 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
                 </li>
               </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 06 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#61-discussion-the-power-of-power-series">6.1 Discussion: The Power of Power Series</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#62-uniform-convergence-of-a-sequence-of-functions">6.2 Uniform Convergence of a Sequence of Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-621">Definition 6.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-623-uniform-convergence">Definition 6.2.3 (Uniform Convergence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-621b">Definition 6.2.1B.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#625-cauchy-criterion-for-uniform-convergence">6.2.5 (Cauchy Criterion for Uniform Convergence).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#626-continuous-limit-theorem">6.2.6 (Continuous Limit Theorem).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#63-uniform-convergence-and-differentiation">6.3. Uniform Convergence and Diﬀerentiation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-631-differentiable-limit-theorem">Theorem 6.3.1 (Diﬀerentiable Limit Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-632">Theorem 6.3.2.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#65-power-series">6.5 Power Series</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lemma-653-abels-lemma">Lemma 6.5.3 (Abel’s Lemma).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#654-abels-theorem">6.5.4 (Abel’s Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-655">Theorem 6.5.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-656">Theorem 6.5.6.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#66-taylor-series">6.6. Taylor Series</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-662-taylors-formula">Theorem 6.6.2 (Taylor’s Formula).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-663-lagranges-remainder-theorem">Theorem 6.6.3 (Lagrange’s Remainder Theorem).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
                 </li>
@@ -93,7 +143,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Chapter 6. Sequences and Series of Functions</li>
+      <li class="breadcrumb-item active">Chapter 06 Notes</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch06notes.md" class="icon icon-github"> Edit on Github</a>
     </li>
@@ -228,7 +278,7 @@ functions defined on <script type="math/tex">A ⊆ R</script> that converges uni
 <p>Then</p>
 <p>
 <script type="math/tex; mode=display"> 
-|f(x) - f(x) | \leq \\
+|f(x) - f(c) | \leq \\
 |f(x) - f_n(x) | + |f_n(x) - f_n(c)| + |f_n(c) - f(c)| \leq \\
 \epsilon / 3 + \epsilon / 3 + \epsilon / 3 = \epsilon
 </script>
@@ -569,6 +619,10 @@ f^{(N+1)}(c)
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch05ex/" class="btn btn-neutral float-left" title="Chapter 05 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch06ex/" class="btn btn-neutral float-right" title="Chapter 06 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -590,6 +644,10 @@ f^{(N+1)}(c)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../ch05ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch06ex/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
