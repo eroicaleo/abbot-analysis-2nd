@@ -284,7 +284,9 @@ differentiable.
 
 (b) If $f$ is increasing and $g$ is integrable, then $g ◦f$ is integrable.
 
-Proof: Assume $f$ is defined on $[a,b]$, and $g$ is
+Proof: The following is not correct.
+
+Assume $f$ is defined on $[a,b]$, and $g$ is
 defined on $[c,d]$, and $[f(a), f(b)] \subseteq [c, d]$. Since $g$ is integrable, and given $\epsilon$.
 We can find a $P = \{x_0, x_1, \cdots, x_n\}$ for $[c,d]$ such that
 $U(g,P) - L(g,P) < \epsilon.$
@@ -332,6 +334,242 @@ $$
 Then $g ◦f$ is again the Dirichlet function.
 
 $\square$
+
+### 7.3.5.
+
+Provide an example or give a reason why the request is impossible.
+
+(a) A sequence $(f_n) → f$ pointwise, where each $f_n$ has at most a finite number
+of discontinuities but $f$ is not integrable.
+
+**Solution**:
+
+Consider
+
+$$ 
+f_n(x) = \begin{cases}
+    1 &\text{if } x = p/q, q \leq n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+$$
+
+Then $f$ is the Dirichlet function which is not integrable.
+
+(b) A sequence $(g_n) → g$ uniformly where each gn has at most a finite number of discontinuities and $g$ is not integrable.
+
+**Proof**: Impossible. Each $g_n$ is integrable, and
+$(g_n) → g$ uniformly. So from exercise 7.2.5, $g$ is
+integrable.
+
+(c) A sequence $(h_n) → h$ uniformly where each $h_n$ is not integrable but $h$ is integrable.
+
+**Solutions**: This is possible. Consdier
+
+$$ 
+h_n(x) = \begin{cases}
+    1/n &\text{if } x \in \mathbf{Q}\\
+    0 &\text{otherwise }\\
+\end{cases} 
+$$
+
+$\square$
+
+### 7.3.6.
+
+Let $\{r_1,r_2,r_3,...\}$ be an enumeration of all the rationals in $[0,1]$, and define 
+
+$$ 
+g_n(x) = \begin{cases}
+    1 &\text{if } x = r_n \\
+    0 &\text{otherwise.}\\
+\end{cases} 
+$$
+
+Anwser:
+
+(a) Is $G(x) = \sum_{n = 1}^{\infty} g_n(x)$ integrable
+on $[0, 1]$?
+
+**Solution**: $G(x)$ is the Dirichlet function.
+So it's not integrable.
+
+(b) $F(x) = \sum_{n = 1}^{\infty} g_n(x)/n$
+integrable on $[0, 1]$?
+
+**Proof**: Yes. Given $\epsilon$, we can find $n$ such
+that $1/n < \epsilon/2$, for $r_1,r_2,r_3,...r_n$, 
+we create a segment $[r_i, r_i + 1/n^2]$. Then upper
+sum of those segments will be less than $1/n < \epsilon / 2$. For the rest of them, the upper sum will
+be less than $1/n \times 1 = 1/n < \epsilon / 2$.
+So overall the upper sum is less than $\epsilon$.
+
+So it's integrable and the value is 0.
+
+$\square$
+
+### 7.3.7.
+
+Assume $f : [a,b] → R$ is integrable.
+
+(a) Show that if $g$ satisfies $g(x) = f(x)$ for all but a finite number of points
+in $[a,b]$, then $g$ is integrable as well.
+
+**Proof**: Consider $h(x) = f(x) - g(x)$, then $h(x)$
+is $0$ but a finite number of points. So it's integrable.
+
+(b) Find an example to show that $g$ may fail to be integrable if it diﬀers from
+$f$ at a countable number of points.
+
+**Solution**: Consider $f = 0$ and $g$ is the Thomae
+function.
+
+$\square$
+
+### 7.3.8.
+
+As in Exercise 7.3.6, let $\{r_1,r_2,r_3,...\}$ be an enumeration of all the rationals in $[0,1]$,
+but this time define
+
+$$ 
+h_n(x) =
+\begin{cases}
+    1 &\text{if } r_n < x \leq 1 \\
+    0 &\text{if } 0 \leq x \leq r_n \\
+\end{cases}
+$$
+
+Show $H(x) = \sum_{n = 1}^{\infty}h_n(x) / 2^n$
+is integrable on $[0,1]$ even though it has discontinuities at every rational point.
+
+**Proof**: 
+
+Simply notice that the $H(x)$ is a monotoneous increasing function will prove it.
+
+We can also find the partition.
+
+Given $\epsilon$, we can find $n$ such that
+$\frac{1}{2^n} < \epsilon / (2n)$.
+For partition $P$ which is
+$x_0 = 0, x_1,x_2,x_3,...,x_n = 1$ which is the set 
+$\{0, 1, r_1,r_2,r_3,...,r_n\}$.
+
+Between $(x_{k-1}, x_k]$, $M_k - m_k \leq \frac{1}{2^{n+1}} + \frac{1}{2^{n+2}} + \cdots < \frac{1}{2^n}$.
+
+Also consider the interval $[x_{k-1}, x_{k-1} + \frac{1}{2^n}]$, for this interval, $m = H(x_{k-1})$,
+
+$$ 
+M < m + \frac{1}{2} + \frac{1}{2^{n+1}} + \frac{1}{2^{n+2}} + \cdots < m + \frac{1}{2} + \frac{1}{2^n}
+$$ 
+
+So
+
+$$ 
+(M - m) \Delta < (\frac{1}{2} + \frac{1}{2^n}) \frac{1}{2^n} < \frac{1}{2^n}
+$$
+
+since there are $n$ of them, then the sum
+is less than $\frac{n}{2^n} < \epsilon / 2$,
+for other part $[x_{k-1} + \frac{1}{2^n}, x_k]$,
+then sum is less than $\epsilon / 2$.
+
+$\square$
+
+### 7.3.9 (Content Zero).
+
+A set $A ⊆ [a,b]$ has content zero if for every
+$ϵ > 0$ there exists a finite collection of open intervals $\{O_1,O_2,...,O_N\}$ that contain $A$
+in their union and whose lengths sum to $ϵ$ or less.
+
+Using $|O_n|$ to refer
+to the length of each interval, we have
+
+$$ 
+A \subseteq \bigcup_{n=1}^{N}  O_n
+\text{ and }
+\sum_{n=1}^{N} |O_n| \leq \epsilon.
+$$
+
+Anwser
+
+(a) Let $f$ be bounded on $[a,b]$.
+Show that if the set of discontinuous points of
+$f$ has content zero, then $f$ is integrable.
+
+**Proof**: Assume $|f(x)| < M$, and given $\epsilon$
+we can find a set of
+open intervals $\{O_1,O_2,...,O_N\}$ such that
+
+$$ 
+A \subseteq \bigcup_{n=1}^{N}  O_n
+\text{ and }
+\sum_{n=1}^{N} |O_n| \leq \epsilon / (4M).
+$$
+
+Let $O_n = (a_n, b_n)$, let
+$P = \{a_1, b_1, \cdots, a_n, b_n\}$.
+In these intervals, the difference of the upper
+sum and lower sum is less than
+$2M \times \epsilon / (4M) = \epsilon / 2$.
+
+In other interval, $f(x)$ is continuous, so we can find
+a partition such that the upper
+sum and lower sum is less than $\epsilon /2$.
+
+$\square$
+
+(b) Show that any finite set has content zero.
+
+Proof: Assume there are $n$ points in $A$,
+$x_1, x_2, x_3, \dots x_{n}$, let
+
+$$ 
+O_n = (x_n - \epsilon / 2n, x_n + \epsilon / 2n)
+$$
+
+$\square$
+
+(c) Content zero sets do not have to be finite.
+They do not have to be countable. Show that the Cantor set $C$ defined in Section 3.1 has content zero.
+
+**Proof**:
+
+Note $|C_1| = \frac{2}{3}$, we can use 2 open sets with length of $\frac{3}{8}$ to cover it.
+
+Similarly, $|C_2|$ can be coverd by $4$ intervals of length $\frac{1}{8}$.
+
+$|C_n|$ can be coverd by $2^n$ intervals of length
+$\frac{1}{8 \times 3^{n-2}}$.
+
+So
+
+$$ 
+\sum_{n=1}^{N} |O_n| = \frac{1}{2} \times
+\left( \frac{2}{3} \right) ^{n-2}.
+$$
+
+In addition,
+
+$$
+C \subset C_n \subset \bigcup_{k=1}^{n} O_n
+$$
+
+$\square$
+
+(d) Prove that
+
+$$ 
+h(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{if } x \not\in C\\
+\end{cases} 
+$$
+
+is integrable, and find the value of the integral.
+
+**Proof**: if $x \not\in C$, $x$ is in an open set.
+So $h(x)$ is continuous at $x$. Then we can apply (a).
+So $h(x)$ is integrable. and the value is $0$.
 
 ## 7.4 Properties of the Integral
 

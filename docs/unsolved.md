@@ -43,6 +43,10 @@ Can we determine if f is twice-diﬀerentiable?
 
 ### Ex 6.6.9 (b)
 
+### Ex 7.3.4 (b)
+
+If $f$ is increasing and $g$ is integrable, then $g ◦f$ is integrable.
+
 # Open Question
 
 1. This is related chapter 5. $f(x)$ is a differentiable on $[a, b]$, $(x_n) \rightarrow c$,
