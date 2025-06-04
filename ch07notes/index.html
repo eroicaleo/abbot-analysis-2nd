@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Exercises for chapter 02 - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <title>Chapter 07 The Riemann Integral - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Exercises for chapter 02";
-        var mkdocs_page_input_path = "ch02.md";
+        var mkdocs_page_name = "Chapter 07 The Riemann Integral";
+        var mkdocs_page_input_path = "ch07notes.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -101,9 +101,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Exercises for chapter 02</li>
+      <li class="breadcrumb-item active">Chapter 07 The Riemann Integral</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch02.md" class="icon icon-github"> Edit on Github</a>
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch07notes.md" class="icon icon-github"> Edit on Github</a>
     </li>
   </ul>
   <hr/>
@@ -111,9 +111,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="exercises-for-chapter-02">Exercises for chapter 02</h1>
-<h2 id="section-21">section 2.1</h2>
-<h3 id="211">2.1.1</h3>
+                <h1 id="chapter-07-the-riemann-integral">Chapter 07 The Riemann Integral</h1>
+<h2 id="74-properties-of-the-integral">7.4 Properties of the Integral</h2>
+<h3 id="742">7.4.2.</h3>
+<p>Assume <script type="math/tex">f</script> and <script type="math/tex">g</script> are integrable functions on the interval <script type="math/tex">[a,b]</script>.</p>
+<p>(i) The function <script type="math/tex">f + g</script> is integrable on <script type="math/tex">[a,b]</script> with
+<script type="math/tex">\int_{a}^{b} (f+g) = \int_{a}^{b}f + \int_{a}^{b} g</script>
+</p>
+<p>Proof: Given any <script type="math/tex">\epsilon</script>, we can find partition <script type="math/tex">P</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} (f+g) \leq U(f+g, P) = U(f, P) + U(g, P)
+< L(f, P) + L(g, P) + \epsilon \\
+< \int_{a}^{b} f + \int_{a}^{b} g + \epsilon
+</script>
+</p>
+<p>On the other hand,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f + \int_{a}^{b} g \leq U(f, P) + U(g, P)
+< L(f, P) + L(g, P) + \epsilon
+= L(f+g, P) + \epsilon \\
+\leq \int_{a}^{b} (f+g) + \epsilon 
+</script>
+</p>
+<p>So we have <script type="math/tex">\int_{a}^{b} (f+g) = \int_{a}^{b}f + \int_{a}^{b} g</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(ii) For <script type="math/tex">k ∈ \mathbf{R}</script>, the function <script type="math/tex">kf</script> is integrable with <script type="math/tex">\int_{a}^{b} kf = k \int_{a}^{b} f</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} kf \leq U(kf, P) = k U(f, P) < k L(f, P) + \epsilon \leq k \int_{a}^{b} f
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+k \int_{a}^{b} f \leq k U(f, P) < k L(f, P) + \epsilon
+= L(kf, P) + \epsilon \leq \int_{a}^{b} kf + \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>

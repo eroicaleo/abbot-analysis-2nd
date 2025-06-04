@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 07 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 07 Exercises";
+        var mkdocs_page_input_path = "ch07ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06notes/">Chapter 06 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 07 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#72-the-definition-of-the-riemann-integral">7.2 The Definition of the Riemann Integral</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#721">7.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#722">7.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#723-sequential-criterion-for-integrability">7.2.3 (Sequential Criterion for Integrability).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#724">7.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#725">7.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#726">7.2.6.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#73-integrating-functions-with-discontinuities">7.3 Integrating Functions with Discontinuities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#731">7.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#732">7.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#733">7.3.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1"></a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#735">7.3.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#736">7.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#737">7.3.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#738">7.3.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#739-content-zero">7.3.9 (Content Zero).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#74-properties-of-the-integral">7.4 Properties of the Integral</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#744">7.4.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#745">7.4.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#746">7.4.6.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 07 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch07ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-07-the-riemann-integral">Chapter 07 The Riemann Integral</h1>
+<h2 id="72-the-definition-of-the-riemann-integral">7.2 The Definition of the Riemann Integral</h2>
+<h3 id="721">7.2.1.</h3>
+<p>Let <script type="math/tex">f</script> be abounded function on <script type="math/tex">[a,b]</script>, and let <script type="math/tex">P</script> be an arbitrary
+partition of <script type="math/tex">[a,b]</script>. First, explain why <script type="math/tex">U(f) ≥ L(f,P)</script>. Now, prove Lemma 7.2.6.</p>
+<p>Proof: Given any partition <script type="math/tex">P'</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+U(f, P') \geq U(f, P \cup P')
+\geq L(f, P \cup P') \geq L(f, P)
+</script>
+</p>
+<p>That means <script type="math/tex">L(f,P)</script> is a lower bound of
+<script type="math/tex">\{U(f,P) : P \in \mathbb{P}\}</script>.</p>
+<p>So <script type="math/tex">U(f) \geq L(f,P)</script>.</p>
+<p>This means <script type="math/tex">U(f)</script> is also an upper bound of
+<script type="math/tex">\{L(f,P) : P \in \mathbb{P}\}</script>.</p>
+<p>So <script type="math/tex">U(f) \geq L(f)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="722">7.2.2.</h3>
+<p>Consider <script type="math/tex">f(x) = 1/x</script> over the interval <script type="math/tex">[1,4]</script>. Let <script type="math/tex">P</script> be the
+partition consisting of the points <script type="math/tex">\{1,3/2,2,4\}</script>.</p>
+<p>(a) Compute <script type="math/tex">L(f,P)</script>, <script type="math/tex">U(f,P)</script>, and <script type="math/tex">U(f,P)−L(f,P)</script>.</p>
+<p><strong>Solutions</strong>:</p>
+<p>
+<script type="math/tex">L(f, P) = \frac{3}{2} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{4} \cdot 2 = \frac{3}{2}</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) = 1 \cdot \frac{1}{2} + \frac{3}{2} \cdot \frac{1}{2}
++ \frac{1}{2} \cdot 2 = \frac{9}{4}
+</script>
+</p>
+<p>The difference is <script type="math/tex">\frac{3}{4}</script>.</p>
+<h3 id="723-sequential-criterion-for-integrability">7.2.3 (Sequential Criterion for Integrability).</h3>
+<p>(a) Prove that
+a bounded function <script type="math/tex">f</script> is integrable on <script type="math/tex">[a,b]</script> if and only if there exists a
+sequence of partitions <script type="math/tex">(P_n)^{\infty}_{n=1}</script> satisfying</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} [U(f, P_n) - L(f, P_n)] = 0,
+</script>
+</p>
+<p>and in this case <script type="math/tex">\int_{a}^{b}f = \lim_{n \to \infty} U(f, P_n) = \lim_{n \to \infty}  L(f, P_n)</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">\Rightarrow</script>
+given <script type="math/tex">1/n</script>, we can find <script type="math/tex">P_n</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 < U(f, P_n) - L(f, P_n) < \frac{1}{n}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} [U(f, P_n) - L(f, P_n)] = 0.
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex">U(f) \leq U(f, P_n)</script> and <script type="math/tex">L(F) \geq L(f, P_n)</script>,
+so <script type="math/tex">U(f) - L(f) \leq U(f, P_n) - L(f, P_n)</script>.</p>
+<p>Since <script type="math/tex">\lim_{n \to \infty} [U(f, P_n) - L(f, P_n)] = 0</script>
+then <script type="math/tex">U(f) - L(f) \leq 0</script>.</p>
+<p>On the other hand, exercise 7.2.1 proves <script type="math/tex">U(f) - L(f) \geq 0</script>. So <script type="math/tex">U(f) = L(f)</script>. So <script type="math/tex">f</script> is integrable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="724">7.2.4.</h3>
+<p>Let <script type="math/tex">g</script> be bounded on <script type="math/tex">[a,b]</script> and assume there exists a partition <script type="math/tex">P</script> with <script type="math/tex">L(g,P) = U(g,P)</script>. Describe g. Is it integrable? If so, what is the value of <script type="math/tex">\int_{a}^{b}g</script>?</p>
+<p><strong>Solutions</strong>: In each segment of <script type="math/tex">P</script>, it's flat.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="725">7.2.5.</h3>
+<p>Assume that, for each <script type="math/tex">n</script>, <script type="math/tex">f_n</script> is an integrable function on <script type="math/tex">[a,b]</script>.</p>
+<p>If <script type="math/tex">(f_n) → f</script> uniformly on <script type="math/tex">[a,b]</script>, prove that <script type="math/tex">f</script> is also integrable on this set. (We
+will see that this conclusion does not necessarily follow if the convergence is pointwise.)</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">N</script> such that
+<script type="math/tex">n > N</script>, <script type="math/tex">|f_n(x) - f(x)| < \frac{\epsilon}{2(b-a)}</script>.</p>
+<p>Fix this <script type="math/tex">n</script>, we can find a partition such that 
+<script type="math/tex">U(f_n, P) - L(f_n, P) < \epsilon / 2</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+U(f_n, P) - L(f_n, P) = \sum_{k = 1}^{n}
+(M_{n, k} - m_{n, k}) \Delta x_{n, k} \geq
+\sum_{k = 1}^{n} (M)
+</script>
+</p>
+<h3 id="726">7.2.6.</h3>
+<p>A tagged partition <script type="math/tex">(P,{c_k})</script> is one where in addition to a partition <script type="math/tex">P</script> we choose a sampling point <script type="math/tex">c_k</script> in each of the subintervals <script type="math/tex">[x_{k−1},x_k]</script>.
+The corresponding Riemann sum,</p>
+<p>
+<script type="math/tex; mode=display"> 
+R(f, P) = \sum_{k = 1}^{n}
+f(c_k) \Delta x_k,
+</script>
+</p>
+<p>is discussed in Section 7.1, where the following definition is alluded to.</p>
+<p>Riemann’s Original Definition of the Integral: A bounded function f is
+integrable on <script type="math/tex">[a,b]</script> with <script type="math/tex">\int_{a}^{b} f = A</script>,
+if for all <script type="math/tex">ϵ > 0</script> there exists a <script type="math/tex">δ > 0</script> such that
+for any tagged partition <script type="math/tex">(P,{c_k})</script> satisfying
+<script type="math/tex">\Delta x_k < \delta</script> for all <script type="math/tex">k</script>, it follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| R(f, P) - A \right| < \epsilon
+</script>
+</p>
+<p>Show that if <script type="math/tex">f</script> satisfies Riemann’s definition above, then <script type="math/tex">f</script> is integrable in the
+sense of Definition 7.2.7. (The full equivalence of these two characterizations of
+integrability is proved in Section 8.1.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+M_k - m_k < f(c_{M, k}) + \frac{\epsilon}{4(b-a)} -
+(f(c_{m, k}) - \frac{\epsilon}{4(b-a)})
+= f(c_{M, k}) - f(c_{m, k}) + \frac{\epsilon}{2(b-a)}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k=1}^{n} (M_k - m_k) \Delta x_k \\
+< \sum_{k=1}^{n} (f(c_{M, k}) - f(c_{m, k}) + \frac{\epsilon}{2(b-a)}) \Delta x_k \\
+= R_1(f, P) - R_2(f, P) + \epsilon / 2 \\
+< \epsilon / 2 + \epsilon / 2 = \epsilon.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="73-integrating-functions-with-discontinuities">7.3 Integrating Functions with Discontinuities</h2>
+<h3 id="731">7.3.1.</h3>
+<p>Consider the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \begin{cases}
+    1 &\text{for } 0 \leq x < 1\\
+    2 &\text{for } x = 1\\
+\end{cases} 
+</script>
+</p>
+<p>over the interval <script type="math/tex">[0,1]</script>
+</p>
+<p>(a) show that <script type="math/tex">L(f,P) =1</script> for every partition <script type="math/tex">P</script> of
+<script type="math/tex">[0,1]</script>.</p>
+<p>Proof: Assume <script type="math/tex">P</script> is <script type="math/tex">0 = x_0 < x_1 < x_2 < \cdots x_{n-1} < x_n = 1</script>. In the first <script type="math/tex">n-1</script> segments, <script type="math/tex">h(x)</script> is constant <script type="math/tex">1</script>, so the <script type="math/tex">m_k = 1</script>. In the nth segment,
+the <script type="math/tex">m_n</script> is still <script type="math/tex">1</script>. So <script type="math/tex">L(f, P) = 1</script>.</p>
+<p>(b) Construct a partition <script type="math/tex">P</script> for which <script type="math/tex">U(f,P) < 1+1/10</script>.</p>
+<p><strong>Solutions</strong>: Let <script type="math/tex">P = \{0, \frac{19}{20}, 1\}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) = \frac{19}{20} + \frac{1}{10} < 1 + \frac{1}{10}
+</script>.</p>
+<p>(c) Given <script type="math/tex">ϵ > 0</script>, construct a partition <script type="math/tex">P_ϵ</script> for which <script type="math/tex">U(f,P_ϵ) < 1+ϵ</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">P = \{0, 1 - \frac{\epsilon}{2}, 1\}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) = 1 - \frac{\epsilon}{2} + \epsilon = 1 + \frac{\epsilon}{2}.
+</script>
+</p>
+<h3 id="732">7.3.2.</h3>
+<p>Recall that Thomae’s function</p>
+<p>
+<script type="math/tex; mode=display"> 
+t(x) =
+\begin{cases}
+    1 &\text{if } x = 0\\
+    1/n &\text{if } x = m/n \\
+    0 &\text{if } x \not\in \mathbf{Q} \\
+\end{cases} 
+</script>
+</p>
+<p>has a countable set of discontinuities occurring at precisely every rational number.
+Follow these steps to prove t(x) is integrable on
+<script type="math/tex">[0,1]</script> with <script type="math/tex">\int_{0}^{1} t = 0</script>.</p>
+<p>(a) First argue that <script type="math/tex">L(t,P) = 0</script> for any partition <script type="math/tex">P</script> of <script type="math/tex">[0,1]</script>.</p>
+<p><strong>Proof</strong>: Given any partition <script type="math/tex">0 = x_0 < x_1 < x_2 < \cdots x_{n-1} < x_n = 1</script>. For any segment, the
+<script type="math/tex">m_k</script> is always <script type="math/tex">0</script>. So <script type="math/tex">L(f,P) = 0</script>.</p>
+<p>(b) Let <script type="math/tex">ϵ > 0</script>, and consider the set of points
+<script type="math/tex">D_{ϵ/2} = \{x ∈ [0,1] : t(x) ≥ ϵ/2\}</script>.
+How big is <script type="math/tex">D_{ϵ/2}</script>?</p>
+<p><strong>Solutions</strong>: Assume <script type="math/tex">n < 2/\epsilon</script>, the the size
+is at most <script type="math/tex">n(n+1)/2</script>.</p>
+<p>(c) To complete the argument, explain how to construct a partition <script type="math/tex">P_ϵ</script> of <script type="math/tex">[0,1]</script> so that <script type="math/tex">U(t,P_ϵ) < ϵ</script>.</p>
+<p><strong>Solutions</strong>: For each of <script type="math/tex">x \in [0, 1]</script> such that
+<script type="math/tex">t(x) > \epsilon /2</script>, we make it a partition <script type="math/tex">[x, x + \frac{\epsilon}{n(n+1)}]</script>. So the upper sum is less than
+<script type="math/tex">\frac{\epsilon}{n(n+1)}</script>. Since there are only
+<script type="math/tex">n(n+1)/2</script> of them, then total upper sum is
+<script type="math/tex">\epsilon / 2</script>. For other segments, each upper sum
+is <script type="math/tex">\epsilon / 2 \Delta x_k</script>, so the total upper
+sum is less than <script type="math/tex">\epsilon / 2</script>. Then the total sum
+is <script type="math/tex">\epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="733">7.3.3.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    1 &\text{if } x = 1/n \text{ for some } n \in N\\
+    0 &\text{otherwise }\\
+\end{cases}
+</script>
+</p>
+<p>Show that <script type="math/tex">f</script> is integrable on <script type="math/tex">[0,1]</script> and compute
+<script type="math/tex">\int_{0}^{1}f</script>.</p>
+<p><strong>Proof</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display">
+P_n = \{
+0, \frac{1}{n}, \frac{1}{n} + \frac{1}{n^2},
+\frac{1}{n-1}, \frac{1}{n-1} + \frac{1}{n^2},
+\frac{1}{n-2}, \frac{1}{n-2} + \frac{1}{n^2},
+\}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+U(f, P_n) = \frac{1}{n} + \frac{1}{n^2} \times (n-1) \\
+< \frac{2}{n} \rightarrow 0
+</script>
+</p>
+<p>So <script type="math/tex">\int_{0}^{1} f = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="_1"></h3>
+<p>7.3.4. Let <script type="math/tex">f</script> and <script type="math/tex">g</script> be functions defined on (possibly diﬀerent) closed
+intervals, and assume the range of <script type="math/tex">f</script> is contained in the domain of <script type="math/tex">g</script> so that the
+composition <script type="math/tex">g ◦f</script> is properly defined.</p>
+<p>(a) Show, by example, that it is not the case that if
+<script type="math/tex">f</script> and <script type="math/tex">g</script> are integrable, then <script type="math/tex">g ◦f</script> is integrable.</p>
+<p>Solution: We use the example in the previous 2
+exercises. Consider <script type="math/tex">f(x)</script> is the Thomae function,
+and <script type="math/tex">g(x)</script> is the function in exercise 7.3.3.
+Then <script type="math/tex">g◦f</script> is the Dirichlet function, which is not
+differentiable.</p>
+<p>(b) If <script type="math/tex">f</script> is increasing and <script type="math/tex">g</script> is integrable, then <script type="math/tex">g ◦f</script> is integrable.</p>
+<p>Proof: The following is not correct.</p>
+<p>Assume <script type="math/tex">f</script> is defined on <script type="math/tex">[a,b]</script>, and <script type="math/tex">g</script> is
+defined on <script type="math/tex">[c,d]</script>, and <script type="math/tex">[f(a), f(b)] \subseteq [c, d]</script>. Since <script type="math/tex">g</script> is integrable, and given <script type="math/tex">\epsilon</script>.
+We can find a <script type="math/tex">P = \{x_0, x_1, \cdots, x_n\}</script> for <script type="math/tex">[c,d]</script> such that
+<script type="math/tex">U(g,P) - L(g,P) < \epsilon.</script>
+</p>
+<p>Assume <script type="math/tex">x_{k-1} \leq f(a) < x_k</script> for some <script type="math/tex">k</script>. And let
+<script type="math/tex">c</script> be the supremum of</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_k = \{x : f(x) \leq x_k\}
+</script>
+</p>
+<p>If <script type="math/tex">f(c) \leq x_k</script>, then
+<script type="math/tex">(M_{g ◦f, [a,c]} - m_{g ◦f, [a,c]}) (c-a) \leq (M_k - m_k)\Delta _k</script>.</p>
+<p>If <script type="math/tex">f(c) > x_k</script>, then assume <script type="math/tex">f(c) \in (x_{l-1}, x_l]</script>
+for some <script type="math/tex">l > k</script>. Then we can divide <script type="math/tex">[a,c]</script> into
+<script type="math/tex">[a,d]</script> and <script type="math/tex">[d,c]</script> so that</p>
+<p>
+<script type="math/tex; mode=display"> 
+(M_{g ◦f, [a,d]} - m_{g ◦f, [a,d]}) (d-a) +
+(M_{g ◦f, [d,c]} - m_{g ◦f, [d,c]}) (c-d) \leq \\
+(M_k - m_k)\Delta _k +
+(M_{g, [x_{l-1}, f(c)]} - m_{g, [x_{l-1}, f(c)]})(f(c) - x_{l-1})
+</script>
+</p>
+<p>In this way, we can construct a partition of <script type="math/tex">[a,b]</script>
+such that</p>
+<p>
+<script type="math/tex">U(g ◦f,P') - L(g ◦f,P') < \epsilon.</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) If <script type="math/tex">f</script> is integrable and <script type="math/tex">g</script> is increasing, then <script type="math/tex">g ◦f</script> is integrable.</p>
+<p><strong>Solutions</strong>: This is not true.
+Consider <script type="math/tex">f</script> is the Thomae function.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = \begin{cases}
+    0 &\text{if } x = 0\\
+    1 &\text{if } x > 0\\
+\end{cases}
+</script>
+</p>
+<p>Then <script type="math/tex">g ◦f</script> is again the Dirichlet function.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="735">7.3.5.</h3>
+<p>Provide an example or give a reason why the request is impossible.</p>
+<p>(a) A sequence <script type="math/tex">(f_n) → f</script> pointwise, where each <script type="math/tex">f_n</script> has at most a finite number
+of discontinuities but <script type="math/tex">f</script> is not integrable.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \begin{cases}
+    1 &\text{if } x = p/q, q \leq n \\
+    0 &\text{otherwise}\\
+\end{cases} 
+</script>
+</p>
+<p>Then <script type="math/tex">f</script> is the Dirichlet function which is not integrable.</p>
+<p>(b) A sequence <script type="math/tex">(g_n) → g</script> uniformly where each gn has at most a finite number of discontinuities and <script type="math/tex">g</script> is not integrable.</p>
+<p><strong>Proof</strong>: Impossible. Each <script type="math/tex">g_n</script> is integrable, and
+<script type="math/tex">(g_n) → g</script> uniformly. So from exercise 7.2.5, <script type="math/tex">g</script> is
+integrable.</p>
+<p>(c) A sequence <script type="math/tex">(h_n) → h</script> uniformly where each <script type="math/tex">h_n</script> is not integrable but <script type="math/tex">h</script> is integrable.</p>
+<p><strong>Solutions</strong>: This is possible. Consdier</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = \begin{cases}
+    1/n &\text{if } x \in \mathbf{Q}\\
+    0 &\text{otherwise }\\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="736">7.3.6.</h3>
+<p>Let <script type="math/tex">\{r_1,r_2,r_3,...\}</script> be an enumeration of all the rationals in <script type="math/tex">[0,1]</script>, and define </p>
+<p>
+<script type="math/tex; mode=display"> 
+g_n(x) = \begin{cases}
+    1 &\text{if } x = r_n \\
+    0 &\text{otherwise.}\\
+\end{cases} 
+</script>
+</p>
+<p>Anwser:</p>
+<p>(a) Is <script type="math/tex">G(x) = \sum_{n = 1}^{\infty} g_n(x)</script> integrable
+on <script type="math/tex">[0, 1]</script>?</p>
+<p><strong>Solution</strong>: <script type="math/tex">G(x)</script> is the Dirichlet function.
+So it's not integrable.</p>
+<p>(b) <script type="math/tex">F(x) = \sum_{n = 1}^{\infty} g_n(x)/n</script>
+integrable on <script type="math/tex">[0, 1]</script>?</p>
+<p><strong>Proof</strong>: Yes. Given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">n</script> such
+that <script type="math/tex">1/n < \epsilon/2</script>, for <script type="math/tex">r_1,r_2,r_3,...r_n</script>, 
+we create a segment <script type="math/tex">[r_i, r_i + 1/n^2]</script>. Then upper
+sum of those segments will be less than <script type="math/tex">1/n < \epsilon / 2</script>. For the rest of them, the upper sum will
+be less than <script type="math/tex">1/n \times 1 = 1/n < \epsilon / 2</script>.
+So overall the upper sum is less than <script type="math/tex">\epsilon</script>.</p>
+<p>So it's integrable and the value is 0.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="737">7.3.7.</h3>
+<p>Assume <script type="math/tex">f : [a,b] → R</script> is integrable.</p>
+<p>(a) Show that if <script type="math/tex">g</script> satisfies <script type="math/tex">g(x) = f(x)</script> for all but a finite number of points
+in <script type="math/tex">[a,b]</script>, then <script type="math/tex">g</script> is integrable as well.</p>
+<p><strong>Proof</strong>: Consider <script type="math/tex">h(x) = f(x) - g(x)</script>, then <script type="math/tex">h(x)</script>
+is <script type="math/tex">0</script> but a finite number of points. So it's integrable.</p>
+<p>(b) Find an example to show that <script type="math/tex">g</script> may fail to be integrable if it diﬀers from
+<script type="math/tex">f</script> at a countable number of points.</p>
+<p><strong>Solution</strong>: Consider <script type="math/tex">f = 0</script> and <script type="math/tex">g</script> is the Thomae
+function.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="738">7.3.8.</h3>
+<p>As in Exercise 7.3.6, let <script type="math/tex">\{r_1,r_2,r_3,...\}</script> be an enumeration of all the rationals in <script type="math/tex">[0,1]</script>,
+but this time define</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) =
+\begin{cases}
+    1 &\text{if } r_n < x \leq 1 \\
+    0 &\text{if } 0 \leq x \leq r_n \\
+\end{cases}
+</script>
+</p>
+<p>Show <script type="math/tex">H(x) = \sum_{n = 1}^{\infty}h_n(x) / 2^n</script>
+is integrable on <script type="math/tex">[0,1]</script> even though it has discontinuities at every rational point.</p>
+<p><strong>Proof</strong>: </p>
+<p>Simply notice that the <script type="math/tex">H(x)</script> is a monotoneous increasing function will prove it.</p>
+<p>We can also find the partition.</p>
+<p>Given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">n</script> such that
+<script type="math/tex">\frac{1}{2^n} < \epsilon / (2n)</script>.
+For partition <script type="math/tex">P</script> which is
+<script type="math/tex">x_0 = 0, x_1,x_2,x_3,...,x_n = 1</script> which is the set 
+<script type="math/tex">\{0, 1, r_1,r_2,r_3,...,r_n\}</script>.</p>
+<p>Between <script type="math/tex">(x_{k-1}, x_k]</script>, <script type="math/tex">M_k - m_k \leq \frac{1}{2^{n+1}} + \frac{1}{2^{n+2}} + \cdots < \frac{1}{2^n}</script>.</p>
+<p>Also consider the interval <script type="math/tex">[x_{k-1}, x_{k-1} + \frac{1}{2^n}]</script>, for this interval, <script type="math/tex">m = H(x_{k-1})</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+M < m + \frac{1}{2} + \frac{1}{2^{n+1}} + \frac{1}{2^{n+2}} + \cdots < m + \frac{1}{2} + \frac{1}{2^n}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+(M - m) \Delta < (\frac{1}{2} + \frac{1}{2^n}) \frac{1}{2^n} < \frac{1}{2^n}
+</script>
+</p>
+<p>since there are <script type="math/tex">n</script> of them, then the sum
+is less than <script type="math/tex">\frac{n}{2^n} < \epsilon / 2</script>,
+for other part <script type="math/tex">[x_{k-1} + \frac{1}{2^n}, x_k]</script>,
+then sum is less than <script type="math/tex">\epsilon / 2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="739-content-zero">7.3.9 (Content Zero).</h3>
+<p>A set <script type="math/tex">A ⊆ [a,b]</script> has content zero if for every
+<script type="math/tex">ϵ > 0</script> there exists a finite collection of open intervals <script type="math/tex">\{O_1,O_2,...,O_N\}</script> that contain <script type="math/tex">A</script>
+in their union and whose lengths sum to <script type="math/tex">ϵ</script> or less.</p>
+<p>Using <script type="math/tex">|O_n|</script> to refer
+to the length of each interval, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+A \subseteq \bigcup_{n=1}^{N}  O_n
+\text{ and }
+\sum_{n=1}^{N} |O_n| \leq \epsilon.
+</script>
+</p>
+<p>Anwser</p>
+<p>(a) Let <script type="math/tex">f</script> be bounded on <script type="math/tex">[a,b]</script>.
+Show that if the set of discontinuous points of
+<script type="math/tex">f</script> has content zero, then <script type="math/tex">f</script> is integrable.</p>
+<p><strong>Proof</strong>: Assume <script type="math/tex">|f(x)| < M</script>, and given <script type="math/tex">\epsilon</script>
+we can find a set of
+open intervals <script type="math/tex">\{O_1,O_2,...,O_N\}</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+A \subseteq \bigcup_{n=1}^{N}  O_n
+\text{ and }
+\sum_{n=1}^{N} |O_n| \leq \epsilon / (4M).
+</script>
+</p>
+<p>Let <script type="math/tex">O_n = (a_n, b_n)</script>, let
+<script type="math/tex">P = \{a_1, b_1, \cdots, a_n, b_n\}</script>.
+In these intervals, the difference of the upper
+sum and lower sum is less than
+<script type="math/tex">2M \times \epsilon / (4M) = \epsilon / 2</script>.</p>
+<p>In other interval, <script type="math/tex">f(x)</script> is continuous, so we can find
+a partition such that the upper
+sum and lower sum is less than <script type="math/tex">\epsilon /2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that any finite set has content zero.</p>
+<p>Proof: Assume there are <script type="math/tex">n</script> points in <script type="math/tex">A</script>,
+<script type="math/tex">x_1, x_2, x_3, \dots x_{n}</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+O_n = (x_n - \epsilon / 2n, x_n + \epsilon / 2n)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Content zero sets do not have to be finite.
+They do not have to be countable. Show that the Cantor set <script type="math/tex">C</script> defined in Section 3.1 has content zero.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">|C_1| = \frac{2}{3}</script>, we can use 2 open sets with length of <script type="math/tex">\frac{3}{8}</script> to cover it.</p>
+<p>Similarly, <script type="math/tex">|C_2|</script> can be coverd by <script type="math/tex">4</script> intervals of length <script type="math/tex">\frac{1}{8}</script>.</p>
+<p>
+<script type="math/tex">|C_n|</script> can be coverd by <script type="math/tex">2^n</script> intervals of length
+<script type="math/tex">\frac{1}{8 \times 3^{n-2}}</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n=1}^{N} |O_n| = \frac{1}{2} \times
+\left( \frac{2}{3} \right) ^{n-2}.
+</script>
+</p>
+<p>In addition,</p>
+<p>
+<script type="math/tex; mode=display">
+C \subset C_n \subset \bigcup_{k=1}^{n} O_n
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{if } x \not\in C\\
+\end{cases} 
+</script>
+</p>
+<p>is integrable, and find the value of the integral.</p>
+<p><strong>Proof</strong>: if <script type="math/tex">x \not\in C</script>, <script type="math/tex">x</script> is in an open set.
+So <script type="math/tex">h(x)</script> is continuous at <script type="math/tex">x</script>. Then we can apply (a).
+So <script type="math/tex">h(x)</script> is integrable. and the value is <script type="math/tex">0</script>.</p>
+<h2 id="74-properties-of-the-integral">7.4 Properties of the Integral</h2>
+<h3 id="744">7.4.4.</h3>
+<p>Show that if <script type="math/tex">f(x) > 0</script> for all <script type="math/tex">x ∈ [a,b]</script> and <script type="math/tex">f</script> is integrable, then <script type="math/tex">\int_{a}^{b} f > 0</script>.</p>
+<p><strong>Proof</strong>: No idea for now. Seems like we need to use
+section 7.5.</p>
+<h3 id="745">7.4.5.</h3>
+<p>Let <script type="math/tex">f</script> and <script type="math/tex">g</script> be integrable functions on <script type="math/tex">[a,b]</script>.</p>
+<p>(a) Show that if <script type="math/tex">P</script> is any partition of <script type="math/tex">[a,b]</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+U(f+g, P) \leq U(f, P) + U(g, P)
+</script>
+</p>
+<p>Provide a specific example where the inequality is strict. What does the corresponding inequality for lower sums look like?</p>
+<p><strong>Proof</strong>: For any segment <script type="math/tex">[x_k, x_{k+1}]</script>, assume
+<script type="math/tex">M_{f+g, k}</script> is the supremum of <script type="math/tex">f+g</script> on this segment.
+For any <script type="math/tex">c \in [x_k, x_{k+1}]</script>, <script type="math/tex">(f+g)(c) = f(c) + g(c)\leq M_{f,k} + M_{g, k}</script>. So <script type="math/tex">M_{f+g, k} \leq M_{f,k} + M_{g, k}</script>.</p>
+<p>Therefore <script type="math/tex">U(f+g, P) \leq U(f, P) + U(g, P)</script>.</p>
+<p>Let <script type="math/tex">f(x) = x, g(x) = -x, [a,b] = [0,1], P = \{0, 1\}</script>.</p>
+<p>So <script type="math/tex">f+g = 0</script>, <script type="math/tex">U(f+g, P) = 0</script>.
+On the other hand, <script type="math/tex">U(f,P) = 1, U(g,P) = 0</script>, so
+<script type="math/tex">U(f+g, P) = U(f,P) + U(g,P)</script>.</p>
+<p>The lower sums look like</p>
+<p>
+<script type="math/tex; mode=display">
+L(f+g, P) \geq L(f, P) + L(g, P)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Review the proof of Theorem 7.4.2 (ii), and provide an argument for part (i) of this theorem.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">f, g</script> are all integrable,
+we can find <script type="math/tex">P_{f, n}, Q_{g, n}</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} U(f, P_{f, n}) - L(f, P_{f, n}) = 0 \\
+\lim_{n \to \infty} U(g, P_{g, n}) - L(g, P_{g, n}) = 0 \\
+</script>
+</p>
+<p>Then let <script type="math/tex">P_n = P_{f, n} \cup P_{g, n}</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} U(f, P_{n}) - L(f, P_{n}) = 0 \\
+\lim_{n \to \infty} U(g, P_{n}) - L(g, P_{n}) = 0 \\
+</script>
+</p>
+<p>Adding them together</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty}
+(U(f, P_{n}) + U(g, P_{n})) -
+(L(f, P_{n}) + L(g, P_{n})) = 0
+</script>
+</p>
+<p>Furthermore, We apply (a), then we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty}
+U(f+g, P_n) -
+L(f+g, P_n) \leq 0
+</script>
+</p>
+<p>On the other hand, <script type="math/tex">U(f+g, P_n) - L(f+g, P_n) \geq 0</script>.
+So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty}
+U(f+g, P_n) -
+L(f+g, P_n) = 0
+</script>
+</p>
+<p>So <script type="math/tex">f+g</script> is integrable. Since <script type="math/tex">U(f+g, P) \leq U(f, P) + U(g, P)</script>, then <script type="math/tex">U(f+g) \leq U(f) + U(g)</script>.
+Similarly, <script type="math/tex">L(f+g) \geq  L(f) + L(g)</script>.</p>
+<p>So <script type="math/tex">\int_{a}^{b} (f+g) = \int_{a}^{b}f + \int_{a}^{b} g</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="746">7.4.6.</h3>
+<p>Although not part of Theorem 7.4.2, it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact:</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch06ex/" class="btn btn-neutral float-left" title="Chapter 06 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../misc/" class="btn btn-neutral float-right" title="Misc info">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch06ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
