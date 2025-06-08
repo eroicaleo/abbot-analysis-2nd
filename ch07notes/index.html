@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Chapter 07 The Riemann Integral - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <title>Chapter 07 Notes - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Chapter 07 The Riemann Integral";
+        var mkdocs_page_name = "Chapter 07 Notes";
         var mkdocs_page_input_path = "ch07notes.md";
         var mkdocs_page_url = null;
       </script>
@@ -75,6 +75,24 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
                 </li>
               </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 07 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#74-properties-of-the-integral">7.4 Properties of the Integral</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#742">7.4.2.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#75-the-fundamental-theorem-of-calculus">7.5 The Fundamental Theorem of Calculus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-751-fundamental-theorem-of-calculus">Theorem 7.5.1 (Fundamental Theorem of Calculus).</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch07ex/">Chapter 07 Exercises</a>
                 </li>
@@ -101,7 +119,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Chapter 07 The Riemann Integral</li>
+      <li class="breadcrumb-item active">Chapter 07 Notes</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch07notes.md" class="icon icon-github"> Edit on Github</a>
     </li>
@@ -157,9 +175,88 @@ k \int_{a}^{b} f \leq k U(f, P) < k L(f, P) + \epsilon
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="75-the-fundamental-theorem-of-calculus">7.5 The Fundamental Theorem of Calculus</h2>
+<h3 id="theorem-751-fundamental-theorem-of-calculus">Theorem 7.5.1 (Fundamental Theorem of Calculus).</h3>
+<p>(i) If <script type="math/tex">f : [a,b] \rightarrow \mathbf{R}</script> is integrable, and <script type="math/tex">F : [a,b] \rightarrow \mathbf{R}</script>
+satisfies <script type="math/tex">F'(x) = f(x)</script> for all <script type="math/tex">x \in [a, b]</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f = F(b) - F(a).
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(ii) Let <script type="math/tex">g:[a, b] \rightarrow \mathbf{R}</script> be
+integrable, and for <script type="math/tex">x \in [a, b]</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+G(x) = \int_{a}^{x} g(x)
+</script>
+</p>
+<p>Then <script type="math/tex">G</script> is continuous on <script type="math/tex">[a,b]</script>.
+If <script type="math/tex">g</script> is continuous at some point <script type="math/tex">c ∈ [a,b]</script>,
+then <script type="math/tex">G</script> is diﬀerentiable at <script type="math/tex">c</script> and <script type="math/tex">G'(c) = g(c)</script>
+.</p>
+<p><strong>Proof</strong>:</p>
+<p>(i) Given a partition <script type="math/tex">P, a = x_0 < x_1 < \cdots < x_n = b</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x_{k+1}) - F(x_k) = f(x'_k) (x_{k+1} - x_k)
+</script>
+</p>
+<p>Since <script type="math/tex">m_k \leq f(x'_k) \leq M_k</script>,
+then <script type="math/tex">L(f, P) \leq F(b) - F(a) \leq U(f, P)</script>,</p>
+<p>So <script type="math/tex">\int_{a}^{b} f = F(b) - F(a)</script>.</p>
+<p>(ii)</p>
+<p>
+<script type="math/tex; mode=display"> 
+|G(y) - G(x)| = 
+\left| \int_{x}^{y} g(t) \right| 
+\leq \int_{x}^{y} |g(t)| \\
+\leq M(x - y)
+</script>
+</p>
+<p>
+<script type="math/tex">G</script> is Lipschitz and so is uniformly continuous on
+<script type="math/tex">[a,b]</script>.</p>
+<p>For the second part:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{
+    G(x) - G(c)
+}{
+    x - c
+} - g(c)
+\right| 
+=
+\frac{1}{x - c}
+\left| 
+\int_{c}^{x} g(t) - g(c) (x - c)
+ \right| \\
+ =
+\frac{1}{x - c}
+\left| 
+\int_{c}^{x} (g(t) - g(c))
+ \right| \\
+\leq
+\frac{1}{x - c}
+\int_{c}^{x} \left| (g(t) - g(c)) \right| \\
+\leq \frac{1}{x - c} \epsilon (x - c) = \epsilon.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch06ex/" class="btn btn-neutral float-left" title="Chapter 06 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch07ex/" class="btn btn-neutral float-right" title="Chapter 07 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -181,6 +278,10 @@ k \int_{a}^{b} f \leq k U(f, P) < k L(f, P) + \epsilon
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../ch06ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch07ex/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

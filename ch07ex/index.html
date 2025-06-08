@@ -75,6 +75,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch07notes/">Chapter 07 Notes</a>
+                </li>
+              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 07 Exercises</a>
     <ul class="current">
@@ -102,7 +106,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#733">7.3.3.</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_1"></a>
+    <li class="toctree-l3"><a class="reference internal" href="#734">7.3.4.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#735">7.3.5.</a>
     </li>
@@ -118,11 +122,27 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#74-properties-of-the-integral">7.4 Properties of the Integral</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#741">7.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#742">7.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#743">7.4.3.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#744">7.4.4.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#745">7.4.5.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#746">7.4.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#747">7.4.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#748">7.4.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#749">7.4.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7410">7.4.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7411">7.4.11.</a>
     </li>
         </ul>
     </li>
@@ -395,8 +415,8 @@ U(f, P_n) = \frac{1}{n} + \frac{1}{n^2} \times (n-1) \\
 <p>
 <script type="math/tex">\square</script>
 </p>
-<h3 id="_1"></h3>
-<p>7.3.4. Let <script type="math/tex">f</script> and <script type="math/tex">g</script> be functions defined on (possibly diﬀerent) closed
+<h3 id="734">7.3.4.</h3>
+<p>Let <script type="math/tex">f</script> and <script type="math/tex">g</script> be functions defined on (possibly diﬀerent) closed
 intervals, and assume the range of <script type="math/tex">f</script> is contained in the domain of <script type="math/tex">g</script> so that the
 composition <script type="math/tex">g ◦f</script> is properly defined.</p>
 <p>(a) Show, by example, that it is not the case that if
@@ -658,6 +678,152 @@ h(x) =
 So <script type="math/tex">h(x)</script> is continuous at <script type="math/tex">x</script>. Then we can apply (a).
 So <script type="math/tex">h(x)</script> is integrable. and the value is <script type="math/tex">0</script>.</p>
 <h2 id="74-properties-of-the-integral">7.4 Properties of the Integral</h2>
+<h3 id="741">7.4.1.</h3>
+<p>Let <script type="math/tex">f</script> be a bounded function on a set <script type="math/tex">A</script>, and set</p>
+<p>
+<script type="math/tex; mode=display"> 
+M = \sup \{f(x) : x \in A\} \\
+m = \inf \{f(x) : x \in A\} \\
+M' = \sup \{|f(x)| : x \in A\} \\
+m' = \inf \{|f(x)| : x \in A\} \\
+</script>
+</p>
+<p>Anwser:</p>
+<p>(a) Show that <script type="math/tex">M - m \geq M' - m'</script>.</p>
+<p>Proof:</p>
+<ul>
+<li>case 1: <script type="math/tex">M > 0, m > 0</script> then <script type="math/tex">M' = M, m' = m</script>
+</li>
+<li>case 2: <script type="math/tex">M > 0, m = 0</script> then <script type="math/tex">M' = M, m' = m</script>
+</li>
+<li>case 3: <script type="math/tex">M > 0, m < 0</script> then <script type="math/tex">M' = M, m' > 0 > m</script>
+</li>
+<li>case 4: <script type="math/tex">M = 0, m = 0</script> then <script type="math/tex">M' = M, m' = m</script>
+</li>
+<li>case 5: <script type="math/tex">M = 0, m < 0</script> then <script type="math/tex">M' = -m, m' = -M</script>
+</li>
+<li>case 6: <script type="math/tex">M < 0, m < 0</script> then <script type="math/tex">M' = -m, m' = -M</script>
+</li>
+</ul>
+<p>In all 6 cases, we have <script type="math/tex">M - m \geq M' - m'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">f</script> is integrable on the interval <script type="math/tex">[a,b]</script>, then <script type="math/tex">|f|</script> is also integrable on this interval.</p>
+<p>Proof: Given a partition, <script type="math/tex">P: a = x_0 < x_1 < x_2 < x_3 < \cdots < x_n = b</script>.</p>
+<p>For segment <script type="math/tex">k</script>, the difference between upper sum
+and lower sum for <script type="math/tex">f</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+(M_k - m_k) \Delta _k \geq (M_k' - m_k') \Delta _k
+</script>
+</p>
+<p>So we have <script type="math/tex">U(|f|, P) - L(|f|, P) \leq U(f, P) - L(f, P) < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Provide the details for the argument that in this case we have <script type="math/tex">\left| \int_{a}^{b} f \right| \leq
+\int_{a}^{b} |f|</script>.</p>
+<p>Proof: <script type="math/tex">|f| - f \geq 0</script>, so <script type="math/tex">\int_{a}^{b}(|f| - f)
+\geq 0</script>, so <script type="math/tex">\int_{a}^{b}|f| - \int_{a}^{b} f \geq 0</script>,
+so <script type="math/tex">\int_{a}^{b} f \leq \int_{a}^{b}|f|</script>.</p>
+<p>On the other hand, <script type="math/tex">f + |f| \geq 0</script>, so
+so <script type="math/tex">\int_{a}^{b}(f + |f|) \geq 0</script>,
+so <script type="math/tex">\int_{a}^{b} f \geq -\int_{a}^{b}|f|</script>.</p>
+<p>Together, we have
+<script type="math/tex">\left| \int_{a}^{b} f \right| \leq
+\int_{a}^{b} |f|</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="742">7.4.2.</h3>
+<p>(a) Let <script type="math/tex">g(x) = x^3</script>, and classify each of the following as positive, negative, or zero.</p>
+<p>(i) <script type="math/tex">\int_{0}^{-1}g + \int_{0}^{1} g</script>
+</p>
+<p>Solution: </p>
+<p>
+<script type="math/tex">\int_{0}^{-1}g</script> = <script type="math/tex">-\int_{-1}^{0}g > 0</script>, so overall
+it's positive.</p>
+<p>(ii) <script type="math/tex">\int_{1}^{0}g + \int_{0}^{1} g</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex">\int_{1}^{0}g = - \int_{0}^{1} g</script>, so it's 0.</p>
+<p>(iii) <script type="math/tex">\int_{1}^{-2}g + \int_{0}^{1} g</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{1}^{-2}g + \int_{0}^{1} g =
+- (\int_{-2}^{1}g - \int_{0}^{1} g) = \\
+- \int_{-2}^{0} g > 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">b ≤ a ≤ c</script> and f is integrable on the interval <script type="math/tex">[b,c]</script>, then it is the case</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f = \int_{a}^{c} f + \int_{c}^{b} f
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{b}^{c} f = \int_{b}^{a} f + \int_{a}^{c} f
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+- \int_{c}^{b} f = - \int_{a}^{b} f + \int_{a}^{c} f
+</script>
+</p>
+<p>So </p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f = \int_{a}^{c} f + \int_{c}^{b} f
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="743">7.4.3.</h3>
+<p>Decide which of the following conjectures is true and supply a short proof. For those that are not true, give a counterexample.</p>
+<p>(a) If <script type="math/tex">|f|</script> is integrable on <script type="math/tex">[a,b]</script>, then <script type="math/tex">f</script> is also integrable on this set.</p>
+<p>Solution: False. Consdier <script type="math/tex">f</script> defined on <script type="math/tex">[0,1]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    -1 &\text{if } x \in \mathbf{Q}\\
+    1  &\text{if } x \in \mathbf{I}\\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Assume <script type="math/tex">g</script> is integrable and <script type="math/tex">g(x) ≥ 0</script> on <script type="math/tex">[a,b]</script>. If <script type="math/tex">g(x) > 0</script> for an infinite number of points
+<script type="math/tex">x ∈ [a,b]</script>, then <script type="math/tex">\int_{a}^{b}f > 0</script>.</p>
+<p><strong>Solution</strong>: False. Consider Thomae function.</p>
+<p>(c) If <script type="math/tex">g</script> is continuous on <script type="math/tex">[a,b]</script> and <script type="math/tex">g(x) ≥ 0</script> with
+<script type="math/tex">g(y_0) > 0</script> for at least one point <script type="math/tex">y_0 ∈ [a,b]</script>, then <script type="math/tex">\int_{a}^{b}f > 0</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">g</script> is continuous, we can find a closed
+interval <script type="math/tex">y_0 \in [c, d] \subseteq [a,b]</script> such that
+<script type="math/tex">f(x) > \epsilon</script> for <script type="math/tex">[c, d]</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f = \int_{a}^{c} f +
+\int_{c}^{d} f + \int_{d}^{b} f
+\geq 0 + \epsilon (d-c) + 0 > 0.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="744">7.4.4.</h3>
 <p>Show that if <script type="math/tex">f(x) > 0</script> for all <script type="math/tex">x ∈ [a,b]</script> and <script type="math/tex">f</script> is integrable, then <script type="math/tex">\int_{a}^{b} f > 0</script>.</p>
 <p><strong>Proof</strong>: No idea for now. Seems like we need to use
@@ -737,11 +903,302 @@ Similarly, <script type="math/tex">L(f+g) \geq  L(f) + L(g)</script>.</p>
 </p>
 <h3 id="746">7.4.6.</h3>
 <p>Although not part of Theorem 7.4.2, it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact:</p>
+<p>(a) If <script type="math/tex">f</script> satisfies <script type="math/tex">|f(x)| ≤ M</script> on <script type="math/tex">[a,b]</script>, show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+(f(x))^2 - (f(y))^2
+\right|
+\leq
+2M \left| f(x) - f(y) \right|
+</script>
+</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+(f(x))^2 - (f(y))^2
+\right|
+= \\
+\left| f(x) + f(y) \right| 
+\left| f(x) - f(y) \right|
+\leq (|f(x)| + |f(y)|) \left| f(x) - f(y) \right| \\
+\leq 2M \left| f(x) - f(y) \right|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">f</script> is integrable on <script type="math/tex">[a,b]</script>, then so is <script type="math/tex">f^2</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the partial sum <script type="math/tex">M_k - m_k</script> for <script type="math/tex">f</script>.
+For any <script type="math/tex">x, y \in [x_k, x_{k+1}]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f(x) - f(y)) ^ 2 \leq
+2M \left| f(x) - f(y) \right| < 2M (M_{f,k} - m_{f,k})
+</script>
+</p>
+<p>So <script type="math/tex">U(f^2, P) - L(f^2, P) \leq 2M U(f, P) - L(f, P)</script>.
+Then <script type="math/tex">f^2</script> is also integrable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Now show that if <script type="math/tex">f</script> and <script type="math/tex">g</script> are integrable, then <script type="math/tex">fg</script> is integrable. (Consider <script type="math/tex">(f+g)^2</script>.)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+fg = \frac{1}{2} ((f+g)^2 - f^2 - g^2)
+</script>
+</p>
+<p>All functions on the right side are integrable.
+The sum of them is integrable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="747">7.4.7.</h3>
+<p>Review the discussion immediately preceding Theorem 7.4.4.</p>
+<p>(a) Produce an example of a sequence
+<script type="math/tex">(f_n) \rightarrow 0</script> pointwise on [0,1] where
+<script type="math/tex">\lim_{n \to \infty} \int_{0}^{1}f_n</script> does not exist.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \begin{cases}
+    n^2 &\text{if } 0 \leq x \leq \frac{1}{n}\\
+    0 &\text{if } x > \frac{1}{n^2} \\
+\end{cases} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{1} f_n = n
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Produce an example of a sequence <script type="math/tex">g_n</script> with <script type="math/tex">\int_{0}^{1}g_n \rightarrow 0</script> but <script type="math/tex">g_n</script> does not converge to zero for any <script type="math/tex">x \in [0,1]</script>.
+To make it more interesting, let’s insist
+that <script type="math/tex">g_n(x) ≥ 0</script> for all <script type="math/tex">x</script> and <script type="math/tex">n</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>I borrowed the idea from exercise 6.4.2 (c)
+Consdier</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_1(x) = 1 \\
+f_2(x) = \begin{cases}
+    1 &\text{if } x < \frac{1}{2}\\
+    0 &\text{if } x \geq \frac{1}{2}\\
+\end{cases} \\
+f_3(x) = \begin{cases}
+    0 &\text{if } x < \frac{1}{2}\\
+    1 &\text{if } x \geq \frac{1}{2}\\
+\end{cases} \\
+f_4(x) = \begin{cases}
+    1 &\text{if } \frac{0}{4} < x < \frac{1}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_5(x) = \begin{cases}
+    1 &\text{if } \frac{1}{4} < x < \frac{2}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_6(x) = \begin{cases}
+    1 &\text{if } \frac{2}{4} < x < \frac{3}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_7(x) = \begin{cases}
+    1 &\text{if } \frac{3}{4} < x < \frac{4}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+\cdots 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="748">7.4.8.</h3>
+<p>For each <script type="math/tex">n \in \mathbf{N}</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h_n(x) = \begin{cases}
+    1/2^n &\text{if } 1/2^n < x \leq 1\\
+    0 &\text{if } 0 \leq x \leq 1/2^n\\
+\end{cases} 
+</script>
+</p>
+<p>And set <script type="math/tex">H(x) = \sum_{n = 1}^{\infty} h_n(x)</script>.
+Show <script type="math/tex">H</script> is integrable and compute <script type="math/tex">\int_{0}^{1} H</script>.</p>
+<p><strong>Solution</strong>: Because each <script type="math/tex">h_n(x)</script> is increasing, <script type="math/tex">H(x)</script> is also
+increasing. <script type="math/tex">H(x)</script> is bounded since <script type="math/tex">H(x) \leq 1</script>.
+So <script type="math/tex">H</script> is integrable.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+H_k(x) = \sum_{n = 1}^{k} h_n(x)
+</script>
+</p>
+<p>Note that <script type="math/tex">H_k(x)</script> converges uniformly to <script type="math/tex">H(x)</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{1} H_k(x) = \frac{1}{2} (1 - \frac{1}{2})
++ \frac{1}{4} (1 - \frac{1}{4}) + \cdots +
+\frac{1}{2^k} (1 - \frac{1}{2^k}) \\
+= \sum_{n = 1}^{k} \frac{1}{2^k} - \sum_{n = 1}^{k} \frac{1}{2^{2k}}
+</script>
+</p>
+<p>So <script type="math/tex">\lim_{n \to \infty} H_k(x) = 1 - \frac{1/4}{1 - 1/4} = 2/3</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="749">7.4.9.</h3>
+<p>Let <script type="math/tex">g_n</script> and <script type="math/tex">g</script> be uniformly bounded on <script type="math/tex">[0,1]</script>, meaning that
+there exists a single <script type="math/tex">M > 0</script> satisfying
+<script type="math/tex">|g(x)| ≤ M</script> and <script type="math/tex">|g_n(x)| ≤ M</script> for all <script type="math/tex">n ∈ \mathbf{N}</script> and <script type="math/tex">x ∈ [0,1]</script>.</p>
+<p>Assume <script type="math/tex">g_n → g</script> pointwise on <script type="math/tex">[0,1]</script> and uniformly on any set of
+the form <script type="math/tex">[0,α]</script>, where <script type="math/tex">0 < α < 1</script>.</p>
+<p>If all the functions are integrable, show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} \int_{0}^{1} g_n
+= \int_{0}^{1} g
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">\epsilon</script>, we want to find <script type="math/tex">N</script> such that
+if <script type="math/tex">n > N</script> then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right| 
+< \epsilon
+</script>
+</p>
+<p>Since <script type="math/tex">g_n</script> and <script type="math/tex">g</script> be uniformly bounded on <script type="math/tex">[0,1]</script>,
+we can have a <script type="math/tex">M</script>.</p>
+<p>Given this <script type="math/tex">M</script>, we can find <script type="math/tex">\alpha</script>, such that
+<script type="math/tex">(1 - \alpha ) M < \epsilon / 3</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right|
+< \left| \int_{0}^{1} g_n - \int_{0}^{\alpha} g_n \right| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| +
+\left| \int_{0}^{1} g_n - \int_{0}^{\alpha} g_n \right| \\
+= \left| \int_{\alpha}^{1} g_n \right| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| + \left| \int_{\alpha}^{1} g \right| \\
+\int_{\alpha}^{1} |g_n| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| +
+\int_{\alpha}^{1} |g| \leq
+(1 - \alpha ) M +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| + (1 - \alpha ) M \\
+2 / 3 \epsilon +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right|
+</script>
+</p>
+<p>Since <script type="math/tex">g_n → g</script> uniformly on any set of
+the form <script type="math/tex">[0,α]</script>, we can find <script type="math/tex">N</script> such that
+if <script type="math/tex">n > N</script> then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| < \epsilon / 3
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right|
+< \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7410">7.4.10.</h3>
+<p>Assume <script type="math/tex">g</script> is integrable on <script type="math/tex">[0,1]</script> and continuous at <script type="math/tex">0</script>. Show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty}
+\int_{0}^{1} g(x^n) dx = g(0)
+</script>
+</p>
+<p><strong>Proof</strong>: We want to find <script type="math/tex">N</script> such that
+if <script type="math/tex">n > N</script> then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{1} g(x^n) dx - g(0) \right|
+< \epsilon
+</script>
+</p>
+<p>We use the technique in theorem 7.5.1</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{0}^{1} g(x^n) dx - g(0) \right|
+= \\
+\left| \int_{0}^{1} g(x^n) dx - 
+\int_{0}^{1} g(0) dx \right| =
+\left| 
+\int_{0}^{1} (g(x^n) - g(0))dx
+\right|
+</script>
+</p>
+<p>Since <script type="math/tex">g</script> is integrable, <script type="math/tex">g</script> is bounded, i.e.
+<script type="math/tex">\left| g(x) \right| \leq M</script>. 
+Then we can find <script type="math/tex">c \in [0, 1]</script>, such that
+<script type="math/tex">2M(1-c) < \epsilon /2</script>.</p>
+<p>Fix this <script type="math/tex">c</script>. Next, since <script type="math/tex">g</script> is continuous at <script type="math/tex">0</script>,
+we can find <script type="math/tex">U_{\delta}(0)</script> such that
+<script type="math/tex">x \in U_{\delta}(0)</script>, <script type="math/tex">|g(x) - g(0)| < \epsilon / 2</script>.</p>
+<p>Then we can find <script type="math/tex">N</script> such that if <script type="math/tex">n > N, x \in [0,c]</script>, <script type="math/tex">x^n \in U_{\delta}(0)</script>.</p>
+<p>So </p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{0}^{1} (g(x^n) - g(0))dx
+\right| \leq
+\int_{0}^{1}
+\left| g(x^n) - g(0) \right| dx \\
+= \int_{0}^{c} \left| g(x^n) - g(0) \right| dx
++ \int_{c}^{1} \left| g(x^n) - g(0) \right| dx \\
+< \epsilon / 2 c + 2M(1-c)
+< \epsilon / 2 + \epsilon / 2= \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7411">7.4.11.</h3>
+<p>Review the original definition of integrability in Section 7.2,
+and in particular the definition of the upper integral <script type="math/tex">U(f)</script>. One reasonable sug-
+gestion might be to bypass the complications introduced in Definition 7.2.7 and
+simply define the integral to be the value of <script type="math/tex">U(f)</script>. Then every bounded function
+is integrable! Although tempting, proceeding in this way has some significant
+drawbacks. Show by example that several of the properties in Theorem 7.4.2 no
+longer hold if we replace our current definition of integrability with the proposal
+that <script type="math/tex">\int_{a}^{b} f= U(f)</script> for every bounded function <script type="math/tex">f</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>(i) Let <script type="math/tex">f(x)</script> is Thomae function and <script type="math/tex">g(x)</script> be
+the negative Thomae function.</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f) = 1, U(g) = 0
+</script>
+</p>
+<p>So <script type="math/tex">U(f) + U(g) = 1</script>, but <script type="math/tex">U(f+g) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(ii), (iii), (iv), (v) holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ch06ex/" class="btn btn-neutral float-left" title="Chapter 06 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch07notes/" class="btn btn-neutral float-left" title="Chapter 07 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../misc/" class="btn btn-neutral float-right" title="Misc info">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -765,7 +1222,7 @@ Similarly, <script type="math/tex">L(f+g) \geq  L(f) + L(g)</script>.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../ch06ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../ch07notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>
