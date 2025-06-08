@@ -47,5 +47,82 @@ $$
 
 $\square$
 
+## 7.5 The Fundamental Theorem of Calculus
 
+### Theorem 7.5.1 (Fundamental Theorem of Calculus).
+
+(i) If $f : [a,b] \rightarrow \mathbf{R}$ is integrable, and $F : [a,b] \rightarrow \mathbf{R}$
+satisfies $F'(x) = f(x)$ for all $x \in [a, b]$,
+then
+
+$$ 
+\int_{a}^{b} f = F(b) - F(a).
+$$
+
+$\square$
+
+(ii) Let $g:[a, b] \rightarrow \mathbf{R}$ be
+integrable, and for $x \in [a, b]$, define
+
+$$ 
+G(x) = \int_{a}^{x} g(x)
+$$
+
+Then $G$ is continuous on $[a,b]$.
+If $g$ is continuous at some point $c ∈ [a,b]$,
+then $G$ is diﬀerentiable at $c$ and $G'(c) = g(c)$
+.
+
+**Proof**:
+
+(i) Given a partition $P, a = x_0 < x_1 < \cdots < x_n = b$.
+
+$$ 
+F(x_{k+1}) - F(x_k) = f(x'_k) (x_{k+1} - x_k)
+$$
+
+Since $m_k \leq f(x'_k) \leq M_k$,
+then $L(f, P) \leq F(b) - F(a) \leq U(f, P)$,
+
+So $\int_{a}^{b} f = F(b) - F(a)$.
+
+(ii)
+
+$$ 
+|G(y) - G(x)| = 
+\left| \int_{x}^{y} g(t) \right| 
+\leq \int_{x}^{y} |g(t)| \\
+\leq M(x - y)
+$$
+
+$G$ is Lipschitz and so is uniformly continuous on
+$[a,b]$.
+
+For the second part:
+
+$$ 
+\left| 
+\frac{
+    G(x) - G(c)
+}{
+    x - c
+} - g(c)
+\right| 
+=
+\frac{1}{x - c}
+\left| 
+\int_{c}^{x} g(t) - g(c) (x - c)
+ \right| \\
+ =
+\frac{1}{x - c}
+\left| 
+\int_{c}^{x} (g(t) - g(c))
+ \right| \\
+\leq
+\frac{1}{x - c}
+\int_{c}^{x} \left| (g(t) - g(c)) \right| \\
+\leq \frac{1}{x - c} \epsilon (x - c) = \epsilon.
+$$
+
+$\square$
 
