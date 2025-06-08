@@ -267,9 +267,9 @@ So $\int_{0}^{1} f = 0$.
 
 $\square$
 
-###
+### 7.3.4.
 
-7.3.4. Let $f$ and $g$ be functions defined on (possibly diﬀerent) closed
+Let $f$ and $g$ be functions defined on (possibly diﬀerent) closed
 intervals, and assume the range of $f$ is contained in the domain of $g$ so that the
 composition $g ◦f$ is properly defined.
 
@@ -573,6 +573,160 @@ So $h(x)$ is integrable. and the value is $0$.
 
 ## 7.4 Properties of the Integral
 
+### 7.4.1.
+
+Let $f$ be a bounded function on a set $A$, and set
+
+$$ 
+M = \sup \{f(x) : x \in A\} \\
+m = \inf \{f(x) : x \in A\} \\
+M' = \sup \{|f(x)| : x \in A\} \\
+m' = \inf \{|f(x)| : x \in A\} \\
+$$
+
+Anwser:
+
+(a) Show that $M - m \geq M' - m'$.
+
+Proof:
+
+* case 1: $M > 0, m > 0$ then $M' = M, m' = m$
+* case 2: $M > 0, m = 0$ then $M' = M, m' = m$
+* case 3: $M > 0, m < 0$ then $M' = M, m' > 0 > m$
+* case 4: $M = 0, m = 0$ then $M' = M, m' = m$
+* case 5: $M = 0, m < 0$ then $M' = -m, m' = -M$
+* case 6: $M < 0, m < 0$ then $M' = -m, m' = -M$
+
+In all 6 cases, we have $M - m \geq M' - m'$.
+
+$\square$
+
+(b) Show that if $f$ is integrable on the interval $[a,b]$, then $|f|$ is also integrable on this interval.
+
+Proof: Given a partition, $P: a = x_0 < x_1 < x_2 < x_3 < \cdots < x_n = b$.
+
+For segment $k$, the difference between upper sum
+and lower sum for $f$ is
+
+$$ 
+(M_k - m_k) \Delta _k \geq (M_k' - m_k') \Delta _k
+$$
+
+So we have $U(|f|, P) - L(|f|, P) \leq U(f, P) - L(f, P) < \epsilon$.
+
+$\square$
+
+(c) Provide the details for the argument that in this case we have $\left| \int_{a}^{b} f \right| \leq
+\int_{a}^{b} |f|$.
+
+Proof: $|f| - f \geq 0$, so $\int_{a}^{b}(|f| - f)
+\geq 0$, so $\int_{a}^{b}|f| - \int_{a}^{b} f \geq 0$,
+so $\int_{a}^{b} f \leq \int_{a}^{b}|f|$.
+
+On the other hand, $f + |f| \geq 0$, so
+so $\int_{a}^{b}(f + |f|) \geq 0$,
+so $\int_{a}^{b} f \geq -\int_{a}^{b}|f|$.
+
+Together, we have
+$\left| \int_{a}^{b} f \right| \leq
+\int_{a}^{b} |f|$.
+
+$\square$
+
+### 7.4.2.
+
+(a) Let $g(x) = x^3$, and classify each of the following as positive, negative, or zero.
+
+(i) $\int_{0}^{-1}g + \int_{0}^{1} g$
+
+Solution: 
+
+$\int_{0}^{-1}g$ = $-\int_{-1}^{0}g > 0$, so overall
+it's positive.
+
+(ii) $\int_{1}^{0}g + \int_{0}^{1} g$
+
+**Solution**:
+
+$\int_{1}^{0}g = - \int_{0}^{1} g$, so it's 0.
+
+(iii) $\int_{1}^{-2}g + \int_{0}^{1} g$
+
+**Solution**:
+
+$$ 
+\int_{1}^{-2}g + \int_{0}^{1} g =
+- (\int_{-2}^{1}g - \int_{0}^{1} g) = \\
+- \int_{-2}^{0} g > 0
+$$
+
+$\square$
+
+(b) Show that if $b ≤ a ≤ c$ and f is integrable on the interval $[b,c]$, then it is the case
+
+$$ 
+\int_{a}^{b} f = \int_{a}^{c} f + \int_{c}^{b} f
+$$
+
+**Proof**:
+
+We have
+
+$$ 
+\int_{b}^{c} f = \int_{b}^{a} f + \int_{a}^{c} f
+$$ 
+
+So
+
+$$ 
+- \int_{c}^{b} f = - \int_{a}^{b} f + \int_{a}^{c} f
+$$
+
+So 
+
+$$ 
+\int_{a}^{b} f = \int_{a}^{c} f + \int_{c}^{b} f
+$$
+
+$\square$
+
+### 7.4.3.
+
+Decide which of the following conjectures is true and supply a short proof. For those that are not true, give a counterexample.
+
+(a) If $|f|$ is integrable on $[a,b]$, then $f$ is also integrable on this set.
+
+Solution: False. Consdier $f$ defined on $[0,1]$ 
+
+$$ 
+f(x) = \begin{cases}
+    -1 &\text{if } x \in \mathbf{Q}\\
+    1  &\text{if } x \in \mathbf{I}\\
+\end{cases} 
+$$
+
+$\square$
+
+(b) Assume $g$ is integrable and $g(x) ≥ 0$ on $[a,b]$. If $g(x) > 0$ for an infinite number of points
+$x ∈ [a,b]$, then $\int_{a}^{b}f > 0$.
+
+**Solution**: False. Consider Thomae function.
+
+(c) If $g$ is continuous on $[a,b]$ and $g(x) ≥ 0$ with
+$g(y_0) > 0$ for at least one point $y_0 ∈ [a,b]$, then $\int_{a}^{b}f > 0$.
+
+**Proof**: Since $g$ is continuous, we can find a closed
+interval $y_0 \in [c, d] \subseteq [a,b]$ such that
+$f(x) > \epsilon$ for $[c, d]$. Then
+
+$$ 
+\int_{a}^{b} f = \int_{a}^{c} f +
+\int_{c}^{d} f + \int_{d}^{b} f
+\geq 0 + \epsilon (d-c) + 0 > 0.
+$$
+
+$\square$
+
 ### 7.4.4.
 
 Show that if $f(x) > 0$ for all $x ∈ [a,b]$ and $f$ is integrable, then $\int_{a}^{b} f > 0$.
@@ -664,4 +818,315 @@ $\square$
 ### 7.4.6.
 
 Although not part of Theorem 7.4.2, it is true that the product of integrable functions is integrable. Provide the details for each step in the following proof of this fact:
+
+(a) If $f$ satisfies $|f(x)| ≤ M$ on $[a,b]$, show
+
+
+$$ 
+\left| 
+(f(x))^2 - (f(y))^2
+\right|
+\leq
+2M \left| f(x) - f(y) \right|
+$$
+
+Proof:
+
+$$ 
+\left| 
+(f(x))^2 - (f(y))^2
+\right|
+= \\
+\left| f(x) + f(y) \right| 
+\left| f(x) - f(y) \right|
+\leq (|f(x)| + |f(y)|) \left| f(x) - f(y) \right| \\
+\leq 2M \left| f(x) - f(y) \right|
+$$
+
+$\square$
+
+(b) Prove that if $f$ is integrable on $[a,b]$, then so is $f^2$.
+
+**Proof**:
+
+Consider the partial sum $M_k - m_k$ for $f$.
+For any $x, y \in [x_k, x_{k+1}]$
+
+$$ 
+(f(x) - f(y)) ^ 2 \leq
+2M \left| f(x) - f(y) \right| < 2M (M_{f,k} - m_{f,k})
+$$
+
+So $U(f^2, P) - L(f^2, P) \leq 2M U(f, P) - L(f, P)$.
+Then $f^2$ is also integrable.
+
+$\square$
+
+(c) Now show that if $f$ and $g$ are integrable, then $fg$ is integrable. (Consider $(f+g)^2$.)
+
+**Proof**:
+
+$$ 
+fg = \frac{1}{2} ((f+g)^2 - f^2 - g^2)
+$$
+
+All functions on the right side are integrable.
+The sum of them is integrable.
+
+$\square$
+
+### 7.4.7.
+
+Review the discussion immediately preceding Theorem 7.4.4.
+
+(a) Produce an example of a sequence
+$(f_n) \rightarrow 0$ pointwise on [0,1] where
+$\lim_{n \to \infty} \int_{0}^{1}f_n$ does not exist.
+
+**Solution**:
+
+Consider
+
+$$ 
+f_n(x) = \begin{cases}
+    n^2 &\text{if } 0 \leq x \leq \frac{1}{n}\\
+    0 &\text{if } x > \frac{1}{n^2} \\
+\end{cases} 
+$$
+
+So we have
+
+$$ 
+\int_{0}^{1} f_n = n
+$$
+
+$\square$
+
+(b) Produce an example of a sequence $g_n$ with $\int_{0}^{1}g_n \rightarrow 0$ but $g_n$ does not converge to zero for any $x \in [0,1]$.
+To make it more interesting, let’s insist
+that $g_n(x) ≥ 0$ for all $x$ and $n$.
+
+**Solution**:
+
+I borrowed the idea from exercise 6.4.2 (c)
+Consdier
+
+$$ 
+f_1(x) = 1 \\
+f_2(x) = \begin{cases}
+    1 &\text{if } x < \frac{1}{2}\\
+    0 &\text{if } x \geq \frac{1}{2}\\
+\end{cases} \\
+f_3(x) = \begin{cases}
+    0 &\text{if } x < \frac{1}{2}\\
+    1 &\text{if } x \geq \frac{1}{2}\\
+\end{cases} \\
+f_4(x) = \begin{cases}
+    1 &\text{if } \frac{0}{4} < x < \frac{1}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_5(x) = \begin{cases}
+    1 &\text{if } \frac{1}{4} < x < \frac{2}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_6(x) = \begin{cases}
+    1 &\text{if } \frac{2}{4} < x < \frac{3}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+f_7(x) = \begin{cases}
+    1 &\text{if } \frac{3}{4} < x < \frac{4}{4}\\
+    0 &\text{otherwise} \\
+\end{cases} \\
+\cdots 
+$$
+
+$\square$
+
+### 7.4.8.
+
+For each $n \in \mathbf{N}$, let
+
+$$ 
+h_n(x) = \begin{cases}
+    1/2^n &\text{if } 1/2^n < x \leq 1\\
+    0 &\text{if } 0 \leq x \leq 1/2^n\\
+\end{cases} 
+$$
+
+And set $H(x) = \sum_{n = 1}^{\infty} h_n(x)$.
+Show $H$ is integrable and compute $\int_{0}^{1} H$.
+
+**Solution**: Because each $h_n(x)$ is increasing, $H(x)$ is also
+increasing. $H(x)$ is bounded since $H(x) \leq 1$.
+So $H$ is integrable.
+
+Consider
+
+$$ 
+H_k(x) = \sum_{n = 1}^{k} h_n(x)
+$$
+
+Note that $H_k(x)$ converges uniformly to $H(x)$ and
+
+$$ 
+\int_{0}^{1} H_k(x) = \frac{1}{2} (1 - \frac{1}{2})
++ \frac{1}{4} (1 - \frac{1}{4}) + \cdots +
+\frac{1}{2^k} (1 - \frac{1}{2^k}) \\
+= \sum_{n = 1}^{k} \frac{1}{2^k} - \sum_{n = 1}^{k} \frac{1}{2^{2k}}
+$$
+
+So $\lim_{n \to \infty} H_k(x) = 1 - \frac{1/4}{1 - 1/4} = 2/3$.
+
+$\square$
+
+### 7.4.9.
+
+Let $g_n$ and $g$ be uniformly bounded on $[0,1]$, meaning that
+there exists a single $M > 0$ satisfying
+$|g(x)| ≤ M$ and $|g_n(x)| ≤ M$ for all $n ∈ \mathbf{N}$ and $x ∈ [0,1]$.
+
+Assume $g_n → g$ pointwise on $[0,1]$ and uniformly on any set of
+the form $[0,α]$, where $0 < α < 1$.
+
+If all the functions are integrable, show that
+
+$$ 
+\lim_{n \to \infty} \int_{0}^{1} g_n
+= \int_{0}^{1} g
+$$
+
+**Proof**:
+
+Given $\epsilon$, we want to find $N$ such that
+if $n > N$ then
+
+$$ 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right| 
+< \epsilon
+$$
+
+Since $g_n$ and $g$ be uniformly bounded on $[0,1]$,
+we can have a $M$.
+
+Given this $M$, we can find $\alpha$, such that
+$(1 - \alpha ) M < \epsilon / 3$.
+
+Then
+
+$$ 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right|
+< \left| \int_{0}^{1} g_n - \int_{0}^{\alpha} g_n \right| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| +
+\left| \int_{0}^{1} g_n - \int_{0}^{\alpha} g_n \right| \\
+= \left| \int_{\alpha}^{1} g_n \right| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| + \left| \int_{\alpha}^{1} g \right| \\
+\int_{\alpha}^{1} |g_n| +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| +
+\int_{\alpha}^{1} |g| \leq
+(1 - \alpha ) M +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| + (1 - \alpha ) M \\
+2 / 3 \epsilon +
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right|
+$$
+
+Since $g_n → g$ uniformly on any set of
+the form $[0,α]$, we can find $N$ such that
+if $n > N$ then
+
+$$ 
+\left| \int_{0}^{\alpha} g_n - \int_{0}^{\alpha} g \right| < \epsilon / 3
+$$
+
+So
+
+$$ 
+\left| \int_{0}^{1} g_n - \int_{0}^{1} g \right|
+< \epsilon 
+$$
+
+$\square$
+
+### 7.4.10.
+
+Assume $g$ is integrable on $[0,1]$ and continuous at $0$. Show
+
+$$ 
+\lim_{n \to \infty}
+\int_{0}^{1} g(x^n) dx = g(0)
+$$
+
+**Proof**: We want to find $N$ such that
+if $n > N$ then
+
+$$ 
+\left| \int_{0}^{1} g(x^n) dx - g(0) \right|
+< \epsilon
+$$
+
+We use the technique in theorem 7.5.1
+
+$$ 
+\left| \int_{0}^{1} g(x^n) dx - g(0) \right|
+= \\
+\left| \int_{0}^{1} g(x^n) dx - 
+\int_{0}^{1} g(0) dx \right| =
+\left| 
+\int_{0}^{1} (g(x^n) - g(0))dx
+\right|
+$$
+
+Since $g$ is integrable, $g$ is bounded, i.e.
+$\left| g(x) \right| \leq M$. 
+Then we can find $c \in [0, 1]$, such that
+$2M(1-c) < \epsilon /2$.
+
+Fix this $c$. Next, since $g$ is continuous at $0$,
+we can find $U_{\delta}(0)$ such that
+$x \in U_{\delta}(0)$, $|g(x) - g(0)| < \epsilon / 2$.
+
+Then we can find $N$ such that if $n > N, x \in [0,c]$, $x^n \in U_{\delta}(0)$.
+
+So 
+
+$$ 
+\left| 
+\int_{0}^{1} (g(x^n) - g(0))dx
+\right| \leq
+\int_{0}^{1}
+\left| g(x^n) - g(0) \right| dx \\
+= \int_{0}^{c} \left| g(x^n) - g(0) \right| dx
++ \int_{c}^{1} \left| g(x^n) - g(0) \right| dx \\
+< \epsilon / 2 c + 2M(1-c)
+< \epsilon / 2 + \epsilon / 2= \epsilon
+$$
+
+$\square$
+
+### 7.4.11.
+
+Review the original definition of integrability in Section 7.2,
+and in particular the definition of the upper integral $U(f)$. One reasonable sug-
+gestion might be to bypass the complications introduced in Definition 7.2.7 and
+simply define the integral to be the value of $U(f)$. Then every bounded function
+is integrable! Although tempting, proceeding in this way has some significant
+drawbacks. Show by example that several of the properties in Theorem 7.4.2 no
+longer hold if we replace our current definition of integrability with the proposal
+that $\int_{a}^{b} f= U(f)$ for every bounded function $f$.
+
+**Solution**:
+
+(i) Let $f(x)$ is Thomae function and $g(x)$ be
+the negative Thomae function.
+
+$$ 
+U(f) = 1, U(g) = 0
+$$
+
+So $U(f) + U(g) = 1$, but $U(f+g) = 0$.
+
+$\square$
+
+(ii), (iii), (iv), (v) holds.
+
+$\square$
 
