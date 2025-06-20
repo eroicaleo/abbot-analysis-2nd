@@ -1126,7 +1126,519 @@ So $U(f) + U(g) = 1$, but $U(f+g) = 0$.
 
 $\square$
 
-(ii), (iii), (iv), (v) holds.
+I think (ii), (iii), (iv), (v) holds.
 
 $\square$
 
+## 7.5 The Fundamental Theorem of Calculus
+
+### 7.5.1.
+
+(a) Let $f(x) = |x|$ and define $F(x) = \int_{-1}^{x} f$.
+Find a piecewise algebraic formula for $F(x)$ 
+for $F(x)$ for all $x$. Where is $F$ continuous?
+Where is $F$ diﬀerentiable? Where does $F'(x) = f(x)$?
+
+**Solution**:
+
+$$ 
+F(x) = \begin{cases}
+    -\frac{1}{2} x^2 + \frac{1}{2} &\text{if } -1 \leq x \leq 0 \\
+    \frac{1}{2} x^2 + \frac{1}{2} &\text{if } x > 0 \\
+\end{cases} 
+$$
+
+$F(x)$ is continuous for $[-1, +\infty )$. It is differentiable
+on this interval. Also $F'(x) = f(x)$.
+
+(b) Repeat part (a) for the function
+
+$$ 
+f(x) = \begin{cases}
+    1 &\text{if } x < 0\\
+    2 &\text{if } x \geq 0\\
+\end{cases} 
+$$
+
+**Solution**:
+
+$$ 
+F(x) =
+\begin{cases}
+    x &\text{if } -1 \leq x \leq 0\\
+    2x &\text{if } x > 0\\
+\end{cases} 
+$$
+
+$F(x)$ is continuous for $[-1, +\infty )$. It's not differentiable
+at $0$. Also $F'(x) = f(x)$ when $x \not = 0$.
+
+$\square$
+
+### 7.5.2.
+
+Decide whether each statement is true or false, providing a
+short justification for each conclusion.
+
+(a) If $g= h'$ for some $h$ on $[a,b]$, then $g$ is continuous on $[a,b]$.
+
+**Solution**:
+
+Consider
+
+$$ 
+h(x) = \begin{cases}
+    0 &\text{if } x = 0\\
+    x^{1.5}\sin \frac{1}{x} &\text{if } 0 < x \leq 1\\
+\end{cases} 
+$$
+
+$$
+g(0) = \lim_{x \to 0} 
+\frac{x^a \sin (1/x)}{x}
+= \lim_{x \to 0}  x^{a-1} \sin (1/x) = 0 \\
+g(c) = ac^{a-1} \sin(1/c) - c^{a-2} \cos (1/c)
+$$
+
+$g$ is not continuous at $0$.
+
+(b) If $g$ is continuous on $[a,b]$, then $g= h'$ for some $h$
+on $[a,b]$.
+
+**Proof**: This is true.
+
+$g$ is continuous, so it's integrable. Then consider
+$G(x) = \int_{a}^{x} g(x)$. Since $g$ is continuous,
+$G'(x) = g(x)$.
+
+$\square$
+
+(c) If $H(x) = \int_{a}^{x} h$ is diﬀerentiable at $c ∈ [a,b]$, then $h$ is continuous at $c$.
+
+**Solution**: false.
+
+Consider $h(x)$ defined on $[0,2]$.
+
+$$ 
+h(x) = \begin{cases}
+    0 &\text{if } x \not = 1\\
+    1 &\text{if } x = 1\\
+\end{cases}
+$$
+
+Then $H(x) = 0$ is differentiable at $c = 0$, but $h(x)$ is
+not continuous at $0$.
+
+$\square$
+
+### 7.5.3.
+
+The hypothesis in Theorem 7.5.1 (i) that $F'(x) = f(x)$ for all
+$x ∈ [a,b]$ is slightly stronger than it needs to be. Carefully read the proof and
+state exactly what needs to be assumed with regard to the relationship between
+$f$ and $F$ for the proof to be valid.
+
+**Solution**: $F'(x) = f(x)$ for all $(a, b)$ is enough.
+
+$\square$
+
+### 7.5.4.
+
+Show that if $f : [a,b] → \mathbf{R}$ is continuous and
+$\int_{a}^{x} f = 0$ for all
+$x ∈ [a,b]$, then $f(x) = 0$ everywhere on $[a,b]$. Provide an example to show that
+this conclusion does not follow if f is not continuous.
+
+**Proof**: For theorem 7.5.1, $f$ is integrable and continuous,
+then $F(x) = \int_{a}^{x}f$ and $F'(x) = f(x)$.
+Since $F(x) = 0$, so $F'(x) = 0$ for $x \in [a, b]$, then
+$f(x) = 0$ for $x \in [a, b]$.
+
+$\square$
+
+### 7.5.5.
+
+The Fundamental Theorem of Calculus can be used to supply
+a shorter argument for Theorem 6.3.1 under the additional assumption that the sequence of derivatives is continuous
+
+Assume $f_n → f$ pointwise and $f'_n → g$ uniformly on $[a,b]$. Assuming each $f'_n$ is continuous, we can apply Theorem 7.5.1 (i) to get
+
+$$ 
+\int_{a}^{x} f_n' = f_n(x) - f_n(a)
+$$
+
+for all $x ∈ [a,b]$. Show that $g(x) = f'(x)$.
+
+**Proof**:
+
+Since $f'_n → g$ and $f'_n$ is continuous, then $g$ is continuous.
+So $g$ is integrable. Furthermore
+
+$$ 
+\int_{a}^{x} g(x) = \lim_{n \to \infty}
+\int_{a}^{x} f_n'(x)
+$$
+
+On the left side
+
+$$ 
+G(x) = \int_{a}^{x} g(x) \text{ and }
+G'(x) = g(x)
+$$
+
+On the right side
+
+$$ 
+\lim_{n \to \infty}
+\int_{a}^{x} f_n'(x) = \lim_{n \to \infty} f_n(x) - f_n(a)\\
+ = f(x) - f(a)
+$$
+
+So $G(x) = f(x) - f(a)$, so $g(x) = f'(x)$.
+
+$\square$
+
+### 7.5.6 (Integration-by-parts).
+
+(a) Assume $h(x)$ and $k(x)$ have continuous derivatives on
+$[a,b]$ and derive the familiar integration-by-parts
+formula
+
+$$ 
+\int_{a}^{b} h(t) k'(t) dt
+= h(b) k(b) - h(a) k (a)
+- \int_{a}^{b} h'(t) k(t) dt .
+$$
+
+Proof:
+
+Since $h(x)$ and $k(x)$ have continuous derivatives on
+$[a,b]$, so does $h(x)k(x)$. And its derivative at
+$t \in [a, b]$  is
+
+$$ 
+h(t)k'(t) + h'(t)k(t)
+$$
+
+In addition, since $h(x), k(x), h'(x), k'(x)$ are all
+continuous, then $h(t)k'(t), h'(t)k(t)$ are both
+integrable. 
+
+So we can directly apply Theorem 7.5.1 to get
+
+$$
+\int_{a}^{b} (h(t)k'(t) + h'(t)k(t)) dt
+=
+h(b) k(b) - h(a) k (a)
+$$
+
+Using theorem 7.4.2 (i) and rearrange it, we can prove it.
+
+(b) Explain how the result in Exercise 7.4.6 can be used to slightly weaken the hypothesis in part (a).
+
+Solution: exercise 7.4.6 states it is true that the product of integrable functions is integrable.
+
+So we just need to assume $h'(x), k'(x)$ are both integrable.
+Then the argument in (a) still holds.
+
+$\square$
+
+### 7.5.7.
+
+Use part (ii) of Theorem 7.5.1 to construct another proof of
+part (i) of Theorem 7.5.1 under the stronger hypothesis that
+$f$ is continuous.
+(To get started, set $G(x) = \int_{a}^{x}f$.)
+
+Proof: $f$ is continuous, then $G'(x) = f(x)$.
+If $F'(x) = f(x)$, then $(F(x) - G(x))' = 0$ for $x \in [a, b]$.
+That means $F(x) = G(x) + C$.
+
+$F(b) - F(a) = G(b) - G(a) = \int_{a}^{b}f(x) - \int_{a}^{a}f(x)$.
+
+$\square$
+
+### 7.5.8 (Natural Logarithm and Euler’s Constant).
+
+Let
+
+$$ 
+L(x) = \int_{1}^{x} \frac{1}{t} dt
+$$
+
+where we consider only $x > 0$.
+
+(a) What is $L(1)$?
+Explain why $L$ is diﬀerentiable and find $L'(x)$.
+
+**Solution**: $L(1) = 0$. This is because $\frac{1}{t}$ is
+continuous.
+
+$\square$
+
+(b) Show that $L(xy) = L(x)+L(y)$. (Think of $y$ as a constant and diﬀerentiate $g(x) = L(xy).$)
+
+**Proof**:
+
+$$ 
+L(xy) = \int_{1}^{xy} \frac{1}{t} dt \\
+L'(xy) = yL'(xy) = y \frac{1}{xy} = \frac{1}{x} = L'(x)
+$$
+
+So $L(xy) = L(x) + C$ and plug $x = 1$, so $L(y) = C$.
+So $L(xy) = L(x) + L(y)$.
+
+$\square$
+
+(c) Show $L(x/y) = L(x)−L(y)$.
+
+Proof:
+
+$$ 
+L'(1/x) = x \cdot (- \frac{1}{x^2}) = - \frac{1}{x} = -L'(x) \\
+L(x) + L(1/x) = C
+$$
+
+plug $x = 1$, so $C = L(1) + L(1) = 0$.
+So $L(1/x) = -L(x)$.
+
+Then with (b), we proved.
+
+(d) Let
+
+$$ 
+\gamma _n = (1 + \frac{1}{2} + \frac{1}{3} +
+\cdots + \frac{1}{n}) - L(n)
+$$
+
+Prove that $(γ_n)$ converges. The constant $γ = \lim γ_n$ is called Euler’s constant.
+
+**Proof**:
+
+For $n > m$, consdier
+
+$$ 
+γ_n - γ_m = \frac{1}{m+1} + \cdots + \frac{1}{n}
+- \int_{m}^{n} \frac{1}{t} dt
+$$
+
+Then note
+
+$$ 
+\int_{m}^{n} \frac{1}{t} dt \geq
+\frac{1}{m+1} \cdot 1 + \cdots + \frac{1}{n} \cdot 1 \\
+\int_{m}^{n} \frac{1}{t} dt \leq
+\frac{1}{m} \cdot 1 + \cdots + \frac{1}{n-1} \cdot 1 \\
+$$
+
+So
+
+$$ 
+|γ_n - γ_m| \leq \frac{1}{m} - \frac{1}{n} < \frac{1}{m}
+$$
+
+So it's Cauchy sequence.
+
+$\square$
+
+(d) Show how consideration of the sequence $γ_{2n}−γ_n$ leads to the interesting identity
+
+$$ 
+L(2) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots
+$$
+
+**Proof**:
+
+$$ 
+γ_{2n}−γ_n = 1 + \frac{1}{2} + \cdots + \frac{1}{2n} - L(2n)
+- (1 + \frac{1}{2} + \cdots + \frac{1}{n} - L(n)) \\
+= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots -
+\frac{1}{2n} - L(2)
+$$
+
+Since $(γ_n)$ converges, then $\lim_{n \to \infty} γ_{2n} - γ_n = 0$,
+
+Then we proved.
+
+$\square$
+
+### 7.5.9.
+
+Given a function $f$ on $[a,b]$, define the total variation of $f$
+to be
+
+$$ 
+Vf = \sup
+\{
+    \sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| 
+\}
+$$
+
+where the supremum is taken over all partitions $P$ of $[a,b]$.
+
+(a) If $f$ is continuously diﬀerentiable ($f'$ exists as a continuous function), use Fundamental Theorem of Calculus to show
+$Vf \leq \int_{a}^{b} |f'|$.
+
+**Proof**: $f'$ is integrable. So from theorem 7.5.1 (i), we know
+$f(x_k) - f(x_{k-1}) = \int_{x_{k-1}}^{x_k} f'(x)$.
+
+So
+
+$$
+\sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| =
+\sum_{k = 1}^{n}
+\left| \int_{x_{k-1}}^{x_k} f'(x) \right| \\
+\leq \sum_{k = 1}^{n}
+\int_{x_{k-1}}^{x_k} |f'(x)| \\
+= \int_{a}^{b} |f'(x)|
+$$
+
+So $Vf \leq \int_{a}^{b} |f'|$
+
+$\square$
+
+(b) Use the Mean Value Theorem to establish the reverse inequality and conclude that $Vf = \int_{a}^{b} |f'|$.
+
+**Proof**:
+
+$$ 
+\sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| =
+\sum_{k = 1}^{n}
+|f'(x_{k, c})(x_k - x_{k-1})| \geq L(|f|, P)
+$$
+
+So $Vf \geq L(|f|) = \int_{a}^{b} |f'(x)|$.
+
+$\square$
+
+### 7.5.10 (Change-of-variable Formula).
+
+Let $g : [a,b] → \mathbf{R}$ be differentiable and assume
+$g'$ is continuous.
+Let $f : [c,d] → \mathbf{R}$ be continuous, and
+assume that the range of $g$ is contained in $[c,d]$ so that the composition $f◦g$ is properly defined.
+
+(a) Why are we sure $f$ is the derivative of some function? How about $(f◦g)g'$?
+
+**Proof**: $f$ is continuous, so from Theorem 7.5.1 (ii) we know
+if $F(x) = \int_{c}^{x}f(x)$, then $f(x) = F'(x)$.
+
+So consider the composite function $F◦g$,
+
+$$ 
+(F◦g)'(x) = F'(g(x)) \cdot g'(x) = f(g(x)) \cdot g'(x)
+$$
+
+So $(f◦g)g'$ is the derivative of $F◦g$.
+
+$\square$
+
+(b) Prove the change-of-variable formula
+
+$$ 
+\int_{a}^{b} f(g(x)) g'(x) dx = 
+\int_{g(a)}^{g(b)} f(t) dt
+$$
+
+**Proof**:
+
+Since $f$ is continuous, then $f$ is integrable.
+Furthermore $F'(x) = f(x)$. Then
+
+$$ 
+\int_{g(a)}^{g(b)} f(t) dt = F(g(b)) - F(g(a))
+$$
+
+For the left side, $f(g(x))$ is continuous and $g'(x)$ is
+continuous, so $f(g(x)) g'(x)$ is integrable, and
+$(F◦g)' = (f◦g)g'$. So
+
+$$ 
+\int_{a}^{b} f(g(x)) g'(x) dx = F(g(b)) - F(g(a))
+$$
+
+$\square$
+
+### 7.5.11.
+
+Assume $f$ is integrable on [a,b] and has a “jump discontinu-
+ity” at $c ∈ (a,b)$. This means that both one-sided limits exist as $x$ approaches
+$c$ from the left and from the right, but that
+
+$$ 
+\lim_{x \to c^-} f(x) \not =
+\lim_{x \to c^+} f(x)
+$$
+
+(This phenomenon is discussed in more detail in Section 4.6.)
+
+(a) Show that in this case, $F(x) = \int_{a}^{x}f(x)$ is not diﬀerentiable at $x = c$.
+
+**Proof**: Assume
+
+$$ 
+\lim_{x \to c^-} f(x) = a < b = \lim_{x \to c^+} f(x)
+$$
+
+We following the proof of Theorem 7.5.1 (ii), assume $x < c$
+and given $\epsilon$, we can find $(c-\delta, c)$
+if $x \in (c-\delta, c)$, then
+$$
+\left| 
+\frac{
+F(c) - F(x)
+}{c - x} - a
+\right| 
+= \frac{1}{c - x} |\int_{x}^{c} f(x) - a| \\
+\leq \frac{1}{c - x} \int_{x}^{c} |f(x) - a|
+<\epsilon 
+$$
+
+That means
+
+$$ 
+\lim_{x \to c^-}
+\frac{
+F(c) - F(x)
+}{c - x} = a
+$$
+
+$\square$
+
+(b) The discussionin Section 5.5 mentions the existence of a continuous monotone function that fails to be diﬀerentiable on a dense subset of R. Combine the results of part (a) with Exercise 6.4.10 to show how to construct such a function.
+
+**Solution**: In 6.4.10, we define this function.
+
+Let $\{r_1,r_2,r_3,...\}$ be an enumeration of the set of
+rational numbers. For each $r_n ∈ \mathbf{Q}$, define
+
+$$ 
+u_n(x) =
+\begin{cases}
+    1/2^n &\text{for } x > r_n   \\
+    0     &\text{for } x \leq r_n\\
+\end{cases}
+$$
+
+Now let $h(x) = \sum_{n = 1}^{\infty}u_n(x)$.
+
+Since $h(x)$ is bounded and monotone increasing, then
+it is integrable. Let
+
+$$ 
+H(x) = \int_{0}^{x} h(x)
+$$
+
+Since $h(x) \geq 0$, then $H(x)$ is monotone increasing.
+From theorem 7.5.1 (ii), we know $H(x)$ is continuous.
+
+$\lim_{x \to r_n^-} h(x)$ and $\lim_{x \to r_n^-} h(x)$
+exist.
+
+Since from any $r_n$, $\lim_{x \to r_n^-} h(x) < \lim_{x \to r_n^+} h(x)$, then based on (a), $H(x)$ is not differentiable
+at all $r_n$ which is $\mathbf{Q}$, which is dense in $\mathbf{R}$.
+
+$\square$
