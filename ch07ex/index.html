@@ -146,6 +146,32 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#75-the-fundamental-theorem-of-calculus">7.5 The Fundamental Theorem of Calculus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#751">7.5.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#752">7.5.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#753">7.5.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#754">7.5.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#755">7.5.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#756-integration-by-parts">7.5.6 (Integration-by-parts).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#757">7.5.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#758-natural-logarithm-and-eulers-constant">7.5.8 (Natural Logarithm and Euler’s Constant).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#759">7.5.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7510-change-of-variable-formula">7.5.10 (Change-of-variable Formula).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7511">7.5.11.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1190,7 +1216,472 @@ U(f) = 1, U(g) = 0
 <p>
 <script type="math/tex">\square</script>
 </p>
-<p>(ii), (iii), (iv), (v) holds.</p>
+<p>I think (ii), (iii), (iv), (v) holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="75-the-fundamental-theorem-of-calculus">7.5 The Fundamental Theorem of Calculus</h2>
+<h3 id="751">7.5.1.</h3>
+<p>(a) Let <script type="math/tex">f(x) = |x|</script> and define <script type="math/tex">F(x) = \int_{-1}^{x} f</script>.
+Find a piecewise algebraic formula for <script type="math/tex">F(x)</script> 
+for <script type="math/tex">F(x)</script> for all <script type="math/tex">x</script>. Where is <script type="math/tex">F</script> continuous?
+Where is <script type="math/tex">F</script> diﬀerentiable? Where does <script type="math/tex">F'(x) = f(x)</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) = \begin{cases}
+    -\frac{1}{2} x^2 + \frac{1}{2} &\text{if } -1 \leq x \leq 0 \\
+    \frac{1}{2} x^2 + \frac{1}{2} &\text{if } x > 0 \\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">F(x)</script> is continuous for <script type="math/tex">[-1, +\infty )</script>. It is differentiable
+on this interval. Also <script type="math/tex">F'(x) = f(x)</script>.</p>
+<p>(b) Repeat part (a) for the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    1 &\text{if } x < 0\\
+    2 &\text{if } x \geq 0\\
+\end{cases} 
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) =
+\begin{cases}
+    x &\text{if } -1 \leq x \leq 0\\
+    2x &\text{if } x > 0\\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">F(x)</script> is continuous for <script type="math/tex">[-1, +\infty )</script>. It's not differentiable
+at <script type="math/tex">0</script>. Also <script type="math/tex">F'(x) = f(x)</script> when <script type="math/tex">x \not = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="752">7.5.2.</h3>
+<p>Decide whether each statement is true or false, providing a
+short justification for each conclusion.</p>
+<p>(a) If <script type="math/tex">g= h'</script> for some <script type="math/tex">h</script> on <script type="math/tex">[a,b]</script>, then <script type="math/tex">g</script> is continuous on <script type="math/tex">[a,b]</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \begin{cases}
+    0 &\text{if } x = 0\\
+    x^{1.5}\sin \frac{1}{x} &\text{if } 0 < x \leq 1\\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+g(0) = \lim_{x \to 0} 
+\frac{x^a \sin (1/x)}{x}
+= \lim_{x \to 0}  x^{a-1} \sin (1/x) = 0 \\
+g(c) = ac^{a-1} \sin(1/c) - c^{a-2} \cos (1/c)
+</script>
+</p>
+<p>
+<script type="math/tex">g</script> is not continuous at <script type="math/tex">0</script>.</p>
+<p>(b) If <script type="math/tex">g</script> is continuous on <script type="math/tex">[a,b]</script>, then <script type="math/tex">g= h'</script> for some <script type="math/tex">h</script>
+on <script type="math/tex">[a,b]</script>.</p>
+<p><strong>Proof</strong>: This is true.</p>
+<p>
+<script type="math/tex">g</script> is continuous, so it's integrable. Then consider
+<script type="math/tex">G(x) = \int_{a}^{x} g(x)</script>. Since <script type="math/tex">g</script> is continuous,
+<script type="math/tex">G'(x) = g(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) If <script type="math/tex">H(x) = \int_{a}^{x} h</script> is diﬀerentiable at <script type="math/tex">c ∈ [a,b]</script>, then <script type="math/tex">h</script> is continuous at <script type="math/tex">c</script>.</p>
+<p><strong>Solution</strong>: false.</p>
+<p>Consider <script type="math/tex">h(x)</script> defined on <script type="math/tex">[0,2]</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \begin{cases}
+    0 &\text{if } x \not = 1\\
+    1 &\text{if } x = 1\\
+\end{cases}
+</script>
+</p>
+<p>Then <script type="math/tex">H(x) = 0</script> is differentiable at <script type="math/tex">c = 0</script>, but <script type="math/tex">h(x)</script> is
+not continuous at <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="753">7.5.3.</h3>
+<p>The hypothesis in Theorem 7.5.1 (i) that <script type="math/tex">F'(x) = f(x)</script> for all
+<script type="math/tex">x ∈ [a,b]</script> is slightly stronger than it needs to be. Carefully read the proof and
+state exactly what needs to be assumed with regard to the relationship between
+<script type="math/tex">f</script> and <script type="math/tex">F</script> for the proof to be valid.</p>
+<p><strong>Solution</strong>: <script type="math/tex">F'(x) = f(x)</script> for all <script type="math/tex">(a, b)</script> is enough.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="754">7.5.4.</h3>
+<p>Show that if <script type="math/tex">f : [a,b] → \mathbf{R}</script> is continuous and
+<script type="math/tex">\int_{a}^{x} f = 0</script> for all
+<script type="math/tex">x ∈ [a,b]</script>, then <script type="math/tex">f(x) = 0</script> everywhere on <script type="math/tex">[a,b]</script>. Provide an example to show that
+this conclusion does not follow if f is not continuous.</p>
+<p><strong>Proof</strong>: For theorem 7.5.1, <script type="math/tex">f</script> is integrable and continuous,
+then <script type="math/tex">F(x) = \int_{a}^{x}f</script> and <script type="math/tex">F'(x) = f(x)</script>.
+Since <script type="math/tex">F(x) = 0</script>, so <script type="math/tex">F'(x) = 0</script> for <script type="math/tex">x \in [a, b]</script>, then
+<script type="math/tex">f(x) = 0</script> for <script type="math/tex">x \in [a, b]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="755">7.5.5.</h3>
+<p>The Fundamental Theorem of Calculus can be used to supply
+a shorter argument for Theorem 6.3.1 under the additional assumption that the sequence of derivatives is continuous</p>
+<p>Assume <script type="math/tex">f_n → f</script> pointwise and <script type="math/tex">f'_n → g</script> uniformly on <script type="math/tex">[a,b]</script>. Assuming each <script type="math/tex">f'_n</script> is continuous, we can apply Theorem 7.5.1 (i) to get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{x} f_n' = f_n(x) - f_n(a)
+</script>
+</p>
+<p>for all <script type="math/tex">x ∈ [a,b]</script>. Show that <script type="math/tex">g(x) = f'(x)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">f'_n → g</script> and <script type="math/tex">f'_n</script> is continuous, then <script type="math/tex">g</script> is continuous.
+So <script type="math/tex">g</script> is integrable. Furthermore</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{x} g(x) = \lim_{n \to \infty}
+\int_{a}^{x} f_n'(x)
+</script>
+</p>
+<p>On the left side</p>
+<p>
+<script type="math/tex; mode=display"> 
+G(x) = \int_{a}^{x} g(x) \text{ and }
+G'(x) = g(x)
+</script>
+</p>
+<p>On the right side</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty}
+\int_{a}^{x} f_n'(x) = \lim_{n \to \infty} f_n(x) - f_n(a)\\
+ = f(x) - f(a)
+</script>
+</p>
+<p>So <script type="math/tex">G(x) = f(x) - f(a)</script>, so <script type="math/tex">g(x) = f'(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="756-integration-by-parts">7.5.6 (Integration-by-parts).</h3>
+<p>(a) Assume <script type="math/tex">h(x)</script> and <script type="math/tex">k(x)</script> have continuous derivatives on
+<script type="math/tex">[a,b]</script> and derive the familiar integration-by-parts
+formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} h(t) k'(t) dt
+= h(b) k(b) - h(a) k (a)
+- \int_{a}^{b} h'(t) k(t) dt .
+</script>
+</p>
+<p>Proof:</p>
+<p>Since <script type="math/tex">h(x)</script> and <script type="math/tex">k(x)</script> have continuous derivatives on
+<script type="math/tex">[a,b]</script>, so does <script type="math/tex">h(x)k(x)</script>. And its derivative at
+<script type="math/tex">t \in [a, b]</script>  is</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(t)k'(t) + h'(t)k(t)
+</script>
+</p>
+<p>In addition, since <script type="math/tex">h(x), k(x), h'(x), k'(x)</script> are all
+continuous, then <script type="math/tex">h(t)k'(t), h'(t)k(t)</script> are both
+integrable. </p>
+<p>So we can directly apply Theorem 7.5.1 to get</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{a}^{b} (h(t)k'(t) + h'(t)k(t)) dt
+=
+h(b) k(b) - h(a) k (a)
+</script>
+</p>
+<p>Using theorem 7.4.2 (i) and rearrange it, we can prove it.</p>
+<p>(b) Explain how the result in Exercise 7.4.6 can be used to slightly weaken the hypothesis in part (a).</p>
+<p>Solution: exercise 7.4.6 states it is true that the product of integrable functions is integrable.</p>
+<p>So we just need to assume <script type="math/tex">h'(x), k'(x)</script> are both integrable.
+Then the argument in (a) still holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="757">7.5.7.</h3>
+<p>Use part (ii) of Theorem 7.5.1 to construct another proof of
+part (i) of Theorem 7.5.1 under the stronger hypothesis that
+<script type="math/tex">f</script> is continuous.
+(To get started, set <script type="math/tex">G(x) = \int_{a}^{x}f</script>.)</p>
+<p>Proof: <script type="math/tex">f</script> is continuous, then <script type="math/tex">G'(x) = f(x)</script>.
+If <script type="math/tex">F'(x) = f(x)</script>, then <script type="math/tex">(F(x) - G(x))' = 0</script> for <script type="math/tex">x \in [a, b]</script>.
+That means <script type="math/tex">F(x) = G(x) + C</script>.</p>
+<p>
+<script type="math/tex">F(b) - F(a) = G(b) - G(a) = \int_{a}^{b}f(x) - \int_{a}^{a}f(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="758-natural-logarithm-and-eulers-constant">7.5.8 (Natural Logarithm and Euler’s Constant).</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+L(x) = \int_{1}^{x} \frac{1}{t} dt
+</script>
+</p>
+<p>where we consider only <script type="math/tex">x > 0</script>.</p>
+<p>(a) What is <script type="math/tex">L(1)</script>?
+Explain why <script type="math/tex">L</script> is diﬀerentiable and find <script type="math/tex">L'(x)</script>.</p>
+<p><strong>Solution</strong>: <script type="math/tex">L(1) = 0</script>. This is because <script type="math/tex">\frac{1}{t}</script> is
+continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">L(xy) = L(x)+L(y)</script>. (Think of <script type="math/tex">y</script> as a constant and diﬀerentiate <script type="math/tex">g(x) = L(xy).</script>)</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+L(xy) = \int_{1}^{xy} \frac{1}{t} dt \\
+L'(xy) = yL'(xy) = y \frac{1}{xy} = \frac{1}{x} = L'(x)
+</script>
+</p>
+<p>So <script type="math/tex">L(xy) = L(x) + C</script> and plug <script type="math/tex">x = 1</script>, so <script type="math/tex">L(y) = C</script>.
+So <script type="math/tex">L(xy) = L(x) + L(y)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show <script type="math/tex">L(x/y) = L(x)−L(y)</script>.</p>
+<p>Proof:</p>
+<p>
+<script type="math/tex; mode=display"> 
+L'(1/x) = x \cdot (- \frac{1}{x^2}) = - \frac{1}{x} = -L'(x) \\
+L(x) + L(1/x) = C
+</script>
+</p>
+<p>plug <script type="math/tex">x = 1</script>, so <script type="math/tex">C = L(1) + L(1) = 0</script>.
+So <script type="math/tex">L(1/x) = -L(x)</script>.</p>
+<p>Then with (b), we proved.</p>
+<p>(d) Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\gamma _n = (1 + \frac{1}{2} + \frac{1}{3} +
+\cdots + \frac{1}{n}) - L(n)
+</script>
+</p>
+<p>Prove that <script type="math/tex">(γ_n)</script> converges. The constant <script type="math/tex">γ = \lim γ_n</script> is called Euler’s constant.</p>
+<p><strong>Proof</strong>:</p>
+<p>For <script type="math/tex">n > m</script>, consdier</p>
+<p>
+<script type="math/tex; mode=display"> 
+γ_n - γ_m = \frac{1}{m+1} + \cdots + \frac{1}{n}
+- \int_{m}^{n} \frac{1}{t} dt
+</script>
+</p>
+<p>Then note</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{m}^{n} \frac{1}{t} dt \geq
+\frac{1}{m+1} \cdot 1 + \cdots + \frac{1}{n} \cdot 1 \\
+\int_{m}^{n} \frac{1}{t} dt \leq
+\frac{1}{m} \cdot 1 + \cdots + \frac{1}{n-1} \cdot 1 \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|γ_n - γ_m| \leq \frac{1}{m} - \frac{1}{n} < \frac{1}{m}
+</script>
+</p>
+<p>So it's Cauchy sequence.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Show how consideration of the sequence <script type="math/tex">γ_{2n}−γ_n</script> leads to the interesting identity</p>
+<p>
+<script type="math/tex; mode=display"> 
+L(2) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+γ_{2n}−γ_n = 1 + \frac{1}{2} + \cdots + \frac{1}{2n} - L(2n)
+- (1 + \frac{1}{2} + \cdots + \frac{1}{n} - L(n)) \\
+= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots -
+\frac{1}{2n} - L(2)
+</script>
+</p>
+<p>Since <script type="math/tex">(γ_n)</script> converges, then <script type="math/tex">\lim_{n \to \infty} γ_{2n} - γ_n = 0</script>,</p>
+<p>Then we proved.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="759">7.5.9.</h3>
+<p>Given a function <script type="math/tex">f</script> on <script type="math/tex">[a,b]</script>, define the total variation of <script type="math/tex">f</script>
+to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+Vf = \sup
+\{
+    \sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| 
+\}
+</script>
+</p>
+<p>where the supremum is taken over all partitions <script type="math/tex">P</script> of <script type="math/tex">[a,b]</script>.</p>
+<p>(a) If <script type="math/tex">f</script> is continuously diﬀerentiable (<script type="math/tex">f'</script> exists as a continuous function), use Fundamental Theorem of Calculus to show
+<script type="math/tex">Vf \leq \int_{a}^{b} |f'|</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">f'</script> is integrable. So from theorem 7.5.1 (i), we know
+<script type="math/tex">f(x_k) - f(x_{k-1}) = \int_{x_{k-1}}^{x_k} f'(x)</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| =
+\sum_{k = 1}^{n}
+\left| \int_{x_{k-1}}^{x_k} f'(x) \right| \\
+\leq \sum_{k = 1}^{n}
+\int_{x_{k-1}}^{x_k} |f'(x)| \\
+= \int_{a}^{b} |f'(x)|
+</script>
+</p>
+<p>So <script type="math/tex">Vf \leq \int_{a}^{b} |f'|</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use the Mean Value Theorem to establish the reverse inequality and conclude that <script type="math/tex">Vf = \int_{a}^{b} |f'|</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k = 1}^{n}
+\left| f(x_k) - f(x_{k-1}) \right| =
+\sum_{k = 1}^{n}
+|f'(x_{k, c})(x_k - x_{k-1})| \geq L(|f|, P)
+</script>
+</p>
+<p>So <script type="math/tex">Vf \geq L(|f|) = \int_{a}^{b} |f'(x)|</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7510-change-of-variable-formula">7.5.10 (Change-of-variable Formula).</h3>
+<p>Let <script type="math/tex">g : [a,b] → \mathbf{R}</script> be differentiable and assume
+<script type="math/tex">g'</script> is continuous.
+Let <script type="math/tex">f : [c,d] → \mathbf{R}</script> be continuous, and
+assume that the range of <script type="math/tex">g</script> is contained in <script type="math/tex">[c,d]</script> so that the composition <script type="math/tex">f◦g</script> is properly defined.</p>
+<p>(a) Why are we sure <script type="math/tex">f</script> is the derivative of some function? How about <script type="math/tex">(f◦g)g'</script>?</p>
+<p><strong>Proof</strong>: <script type="math/tex">f</script> is continuous, so from Theorem 7.5.1 (ii) we know
+if <script type="math/tex">F(x) = \int_{c}^{x}f(x)</script>, then <script type="math/tex">f(x) = F'(x)</script>.</p>
+<p>So consider the composite function <script type="math/tex">F◦g</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(F◦g)'(x) = F'(g(x)) \cdot g'(x) = f(g(x)) \cdot g'(x)
+</script>
+</p>
+<p>So <script type="math/tex">(f◦g)g'</script> is the derivative of <script type="math/tex">F◦g</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove the change-of-variable formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f(g(x)) g'(x) dx = 
+\int_{g(a)}^{g(b)} f(t) dt
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">f</script> is continuous, then <script type="math/tex">f</script> is integrable.
+Furthermore <script type="math/tex">F'(x) = f(x)</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{g(a)}^{g(b)} f(t) dt = F(g(b)) - F(g(a))
+</script>
+</p>
+<p>For the left side, <script type="math/tex">f(g(x))</script> is continuous and <script type="math/tex">g'(x)</script> is
+continuous, so <script type="math/tex">f(g(x)) g'(x)</script> is integrable, and
+<script type="math/tex">(F◦g)' = (f◦g)g'</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f(g(x)) g'(x) dx = F(g(b)) - F(g(a))
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7511">7.5.11.</h3>
+<p>Assume <script type="math/tex">f</script> is integrable on [a,b] and has a “jump discontinu-
+ity” at <script type="math/tex">c ∈ (a,b)</script>. This means that both one-sided limits exist as <script type="math/tex">x</script> approaches
+<script type="math/tex">c</script> from the left and from the right, but that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c^-} f(x) \not =
+\lim_{x \to c^+} f(x)
+</script>
+</p>
+<p>(This phenomenon is discussed in more detail in Section 4.6.)</p>
+<p>(a) Show that in this case, <script type="math/tex">F(x) = \int_{a}^{x}f(x)</script> is not diﬀerentiable at <script type="math/tex">x = c</script>.</p>
+<p><strong>Proof</strong>: Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c^-} f(x) = a < b = \lim_{x \to c^+} f(x)
+</script>
+</p>
+<p>We following the proof of Theorem 7.5.1 (ii), assume <script type="math/tex">x < c</script>
+and given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">(c-\delta, c)</script>
+if <script type="math/tex">x \in (c-\delta, c)</script>, then
+<script type="math/tex; mode=display">
+\left| 
+\frac{
+F(c) - F(x)
+}{c - x} - a
+\right| 
+= \frac{1}{c - x} |\int_{x}^{c} f(x) - a| \\
+\leq \frac{1}{c - x} \int_{x}^{c} |f(x) - a|
+<\epsilon 
+</script>
+</p>
+<p>That means</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c^-}
+\frac{
+F(c) - F(x)
+}{c - x} = a
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) The discussionin Section 5.5 mentions the existence of a continuous monotone function that fails to be diﬀerentiable on a dense subset of R. Combine the results of part (a) with Exercise 6.4.10 to show how to construct such a function.</p>
+<p><strong>Solution</strong>: In 6.4.10, we define this function.</p>
+<p>Let <script type="math/tex">\{r_1,r_2,r_3,...\}</script> be an enumeration of the set of
+rational numbers. For each <script type="math/tex">r_n ∈ \mathbf{Q}</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+u_n(x) =
+\begin{cases}
+    1/2^n &\text{for } x > r_n   \\
+    0     &\text{for } x \leq r_n\\
+\end{cases}
+</script>
+</p>
+<p>Now let <script type="math/tex">h(x) = \sum_{n = 1}^{\infty}u_n(x)</script>.</p>
+<p>Since <script type="math/tex">h(x)</script> is bounded and monotone increasing, then
+it is integrable. Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+H(x) = \int_{0}^{x} h(x)
+</script>
+</p>
+<p>Since <script type="math/tex">h(x) \geq 0</script>, then <script type="math/tex">H(x)</script> is monotone increasing.
+From theorem 7.5.1 (ii), we know <script type="math/tex">H(x)</script> is continuous.</p>
+<p>
+<script type="math/tex">\lim_{x \to r_n^-} h(x)</script> and <script type="math/tex">\lim_{x \to r_n^-} h(x)</script>
+exist.</p>
+<p>Since from any <script type="math/tex">r_n</script>, <script type="math/tex">\lim_{x \to r_n^-} h(x) < \lim_{x \to r_n^+} h(x)</script>, then based on (a), <script type="math/tex">H(x)</script> is not differentiable
+at all <script type="math/tex">r_n</script> which is <script type="math/tex">\mathbf{Q}</script>, which is dense in <script type="math/tex">\mathbf{R}</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
