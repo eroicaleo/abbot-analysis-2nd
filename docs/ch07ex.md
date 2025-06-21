@@ -33,7 +33,7 @@ partition consisting of the points $\{1,3/2,2,4\}$.
 
 (a) Compute $L(f,P)$, $U(f,P)$, and $U(f,P)−L(f,P)$.
 
-**Solutions**:
+**Solution**:
 
 $L(f, P) = \frac{3}{2} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{4} \cdot 2 = \frac{3}{2}$
 
@@ -85,7 +85,7 @@ $\square$
 
 Let $g$ be bounded on $[a,b]$ and assume there exists a partition $P$ with $L(g,P) = U(g,P)$. Describe g. Is it integrable? If so, what is the value of $\int_{a}^{b}g$?
 
-**Solutions**: In each segment of $P$, it's flat.
+**Solution**: In each segment of $P$, it's flat.
 
 $\square$
 
@@ -176,7 +176,7 @@ the $m_n$ is still $1$. So $L(f, P) = 1$.
 
 (b) Construct a partition $P$ for which $U(f,P) < 1+1/10$.
 
-**Solutions**: Let $P = \{0, \frac{19}{20}, 1\}$,
+**Solution**: Let $P = \{0, \frac{19}{20}, 1\}$,
 
 $$ 
 U(f, P) = \frac{19}{20} + \frac{1}{10} < 1 + \frac{1}{10}
@@ -216,12 +216,12 @@ $m_k$ is always $0$. So $L(f,P) = 0$.
 $D_{ϵ/2} = \{x ∈ [0,1] : t(x) ≥ ϵ/2\}$.
 How big is $D_{ϵ/2}$?
 
-**Solutions**: Assume $n < 2/\epsilon$, the the size
+**Solution**: Assume $n < 2/\epsilon$, the the size
 is at most $n(n+1)/2$.
 
 (c) To complete the argument, explain how to construct a partition $P_ϵ$ of $[0,1]$ so that $U(t,P_ϵ) < ϵ$.
 
-**Solutions**: For each of $x \in [0, 1]$ such that
+**Solution**: For each of $x \in [0, 1]$ such that
 $t(x) > \epsilon /2$, we make it a partition $[x, x + \frac{\epsilon}{n(n+1)}]$. So the upper sum is less than
 $\frac{\epsilon}{n(n+1)}$. Since there are only
 $n(n+1)/2$ of them, then total upper sum is
@@ -321,7 +321,7 @@ $\square$
 
 (c) If $f$ is integrable and $g$ is increasing, then $g ◦f$ is integrable.
 
-**Solutions**: This is not true.
+**Solution**: This is not true.
 Consider $f$ is the Thomae function.
 
 $$ 
@@ -363,7 +363,7 @@ integrable.
 
 (c) A sequence $(h_n) → h$ uniformly where each $h_n$ is not integrable but $h$ is integrable.
 
-**Solutions**: This is possible. Consdier
+**Solution**: This is possible. Consdier
 
 $$ 
 h_n(x) = \begin{cases}
@@ -1640,5 +1640,180 @@ exist.
 
 Since from any $r_n$, $\lim_{x \to r_n^-} h(x) < \lim_{x \to r_n^+} h(x)$, then based on (a), $H(x)$ is not differentiable
 at all $r_n$ which is $\mathbf{Q}$, which is dense in $\mathbf{R}$.
+
+$\square$
+
+## 7.6 Lebesgue’s Criterion for Riemann Integrability
+
+### 7.6.14.
+
+(a) Find $g'(0)$.
+
+**Solution**:
+
+$$ 
+\lim_{x \to 0} \frac{
+x^2 \sin \frac{1}{x} - 0
+}{x - 0} = \lim_{x \to 0} x \sin \frac{1}{x} = 0
+$$
+
+$\square$
+
+(b) Use the standard rules of diﬀerentiation to compute $g'(x)$ for $x \not = 0$.
+
+$$ 
+g'(x) = 2x \sin \frac{1}{x} - x^2 \cos \frac{1}{x} \frac{1}{x^2}\\
+= 2x \sin \frac{1}{x} - \cos \frac{1}{x}
+$$
+
+$\square$
+
+(c) Explain why, for every $δ > 0$, $g'(x)$ attains every value between $1$ and $−1$
+as $x$ ranges over the set $(−δ,δ)$. Conclude that $g'$ is not continuous at $x = 0$.
+
+**Proof:** Given $(−δ,δ)$, we can find $k$ such that
+
+$$ 
+-δ < -\frac{1}{2k \pi} < -\frac{1}{2 (k+1) \pi} < 0
+< \frac{1}{2 (k+1) \pi} < \frac{1}{2k \pi} < δ
+$$
+
+Note
+
+$$ 
+g'(-\frac{1}{2k \pi}) = g'(\frac{1}{2k \pi}) = -1 \\
+g'(-\frac{1}{2(k+1) \pi}) = g'(\frac{1}{2(k+1) \pi}) = 1 \\
+$$
+
+Since $g'(x)$ is continuous on $[\frac{1}{2 (k+1) \pi}, \frac{1}{2k \pi}]$, then because of the intermediate value property,
+$g'(x)$ attains every value between $1$ and $−1$.
+
+Since $g'(x) = 0$, $g'$ is not continuous at $x = 0$.
+
+$\square$
+
+### 7.6.15.
+
+(a) If $c ∈ C$, what is $\lim_{n→∞} f_n(c)$?
+
+**Solution**: In each $f_n$, $f_n(c) = 0$. So
+$\lim_{n→∞} f_n(c) = 0$.
+
+(b) Why does $\lim_{n→∞} f_n(x)$ exist for $x \not ∈ C$?
+
+**Solution**: If $x \not \in C$, then there exists
+$N$, if $n \geq N$, $x \not \in C_n$. Let $N$ be the smallest
+integer such that $x \not \in C_N$.
+
+It will be replaced by the $x^2 \sin \frac{1}{x}$ function
+and won't be changed any more.
+
+So $\lim_{n→∞} f_n(x)$ exists.
+
+### 7.6.16.
+
+(a) Explain why $f'(x)$ exists for all $x \not \in C$.
+
+**Proof**: if $x \not \in C$, then we can assue it was taken
+out during the interval $(a,b)$. On this interval,
+it is either $g(x-a)$ or $g(-x + b)$ or in the splice part.
+Wherever it is, it's differentiable.
+
+$\square$
+
+(b) If $c ∈ C$, argue that $|f(x)| ≤ (x− c)^2$ for all
+$x ∈ [0,1]$. Show how this implies $f'(c) = 0$.
+
+**Proof**: If $x \in C$, $f(x) = 0$. So it holds.
+
+If $x \not \in C$, assume it is taken out with $(a, b)$.
+Note that $a, b \in C$. So $(x-c)^2 \geq \max \{ (x-a)^2, (x-b)^2\}$. By our construction of $f(x)$, we know
+
+$$ 
+|f(x)|^2 \leq (x - a)^2 \text{ and } |f(x)|^2 \leq (-x + b)^2
+$$
+
+So the inequality also holds.
+
+$$ 
+\lim_{x \to c}  \left| 
+\frac{f(x) - f(c)}{x - c} - 0
+ \right| =\\
+ \lim_{x \to c}
+\left| 
+\frac{f(x)}{x-c}
+\right|
+\leq 
+\lim_{x \to c}
+\left| 
+\frac{(x-c)^2}{x-c}
+\right| = 0
+$$
+
+So $f'(c) = 0$.
+
+$\square$
+
+(c) Give a careful argument for why $f'(x)$ fails to be continuous on $C$. Remember that $C$ contains many points besides the endpoints of the intervals
+that make up $C1,C2,C3,...$.
+
+**Proof**: Let $c ∈ C$. And given $U_{\delta}(c)$, it is possible
+to find an open interval $(a, b) \subset U_{\delta}(c)$ and
+$(a, b) \cap C = \emptyset$. Based on our construction of
+$f$, $f'(x)$ can achieve any value in $[-1, 1]$ when $x \in (a, b)$. Since $f'(c) = 0$, $f'(x)$ cannot be continuous at $c$.
+
+$\square$
+
+### 7.6.17.
+
+Why is $f'(x)$ Riemann-integrable on [0,1]?
+
+**Proof**: This is because $f'(x)$ is continuous for
+$x \not \in C$, and Cantor set is measure $0$.
+
+$\square$
+
+### 7.6.18.
+
+Show that, under these circumstances, the sum of the lengths
+of the intervals making up each $C_n$ no longer tends to zero as $n → ∞$. What is this limit?
+
+**Proof**: The segment we take out is
+
+$$ 
+\sum_{n=1}^{\infty} 2^{n-1}
+\left( \frac{1}{3^{n+1}} \right)
+= \frac{1}{9} (1 + \frac{2}{3} + \frac{4}{9} + \cdots) = \frac{1}{3}
+$$
+
+$\square$
+
+### 7.6.19.
+
+As a final gesture, provide the example advertised in
+Exercise 7.6.13 of an integrable function $f$ and a continuous function $g$ where the
+composition $f ◦ g$ is properly defined but not integrable. Exercise 4.3.12 may be useful.
+
+**Solution**: Consider $A$ is the set defined in 7.6.18,
+$g$ is the function used in Exercise 4.3.12. Since $A$ is
+a close set, $g$ is continuous. Let $f$ be this function
+defined in $[0,1]$ :
+
+$$ 
+f(x) = \begin{cases}
+    0 &\text{if } x = 0 \\
+    \sin \frac{1}{x} &\text{if } x \not = 0 \\
+\end{cases} 
+$$
+
+$f(x)$ is integrable because $f(x)$ is only discontinueous at $0$.
+
+So let $h = f ◦ g$, $h(x) = 0$ if $x \in A$, because the
+distance between $x$ and $A$ is $0$.
+
+Furthermore, $h(x)$ is not continuous at $x \in A$.
+Given $c \in A$ it is possible
+to find an open interval $(a, b) \subset U_{\delta}(c)$ and
+$(a, b) \cap C = \emptyset$, $a,b \in A$. $h(x)$ can achieve any value in $[-1, 1]$ when $x \in (a, b)$. Since $h(c) = 0$, $h(x)$ cannot be continuous at $c$.
 
 $\square$
