@@ -172,6 +172,22 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#76-lebesgues-criterion-for-riemann-integrability">7.6 Lebesgue’s Criterion for Riemann Integrability</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#7614">7.6.14.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7615">7.6.15.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7616">7.6.16.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7617">7.6.17.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7618">7.6.18.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7619">7.6.19.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -232,7 +248,7 @@ U(f, P') \geq U(f, P \cup P')
 <p>Consider <script type="math/tex">f(x) = 1/x</script> over the interval <script type="math/tex">[1,4]</script>. Let <script type="math/tex">P</script> be the
 partition consisting of the points <script type="math/tex">\{1,3/2,2,4\}</script>.</p>
 <p>(a) Compute <script type="math/tex">L(f,P)</script>, <script type="math/tex">U(f,P)</script>, and <script type="math/tex">U(f,P)−L(f,P)</script>.</p>
-<p><strong>Solutions</strong>:</p>
+<p><strong>Solution</strong>:</p>
 <p>
 <script type="math/tex">L(f, P) = \frac{3}{2} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{4} \cdot 2 = \frac{3}{2}</script>
 </p>
@@ -280,7 +296,7 @@ then <script type="math/tex">U(f) - L(f) \leq 0</script>.</p>
 </p>
 <h3 id="724">7.2.4.</h3>
 <p>Let <script type="math/tex">g</script> be bounded on <script type="math/tex">[a,b]</script> and assume there exists a partition <script type="math/tex">P</script> with <script type="math/tex">L(g,P) = U(g,P)</script>. Describe g. Is it integrable? If so, what is the value of <script type="math/tex">\int_{a}^{b}g</script>?</p>
-<p><strong>Solutions</strong>: In each segment of <script type="math/tex">P</script>, it's flat.</p>
+<p><strong>Solution</strong>: In each segment of <script type="math/tex">P</script>, it's flat.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
@@ -361,7 +377,7 @@ h(x) = \begin{cases}
 <p>Proof: Assume <script type="math/tex">P</script> is <script type="math/tex">0 = x_0 < x_1 < x_2 < \cdots x_{n-1} < x_n = 1</script>. In the first <script type="math/tex">n-1</script> segments, <script type="math/tex">h(x)</script> is constant <script type="math/tex">1</script>, so the <script type="math/tex">m_k = 1</script>. In the nth segment,
 the <script type="math/tex">m_n</script> is still <script type="math/tex">1</script>. So <script type="math/tex">L(f, P) = 1</script>.</p>
 <p>(b) Construct a partition <script type="math/tex">P</script> for which <script type="math/tex">U(f,P) < 1+1/10</script>.</p>
-<p><strong>Solutions</strong>: Let <script type="math/tex">P = \{0, \frac{19}{20}, 1\}</script>,</p>
+<p><strong>Solution</strong>: Let <script type="math/tex">P = \{0, \frac{19}{20}, 1\}</script>,</p>
 <p>
 <script type="math/tex; mode=display"> 
 U(f, P) = \frac{19}{20} + \frac{1}{10} < 1 + \frac{1}{10}
@@ -394,10 +410,10 @@ Follow these steps to prove t(x) is integrable on
 <p>(b) Let <script type="math/tex">ϵ > 0</script>, and consider the set of points
 <script type="math/tex">D_{ϵ/2} = \{x ∈ [0,1] : t(x) ≥ ϵ/2\}</script>.
 How big is <script type="math/tex">D_{ϵ/2}</script>?</p>
-<p><strong>Solutions</strong>: Assume <script type="math/tex">n < 2/\epsilon</script>, the the size
+<p><strong>Solution</strong>: Assume <script type="math/tex">n < 2/\epsilon</script>, the the size
 is at most <script type="math/tex">n(n+1)/2</script>.</p>
 <p>(c) To complete the argument, explain how to construct a partition <script type="math/tex">P_ϵ</script> of <script type="math/tex">[0,1]</script> so that <script type="math/tex">U(t,P_ϵ) < ϵ</script>.</p>
-<p><strong>Solutions</strong>: For each of <script type="math/tex">x \in [0, 1]</script> such that
+<p><strong>Solution</strong>: For each of <script type="math/tex">x \in [0, 1]</script> such that
 <script type="math/tex">t(x) > \epsilon /2</script>, we make it a partition <script type="math/tex">[x, x + \frac{\epsilon}{n(n+1)}]</script>. So the upper sum is less than
 <script type="math/tex">\frac{\epsilon}{n(n+1)}</script>. Since there are only
 <script type="math/tex">n(n+1)/2</script> of them, then total upper sum is
@@ -488,7 +504,7 @@ such that</p>
 <script type="math/tex">\square</script>
 </p>
 <p>(c) If <script type="math/tex">f</script> is integrable and <script type="math/tex">g</script> is increasing, then <script type="math/tex">g ◦f</script> is integrable.</p>
-<p><strong>Solutions</strong>: This is not true.
+<p><strong>Solution</strong>: This is not true.
 Consider <script type="math/tex">f</script> is the Thomae function.</p>
 <p>
 <script type="math/tex; mode=display"> 
@@ -522,7 +538,7 @@ f_n(x) = \begin{cases}
 <script type="math/tex">(g_n) → g</script> uniformly. So from exercise 7.2.5, <script type="math/tex">g</script> is
 integrable.</p>
 <p>(c) A sequence <script type="math/tex">(h_n) → h</script> uniformly where each <script type="math/tex">h_n</script> is not integrable but <script type="math/tex">h</script> is integrable.</p>
-<p><strong>Solutions</strong>: This is possible. Consdier</p>
+<p><strong>Solution</strong>: This is possible. Consdier</p>
 <p>
 <script type="math/tex; mode=display"> 
 h_n(x) = \begin{cases}
@@ -1682,6 +1698,160 @@ From theorem 7.5.1 (ii), we know <script type="math/tex">H(x)</script> is contin
 exist.</p>
 <p>Since from any <script type="math/tex">r_n</script>, <script type="math/tex">\lim_{x \to r_n^-} h(x) < \lim_{x \to r_n^+} h(x)</script>, then based on (a), <script type="math/tex">H(x)</script> is not differentiable
 at all <script type="math/tex">r_n</script> which is <script type="math/tex">\mathbf{Q}</script>, which is dense in <script type="math/tex">\mathbf{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="76-lebesgues-criterion-for-riemann-integrability">7.6 Lebesgue’s Criterion for Riemann Integrability</h2>
+<h3 id="7614">7.6.14.</h3>
+<p>(a) Find <script type="math/tex">g'(0)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to 0} \frac{
+x^2 \sin \frac{1}{x} - 0
+}{x - 0} = \lim_{x \to 0} x \sin \frac{1}{x} = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use the standard rules of diﬀerentiation to compute <script type="math/tex">g'(x)</script> for <script type="math/tex">x \not = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(x) = 2x \sin \frac{1}{x} - x^2 \cos \frac{1}{x} \frac{1}{x^2}\\
+= 2x \sin \frac{1}{x} - \cos \frac{1}{x}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Explain why, for every <script type="math/tex">δ > 0</script>, <script type="math/tex">g'(x)</script> attains every value between <script type="math/tex">1</script> and <script type="math/tex">−1</script>
+as <script type="math/tex">x</script> ranges over the set <script type="math/tex">(−δ,δ)</script>. Conclude that <script type="math/tex">g'</script> is not continuous at <script type="math/tex">x = 0</script>.</p>
+<p><strong>Proof:</strong> Given <script type="math/tex">(−δ,δ)</script>, we can find <script type="math/tex">k</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+-δ < -\frac{1}{2k \pi} < -\frac{1}{2 (k+1) \pi} < 0
+< \frac{1}{2 (k+1) \pi} < \frac{1}{2k \pi} < δ
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+g'(-\frac{1}{2k \pi}) = g'(\frac{1}{2k \pi}) = -1 \\
+g'(-\frac{1}{2(k+1) \pi}) = g'(\frac{1}{2(k+1) \pi}) = 1 \\
+</script>
+</p>
+<p>Since <script type="math/tex">g'(x)</script> is continuous on <script type="math/tex">[\frac{1}{2 (k+1) \pi}, \frac{1}{2k \pi}]</script>, then because of the intermediate value property,
+<script type="math/tex">g'(x)</script> attains every value between <script type="math/tex">1</script> and <script type="math/tex">−1</script>.</p>
+<p>Since <script type="math/tex">g'(x) = 0</script>, <script type="math/tex">g'</script> is not continuous at <script type="math/tex">x = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7615">7.6.15.</h3>
+<p>(a) If <script type="math/tex">c ∈ C</script>, what is <script type="math/tex">\lim_{n→∞} f_n(c)</script>?</p>
+<p><strong>Solution</strong>: In each <script type="math/tex">f_n</script>, <script type="math/tex">f_n(c) = 0</script>. So
+<script type="math/tex">\lim_{n→∞} f_n(c) = 0</script>.</p>
+<p>(b) Why does <script type="math/tex">\lim_{n→∞} f_n(x)</script> exist for <script type="math/tex">x \not ∈ C</script>?</p>
+<p><strong>Solution</strong>: If <script type="math/tex">x \not \in C</script>, then there exists
+<script type="math/tex">N</script>, if <script type="math/tex">n \geq N</script>, <script type="math/tex">x \not \in C_n</script>. Let <script type="math/tex">N</script> be the smallest
+integer such that <script type="math/tex">x \not \in C_N</script>.</p>
+<p>It will be replaced by the <script type="math/tex">x^2 \sin \frac{1}{x}</script> function
+and won't be changed any more.</p>
+<p>So <script type="math/tex">\lim_{n→∞} f_n(x)</script> exists.</p>
+<h3 id="7616">7.6.16.</h3>
+<p>(a) Explain why <script type="math/tex">f'(x)</script> exists for all <script type="math/tex">x \not \in C</script>.</p>
+<p><strong>Proof</strong>: if <script type="math/tex">x \not \in C</script>, then we can assue it was taken
+out during the interval <script type="math/tex">(a,b)</script>. On this interval,
+it is either <script type="math/tex">g(x-a)</script> or <script type="math/tex">g(-x + b)</script> or in the splice part.
+Wherever it is, it's differentiable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If <script type="math/tex">c ∈ C</script>, argue that <script type="math/tex">|f(x)| ≤ (x− c)^2</script> for all
+<script type="math/tex">x ∈ [0,1]</script>. Show how this implies <script type="math/tex">f'(c) = 0</script>.</p>
+<p><strong>Proof</strong>: If <script type="math/tex">x \in C</script>, <script type="math/tex">f(x) = 0</script>. So it holds.</p>
+<p>If <script type="math/tex">x \not \in C</script>, assume it is taken out with <script type="math/tex">(a, b)</script>.
+Note that <script type="math/tex">a, b \in C</script>. So <script type="math/tex">(x-c)^2 \geq \max \{ (x-a)^2, (x-b)^2\}</script>. By our construction of <script type="math/tex">f(x)</script>, we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x)|^2 \leq (x - a)^2 \text{ and } |f(x)|^2 \leq (-x + b)^2
+</script>
+</p>
+<p>So the inequality also holds.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c}  \left| 
+\frac{f(x) - f(c)}{x - c} - 0
+ \right| =\\
+ \lim_{x \to c}
+\left| 
+\frac{f(x)}{x-c}
+\right|
+\leq 
+\lim_{x \to c}
+\left| 
+\frac{(x-c)^2}{x-c}
+\right| = 0
+</script>
+</p>
+<p>So <script type="math/tex">f'(c) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Give a careful argument for why <script type="math/tex">f'(x)</script> fails to be continuous on <script type="math/tex">C</script>. Remember that <script type="math/tex">C</script> contains many points besides the endpoints of the intervals
+that make up <script type="math/tex">C1,C2,C3,...</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">c ∈ C</script>. And given <script type="math/tex">U_{\delta}(c)</script>, it is possible
+to find an open interval <script type="math/tex">(a, b) \subset U_{\delta}(c)</script> and
+<script type="math/tex">(a, b) \cap C = \emptyset</script>. Based on our construction of
+<script type="math/tex">f</script>, <script type="math/tex">f'(x)</script> can achieve any value in <script type="math/tex">[-1, 1]</script> when <script type="math/tex">x \in (a, b)</script>. Since <script type="math/tex">f'(c) = 0</script>, <script type="math/tex">f'(x)</script> cannot be continuous at <script type="math/tex">c</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7617">7.6.17.</h3>
+<p>Why is <script type="math/tex">f'(x)</script> Riemann-integrable on [0,1]?</p>
+<p><strong>Proof</strong>: This is because <script type="math/tex">f'(x)</script> is continuous for
+<script type="math/tex">x \not \in C</script>, and Cantor set is measure <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7618">7.6.18.</h3>
+<p>Show that, under these circumstances, the sum of the lengths
+of the intervals making up each <script type="math/tex">C_n</script> no longer tends to zero as <script type="math/tex">n → ∞</script>. What is this limit?</p>
+<p><strong>Proof</strong>: The segment we take out is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n=1}^{\infty} 2^{n-1}
+\left( \frac{1}{3^{n+1}} \right)
+= \frac{1}{9} (1 + \frac{2}{3} + \frac{4}{9} + \cdots) = \frac{1}{3}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="7619">7.6.19.</h3>
+<p>As a final gesture, provide the example advertised in
+Exercise 7.6.13 of an integrable function <script type="math/tex">f</script> and a continuous function <script type="math/tex">g</script> where the
+composition <script type="math/tex">f ◦ g</script> is properly defined but not integrable. Exercise 4.3.12 may be useful.</p>
+<p><strong>Solution</strong>: Consider <script type="math/tex">A</script> is the set defined in 7.6.18,
+<script type="math/tex">g</script> is the function used in Exercise 4.3.12. Since <script type="math/tex">A</script> is
+a close set, <script type="math/tex">g</script> is continuous. Let <script type="math/tex">f</script> be this function
+defined in <script type="math/tex">[0,1]</script> :</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    0 &\text{if } x = 0 \\
+    \sin \frac{1}{x} &\text{if } x \not = 0 \\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">f(x)</script> is integrable because <script type="math/tex">f(x)</script> is only discontinueous at <script type="math/tex">0</script>.</p>
+<p>So let <script type="math/tex">h = f ◦ g</script>, <script type="math/tex">h(x) = 0</script> if <script type="math/tex">x \in A</script>, because the
+distance between <script type="math/tex">x</script> and <script type="math/tex">A</script> is <script type="math/tex">0</script>.</p>
+<p>Furthermore, <script type="math/tex">h(x)</script> is not continuous at <script type="math/tex">x \in A</script>.
+Given <script type="math/tex">c \in A</script> it is possible
+to find an open interval <script type="math/tex">(a, b) \subset U_{\delta}(c)</script> and
+<script type="math/tex">(a, b) \cap C = \emptyset</script>, <script type="math/tex">a,b \in A</script>. <script type="math/tex">h(x)</script> can achieve any value in <script type="math/tex">[-1, 1]</script> when <script type="math/tex">x \in (a, b)</script>. Since <script type="math/tex">h(c) = 0</script>, <script type="math/tex">h(x)</script> cannot be continuous at <script type="math/tex">c</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

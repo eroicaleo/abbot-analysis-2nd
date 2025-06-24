@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 08 Additional Topics - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 08 Additional Topics";
+        var mkdocs_page_input_path = "ch08ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06notes/">Chapter 06 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch07notes/">Chapter 07 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch07ex/">Chapter 07 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 08 Additional Topics</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch08ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-08-additional-topics">Chapter 08 Additional Topics</h1>
+<h2 id="81-the-generalized-riemann-integral">8.1 The Generalized Riemann Integral</h2>
+<h3 id="exercise-811">Exercise 8.1.1</h3>
+<p>Let <script type="math/tex">(P,{c_k})</script> be an arbitrary tagged partition of <script type="math/tex">[a,b]</script> that
+is <script type="math/tex">δ</script>-fine, and let <script type="math/tex">P' = P ∪ P_ϵ</script>.</p>
+<p>(a) Explain why both the Riemann sum <script type="math/tex">R(f,P)</script> and <script type="math/tex">\int_{a}^{b}f</script>
+fall between <script type="math/tex">L(f,P)</script> and <script type="math/tex">U(f,P)</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">\int_{a}^{b}f</script> is an upper bound of <script type="math/tex">L(f,P)</script>
+and a lower bound of <script type="math/tex">U(f,P)</script>, so <script type="math/tex">\int_{a}^{b}f</script>
+fall between <script type="math/tex">L(f,P)</script> and <script type="math/tex">U(f,P)</script>.</p>
+<p>Since <script type="math/tex">m_k \leq c_k \leq M_k</script>, <script type="math/tex">R(f,P)</script> also
+fall between <script type="math/tex">L(f,P)</script> and <script type="math/tex">U(f,P)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Explain why <script type="math/tex">U(f,P')−L(f,P') < ϵ/3</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">P' = P ∪ P_ϵ</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+L(f, P_ϵ) \leq L(f, P') \leq U(f, P') \leq  U(f, P_ϵ)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="812">8.1.2.</h3>
+<p>Explain why <script type="math/tex">U(f,P)−U(f,P') ≥ 0</script>.</p>
+<p><strong>Proof</strong>: See previous exercise.</p>
+<h3 id="813">8.1.3.</h3>
+<p>(a) In terms of <script type="math/tex">n</script>, what is the largest number of terms of the
+form <script type="math/tex">M_k(x_k - x_{k-1})</script> that could appear in one of <script type="math/tex">U(f,P)</script> or <script type="math/tex">U(f,P')</script> but not the other?</p>
+<p>Solution: Note that <script type="math/tex">P \subseteq P' = P \cup P_{\epsilon }</script>, and
+since <script type="math/tex">P_{\epsilon}</script> has <script type="math/tex">n</script> segments, so <script type="math/tex">P'</script> has at most <script type="math/tex">n</script> points more than <script type="math/tex">P</script>.</p>
+<p>If these <script type="math/tex">n</script> points fall into <script type="math/tex">n</script> different
+segments of <script type="math/tex">P</script>, then we can achive the
+largest number of terms of the
+form <script type="math/tex">M_k(x_k - x_{k-1})</script> that appears in one of <script type="math/tex">U(f,P)</script> or <script type="math/tex">U(f,P')</script> but not the other, which is <script type="math/tex">3n</script>.</p>
+<p>(b) Finish the proof in this direction by arguing that</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) - U(f, P') < \epsilon / 3.
+</script>
+</p>
+<p>Proof: Now we can bound</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) - U(f, P') < 3n \cdot M \cdot \frac{\epsilon}{9nM}
+= \epsilon / 3
+</script>
+</p>
+<p>Combine the previous exercises, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+R(f, P), \int_{a}^{b}f \leq U(f, P) < U(f, P') + \epsilon / 3 \\
+R(f, P), \int_{a}^{b}f \geq L(f, P) > L(f, P') - \epsilon / 3
+</script>
+</p>
+<p>So <script type="math/tex">\left| R(f, P) - \int_{a}^{b} f \right| < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="814">8.1.4.</h3>
+<p>(a) Show that if <script type="math/tex">f</script> is continuous, then it is possible to pick tags
+<script type="math/tex">\{c_k\}^n_{k=1}</script>
+so that <script type="math/tex">R(f,P) = U(f,P)</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">f</script> is continuous, for each segment
+<script type="math/tex">[x_{k-1}, x_k]</script>, because of extreme value theorem, it is possible to find <script type="math/tex">c_k</script> such that
+<script type="math/tex">f(x_k) = M_k</script>.
+Pick those <script type="math/tex">c_k</script>, we have <script type="math/tex">R(f,P) = U(f,P)</script>.</p>
+<p>(b) If <script type="math/tex">f</script> is not continuous, it may not be possible to find tags for which <script type="math/tex">R(f,P) = U(f,P)</script>.
+Show, however, that given an arbitrary <script type="math/tex">ϵ > 0</script>, it
+is possible to pick tags for <script type="math/tex">P</script> so that</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f,P) - R(f,P) < \epsilon.
+</script>
+</p>
+<p>The analogous statement holds for lower sums.</p>
+<p><strong>Proof</strong>: For each segment <script type="math/tex">[x_{k-1}, x_k]</script>, <script type="math/tex">M_k</script> is the
+supremum of <script type="math/tex">f(x)</script> for <script type="math/tex">x \in [x_{k-1}, x_k]</script>. So we can find
+<script type="math/tex">c_k</script> such that <script type="math/tex">M_k - c_k < \epsilon / (b-a)</script>.</p>
+<p>Pick those <script type="math/tex">c_k</script>, we have <script type="math/tex">U(f,P) - R(f,P) < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="815">8.1.5.</h3>
+<p>Use the results of the previous exercise to finish the proof of Theorem 8.1.2.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">\epsilon</script>, we can find partition <script type="math/tex">\delta</script>,
+such that any <script type="math/tex">\delta</script>-fine tagged partition <script type="math/tex">|R(f, P) - A| < \epsilon /4</script>.
+ <script type="math/tex">P</script>, such
+that <script type="math/tex">U(f,P) - R_1(f,P) < \epsilon / 4</script>. Similarly,
+<script type="math/tex">R_2(f,P) - L(f,P) < \epsilon / 4</script>.</p>
+<p>Let <script type="math/tex">P_{\epsilon} = P_1 \cup P_2</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P) - L (f, P)
+= U(f, P) - R_1(f,P) + R_1(f,P) - A + A - R_2(f,P) + R_2(f,P) - L (f, P) \\
+< \epsilon / 4 + \epsilon / 4 + \epsilon / 4 + \epsilon / 4
+< \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>Gauges and δ(x)-fine Partitions</strong></p>
+<h3 id="definition-813">Definition 8.1.3.</h3>
+<p>A function <script type="math/tex">δ : [a,b] → \mathbf{R}</script> is called a gauge on <script type="math/tex">[a,b]</script> if <script type="math/tex">δ(x) > 0</script> for all <script type="math/tex">x ∈ [a,b]</script>.</p>
+<h3 id="definition-814">Definition 8.1.4.</h3>
+<p>Given a particular gauge <script type="math/tex">δ(x)</script>, a tagged partition
+<script type="math/tex">(P, {c_k}_{k=1}^n)</script> is <script type="math/tex">\delta(x)</script>-fine if every subinterval
+<script type="math/tex">[x_{k−1},x_k]</script> satisfies <script type="math/tex">x_k - x_{k−1} < \delta(c_k)</script>.</p>
+<p>In other words, each subinterval <script type="math/tex">[x_{k−1},x_k]</script> has width less 
+than <script type="math/tex">\delta(c_k)</script>.</p>
+<h3 id="816">8.1.6.</h3>
+<p>Consider the interval [0,1].</p>
+<p>(a) If <script type="math/tex">\delta(x) = 1/9</script>, find a <script type="math/tex">\delta(x)</script>-fine tagged partition of <script type="math/tex">[0,1]</script>. Does the choice of tags matter in this case?</p>
+<p><strong>Solution</strong>:</p>
+<p>Let <script type="math/tex">P = \{0, 0.1, 0.2, \cdots, 0.9, 1.0\}</script>.
+The choice of tags does not matter.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\delta (x) = \begin{cases}
+    1/4 &\text{if } x = 0\\
+    x/3 &\text{if } 0 < x \leq 1\\
+\end{cases} 
+</script>
+</p>
+<p>Construct a <script type="math/tex">δ(x)</script>-fine tagged partition of <script type="math/tex">[0,1]</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Let <script type="math/tex">x_0 = 0, x_1 = 1, c_1 = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-815">Theorem 8.1.5.</h3>
+<p>Given a gauge <script type="math/tex">δ(x)</script> on an interval <script type="math/tex">[a,b]</script>, there exists a tagged
+partition <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> that is <script type="math/tex">δ(x)</script>-fine.</p>
+<p><strong>Proof</strong>. Let <script type="math/tex">I_0 = [a,b]</script>. It may be possible to find a tag such that the trivial partition
+<script type="math/tex">P= \{a,b\}</script> works.</p>
+<p>Specifically, if <script type="math/tex">b−a < δ(x)</script> for some <script type="math/tex">x ∈ [a,b]</script>, then
+we can set <script type="math/tex">c_1</script> equal to such an <script type="math/tex">x</script> and notice that
+<script type="math/tex">(P,{c_1})</script> is <script type="math/tex">δ(x)</script>-fine. If no
+such <script type="math/tex">x</script> exists, then bisect <script type="math/tex">[a,b]</script> into two equal halves.</p>
+<h3 id="exercise-817">Exercise 8.1.7.</h3>
+<p>Finish the proof of Theorem 8.1.5.</p>
+<p><strong>Proof</strong>: Assume otherwise, then this process continuous
+indefinitely, then we get a nested intervals.
+Because of NIP, we can find <script type="math/tex">c</script> in all these intervals.
+That means <script type="math/tex">\delta (c) \geq b_n - a_n</script> for all <script type="math/tex">n</script>.
+But
+<script type="math/tex">\lim_{n \to \infty} b_n - a_n =
+\lim_{n \to \infty}\frac{b-a}{2^n} = 0
+</script>
+So we have a contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-816">Definition 8.1.6.</h3>
+<p>A function <script type="math/tex">f</script> on <script type="math/tex">[a,b]</script> has generalized Riemann integral <script type="math/tex">A</script>
+if, for every <script type="math/tex">ϵ > 0</script>, there exists a gauge <script type="math/tex">δ(x)</script> on <script type="math/tex">[a,b]</script> such that for each tagged partition <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> that is
+<script type="math/tex">δ(x)</script>-fine, it is true that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|R(f,P)−A| < ϵ
+</script>
+</p>
+<p>In this case, we write <script type="math/tex">A = \int_{a}^{b}f</script>.</p>
+<h3 id="theorem-817">Theorem 8.1.7.</h3>
+<p>If a function has a generalized Riemann integral, then the
+value of the integral is unique.</p>
+<h3 id="exercise-818">Exercise 8.1.8.</h3>
+<p>Finish the argument.</p>
+<p><strong>Proof</strong>: Assume that a function <script type="math/tex">f</script> has generalized Riemann 
+integral <script type="math/tex">A1</script> and that
+it also has generalized Riemann integral <script type="math/tex">A2</script>.
+We must prove <script type="math/tex">A1 = A2</script>.</p>
+<p>Since <script type="math/tex">f</script> is generalized Riemann integrable, given <script type="math/tex">\epsilon</script>, we
+can find <script type="math/tex">\delta_1(x)</script>, such that if a tagged partition <script type="math/tex">P_1</script> is 
+<script type="math/tex">\delta_1(x)</script>-fine, then <script type="math/tex">|R(f, P_1) - A_1| < \epsilon</script>.</p>
+<p>Similarly, we can find <script type="math/tex">\delta_2(x)</script>, such that if a tagged partition <script type="math/tex">P_2</script> is 
+<script type="math/tex">\delta_2(x)</script>-fine, then <script type="math/tex">|R(f, P_2) - A_2| < \epsilon</script>.</p>
+<p>Now we can define <script type="math/tex">\delta (x) = \min \{\delta_1(x), \delta_2(x)\}</script>.
+From Theorem 8.1.5, we can find a tagged partition <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> that is <script type="math/tex">\delta(x)</script>-fine.</p>
+<p>If <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> is <script type="math/tex">\delta(x)</script>-fine, it has to be
+<script type="math/tex">\delta_1(x)</script>-fine. This is because</p>
+<p>
+<script type="math/tex; mode=display"> 
+x_k - x_{k-1} < \delta (c_k) \leq \delta_1(c_k)
+</script>
+</p>
+<p>So <script type="math/tex">|R(f, P) - A_1| < \epsilon</script>.</p>
+<p>For the same reason, <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> is <script type="math/tex">\delta(x)</script>-fine, it has to be <script type="math/tex">\delta_2(x)</script>-fine, and <script type="math/tex">|R(f, P) - A_2| < \epsilon</script>.</p>
+<p>Since</p>
+<p>
+<script type="math/tex; mode=display"> 
+|A_1 - A_2| < |R(f, P) - A_1| + |R(f, P) - A_2| < \epsilon /2
+</script>
+</p>
+<p>And <script type="math/tex">\epsilon</script> can be arbitrary, so <script type="math/tex">A_1 = A_2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-819">Exercise 8.1.9</h3>
+<p>Explain why every function that is Riemann-integrable
+with <script type="math/tex">\int_{a}^{b}f = A</script> must also have generalized Riemann
+integral <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>: If <script type="math/tex">f</script> is Riemann-integrable, then for any
+<script type="math/tex">\epsilon</script>, we can find <script type="math/tex">\delta</script>, any tagged partition <script type="math/tex">P</script> is <script type="math/tex">\delta</script>-fine
+then <script type="math/tex">|R(f, P) - A| \leq \epsilon</script>.</p>
+<p>Let this <script type="math/tex">\delta(x) = \delta</script> be the gauge, we can see
+<script type="math/tex">f</script> is generalized Riemann integrable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-818">Theorem 8.1.8.</h3>
+<p>Dirichlet’s function <script type="math/tex">g(x)</script> is generalized Riemann-integrable on
+<script type="math/tex">[0,1]</script> with <script type="math/tex">\int_{0}^{1} g = 0</script>.</p>
+<p><strong>Proof</strong>: Let ϵ &gt; 0. By Definition 8.1.6, we must construct a 
+gauge <script type="math/tex">δ(x)</script> on [0,1] such that whenever
+<script type="math/tex">(P,\{c_k\}^n_{k=1})</script> is <script type="math/tex">\delta(x)</script>-fine tagged partition, it 
+follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 \leq \sum_{k=1}^{n} g(c_k)(x_k - x_{k-1}) < \epsilon
+</script>
+</p>
+<p>The gauge represents a restriction on the size of
+<script type="math/tex">Δx_k = x_k−x_{k−1}</script> in the sense that <script type="math/tex">Δx_k < δ(c_k)</script>.</p>
+<p>The Riemann sum consists of products of the form <script type="math/tex">g(c_k)Δx_k</script>.
+Thus, for irrational tags, there is nothing to worry about because 
+<script type="math/tex">g(c_k) = 0</script> in this case. Our task is to make sure that any time 
+a tag <script type="math/tex">c_k</script> is rational, it comes from a suitably thin subinterval.</p>
+<p>Let <script type="math/tex">\{r_1,r_2,r_3,...\}</script> be an enumeration of the countable set of rational numbers contained in <script type="math/tex">[0,1]</script>.
+For each <script type="math/tex">r_k</script>, set <script type="math/tex">δ(r_k) = ϵ/2^{k+1}</script>. For x irrational, set
+<script type="math/tex">δ(x) = 1</script>.</p>
+<h3 id="exercise-8110">Exercise 8.1.10.</h3>
+<p>Show that if <script type="math/tex">(P,\{c_k\}^n_{k=1})</script> is a <script type="math/tex">δ(x)</script>-fine tagged partition, then <script type="math/tex">R(g,P) < ϵ</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">c_k</script> is irrational, then <script type="math/tex">g(c_k)Δx_k = 0</script>.
+Otherwise, <script type="math/tex">g(c_k)Δx_k < δ(r_k) = ϵ/2^{k+1}</script>.
+So <script type="math/tex">\sum_{k=1}^{n} g(c_k)(x_k - x_{k-1}) < \epsilon</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-819">Theorem 8.1.9.</h3>
+<p>Assume <script type="math/tex">F : [a,b] → \mathbf{R}</script> is diﬀerentiable at each point in <script type="math/tex">[a,b]</script>, and set <script type="math/tex">f(x) = F'(x)</script>. Then, <script type="math/tex">f</script> has the generalized Riemann integral</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} f = F(b) - F(a)
+</script>
+</p>
+<p>Proof. Let <script type="math/tex">P= {x_0,x_1,x_2,...,x_n}</script> be a partition of <script type="math/tex">[a,b]</script>. Both this proof and
+the proof of Theorem 7.5.1 make use of the following fact.</p>
+<h3 id="exercise-8111">Exercise 8.1.11.</h3>
+<p>Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(b) - F(a) = \sum_{k=1}^{n} [F(x_k) - F(x_{k-1})]
+</script>
+</p>
+<p><strong>Proof</strong>: It is obvious. <script type="math/tex">\square</script>
+</p>
+<p>If <script type="math/tex">\{c_k\}^n_{k=1}</script> is a set of tags for <script type="math/tex">P</script>, then we can estimate the diﬀerence between
+the Riemann sum <script type="math/tex">R(f,P)</script> and <script type="math/tex">F(b)−F(a)</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(b) - F(a) - R(f, P)| =
+\left| 
+\sum_{k = 1}^{n} [F(x_k) - F(x_{k-1}) - f(c_k)(x_k - x_{k-1})]
+\right| \\
+\leq
+\sum_{k = 1}^{n} |F(x_k) - F(x_{k-1}) - f(c_k)(x_k - x_{k-1})|
+</script>
+</p>
+<p>Let <script type="math/tex">ϵ > 0</script>. To prove the theorem, we must construct a gauge <script type="math/tex">δ(c)</script>
+such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(b) - F(a) - R(f, P)| < ϵ
+</script>
+</p>
+<p>for all <script type="math/tex">(P,{c_k})</script> that are <script type="math/tex">δ(c)</script>-fine. (Using the variable <script type="math/tex">c</script> in the gauge function is more convenient than <script type="math/tex">x</script> in this case.)</p>
+<h3 id="exercise-8112">Exercise 8.1.12.</h3>
+<p>For each <script type="math/tex">c ∈ [a,b]</script>, explain why there exists a <script type="math/tex">δ(c) > 0</script>
+(a <script type="math/tex">δ > 0</script> depending on <script type="math/tex">c</script>) such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{F(x) - F(c)}{x - c} - f(c)
+\right|
+< \epsilon
+</script>
+</p>
+<p>for all <script type="math/tex">0 < |x-c| < \delta (c)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">F(x)</script> is differential at <script type="math/tex">c</script>, that means</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to c} \frac{F(x) - F(c)}{x - c} = f(c)
+</script>
+</p>
+<p>i.e. given <script type="math/tex">\epsilon</script>, for <script type="math/tex">c</script>, we can find a <script type="math/tex">\delta (c)</script>, as
+long as <script type="math/tex">0 < |x-c| < \delta (c)</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{F(x) - F(c)}{x - c} - f(c)
+\right|
+< \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8113">Exercise 8.1.13.</h3>
+<p>(a) For a particular <script type="math/tex">c_k ∈ [x_{k−1},x_k]</script> of <script type="math/tex">P</script>, show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(x_k)−F(c_k)−f(c_k)(x_k−c_k)| < ϵ(x_k−c_k)
+</script>
+</p>
+<p>and</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(c_k)−F(x_{k−1})−f(c_k)(c_k−x_{k−1})| < ϵ(c_k−x_{k−1}).
+</script>
+</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">0 < x_k - c_k < \delta (c_k)</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\left| 
+\frac{F(x_k) - F(c_k)}{x_k - c_k} - f(c_k)
+\right| < \epsilon
+</script>
+</p>
+<p>i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(x_k)−F(c_k)−f(c_k)(x_k−c_k)| < ϵ(x_k−c_k)
+</script>
+</p>
+<p>The other part is the same.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now, argue that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(x_k)−F(x_{k−1})−f(c_k)(x_k−x_{k−1})| < ϵ(x_k−x_{k−1})
+</script>
+</p>
+<p>and use this fact to complete the proof of the theorem.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(x_k)−F(x_{k−1})−f(c_k)(x_k−x_{k−1})| =\\
+\left| 
+F(x_k)−F(c_k)−f(c_k)(x_k−c_k) +
+F(c_k)−F(x_{k−1})−f(c_k)(c_k−x_{k−1})
+\right| \\
+\leq
+|F(x_k)−F(c_k)−f(c_k)(x_k−c_k)| + |F(x_k)−F(c_k)−f(c_k)(x_k−c_k)| \\
+\leq
+ϵ(x_k−c_k) + ϵ(c_k−x_{k−1})\\
+= ϵ(x_k−x_{k−1})
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(b) - F(a) - R(f, P)| \\
+\leq
+\sum_{k = 1}^{n} |F(x_k) - F(x_{k-1}) - f(c_k)(x_k - x_{k-1})|
+\\
+\leq
+\sum_{k = 1}^{n} ϵ(x_k−x_{k−1}) \\
+= \epsilon
+</script>
+</p>
+<p>Then we proved Theorem 8.1.9.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>If we consider the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) =
+\begin{cases}
+    x^{3/2} \sin (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases} 
+</script>
+</p>
+<p>then it is not too diﬃcult to show that <script type="math/tex">F</script> is diﬀerentiable everywhere, including <script type="math/tex">x = 0</script>, with</p>
+<p>
+<script type="math/tex; mode=display"> 
+F'(x) =
+\begin{cases}
+    (3/2) \sqrt[]{x} \sin (1/x) - (1/\sqrt[]{x}) \cos (1/x) &\text{if } x \not = 0\\
+    0 &\text{if } x = 0\\
+\end{cases} 
+</script>
+</p>
+<p>What is notable here is that the derivative is unbounded near the origin.
+The theory of the ordinary Riemann integral begins with the assumption that we only consider bounded functions on closed intervals, but there is no such restriction for the generalized Riemann integral.
+Theorem 8.1.9 proves that <script type="math/tex">F'</script> has a generalized integral.</p>
+<p>Now, <em>improper</em> Riemann integrals have been created to extend Riemann integration to some unbounded functions, but it is another
+interesting fact about the generalized Riemann integral that any function having an improper integral must already be integrable in the sense described in Definition 8.1.6.</p>
+<h3 id="theorem-8110-change-of-variable-formula">Theorem 8.1.10 (Change-of-variable Formula).</h3>
+<p>Let <script type="math/tex">g : [a,b] → \mathbf{R}</script> be
+diﬀerentiable at each point of <script type="math/tex">[a,b]</script>, and assume <script type="math/tex">F</script> is diﬀerentiable on the set <script type="math/tex">g([a,b])</script>.
+If <script type="math/tex">f(x) = F'(x)</script> for all <script type="math/tex">x ∈ g([a,b])</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} (f◦g)·g' =
+\int_{g(a)}^{g(b)} f.
+</script>
+</p>
+<p><strong>Proof</strong>. The hypothesis of the theorem guarantees that the function <script type="math/tex">(F ◦g)(x)</script>
+is diﬀerentiable for all <script type="math/tex">x ∈ [a,b]</script>.</p>
+<h3 id="exercise-8114">Exercise 8.1.14.</h3>
+<p>(a) Why are we sure that <script type="math/tex">f</script> and <script type="math/tex">(F◦g)'</script> have generalized
+Riemann integrals?</p>
+<p><strong>Proof</strong>: This is because <script type="math/tex">F</script> is diﬀerentiable and
+<script type="math/tex">f(x) = F'(x)</script>. Since <script type="math/tex">g</script> is also differentialble, then
+<script type="math/tex">F◦g</script> is differentialble. And <script type="math/tex">(F◦g)'</script> is its derivative.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use Theorem 8.1.9 to finish the proof.</p>
+<p><strong>Proof</strong>:</p>
+<p>On the left side</p>
+<p>
+<script type="math/tex; mode=display">
+(F◦g)' = (f◦g) \cdot g'
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} (f◦g)·g' = F(g(b)) - F(g(a))
+</script>
+</p>
+<p>On the right side</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{g(a)}^{g(b)} f = F(g(b)) - F(g(a))
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="83-eulers-sum">8.3 Euler’s Sum</h2>
+<p>In Section 6.1 we saw Euler’s first and most famous derivation of the formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+1 + \frac{1}{4} + \frac{1}{9} +
+\frac{1}{16} + \frac{1}{25} + \cdots = \frac{\pi ^2}{6}
+</script>
+</p>
+<p>At the crux of this argument are two representations for the function <script type="math/tex">sin(x)</script>.
+The first is the standard Taylor series representation</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{1}
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!}
++ \cdots ,
+</script>
+</p>
+<p>and the second is an infinite product representation</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{2}
+\sin x = x
+\left( 1 - \frac{x}{\pi } \right) 
+\left( 1 + \frac{x}{\pi } \right) 
+\left( 1 - \frac{x}{2 \pi } \right) 
+\left( 1 + \frac{x}{2 \pi } \right)
+\cdots .
+</script>
+</p>
+<h3 id="walliss-product">Wallis’s Product</h3>
+<h3 id="exercise-831">Exercise 8.3.1.</h3>
+<p>Supply the details to show that when <script type="math/tex">x = π/2</script> the product
+formula in (2) is equivalent to</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{3}
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) 
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We plug the <script type="math/tex">\frac{\pi}{2}</script> into equation (2).</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-832">Exercise 8.3.2.</h3>
+<p>Assume <script type="math/tex">h(x)</script> and <script type="math/tex">k(x)</script> have continuous derivatives on
+<script type="math/tex">[a,b]</script> and derive the familiar integration-by-parts
+formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{b} h(t) k'(t) dt
+= h(b) k(b) - h(a) k (a)
+- \int_{a}^{b} h'(t) k(t) dt .
+</script>
+</p>
+<p><strong>Proof</strong>: See exercise 7.5.6.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-833">Exercise 8.3.3.</h3>
+<p>(a) Using the simple identity <script type="math/tex">\sin^n(x) = \sin^{n−1}(x)\sin(x)</script> and
+the previous exercise, derive the recurrence relation</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_n = \frac{n-1}{n} b_{n-2} \text{ for all } n \geq 2
+</script>
+</p>
+<p><strong>Proof</strong>: </p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\frac{\pi}{2}}
+\sin^n(x)
+= 
+\int_{0}^{\frac{\pi}{2}}
+\sin^{n-1} (x) \sin (x)\\
+= \sin^{n-1} (\frac{\pi}{2}) (-\cos (\frac{\pi}{2}))
+- \sin^{n-1} (0) (-\cos (0))
+- \int_{0}^{\frac{\pi}{2}} (n - 1) \sin ^{n-2} (x) \cos (x) (-\cos (x))\\
+= (n - 1)\int_{0}^{\frac{\pi}{2}}
+\sin ^{n-2} (x) \cos ^2 (x) \\
+= (n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin ^{n-2} (x) - \sin ^{n} (x)
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\frac{\pi}{2}}
+\sin^n(x) +
+(n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin^n(x) = (n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin^{n-2}(x)
+</script>
+</p>
+<p>So,</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_n = \frac{n-1}{n} b_{n-2} \text{ for all } n \geq 2
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use this relation to generate the first three even terms and the first three odd terms of the sequence <script type="math/tex">(b_n)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_2 = \frac{1}{2} b_0 = \frac{\pi }{4}\\
+b_4 = \frac{3}{4} b_2 = \frac{3 \pi }{16}\\
+b_6 = \frac{5}{6} b_4 = \frac{15 \pi }{96}\\
+b_3 = \frac{2}{3} b_1 = \frac{2}{3}\\
+b_5 = \frac{4}{5} b_3 = \frac{8}{15}\\
+b_7 = \frac{6}{7} b_4 = \frac{48}{105}\\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Write a general expression for <script type="math/tex">b_{2n}</script> and <script type="math/tex">b_{2n+1}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+b_{2n} = \frac{\pi}{2} \cdot \frac{1}{2}
+\cdot \frac{3}{4}
+\cdot \frac{5}{6} \cdots
+\cdot \frac{2n-1}{2n}
+</script>
+</p>
+<p>and </p>
+<p>
+<script type="math/tex; mode=display"> 
+b_{2n+1} = 1
+\cdot \frac{2}{3}
+\cdot \frac{4}{5}
+\cdot \frac{6}{7}
+\cdots
+\cdot \frac{2n}{2n+1}
+</script>
+</p>
+<h3 id="exercise-834">Exercise 8.3.4.</h3>
+<p>Show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}} = 1
+</script>
+</p>
+<p>and use this fact to finish the proof of Wallis’s product formula in (3).</p>
+<p><strong>Proof</strong>:</p>
+<p>Because <script type="math/tex">b_{2n} \geq b_{2n+1} \geq b_{2n+2}</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+1 \leq \frac{b_{2n}}{b_{2n+1}} \leq \frac{b_{2n}}{b_{2n+2}}
+= \frac{2n+2}{2n+1}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}}
+\leq 
+\lim_{n \to \infty} \frac{2n+2}{2n+1} = 1
+\\
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}}
+\geq
+\lim_{n \to \infty} 1 = 1
+</script>
+</p>
+<p>Then it's easy to see product formula in (3) holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-835">Exercise 8.3.5.</h3>
+<p>Derive the following alternative form of Wallis’s product formula:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sqrt[]{\pi} =
+\lim_{n \to \infty}
+\frac{
+2^{2n} (n!)^2
+}{
+(2n)! \sqrt[]{n}
+}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) \\
+= \frac{
+(2^{2n} (n!)^2)^2
+}{
+(2n!)^2 (2n+1)
+}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\pi = \lim_{n \to \infty} 
+\frac{
+(2^{2n} (n!)^2)^2 2
+}{
+(2n!)^2 (2n+1)
+}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sqrt[]{\pi} =
+\lim_{n \to \infty}
+\frac{
+2^{2n} (n!)^2
+}{
+(2n)! \sqrt[]{n}
+}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="taylor-series">Taylor Series</h3>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
