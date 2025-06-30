@@ -513,7 +513,7 @@ $\square$
 
 On the left side
 
-$$ 
+$$
 (F◦g)' = (f◦g) \cdot g'
 $$
 
@@ -528,5 +528,827 @@ On the right side
 $$ 
 \int_{g(a)}^{g(b)} f = F(g(b)) - F(g(a))
 $$
+
+$\square$
+
+## 8.3 Euler’s Sum
+
+In Section 6.1 we saw Euler’s first and most famous derivation of the formula
+
+$$ 
+1 + \frac{1}{4} + \frac{1}{9} +
+\frac{1}{16} + \frac{1}{25} + \cdots = \frac{\pi ^2}{6}
+$$
+
+At the crux of this argument are two representations for the function $sin(x)$.
+The first is the standard Taylor series representation
+
+$$ 
+\tag{1}
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!}
++ \cdots ,
+$$
+
+and the second is an infinite product representation
+
+$$ 
+\tag{2}
+\sin x = x
+\left( 1 - \frac{x}{\pi } \right) 
+\left( 1 + \frac{x}{\pi } \right) 
+\left( 1 - \frac{x}{2 \pi } \right) 
+\left( 1 + \frac{x}{2 \pi } \right)
+\cdots .
+$$
+
+### Wallis’s Product
+
+### Exercise 8.3.1.
+
+Supply the details to show that when $x = π/2$ the product
+formula in (2) is equivalent to
+
+$$ 
+\tag{3}
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) 
+$$
+
+**Proof**:
+
+We plug the $\frac{\pi}{2}$ into equation (2).
+
+$\square$
+
+### Exercise 8.3.2.
+
+Assume $h(x)$ and $k(x)$ have continuous derivatives on
+$[a,b]$ and derive the familiar integration-by-parts
+formula
+
+$$ 
+\int_{a}^{b} h(t) k'(t) dt
+= h(b) k(b) - h(a) k (a)
+- \int_{a}^{b} h'(t) k(t) dt .
+$$
+
+**Proof**: See exercise 7.5.6.
+
+$\square$
+
+### Exercise 8.3.3.
+
+(a) Using the simple identity $\sin^n(x) = \sin^{n−1}(x)\sin(x)$ and
+the previous exercise, derive the recurrence relation
+
+$$ 
+b_n = \frac{n-1}{n} b_{n-2} \text{ for all } n \geq 2
+$$
+
+**Proof**: 
+
+$$ 
+\int_{0}^{\frac{\pi}{2}}
+\sin^n(x)
+= 
+\int_{0}^{\frac{\pi}{2}}
+\sin^{n-1} (x) \sin (x)\\
+= \sin^{n-1} (\frac{\pi}{2}) (-\cos (\frac{\pi}{2}))
+- \sin^{n-1} (0) (-\cos (0))
+- \int_{0}^{\frac{\pi}{2}} (n - 1) \sin ^{n-2} (x) \cos (x) (-\cos (x))\\
+= (n - 1)\int_{0}^{\frac{\pi}{2}}
+\sin ^{n-2} (x) \cos ^2 (x) \\
+= (n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin ^{n-2} (x) - \sin ^{n} (x)
+$$
+
+So we have
+
+$$ 
+\int_{0}^{\frac{\pi}{2}}
+\sin^n(x) +
+(n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin^n(x) = (n - 1) \int_{0}^{\frac{\pi}{2}}
+\sin^{n-2}(x)
+$$
+
+So,
+
+$$ 
+b_n = \frac{n-1}{n} b_{n-2} \text{ for all } n \geq 2
+$$
+
+$\square$
+
+(b) Use this relation to generate the first three even terms and the first three odd terms of the sequence $(b_n)$.
+
+$$ 
+b_2 = \frac{1}{2} b_0 = \frac{\pi }{4}\\
+b_4 = \frac{3}{4} b_2 = \frac{3 \pi }{16}\\
+b_6 = \frac{5}{6} b_4 = \frac{15 \pi }{96}\\
+b_3 = \frac{2}{3} b_1 = \frac{2}{3}\\
+b_5 = \frac{4}{5} b_3 = \frac{8}{15}\\
+b_7 = \frac{6}{7} b_4 = \frac{48}{105}\\
+$$
+
+$\square$
+
+(c) Write a general expression for $b_{2n}$ and $b_{2n+1}$
+
+$$
+b_{2n} = \frac{\pi}{2} \cdot \frac{1}{2}
+\cdot \frac{3}{4}
+\cdot \frac{5}{6} \cdots
+\cdot \frac{2n-1}{2n}
+$$
+
+and 
+
+$$ 
+b_{2n+1} = 1
+\cdot \frac{2}{3}
+\cdot \frac{4}{5}
+\cdot \frac{6}{7}
+\cdots
+\cdot \frac{2n}{2n+1}
+$$
+
+### Exercise 8.3.4.
+
+Show
+
+$$ 
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}} = 1
+$$
+
+and use this fact to finish the proof of Wallis’s product formula in (3).
+
+**Proof**:
+
+Because $b_{2n} \geq b_{2n+1} \geq b_{2n+2}$, so
+
+$$ 
+1 \leq \frac{b_{2n}}{b_{2n+1}} \leq \frac{b_{2n}}{b_{2n+2}}
+= \frac{2n+2}{2n+1}
+$$
+
+So
+
+$$ 
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}}
+\leq 
+\lim_{n \to \infty} \frac{2n+2}{2n+1} = 1
+\\
+\lim_{n \to \infty} \frac{b_{2n}}{b_{2n+1}}
+\geq
+\lim_{n \to \infty} 1 = 1
+$$
+
+Then it's easy to see product formula in (3) holds.
+
+$\square$
+
+### Exercise 8.3.5.
+
+Derive the following alternative form of Wallis’s product formula:
+
+$$ 
+\sqrt[]{\pi} =
+\lim_{n \to \infty}
+\frac{
+2^{2n} (n!)^2
+}{
+(2n)! \sqrt[]{n}
+}
+$$
+
+**Proof**:
+
+We know
+
+$$ 
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) \\
+= \frac{
+(2^{2n} (n!)^2)^2
+}{
+(2n!)^2 (2n+1)
+}
+$$
+
+So
+
+$$ 
+\pi = \lim_{n \to \infty} 
+\frac{
+(2^{2n} (n!)^2)^2 2
+}{
+(2n!)^2 (2n+1)
+}
+$$
+
+So
+
+$$ 
+\sqrt[]{\pi} =
+\lim_{n \to \infty}
+\frac{
+2^{2n} (n!)^2
+}{
+(2n)! \sqrt[]{n}
+}
+$$
+
+$\square$
+
+### Taylor Series
+
+### Exercise 8.3.6.
+
+Show that $1/\sqrt[]{1−x}$ has Taylor expansion
+$\sum_{n=0}^{∞} c_nx_n$, where $c_0 = 1$ and
+
+$$ 
+c_n = \frac{
+(2n)!
+}{2^{2n}(n!)^2}
+= \frac{
+1 \cdot 3 \cdot 5 \cdots (2n - 1)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+for $n \geq 1$.
+
+**Solution**:
+
+$$ 
+f'(0) = \frac{1}{2} (1 - x)^{-3/2} = \frac{1}{2} \\
+f''(0) = \frac{3}{4} (1-x)^{-5/2} = \frac{3}{4} \\
+\cdots \\
+f^{(n)}(0) = \frac{1 \cdot 3 \cdots(2n-1)}{2^n}
+$$
+
+Then
+
+$$ 
+c_n = \frac{f^{(n)}(0)}{n!} =
+\frac{
+1 \cdot 3 \cdot 5 \cdots (2n - 1)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+$\square$
+
+### Exercise 8.3.7.
+
+Show that $\lim c_n = 0$ but $\sum_{n=0}^{∞} c_n$ diverges.
+
+**Proof**: 
+
+$$ 
+c_n = \frac{
+1 \cdot 3 \cdot 5 \cdots (2n - 1)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+$c_n$ is a decreasing and bigger than $0$, so $c_n$ converges.
+if $(c_n) \rightarrow c > 0$, then
+
+$$ 
+\lim_{n \to \infty} \frac{1}{c_n \sqrt[]{n}} \\
+= \frac{1}{c} \times 0 = 0 \not = \sqrt[]{\pi}
+$$
+
+Now note
+
+$$ 
+c_n >
+\frac{
+1 \cdot 2 \cdot 4 \cdots (2n - 2)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+} = \frac{1}{2n}
+$$
+
+So we have
+
+$$ 
+\sum_{k=1}^{n} c_n > \frac{1}{2} (1 + 1/2 + 1/4 +
+\cdots + 1/n)
+$$
+
+So $\sum_{n=0}^{∞} c_n$ diverges.
+
+$\square$
+
+The divergence of $\sum_{n=0}^{∞} c_n$ makes sense when we consider the Taylor series
+for $1/$. We want to determine the values of $x$ for which
+
+$$ 
+\tag{4}
+\frac{1}{\sqrt[]{1−x}} 
+= \sum_{n = 1}^{\infty} c_nx^n,
+$$
+
+### Exercise 8.3.8.
+
+Using the expression for $E_N(x)$ from Lagrange’s Remainder
+Theorem, show that equation (4) is valid for all $|x| < 1/2$.
+What goes wrong
+when we try to use this method to prove (4) for $x ∈ (1/2,1)$?
+
+**Solution**:
+
+The Lagrange's Remainder is
+
+$$ 
+E_N(x) = \frac{f^{(N+1)}(c)}{(N+1)!}x^{N+1} =
+\frac{1 \cdot 3 \cdots (2N+1) }{2^{N+1} (N+1)!}
+\frac{x^{N+1}}{(1-c)^{N+1} \sqrt[]{1-c}}
+$$
+
+Fix $x < 1/2$, then $c < x < 1/2$. So $1 - c > x$.
+$1 - c > 1/2$. So $\frac{1}{\sqrt[]{1-c}} < \frac{1}{\sqrt[]{2}}$.
+
+$$ 
+\frac{x}{1-c} < 1
+$$
+
+So $E_N(x) \rightarrow 0$.
+
+When $x ∈ (1/2,1)$, we cannot guarantee
+
+$$ 
+\frac{x}{1-c} < 1.
+$$
+
+$\square$
+
+### Theorem 8.3.1 (Integral Remainder Theorem).
+
+Let $f$ be diﬀerentiable $N + 1$ times on $(−R,R)$ and assume
+$f^{(N+1)}$ is continuous. Define $a_n = f^{(n)}(0)/n!$
+for $n = 0,1,...,N$, and let
+
+$$ 
+S_N(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \cdots + a_N x^N
+$$
+
+For all $x ∈ (−R,R)$, the error function $E_N(x) = f(x)−S_N(x)$ satisfies
+
+$$ 
+E_N(x) = \frac{1}{N!}
+\int_{0}^{x} f^{(N+1)}(t) (x - t)^N dt .
+$$
+
+**Proof**. The case $x = 0$ is easy to check, so let’s take
+$x \not = 0$ in $(−R,R)$ and keep
+in mind that $x$ is a fixed constant in what follows. To avoid a few technical distractions, let’s just consider the case
+$x > 0$.
+
+### Exercise 8.3.9.
+
+(a) Show
+
+$$ 
+f(x) = f(0) + \int_{0}^{x} f'(t) dt
+$$
+
+**Proof**: $f'(t)$ is differentiable, so it's continuous.
+So it's integrable. From theorem 7.5.1, then
+
+$$ 
+\int_{0}^{x} f'(t) dt = f(x) - f(0)
+$$
+
+$\square$
+
+(b) Now use a previous result from this section to show
+
+$$ 
+f(x) = f(0)+f'(0)x + \int_{0}^{x} f''(t) (x-t) dt .
+$$
+
+**Proof**:
+
+We use integration-by-parts, and let $h(x) = f'(x), k(x) = (x-t)$ 
+
+$$
+-\int_{0}^{x} f'(t) dt = \int_{0}^{x} h(t) k'(t) dt
+\\
+=h(x)k(x) - h(0)k(0) - \int_{0}^{x} h'(t) k(t) dt \\
+= -f'(0) x- \int_{0}^{x} f''(t) (x-t) dt \\
+$$
+
+So
+
+$$ 
+\int_{0}^{x} f'(t) dt = f'(0)x + \int_{0}^{x} f''(t) (x-t) dt
+$$
+
+$\square$
+
+(c) Continue in this fashion to complete the proof of the theorem.
+
+**Proof**:
+
+Let $h(t) = f^{(N)}(t), k(t) = -\frac{(x-t)^{N}}{N}$.
+
+Consider
+
+$$ 
+\int_{0}^{x} f^{(N)}(t) (x - t)^{N-1} dt
+= \int_{0}^{x} h(t) k'(t) dt
+= h(x)k(x) - h(0)k(0) - \int_{0}^{x} h''(t) k(t) dt \\
+= \frac{1}{N} f^{(N)}(0) x^N +
+\frac{1}{N} \int_{0}^{x} f^{(N+1)}(t) (x-t)^N dt
+$$
+
+So we have
+
+$$ 
+E_N(x) = \frac{1}{N!}
+\int_{0}^{x} f^{(N+1)}(t) (x - t)^N dt .
+$$ 
+
+$\square$
+
+### Exercise 8.3.10.
+
+(a) Make a rough sketch of $1/\sqrt[]{1-x}$
+and $S_2(x)$ over the interval $(−1,1)$,
+and compute $E_2(x)$ for $x = 1/2,3/4$, and $8/9$.
+
+**Solution**:
+
+$$ 
+a_0 = 1\\
+a_1 = \frac{f'(0)}{1!} = \frac{1}{2} \\
+a_2 = \frac{f''(0)}{2!} = \frac{1 \cdot 3}{2 \cdot 4} \\
+$$
+
+So $S_2(x) = 1 + \frac{1}{2}x + \frac{3}{8} x^2$.
+
+Here are the python code to plot and compute $E_2(x)$.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the range of x values, avoiding the point where the function is undefined
+x = np.linspace(-1, 0.99, 400)  # 400 points between -1 and 0.99
+
+# Compute the function values
+y = 1 / np.sqrt(1 - x)
+z = 1 + (1/2) * x + (3/8) * (x**2)
+# Plot the function
+plt.plot(x, y)
+plt.plot(x, z)
+plt.title('Plot of $1/\sqrt{1-x}$ and $1 + (1/2)x + (3/8)x^2$')
+plt.xlabel('x')
+plt.ylabel('1/sqrt(1-x)')
+plt.grid(True)
+plt.show()
+
+x = np.array([1/2, 3/4, 8/9])
+y = 1 / np.sqrt(1 - x)
+z = 1 + (1/2) * x + (3/8) * (x**2)
+e = y - z
+print(e)
+```
+
+The $E_2(x)$ for $x = 1/2,3/4$, and $8/9$ are
+$[0.07046356, 0.4140625, 1.25925926]$
+
+$\square$
+
+(b) For a general $x$ satisfying $−1 < x < 1$, show
+
+$$ 
+E_2(x) = \frac{15}{16}
+\int_{0}^{x}
+\left( 
+\frac{x-t}{1-t}
+\right) ^ 2
+\frac{1}{
+(1-t)^{3/2}
+} dt
+$$
+
+**Proof**:
+
+$$ 
+E_2(x) =
+\frac{1}{2!}
+\int_{0}^{x} f^{(2+1)}(t) (x - t)^2 dt
+$$
+
+$$ 
+f^{(1)}(t) = \frac{1}{2} (1-x)^{-\frac{3}{2}} \\
+f^{(2)}(t) = \frac{1 \cdot 3}{2 \cdot 2} (1-x)^{-\frac{5}{2}} \\
+f^{(3)}(t) = \frac{1 \cdot 3 \cdot 5}{2 \cdot 2 \cdot 2}
+(1-x)^{-\frac{7}{2}} \\
+$$
+
+So we proved.
+
+$\square$
+
+(c) Explain why the inequality
+
+$$ 
+\left| 
+\frac{x-t}{1-t}
+\right| \leq |x|
+$$
+
+is valid, and use this to find an overestimate for
+$|E_2(x)|$ that no longer
+involves an integral. Note that this estimate will necessarily depend on $x$.
+Confirm that things are going well by checking that this overestimate is
+in fact larger than $|E_2(x)|$ at the three computed values from part (a).
+
+**Proof**: 
+
+Assume $0 \leq t \leq x < 1$. Then $xt \leq  t$,
+$x - xt \geq x - t$, so $\frac{x-t}{1-t} \leq x$ 
+
+If $-1 < x \leq t \leq 0$, then $xt \geq t$ so
+$x - xt \leq x - t$, so $x \leq \frac{x-t}{1-t}$, i.e.
+$-x \geq -\frac{x-t}{1-t}$
+
+In both cases, we proved it.
+
+$$ 
+|E_2(x)| = \frac{15}{16}
+\left| 
+\int_{0}^{x}
+\left( 
+\frac{x-t}{1-t}
+\right) ^ 2
+\frac{1}{
+(1-t)^{3/2}
+} dt
+\right| \\
+\leq
+\frac{15}{16} x^3 \frac{1}{(1-|x|)^{3/2}}
+$$
+
+For $x = 1/2,3/4$, and $8/9$ are, the errors are
+
+$$ 
+[0.3314563, 3.1640625, 17.77777778]
+$$
+
+$\square$
+
+(d) Finally, show
+$E_N(x) → 0$ as $N → ∞$ for an arbitrary $x ∈ (−1,1)$.
+
+**Proof**:
+
+We have
+
+$$ 
+f^{(N+1)}(t) =
+\frac{1 \cdot 3 \cdots (2N+1) }{2^{N+1}}
+\cdot
+\frac{1}{(1-t)^{N}}
+\cdot
+\frac{1}{(1-t)^{3/2}}
+$$
+
+So
+
+$$ 
+E_N(x) = \frac{1}{N!}
+\int_{0}^{x}
+\frac{1 \cdot 3 \cdots (2N+1) }{2^{N+1}}
+\cdot
+\frac{1}{(1-t)^{N}}
+\cdot
+\frac{1}{(1-t)^{3/2}}
+(x-t)^N dt \\
+\leq 
+C_N \cdot (2N+1)|x|^N \frac{|x|}{(1-|x|)^{3/2}}
+$$
+
+Since $C_N \rightarrow 0$ and $(2N+1)|x|^N \rightarrow 0$,
+then $E_N(x)$.
+
+$\square$
+
+The next step is to take the term-by-term anti-derivative of
+this series.
+Any time we start manipulating infinite series as though they 
+were finite in nature we need to pause and make sure we are on 
+solid footing.
+
+### Exercise 8.3.11.
+
+Assuming that the derivative of $\arcsin (x)$ is indeed
+$1 / \sqrt[]{1−x^2}$
+supply the justification that allows us to conclude
+
+$$
+\tag{5}
+\arcsin (x) =
+\sum_{n = 0}^{\infty}
+\frac{c_n}{2n+1} x^{2n+1} \text{ for all } |x| < 1.
+$$
+
+**Proof**: Since $\sum_{n = 0}^{\infty}c_nx^{2n}$ converges
+for $|x| < 1$, and $\frac{c_n}{2n+1} x^{2n+1} < c_nx^{2n}$,
+then $\sum_{n = 0}^{\infty} \frac{c_n}{2n+1} x^{2n+1}$
+converges for $|x| < 1$.
+
+Let
+
+$$ 
+f(x) =
+\sum_{n = 0}^{\infty}
+\frac{c_n}{2n+1} x^{2n+1}
+$$
+
+From theorem 6.5.7, $f(x)$ is differentiable and
+$f'(x) = \arcsin' (x)$. So $f(x) = \arcsin (x) + C$.
+Since $f(0) = \arcsin (0) = 0$, then $f(x) = \arcsin (x)$,
+for $|x| < 1$.
+
+$\square$
+
+### Exercise 8.3.12.
+
+Our work thus far shows that the Taylor series in (5) is valid
+for all $|x| < 1$, but note that $\arcsin(x)$ is continuous for all $|x| ≤ 1$. Carefully
+explain why the series in (5) converges uniformly to
+$\arcsin(x)$ on the closed interval $[−1,1]$.
+
+Proof: Consider
+
+$$ 
+f(1) =
+\sum_{n = 0}^{\infty}
+\frac{c_n}{2n+1}
+$$
+
+Since
+
+$$ 
+\lim_{n \to \infty} \frac{1}{c_n \sqrt[]{n}}
+= \sqrt[]{\pi }
+$$
+
+Then
+
+$$ 
+\lim_{n \to \infty} c_n \sqrt[]{n}
+= 1/\sqrt[]{\pi }
+$$
+
+when $n$ is large,
+$c_n < \frac{1 + 1/\sqrt[]{\pi}}{\sqrt[]{n}} < \frac{2}{\sqrt[]{n}}$.
+
+So
+
+$$ 
+\frac{c_n}{2n+1} < \frac{2}{(2n+1)\sqrt[]{n}}
+\lt n^{-3/2} 
+$$
+
+So
+
+$$ 
+\sum_{n = 0}^{\infty}
+\frac{c_n}{2n+1}
+$$
+
+converges. Since it's all positive, it converges absolutely.
+Then (5) also converges in $-1$.
+
+$\square$
+
+### Summing $\sum_{n = 1}^{\infty} 1/n^2$
+
+Every proof of Euler’s sum contains a moment of genuine
+ingenuity at some point, and this is where our proof takes
+an unanticipated turn.
+
+Let’s make the substitution
+$x = \sin(θ)$ in (5) where we restrict our attention
+to $−π/2 ≤ θ ≤ π/2$. The result is
+
+$$ 
+\theta = \arcsin (\sin (\theta) ) =
+\sum_{n = 1}^{\infty}
+\frac{c_n}{2n+1} \sin ^{2n+1} (\theta )
+$$
+
+which converges uniformly on $[−π/2,π/2]$.
+
+### Exercise 8.3.13.
+
+(a) Show
+
+$$ 
+\int_{0}^{\pi /2} \theta d \theta 
+= \sum_{n = 1}^{\infty} \frac{c_n}{2n+1} b_{2n+1}
+$$
+
+being careful to justify each step in the argument. The term
+$b_{2n+1}$ refers
+back to our earlier work on Wallis’s product.
+
+**Proof**: let
+
+$$
+f_n(\theta ) =
+\frac{c_n}{2n+1} \sin ^{2n+1} (\theta ) \\
+f(\theta ) = \theta
+$$
+
+So $\sum_{n = 1}^{\infty}f_n(\theta ) \rightarrow f(\theta )$
+uniformly, then
+
+$$ 
+\int_{0}^{\pi /2} \theta d \theta =
+\sum_{n = 1}^{\infty} \int_{0}^{\pi /2} f_n(\theta)
+= \sum_{n = 1}^{\infty} 
+\frac{c_n}{2n+1} \int_{0}^{\pi /2} \sin ^{2n+1} (\theta ) \\
+= \sum_{n = 1}^{\infty} 
+\frac{c_n}{2n+1} b_{2n+1}
+$$
+
+$\square$
+
+(b) Deduce
+
+$$ 
+\frac{\pi ^2}{8} = \sum_{n = 0}^{\infty} \frac{1}{(2n+1)^2},
+$$
+
+and use this to finish the proof that $\frac{\pi ^2}{6} = \sum_{n = 1}^{\infty} 1/n^2$.
+
+**Proof**:
+
+$$ 
+c_n = \frac{
+1 \cdot 3 \cdot 5 \cdots (2n - 1)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+$$ 
+b_{2n+1} = 1
+\cdot \frac{2}{3}
+\cdot \frac{4}{5}
+\cdot \frac{6}{7}
+\cdots
+\cdot \frac{2n}{2n+1}
+$$
+
+So
+
+$$ 
+\frac{c_n}{2n+1} b_{2n+1} = \frac{1}{(2n+1)^2}
+$$
+
+On the left side, $\int_{0}^{\pi /2} \theta d \theta = \frac{1}{2}(\frac{\pi}{2})^2 - 0 = \frac{\pi ^2}{8}$.
+
+So we proved the first part.
+
+Let
+
+$$
+A = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2}
++ \cdots
+$$
+
+Then
+
+$$ 
+A = (\frac{1}{1^2} + \frac{1}{3^2} + \cdots) +
+(\frac{1}{2^2} + \frac{1}{4^2} + \cdots) \\
+= \frac{\pi^2}{8} +  \frac{1}{4} A
+$$
+
+So $A = \frac{\pi ^2}{6}$.
 
 $\square$

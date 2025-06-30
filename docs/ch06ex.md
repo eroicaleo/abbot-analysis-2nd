@@ -2716,6 +2716,23 @@ $$
 \frac{x}{1 - c} < 1
 $$
 
+Also since $c < 1/2$, then  
+
+$$
+\frac{1}{\sqrt[]{1-c}} < \frac{\sqrt[]{2}}{2}
+$$
+
+Let
+
+$$ 
+c_n =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+From Exercise 8.3.7, $\lim_{n \to \infty} c_n = 0$.
+
 Then the Lagrange's Remainder converges to 0.
 
 When $x > 1/2$, we cannot establish $\frac{x}{1 - c} < 1$.
@@ -2733,10 +2750,42 @@ E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x \\
 \frac{(x-c)^{N}x}{(1-c)^{N+1} \sqrt[]{1-c}}
 $$
 
-Given any $0 < c < x < 1$, so $x-c < 1-c$, so
+Given any $0 < c < x < 1$, so $x-c < 1-c$.
+Furthermore since $xc < c$, so $x - xc > x - c$, so  
 
 $$ 
-\lim_{N \to \infty} \frac{(2N+1)(x-c)^N}{(1-c)^{N+1}} \rightarrow 0
+\frac{x-c}{1-c} < x
+$$
+
+Also
+
+$$ 
+\frac{1}{(1-c)^{3/2}} < \frac{1}{(1-x)^{3/2}}
+$$
+
+So
+
+$$ 
+E_N(x) =
+\frac{1 \cdot 3 \cdot 5 \cdots (2N+1)}{
+2 \cdot 4 \cdot 6 \cdots 2N
+} \cdot
+\frac{(x-c)^N}{(1-c)^N}
+\cdot
+\frac{1}{(1-c)^{3/2}} \\
+< 
+\frac{1 \cdot 3 \cdot 5 \cdots (2N-1)}{
+2 \cdot 4 \cdot 6 \cdots 2N
+} \cdot
+(2N+1) \cdot x^N
+\cdot \frac{1}{(1-x)^{3/2}}
+$$
+
+Since $x < 1$ then $\lim_{n \to \infty} (2n+1) x^n = 0$,
+we have
+
+$$ 
+\lim_{N \to \infty} E_N(x) = 0
 $$
 
 $\square$

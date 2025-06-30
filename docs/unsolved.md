@@ -45,7 +45,30 @@ Can we determine if f is twice-diﬀerentiable?
 
 ### Ex 7.3.4 (b)
 
-If $f$ is increasing and $g$ is integrable, then $g ◦f$ is integrable.
+If $f$ is increasing and $g$ is integrable, then $g◦f$ is integrable.
+
+### Exercise 8.3.7.
+
+Let
+
+$$ 
+c_n = \frac{
+1 \cdot 3 \cdot 5 \cdots (2n - 1)
+}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+$$
+
+Show that $\lim c_n = 0$ but $\sum_{n=0}^{∞} c_n$ diverges.
+
+**Discussion**: I have to rely on the fact mentioned in
+the book that
+
+$$
+\lim_{n \to \infty} \frac{1}{c_n \sqrt[]{n}} = \sqrt[]{\pi}
+$$
+
+Can we have some other ways to prove directly?
 
 # Open Question
 
