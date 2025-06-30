@@ -2749,6 +2749,22 @@ f^{(n)}(0) = \frac{1 \cdot 3 \cdots(2n-1)}{2^n}
 \frac{x}{1 - c} < 1
 </script>
 </p>
+<p>Also since <script type="math/tex">c < 1/2</script>, then  </p>
+<p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt[]{1-c}} < \frac{\sqrt[]{2}}{2}
+</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+c_n =
+\frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{
+2 \cdot 4 \cdot 6 \cdots 2n
+}
+</script>
+</p>
+<p>From Exercise 8.3.7, <script type="math/tex">\lim_{n \to \infty} c_n = 0</script>.</p>
 <p>Then the Lagrange's Remainder converges to 0.</p>
 <p>When <script type="math/tex">x > 1/2</script>, we cannot establish <script type="math/tex">\frac{x}{1 - c} < 1</script>.
 So Lagrange's Remainder theorem is not applicable in this case.</p>
@@ -2764,10 +2780,42 @@ E_N(x) = \frac{f^{(N+1)}(c)}{N!}(x - c)^N x \\
 \frac{(x-c)^{N}x}{(1-c)^{N+1} \sqrt[]{1-c}}
 </script>
 </p>
-<p>Given any <script type="math/tex">0 < c < x < 1</script>, so <script type="math/tex">x-c < 1-c</script>, so</p>
+<p>Given any <script type="math/tex">0 < c < x < 1</script>, so <script type="math/tex">x-c < 1-c</script>.
+Furthermore since <script type="math/tex">xc < c</script>, so <script type="math/tex">x - xc > x - c</script>, so  </p>
 <p>
 <script type="math/tex; mode=display"> 
-\lim_{N \to \infty} \frac{(2N+1)(x-c)^N}{(1-c)^{N+1}} \rightarrow 0
+\frac{x-c}{1-c} < x
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{(1-c)^{3/2}} < \frac{1}{(1-x)^{3/2}}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+E_N(x) =
+\frac{1 \cdot 3 \cdot 5 \cdots (2N+1)}{
+2 \cdot 4 \cdot 6 \cdots 2N
+} \cdot
+\frac{(x-c)^N}{(1-c)^N}
+\cdot
+\frac{1}{(1-c)^{3/2}} \\
+< 
+\frac{1 \cdot 3 \cdot 5 \cdots (2N-1)}{
+2 \cdot 4 \cdot 6 \cdots 2N
+} \cdot
+(2N+1) \cdot x^N
+\cdot \frac{1}{(1-x)^{3/2}}
+</script>
+</p>
+<p>Since <script type="math/tex">x < 1</script> then <script type="math/tex">\lim_{n \to \infty} (2n+1) x^n = 0</script>,
+we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{N \to \infty} E_N(x) = 0
 </script>
 </p>
 <p>
