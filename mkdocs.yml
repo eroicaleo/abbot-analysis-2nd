@@ -3,6 +3,7 @@ theme: readthedocs
 
 nav:
   - Home: index.md
+  - Chapter 02 Exercises: ch02ex.md
   - Chapter 03 Notes: ch03notes.md
   - Chapter 03 Exercises: ch03ex.md
   - Chapter 04 Notes: ch04notes.md
@@ -13,6 +14,7 @@ nav:
   - Chapter 06 Exercises: ch06ex.md
   - Chapter 07 Notes: ch07notes.md
   - Chapter 07 Exercises: ch07ex.md
+  - Chapter 08 Exercises: ch08ex.md
   - Misc info: misc.md
   - Unsolved Problems: unsolved.md
 
