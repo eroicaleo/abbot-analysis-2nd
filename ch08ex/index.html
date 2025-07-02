@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Chapter 08 Additional Topics - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <title>Chapter 08 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Chapter 08 Additional Topics";
+        var mkdocs_page_name = "Chapter 08 Exercises";
         var mkdocs_page_input_path = "ch08ex.md";
         var mkdocs_page_url = null;
       </script>
@@ -41,6 +41,10 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -83,6 +87,98 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ch07ex/">Chapter 07 Exercises</a>
                 </li>
               </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 08 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#81-the-generalized-riemann-integral">8.1 The Generalized Riemann Integral</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-811">Exercise 8.1.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#812">8.1.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#813">8.1.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#814">8.1.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#815">8.1.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-813">Definition 8.1.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-814">Definition 8.1.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#816">8.1.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-815">Theorem 8.1.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-817">Exercise 8.1.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-816">Definition 8.1.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-817">Theorem 8.1.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-818">Exercise 8.1.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-819">Exercise 8.1.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-818">Theorem 8.1.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8110">Exercise 8.1.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-819">Theorem 8.1.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8111">Exercise 8.1.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8112">Exercise 8.1.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8113">Exercise 8.1.13.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-8110-change-of-variable-formula">Theorem 8.1.10 (Change-of-variable Formula).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8114">Exercise 8.1.14.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#83-eulers-sum">8.3 Euler’s Sum</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#walliss-product">Wallis’s Product</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-831">Exercise 8.3.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-832">Exercise 8.3.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-833">Exercise 8.3.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-834">Exercise 8.3.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-835">Exercise 8.3.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#taylor-series">Taylor Series</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-836">Exercise 8.3.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-837">Exercise 8.3.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-838">Exercise 8.3.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-831-integral-remainder-theorem">Theorem 8.3.1 (Integral Remainder Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-839">Exercise 8.3.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8310">Exercise 8.3.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8311">Exercise 8.3.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8312">Exercise 8.3.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summing-sum_n-1infty-1n2">Summing \sum_{n = 1}^{\infty} 1/n^2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8313">Exercise 8.3.13.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
                 </li>
@@ -105,7 +201,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Chapter 08 Additional Topics</li>
+      <li class="breadcrumb-item active">Chapter 08 Exercises</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch08ex.md" class="icon icon-github"> Edit on Github</a>
     </li>
@@ -1362,6 +1458,10 @@ A = (\frac{1}{1^2} + \frac{1}{3^2} + \cdots) +
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch07ex/" class="btn btn-neutral float-left" title="Chapter 07 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../misc/" class="btn btn-neutral float-right" title="Misc info">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -1383,6 +1483,10 @@ A = (\frac{1}{1^2} + \frac{1}{3^2} + \cdots) +
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../ch07ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../misc/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
