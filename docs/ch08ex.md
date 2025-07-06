@@ -1352,3 +1352,743 @@ $$
 So $A = \frac{\pi ^2}{6}$.
 
 $\square$
+
+## 8.4 Inventing the Factorial Function
+
+### Exercise 8.4.2.
+
+Verify that the series converges absolutely for all
+$x ∈ R$, that $E(x)$ is diﬀerentiable on $R$, and
+$E'(x) = E(x)$.
+
+**Proof**: Fix any $x \in \mathbf{R}$, we can find 
+$N > 2x$. Let $a_n = \frac{x^n}{n!}$ and
+
+$$
+A =
+\left| 
+\frac{x^N}{N!}
+\right| 
+$$
+
+For $n > N$, $|a_n| < \frac{A}{2^{n-N}}$. So $\sum_{k = 1}^{\infty}|a_n|$ converges absolutely. Then we can apply
+Theorem 6.5.7 to know that $E(x)$ is diﬀerentiable on $R$,
+and $E'(x) = E(x)$.
+
+$\square$
+
+### Exercise 8.4.3.
+
+(a) Use the results of Exercise 2.8.7 and the binomial formula
+to show that $E(x+y) = E(x)E(y)$ for all $x,y ∈ \mathbf{R}$.
+
+**Proof**: Fix $x$ and $y$. Let
+
+$$ 
+a_n = \frac{x^n}{n!} \\
+b_n = \frac{y^n}{n!} \\
+$$
+
+Then note
+
+$$ 
+d_k = a_{0}b_{k} + a_{1}b_{k-1} + \cdots + a_{k-1}b_{1} + a_k b_0 \\
+= \frac{y^k}{0!k!} + \frac{xy^{k-1}}{1!(k-1)!} + \cdots 
++ \frac{x^{k-1}y}{(k-1)!1!} + \frac{x^k}{k!0!} \\
+= \frac{(x+y)^k}{k!}
+$$
+
+Use the results of Exercise 2.8.7, $\sum_{k = 1}^{\infty}d_k$
+converges and it converges $E(x)E(y)$.
+
+On the other hand, $\sum_{k = 1}^{\infty}d_k = E(x+y)$.
+
+So $E(x+y) = E(x)E(y)$.
+
+$\square$
+
+(b) Show that $E(0) = 1, E(−x) = 1/E(x)$, and $E(x) > 0$ for all $x ∈ \mathbf{R}$.
+
+**Proof**:
+
+$$ 
+E(0) = 1 + \frac{0}{1!} + \frac{0^2}{2!} + \cdots = 1
+$$
+
+Also
+
+$$ 
+1 = E(0) = E(x + (-x)) = E(x)E(-x)
+$$
+
+So $E(-x)=1/E(x)$.
+
+Also since if $x > 0$, then $a_n = \frac{x^n}{n!} > 0$,
+then $E(x) > 0$.
+
+$\square$
+
+### Exercise 8.4.4.
+
+Define $e = E(1)$. Show $E(n) = e^n$ and $E(m/n) = (\sqrt[n]{e})^m$ for all $m,n ∈ Z$.
+
+**Proof**:
+
+$$ 
+E(n) = E(1+1+\cdots +1) = E(1)\cdot E(1) \cdots E(1)\\
+= e^n
+$$
+
+We also have
+
+$$ 
+e = E(1) = E(1/n + \cdots +1/n) = E(1/n)^n
+$$
+
+So $E(1/n) = \sqrt[n]{e}$. So $E(m/n) = (\sqrt[n]{e})^n$.
+
+$\square$
+
+### Definition 8.4.1.
+
+Given $f : [a,∞] → R$, we say that $\lim_{x \to \infty} f(x) = L$ if for all $ϵ > 0$, there exists $M > a$ such that whenever $x ≥ M$ it follows that
+
+$$ 
+|f(x) - L| < \epsilon
+$$
+
+### Exercise 8.4.5.
+
+Show $\lim_{x \to \infty}  x^ne^{−x} = 0$
+for all $n = 0,1,2,...$.
+
+**Proof**:
+
+$$
+\frac{x^n}{e^x} = 
+\frac{x^n}{1 + \frac{x}{1} + \frac{x^2}{2!}+ \cdots + \frac{x^{n+1}}{(n+1)!} + \cdots} \leq
+\frac{(n+1)!}{x} \rightarrow 0
+$$
+
+$\square$
+
+### Exercise 8.4.6.
+
+(a) Explain why we know $e^x$ has an inverse function—let’s
+call it $\log x$—defined on the strictly positive real numbers and satisfying
+
+(i) $\log (e^y) = y$ for all $y \in \mathbf{R}$ and
+
+(ii) $e^{\log x} = x$, for all $x > 0$.
+
+(b) Prove $(\log x)' = 1/x$. (See Exercise 5.2.12.)
+
+**Proof**:
+
+Let $y = e^x$ 
+$$ 
+\log'y = \frac{1}{(e^x)'} = \frac{1}{e^x} = 1/y
+$$
+
+$\square$
+
+(c) Fix $y > 0$ and diﬀerentiate $\log(xy)$ with respect to $x$. Conclude that
+
+$$ 
+\log_{} (xy) = \log x + \log y \text{ for all } x, y > 0.
+$$
+
+**Proof**: Also see exercise
+Exercise 7.5.8 (Natural Logarithm and Euler’s Constant).
+
+$$ 
+\log_{}' (xy) = \frac{1}{xy} \cdot y = \frac{1}{x}
+$$
+
+Since $\log_{}' x = \frac{1}{x}$, so
+
+$$ 
+\log xy = \log x + C
+$$
+
+Since $\log 1 = 0$, we can plug $x = 1$ and get
+$\log y = C$.
+
+$\square$
+
+(d) For $t > 0$ and $n ∈ N$, $t_n$ has the usual interpretation as $t·t···t$ ($n$ times). Show that
+
+$$ 
+\tag{2}
+t^n = e^{n \log_{} t} \text{ for all } n \in \mathbf{N}
+$$
+
+**Proof**: 
+
+From (c), we know
+
+$$ 
+n \log_{} t = \log_{} t^n 
+$$
+
+And from (a), we know
+
+$$ 
+e^ {\log_{} t^n } = t^n
+$$
+
+So (2) holds.
+
+$\square$
+
+### Definition 8.4.2.
+
+Given $t > 0$, define the exponential function $t^x$ to be
+
+$$ 
+t^x = e^{x \log_{} t} \text{ for all } x \in \mathbf{R}
+$$
+
+### Exercise 8.4.7.
+
+(a) Show $t^{m/n} = (\sqrt[n]{t})^m$ for all $m, n \in \mathbf{N}$.
+
+**Proof**:
+
+$$ 
+(\sqrt[n]{t})^m =
+e^{m \log_{} \sqrt[n]{t}}
+$$
+
+Let $p = \log_{} \sqrt[n]{t}$, then $e^p = \sqrt[n]{t}$,
+$e^{pn} = t$, i.e. $n \log_{} e^p = \log_{} t$,
+i.e. $\log_{} e^p = \frac{1}{n} \log_{} t$, i.e.
+$\log_{} \sqrt[n]{t} = \frac{1}{n} \log_{} t$.
+
+So
+
+$$ 
+e^{m \log_{} \sqrt[n]{t}} = e^{\frac{m}{n} \log_{} t}\\
+= t^{\frac{m}{n}}
+$$
+
+$\square$
+
+(b) Show $\log(t^x) = x\log t$, for all $t > 0$ and $x ∈ \mathbf{R}$.
+
+**Proof**: Note
+
+$$ 
+e^{x\log t} = t^x \\
+e^{\log(t^x)} = t^x
+$$
+
+So $\log(t^x) = x\log t$.
+
+$\square$
+
+(c) Show $t^x$ is diﬀerentiable on $\mathbf{R}$ and find the derivative.
+
+**Proof**: Because $t^x = e^{x \log_{} t}$, let
+
+$$ 
+g(x) = x \log_{} t
+$$
+
+which is differentiable, and let $f(x) = e^x$ which is also
+differentiable, then their composite function $f \circ g$
+is also differentiable.
+
+$$ 
+(e^{x \log_{} t})' = e^{x \log_{} t} \log_{} t = t^x \log_{} t
+$$
+
+$\square$
+
+### Exercise 8.4.8.
+
+Inspired by the fact that $0! = 1$ and $1! = 1$, let $h(x)$ satisfy
+
+(i) $h(x) = 1$ for all $0 ≤ x ≤ 1$, and
+
+(ii) $h(x) = xh(x−1)$ for all $x ∈ \mathbf{R}$.
+
+(a) Find a formula for $h(x)$ on $[1,2]$, $[2,3]$, and $[n,n + 1]$ for arbitrary $n \in \mathbf{N}$.
+
+$$ 
+h(x) = x h(x - 1) = x, x \in [1,2] \\
+h(x) = x h(x - 1) = x(x-1), x \in [2,3] \\
+h(x) = x h(x - 1) = x(x-1) \cdots 1, x \in [n, n+1] \\
+$$
+
+$\square$
+
+(b) (c) skipped
+
+### Improper Riemann Integrals
+
+### Definition 8.4.3.
+
+Assume $f$ is defined on $[a,∞)$ and integrable on every
+interval of the form $[a,b]$. Then define $\int_{a}^{\infty }f$ to be
+
+$$ 
+\lim_{b \to \infty} \int_{a}^{b}f,
+$$
+
+provided the limit exists. In this case we say the improper integral $\int_{a}^{\infty }f$ converges.
+
+### Exercise 8.4.9.
+
+(a) Show that the improper integral $\int_{a}^{\infty }f$
+converges if and only if, for all $ϵ > 0$ there exists
+$M > a$ such that whenever $d > c \geq M$ it follows that
+
+$$ 
+\left| 
+\int_{c}^{d} f
+ \right| < \epsilon
+$$
+
+(In one direction it will be useful to consider the sequence
+$a_n = \int_{a}^{a+n} f$.
+
+**Proof**:
+
+$\Rightarrow$ Assume $\int_{a}^{\infty }f$
+converges, and assume $\lim_{b \to \infty} \int_{a}^{b}f = B$,
+then we can find $M$, if $b \geq M$, then
+
+$$ 
+\left| 
+\int_{a}^{b} f - B
+ \right| < \epsilon / 2
+$$
+
+Consider $d > c \geq M$,
+
+$$
+\left| \int_{c}^{d} f \right| 
+=
+\left| \int_{a}^{d} f - \int_{a}^{c} f \right|
+\leq
+\left| \int_{a}^{d} f - B \right| +
+\left| B - \int_{a}^{c} \right| <
+\epsilon / 2 + \epsilon / 2 = \epsilon 
+$$
+
+$\Leftarrow$ Consider $a_n = \int_{a}^{a+n} f$ then
+$a_n$ is Cauchy sequence and assume $\lim_{n \to \infty} a_n = B$.
+
+For $\epsilon$, we can find $M_1$, such that $d > c \geq M_1$,
+
+$$ 
+\left| 
+\int_{c}^{d} f
+ \right| < \epsilon / 2
+$$
+
+We can also find $M_2$, if $a+n > M_2$, then
+$|a_n - B| < \epsilon / 2$. Then let $M = \max \{M_1, M_2\}$.
+
+If $b > M$, and find $n$ such that $a+n > M$  then
+
+$$ 
+\left| \int_{a}^{b} f - B \right| =
+\left| \int_{a}^{b} f - \int_{a}^{a+n} f + \int_{a}^{a+n} f - B \right| < \\
+\left| \int_{a}^{b} f - \int_{a}^{a+n} f \right| +
+\left| \int_{a}^{a+n} f - B \right| < \\
+\epsilon / 2 + \epsilon / 2 = \epsilon
+$$
+
+So
+
+$$ 
+\lim_{b \to \infty} \int_{a}^{b} f = B
+$$
+
+$\square$
+
+(b) Show that if $0 ≤ f ≤ g$ and $\int_{a}^{b}g$ converges
+then $\int_{a}^{b}f$ converges.
+
+**Proof**: Since $\int_{a}^{b}g$ converges, then
+we can find $M$, if $d > c \geq M$ then
+$|\int_{c}^{d} g | = \int_{c}^{d} g < \epsilon$.
+Since $0 ≤ f ≤ g$, then
+$|\int_{c}^{d} f | = \int_{c}^{d} f \leq
+\int_{c}^{d} g < \epsilon$
+
+$\square$
+
+(c) Part (a) is a Cauchy criterion, and part (b) is a comparison 
+test. State and prove an absolute convergence test for improper 
+integrals.
+
+**Proof**: The absolute convergence test for improper 
+integrals is: if $f$ is integrable on any interval $[a,b]$ and $\lim_{b \to \infty} \int_{a}^{b} |f|$ converges,
+then $\lim_{b \to \infty} \int_{a}^{b} f$ converges.
+
+Since $f$ is integrable on any interval $[a,b]$, then from Theorem 7.4.2. (v), $|f|$ is also integrable on any interval $[a,b]$. Since $\lim_{b \to \infty} \int_{a}^{b} f$ converges,
+we can find a $M$ such that $d > c \geq M$, then
+
+$$ 
+\int_{c}^{d} |f| < \epsilon
+$$
+
+Again from Theorem 7.4.2. (v)
+
+$$ 
+\left| \int_{c}^{d} f \right| \leq
+\int_{c}^{d} |f| < \epsilon 
+$$
+
+Then from part (a) $\lim_{b \to \infty} \int_{a}^{b} f$ converges.
+
+$\square$
+
+### Exercise 8.4.10.
+
+(a) Use the properties of $e^t$ previously discussed to show
+
+$$ 
+\int_{0}^{\infty} e^{-t} dt = 1
+$$
+
+**Proof**: $e^t$ is continuous on $[0,b]$, so it's integrable.
+Then we can use the first part of theorem 7.5.1, let
+
+$$ 
+F(t) = - e^{-t}
+$$
+
+and $F'(t) = e^{-t}$, so
+
+$$ 
+\int_{0}^{\infty} e^{-t} dt = \lim_{b \to \infty} F(b) - F(0)
+= 1 - e^{-b} = 1
+$$
+
+$\square$
+
+(b) Show
+
+$$ 
+\tag{3}
+\frac{1}{\alpha }
+= \int_{0}^{\infty}e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+$$
+
+**Proof**:
+
+$e^{-\alpha t}$ is continuous on $[0,b]$, so it's integrable.
+
+Let
+
+$$ 
+F(t) = - \frac{1}{\alpha} e^{-\alpha t}
+$$
+
+and $F'(t) = f(t)$.
+
+$$ 
+\int_{0}^{\infty} e^{-\alpha t} dt =
+\lim_{b \to \infty} F(b) - F(0) = \frac{1}{\alpha}
+$$
+
+$\square$
+
+### Exercise 8.4.11.
+
+(a) Evaluate $\int_{0}^{b} t e^{-\alpha t}$ using the integration-by-parts formula from Exercise 7.5.6. The result will be an expression in α and b.
+
+**Solution**:
+
+Let
+
+$$ 
+h(t) = - \frac{1}{\alpha } e^{-\alpha t} \\
+k(t) = t
+$$
+
+Then
+
+$$ 
+\int_{0}^{b} t e^{-\alpha t} =
+\int_{0}^{b} k(t) h'(t) =
+h(b) k(b) - h(0) k(0) - \int_{0}^{b} k'(t) h(t) = \\
+- \frac{1}{\alpha } e^{-\alpha b} \cdot b -
+
+\int_{0}^{b} -\frac{1}{\alpha } e^{-\alpha t} dt \\
+=
+\frac{1}{\alpha } \int_{0}^{b} e^{-\alpha t} dt -
+\frac{b}{\alpha } e^{-\alpha b} \\
+=
+\frac{1}{\alpha } (\frac{1}{\alpha} -
+\frac{1}{\alpha } e^{-\alpha b}) -
+\frac{b}{\alpha } e^{-\alpha b}
+$$
+
+$\square$
+
+(b) Now compute
+
+$$ 
+\int_{0}^{\infty} t e^{-\alpha t}
+$$
+
+and verify equation (4).
+
+$$ 
+\tag{4}
+\frac{1}{\alpha ^2} =
+\int_{0}^{\infty} t e^{-\alpha t} dt
+$$
+
+**Solution**:
+
+$$ 
+\lim_{b \to \infty} 
+\frac{1}{\alpha } (\frac{1}{\alpha} -
+\frac{1}{\alpha } e^{-\alpha b}) -
+\frac{b}{\alpha } e^{-\alpha b} = \frac{1}{\alpha ^2}
+$$
+
+$\square$
+
+### Diﬀerentiating Under the Integral
+
+* Our sense of distance
+between points $(x_0,t_0)$ and $(x,t)$ with the familiar Euclidean distance formula
+
+$$ 
+\| (x,t) - (x_0,t_0) \| =
+\sqrt[]{(x - x_0^2) + (t - t_0)^2}
+$$
+
+### Definition 8.4.4.
+
+A function $f : D → \mathbf{R}$ is continuous at $(x_0,t_0)$ if for all
+$ϵ > 0$, there exists $δ > 0$ such that whenever
+$\| (x,t) - (x_0,t_0) \| < \delta$, it follows
+that
+
+$$ 
+\left| f(x, t) - f(x_0, t_0) \right| < \epsilon.
+$$
+
+### Exercise 8.4.12.
+
+Assume the function $f(x,t)$ is continuous on the rectangle
+$D = \{(x,t) : a \leq x \leq b, c \leq t \leq d\}$.
+Explain why the function
+
+$$ 
+F(x) = \int_{c}^{d} f(x, t)dt
+$$
+
+is properly defined for all $x \in [a,b]$.
+
+**Proof**: Fix $x$, $f(x, t)$ is a continuous function
+defined on $[c,d]$. So it is integrable. So
+
+$$ 
+\int_{c}^{d} f(x, t)dt
+$$
+
+exists.
+
+$\square$
+
+It should not be too surprising that Theorem 4.4.7
+has an analogue in the
+$\mathbf{R}^2$ setting.
+The set $D$ is compact in $\mathbf{R}^2$, and a continuous 
+function on $D$ is
+uniformly continuous in the sense that the
+$δ$ in Definition 8.4.4 can be chosen
+independently of the point $(x_0,t_0)$.
+
+### Theorem 8.4.5.
+
+If $f(x,t)$ is continuous on $D$, then
+$F(x) = \int_{c}^{d} f(x,t) dt$ is uniformly continuous on
+$[a,b]$.
+
+### Exercise 8.4.13.
+
+Prove Theorem 8.4.5.
+
+**Proof**: We will prove $F(x)$ is continuous first.
+Given $x_0$ in $[a, b]$ and $\epsilon > 0$, since $f(x,t)$
+is uniformly continuous on $D$, we can find $\delta$,
+as long as $x \in U_{\delta}(x_0)$,
+$\left| f(x, t) - f(x_0, t) \right| < \frac{\epsilon}{d-c}$ for
+all $t \in [c,d]$.
+
+So
+
+$$ 
+|F(x) - F(x_0)| =
+\left| \int_{c}^{d} f(x, t) -
+\int_{c}^{d} f(x_0, t) \right| 
+\leq
+\int_{c}^{d}
+\left| f(x, t) -
+f(x_0, t) \right| \\
+\leq
+\frac{\epsilon }{d-c} (d-c) = \epsilon
+$$
+
+Since $F(x)$ is continuous then $F(x)$ is uniformly continuous.
+
+$\square$
+
+Taking inspiration from equations (3) and (4), let’s add the 
+assumption that
+for each fixed value of $t$ in $[c,d]$, the function
+$f(x,t)$ is a diﬀerentiable function of $x$; that is,
+
+$$ 
+f_x(x, t) = \lim_{z \to x}
+\frac{
+f(z,t) - f(x,t)
+}{z-x}
+$$
+
+exists for all $(x,t) ∈ D$.
+In addition, let’s assume that the derivative function
+$f_x(x,t)$ is continuous.
+
+### Theorem 8.4.6.
+
+If $f(x,t)$ and $f_x(x,t)$ are continuous on $D$, then the
+function $F(x) = \int_{c}^{d} f(x,t) dt$ is diﬀerentiable and
+
+$$ 
+F'(x) = \int_{c}^{d} f_x(x,t) dt.
+$$
+
+**Proof**. Fix $x$ in $[a,b]$ and let $ϵ > 0$ be arbitrary.
+Our task is to find a $δ > 0$ such that
+
+$$
+\tag{5}
+\left| 
+\frac{F(z) - F(x)}{z-x}
+-
+\int_{c}^{d} f_x(x,t)dt
+ \right| < \epsilon
+$$
+
+whenever $0 < |z-x| < \delta$.
+
+### Exercise 8.4.14.
+
+Finish the proof of Theorem 8.4.6
+
+**Proof**:
+
+Because
+
+$$ 
+\left| 
+\frac{F(z) - F(x)}{z-x}
+-
+\int_{c}^{d} f_x(x,t)dt
+ \right| \\
+=
+\left| 
+\frac{\int_{c}^{d} f(z,t) - \int_{c}^{d} f(x,t)}{z-x}
+- f_x(x,t)
+ \right| \\
+=
+\left| 
+\int_{c}^{d}
+\frac{f(z,t) - f(x,t)}{z-x} - f_x(x,t)
+ \right| \\
+ \leq
+\int_{c}^{d}
+\left| 
+\frac{f(z,t) - f(x,t)}{z-x} - f_x(x,t)
+\right| <
+\frac{\epsilon}{d-c}(d-c) = \epsilon
+$$
+
+$\square$
+
+### Improper Integrals, Revisited
+
+Theorem 8.4.6 is a formal justification for diﬀerentiating under 
+the integral sign,
+but we need to extend this result to the case where the integral 
+is improper.
+Looking back one more time to our motivating example in equation 
+(3), we see
+that what we have is a function $f(x,t)$ where the domain of the 
+variable $t$ is the
+unbounded interval $c ≤ t < ∞$.
+
+Let’s fix $x$ from some set $A ⊆ R$. For such an $x$, we define
+
+$$ 
+\tag{6}
+F(x) = \int_{c}^{\infty} f(x,t)dt =
+\lim_{d \to \infty} \int_{c}^{d} f(x,t)dt,
+$$
+
+provided the limit exists.
+
+As we have seen on numerous occasions, the elixir required
+to ensure that good behavior in the finite setting extends to
+the infinite setting is uniformity.
+
+### Definition 8.4.7.
+
+Given $f(x,t)$ defined on $D= \{(x,t) : x ∈ A,c ≤ t\}$, assume
+$F(x) = \int_{c}^{\infty}f(x,t)dt$ exists for all $x ∈ A$.
+We say the improper integral converges
+uniformly to $F(x)$ on $A$ if for all $ϵ > 0$, there exists
+$M > c$ such that
+
+$$ 
+\left| 
+F(x) - \int_{c}^{d} f(x,t) dt
+ \right| < \epsilon 
+$$
+
+for all $d ≥ M$ and all $x ∈ A$.
+
+### Exercise 8.4.15.
+
+(a) Show that the improper integral
+$\int_{0}^{\infty} e^{-xt} dt$ converges
+uniformly to $1/x$ on the set $[1/2,∞)$.
+
+**Proof**:
+
+$$ 
+\int_{0}^{b} e^{-xt} dt =
+1 - \frac{1}{x} e^{-xb} \geq 1 - 2 e ^{-b/2}
+$$
+
+It does not depend on $x$.
+
+$\square$
+
+(b) Is the convergence uniform on $(0,∞)$?
+
+**Solution**: No. For any fixed $x$,
+$\int_{0}^{\infty} e^{-xt} dt = 1$, but give any $b$,
+let $x = 1/b$
+
+$$ 
+\int_{0}^{b} e^{-xt} dt = 1 - b/e
+$$
+
+$\square$
+
+### Exercise 8.4.16.
+
+Prove the following analogue of the Weierstrass M-Test for
