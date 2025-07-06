@@ -176,6 +176,38 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#84-inventing-the-factorial-function">8.4 Inventing the Factorial Function</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-842">Exercise 8.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-843">Exercise 8.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-844">Exercise 8.4.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-841">Definition 8.4.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-845">Exercise 8.4.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-846">Exercise 8.4.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-842">Definition 8.4.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-847">Exercise 8.4.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-848">Exercise 8.4.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#improper-riemann-integrals">Improper Riemann Integrals</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-843">Definition 8.4.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-849">Exercise 8.4.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8410">Exercise 8.4.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8411">Exercise 8.4.11.</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1455,6 +1487,685 @@ A = (\frac{1}{1^2} + \frac{1}{3^2} + \cdots) +
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="84-inventing-the-factorial-function">8.4 Inventing the Factorial Function</h2>
+<h3 id="exercise-842">Exercise 8.4.2.</h3>
+<p>Verify that the series converges absolutely for all
+<script type="math/tex">x ∈ R</script>, that <script type="math/tex">E(x)</script> is diﬀerentiable on <script type="math/tex">R</script>, and
+<script type="math/tex">E'(x) = E(x)</script>.</p>
+<p><strong>Proof</strong>: Fix any <script type="math/tex">x \in \mathbf{R}</script>, we can find 
+<script type="math/tex">N > 2x</script>. Let <script type="math/tex">a_n = \frac{x^n}{n!}</script> and</p>
+<p>
+<script type="math/tex; mode=display">
+A =
+\left| 
+\frac{x^N}{N!}
+\right| 
+</script>
+</p>
+<p>For <script type="math/tex">n > N</script>, <script type="math/tex">|a_n| < \frac{A}{2^{n-N}}</script>. So <script type="math/tex">\sum_{k = 1}^{\infty}|a_n|</script> converges absolutely. Then we can apply
+Theorem 6.5.7 to know that <script type="math/tex">E(x)</script> is diﬀerentiable on <script type="math/tex">R</script>,
+and <script type="math/tex">E'(x) = E(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-843">Exercise 8.4.3.</h3>
+<p>(a) Use the results of Exercise 2.8.7 and the binomial formula
+to show that <script type="math/tex">E(x+y) = E(x)E(y)</script> for all <script type="math/tex">x,y ∈ \mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: Fix <script type="math/tex">x</script> and <script type="math/tex">y</script>. Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n = \frac{x^n}{n!} \\
+b_n = \frac{y^n}{n!} \\
+</script>
+</p>
+<p>Then note</p>
+<p>
+<script type="math/tex; mode=display"> 
+d_k = a_{0}b_{k} + a_{1}b_{k-1} + \cdots + a_{k-1}b_{1} + a_k b_0 \\
+= \frac{y^k}{0!k!} + \frac{xy^{k-1}}{1!(k-1)!} + \cdots 
++ \frac{x^{k-1}y}{(k-1)!1!} + \frac{x^k}{k!0!} \\
+= \frac{(x+y)^k}{k!}
+</script>
+</p>
+<p>Use the results of Exercise 2.8.7, <script type="math/tex">\sum_{k = 1}^{\infty}d_k</script>
+converges and it converges <script type="math/tex">E(x)E(y)</script>.</p>
+<p>On the other hand, <script type="math/tex">\sum_{k = 1}^{\infty}d_k = E(x+y)</script>.</p>
+<p>So <script type="math/tex">E(x+y) = E(x)E(y)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">E(0) = 1, E(−x) = 1/E(x)</script>, and <script type="math/tex">E(x) > 0</script> for all <script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+E(0) = 1 + \frac{0}{1!} + \frac{0^2}{2!} + \cdots = 1
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+1 = E(0) = E(x + (-x)) = E(x)E(-x)
+</script>
+</p>
+<p>So <script type="math/tex">E(-x)=1/E(x)</script>.</p>
+<p>Also since if <script type="math/tex">x > 0</script>, then <script type="math/tex">a_n = \frac{x^n}{n!} > 0</script>,
+then <script type="math/tex">E(x) > 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-844">Exercise 8.4.4.</h3>
+<p>Define <script type="math/tex">e = E(1)</script>. Show <script type="math/tex">E(n) = e^n</script> and <script type="math/tex">E(m/n) = (\sqrt[n]{e})^m</script> for all <script type="math/tex">m,n ∈ Z</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+E(n) = E(1+1+\cdots +1) = E(1)\cdot E(1) \cdots E(1)\\
+= e^n
+</script>
+</p>
+<p>We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+e = E(1) = E(1/n + \cdots +1/n) = E(1/n)^n
+</script>
+</p>
+<p>So <script type="math/tex">E(1/n) = \sqrt[n]{e}</script>. So <script type="math/tex">E(m/n) = (\sqrt[n]{e})^n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-841">Definition 8.4.1.</h3>
+<p>Given <script type="math/tex">f : [a,∞] → R</script>, we say that <script type="math/tex">\lim_{x \to \infty} f(x) = L</script> if for all <script type="math/tex">ϵ > 0</script>, there exists <script type="math/tex">M > a</script> such that whenever <script type="math/tex">x ≥ M</script> it follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - L| < \epsilon
+</script>
+</p>
+<h3 id="exercise-845">Exercise 8.4.5.</h3>
+<p>Show <script type="math/tex">\lim_{x \to \infty}  x^ne^{−x} = 0</script>
+for all <script type="math/tex">n = 0,1,2,...</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\frac{x^n}{e^x} = 
+\frac{x^n}{1 + \frac{x}{1} + \frac{x^2}{2!}+ \cdots + \frac{x^{n+1}}{(n+1)!} + \cdots} \leq
+\frac{(n+1)!}{x} \rightarrow 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-846">Exercise 8.4.6.</h3>
+<p>(a) Explain why we know <script type="math/tex">e^x</script> has an inverse function—let’s
+call it <script type="math/tex">\log x</script>—defined on the strictly positive real numbers and satisfying</p>
+<p>(i) <script type="math/tex">\log (e^y) = y</script> for all <script type="math/tex">y \in \mathbf{R}</script> and</p>
+<p>(ii) <script type="math/tex">e^{\log x} = x</script>, for all <script type="math/tex">x > 0</script>.</p>
+<p>(b) Prove <script type="math/tex">(\log x)' = 1/x</script>. (See Exercise 5.2.12.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">y = e^x</script>
+<script type="math/tex; mode=display"> 
+\log'y = \frac{1}{(e^x)'} = \frac{1}{e^x} = 1/y
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Fix <script type="math/tex">y > 0</script> and diﬀerentiate <script type="math/tex">\log(xy)</script> with respect to <script type="math/tex">x</script>. Conclude that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\log_{} (xy) = \log x + \log y \text{ for all } x, y > 0.
+</script>
+</p>
+<p><strong>Proof</strong>: Also see exercise
+Exercise 7.5.8 (Natural Logarithm and Euler’s Constant).</p>
+<p>
+<script type="math/tex; mode=display"> 
+\log_{}' (xy) = \frac{1}{xy} \cdot y = \frac{1}{x}
+</script>
+</p>
+<p>Since <script type="math/tex">\log_{}' x = \frac{1}{x}</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+\log xy = \log x + C
+</script>
+</p>
+<p>Since <script type="math/tex">\log 1 = 0</script>, we can plug <script type="math/tex">x = 1</script> and get
+<script type="math/tex">\log y = C</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) For <script type="math/tex">t > 0</script> and <script type="math/tex">n ∈ N</script>, <script type="math/tex">t_n</script> has the usual interpretation as <script type="math/tex">t·t···t</script> (<script type="math/tex">n</script> times). Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{2}
+t^n = e^{n \log_{} t} \text{ for all } n \in \mathbf{N}
+</script>
+</p>
+<p><strong>Proof</strong>: </p>
+<p>From (c), we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+n \log_{} t = \log_{} t^n 
+</script>
+</p>
+<p>And from (a), we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^ {\log_{} t^n } = t^n
+</script>
+</p>
+<p>So (2) holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-842">Definition 8.4.2.</h3>
+<p>Given <script type="math/tex">t > 0</script>, define the exponential function <script type="math/tex">t^x</script> to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+t^x = e^{x \log_{} t} \text{ for all } x \in \mathbf{R}
+</script>
+</p>
+<h3 id="exercise-847">Exercise 8.4.7.</h3>
+<p>(a) Show <script type="math/tex">t^{m/n} = (\sqrt[n]{t})^m</script> for all <script type="math/tex">m, n \in \mathbf{N}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\sqrt[n]{t})^m =
+e^{m \log_{} \sqrt[n]{t}}
+</script>
+</p>
+<p>Let <script type="math/tex">p = \log_{} \sqrt[n]{t}</script>, then <script type="math/tex">e^p = \sqrt[n]{t}</script>,
+<script type="math/tex">e^{pn} = t</script>, i.e. <script type="math/tex">n \log_{} e^p = \log_{} t</script>,
+i.e. <script type="math/tex">\log_{} e^p = \frac{1}{n} \log_{} t</script>, i.e.
+<script type="math/tex">\log_{} \sqrt[n]{t} = \frac{1}{n} \log_{} t</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^{m \log_{} \sqrt[n]{t}} = e^{\frac{m}{n} \log_{} t}\\
+= t^{\frac{m}{n}}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show <script type="math/tex">\log(t^x) = x\log t</script>, for all <script type="math/tex">t > 0</script> and <script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^{x\log t} = t^x \\
+e^{\log(t^x)} = t^x
+</script>
+</p>
+<p>So <script type="math/tex">\log(t^x) = x\log t</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show <script type="math/tex">t^x</script> is diﬀerentiable on <script type="math/tex">\mathbf{R}</script> and find the derivative.</p>
+<p><strong>Proof</strong>: Because <script type="math/tex">t^x = e^{x \log_{} t}</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = x \log_{} t
+</script>
+</p>
+<p>which is differentiable, and let <script type="math/tex">f(x) = e^x</script> which is also
+differentiable, then their composite function <script type="math/tex">f \circ g</script>
+is also differentiable.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(e^{x \log_{} t})' = e^{x \log_{} t} \log_{} t = t^x \log_{} t
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-848">Exercise 8.4.8.</h3>
+<p>Inspired by the fact that <script type="math/tex">0! = 1</script> and <script type="math/tex">1! = 1</script>, let <script type="math/tex">h(x)</script> satisfy</p>
+<p>(i) <script type="math/tex">h(x) = 1</script> for all <script type="math/tex">0 ≤ x ≤ 1</script>, and</p>
+<p>(ii) <script type="math/tex">h(x) = xh(x−1)</script> for all <script type="math/tex">x ∈ \mathbf{R}</script>.</p>
+<p>(a) Find a formula for <script type="math/tex">h(x)</script> on <script type="math/tex">[1,2]</script>, <script type="math/tex">[2,3]</script>, and <script type="math/tex">[n,n + 1]</script> for arbitrary <script type="math/tex">n \in \mathbf{N}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = x h(x - 1) = x, x \in [1,2] \\
+h(x) = x h(x - 1) = x(x-1), x \in [2,3] \\
+h(x) = x h(x - 1) = x(x-1) \cdots 1, x \in [n, n+1] \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) (c) skipped</p>
+<h3 id="improper-riemann-integrals">Improper Riemann Integrals</h3>
+<h3 id="definition-843">Definition 8.4.3.</h3>
+<p>Assume <script type="math/tex">f</script> is defined on <script type="math/tex">[a,∞)</script> and integrable on every
+interval of the form <script type="math/tex">[a,b]</script>. Then define <script type="math/tex">\int_{a}^{\infty }f</script> to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{b \to \infty} \int_{a}^{b}f,
+</script>
+</p>
+<p>provided the limit exists. In this case we say the improper integral <script type="math/tex">\int_{a}^{\infty }f</script> converges.</p>
+<h3 id="exercise-849">Exercise 8.4.9.</h3>
+<p>(a) Show that the improper integral <script type="math/tex">\int_{a}^{\infty }f</script>
+converges if and only if, for all <script type="math/tex">ϵ > 0</script> there exists
+<script type="math/tex">M > a</script> such that whenever <script type="math/tex">d > c \geq M</script> it follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{c}^{d} f
+ \right| < \epsilon
+</script>
+</p>
+<p>(In one direction it will be useful to consider the sequence
+<script type="math/tex">a_n = \int_{a}^{a+n} f</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">\int_{a}^{\infty }f</script>
+converges, and assume <script type="math/tex">\lim_{b \to \infty} \int_{a}^{b}f = B</script>,
+then we can find <script type="math/tex">M</script>, if <script type="math/tex">b \geq M</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{a}^{b} f - B
+ \right| < \epsilon / 2
+</script>
+</p>
+<p>Consider <script type="math/tex">d > c \geq M</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\left| \int_{c}^{d} f \right| 
+=
+\left| \int_{a}^{d} f - \int_{a}^{c} f \right|
+\leq
+\left| \int_{a}^{d} f - B \right| +
+\left| B - \int_{a}^{c} \right| <
+\epsilon / 2 + \epsilon / 2 = \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script> Consider <script type="math/tex">a_n = \int_{a}^{a+n} f</script> then
+<script type="math/tex">a_n</script> is Cauchy sequence and assume <script type="math/tex">\lim_{n \to \infty} a_n = B</script>.</p>
+<p>For <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">M_1</script>, such that <script type="math/tex">d > c \geq M_1</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{c}^{d} f
+ \right| < \epsilon / 2
+</script>
+</p>
+<p>We can also find <script type="math/tex">M_2</script>, if <script type="math/tex">a+n > M_2</script>, then
+<script type="math/tex">|a_n - B| < \epsilon / 2</script>. Then let <script type="math/tex">M = \max \{M_1, M_2\}</script>.</p>
+<p>If <script type="math/tex">b > M</script>, and find <script type="math/tex">n</script> such that <script type="math/tex">a+n > M</script>  then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{a}^{b} f - B \right| =
+\left| \int_{a}^{b} f - \int_{a}^{a+n} f + \int_{a}^{a+n} f - B \right| < \\
+\left| \int_{a}^{b} f - \int_{a}^{a+n} f \right| +
+\left| \int_{a}^{a+n} f - B \right| < \\
+\epsilon / 2 + \epsilon / 2 = \epsilon
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{b \to \infty} \int_{a}^{b} f = B
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">0 ≤ f ≤ g</script> and <script type="math/tex">\int_{a}^{b}g</script> converges
+then <script type="math/tex">\int_{a}^{b}f</script> converges.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">\int_{a}^{b}g</script> converges, then
+we can find <script type="math/tex">M</script>, if <script type="math/tex">d > c \geq M</script> then
+<script type="math/tex">|\int_{c}^{d} g | = \int_{c}^{d} g < \epsilon</script>.
+Since <script type="math/tex">0 ≤ f ≤ g</script>, then
+<script type="math/tex">|\int_{c}^{d} f | = \int_{c}^{d} f \leq
+\int_{c}^{d} g < \epsilon</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Part (a) is a Cauchy criterion, and part (b) is a comparison 
+test. State and prove an absolute convergence test for improper 
+integrals.</p>
+<p><strong>Proof</strong>: The absolute convergence test for improper 
+integrals is: if <script type="math/tex">f</script> is integrable on any interval <script type="math/tex">[a,b]</script> and <script type="math/tex">\lim_{b \to \infty} \int_{a}^{b} |f|</script> converges,
+then <script type="math/tex">\lim_{b \to \infty} \int_{a}^{b} f</script> converges.</p>
+<p>Since <script type="math/tex">f</script> is integrable on any interval <script type="math/tex">[a,b]</script>, then from Theorem 7.4.2. (v), <script type="math/tex">|f|</script> is also integrable on any interval <script type="math/tex">[a,b]</script>. Since <script type="math/tex">\lim_{b \to \infty} \int_{a}^{b} f</script> converges,
+we can find a <script type="math/tex">M</script> such that <script type="math/tex">d > c \geq M</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{c}^{d} |f| < \epsilon
+</script>
+</p>
+<p>Again from Theorem 7.4.2. (v)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{c}^{d} f \right| \leq
+\int_{c}^{d} |f| < \epsilon 
+</script>
+</p>
+<p>Then from part (a) <script type="math/tex">\lim_{b \to \infty} \int_{a}^{b} f</script> converges.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8410">Exercise 8.4.10.</h3>
+<p>(a) Use the properties of <script type="math/tex">e^t</script> previously discussed to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} e^{-t} dt = 1
+</script>
+</p>
+<p><strong>Proof</strong>: <script type="math/tex">e^t</script> is continuous on <script type="math/tex">[0,b]</script>, so it's integrable.
+Then we can use the first part of theorem 7.5.1, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(t) = - e^{-t}
+</script>
+</p>
+<p>and <script type="math/tex">F'(t) = e^{-t}</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} e^{-t} dt = \lim_{b \to \infty} F(b) - F(0)
+= 1 - e^{-b} = 1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{3}
+\frac{1}{\alpha }
+= \int_{0}^{\infty}e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">e^{-\alpha t}</script> is continuous on <script type="math/tex">[0,b]</script>, so it's integrable.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(t) = - \frac{1}{\alpha} e^{-\alpha t}
+</script>
+</p>
+<p>and <script type="math/tex">F'(t) = f(t)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} e^{-\alpha t} dt =
+\lim_{b \to \infty} F(b) - F(0) = \frac{1}{\alpha}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8411">Exercise 8.4.11.</h3>
+<p>(a) Evaluate <script type="math/tex">\int_{0}^{b} t e^{-\alpha t}</script> using the integration-by-parts formula from Exercise 7.5.6. The result will be an expression in α and b.</p>
+<p><strong>Solution</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(t) = - \frac{1}{\alpha } e^{-\alpha t} \\
+k(t) = t
+</script>
+</p>
+<p>Then</p>
+<p>$$ 
+\int_{0}^{b} t e^{-\alpha t} =
+\int_{0}^{b} k(t) h'(t) =
+h(b) k(b) - h(0) k(0) - \int_{0}^{b} k'(t) h(t) = \
+- \frac{1}{\alpha } e^{-\alpha b} \cdot b -</p>
+<h1 id="int_0b-frac1alpha-e-alpha-t-dt">\int_{0}^{b} -\frac{1}{\alpha } e^{-\alpha t} dt \</h1>
+<p>\frac{1}{\alpha } \int_{0}^{b} e^{-\alpha t} dt -
+\frac{b}{\alpha } e^{-\alpha b} \
+=
+\frac{1}{\alpha } (\frac{1}{\alpha} -
+\frac{1}{\alpha } e^{-\alpha b}) -
+\frac{b}{\alpha } e^{-\alpha b}
+$$</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now compute</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} t e^{-\alpha t}
+</script>
+</p>
+<p>and verify equation (4).</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{4}
+\frac{1}{\alpha ^2} =
+\int_{0}^{\infty} t e^{-\alpha t} dt
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{b \to \infty} 
+\frac{1}{\alpha } (\frac{1}{\alpha} -
+\frac{1}{\alpha } e^{-\alpha b}) -
+\frac{b}{\alpha } e^{-\alpha b} = \frac{1}{\alpha ^2}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="differentiating-under-the-integral">Diﬀerentiating Under the Integral</h3>
+<ul>
+<li>Our sense of distance
+between points <script type="math/tex">(x_0,t_0)</script> and <script type="math/tex">(x,t)</script> with the familiar Euclidean distance formula</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\| (x,t) - (x_0,t_0) \| =
+\sqrt[]{(x - x_0^2) + (t - t_0)^2}
+</script>
+</p>
+<h3 id="definition-844">Definition 8.4.4.</h3>
+<p>A function <script type="math/tex">f : D → \mathbf{R}</script> is continuous at <script type="math/tex">(x_0,t_0)</script> if for all
+<script type="math/tex">ϵ > 0</script>, there exists <script type="math/tex">δ > 0</script> such that whenever
+<script type="math/tex">\| (x,t) - (x_0,t_0) \| < \delta</script>, it follows
+that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(x, t) - f(x_0, t_0) \right| < \epsilon.
+</script>
+</p>
+<h3 id="exercise-8412">Exercise 8.4.12.</h3>
+<p>Assume the function <script type="math/tex">f(x,t)</script> is continuous on the rectangle
+<script type="math/tex">D = \{(x,t) : a \leq x \leq b, c \leq t \leq d\}</script>.
+Explain why the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) = \int_{c}^{d} f(x, t)dt
+</script>
+</p>
+<p>is properly defined for all <script type="math/tex">x \in [a,b]</script>.</p>
+<p><strong>Proof</strong>: Fix <script type="math/tex">x</script>, <script type="math/tex">f(x, t)</script> is a continuous function
+defined on <script type="math/tex">[c,d]</script>. So it is integrable. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{c}^{d} f(x, t)dt
+</script>
+</p>
+<p>exists.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>It should not be too surprising that Theorem 4.4.7
+has an analogue in the
+<script type="math/tex">\mathbf{R}^2</script> setting.
+The set <script type="math/tex">D</script> is compact in <script type="math/tex">\mathbf{R}^2</script>, and a continuous 
+function on <script type="math/tex">D</script> is
+uniformly continuous in the sense that the
+<script type="math/tex">δ</script> in Definition 8.4.4 can be chosen
+independently of the point <script type="math/tex">(x_0,t_0)</script>.</p>
+<h3 id="theorem-845">Theorem 8.4.5.</h3>
+<p>If <script type="math/tex">f(x,t)</script> is continuous on <script type="math/tex">D</script>, then
+<script type="math/tex">F(x) = \int_{c}^{d} f(x,t) dt</script> is uniformly continuous on
+<script type="math/tex">[a,b]</script>.</p>
+<h3 id="exercise-8413">Exercise 8.4.13.</h3>
+<p>Prove Theorem 8.4.5.</p>
+<p><strong>Proof</strong>: We will prove <script type="math/tex">F(x)</script> is continuous first.
+Given <script type="math/tex">x_0</script> in <script type="math/tex">[a, b]</script> and <script type="math/tex">\epsilon > 0</script>, since <script type="math/tex">f(x,t)</script>
+is uniformly continuous on <script type="math/tex">D</script>, we can find <script type="math/tex">\delta</script>,
+as long as <script type="math/tex">x \in U_{\delta}(x_0)</script>,
+<script type="math/tex">\left| f(x, t) - f(x_0, t) \right| < \frac{\epsilon}{d-c}</script> for
+all <script type="math/tex">t \in [c,d]</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|F(x) - F(x_0)| =
+\left| \int_{c}^{d} f(x, t) -
+\int_{c}^{d} f(x_0, t) \right| 
+\leq
+\int_{c}^{d}
+\left| f(x, t) -
+f(x_0, t) \right| \\
+\leq
+\frac{\epsilon }{d-c} (d-c) = \epsilon
+</script>
+</p>
+<p>Since <script type="math/tex">F(x)</script> is continuous then <script type="math/tex">F(x)</script> is uniformly continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Taking inspiration from equations (3) and (4), let’s add the 
+assumption that
+for each fixed value of <script type="math/tex">t</script> in <script type="math/tex">[c,d]</script>, the function
+<script type="math/tex">f(x,t)</script> is a diﬀerentiable function of <script type="math/tex">x</script>; that is,</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_x(x, t) = \lim_{z \to x}
+\frac{
+f(z,t) - f(x,t)
+}{z-x}
+</script>
+</p>
+<p>exists for all <script type="math/tex">(x,t) ∈ D</script>.
+In addition, let’s assume that the derivative function
+<script type="math/tex">f_x(x,t)</script> is continuous.</p>
+<h3 id="theorem-846">Theorem 8.4.6.</h3>
+<p>If <script type="math/tex">f(x,t)</script> and <script type="math/tex">f_x(x,t)</script> are continuous on <script type="math/tex">D</script>, then the
+function <script type="math/tex">F(x) = \int_{c}^{d} f(x,t) dt</script> is diﬀerentiable and</p>
+<p>
+<script type="math/tex; mode=display"> 
+F'(x) = \int_{c}^{d} f_x(x,t) dt.
+</script>
+</p>
+<p><strong>Proof</strong>. Fix <script type="math/tex">x</script> in <script type="math/tex">[a,b]</script> and let <script type="math/tex">ϵ > 0</script> be arbitrary.
+Our task is to find a <script type="math/tex">δ > 0</script> such that</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{5}
+\left| 
+\frac{F(z) - F(x)}{z-x}
+-
+\int_{c}^{d} f_x(x,t)dt
+ \right| < \epsilon
+</script>
+</p>
+<p>whenever <script type="math/tex">0 < |z-x| < \delta</script>.</p>
+<h3 id="exercise-8414">Exercise 8.4.14.</h3>
+<p>Finish the proof of Theorem 8.4.6</p>
+<p><strong>Proof</strong>:</p>
+<p>Because</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{F(z) - F(x)}{z-x}
+-
+\int_{c}^{d} f_x(x,t)dt
+ \right| \\
+=
+\left| 
+\frac{\int_{c}^{d} f(z,t) - \int_{c}^{d} f(x,t)}{z-x}
+- f_x(x,t)
+ \right| \\
+=
+\left| 
+\int_{c}^{d}
+\frac{f(z,t) - f(x,t)}{z-x} - f_x(x,t)
+ \right| \\
+ \leq
+\int_{c}^{d}
+\left| 
+\frac{f(z,t) - f(x,t)}{z-x} - f_x(x,t)
+\right| <
+\frac{\epsilon}{d-c}(d-c) = \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="improper-integrals-revisited">Improper Integrals, Revisited</h3>
+<p>Theorem 8.4.6 is a formal justification for diﬀerentiating under 
+the integral sign,
+but we need to extend this result to the case where the integral 
+is improper.
+Looking back one more time to our motivating example in equation 
+(3), we see
+that what we have is a function <script type="math/tex">f(x,t)</script> where the domain of the 
+variable <script type="math/tex">t</script> is the
+unbounded interval <script type="math/tex">c ≤ t < ∞</script>.</p>
+<p>Let’s fix <script type="math/tex">x</script> from some set <script type="math/tex">A ⊆ R</script>. For such an <script type="math/tex">x</script>, we define</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{6}
+F(x) = \int_{c}^{\infty} f(x,t)dt =
+\lim_{d \to \infty} \int_{c}^{d} f(x,t)dt,
+</script>
+</p>
+<p>provided the limit exists.</p>
+<p>As we have seen on numerous occasions, the elixir required
+to ensure that good behavior in the finite setting extends to
+the infinite setting is uniformity.</p>
+<h3 id="definition-847">Definition 8.4.7.</h3>
+<p>Given <script type="math/tex">f(x,t)</script> defined on <script type="math/tex">D= \{(x,t) : x ∈ A,c ≤ t\}</script>, assume
+<script type="math/tex">F(x) = \int_{c}^{\infty}f(x,t)dt</script> exists for all <script type="math/tex">x ∈ A</script>.
+We say the improper integral converges
+uniformly to <script type="math/tex">F(x)</script> on <script type="math/tex">A</script> if for all <script type="math/tex">ϵ > 0</script>, there exists
+<script type="math/tex">M > c</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+F(x) - \int_{c}^{d} f(x,t) dt
+ \right| < \epsilon 
+</script>
+</p>
+<p>for all <script type="math/tex">d ≥ M</script> and all <script type="math/tex">x ∈ A</script>.</p>
+<h3 id="exercise-8415">Exercise 8.4.15.</h3>
+<p>(a) Show that the improper integral
+<script type="math/tex">\int_{0}^{\infty} e^{-xt} dt</script> converges
+uniformly to <script type="math/tex">1/x</script> on the set <script type="math/tex">[1/2,∞)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{b} e^{-xt} dt =
+1 - \frac{1}{x} e^{-xb} \geq 1 - 2 e ^{-b/2}
+</script>
+</p>
+<p>It does not depend on <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Is the convergence uniform on <script type="math/tex">(0,∞)</script>?</p>
+<p><strong>Solution</strong>: No. For any fixed <script type="math/tex">x</script>,
+<script type="math/tex">\int_{0}^{\infty} e^{-xt} dt = 1</script>, but give any <script type="math/tex">b</script>,
+let <script type="math/tex">x = 1/b</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{b} e^{-xt} dt = 1 - b/e
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8416">Exercise 8.4.16.</h3>
+<p>Prove the following analogue of the Weierstrass M-Test for</p>
               
             </div>
           </div><footer>
