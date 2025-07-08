@@ -2092,3 +2092,688 @@ $\square$
 ### Exercise 8.4.16.
 
 Prove the following analogue of the Weierstrass M-Test for
+improper integrals: If $f(x,t)$ satisfies $|f(x,t)| ≤ g(t)$
+for all $x ∈ A$ and $\int_{a}^{\infty} g(t)dt$ converges, then
+$\int_{a}^{\infty} f(x,t)dt$ converges uniformly on $A$.
+
+**Proof**:
+
+Given $\epsilon$, since $\int_{a}^{\infty} g(t)dt$ converges,
+we can find $M$, if $d > c \geq M$, we have
+$|\int_{c}^{d} g(t) dt | = \int_{c}^{d} |g(t)| dt < \epsilon / 2$.
+
+Then
+
+$$ 
+\left| \int_{c}^{d} f(x,t) dt \right|  \leq
+\int_{c}^{d} |f(x,t)| dt \leq
+\int_{c}^{d} g(t) dt < \epsilon / 2
+$$
+
+Then given any $x_0$, we can find $d_{x_0}$, such that
+
+$$ 
+\left| \int_{a}^{d_{x_0}} f(x_0, t) dt - F(x_0)
+ \right| < \epsilon / 2
+$$
+
+Then
+
+$$ 
+\left| 
+\int_{a}^{c} f(x_0, t) dt - F(x_0)
+ \right| \leq 
+\left| 
+\int_{a}^{c} f(x_0, t) dt - \int_{a}^{d_{x_0}} f(x_0, t) dt
+ \right| +
+\left| 
+\int_{a}^{d_{x_0}} f(x_0, t) dt - F(x_0)
+ \right| \\
+\leq \epsilon / 2 + \epsilon / 2 = \epsilon 
+$$
+
+$\square$
+
+An immediate consequence of Definition 8.4.7 is that if the 
+improper integral
+converges uniformly then the sequence of functions defined by
+
+$$ 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt
+$$
+
+converges uniformly to $F(x)$ on $[a,b]$. This observation gives us access to the
+host of useful results we developed in Chapter 6.
+
+### Theorem 8.4.8.
+
+If $f(x,t)$ is continuous on $D= \{(x,t) : a ≤ x ≤ b,c ≤ t\}$,
+then
+
+$$ 
+F(x) = \int_{c}^{\infty} f(x,t)dt
+$$
+
+is uniformly continuous on $[a,b]$, provided the integral converges uniformly.
+
+**Proof**:
+
+Let
+
+$$ 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt
+$$
+
+From theorem 8.4.5., then $F_n(x)$ is continuous.
+Since the integral converges uniformly, then $F_n(x)$ converges
+to $F(x)$ uniformly.
+Then according to theorem 6.2.6, $F(x)$ is continuous.
+
+$\square$
+
+### Theorem 8.4.9.
+
+Assume the function $f(x,t)$ is continuous on
+$D= \{(x,t) : a ≤ x ≤ b,c ≤ t\}$ and
+$F(x) = \int_{c}^{\infty} f(x,t)dt$ exists for each $x ∈ [a,b]$.
+If the derivative function
+$f_x(x,t)$ exists and is continuous, then
+
+$$ 
+\tag{7}
+F'(x) =
+\int_{c}^{\infty} f_x(x,t) dt,
+$$
+
+provided the integral in (7) converges uniformly.
+
+### Exercise 8.4.18.
+
+Prove Theorem 8.4.9.
+
+**Proof**:
+
+Let $G(x) = \int_{c}^{\infty} f_x(x,t) dt$.
+
+Again, consider
+
+$$ 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt \text{ and }
+G_n(x) = \int_{c}^{c+n} f_x(x,t) dt
+$$
+
+And let $D_n = \{(x,t) : a ≤ x ≤ b,c ≤ t ≤ c+n\}$.
+
+Since $f(x,t)$ and $f_x(x,t)$ are continuous on $D_n$, then from theorem 8.4.6, $F_n'(x) = G_n(x)$.
+
+Since $F_n(x)$ converges to $F(x)$ and $G_n(x)$ converges
+uniformly to $G(x)$, then from theorem 6.3.1,
+$F(x)$ is differentiable and $F'(x) = G(x)$.
+
+$\square$
+
+### The Factorial Function
+
+It’s time to return our attention to equation (3) from earlier in this section:
+
+$$ 
+\frac{1}{\alpha }
+= \int_{0}^{\infty}e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+$$
+
+### Exercise 8.4.19.
+
+(a) Although we verified it directly, show how to use the
+theorems in this section to give a second justification for the formula
+
+$$ 
+\frac{1}{\alpha ^2} =
+\int_{0}^{\infty} t e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+$$
+
+**Proof**: Consider $f(x,t) = e^{-xt}$, and
+$D = \{(x,t) : 1/2 ≤ x ≤ 3/2, 0 ≤ t\}$.
+
+$$ 
+f_x(x,t) = -t e^{-xt}
+$$
+
+is also continuous on $D$.
+
+$$
+\int_{0}^{b} t e^{-x t} =
+\int_{0}^{b} k(t) h'(t) =
+h(b) k(b) - h(0) k(0) - \int_{0}^{b} k'(t) h(t) = \\
+- \frac{1}{x } e^{-x b} \cdot b -
+
+\int_{0}^{b} -\frac{1}{x } e^{-x t} dt \\
+=
+\frac{1}{x } \int_{0}^{b} e^{-x t} dt -
+\frac{b}{x } e^{-x b} \\
+=
+\frac{1}{x } (\frac{1}{x} -
+\frac{1}{x } e^{-x b}) -
+\frac{b}{x } e^{-x b} \\
+= \frac{1}{x^2} - \frac{1}{x^2} e^{-x b} - \frac{b}{x } e^{-x b}
+$$
+
+So
+
+$$ 
+\int_{0}^{\infty} f_x(x, t) dt
+$$
+
+converges uniformly. We can apply theorem 8.4.9:
+
+$$ 
+-\frac{1}{x^2} = F'(x) = \int_{0}^{\infty} f_x(x,t) dt
+= \int_{0}^{\infty} -t e^{-xt} dt
+$$
+
+So,
+
+$$ 
+\frac{1}{x^2} = \int_{0}^{\infty} t e^{-xt} dt
+$$
+
+Then we can plug $\alpha$ back.
+
+$\square$
+
+(b) Now derive the formula
+
+$$ 
+\tag{8}
+\frac{n!}{\alpha ^ {n+1}} =
+\int_{0}^{\infty}t^n e^{-\alpha t} dt
+\text{ for all } \alpha > 0.
+$$
+
+**Proof**:
+
+First, we prove $\int_{0}^{\infty}t^n e^{- x t} dt$ for any
+$0 < a \leq x \leq b$.
+
+$$ 
+\left| t^n e^{- x t} \right|
+= t^n e^{- x t} \leq t^n e^{- a t}
+$$
+
+Since
+
+$$ 
+e^{at} = 1 + (at) + \frac{(at)^2}{2!} + \cdots
++ \frac{(at)^{n+2}}{(n+2)!} + \cdots >
+\frac{(at)^{n+2}}{(n+2)!}
+$$
+
+So
+
+$$
+t^n e^{- a t} \leq g(t) = \begin{cases}
+    1 &\text{if } 0 \leq t \leq 1\\
+    \frac{(n+2)!}{a^{n+2} t^2} &\text{if } t > 1\\
+\end{cases} 
+$$
+
+The improper integral $\lim_{t \to \infty} g(t)$ converges.
+So from exercise 8.4.16, $\int_{0}^{\infty}t^n e^{- x t} dt$
+converges uniformly.
+
+We can use induction, assume the improper integral holds
+
+$$
+\frac{(n-1)!}{x^{n}} = \int_{0}^{\infty}
+t^{n-1} e^{-xt} dt
+$$
+
+Then $f(x,t)$ is continuous,
+$f_x(x,t) = -t^n e^{-xt}$ continuous and
+$\int_{0}^{\infty}f_x(x,t) dt$ converges uniformly.
+
+So we have
+
+$$ 
+\frac{n!}{x^{n+1}} = \int_{0}^{\infty} t^n e^{-xt} dt
+$$
+
+$\square$
+
+### Definition 8.4.10.
+
+For $x ≥ 0$, define the factorial function
+
+$$ 
+x! = \int_{0}^{\infty} t^x e^{-t} dt .
+$$
+
+### Exercise 8.4.20.
+
+(a) Show that $x!$ is an infinitely diﬀerentiable function on
+$(0,∞)$ and produce a formula for the nth derivative.
+In particular show that $(x!)'' > 0$.
+
+**Proof**: Let $f(x,t) = t^x e^{-t}$ . Given $x$, since $t^x$ and $e^{-t}$ are continuous
+functions on $[0, c]$, so they are integrable.
+
+Also, if $0 < a \leq x \leq b$, we can find $k$,
+such that $0 < 1/k < a \leq x \leq b < k$.
+then for $t > 1$,
+
+$$ 
+t^x e^{-t} =
+\frac{
+    t^x
+}{1 + \frac{t}{1!} + \frac{t^2}{2!} + \cdots +
+\frac{t^{k+2}}{(k+2)!} + \cdots} \\
+< \frac{(k+2)!}{t^2}
+$$
+
+define $g(x)$ as
+
+$$
+g(t) = \begin{cases}
+    1 &\text{if } 0 \leq t \leq 1\\
+    \frac{(k+2)!}{t^2} &\text{if } t > 1\\
+\end{cases} 
+$$
+
+So
+
+$$ 
+|t^x e^{-t}| = t^x e^{-t} \leq g(x)
+$$
+
+Since the improper integral $\lim_{t \to \infty} g(t)$
+converges, then $f(x,t)$ converges uniformly.
+
+Now, let's consider the nth derivative of $f(x,t)$ w.r.t $x$:
+
+$$ 
+f_x^{(n)}(x, t) = t^x (\log_{} (t))^n e^{-t}
+$$
+
+Note that $f_x^{(n)}(x, t)$ is not defined at $t = 0$.
+But we can use L’Hospital’s Rule: ∞/∞ case:
+
+$$ 
+\lim_{t \to 0} \frac{(\log_{} (t))^n}{t^{-x}}
+=
+\lim_{t \to 0}
+\frac{n (\log_{} (t))^{n-1} (1/t)}{(-x)t^{-1-x}} \\
+=
+\lim_{t \to 0}
+\frac{n}{(-x)} \frac{\log_{} (t))^{n-1}}{t^{-x}} \\
+\lim_{t \to 0}
+= \frac{n!}{(-x)^n} \frac{1}{t^{-x}} = 0
+$$
+
+Thus we can define $f_x^{(n)}(x, 0) = 0$.
+
+When $x \in [a,b]$, and $t > 1$ 
+
+$$ 
+\left| t^x (\log_{} (t))^n e^{-t} \right|
+= t^x (\log_{} (t))^n e^{-t} \\
+\leq
+t^b t^n e^{-t} \leq \frac{C}{t^2}
+$$
+
+where $C$ is a constant independent of $x$.
+So the improper integral
+$\int_{0}^{\infty} t^x (\log_{} (t))^n e^{-t}$
+converges uniformly.
+
+So the nth derivative is
+
+$$ 
+\int_{0}^{\infty} t^x (\log_{} (t))^n e^{-t} dt
+$$
+
+And the 2nd derivative is
+
+$$ 
+\int_{0}^{\infty} t^x (\log_{} (t))^2 e^{-t} dt
+$$
+
+For any $x > 0$, $t^x (\log_{} (t))^2 e^{-t} >0$,
+so $(x!)'' > 0$.
+
+$\square$
+
+(b) Use the integration-by-parts formula employed earlier to show 
+that $x!$ satisfies the functional equation.
+
+$$ 
+(x+1)! = (x+1)x! 
+$$
+
+**Proof**:
+
+$$ 
+(x+1)! = \int_{0}^{\infty} t^{x+1} e^{-t} dt
+$$
+
+So let $h(t) = \frac{t^{x+1}}{(x+1)}, k(t) = e^{-t}$
+then
+
+$$ 
+\int_{0}^{b} t^{x} e^{-t} =
+\int_{0}^{b} h'(t) k(t) \\
+= h(b) k(b) - h(0) k(0) - \int_{0}^{b} h(t) k'(t)
+\\ =
+\frac{b^{x+1} e^{-b}}{x+1} - 0 +
+\int_{0}^{b} \frac{t^{x+1}}{x+1} e^{-t} dt
+$$
+
+When $b \rightarrow \infty$, we have
+
+$$ 
+x! = \frac{(x+1)!}{x+1}
+$$
+
+$\square$
+
+### Theorem 8.4.11 (Bohr–Mollerup Theorem).
+
+There is a unique positive
+function $f$ defined on $x ≥ 0$ satisfying
+
+(i) $f(0) = 1$
+
+(ii) $f(x+1) = (x+1)f(x)$, and
+
+(iii) $\log(f(x))$ is convex.
+
+Because $x!$ satisfies properties (i), (ii), and (iii), it follows that $f(x) = x!$.
+
+**Proof**: We need one more geometrically plausible fact about convex functions.
+If $[a,b]$ and $[a',b']$ are two intervals in the domain of a convex function $φ$, and
+$a ≤ a'$ and $b ≤ b'$, then the slopes of the chords over these intervals satisfy
+
+$$ 
+\frac{\phi(b)-\phi(a)}{b-a}
+\leq
+\frac{\phi(b')-\phi(a')}{b'-a'}
+$$
+
+Because $f$ satisfies properties (i) and (ii) we know $f(n) = n!$ for all $n ∈ N$.
+Now fix $n ∈ N$ and $x ∈ (0,1]$.
+
+### Exercise 8.4.21.
+
+(a) Use the convexity of $\log(f(x))$ and the three intervals
+$[n−1,n]$, $[n,n+x]$, and $[n,n+1]$ to show
+
+$$ 
+x \log_{} (n) \leq
+\log_{} (f(n+x)) - \log_{} (n!)
+\leq
+x \log_{} (n+1)
+$$
+
+**Proof**:
+
+$$ 
+\frac{\log(f(n)) - \log_{} f((n-1))}{1}
+\leq
+\frac{\log(f(n+x)) - \log_{} f((n))}{x}
+\leq
+\frac{\log(f(n+1)) - \log_{} f((n))}{1}
+$$
+
+This is the same as it asks.
+
+$\square$
+
+(b) Show $\log(f(n+x)) = \log(f(x))+\log((x+1)(x+2)···(x+n))$
+
+**Proof**:
+
+Since
+
+$$ 
+f(x+n) = (x+n)f(x+n-1)
+= (x+n)(x+n-1)f(x+n-2)
+\cdots
+= (x+n)\cdots (x+1) f(x) 
+$$
+
+Then with exercise 8.4.6 (c), so we proved.
+
+$\square$
+
+(c) Now establish that
+
+$$ 
+0 \leq
+\log_{} (f(x)) -
+\log_{}
+\left( 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+ \right)
+\leq
+x \log_{} (1+\frac{1}{n})
+$$
+
+**Proof**:
+
+We use (a) - $x \log_{} n$ and get
+
+$$ 
+\log_{} (f(n+x)) - \log_{} (n!) - x\log_{} n =\\
+\log_{} f(x) + \log_{} ((x+1)(x+2)\cdots (x+n))
+- \log_{} (n!) - x\log_{} n \\
+= \log_{} f(x) -
+\log_{}
+\left( 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+ \right)
+$$
+
+$\square$
+
+(d) Conclude that
+
+$$
+f(x) = \lim_{n \to \infty} 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+$$
+
+**Proof**:
+
+This is because
+
+$$ 
+\lim_{n \to \infty} x \log_{} (1 + \frac{1}{n}) = 0
+$$
+
+$\square$
+
+(e) Finally, show that the conclusion in (d) holds for all
+$x ≥ 0$.
+
+**Proof**:
+
+Assume $x \in (1, 2]$ then $x = 1 + x_0$, $x_0 \in (0,1]$.
+
+$$ 
+f(x) = f(x_0+1)
+= (x_0+1) f(x_0) \\
+= (x_0+1)
+\lim_{n \to \infty} 
+\frac{n^{x_0}n!}{(x_0+1)(x_0+2)\cdots (x_0+n)} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x_0+1}(n-1)!}{(x_0+2)(x_0+3)\cdots (x_0+n)} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x}(n-1)!}{(x+1)(x+2)\cdots (x+(n-1))} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)} \\
+$$
+
+Then we can use induction for all $x > 0$.
+
+$\square$
+
+Because we have arrived at an explicit formula for $f(x)$, the function $f(x)$
+must be unique. By virtue of the fact that $x!$ satisfies conditions (i), (ii), and(iii)
+of the theorem, we can conclude that $x!$ is this unique function; i.e., $f(x) = x!$.
+Thus, not only have we proved the theorem, but we have also discovered analternate representation for the factorial function called the Gauss product formula:
+
+$$ 
+\tag{9}
+x! = \int_{0}^{\infty} t^x e^{-t} dt =
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)}
+$$
+
+For all $x \geq 0$.
+
+Recall that when $x!$ is extended to all of $\mathbf{R}$ via the functional equation
+$x! = x(x− 1)!$ we get asymptotes at every negative integer. Thus, there is a
+compelling reason to consider the reciprocal function $1/x!$ which we can take to
+be zero for $x =−1,−2,−3,...$.
+
+### Exercise 8.4.22.
+
+(a) Where does
+$g(x) = \frac{x}{x!(−x)!}$ equal zero? What other
+familiar function has the same set of roots?
+
+**Solution**: $g(x) = 0$ for every integer.
+$\sin \pi x$ also has the same set of roots.
+
+(b) The function $e^{−x^2}$ provides the raw material for the all-important Gaussian bell curve from probability, where it is known that
+
+$$ 
+\int_{-\infty}^{\infty} e^{−x^2} dx = \sqrt[]{\pi}
+$$
+
+Use this fact (and some standard integration techniques) to evaluate $(1/2)!$.
+
+**Solution**:
+
+$$ 
+(1/2)! = \int_{0}^{\infty} t^{1/2} e^{-t} dt
+$$
+
+Consider the integral
+
+$$ 
+\int_{0}^{b^2} t^{1/2} e^{-t} dt
+$$
+
+We apply 7.5.10 Change-of-variable Formula and let $g(x) = x^2$.
+So
+
+$$
+\int_{0}^{b} f(g(x)) g'(x) dx =
+\int_{0}^{b} (x^2)^{1/2} e^{-x^2} 2x dx \\
+= \int_{0}^{b} 2x^2e^{-x^2} dx \\
+= \int_{-b}^{b} x^2e^{-x^2} dx
+$$
+
+Let $h(x) = - \frac{1}{2} e^{-x^2}, k(x) = x$, then
+
+$$ 
+\int_{-b}^{b} x^2e^{-x^2} =
+\int_{-b}^{b} h'(x) k(x) \\
+= h(b)k(b) - h(-b)k(-b) - \int_{-b}^{b} (- \frac{1}{2} e^{-x^2}) dx \\
+= (-e^{-b^2} \cdot (b)) - (-e^{-b^2} \cdot (-b)) +
+\int_{-b}^{b} \frac{1}{2} e^{-x^2} dx
+$$
+
+So
+
+$$ 
+\lim_{b \to \infty} \int_{0}^{b^2} t^{1/2} e^{-t} dt \\
+= \lim_{b \to \infty} \int_{-b}^{b} e^{-x^2} dx \\
+= \frac{1}{2} \sqrt[]{\pi}
+$$
+
+$\square$
+
+(c) Now use (a) and (b) to conjecture a striking relationship between the
+factorial function and a well-known function from trigonometry.
+
+**Solution**:
+
+$$ 
+(1/2)! = 1/2 \cdot (-1/2)! \\
+(-1/2)! = 2 \cdot (1/2)!
+$$
+
+So
+
+$$ 
+g(1/2) = \frac{1/2}{(1/2)! \cdot 2 \cdot (1/2)!} \\
+= \frac{1}{\pi}
+$$
+
+So my conjecture is
+
+$$ 
+\frac{x}{x!(−x)!} = \frac{1}{\pi} \sin (\pi x)
+$$
+
+$\square$
+
+### Exercise 8.4.23.
+
+As a parting shot, use the value for $(1/2)!$ and the Gauss
+product formula in equation (9) to derive the famous product formula for $π$
+discovered by John Wallis in the 1650s
+
+$$ 
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) 
+$$
+
+**Proof**:
+
+$$ 
+x! =
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)}
+$$
+
+We plug $x = 1/2$, and take square on both side. Then we have
+
+$$
+\frac{\pi}{2} =
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right)
+\cdot
+\frac{2n}{2n+1} \\
+=
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots
+\lim_{n \to \infty}
+\frac{2n}{2n+1} \\
+=
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right)
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right)
+$$
+
+$\square$
