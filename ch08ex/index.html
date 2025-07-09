@@ -2165,7 +2165,651 @@ let <script type="math/tex">x = 1/b</script>
 <script type="math/tex">\square</script>
 </p>
 <h3 id="exercise-8416">Exercise 8.4.16.</h3>
-<p>Prove the following analogue of the Weierstrass M-Test for</p>
+<p>Prove the following analogue of the Weierstrass M-Test for
+improper integrals: If <script type="math/tex">f(x,t)</script> satisfies <script type="math/tex">|f(x,t)| ≤ g(t)</script>
+for all <script type="math/tex">x ∈ A</script> and <script type="math/tex">\int_{a}^{\infty} g(t)dt</script> converges, then
+<script type="math/tex">\int_{a}^{\infty} f(x,t)dt</script> converges uniformly on <script type="math/tex">A</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">\epsilon</script>, since <script type="math/tex">\int_{a}^{\infty} g(t)dt</script> converges,
+we can find <script type="math/tex">M</script>, if <script type="math/tex">d > c \geq M</script>, we have
+<script type="math/tex">|\int_{c}^{d} g(t) dt | = \int_{c}^{d} |g(t)| dt < \epsilon / 2</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{c}^{d} f(x,t) dt \right|  \leq
+\int_{c}^{d} |f(x,t)| dt \leq
+\int_{c}^{d} g(t) dt < \epsilon / 2
+</script>
+</p>
+<p>Then given any <script type="math/tex">x_0</script>, we can find <script type="math/tex">d_{x_0}</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \int_{a}^{d_{x_0}} f(x_0, t) dt - F(x_0)
+ \right| < \epsilon / 2
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{a}^{c} f(x_0, t) dt - F(x_0)
+ \right| \leq 
+\left| 
+\int_{a}^{c} f(x_0, t) dt - \int_{a}^{d_{x_0}} f(x_0, t) dt
+ \right| +
+\left| 
+\int_{a}^{d_{x_0}} f(x_0, t) dt - F(x_0)
+ \right| \\
+\leq \epsilon / 2 + \epsilon / 2 = \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>An immediate consequence of Definition 8.4.7 is that if the 
+improper integral
+converges uniformly then the sequence of functions defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt
+</script>
+</p>
+<p>converges uniformly to <script type="math/tex">F(x)</script> on <script type="math/tex">[a,b]</script>. This observation gives us access to the
+host of useful results we developed in Chapter 6.</p>
+<h3 id="theorem-848">Theorem 8.4.8.</h3>
+<p>If <script type="math/tex">f(x,t)</script> is continuous on <script type="math/tex">D= \{(x,t) : a ≤ x ≤ b,c ≤ t\}</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) = \int_{c}^{\infty} f(x,t)dt
+</script>
+</p>
+<p>is uniformly continuous on <script type="math/tex">[a,b]</script>, provided the integral converges uniformly.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt
+</script>
+</p>
+<p>From theorem 8.4.5., then <script type="math/tex">F_n(x)</script> is continuous.
+Since the integral converges uniformly, then <script type="math/tex">F_n(x)</script> converges
+to <script type="math/tex">F(x)</script> uniformly.
+Then according to theorem 6.2.6, <script type="math/tex">F(x)</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-849">Theorem 8.4.9.</h3>
+<p>Assume the function <script type="math/tex">f(x,t)</script> is continuous on
+<script type="math/tex">D= \{(x,t) : a ≤ x ≤ b,c ≤ t\}</script> and
+<script type="math/tex">F(x) = \int_{c}^{\infty} f(x,t)dt</script> exists for each <script type="math/tex">x ∈ [a,b]</script>.
+If the derivative function
+<script type="math/tex">f_x(x,t)</script> exists and is continuous, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{7}
+F'(x) =
+\int_{c}^{\infty} f_x(x,t) dt,
+</script>
+</p>
+<p>provided the integral in (7) converges uniformly.</p>
+<h3 id="exercise-8418">Exercise 8.4.18.</h3>
+<p>Prove Theorem 8.4.9.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">G(x) = \int_{c}^{\infty} f_x(x,t) dt</script>.</p>
+<p>Again, consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+F_n(x) = \int_{c}^{c+n} f(x,t) dt \text{ and }
+G_n(x) = \int_{c}^{c+n} f_x(x,t) dt
+</script>
+</p>
+<p>And let <script type="math/tex">D_n = \{(x,t) : a ≤ x ≤ b,c ≤ t ≤ c+n\}</script>.</p>
+<p>Since <script type="math/tex">f(x,t)</script> and <script type="math/tex">f_x(x,t)</script> are continuous on <script type="math/tex">D_n</script>, then from theorem 8.4.6, <script type="math/tex">F_n'(x) = G_n(x)</script>.</p>
+<p>Since <script type="math/tex">F_n(x)</script> converges to <script type="math/tex">F(x)</script> and <script type="math/tex">G_n(x)</script> converges
+uniformly to <script type="math/tex">G(x)</script>, then from theorem 6.3.1,
+<script type="math/tex">F(x)</script> is differentiable and <script type="math/tex">F'(x) = G(x)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="the-factorial-function">The Factorial Function</h3>
+<p>It’s time to return our attention to equation (3) from earlier in this section:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{\alpha }
+= \int_{0}^{\infty}e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+</script>
+</p>
+<h3 id="exercise-8419">Exercise 8.4.19.</h3>
+<p>(a) Although we verified it directly, show how to use the
+theorems in this section to give a second justification for the formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{\alpha ^2} =
+\int_{0}^{\infty} t e^{-\alpha t} dt,
+\text{ for all } \alpha > 0.
+</script>
+</p>
+<p><strong>Proof</strong>: Consider <script type="math/tex">f(x,t) = e^{-xt}</script>, and
+<script type="math/tex">D = \{(x,t) : 1/2 ≤ x ≤ 3/2, 0 ≤ t\}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_x(x,t) = -t e^{-xt}
+</script>
+</p>
+<p>is also continuous on <script type="math/tex">D</script>.</p>
+<p>$$
+\int_{0}^{b} t e^{-x t} =
+\int_{0}^{b} k(t) h'(t) =
+h(b) k(b) - h(0) k(0) - \int_{0}^{b} k'(t) h(t) = \
+- \frac{1}{x } e^{-x b} \cdot b -</p>
+<h1 id="int_0b-frac1x-e-x-t-dt">\int_{0}^{b} -\frac{1}{x } e^{-x t} dt \</h1>
+<p>\frac{1}{x } \int_{0}^{b} e^{-x t} dt -
+\frac{b}{x } e^{-x b} \
+=
+\frac{1}{x } (\frac{1}{x} -
+\frac{1}{x } e^{-x b}) -
+\frac{b}{x } e^{-x b} \
+= \frac{1}{x^2} - \frac{1}{x^2} e^{-x b} - \frac{b}{x } e^{-x b}
+$$</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} f_x(x, t) dt
+</script>
+</p>
+<p>converges uniformly. We can apply theorem 8.4.9:</p>
+<p>
+<script type="math/tex; mode=display"> 
+-\frac{1}{x^2} = F'(x) = \int_{0}^{\infty} f_x(x,t) dt
+= \int_{0}^{\infty} -t e^{-xt} dt
+</script>
+</p>
+<p>So,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{x^2} = \int_{0}^{\infty} t e^{-xt} dt
+</script>
+</p>
+<p>Then we can plug <script type="math/tex">\alpha</script> back.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now derive the formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{8}
+\frac{n!}{\alpha ^ {n+1}} =
+\int_{0}^{\infty}t^n e^{-\alpha t} dt
+\text{ for all } \alpha > 0.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>First, we prove <script type="math/tex">\int_{0}^{\infty}t^n e^{- x t} dt</script> for any
+<script type="math/tex">0 < a \leq x \leq b</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| t^n e^{- x t} \right|
+= t^n e^{- x t} \leq t^n e^{- a t}
+</script>
+</p>
+<p>Since</p>
+<p>
+<script type="math/tex; mode=display"> 
+e^{at} = 1 + (at) + \frac{(at)^2}{2!} + \cdots
++ \frac{(at)^{n+2}}{(n+2)!} + \cdots >
+\frac{(at)^{n+2}}{(n+2)!}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+t^n e^{- a t} \leq g(t) = \begin{cases}
+    1 &\text{if } 0 \leq t \leq 1\\
+    \frac{(n+2)!}{a^{n+2} t^2} &\text{if } t > 1\\
+\end{cases} 
+</script>
+</p>
+<p>The improper integral <script type="math/tex">\lim_{t \to \infty} g(t)</script> converges.
+So from exercise 8.4.16, <script type="math/tex">\int_{0}^{\infty}t^n e^{- x t} dt</script>
+converges uniformly.</p>
+<p>We can use induction, assume the improper integral holds</p>
+<p>
+<script type="math/tex; mode=display">
+\frac{(n-1)!}{x^{n}} = \int_{0}^{\infty}
+t^{n-1} e^{-xt} dt
+</script>
+</p>
+<p>Then <script type="math/tex">f(x,t)</script> is continuous,
+<script type="math/tex">f_x(x,t) = -t^n e^{-xt}</script> continuous and
+<script type="math/tex">\int_{0}^{\infty}f_x(x,t) dt</script> converges uniformly.</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{n!}{x^{n+1}} = \int_{0}^{\infty} t^n e^{-xt} dt
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-8410">Definition 8.4.10.</h3>
+<p>For <script type="math/tex">x ≥ 0</script>, define the factorial function</p>
+<p>
+<script type="math/tex; mode=display"> 
+x! = \int_{0}^{\infty} t^x e^{-t} dt .
+</script>
+</p>
+<h3 id="exercise-8420">Exercise 8.4.20.</h3>
+<p>(a) Show that <script type="math/tex">x!</script> is an infinitely diﬀerentiable function on
+<script type="math/tex">(0,∞)</script> and produce a formula for the nth derivative.
+In particular show that <script type="math/tex">(x!)'' > 0</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">f(x,t) = t^x e^{-t}</script> . Given <script type="math/tex">x</script>, since <script type="math/tex">t^x</script> and <script type="math/tex">e^{-t}</script> are continuous
+functions on <script type="math/tex">[0, c]</script>, so they are integrable.</p>
+<p>Also, if <script type="math/tex">0 < a \leq x \leq b</script>, we can find <script type="math/tex">k</script>,
+such that <script type="math/tex">0 < 1/k < a \leq x \leq b < k</script>.
+then for <script type="math/tex">t > 1</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+t^x e^{-t} =
+\frac{
+    t^x
+}{1 + \frac{t}{1!} + \frac{t^2}{2!} + \cdots +
+\frac{t^{k+2}}{(k+2)!} + \cdots} \\
+< \frac{(k+2)!}{t^2}
+</script>
+</p>
+<p>define <script type="math/tex">g(x)</script> as</p>
+<p>
+<script type="math/tex; mode=display">
+g(t) = \begin{cases}
+    1 &\text{if } 0 \leq t \leq 1\\
+    \frac{(k+2)!}{t^2} &\text{if } t > 1\\
+\end{cases} 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+|t^x e^{-t}| = t^x e^{-t} \leq g(x)
+</script>
+</p>
+<p>Since the improper integral <script type="math/tex">\lim_{t \to \infty} g(t)</script>
+converges, then <script type="math/tex">f(x,t)</script> converges uniformly.</p>
+<p>Now, let's consider the nth derivative of <script type="math/tex">f(x,t)</script> w.r.t <script type="math/tex">x</script>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_x^{(n)}(x, t) = t^x (\log_{} (t))^n e^{-t}
+</script>
+</p>
+<p>Note that <script type="math/tex">f_x^{(n)}(x, t)</script> is not defined at <script type="math/tex">t = 0</script>.
+But we can use L’Hospital’s Rule: ∞/∞ case:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{t \to 0} \frac{(\log_{} (t))^n}{t^{-x}}
+=
+\lim_{t \to 0}
+\frac{n (\log_{} (t))^{n-1} (1/t)}{(-x)t^{-1-x}} \\
+=
+\lim_{t \to 0}
+\frac{n}{(-x)} \frac{\log_{} (t))^{n-1}}{t^{-x}} \\
+\lim_{t \to 0}
+= \frac{n!}{(-x)^n} \frac{1}{t^{-x}} = 0
+</script>
+</p>
+<p>Thus we can define <script type="math/tex">f_x^{(n)}(x, 0) = 0</script>.</p>
+<p>When <script type="math/tex">x \in [a,b]</script>, and <script type="math/tex">t > 1</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| t^x (\log_{} (t))^n e^{-t} \right|
+= t^x (\log_{} (t))^n e^{-t} \\
+\leq
+t^b t^n e^{-t} \leq \frac{C}{t^2}
+</script>
+</p>
+<p>where <script type="math/tex">C</script> is a constant independent of <script type="math/tex">x</script>.
+So the improper integral
+<script type="math/tex">\int_{0}^{\infty} t^x (\log_{} (t))^n e^{-t}</script>
+converges uniformly.</p>
+<p>So the nth derivative is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} t^x (\log_{} (t))^n e^{-t} dt
+</script>
+</p>
+<p>And the 2nd derivative is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{\infty} t^x (\log_{} (t))^2 e^{-t} dt
+</script>
+</p>
+<p>For any <script type="math/tex">x > 0</script>, <script type="math/tex">t^x (\log_{} (t))^2 e^{-t} >0</script>,
+so <script type="math/tex">(x!)'' > 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Use the integration-by-parts formula employed earlier to show 
+that <script type="math/tex">x!</script> satisfies the functional equation.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x+1)! = (x+1)x! 
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x+1)! = \int_{0}^{\infty} t^{x+1} e^{-t} dt
+</script>
+</p>
+<p>So let <script type="math/tex">h(t) = \frac{t^{x+1}}{(x+1)}, k(t) = e^{-t}</script>
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{b} t^{x} e^{-t} =
+\int_{0}^{b} h'(t) k(t) \\
+= h(b) k(b) - h(0) k(0) - \int_{0}^{b} h(t) k'(t)
+\\ =
+\frac{b^{x+1} e^{-b}}{x+1} - 0 +
+\int_{0}^{b} \frac{t^{x+1}}{x+1} e^{-t} dt
+</script>
+</p>
+<p>When <script type="math/tex">b \rightarrow \infty</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+x! = \frac{(x+1)!}{x+1}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-8411-bohrmollerup-theorem">Theorem 8.4.11 (Bohr–Mollerup Theorem).</h3>
+<p>There is a unique positive
+function <script type="math/tex">f</script> defined on <script type="math/tex">x ≥ 0</script> satisfying</p>
+<p>(i) <script type="math/tex">f(0) = 1</script>
+</p>
+<p>(ii) <script type="math/tex">f(x+1) = (x+1)f(x)</script>, and</p>
+<p>(iii) <script type="math/tex">\log(f(x))</script> is convex.</p>
+<p>Because <script type="math/tex">x!</script> satisfies properties (i), (ii), and (iii), it follows that <script type="math/tex">f(x) = x!</script>.</p>
+<p><strong>Proof</strong>: We need one more geometrically plausible fact about convex functions.
+If <script type="math/tex">[a,b]</script> and <script type="math/tex">[a',b']</script> are two intervals in the domain of a convex function <script type="math/tex">φ</script>, and
+<script type="math/tex">a ≤ a'</script> and <script type="math/tex">b ≤ b'</script>, then the slopes of the chords over these intervals satisfy</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\phi(b)-\phi(a)}{b-a}
+\leq
+\frac{\phi(b')-\phi(a')}{b'-a'}
+</script>
+</p>
+<p>Because <script type="math/tex">f</script> satisfies properties (i) and (ii) we know <script type="math/tex">f(n) = n!</script> for all <script type="math/tex">n ∈ N</script>.
+Now fix <script type="math/tex">n ∈ N</script> and <script type="math/tex">x ∈ (0,1]</script>.</p>
+<h3 id="exercise-8421">Exercise 8.4.21.</h3>
+<p>(a) Use the convexity of <script type="math/tex">\log(f(x))</script> and the three intervals
+<script type="math/tex">[n−1,n]</script>, <script type="math/tex">[n,n+x]</script>, and <script type="math/tex">[n,n+1]</script> to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+x \log_{} (n) \leq
+\log_{} (f(n+x)) - \log_{} (n!)
+\leq
+x \log_{} (n+1)
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\log(f(n)) - \log_{} f((n-1))}{1}
+\leq
+\frac{\log(f(n+x)) - \log_{} f((n))}{x}
+\leq
+\frac{\log(f(n+1)) - \log_{} f((n))}{1}
+</script>
+</p>
+<p>This is the same as it asks.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show <script type="math/tex">\log(f(n+x)) = \log(f(x))+\log((x+1)(x+2)···(x+n))</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Since</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x+n) = (x+n)f(x+n-1)
+= (x+n)(x+n-1)f(x+n-2)
+\cdots
+= (x+n)\cdots (x+1) f(x) 
+</script>
+</p>
+<p>Then with exercise 8.4.6 (c), so we proved.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Now establish that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 \leq
+\log_{} (f(x)) -
+\log_{}
+\left( 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+ \right)
+\leq
+x \log_{} (1+\frac{1}{n})
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We use (a) - <script type="math/tex">x \log_{} n</script> and get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\log_{} (f(n+x)) - \log_{} (n!) - x\log_{} n =\\
+\log_{} f(x) + \log_{} ((x+1)(x+2)\cdots (x+n))
+- \log_{} (n!) - x\log_{} n \\
+= \log_{} f(x) -
+\log_{}
+\left( 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+ \right)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Conclude that</p>
+<p>
+<script type="math/tex; mode=display">
+f(x) = \lim_{n \to \infty} 
+\frac{n^xn!}{(x+1)(x+2)\cdots (x+n)}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>This is because</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} x \log_{} (1 + \frac{1}{n}) = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(e) Finally, show that the conclusion in (d) holds for all
+<script type="math/tex">x ≥ 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">x \in (1, 2]</script> then <script type="math/tex">x = 1 + x_0</script>, <script type="math/tex">x_0 \in (0,1]</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = f(x_0+1)
+= (x_0+1) f(x_0) \\
+= (x_0+1)
+\lim_{n \to \infty} 
+\frac{n^{x_0}n!}{(x_0+1)(x_0+2)\cdots (x_0+n)} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x_0+1}(n-1)!}{(x_0+2)(x_0+3)\cdots (x_0+n)} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x}(n-1)!}{(x+1)(x+2)\cdots (x+(n-1))} \\
+=
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)} \\
+</script>
+</p>
+<p>Then we can use induction for all <script type="math/tex">x > 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Because we have arrived at an explicit formula for <script type="math/tex">f(x)</script>, the function <script type="math/tex">f(x)</script>
+must be unique. By virtue of the fact that <script type="math/tex">x!</script> satisfies conditions (i), (ii), and(iii)
+of the theorem, we can conclude that <script type="math/tex">x!</script> is this unique function; i.e., <script type="math/tex">f(x) = x!</script>.
+Thus, not only have we proved the theorem, but we have also discovered analternate representation for the factorial function called the Gauss product formula:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{9}
+x! = \int_{0}^{\infty} t^x e^{-t} dt =
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)}
+</script>
+</p>
+<p>For all <script type="math/tex">x \geq 0</script>.</p>
+<p>Recall that when <script type="math/tex">x!</script> is extended to all of <script type="math/tex">\mathbf{R}</script> via the functional equation
+<script type="math/tex">x! = x(x− 1)!</script> we get asymptotes at every negative integer. Thus, there is a
+compelling reason to consider the reciprocal function <script type="math/tex">1/x!</script> which we can take to
+be zero for <script type="math/tex">x =−1,−2,−3,...</script>.</p>
+<h3 id="exercise-8422">Exercise 8.4.22.</h3>
+<p>(a) Where does
+<script type="math/tex">g(x) = \frac{x}{x!(−x)!}</script> equal zero? What other
+familiar function has the same set of roots?</p>
+<p><strong>Solution</strong>: <script type="math/tex">g(x) = 0</script> for every integer.
+<script type="math/tex">\sin \pi x</script> also has the same set of roots.</p>
+<p>(b) The function <script type="math/tex">e^{−x^2}</script> provides the raw material for the all-important Gaussian bell curve from probability, where it is known that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\infty}^{\infty} e^{−x^2} dx = \sqrt[]{\pi}
+</script>
+</p>
+<p>Use this fact (and some standard integration techniques) to evaluate <script type="math/tex">(1/2)!</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(1/2)! = \int_{0}^{\infty} t^{1/2} e^{-t} dt
+</script>
+</p>
+<p>Consider the integral</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{b^2} t^{1/2} e^{-t} dt
+</script>
+</p>
+<p>We apply 7.5.10 Change-of-variable Formula and let <script type="math/tex">g(x) = x^2</script>.
+So</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{0}^{b} f(g(x)) g'(x) dx =
+\int_{0}^{b} (x^2)^{1/2} e^{-x^2} 2x dx \\
+= \int_{0}^{b} 2x^2e^{-x^2} dx \\
+= \int_{-b}^{b} x^2e^{-x^2} dx
+</script>
+</p>
+<p>Let <script type="math/tex">h(x) = - \frac{1}{2} e^{-x^2}, k(x) = x</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-b}^{b} x^2e^{-x^2} =
+\int_{-b}^{b} h'(x) k(x) \\
+= h(b)k(b) - h(-b)k(-b) - \int_{-b}^{b} (- \frac{1}{2} e^{-x^2}) dx \\
+= (-e^{-b^2} \cdot (b)) - (-e^{-b^2} \cdot (-b)) +
+\int_{-b}^{b} \frac{1}{2} e^{-x^2} dx
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{b \to \infty} \int_{0}^{b^2} t^{1/2} e^{-t} dt \\
+= \lim_{b \to \infty} \int_{-b}^{b} e^{-x^2} dx \\
+= \frac{1}{2} \sqrt[]{\pi}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Now use (a) and (b) to conjecture a striking relationship between the
+factorial function and a well-known function from trigonometry.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(1/2)! = 1/2 \cdot (-1/2)! \\
+(-1/2)! = 2 \cdot (1/2)!
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(1/2) = \frac{1/2}{(1/2)! \cdot 2 \cdot (1/2)!} \\
+= \frac{1}{\pi}
+</script>
+</p>
+<p>So my conjecture is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{x}{x!(−x)!} = \frac{1}{\pi} \sin (\pi x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8423">Exercise 8.4.23.</h3>
+<p>As a parting shot, use the value for <script type="math/tex">(1/2)!</script> and the Gauss
+product formula in equation (9) to derive the famous product formula for <script type="math/tex">π</script>
+discovered by John Wallis in the 1650s</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\pi }{2}
+=\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right) 
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+x! =
+\lim_{n \to \infty} 
+\frac{n^{x}n!}{(x+1)(x+2)\cdots (x+n)}
+</script>
+</p>
+<p>We plug <script type="math/tex">x = 1/2</script>, and take square on both side. Then we have</p>
+<p>
+<script type="math/tex; mode=display">
+\frac{\pi}{2} =
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right)
+\cdot
+\frac{2n}{2n+1} \\
+=
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right) 
+\cdots
+\lim_{n \to \infty}
+\frac{2n}{2n+1} \\
+=
+\lim_{n \to \infty}
+\left( \frac{2 \cdot 2}{1 \cdot 3} \right) 
+\left( \frac{4 \cdot 4}{3 \cdot 5} \right) 
+\left( \frac{6 \cdot 6}{5 \cdot 7} \right)
+\cdots 
+\left( \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \right)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
