@@ -2777,3 +2777,1324 @@ $$
 $$
 
 $\square$
+
+## 8.5 Fourier Series
+
+### Trigonometric Series
+
+A trigonometric series has the form
+
+$$ 
+f(x) = a_0 +
+a_1 \cos (x) + b_1 \sin (x) +
+a_2 \cos (2x) + b_2 \sin (2x) +
+a_3 \cos (3x) + b_3 \sin (3x) + \cdots \\
+= a_0 + \sum_{n = 1}^{\infty} a_n \cos (nx) + b_n \sin (nx)
+$$
+
+The idea ofrepresenting a function in this way was not completely new when
+Fourier first publicly proposed it in 1807. About 50 years earlier, Jean Le Rond
+d’Alembert (1717–1783) published the partial diﬀerential equation
+
+$$ 
+\tag{1}
+\frac{\partial ^2 u}{\partial x^2}
+=
+\frac{\partial ^2 u}{\partial t^2}
+$$
+
+as a means of describing the motion of a vibrating string. In this model, the
+function $u(x,t)$ represents the displacement of the string at time $t ≥ 0$ and at
+some point $x$, which we will take to be in the interval $[0,π]$. Because the string
+is understood to be attached at each end of this interval, we have
+
+$$ 
+\tag{2}
+u(0,t) = 0 \text{ and } u(\pi, t) = 0
+$$
+
+for all values of $t ≥ 0$. Now, at $t = 0$, the string is 
+displaced some initial amount,
+and at the moment it is released we assume
+
+$$ 
+\tag{3}
+\frac{\partial u}{\partial t} (x, 0) = 0
+$$
+
+meaning that, although the string immediately starts to move, it is given no
+initial velocity at any point. Finding a function $u(x,t)$ that satisfies equations (1), (2), and (3) is not too diﬃcult.
+
+### Exercise 8.5.1.
+
+(a) Verify that
+
+$$ 
+u(x,t) = b_n \sin (nx) \cos (nt)
+$$
+
+satisfies equations (1), (2), and (3) for any choice of
+$n ∈ \mathbf{N}$ and $b_n ∈ \mathbf{R}$.
+What goes wrong if $n \not\in N$?
+
+**Proof**:
+
+$$ 
+\frac{\partial u}{\partial x} =
+n b_n \cos (nx) \cos (nt) \\
+\frac{\partial^2 u}{\partial x^2} =
+-n^2 b_n \sin (nx) \cos (nt)
+$$
+
+On the other hand
+
+$$ 
+\frac{\partial u}{\partial t} =
+-n b_n \sin (nx) \sin (nt) \\
+$$
+
+$$ 
+\frac{\partial^2 u}{\partial t^2} =
+-n^2 b_n \sin (nx) \cos (nt)
+$$
+
+So (1) holds.
+
+$$ 
+u(0, t) = b_n \sin (n \cdot 0) \cos (nt) = 0 \\
+u(\pi, t) = b_n \sin (n \cdot \pi) \cos (nt) = 0 \\
+$$
+
+So (2) holds.
+
+$$ 
+\frac{\partial u}{\partial t} (x, 0)
+= -n b_n \sin (nx) \sin (n \cdot 0)
+= 0
+$$
+
+So (3) holds.
+
+if $a \not \in \mathbf{N}$ 
+$$ 
+u(\pi, t) = b_n \sin (a \cdot \pi) \cos (a \cdot t) \not = 0
+$$
+
+$\square$
+
+(b) Explain why any finite sum of functions of the form given in 
+part (a) would also satisfy (1), (2), and (3).
+
+**Proof**: We can do the operation (1), (2), and (3) item by item.
+
+$\square$
+
+Now, we come to the truly interesting issue. We have just seen 
+that any function of the form
+
+$$
+\tag{4}
+u(x,t) = \sum_{n = 1}^{N} b_n \sin (nx) \cos (nt)
+$$
+
+At time $t = 0$, we will
+assume that the string is given some initial displacement
+$f(x) = u(x,0)$. Setting
+$t = 0$ in our family of solutions in (4), the hope is that the initial displacement
+function $f(x)$ can be expressed as
+
+$$ 
+f(x) = \sum_{n = 1}^{N} b_n \sin (nx)
+$$
+
+### Periodic Functions
+
+Fourier arrived at the more general
+formulation of the problem, which is to find suitable coeﬃcients
+$(a_n)$ and $(b_n)$
+to express a function $f(x)$ as
+
+$$ 
+\tag{6}
+f(x) = a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+$$
+
+We will give primary attention to the interval $(−π,π]$.
+
+### Types of Convergence
+
+Our usual course of action with infinite series is first to define the partial sum
+
+$$
+\tag{7}
+S_N(x) = a_0 + \sum_{n = 1}^{N}
+a_n \cos (nx) + b_n \sin (nx)
+$$
+
+To "express $f(x)$ as a trigonometric series" then means finding coeﬃcients $(a_n)_{n=0}^{\infty}$ and $(b_n)_{n=0}^{\infty}$
+so that
+
+$$ 
+\tag{8}
+f(x) = \lim_{N \to \infty} S_N(x)
+$$
+
+The question remainsas to what kind of limit this is.
+
+* Fourier probably imagined something akin to a pointwise limit.
+* $L^2$ convergence:
+
+$$ 
+\int_{-\pi }^{\pi }
+|S_N(x) - f(x)|^2 dx \rightarrow 0
+$$
+
+* Cesaro mean convergence, relies on demonstrating that the
+averages of the partial sums converge, in our case uniformly, to
+$f(x)$.
+
+### Fourier Coeﬃcients
+
+Exercise 8.5.2. Using trigonometric identities when necessary, verify the following integrals.
+
+(a) For all $n \in \mathbf{N}$,
+
+$$ 
+\int_{-\pi }^{\pi }
+\cos (nx) = 0
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin (nx) = 0
+$$
+
+**Solution**:
+
+$$ 
+F(x) = \frac{1}{n} \sin (nx)
+$$
+
+Then $F'(x) = \cos (nx)$
+
+$$ 
+F(\pi) - F(-\pi ) = 0 - 0 = 0
+$$
+
+Similarly, $F(x) = \frac{1}{n} \cos (nx)$,
+then $F'(x) = \sin (nx)$
+
+$$
+F(\pi) - F(-\pi ) = \frac{1}{n} ( \cos (n \pi ) - \cos (-n \pi) )
+= 0
+$$
+
+$\square$
+
+(b) For all $n \in \mathbf{N}$,
+
+$$ 
+\int_{-\pi }^{\pi }
+\cos ^2 (nx) = \pi 
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin ^2 (nx) = \pi 
+$$
+
+**Proof**:
+
+$$ 
+\cos ^2 (nx) =
+\frac{1 + \cos (2nx)}{2}
+$$
+
+$$ 
+\sin ^2 (nx) =
+\frac{1 - \cos (2nx)}{2}
+$$
+
+Then from (a), it's done.
+
+$\square$
+
+(c) For all $m, n \in \mathbf{N}$,
+
+$$ 
+\int_{-\pi }^{\pi }
+\cos (mx) \sin (nx) = 0.
+$$
+
+For $m \not = n$,
+
+$$ 
+\int_{-\pi }^{\pi }
+\cos (mx) \cos (nx) = 0
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin (mx) \sin (nx) = 0
+$$
+
+**Proof**:
+
+$$ 
+\cos (mx) \sin (nx)
+=
+\frac{\sin ((m+n)x) + \sin ((m-n)x) }{2}
+$$
+
+Then we can use (a). And similarly for the other 2.
+
+$\square$
+
+The consequences of these results are much more interesting than their
+proofs. The intuition from inner-product spaces is useful. Interpreting the
+integral as a kind of dot product, this exercise can be summarized by saying
+that the functions
+
+$$ 
+\{
+1,
+\cos (x), \sin (x),
+\cos (2x), \sin (2x),
+\cos (3x), \sin (3x),
+\cdots
+\}
+$$
+
+are all orthogonal to each other. The content of what follows is that they in
+fact form a basis for a large class of functions.
+
+To compute $a_0$, integrate each side of equation (6) from
+$−π$ to $π$, brazenly
+take the integral inside the infinite sum, and use
+Exercise 8.5.2 to get
+
+$$ 
+\int_{-\pi }^{\pi }
+f(x)
+=
+\int_{-\pi }^{\pi }
+\left[ 
+a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+ \right] dx \\
+=
+\int_{-\pi }^{\pi } a_0 dx +
+\sum_{n = 1}^{\infty}
+\int_{-\pi }^{\pi }
+[a_n \cos (nx) + b_n \sin (nx)] dx \\
+= a_0(2 \pi ) +
+\sum_{n = 1}^{\infty}
+a_n 0 + b_n 0 = a_0(2 \pi )
+$$
+
+Thus
+
+$$
+\tag{9}
+a_0 =
+\frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x) dx
+$$
+
+### Exercise 8.5.3.
+
+Derive the formulas
+
+$$ 
+\tag{10}
+a_m = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (mx) dx
+\text{ and }
+b_m =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \sin (mx) dx
+$$
+
+for all $m \geq 1$.
+
+Proof:
+
+We can directly use exercise 8.5.2 (b) (c).
+
+$\square$
+
+### Example 8.5.1.
+
+Let
+
+$$ 
+f(x) = \begin{cases}
+    1 &\text{if } 0 < x < \pi \\
+    0 &\text{if } x = 0 \text{ or } x = \pi \\
+    -1 &\text{if } -\pi < x < 0 \\
+\end{cases} 
+$$
+
+The fact that $f$ is an odd function (i.e., $f(−x) =−f(x)$) means we can avoid
+doing any integrals for the moment and just appeal to a symmetry argument to conclude
+
+$$ 
+a_0 = \frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x)dx = 0
+$$
+
+$$ 
+a_n = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \cos (nx) dx = 0
+$$
+
+$$ 
+b_n = \begin{cases}
+    4/n \pi  &\text{if } n \text{ is odd}\\
+    0 &\text{if } n \text{ is even}\\
+\end{cases} 
+$$
+
+Proceeding on blind faith, we plug these results into equation 
+(6) to get the representation
+
+$$ 
+f(x) = \frac{4}{\pi }
+\sum_{n = 0}^{\infty}
+\frac{1}{2n+1} \sin ((2n+1)x)
+$$
+
+The code to plot it:
+
+```python
+x = np.linspace(-np.pi, np.pi, 500)
+y = np.zeros(x.shape)
+
+# Compute the function values
+N = 100
+for i in range(1, N, 2):
+    y += 4 / (i * np.pi) * np.sin(i * x)
+
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of fourier series')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+```
+
+### Exercise 8.5.4.
+
+(a) Referring to the previous example, explain why we can
+be sure that the convergence of the partial sums to $f(x)$ is not 
+uniform on any interval containing 0.
+
+**Proof**:
+
+This is because $f(x) = 0$, and $\frac{1}{2n+1} \sin ((2n+1)x)$
+are all continuous function, so we can find $U_{\delta}(0)$,
+such that $S_N(x) < 0.5$.
+Then $|f(x) - S_N(x)| > 0.5$. Therefore, the convergence
+is not uniform.
+
+$\square$
+
+(b) Repeat the computations of Example 8.5.1 for the function $g(x) = |x|$ and examine graphs for some partial sums.
+This time, make use of the fact that g is even $(g(x) = g(−x))$
+to simplify the calculations. By just looking at the coeﬃcients, 
+how do we know this series converges uniformly to something?
+
+**Solution**:
+
+This time we can be sure $b_n = 0$.
+
+$$ 
+a_0 = \frac{1}{2 \pi } \int_{-\pi}^{\pi} |x| dx
+= \frac{1}{\pi } \int_{0}^{\pi} x dx \\
+= \frac{1}{\pi } \frac{x^2}{2} \Big|_0^{\pi } \\
+= \frac{\pi }{2}
+$$
+
+And
+
+$$ 
+a_n = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (nx) dx \\
+=
+\frac{2}{\pi } \int_{0}^{\pi}
+x \cos (nx) dx \\
+=
+\frac{2}{\pi }
+\left( 
+\frac{x \sin (nx)}{n} + \frac{\cos (nx)}{n^2}
+ \right) \Big|_0^{\pi }
+$$
+
+So
+
+$$ 
+a_n = \begin{cases}
+    0 &\text{if } n \text{ is even}\\
+    -\frac{4}{n^2 \pi } &\text{if } n \text{ is odd}\\
+\end{cases}
+$$
+
+So, we have
+
+$$ 
+f(x) = \frac{\pi }{2} -
+\frac{4}{\pi }
+\sum_{n = 0}^{\infty} \frac{1}{(2n+1)^2} \cos ((2n+1)x)
+$$
+
+The code to plot is here:
+
+```python
+# Exercise 8.5.4 (b)
+x = np.linspace(-np.pi, np.pi, 500)
+y = np.zeros(x.shape) + (np.pi / 2)
+
+# Compute the function values
+N = 100
+for i in range(0, N):
+    y += -4 / (((2*i+1)**2) * np.pi) * np.cos((2*i+1) * x)
+
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of fourier series')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+```
+
+The coeﬃcients are $1/(2n+1)^2$, so it converges.
+Since it's independent of $x$, then it converges uniformly.
+
+$\square$
+
+(c) Use graphs to collect some empirical evidence regarding the 
+question of term-by-term diﬀerentiation in our two examples to 
+this point. Is it possible to conclude convergence or divergence 
+of either diﬀerentiated series by looking at the resulting 
+coeﬃcients? Theorem 6.4.3 is about the legitimacy of
+term-by-term diﬀerentiation. Can it be applied to either of
+these examples?
+
+**Proof**:
+
+If we look at the example 8.5.1, the coefficients
+are diverge, but from our graph, it does seem to converge.
+
+For exercise 8.5.4 (b), just from the coefficients, we know
+it's uniformly converging.
+
+Theorem 6.4.3 cannot be applied here. Since the direvative
+is not convergence uniformly.
+
+$\square$
+
+### The Riemann–Lebesgue Lemma
+
+### Theorem 8.5.2 (Riemann–Lebesgue Lemma).
+
+Assume $h(x)$ is continuous on $(-\pi, \pi ]$. Then
+
+$$ 
+\int_{-\pi}^{\pi} h(x) \sin (nx) dx \rightarrow 0
+$$
+
+and
+
+$$ 
+\int_{-\pi}^{\pi} h(x) \cos (nx) dx \rightarrow 0
+$$
+
+as $n \rightarrow \infty$.
+
+**Proof**: Remember that, like all of our functions from here on, we are mentally
+extending $h$ to be $2π$-periodic. Thus, while our attention is generally focused
+on the interval $(−π,π]$, the assumption of continuity is intended to mean that
+the periodically extended $h$ is continuous on all of $\mathbf{R}$. Note that in addition to
+continuity on $(−π,π]$, this amounts to insisting that
+
+$$ 
+\lim_{x \to -\pi ^{+}} h(x) = h(\pi ).
+$$
+
+### Exercise 8.5.5.
+
+Explain why $h$ is uniformly continuous on $\mathbf{R}$.
+
+**Proof**: $h$ is uniform continuous on $[−π,π]$ and
+it is $2π$-periodic. So it is uniform continuous on $\mathbf{R}$.
+
+$\square$
+
+Given $ϵ > 0$, choose $δ > 0$ such that $|x−y| < δ$ implies
+$|h(x)−h(y)| < ϵ/2$.
+The period of $\sin(nx)$ is $2π/n$, so choose $N$ large enough
+so that $2π/n < δ$ whenever
+$n ≥ N$.
+Now, consider a particular interval $[a,b]$ of length
+$2π/n$ over which $\sin(nx)$ moves through one complete 
+oscillation.
+
+### Exercise 8.5.6.
+
+Show that
+
+$$ 
+\left| 
+\int_{a}^{b}
+h(x) \sin(nx)dx
+\right| 
+< ϵ/n
+$$
+
+and use this fact to complete the proof.
+
+**Proof**: To simplify the discussion, let's first assume
+
+$$ 
+a = \frac{2k \pi }{n} \\
+c = \frac{(2k + 1) \pi }{n} \\
+b = \frac{(2k + 2) \pi }{n}
+$$
+
+Assume
+
+$$
+A \leq h(x) \leq B, x \in [a,c] \\
+D \leq h(x) \leq C, x \in [c,d] \\
+$$
+
+$$ 
+\int_{a}^{c} h(x) \sin (nx) \geq A \int_{a}^{c} \sin (nx)
+= A \frac{- \cos (nx)}{n} \Bigg|_a^c = \frac{2A}{n}
+$$
+
+For the same reason, $\int_{a}^{c} h(x) \sin (nx) \leq \frac{2B}{n}$.
+
+Similarly
+
+$$ 
+-\frac{2C}{n} \leq \int_{c}^{b} h(x) \sin (nx)
+\leq -\frac{2D}{n}
+$$
+
+So
+
+$$ 
+\frac{2(A-C)}{n} \leq
+\int_{a}^{b} h(x) \sin (nx)
+\leq
+\frac{2(B-D)}{n}
+$$
+
+Then we have
+
+$$ 
+\left| \frac{2(A-C)}{n} \right| <
+\frac{2 \epsilon / 2}{n} = \frac{\epsilon }{n}
+$$
+
+For the same reason
+$\left| \frac{2(B-D)}{n} \right| < \epsilon / n$.
+
+So
+
+$$ 
+\left| 
+\int_{a}^{b} h(x) \sin (nx)
+\right| < \epsilon / n
+$$
+
+There are $n$ segments with length of $\frac{2 \pi }{n}$
+between $[-\pi , \pi]$. So we proved theorem 8.5.2.
+
+$\square$
+
+### A Pointwise Convergence Proof
+
+Note that the coeﬃcients of the Fourier series are
+
+$$
+a_0 =
+\frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x) dx
+$$
+
+$$ 
+a_m = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (mx) dx
+\text{ and }
+b_m =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \sin (mx) dx
+$$
+
+So it requires that our function be integrable.
+The natural question to ask now is whether Riemann integrability 
+is enough or whether we need to make some additional assumptions 
+about $f$ in order to guarantee that the Fourier series converges 
+back to $f$. The answer depends on
+the type of convergence we hope to establish.
+
+$$ 
+f(x) = a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+$$
+
+The $f$ can have the following properties:
+* bounded
+* integrable
+* continuous
+* differentiable
+* $f'$ continuous
+
+The type of convergence can be:
+* pointwise
+* uniform
+* $L^2$
+* Cesaro mean
+
+### Theorem 8.5.3.
+
+Let $f(x)$ be continuous on $(−π,π]$, and let $S_N(x)$ be the
+Nth partial sum of the Fourier series described in equation (7), 
+where the coeﬃcients $(a_n)$ and $(b_n)$ are given by equations 
+(9) and (10). It follows that
+
+$$ 
+\lim_{N \to \infty} S_N(x) = f(x)
+$$
+
+pointwise at any $x ∈ (−π,π]$ where $f'(x)$ exists.
+
+**Proof**:
+
+Cataloging a few preliminary facts makes for a smoother
+argument.
+
+Fact 1: trigonometric identities
+
+$$ 
+\cos(α−θ) = \cos(α)\cos(θ)+\sin(α)\sin(θ) \\
+\sin(α+θ) = \sin(α)\cos(θ)+\cos(α)\sin(θ) \\
+$$
+
+Fact 2: Dirichlet kernel
+
+$$ 
+\frac{1}{2} + \cos(θ) + \cos(2θ) + \cos(3θ) +··· + \cos(Nθ)
+=
+\frac{\sin((N +1/2)θ)}{2\sin(θ/2)}
+\text{ for } θ \not = 2n \pi
+$$
+
+One proof from [wikipedia](https://en.wikipedia.org/wiki/Dirichlet_kernel#Alternative_proof_of_the_trigonometric_identity)
+
+Note that
+
+$$ 
+2 \sin(θ/2) \cos(nθ) =
+\sin \frac{n + 1/2}{2} θ -
+\sin \frac{n - 1/2}{2} θ
+$$
+
+Then multiply each side by $2 \sin(θ/2)$, then the equation holds.
+
+Furthermore, notice
+
+$$ 
+\lim_{\theta \to 0} 
+\frac{\sin((N +1/2)θ)}{2\sin(θ/2)}
+=
+\frac{N +1/2}{2 \cdot 1/2}
+\lim_{\theta \to 0}
+\frac{\cos ((N +1/2)θ)}{\cos (θ/2)}
+= N + 1/2 \\
+=
+\frac{1}{2} + \cos(0) + \cos(2 \cdot 0) + \cos(3 \cdot 0) +··· + \cos(N \cdot 0)
+$$
+
+Fact 3: Setting
+
+$$ 
+D_N(θ) =
+\begin{cases}
+    \frac{\sin((N +1/2)θ)}{2\sin(θ/2)}, &\text{if } \theta \not = 2n \pi \\
+    1/2 + N, &\text{if } \theta = 2n \pi \\
+\end{cases} 
+$$
+
+from Fact 2, we see that
+
+$$ 
+\int_{-\pi}^{\pi}
+D_N(θ) dθ = \pi
+$$
+
+Using Fact (1) and (2), we get
+
+$$
+\begin{split}
+S_N(x) &= a_0 + \sum_{n = 1}^{N}
+a_n \cos (nx) + b_n \sin (nx) \\
+&=
+\left[ \frac{1}{2 \pi } \int_{-\pi}^{\pi} f(t) dt \right] 
++
+\sum_{n = 1}^{N}
+\left[ \frac{1}{\pi } \int_{-\pi}^{\pi}f(t) \cos (nt) dt \right]
+\cos (nx)
++
+\left[ \frac{1}{\pi } \int_{-\pi}^{\pi}f(t) \sin (nt) dt \right]
+\sin (nx) \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+\left[ 
+\frac{1}{2}
++ \sum_{n = 1}^{N}
+\cos (nt) \cos (nx)
++ 
+\sin (nt) \sin (nx)
+\right] dt \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+\left[ 
+\frac{1}{2}
++ \sum_{n = 1}^{N} \cos (n(t-x))
+\right] dt \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+D_N(t-x) dt \\
+\end{split}
+$$
+
+Replace $u = t-x$, we have
+
+$$ 
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+D_N(t-x) dt =
+\frac{1}{\pi } \int_{-x-\pi}^{-x+\pi} f(u+x)
+D_N(u) du
+$$
+
+Since $f(u), D_N(u)$ are periodic function with period of
+$2 \pi$,
+
+$$ 
+\frac{1}{\pi } \int_{-x-\pi}^{-x+\pi} f(u+x)
+D_N(u) du
+=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(u+x)
+D_N(u) du
+$$
+
+By the fact of (3),
+
+$$ 
+f(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) D_N(u) du,
+$$
+
+And then it follows
+
+$$
+\tag{11}
+S_N(x) - f(x) =
+\frac{1}{\pi } \int_{-\pi}^{\pi}
+(f(u+x) - f(x)) D_N(u) du
+$$
+
+Using Fact 1(b), we can rewrite the Dirichlet kernel as
+
+$$
+\begin{split}
+D_N(u) &= \frac{\sin((N +1/2)u)}{2\sin(u/2)}
+= \frac{
+\sin (Nu) \cos (u/2) + \cos (Nu) \sin (u/2)
+}{2\sin(u/2)} \\
+&=
+\frac{\sin (Nu) \cos (u/2)}{2\sin(u/2)} +
+\frac{\cos (Nu)}{2}    
+\end{split}
+$$
+
+Then equation (11) becomes
+
+$$ 
+\begin{split}
+S_N(x) - f(x)
+&=
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+(f(u+x) - f(x))
+\left[ 
+\frac{\sin (Nu) \cos (u/2)}{\sin(u/2)}
++
+\cos (Nu)
+\right] du \\
+&=
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+p_x(u) \sin (Nu) du +
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+q_x(u) \cos (Nu) du
+\end{split}
+$$
+
+where in the last step we have set
+
+$$ 
+p_x(u) = \frac{
+(f(u+x)-f(x)) \cos (u/2)
+}{\sin (u/2)}
+\text{ and }
+q_x(u) =
+f(u+x)-f(x)
+$$
+
+### Exercise 8.5.7. 
+(a) First, argue why the integral involving $q_x(u)$ tends to
+zero as $N → ∞$.
+
+**Proof**: $q_x(u)$ is a continuous function.
+So we directly apply the Riemann–Lebesgue Lemma.
+
+$\square$
+
+(b) The first integral is a little more subtle because the 
+function $p_x(u)$ has the
+$\sin(u/2)$ term in the denominator. Use the fact that $f$ is diﬀerentiable at
+$x$ (and a familiar limit from calculus)
+to prove that the first integral goes to zero as well.
+
+**Proof**:
+
+$$
+\lim_{u \to 0} 
+\frac{
+(f(u+x)-f(x)) \cos (u/2)
+}{\sin (u/2)} =\\
+\lim_{u \to 0} \frac{f(u+x) - f(x)}{u}
+\cdot
+\lim_{u \to 0} \frac{u}{\sin (u/2)}
+\cdot
+\cos (u/2) \\
+= 2f'(x)
+$$
+
+So $p_x(u)$ is also continuous $(-\pi, \pi]$.
+So again we directly apply the Riemann–Lebesgue Lemma.
+
+### Cesaro Mean Convergence
+
+### Exercise 8.5.8.
+
+Prove that if a sequence of real numbers $(x_n)$ converges, then
+the arithmetic means
+
+$$ 
+y_n = \frac{x_1 + x_2 + x_3 + \cdots + x_n}{n}
+$$
+
+also converge to the same limit. Give an example to show that it 
+is possible for the sequence of means $(y_n)$ to converge even if 
+the original sequence $(x_n)$ does not.
+
+**Proof**:
+
+Assume $\lim_{n \to \infty} x_n = c$, and given $\epsilon$ we
+can find a $N_1$ such that $|x_n - c| < \epsilon /2$ for
+$n > N_1$.
+For
+
+$$ 
+S_{N_1} = \sum_{n=1}^{N_1} x_1 + x_2 + x_3 + \cdots + x_{N_1}
+$$
+
+Let $A = S_{N_1} - N_1 c$, then we can find $N_2$ such that
+$|A/N_2| < \epsilon / 2$.
+
+Let $N = \max \{N_1, N_2\}$. For $n > N$,
+
+$$ 
+\left| 
+\frac{x_1 + x_2 + x_3 + \cdots + x_n}{n} - c
+ \right|
+ =
+\left| 
+\frac{A + (x_{N_1+1}-c) + (x_{N_1 + 2} -c)
++ (x_n - c)}{n}
+ \right| \\
+<
+\frac{A}{N_2} + \frac{n - N_1 + 1}{n} \cdot \epsilon / 2
+< \epsilon / 2 + \epsilon / 2 = \epsilon 
+$$
+
+Consider $x_n = (-1)^n$, $(x_n)$ does not converge,
+but $(y_n)$ does converge.
+
+$\square$
+
+### Theorem 8.5.4 (Fejer’s Theorem).
+
+Let $S_n(x)$ be the $n$th partial sum of the
+Fourier series for a function f on $(−π,π]$. Define
+
+$$ 
+σ_N(x) = \frac{1}{N+1} \sum_{n = 0}^{N} S_n(x).
+$$
+
+If $f$ is continuous on $(−π,π]$, then $σ_N(x) → f(x)$ uniformly.
+
+**Proof**:
+
+We will use the following fact
+
+$$ 
+\sin (1 \theta) + \sin (2 \theta) + \sin (3 \theta) + \cdots + \sin (N \theta) =
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+$$
+
+Note that
+
+$$ 
+\sin (θ) \sin (\frac{θ}{2}) = \frac{1}{2}
+(\cos (θ/2) - \cos (3θ/2))
+$$
+
+So we get
+
+$$ 
+\cos (θ/2) - \cos ((N+1/2)θ) = - 2
+\sin (-\frac{N}{2} θ) \sin (\frac{(N+1)θ}{2})
+= \sin (\frac{Nθ}{2}) \sin (\frac{(N+1)θ}{2})
+$$
+
+### Exercise 8.5.9.
+
+Use the previous identity to show that
+
+$$ 
+\frac{
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ)
+}{N+1} =
+\frac{1}{2(N+1)}
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+$$
+
+**Proof**:
+
+Note that
+
+$$ 
+D_N(θ) =
+\frac{\sin (Nθ) \cos (θ/2)}{2\sin(θ/2)} +
+\frac{\cos (Nθ)}{2}
+$$
+
+So
+$$ 
+\begin{split}
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ) = \\
+1/2(1 + \cos(1 \theta) + \cos(2 \theta) + \cdots + \cos(N \theta)) + \\
+\frac{\cos (θ/2)}{2\sin(θ/2)}
+(\sin(1 \theta) + \sin(2 \theta) + \cdots + \sin(N \theta))
+\\
+&= 1/2(1/2 + D_N(θ)) +
+\frac{\cos (θ/2)}{2\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+\end{split}
+$$
+
+Then let's see
+
+$$ 
+\begin{split}
+1/2 + D_N(\theta)
+\\
+&= 1/2 +
+\frac{
+    \sin ((N+1/2)θ)
+}{
+    2 \sin(θ/2)
+}\\
+&=
+\frac{
+\sin (\frac{(N+1) θ}{2}) \cos (\frac{N θ}{2})
+}{\sin (θ/2)}
+\end{split}
+$$
+
+So we have
+
+$$ 
+\begin{split}
+1/2 + D_N(\theta) + \frac{\cos (θ/2)}{\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+\\
+&= \frac{
+\sin (\frac{(N+1) θ}{2}) \cos (\frac{N θ}{2})
+}{\sin (θ/2)}
++
+\frac{\cos (θ/2)}{\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( θ/2 )}
+\\
+&=
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+\end{split}
+$$
+
+So we proved it.
+
+$\square$
+
+### Exercise 8.5.10.
+
+(a) Show that
+
+$$ 
+σ_N(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi} f(u+x) F_N (u) du
+$$
+
+**Proof**:
+
+$$ 
+S_N(x) = 
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(u+x)
+D_N(u) du
+$$
+
+$$ 
+S_0(x) = a_0 = \frac{1}{2 \pi } \int_{-\pi}^{\pi} f(u+x) du
+$$
+
+So 
+
+$$ 
+σ_N(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi} f(u+x) F_N (u) du
+$$
+
+$\square$
+
+(b) Graph the function $F_N(u)$ for several values of $N$. Where 
+is $F_N$ large, and where is it close to zero? Compare
+this function to the Dirichlet kernel $D_N(u)$.
+Now, prove that $F_N → 0$ uniformly on any set of the form
+$\{u : |u| ≥ δ\}$, where $δ > 0$ is fixed (and u is restricted to 
+the interval $(−π,π]$).
+
+**Proof**:
+
+The code to plot $F_N(u)$.
+
+```python
+x = np.linspace(-np.pi, np.pi, 500)
+N = 100
+y = 1/(2*(N+1)) * (np.sin((N+1)*x/2) / np.sin(x/2)) ** 2
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of Fejer kernel')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+```
+
+It's big when $u$ is close to 0. When it's away from 0,
+$F_N$ is close to 0.
+
+The code to plot $D_N(u)$.
+
+```python
+x = np.linspace(-np.pi, np.pi, 500)
+N = 10
+y = np.sin((N+0.5) * x) / (2 * np.sin(x/2))
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of Dirichlet kernel')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+```
+
+We rewrite the Fejer kernel here
+
+$$
+F_N(θ) =
+\frac{1}{2(N+1)}
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+$$
+
+Since $|u| \geq \delta$, then
+$|\sin (\frac{θ}{2})| \geq \sin (\frac{\delta }{2})$,
+
+So
+
+$$ 
+F_N(θ) \leq \frac{1}{2(N+1)} \frac{1}{\sin ^2 (\delta/2)}
+$$
+
+So we proved.
+
+$\square$
+
+(c) Prove that $\int_{-\pi}^{\pi} F_N(u)du = \pi$
+
+**Proof**:
+
+Note that $\int_{-\pi}^{\pi} D_n(θ) dθ = \pi$, so
+
+$$
+\int_{-\pi}^{\pi}
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ)
+= (N+1) \pi 
+$$
+
+So $\int_{-\pi}^{\pi} F_N(u)du = \pi$.
+
+$\square$
+
+(d) To finish the proof of Fejer’s Theorem, first choose a
+$δ > 0$ so the
+
+$$ 
+|u| < \delta \text{ implies } |f(x+u) - f(x)| < \epsilon
+$$
+
+Set up a single integral that represents the diﬀerence
+$σ_N(x)− f(x)$ and divide this integral into sets where
+$|u| ≤ δ$ and $|u| ≥ δ$. Explain why it is
+possible to make each of these integrals suﬃciently small, 
+independently of the choice of $x$.
+
+**Proof**:
+
+Given $\epsilon$, since $f(x)$ is continuous, we can find
+$\delta$, for $|u| < δ$, then $|f(x+u) - f(x)| < \epsilon$.
+
+Then fix $x$, we have
+
+$$
+f(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) F_N(u) du
+$$
+
+Then
+
+$$ 
+σ_N(x)− f(x) =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+(f(x+u) - f(x)) F_N(u) du
+$$
+
+Consider
+
+$$
+\left|
+\int_{-\delta}^{\delta} (f(x+u) - f(x)) F_N(u) du
+\right| 
+\\
+\leq
+\int_{-\delta}^{\delta}
+|(f(x+u) - f(x)) F_N(u)| du \\
+\leq
+\int_{-\delta}^{\delta}
+\epsilon F_N(u) du < \epsilon \pi
+$$
+
+Also
+
+$$ 
+\left|
+\int_{\delta}^{\pi} (f(x+u) - f(x)) F_N(u) du
+\right| \\
+\leq
+\int_{\delta}^{\pi}
+|(f(x+u) - f(x)) F_N(u)| du \\
+\leq
+2A \epsilon \pi 
+$$
+
+Same thing holds for $[-\pi, -\delta]$.
+
+So it is possible to make each of these integrals suﬃciently 
+small, independently of the choice of $x$.
+
+$\square$
+
+### Exercise 8.5.11.
+
+(a) Use the fact that the Taylor series for $\sin(x)$ and
+$\cos(x)$ converge uniformly on any compact set to prove WAT 
+under the added assumption that $[a,b]$ is $[0,π]$.
+
+**Proof**: For a continuous function $f(x)$ defined on
+$[0,π]$, and given $\epsilon$, we can find a Fourier partial
+sum $S_N(x)$, such that
+
+$$ 
+|f(x) - σ_N(x) | < \epsilon / 2
+$$
+
+for $[0,π]$.
+
+Then for each $\sin (nx), \cos (nx)$, $n = 1, 2, 3, \cdots, N$,
+It's possible to find a polynomial $g_n(x), h_n(x)$ such that
+
+$$ 
+|\sin (nx) - g_n(x) | < \frac{\epsilon }{2 a_n N}
+\text{ and }
+|\cos (nx) - h_n(x) | < \frac{\epsilon }{2 b_n N}
+$$
+
+Then we can find the polynomial.
+
+$\square$
+
+(b) Show how the case for an arbitrary interval [a,b] follows from this one.
+
+**Proof**:
+
+Assume if $f(x)$ is defined on $[a,b]$, then let
+$g(u) = f(a + \frac{u}{\pi } (b-a) )$, then $g(u)$ is
+defined on $[0,\pi ]$.
+Furthermore, $f(x) = g(\frac{x-a}{b-a} \pi)$.
+
+From (a), we can find a polynomial $g_n$ such that
+
+$$ 
+|g(u) - g_n(u)| < \epsilon
+$$
+
+Then
+
+$$ 
+|f(x) - g_n(\frac{x-a}{b-a} \pi) | < \epsilon 
+$$
+
+$\square$
+

@@ -92,3 +92,66 @@ If $f'(x)$ is not continuous,
 then it might not be true.
 What if we add a condition that $|f'(x)| < 1$.
  
+2. At the end of chapter 8.5 right after exercise 8.5.7
+the author mentioned if we assume $f'$ is continuous, then the
+fourier series converges uniformly to $f$.
+
+I think our first step would be to show
+
+$$ 
+f_n(x) = \int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+$$
+
+converges uniformly to 0, if $f'$ is continuous.
+
+$$
+\begin{split}
+\int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+&= \frac{f(u+x)- f(x)}{n} \sin (nu) \Bigg|_{-\pi }^{\pi} -
+\int_{-\pi}^{\pi} f'(u+x)  \frac{\sin (nu)}{n} du \\
+&=
+- \frac{1}{n} \int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+\end{split}
+$$
+
+Since $f'$ is continuous and has a period of $2 \pi$, then
+we have $|f(x)| \leq A$ 
+
+$$ 
+\left| 
+\int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+ \right|
+\leq
+\int_{-\pi}^{\pi}
+\left| f'(u+x) \sin (nu) \right| du
+\leq
+\int_{-\pi}^{\pi}
+A du = 2 \pi A
+$$
+
+So
+
+$$
+\left| 
+\int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+\right| =
+\left| 
+- \frac{1}{n} \int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+\right| \leq
+\frac{2 \pi A}{n}
+$$
+
+This means $f_n(x)$ converges uniformly.
+
+It should point us to the direction, we should prove:
+
+If $h(x)$ has continuous direvative $h'(x)$ and is a periodic
+function of $2 \pi$, then
+
+$$ 
+\int_{-\pi}^{\pi} h(x) \sin (nx)
+\text{ and } 
+\int_{-\pi}^{\pi} h(x) \cos (nx)
+$$
+
+converges uniformly.
