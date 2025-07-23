@@ -225,6 +225,69 @@ assumption is true based on L'Hospital rule.</p>
 <p>If <script type="math/tex">f'(x)</script> is not continuous,
 then it might not be true.
 What if we add a condition that <script type="math/tex">|f'(x)| < 1</script>.</p>
+<ol>
+<li>At the end of chapter 8.5 right after exercise 8.5.7
+the author mentioned if we assume <script type="math/tex">f'</script> is continuous, then the
+fourier series converges uniformly to <script type="math/tex">f</script>.</li>
+</ol>
+<p>I think our first step would be to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+</script>
+</p>
+<p>converges uniformly to 0, if <script type="math/tex">f'</script> is continuous.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+\int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+&= \frac{f(u+x)- f(x)}{n} \sin (nu) \Bigg|_{-\pi }^{\pi} -
+\int_{-\pi}^{\pi} f'(u+x)  \frac{\sin (nu)}{n} du \\
+&=
+- \frac{1}{n} \int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+\end{split}
+</script>
+</p>
+<p>Since <script type="math/tex">f'</script> is continuous and has a period of <script type="math/tex">2 \pi</script>, then
+we have <script type="math/tex">|f(x)| \leq A</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+ \right|
+\leq
+\int_{-\pi}^{\pi}
+\left| f'(u+x) \sin (nu) \right| du
+\leq
+\int_{-\pi}^{\pi}
+A du = 2 \pi A
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\left| 
+\int_{-\pi}^{\pi} (f(u+x) - f(x)) \cos (nu) du
+\right| =
+\left| 
+- \frac{1}{n} \int_{-\pi}^{\pi} f'(u+x) \sin (nu)  du
+\right| \leq
+\frac{2 \pi A}{n}
+</script>
+</p>
+<p>This means <script type="math/tex">f_n(x)</script> converges uniformly.</p>
+<p>It should point us to the direction, we should prove:</p>
+<p>If <script type="math/tex">h(x)</script> has continuous direvative <script type="math/tex">h'(x)</script> and is a periodic
+function of <script type="math/tex">2 \pi</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi}^{\pi} h(x) \sin (nx)
+\text{ and } 
+\int_{-\pi}^{\pi} h(x) \cos (nx)
+</script>
+</p>
+<p>converges uniformly.</p>
               
             </div>
           </div><footer>

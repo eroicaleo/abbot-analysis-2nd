@@ -2810,6 +2810,1775 @@ x! =
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="85-fourier-series">8.5 Fourier Series</h2>
+<h3 id="trigonometric-series">Trigonometric Series</h3>
+<p>A trigonometric series has the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = a_0 +
+a_1 \cos (x) + b_1 \sin (x) +
+a_2 \cos (2x) + b_2 \sin (2x) +
+a_3 \cos (3x) + b_3 \sin (3x) + \cdots \\
+= a_0 + \sum_{n = 1}^{\infty} a_n \cos (nx) + b_n \sin (nx)
+</script>
+</p>
+<p>The idea ofrepresenting a function in this way was not completely new when
+Fourier first publicly proposed it in 1807. About 50 years earlier, Jean Le Rond
+d’Alembert (1717–1783) published the partial diﬀerential equation</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{1}
+\frac{\partial ^2 u}{\partial x^2}
+=
+\frac{\partial ^2 u}{\partial t^2}
+</script>
+</p>
+<p>as a means of describing the motion of a vibrating string. In this model, the
+function <script type="math/tex">u(x,t)</script> represents the displacement of the string at time <script type="math/tex">t ≥ 0</script> and at
+some point <script type="math/tex">x</script>, which we will take to be in the interval <script type="math/tex">[0,π]</script>. Because the string
+is understood to be attached at each end of this interval, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{2}
+u(0,t) = 0 \text{ and } u(\pi, t) = 0
+</script>
+</p>
+<p>for all values of <script type="math/tex">t ≥ 0</script>. Now, at <script type="math/tex">t = 0</script>, the string is 
+displaced some initial amount,
+and at the moment it is released we assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{3}
+\frac{\partial u}{\partial t} (x, 0) = 0
+</script>
+</p>
+<p>meaning that, although the string immediately starts to move, it is given no
+initial velocity at any point. Finding a function <script type="math/tex">u(x,t)</script> that satisfies equations (1), (2), and (3) is not too diﬃcult.</p>
+<h3 id="exercise-851">Exercise 8.5.1.</h3>
+<p>(a) Verify that</p>
+<p>
+<script type="math/tex; mode=display"> 
+u(x,t) = b_n \sin (nx) \cos (nt)
+</script>
+</p>
+<p>satisfies equations (1), (2), and (3) for any choice of
+<script type="math/tex">n ∈ \mathbf{N}</script> and <script type="math/tex">b_n ∈ \mathbf{R}</script>.
+What goes wrong if <script type="math/tex">n \not\in N</script>?</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\partial u}{\partial x} =
+n b_n \cos (nx) \cos (nt) \\
+\frac{\partial^2 u}{\partial x^2} =
+-n^2 b_n \sin (nx) \cos (nt)
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\partial u}{\partial t} =
+-n b_n \sin (nx) \sin (nt) \\
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\partial^2 u}{\partial t^2} =
+-n^2 b_n \sin (nx) \cos (nt)
+</script>
+</p>
+<p>So (1) holds.</p>
+<p>
+<script type="math/tex; mode=display"> 
+u(0, t) = b_n \sin (n \cdot 0) \cos (nt) = 0 \\
+u(\pi, t) = b_n \sin (n \cdot \pi) \cos (nt) = 0 \\
+</script>
+</p>
+<p>So (2) holds.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{\partial u}{\partial t} (x, 0)
+= -n b_n \sin (nx) \sin (n \cdot 0)
+= 0
+</script>
+</p>
+<p>So (3) holds.</p>
+<p>if <script type="math/tex">a \not \in \mathbf{N}</script>
+<script type="math/tex; mode=display"> 
+u(\pi, t) = b_n \sin (a \cdot \pi) \cos (a \cdot t) \not = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Explain why any finite sum of functions of the form given in 
+part (a) would also satisfy (1), (2), and (3).</p>
+<p><strong>Proof</strong>: We can do the operation (1), (2), and (3) item by item.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Now, we come to the truly interesting issue. We have just seen 
+that any function of the form</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{4}
+u(x,t) = \sum_{n = 1}^{N} b_n \sin (nx) \cos (nt)
+</script>
+</p>
+<p>At time <script type="math/tex">t = 0</script>, we will
+assume that the string is given some initial displacement
+<script type="math/tex">f(x) = u(x,0)</script>. Setting
+<script type="math/tex">t = 0</script> in our family of solutions in (4), the hope is that the initial displacement
+function <script type="math/tex">f(x)</script> can be expressed as</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \sum_{n = 1}^{N} b_n \sin (nx)
+</script>
+</p>
+<h3 id="periodic-functions">Periodic Functions</h3>
+<p>Fourier arrived at the more general
+formulation of the problem, which is to find suitable coeﬃcients
+<script type="math/tex">(a_n)</script> and <script type="math/tex">(b_n)</script>
+to express a function <script type="math/tex">f(x)</script> as</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{6}
+f(x) = a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+</script>
+</p>
+<p>We will give primary attention to the interval <script type="math/tex">(−π,π]</script>.</p>
+<h3 id="types-of-convergence">Types of Convergence</h3>
+<p>Our usual course of action with infinite series is first to define the partial sum</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{7}
+S_N(x) = a_0 + \sum_{n = 1}^{N}
+a_n \cos (nx) + b_n \sin (nx)
+</script>
+</p>
+<p>To "express <script type="math/tex">f(x)</script> as a trigonometric series" then means finding coeﬃcients <script type="math/tex">(a_n)_{n=0}^{\infty}</script> and <script type="math/tex">(b_n)_{n=0}^{\infty}</script>
+so that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{8}
+f(x) = \lim_{N \to \infty} S_N(x)
+</script>
+</p>
+<p>The question remainsas to what kind of limit this is.</p>
+<ul>
+<li>Fourier probably imagined something akin to a pointwise limit.</li>
+<li>
+<script type="math/tex">L^2</script> convergence:</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+|S_N(x) - f(x)|^2 dx \rightarrow 0
+</script>
+</p>
+<ul>
+<li>Cesaro mean convergence, relies on demonstrating that the
+averages of the partial sums converge, in our case uniformly, to
+<script type="math/tex">f(x)</script>.</li>
+</ul>
+<h3 id="fourier-coefficients">Fourier Coeﬃcients</h3>
+<p>Exercise 8.5.2. Using trigonometric identities when necessary, verify the following integrals.</p>
+<p>(a) For all <script type="math/tex">n \in \mathbf{N}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+\cos (nx) = 0
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin (nx) = 0
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(x) = \frac{1}{n} \sin (nx)
+</script>
+</p>
+<p>Then <script type="math/tex">F'(x) = \cos (nx)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+F(\pi) - F(-\pi ) = 0 - 0 = 0
+</script>
+</p>
+<p>Similarly, <script type="math/tex">F(x) = \frac{1}{n} \cos (nx)</script>,
+then <script type="math/tex">F'(x) = \sin (nx)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+F(\pi) - F(-\pi ) = \frac{1}{n} ( \cos (n \pi ) - \cos (-n \pi) )
+= 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) For all <script type="math/tex">n \in \mathbf{N}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+\cos ^2 (nx) = \pi 
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin ^2 (nx) = \pi 
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos ^2 (nx) =
+\frac{1 + \cos (2nx)}{2}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sin ^2 (nx) =
+\frac{1 - \cos (2nx)}{2}
+</script>
+</p>
+<p>Then from (a), it's done.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) For all <script type="math/tex">m, n \in \mathbf{N}</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+\cos (mx) \sin (nx) = 0.
+</script>
+</p>
+<p>For <script type="math/tex">m \not = n</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+\cos (mx) \cos (nx) = 0
+\text{ and }
+\int_{-\pi }^{\pi }
+\sin (mx) \sin (nx) = 0
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos (mx) \sin (nx)
+=
+\frac{\sin ((m+n)x) + \sin ((m-n)x) }{2}
+</script>
+</p>
+<p>Then we can use (a). And similarly for the other 2.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>The consequences of these results are much more interesting than their
+proofs. The intuition from inner-product spaces is useful. Interpreting the
+integral as a kind of dot product, this exercise can be summarized by saying
+that the functions</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{
+1,
+\cos (x), \sin (x),
+\cos (2x), \sin (2x),
+\cos (3x), \sin (3x),
+\cdots
+\}
+</script>
+</p>
+<p>are all orthogonal to each other. The content of what follows is that they in
+fact form a basis for a large class of functions.</p>
+<p>To compute <script type="math/tex">a_0</script>, integrate each side of equation (6) from
+<script type="math/tex">−π</script> to <script type="math/tex">π</script>, brazenly
+take the integral inside the infinite sum, and use
+Exercise 8.5.2 to get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi }^{\pi }
+f(x)
+=
+\int_{-\pi }^{\pi }
+\left[ 
+a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+ \right] dx \\
+=
+\int_{-\pi }^{\pi } a_0 dx +
+\sum_{n = 1}^{\infty}
+\int_{-\pi }^{\pi }
+[a_n \cos (nx) + b_n \sin (nx)] dx \\
+= a_0(2 \pi ) +
+\sum_{n = 1}^{\infty}
+a_n 0 + b_n 0 = a_0(2 \pi )
+</script>
+</p>
+<p>Thus</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{9}
+a_0 =
+\frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x) dx
+</script>
+</p>
+<h3 id="exercise-853">Exercise 8.5.3.</h3>
+<p>Derive the formulas</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{10}
+a_m = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (mx) dx
+\text{ and }
+b_m =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \sin (mx) dx
+</script>
+</p>
+<p>for all <script type="math/tex">m \geq 1</script>.</p>
+<p>Proof:</p>
+<p>We can directly use exercise 8.5.2 (b) (c).</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="example-851">Example 8.5.1.</h3>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \begin{cases}
+    1 &\text{if } 0 < x < \pi \\
+    0 &\text{if } x = 0 \text{ or } x = \pi \\
+    -1 &\text{if } -\pi < x < 0 \\
+\end{cases} 
+</script>
+</p>
+<p>The fact that <script type="math/tex">f</script> is an odd function (i.e., <script type="math/tex">f(−x) =−f(x)</script>) means we can avoid
+doing any integrals for the moment and just appeal to a symmetry argument to conclude</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0 = \frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x)dx = 0
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \cos (nx) dx = 0
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_n = \begin{cases}
+    4/n \pi  &\text{if } n \text{ is odd}\\
+    0 &\text{if } n \text{ is even}\\
+\end{cases} 
+</script>
+</p>
+<p>Proceeding on blind faith, we plug these results into equation 
+(6) to get the representation</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \frac{4}{\pi }
+\sum_{n = 0}^{\infty}
+\frac{1}{2n+1} \sin ((2n+1)x)
+</script>
+</p>
+<p>The code to plot it:</p>
+<pre><code class="language-python">x = np.linspace(-np.pi, np.pi, 500)
+y = np.zeros(x.shape)
+
+# Compute the function values
+N = 100
+for i in range(1, N, 2):
+    y += 4 / (i * np.pi) * np.sin(i * x)
+
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of fourier series')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+</code></pre>
+<h3 id="exercise-854">Exercise 8.5.4.</h3>
+<p>(a) Referring to the previous example, explain why we can
+be sure that the convergence of the partial sums to <script type="math/tex">f(x)</script> is not 
+uniform on any interval containing 0.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is because <script type="math/tex">f(x) = 0</script>, and <script type="math/tex">\frac{1}{2n+1} \sin ((2n+1)x)</script>
+are all continuous function, so we can find <script type="math/tex">U_{\delta}(0)</script>,
+such that <script type="math/tex">S_N(x) < 0.5</script>.
+Then <script type="math/tex">|f(x) - S_N(x)| > 0.5</script>. Therefore, the convergence
+is not uniform.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Repeat the computations of Example 8.5.1 for the function <script type="math/tex">g(x) = |x|</script> and examine graphs for some partial sums.
+This time, make use of the fact that g is even <script type="math/tex">(g(x) = g(−x))</script>
+to simplify the calculations. By just looking at the coeﬃcients, 
+how do we know this series converges uniformly to something?</p>
+<p><strong>Solution</strong>:</p>
+<p>This time we can be sure <script type="math/tex">b_n = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0 = \frac{1}{2 \pi } \int_{-\pi}^{\pi} |x| dx
+= \frac{1}{\pi } \int_{0}^{\pi} x dx \\
+= \frac{1}{\pi } \frac{x^2}{2} \Big|_0^{\pi } \\
+= \frac{\pi }{2}
+</script>
+</p>
+<p>And</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (nx) dx \\
+=
+\frac{2}{\pi } \int_{0}^{\pi}
+x \cos (nx) dx \\
+=
+\frac{2}{\pi }
+\left( 
+\frac{x \sin (nx)}{n} + \frac{\cos (nx)}{n^2}
+ \right) \Big|_0^{\pi }
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_n = \begin{cases}
+    0 &\text{if } n \text{ is even}\\
+    -\frac{4}{n^2 \pi } &\text{if } n \text{ is odd}\\
+\end{cases}
+</script>
+</p>
+<p>So, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \frac{\pi }{2} -
+\frac{4}{\pi }
+\sum_{n = 0}^{\infty} \frac{1}{(2n+1)^2} \cos ((2n+1)x)
+</script>
+</p>
+<p>The code to plot is here:</p>
+<pre><code class="language-python"># Exercise 8.5.4 (b)
+x = np.linspace(-np.pi, np.pi, 500)
+y = np.zeros(x.shape) + (np.pi / 2)
+
+# Compute the function values
+N = 100
+for i in range(0, N):
+    y += -4 / (((2*i+1)**2) * np.pi) * np.cos((2*i+1) * x)
+
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of fourier series')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+</code></pre>
+<p>The coeﬃcients are <script type="math/tex">1/(2n+1)^2</script>, so it converges.
+Since it's independent of <script type="math/tex">x</script>, then it converges uniformly.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Use graphs to collect some empirical evidence regarding the 
+question of term-by-term diﬀerentiation in our two examples to 
+this point. Is it possible to conclude convergence or divergence 
+of either diﬀerentiated series by looking at the resulting 
+coeﬃcients? Theorem 6.4.3 is about the legitimacy of
+term-by-term diﬀerentiation. Can it be applied to either of
+these examples?</p>
+<p><strong>Proof</strong>:</p>
+<p>If we look at the example 8.5.1, the coefficients
+are diverge, but from our graph, it does seem to converge.</p>
+<p>For exercise 8.5.4 (b), just from the coefficients, we know
+it's uniformly converging.</p>
+<p>Theorem 6.4.3 cannot be applied here. Since the direvative
+is not convergence uniformly.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="the-riemannlebesgue-lemma">The Riemann–Lebesgue Lemma</h3>
+<h3 id="theorem-852-riemannlebesgue-lemma">Theorem 8.5.2 (Riemann–Lebesgue Lemma).</h3>
+<p>Assume <script type="math/tex">h(x)</script> is continuous on <script type="math/tex">(-\pi, \pi ]</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi}^{\pi} h(x) \sin (nx) dx \rightarrow 0
+</script>
+</p>
+<p>and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi}^{\pi} h(x) \cos (nx) dx \rightarrow 0
+</script>
+</p>
+<p>as <script type="math/tex">n \rightarrow \infty</script>.</p>
+<p><strong>Proof</strong>: Remember that, like all of our functions from here on, we are mentally
+extending <script type="math/tex">h</script> to be <script type="math/tex">2π</script>-periodic. Thus, while our attention is generally focused
+on the interval <script type="math/tex">(−π,π]</script>, the assumption of continuity is intended to mean that
+the periodically extended <script type="math/tex">h</script> is continuous on all of <script type="math/tex">\mathbf{R}</script>. Note that in addition to
+continuity on <script type="math/tex">(−π,π]</script>, this amounts to insisting that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{x \to -\pi ^{+}} h(x) = h(\pi ).
+</script>
+</p>
+<h3 id="exercise-855">Exercise 8.5.5.</h3>
+<p>Explain why <script type="math/tex">h</script> is uniformly continuous on <script type="math/tex">\mathbf{R}</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">h</script> is uniform continuous on <script type="math/tex">[−π,π]</script> and
+it is <script type="math/tex">2π</script>-periodic. So it is uniform continuous on <script type="math/tex">\mathbf{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Given <script type="math/tex">ϵ > 0</script>, choose <script type="math/tex">δ > 0</script> such that <script type="math/tex">|x−y| < δ</script> implies
+<script type="math/tex">|h(x)−h(y)| < ϵ/2</script>.
+The period of <script type="math/tex">\sin(nx)</script> is <script type="math/tex">2π/n</script>, so choose <script type="math/tex">N</script> large enough
+so that <script type="math/tex">2π/n < δ</script> whenever
+<script type="math/tex">n ≥ N</script>.
+Now, consider a particular interval <script type="math/tex">[a,b]</script> of length
+<script type="math/tex">2π/n</script> over which <script type="math/tex">\sin(nx)</script> moves through one complete 
+oscillation.</p>
+<h3 id="exercise-856">Exercise 8.5.6.</h3>
+<p>Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{a}^{b}
+h(x) \sin(nx)dx
+\right| 
+< ϵ/n
+</script>
+</p>
+<p>and use this fact to complete the proof.</p>
+<p><strong>Proof</strong>: To simplify the discussion, let's first assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a = \frac{2k \pi }{n} \\
+c = \frac{(2k + 1) \pi }{n} \\
+b = \frac{(2k + 2) \pi }{n}
+</script>
+</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display">
+A \leq h(x) \leq B, x \in [a,c] \\
+D \leq h(x) \leq C, x \in [c,d] \\
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{a}^{c} h(x) \sin (nx) \geq A \int_{a}^{c} \sin (nx)
+= A \frac{- \cos (nx)}{n} \Bigg|_a^c = \frac{2A}{n}
+</script>
+</p>
+<p>For the same reason, <script type="math/tex">\int_{a}^{c} h(x) \sin (nx) \leq \frac{2B}{n}</script>.</p>
+<p>Similarly</p>
+<p>
+<script type="math/tex; mode=display"> 
+-\frac{2C}{n} \leq \int_{c}^{b} h(x) \sin (nx)
+\leq -\frac{2D}{n}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{2(A-C)}{n} \leq
+\int_{a}^{b} h(x) \sin (nx)
+\leq
+\frac{2(B-D)}{n}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| \frac{2(A-C)}{n} \right| <
+\frac{2 \epsilon / 2}{n} = \frac{\epsilon }{n}
+</script>
+</p>
+<p>For the same reason
+<script type="math/tex">\left| \frac{2(B-D)}{n} \right| < \epsilon / n</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\int_{a}^{b} h(x) \sin (nx)
+\right| < \epsilon / n
+</script>
+</p>
+<p>There are <script type="math/tex">n</script> segments with length of <script type="math/tex">\frac{2 \pi }{n}</script>
+between <script type="math/tex">[-\pi , \pi]</script>. So we proved theorem 8.5.2.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="a-pointwise-convergence-proof">A Pointwise Convergence Proof</h3>
+<p>Note that the coeﬃcients of the Fourier series are</p>
+<p>
+<script type="math/tex; mode=display">
+a_0 =
+\frac{1}{2 \pi }
+\int_{-\pi}^{\pi}
+f(x) dx
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_m = \frac{1}{\pi } \int_{-\pi}^{\pi}
+f(x) \cos (mx) dx
+\text{ and }
+b_m =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) \sin (mx) dx
+</script>
+</p>
+<p>So it requires that our function be integrable.
+The natural question to ask now is whether Riemann integrability 
+is enough or whether we need to make some additional assumptions 
+about <script type="math/tex">f</script> in order to guarantee that the Fourier series converges 
+back to <script type="math/tex">f</script>. The answer depends on
+the type of convergence we hope to establish.</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = a_0 + \sum_{n = 1}^{\infty}
+a_n \cos (nx) + b_n \sin (nx)
+</script>
+</p>
+<p>The <script type="math/tex">f</script> can have the following properties:
+* bounded
+* integrable
+* continuous
+* differentiable
+* <script type="math/tex">f'</script> continuous</p>
+<p>The type of convergence can be:
+* pointwise
+* uniform
+* <script type="math/tex">L^2</script>
+* Cesaro mean</p>
+<h3 id="theorem-853">Theorem 8.5.3.</h3>
+<p>Let <script type="math/tex">f(x)</script> be continuous on <script type="math/tex">(−π,π]</script>, and let <script type="math/tex">S_N(x)</script> be the
+Nth partial sum of the Fourier series described in equation (7), 
+where the coeﬃcients <script type="math/tex">(a_n)</script> and <script type="math/tex">(b_n)</script> are given by equations 
+(9) and (10). It follows that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{N \to \infty} S_N(x) = f(x)
+</script>
+</p>
+<p>pointwise at any <script type="math/tex">x ∈ (−π,π]</script> where <script type="math/tex">f'(x)</script> exists.</p>
+<p><strong>Proof</strong>:</p>
+<p>Cataloging a few preliminary facts makes for a smoother
+argument.</p>
+<p>Fact 1: trigonometric identities</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos(α−θ) = \cos(α)\cos(θ)+\sin(α)\sin(θ) \\
+\sin(α+θ) = \sin(α)\cos(θ)+\cos(α)\sin(θ) \\
+</script>
+</p>
+<p>Fact 2: Dirichlet kernel</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{2} + \cos(θ) + \cos(2θ) + \cos(3θ) +··· + \cos(Nθ)
+=
+\frac{\sin((N +1/2)θ)}{2\sin(θ/2)}
+\text{ for } θ \not = 2n \pi
+</script>
+</p>
+<p>One proof from <a href="https://en.wikipedia.org/wiki/Dirichlet_kernel#Alternative_proof_of_the_trigonometric_identity">wikipedia</a></p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+2 \sin(θ/2) \cos(nθ) =
+\sin \frac{n + 1/2}{2} θ -
+\sin \frac{n - 1/2}{2} θ
+</script>
+</p>
+<p>Then multiply each side by <script type="math/tex">2 \sin(θ/2)</script>, then the equation holds.</p>
+<p>Furthermore, notice</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{\theta \to 0} 
+\frac{\sin((N +1/2)θ)}{2\sin(θ/2)}
+=
+\frac{N +1/2}{2 \cdot 1/2}
+\lim_{\theta \to 0}
+\frac{\cos ((N +1/2)θ)}{\cos (θ/2)}
+= N + 1/2 \\
+=
+\frac{1}{2} + \cos(0) + \cos(2 \cdot 0) + \cos(3 \cdot 0) +··· + \cos(N \cdot 0)
+</script>
+</p>
+<p>Fact 3: Setting</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_N(θ) =
+\begin{cases}
+    \frac{\sin((N +1/2)θ)}{2\sin(θ/2)}, &\text{if } \theta \not = 2n \pi \\
+    1/2 + N, &\text{if } \theta = 2n \pi \\
+\end{cases} 
+</script>
+</p>
+<p>from Fact 2, we see that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{-\pi}^{\pi}
+D_N(θ) dθ = \pi
+</script>
+</p>
+<p>Using Fact (1) and (2), we get</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+S_N(x) &= a_0 + \sum_{n = 1}^{N}
+a_n \cos (nx) + b_n \sin (nx) \\
+&=
+\left[ \frac{1}{2 \pi } \int_{-\pi}^{\pi} f(t) dt \right] 
++
+\sum_{n = 1}^{N}
+\left[ \frac{1}{\pi } \int_{-\pi}^{\pi}f(t) \cos (nt) dt \right]
+\cos (nx)
++
+\left[ \frac{1}{\pi } \int_{-\pi}^{\pi}f(t) \sin (nt) dt \right]
+\sin (nx) \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+\left[ 
+\frac{1}{2}
++ \sum_{n = 1}^{N}
+\cos (nt) \cos (nx)
++ 
+\sin (nt) \sin (nx)
+\right] dt \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+\left[ 
+\frac{1}{2}
++ \sum_{n = 1}^{N} \cos (n(t-x))
+\right] dt \\
+&=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+D_N(t-x) dt \\
+\end{split}
+</script>
+</p>
+<p>Replace <script type="math/tex">u = t-x</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(t)
+D_N(t-x) dt =
+\frac{1}{\pi } \int_{-x-\pi}^{-x+\pi} f(u+x)
+D_N(u) du
+</script>
+</p>
+<p>Since <script type="math/tex">f(u), D_N(u)</script> are periodic function with period of
+<script type="math/tex">2 \pi</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{\pi } \int_{-x-\pi}^{-x+\pi} f(u+x)
+D_N(u) du
+=
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(u+x)
+D_N(u) du
+</script>
+</p>
+<p>By the fact of (3),</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) D_N(u) du,
+</script>
+</p>
+<p>And then it follows</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{11}
+S_N(x) - f(x) =
+\frac{1}{\pi } \int_{-\pi}^{\pi}
+(f(u+x) - f(x)) D_N(u) du
+</script>
+</p>
+<p>Using Fact 1(b), we can rewrite the Dirichlet kernel as</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+D_N(u) &= \frac{\sin((N +1/2)u)}{2\sin(u/2)}
+= \frac{
+\sin (Nu) \cos (u/2) + \cos (Nu) \sin (u/2)
+}{2\sin(u/2)} \\
+&=
+\frac{\sin (Nu) \cos (u/2)}{2\sin(u/2)} +
+\frac{\cos (Nu)}{2}    
+\end{split}
+</script>
+</p>
+<p>Then equation (11) becomes</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+S_N(x) - f(x)
+&=
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+(f(u+x) - f(x))
+\left[ 
+\frac{\sin (Nu) \cos (u/2)}{\sin(u/2)}
++
+\cos (Nu)
+\right] du \\
+&=
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+p_x(u) \sin (Nu) du +
+\frac{1}{2\pi } \int_{-\pi}^{\pi}
+q_x(u) \cos (Nu) du
+\end{split}
+</script>
+</p>
+<p>where in the last step we have set</p>
+<p>
+<script type="math/tex; mode=display"> 
+p_x(u) = \frac{
+(f(u+x)-f(x)) \cos (u/2)
+}{\sin (u/2)}
+\text{ and }
+q_x(u) =
+f(u+x)-f(x)
+</script>
+</p>
+<h3 id="exercise-857">Exercise 8.5.7.</h3>
+<p>(a) First, argue why the integral involving <script type="math/tex">q_x(u)</script> tends to
+zero as <script type="math/tex">N → ∞</script>.</p>
+<p><strong>Proof</strong>: <script type="math/tex">q_x(u)</script> is a continuous function.
+So we directly apply the Riemann–Lebesgue Lemma.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) The first integral is a little more subtle because the 
+function <script type="math/tex">p_x(u)</script> has the
+<script type="math/tex">\sin(u/2)</script> term in the denominator. Use the fact that <script type="math/tex">f</script> is diﬀerentiable at
+<script type="math/tex">x</script> (and a familiar limit from calculus)
+to prove that the first integral goes to zero as well.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{u \to 0} 
+\frac{
+(f(u+x)-f(x)) \cos (u/2)
+}{\sin (u/2)} =\\
+\lim_{u \to 0} \frac{f(u+x) - f(x)}{u}
+\cdot
+\lim_{u \to 0} \frac{u}{\sin (u/2)}
+\cdot
+\cos (u/2) \\
+= 2f'(x)
+</script>
+</p>
+<p>So <script type="math/tex">p_x(u)</script> is also continuous <script type="math/tex">(-\pi, \pi]</script>.
+So again we directly apply the Riemann–Lebesgue Lemma.</p>
+<h3 id="cesaro-mean-convergence">Cesaro Mean Convergence</h3>
+<h3 id="exercise-858">Exercise 8.5.8.</h3>
+<p>Prove that if a sequence of real numbers <script type="math/tex">(x_n)</script> converges, then
+the arithmetic means</p>
+<p>
+<script type="math/tex; mode=display"> 
+y_n = \frac{x_1 + x_2 + x_3 + \cdots + x_n}{n}
+</script>
+</p>
+<p>also converge to the same limit. Give an example to show that it 
+is possible for the sequence of means <script type="math/tex">(y_n)</script> to converge even if 
+the original sequence <script type="math/tex">(x_n)</script> does not.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\lim_{n \to \infty} x_n = c</script>, and given <script type="math/tex">\epsilon</script> we
+can find a <script type="math/tex">N_1</script> such that <script type="math/tex">|x_n - c| < \epsilon /2</script> for
+<script type="math/tex">n > N_1</script>.
+For</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_{N_1} = \sum_{n=1}^{N_1} x_1 + x_2 + x_3 + \cdots + x_{N_1}
+</script>
+</p>
+<p>Let <script type="math/tex">A = S_{N_1} - N_1 c</script>, then we can find <script type="math/tex">N_2</script> such that
+<script type="math/tex">|A/N_2| < \epsilon / 2</script>.</p>
+<p>Let <script type="math/tex">N = \max \{N_1, N_2\}</script>. For <script type="math/tex">n > N</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{x_1 + x_2 + x_3 + \cdots + x_n}{n} - c
+ \right|
+ =
+\left| 
+\frac{A + (x_{N_1+1}-c) + (x_{N_1 + 2} -c)
++ (x_n - c)}{n}
+ \right| \\
+<
+\frac{A}{N_2} + \frac{n - N_1 + 1}{n} \cdot \epsilon / 2
+< \epsilon / 2 + \epsilon / 2 = \epsilon 
+</script>
+</p>
+<p>Consider <script type="math/tex">x_n = (-1)^n</script>, <script type="math/tex">(x_n)</script> does not converge,
+but <script type="math/tex">(y_n)</script> does converge.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-854-fejers-theorem">Theorem 8.5.4 (Fejer’s Theorem).</h3>
+<p>Let <script type="math/tex">S_n(x)</script> be the <script type="math/tex">n</script>th partial sum of the
+Fourier series for a function f on <script type="math/tex">(−π,π]</script>. Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+σ_N(x) = \frac{1}{N+1} \sum_{n = 0}^{N} S_n(x).
+</script>
+</p>
+<p>If <script type="math/tex">f</script> is continuous on <script type="math/tex">(−π,π]</script>, then <script type="math/tex">σ_N(x) → f(x)</script> uniformly.</p>
+<p><strong>Proof</strong>:</p>
+<p>We will use the following fact</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sin (1 \theta) + \sin (2 \theta) + \sin (3 \theta) + \cdots + \sin (N \theta) =
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+</script>
+</p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sin (θ) \sin (\frac{θ}{2}) = \frac{1}{2}
+(\cos (θ/2) - \cos (3θ/2))
+</script>
+</p>
+<p>So we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+\cos (θ/2) - \cos ((N+1/2)θ) = - 2
+\sin (-\frac{N}{2} θ) \sin (\frac{(N+1)θ}{2})
+= \sin (\frac{Nθ}{2}) \sin (\frac{(N+1)θ}{2})
+</script>
+</p>
+<h3 id="exercise-859">Exercise 8.5.9.</h3>
+<p>Use the previous identity to show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ)
+}{N+1} =
+\frac{1}{2(N+1)}
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+D_N(θ) =
+\frac{\sin (Nθ) \cos (θ/2)}{2\sin(θ/2)} +
+\frac{\cos (Nθ)}{2}
+</script>
+</p>
+<p>So
+<script type="math/tex; mode=display"> 
+\begin{split}
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ) = \\
+1/2(1 + \cos(1 \theta) + \cos(2 \theta) + \cdots + \cos(N \theta)) + \\
+\frac{\cos (θ/2)}{2\sin(θ/2)}
+(\sin(1 \theta) + \sin(2 \theta) + \cdots + \sin(N \theta))
+\\
+&= 1/2(1/2 + D_N(θ)) +
+\frac{\cos (θ/2)}{2\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+\end{split}
+</script>
+</p>
+<p>Then let's see</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+1/2 + D_N(\theta)
+\\
+&= 1/2 +
+\frac{
+    \sin ((N+1/2)θ)
+}{
+    2 \sin(θ/2)
+}\\
+&=
+\frac{
+\sin (\frac{(N+1) θ}{2}) \cos (\frac{N θ}{2})
+}{\sin (θ/2)}
+\end{split}
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+1/2 + D_N(\theta) + \frac{\cos (θ/2)}{\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( \frac{\theta}{2} )}
+\\
+&= \frac{
+\sin (\frac{(N+1) θ}{2}) \cos (\frac{N θ}{2})
+}{\sin (θ/2)}
++
+\frac{\cos (θ/2)}{\sin(θ/2)}
+\frac{
+\sin (\frac{N \theta}{2}) \sin ((N+1) \frac{\theta }{2})
+}{\sin ( θ/2 )}
+\\
+&=
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+\end{split}
+</script>
+</p>
+<p>So we proved it.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8510">Exercise 8.5.10.</h3>
+<p>(a) Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+σ_N(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi} f(u+x) F_N (u) du
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_N(x) = 
+\frac{1}{\pi } \int_{-\pi}^{\pi} f(u+x)
+D_N(u) du
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+S_0(x) = a_0 = \frac{1}{2 \pi } \int_{-\pi}^{\pi} f(u+x) du
+</script>
+</p>
+<p>So </p>
+<p>
+<script type="math/tex; mode=display"> 
+σ_N(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi} f(u+x) F_N (u) du
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Graph the function <script type="math/tex">F_N(u)</script> for several values of <script type="math/tex">N</script>. Where 
+is <script type="math/tex">F_N</script> large, and where is it close to zero? Compare
+this function to the Dirichlet kernel <script type="math/tex">D_N(u)</script>.
+Now, prove that <script type="math/tex">F_N → 0</script> uniformly on any set of the form
+<script type="math/tex">\{u : |u| ≥ δ\}</script>, where <script type="math/tex">δ > 0</script> is fixed (and u is restricted to 
+the interval <script type="math/tex">(−π,π]</script>).</p>
+<p><strong>Proof</strong>:</p>
+<p>The code to plot <script type="math/tex">F_N(u)</script>.</p>
+<pre><code class="language-python">x = np.linspace(-np.pi, np.pi, 500)
+N = 100
+y = 1/(2*(N+1)) * (np.sin((N+1)*x/2) / np.sin(x/2)) ** 2
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of Fejer kernel')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+</code></pre>
+<p>It's big when <script type="math/tex">u</script> is close to 0. When it's away from 0,
+<script type="math/tex">F_N</script> is close to 0.</p>
+<p>The code to plot <script type="math/tex">D_N(u)</script>.</p>
+<pre><code class="language-python">x = np.linspace(-np.pi, np.pi, 500)
+N = 10
+y = np.sin((N+0.5) * x) / (2 * np.sin(x/2))
+# Plot the function
+plt.plot(x, y)
+plt.title('Plot of Dirichlet kernel')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+</code></pre>
+<p>We rewrite the Fejer kernel here</p>
+<p>
+<script type="math/tex; mode=display">
+F_N(θ) =
+\frac{1}{2(N+1)}
+\left[ 
+\frac{\sin ((N+1)\frac{θ}{2})}{\sin (\frac{θ}{2})}
+ \right] ^ 2
+</script>
+</p>
+<p>Since <script type="math/tex">|u| \geq \delta</script>, then
+<script type="math/tex">|\sin (\frac{θ}{2})| \geq \sin (\frac{\delta }{2})</script>,</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+F_N(θ) \leq \frac{1}{2(N+1)} \frac{1}{\sin ^2 (\delta/2)}
+</script>
+</p>
+<p>So we proved.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Prove that <script type="math/tex">\int_{-\pi}^{\pi} F_N(u)du = \pi</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Note that <script type="math/tex">\int_{-\pi}^{\pi} D_n(θ) dθ = \pi</script>, so</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{-\pi}^{\pi}
+1/2 + D_1(θ) + D_2(θ) + D_3(θ) + \cdots + D_N(θ)
+= (N+1) \pi 
+</script>
+</p>
+<p>So <script type="math/tex">\int_{-\pi}^{\pi} F_N(u)du = \pi</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) To finish the proof of Fejer’s Theorem, first choose a
+<script type="math/tex">δ > 0</script> so the</p>
+<p>
+<script type="math/tex; mode=display"> 
+|u| < \delta \text{ implies } |f(x+u) - f(x)| < \epsilon
+</script>
+</p>
+<p>Set up a single integral that represents the diﬀerence
+<script type="math/tex">σ_N(x)− f(x)</script> and divide this integral into sets where
+<script type="math/tex">|u| ≤ δ</script> and <script type="math/tex">|u| ≥ δ</script>. Explain why it is
+possible to make each of these integrals suﬃciently small, 
+independently of the choice of <script type="math/tex">x</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">\epsilon</script>, since <script type="math/tex">f(x)</script> is continuous, we can find
+<script type="math/tex">\delta</script>, for <script type="math/tex">|u| < δ</script>, then <script type="math/tex">|f(x+u) - f(x)| < \epsilon</script>.</p>
+<p>Then fix <script type="math/tex">x</script>, we have</p>
+<p>
+<script type="math/tex; mode=display">
+f(x) = \frac{1}{\pi }
+\int_{-\pi}^{\pi}
+f(x) F_N(u) du
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+σ_N(x)− f(x) =
+\frac{1}{\pi }
+\int_{-\pi}^{\pi}
+(f(x+u) - f(x)) F_N(u) du
+</script>
+</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+\left|
+\int_{-\delta}^{\delta} (f(x+u) - f(x)) F_N(u) du
+\right| 
+\\
+\leq
+\int_{-\delta}^{\delta}
+|(f(x+u) - f(x)) F_N(u)| du \\
+\leq
+\int_{-\delta}^{\delta}
+\epsilon F_N(u) du < \epsilon \pi
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left|
+\int_{\delta}^{\pi} (f(x+u) - f(x)) F_N(u) du
+\right| \\
+\leq
+\int_{\delta}^{\pi}
+|(f(x+u) - f(x)) F_N(u)| du \\
+\leq
+2A \epsilon \pi 
+</script>
+</p>
+<p>Same thing holds for <script type="math/tex">[-\pi, -\delta]</script>.</p>
+<p>So it is possible to make each of these integrals suﬃciently 
+small, independently of the choice of <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8511">Exercise 8.5.11.</h3>
+<p>(a) Use the fact that the Taylor series for <script type="math/tex">\sin(x)</script> and
+<script type="math/tex">\cos(x)</script> converge uniformly on any compact set to prove WAT 
+under the added assumption that <script type="math/tex">[a,b]</script> is <script type="math/tex">[0,π]</script>.</p>
+<p><strong>Proof</strong>: For a continuous function <script type="math/tex">f(x)</script> defined on
+<script type="math/tex">[0,π]</script>, and given <script type="math/tex">\epsilon</script>, we can find a Fourier partial
+sum <script type="math/tex">S_N(x)</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - σ_N(x) | < \epsilon / 2
+</script>
+</p>
+<p>for <script type="math/tex">[0,π]</script>.</p>
+<p>Then for each <script type="math/tex">\sin (nx), \cos (nx)</script>, <script type="math/tex">n = 1, 2, 3, \cdots, N</script>,
+It's possible to find a polynomial <script type="math/tex">g_n(x), h_n(x)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|\sin (nx) - g_n(x) | < \frac{\epsilon }{2 a_n N}
+\text{ and }
+|\cos (nx) - h_n(x) | < \frac{\epsilon }{2 b_n N}
+</script>
+</p>
+<p>Then we can find the polynomial.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show how the case for an arbitrary interval [a,b] follows from this one.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume if <script type="math/tex">f(x)</script> is defined on <script type="math/tex">[a,b]</script>, then let
+<script type="math/tex">g(u) = f(a + \frac{u}{\pi } (b-a) )</script>, then <script type="math/tex">g(u)</script> is
+defined on <script type="math/tex">[0,\pi ]</script>.
+Furthermore, <script type="math/tex">f(x) = g(\frac{x-a}{b-a} \pi)</script>.</p>
+<p>From (a), we can find a polynomial <script type="math/tex">g_n</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g(u) - g_n(u)| < \epsilon
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f(x) - g_n(\frac{x-a}{b-a} \pi) | < \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="86-a-construction-of-mathbfr-from-mathbfq">8.6 A Construction of <script type="math/tex">\mathbf{R}</script> From <script type="math/tex">\mathbf{Q}</script>
+</h2>
+<h3 id="theorem-861-existence-of-the-real-numbers">Theorem 8.6.1 (Existence of the Real Numbers).</h3>
+<p>There exists an ordered field in which every nonempty set that
+is bounded above has a least upper bound.
+In addition, this field contains <script type="math/tex">\mathbf{Q}</script> as a subfield.</p>
+<h3 id="axiom-of-completeness">Axiom of Completeness.</h3>
+<p>Every nonempty set of real numbers that is bounded
+above has a least upper bound.</p>
+<h3 id="dedekind-cuts">Dedekind Cuts</h3>
+<h3 id="definition-862">Definition 8.6.2.</h3>
+<p>A subset <script type="math/tex">A</script> of the rational numbers is called a cut if it
+possesses the following three properties:</p>
+<p>(c1) <script type="math/tex">A \not = \emptyset</script> and <script type="math/tex">A \not = \mathbf{Q}</script>.</p>
+<p>(c2) if <script type="math/tex">r \in A</script>, then <script type="math/tex">A</script> also contains every rational
+<script type="math/tex">q < r</script>.</p>
+<p>(c3) <script type="math/tex">A</script> does not have a maximum; that is, if <script type="math/tex">r ∈ A</script>, then there 
+exists <script type="math/tex">s ∈ A</script> with <script type="math/tex">r < s</script>.</p>
+<h3 id="exercise-861">Exercise 8.6.1.</h3>
+<p>(a) Fix <script type="math/tex">r ∈ \mathbf{Q}</script>. Show that the set
+<script type="math/tex">C_r = \{ t ∈ \mathbf{Q} : t < r \}</script> is a cut.</p>
+<p><strong>Proof</strong>:</p>
+<p>(c1) <script type="math/tex">t \in C_r</script> so it's not emptyset.
+<script type="math/tex">r \not \in C_r</script>, so it's not <script type="math/tex">\mathbf{Q}</script>.</p>
+<p>(c2) If <script type="math/tex">t \in C_r</script>, and <script type="math/tex">s < t</script>, so <script type="math/tex">s < r</script>, so
+<script type="math/tex">s \in C_r</script>.</p>
+<p>(c3) If <script type="math/tex">t \in C_r</script>, then <script type="math/tex">t < r</script>, we can find <script type="math/tex">t < s < r</script>,
+also <script type="math/tex">s \in C_r</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>The temptation to think of all cuts as being of this form 
+should be avoided. Which of the following subsets of
+<script type="math/tex">\mathbf{Q}</script> are cuts?</p>
+<p>(b) <script type="math/tex">S= \{t ∈ \mathbf{Q} : t ≤ 2\}</script>
+</p>
+<p><strong>Solution</strong>: No. <script type="math/tex">S</script> has a maximum, i.e. <script type="math/tex">2</script>.</p>
+<p>(c) <script type="math/tex">T = \{t ∈ \mathbf{Q} : t^2 < 2 \text{ or } t < 0\}</script>
+</p>
+<p><strong>Solution</strong>: Yes.</p>
+<p>(d) <script type="math/tex">U = \{t ∈ \mathbf{Q} : t^2 \leq 2 \text{ or } t < 0\}</script>
+</p>
+<p><strong>Solution</strong>: Yes.</p>
+<h3 id="exercise-862">Exercise 8.6.2.</h3>
+<p>Let <script type="math/tex">A</script> be a cut. Show that if <script type="math/tex">r ∈ A</script> and <script type="math/tex">s \not ∈ A</script>, then <script type="math/tex">r < s</script>.</p>
+<p><strong>Proof</strong>: If <script type="math/tex">s = r</script>, then <script type="math/tex">s \in A</script>.
+If <script type="math/tex">s < r</script>, then <script type="math/tex">s \in A</script>.
+So <script type="math/tex">r < s</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-863">Definition 8.6.3.</h3>
+<p>Define the real numbers <script type="math/tex">\mathbf{R}</script> to be the set of all cuts in <script type="math/tex">\mathbf{Q}</script>.</p>
+<h3 id="field-and-order-properties">Field and Order Properties</h3>
+<p>Given a set <script type="math/tex">F</script> and two elements <script type="math/tex">x,y ∈ F</script>, an operation on <script type="math/tex">F</script> 
+is a function that takes the ordered pair <script type="math/tex">(x,y)</script> to a third 
+element <script type="math/tex">z ∈ F</script>. Writing <script type="math/tex">x + y</script> or <script type="math/tex">xy</script> to represent diﬀerent 
+operations reminds us of the two operations that we are
+trying to emulate.</p>
+<h3 id="definition-864">Definition 8.6.4.</h3>
+<p>A set <script type="math/tex">F</script> is a field if there exist two operations—addition
+<script type="math/tex">(x+y)</script> and multiplication <script type="math/tex">(xy)</script>—that satisfy the following list 
+of conditions:</p>
+<p>(f1) (commutativity) <script type="math/tex">x+y= y +x</script> and <script type="math/tex">xy= yx</script> for all <script type="math/tex">x,y ∈ F</script>.</p>
+<p>(f2) (associativity)<script type="math/tex">(x+y)+z = x+(y+z)</script> and <script type="math/tex">(xy)z = x(yz)</script>
+for all <script type="math/tex">x,y,z ∈ F</script>.</p>
+<p>(f3) (identities exist) There exist two special elements <script type="math/tex">0</script> and 
+<script type="math/tex">1</script> with <script type="math/tex">0 \not = 1</script> such
+that <script type="math/tex">x+0 = x</script> and <script type="math/tex">x1 = x</script> for all <script type="math/tex">x ∈ F</script>.</p>
+<p>(f4) (inverses exist) Given <script type="math/tex">x ∈ F</script>, there exists an element
+<script type="math/tex">−x ∈ F</script> such that <script type="math/tex">x+(−x) = 0</script>. If <script type="math/tex">x \not = 0</script>, there exists an
+element <script type="math/tex">x^{−1}</script> such that <script type="math/tex">xx^{−1} = 1</script>.</p>
+<p>(f5) (distributive property) <script type="math/tex">x(y +z) = xy +xz</script> for all
+<script type="math/tex">x,y,z ∈ F</script>.</p>
+<h3 id="exercise-863">Exercise 8.6.3.</h3>
+<p>Using the usual definitions of addition and multiplication,
+determine which of these properties are possessed by
+<script type="math/tex">\mathbf{N}</script>, <script type="math/tex">\mathbf{Z}</script>, and <script type="math/tex">\mathbf{Q}</script>, respectively.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex">\mathbf{N}</script>: f1, f2, f5</p>
+<p>
+<script type="math/tex">\mathbf{Z}</script>: f1, f2, f3, f5</p>
+<p>
+<script type="math/tex">\mathbf{Q}</script>: f1, f2, f3, f4, f5</p>
+<h3 id="definition-865">Definition 8.6.5.</h3>
+<p>An ordering on a set <script type="math/tex">F</script> is a relation, represented by <script type="math/tex">≤</script>, with
+the following three properties:</p>
+<p>(o1) For arbitrary <script type="math/tex">x,y ∈ F</script>, at least one of the statements
+<script type="math/tex">x ≤ y</script> or <script type="math/tex">y ≤ x</script> is true.</p>
+<p>(o2) If <script type="math/tex">x ≤ y</script> and <script type="math/tex">y ≤ x</script>, then <script type="math/tex">x = y</script>.</p>
+<p>(o3) If <script type="math/tex">x ≤ y</script> and <script type="math/tex">y ≤ z</script>, then <script type="math/tex">x ≤ z</script>.</p>
+<p>A field <script type="math/tex">F</script> is called an ordered field if <script type="math/tex">F</script> is endowed with an 
+ordering <script type="math/tex">≤</script> that satisfies</p>
+<p>(o4) If <script type="math/tex">y ≤ z</script>, then <script type="math/tex">x+y ≤ x+z</script>.</p>
+<p>(o5) If <script type="math/tex">x ≥ 0</script> and <script type="math/tex">y ≥ 0</script>, then <script type="math/tex">xy ≥ 0</script>.</p>
+<p>Define <script type="math/tex">A ≤ B</script> to mean <script type="math/tex">A ⊆ B</script>.</p>
+<h3 id="exercise-864">Exercise 8.6.4.</h3>
+<p>Show that this defines an ordering on <script type="math/tex">\mathbf{R}</script> by verifying 
+properties (o1), (o2), and (o3) from Definition 8.6.5.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">r_1, r_2 \in \mathbf{R}</script>, if for every rational number <script type="math/tex">s \in r_1</script> we have <script type="math/tex">s \in r_2</script>, then <script type="math/tex">r_1 \subseteq r_2</script>, i.e.
+<script type="math/tex">r_1 \leq r_2</script>.</p>
+<p>Now assume <script type="math/tex">s \in r_1</script> but <script type="math/tex">s \not \in r_2</script>. From exercise 8.6.2, since <script type="math/tex">r_1</script> is not empty, then for every rational number
+<script type="math/tex">t \in r_2</script>, we know <script type="math/tex">t < s</script>. That means <script type="math/tex">t \in r_1</script>.
+So we have <script type="math/tex">r_2 \subseteq r_1</script>, i.e. <script type="math/tex">r2 \leq r_1</script>.
+We proved (o1).</p>
+<p>
+<script type="math/tex">x \leq y</script> means <script type="math/tex">x \subseteq y</script>, 
+<script type="math/tex">y \leq x</script> means <script type="math/tex">y \subseteq x</script>,
+So <script type="math/tex">x = y</script>. We proved (o2).</p>
+<p>
+<script type="math/tex">x \leq y</script> means <script type="math/tex">x \subseteq y</script>, 
+<script type="math/tex">y \leq z</script> means <script type="math/tex">y \subseteq z</script>, i.e. <script type="math/tex">x \leq z</script>.
+We proved (o3).</p>
+<h3 id="algebra-in-mathbfr">Algebra in <script type="math/tex">\mathbf{R}</script>
+</h3>
+<p>Given <script type="math/tex">A</script> and <script type="math/tex">B</script> in <script type="math/tex">\mathbf{R}</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+A + B = \{a + b : a \in A \text{ and } b \in B\}
+</script>
+</p>
+<p>We first need to prove <script type="math/tex">A+B</script> is a cut.</p>
+<p>(c2) Let <script type="math/tex">a + b ∈ A + B</script> be arbitrary and let <script type="math/tex">s ∈ \mathbf{Q}</script> 
+satisfy <script type="math/tex">s < a + b</script>.</p>
+<p>Then, <script type="math/tex">s−b < a</script>, which implies that <script type="math/tex">s−b ∈ A</script> because <script type="math/tex">A</script> is a 
+cut. But then</p>
+<p>
+<script type="math/tex; mode=display"> 
+s = (s-b) + b \in A + B
+</script>
+</p>
+<h3 id="exercise-865">Exercise 8.6.5.</h3>
+<p>(a) Show that (c1) and (c3) also hold for <script type="math/tex">A+B</script>. Conclude
+that <script type="math/tex">A+B</script> is a cut.</p>
+<p><strong>Proof</strong>:</p>
+<p>(c1) Since <script type="math/tex">A, B</script> are cuts, then
+<script type="math/tex">A \not = \emptyset</script> and <script type="math/tex">A \not = \mathbf{Q}</script>,
+<script type="math/tex">B \not = \emptyset</script> and <script type="math/tex">B \not = \mathbf{Q}</script>
+</p>
+<p>So <script type="math/tex">A+B</script> cannot be empty.</p>
+<p>Let
+<script type="math/tex">c \not \in A</script>, <script type="math/tex">d \not \in B</script>.
+We want to prove <script type="math/tex">c+d \not \in A+B</script>.</p>
+<p>Assume otherwise, i.e. <script type="math/tex">c+d \in A+B</script>, that means
+we can find <script type="math/tex">a \in A, b \in B</script>, such that <script type="math/tex">a + b = c + d</script>.
+Then either <script type="math/tex">a \geq c</script> or <script type="math/tex">b \geq d</script>.</p>
+<p>If <script type="math/tex">a \geq c</script>, then <script type="math/tex">c \in A</script>, we have a contradiction.
+If <script type="math/tex">b \geq d</script>, then <script type="math/tex">d \in B</script>, we have a contradiction.</p>
+<p>So <script type="math/tex">A+B \not = \mathbf{Q}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c3) Let <script type="math/tex">c \in A+B</script>, then <script type="math/tex">c = a + b</script> for <script type="math/tex">a \in A</script> and
+<script type="math/tex">b \in B</script>. Then we can find <script type="math/tex">e \in A</script> and
+<script type="math/tex">f \in B</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+a < e, b < f
+</script>
+</p>
+<p>Then <script type="math/tex">e+f \in A+B</script> and <script type="math/tex">a+b < e+f</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Check that addition in <script type="math/tex">\mathbf{R}</script> is commutative (f1) and 
+associative (f2).</p>
+<p>(f1) commutative</p>
+<p>We want to prove <script type="math/tex">A+B = B+A</script>. We will first prove
+<script type="math/tex">A+B \leq B+A</script>. Assume <script type="math/tex">c = a+b \in A+B</script>, then
+<script type="math/tex">c = a+b = b+a \in B+A</script>. So <script type="math/tex">A+B \subseteq B+A</script>, i.e.
+<script type="math/tex">A+B \leq B+A</script>. For the same reason, <script type="math/tex">B+A \leq A+B</script>.
+Then with (o2), <script type="math/tex">A+B = B+A</script>.</p>
+<p>(f2) associative</p>
+<p>We want to prove <script type="math/tex">(A+B) + C = A + (B+C)</script>.
+We use the same strategy as (f1).</p>
+<p>For any <script type="math/tex">d \in (A+B) + C</script>, then we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+d = (a+b) + c, a \in A, b \in B, c \in C
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+d = (a+b) + c = a + (b+c) \in A + (B+C)
+</script>
+</p>
+<p>So <script type="math/tex">(A+B)+C \leq A + (B+C)</script>. For the same reason
+<script type="math/tex">A + (B+C) \leq (A+B) + C</script>.
+So <script type="math/tex">(A+B)+C = A + (B+C)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that property (o4) holds.</p>
+<p><strong>Proof</strong>:</p>
+<p>(o4) states: if <script type="math/tex">B ≤ C</script>, then <script type="math/tex">A+B ≤ A+C</script>.</p>
+<p>Assume <script type="math/tex">a+b \in A+B</script>, since <script type="math/tex">B \leq C</script>, then <script type="math/tex">b \in C</script>.</p>
+<p>so <script type="math/tex">a+b \in A+C</script>, then <script type="math/tex">A+B \leq A+C</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Show that the cut</p>
+<p>
+<script type="math/tex; mode=display"> 
+O = \{p \in \mathbf{Q} : p < 0\}
+</script>
+</p>
+<p>successfully plays the role of the additive identity (f3).
+(Showing <script type="math/tex">A+O= A</script> amounts to proving that these two sets are the 
+same. The standard way to prove such a thing is to show two 
+inclusions: <script type="math/tex">A + O ⊆ A</script> and <script type="math/tex">A ⊆ A+O</script>.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">a + o \in A+O</script>, since <script type="math/tex">o < 0</script>, <script type="math/tex">a + o < a</script>, so
+<script type="math/tex">a + o \in A</script>, then <script type="math/tex">A+O \subseteq A</script>.</p>
+<p>Assume <script type="math/tex">a \in A</script>, we can <script type="math/tex">a < b \in A</script>, let <script type="math/tex">o = a - b < 0</script>,
+so <script type="math/tex">o \in O</script>. And <script type="math/tex">b + o = b + (a - b) = a</script>.
+So <script type="math/tex">a \in A + O</script>. Then <script type="math/tex">A \subseteq A + O</script>.</p>
+<p>Then <script type="math/tex">A = A + O</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Given <script type="math/tex">A ∈ \mathbf{R}</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+−A= \{r ∈ Q : \text{ there exists } t \not ∈ A \text{ with } t <−r \}.
+</script>
+</p>
+<h3 id="exercise-866">Exercise 8.6.6.</h3>
+<p>(a) Prove that <script type="math/tex">−A</script> defines a cut.</p>
+<p><strong>Proof</strong>:</p>
+<p>(c1) We need to show
+<script type="math/tex">-A \not = \emptyset</script> and <script type="math/tex">-A \not = \mathbf{Q}</script>.</p>
+<p>Since <script type="math/tex">A \not = \mathbf{Q}</script>, so we can find <script type="math/tex">t \not \in A</script>.
+since <script type="math/tex">t < t + 1</script>, so <script type="math/tex">-(t+1) \in -A</script>.
+<script type="math/tex">-A</script> is not an empty set.</p>
+<p>Consider <script type="math/tex">-r \in A</script> is a negative number, then <script type="math/tex">r</script> is a
+positive number. If <script type="math/tex">r \in -A</script>, then there exists <script type="math/tex">t \not \in A</script>, and <script type="math/tex">t < -r</script>. But since <script type="math/tex">-r \in A</script>, we must have <script type="math/tex">t \in A</script> based
+on (c2), so we have a contradiction. then <script type="math/tex">r \not \in -A</script>.
+So <script type="math/tex">-A \not = \mathbf{Q}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c2) We need to show if <script type="math/tex">r \in -A</script>, then <script type="math/tex">A</script> also contains every rational <script type="math/tex">q < r</script>.</p>
+<p>If <script type="math/tex">r \in -A</script>, and <script type="math/tex">q < r</script>, then <script type="math/tex">t < -r < -q</script>. so <script type="math/tex">q \in -A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c3) We need to show <script type="math/tex">-A</script> does not have a maximum; that is, if <script type="math/tex">r ∈ -A</script>, then there 
+exists <script type="math/tex">s ∈ -A</script> with <script type="math/tex">r < s</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">r \in -A</script>, then <script type="math/tex">t < -r</script> and <script type="math/tex">t \not \in A</script>.
+Let <script type="math/tex">-s = \frac{t-r}{2}</script>, so <script type="math/tex">t < -s < -r</script>.
+Then <script type="math/tex">s \in -A</script> and <script type="math/tex">r < s</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) What goes wrong if we set <script type="math/tex">−A= \{r ∈ Q :−r \not  ∈ A\}</script>?</p>
+<p><strong>Solution</strong>: Take <script type="math/tex">A = C_2 = \{r ∈ Q : r < 2 \}</script> as an example,
+then <script type="math/tex">-A = \{r ∈ Q : r \leq -2 \}</script>.
+Then <script type="math/tex">-2</script> is the maximum of <script type="math/tex">-A</script>, then <script type="math/tex">-A</script> cannot be a cut.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) If <script type="math/tex">a ∈ A</script> and <script type="math/tex">r ∈ −A</script>, show <script type="math/tex">a+r ∈ O</script>. This shows
+<script type="math/tex">A+(−A) ⊆ O</script>. Now, finish the proof of property (f4) for
+addition in Definition 8.6.4.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">r ∈ −A</script>, then <script type="math/tex">-r > t \not \in A</script>. From exercise 8.6.2,
+<script type="math/tex">a < t</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a + r < t + r < -r + r = 0
+</script>
+</p>
+<p>So <script type="math/tex">a + r \in O</script>, i.e. <script type="math/tex">A+(-A) \subseteq O</script>, i.e.
+<script type="math/tex">A + (-A) \leq O</script>.</p>
+<p>If <script type="math/tex">A = O</script>, then for <script type="math/tex">p \in O</script>, then <script type="math/tex">p < 0</script>, so <script type="math/tex">p/2 < 0</script>.
+Then <script type="math/tex">0 < -p/4 \not \in A</script>, so <script type="math/tex">p/2 \in -A</script>.
+Then <script type="math/tex">A + (-A) \supseteq O</script>.</p>
+<p>If <script type="math/tex">O \subset A</script>, then <script type="math/tex">0 \in A</script>.
+let <script type="math/tex">p \in O</script>. So <script type="math/tex">p < 0</script>.
+Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+0, -\frac{1}{2}p, -\frac{2}{2}p, \cdots
+</script>
+</p>
+<p>We can find <script type="math/tex">k</script>, such that <script type="math/tex">-\frac{k-1}{2}p \in A</script>, but
+<script type="math/tex">-\frac{k}{2}p \not \in A</script>. So <script type="math/tex">\frac{k+1}{2}p \in -A</script>.
+Then <script type="math/tex">-\frac{k}{2}p + \frac{k+1}{2}p = p</script>. So <script type="math/tex">A + (-A) \supseteq O</script>
+</p>
+<p>If <script type="math/tex">A \subset O</script>, then <script type="math/tex">0 \not \in A</script>. Consider <script type="math/tex">p < 0</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+0, \frac{1}{2}p, \frac{2}{2}p, \cdots
+</script>
+</p>
+<p>We can find <script type="math/tex">k</script>, such that <script type="math/tex">\frac{k-1}{2}p \not \in A</script>, but
+<script type="math/tex">\frac{k}{2}p \in A</script>.
+Now consider <script type="math/tex">-\frac{k-2}{2}p</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+-(-\frac{k-2}{2}p) = \frac{k-2}{2}p > \frac{k-1}{2}p
+\not \in A
+</script>
+</p>
+<p>So <script type="math/tex">-\frac{k-2}{2}p \in -A</script>. Also we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+-\frac{k-2}{2} p + \frac{k}{2} p = p
+</script>
+</p>
+<p>So <script type="math/tex">A + (-A) \supseteq O</script>.</p>
+<p>In all 3 cases, we have <script type="math/tex">A + (-A) \supseteq O</script>.</p>
+<p>In conclusion: <script type="math/tex">A + (-A) = O</script>.
+<script type="math/tex">\square</script>
+</p>
+<p>Given <script type="math/tex">A ≥ O</script> and <script type="math/tex">B ≥ O</script> in <script type="math/tex">\mathbf{R}</script>, define the product</p>
+<p>
+<script type="math/tex; mode=display"> 
+AB = \{ab : a ∈ A,b ∈ B \text{ with } a, b ≥ 0\} ∪ \{q ∈ Q : q < 0\}.
+</script>
+</p>
+<h3 id="exercise-867">Exercise 8.6.7.</h3>
+<p>(a) Show that <script type="math/tex">AB</script> is a cut and that property (o5) holds.</p>
+<p><strong>Proof</strong>:</p>
+<p>(c1) <script type="math/tex">-1 \in AB</script> so <script type="math/tex">AB</script> is not empty.</p>
+<p>Assume <script type="math/tex">c \not \in A, d \not \in B</script>, then
+<script type="math/tex">c \geq 0, d \geq 0</script>. Assume <script type="math/tex">cd \in AB</script>,
+then <script type="math/tex">cd \not \in \{q ∈ Q : q < 0\}</script>.
+So
+<script type="math/tex">cd \in \{ab : a ∈ A,b ∈ B \text{ with } a, b ≥ 0\}</script>
+</p>
+<p>then we can find <script type="math/tex">ab = cd</script>.
+Since <script type="math/tex">0 \leq a < c, 0 \leq b < d</script>.
+We must have <script type="math/tex">ab < cd</script>.</p>
+<p>So <script type="math/tex">AB \not = \mathbf{R}</script>.</p>
+<p>(c2) If <script type="math/tex">A = O</script> or <script type="math/tex">B = O</script>, then
+<script type="math/tex">\{ab : a ∈ A,b ∈ B \text{ with } a, b ≥ 0\}</script> is
+empty, so <script type="math/tex">AB = \{q ∈ Q : q < 0\} = O</script> which
+does not have a maximum.</p>
+<p>If <script type="math/tex">A > O, B > O</script>, and <script type="math/tex">r \in AB</script>. If <script type="math/tex">r \leq 0</script>,
+we can find <script type="math/tex">0 < a \in A</script> and <script type="math/tex">0 < b \in B</script>,
+then <script type="math/tex">ab > 0 \geq r</script>.</p>
+<p>If <script type="math/tex">r > 0</script>, then <script type="math/tex">r = ab, a > 0, b > 0</script>.
+Since <script type="math/tex">A, B</script> are all cuts, we can find <script type="math/tex">c > a, d > b</script>.
+Then <script type="math/tex">cd > ab</script>.</p>
+<p>(c3) If <script type="math/tex">r \in AB</script>, and <script type="math/tex">s < r</script>. If <script type="math/tex">s < 0</script>, then
+<script type="math/tex">s \in AB</script> by definition.</p>
+<p>If <script type="math/tex">s \geq 0</script>, then <script type="math/tex">0 < r = ab</script>, where <script type="math/tex">a, b > 0</script>.
+Let <script type="math/tex">b' = s / a < r/a = b</script>, so <script type="math/tex">0 \leq b' \in B</script>.
+And <script type="math/tex">a b' = s \in AB</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Propose a good candidate for the multiplicative identity (1) on <script type="math/tex">\mathbf{R}</script> and
+show that this works for all cuts <script type="math/tex">A ≥ O</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">I = \{q \in \mathbf{Q}: q < 1\}</script>. We want to prove
+<script type="math/tex">A I = A</script> for <script type="math/tex">A \geq O</script>.</p>
+<p>For <script type="math/tex">0 < a \in A</script>, since <script type="math/tex">A</script> is a cut, then we can find
+<script type="math/tex">a < b \in A</script>, let <script type="math/tex">c = a / b < 1</script>, so <script type="math/tex">c \in I</script>.
+then <script type="math/tex">bc = b (a/b) = a</script>, so <script type="math/tex">a \in AI</script>. We have
+<script type="math/tex">A \subseteq AI</script>.</p>
+<p>For <script type="math/tex">0 \leq c \in AI</script>, we can find <script type="math/tex">a \in A, b \in B</script> such
+that <script type="math/tex">c = ab</script>. Since <script type="math/tex">b < 1</script>, then <script type="math/tex">c < a</script>, then <script type="math/tex">c \in A</script>,
+That is <script type="math/tex">AI \subseteq A</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show the distributive property (f5) holds for non-negative cuts.</p>
+<p><strong>Proof</strong>: We want to show <script type="math/tex">A(B+C) = AB + AC</script> for <script type="math/tex">A, B, C \geq O</script>.</p>
+<p>First of all, if <script type="math/tex">q < 0</script>, then <script type="math/tex">q \in A(B+C)</script>.
+Also <script type="math/tex">q \in AB, 0 \in AC</script>, so <script type="math/tex">q \in AB + AC</script>.</p>
+<p>Secondly, <script type="math/tex">0 \in A, B, C</script>, so <script type="math/tex">0 \in  A(B+C)</script>, and
+<script type="math/tex">0 \in AB+AC</script>.</p>
+<p>If <script type="math/tex">0 < q \in AB+AC</script>, assume <script type="math/tex">q = r+s</script>.
+If <script type="math/tex">r > 0, s \leq 0</script> and <script type="math/tex">r = ab</script>. Let <script type="math/tex">c = s/a</script>, since
+<script type="math/tex">c \leq 0</script> then <script type="math/tex">c \in C</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a (b + c) = ab + a (s/a) = r + s = q
+</script>
+</p>
+<p>Similarly, we can prove if <script type="math/tex">r \leq 0, s > 0</script>.</p>
+<p>Now assume <script type="math/tex">r > 0, s > 0</script>. <script type="math/tex">r = a_1 b, s = a_2 c</script>.
+If <script type="math/tex">a1 \geq a_2</script>, then <script type="math/tex">s = a_1 (a_2 / a_1) c</script>.
+<script type="math/tex">(a_2 / a_1) c \leq c</script>, so <script type="math/tex">(a_2 / a_1) c \in C</script>.</p>
+<p>
+<script type="math/tex">a_1 (b + (a_2 / a_1)c) = a_1b + a_2c = q</script>, so <script type="math/tex">q \in A(B+C)</script>.</p>
+<p>Then we have <script type="math/tex">A(B+C) \supseteq AB + AC</script>.</p>
+<p>The other direction, assume <script type="math/tex">a(b+c) \in A(B+C), a \geq 0, (b+c)\geq 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a(b+c) = ab + ac
+</script>
+</p>
+<p>If <script type="math/tex">b \geq 0</script>, then <script type="math/tex">ab \in AB</script>. If <script type="math/tex">b < 0</script>, <script type="math/tex">ab \leq 0</script>,
+<script type="math/tex">ab \in AB</script>. Same thing for <script type="math/tex">ac</script>.</p>
+<p>Then <script type="math/tex">a(b+c) \in AB+AC</script>, i.e. <script type="math/tex">A(B+C) \subseteq AB + AC</script>.</p>
+<p>So <script type="math/tex">A(B+C) = AB + AC</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Products involving at least one negative factor can be defined in 
+terms of the product of two positive cuts by observing that
+<script type="math/tex">−A ≥ 0</script> whenever <script type="math/tex">A ≤ O</script>. (Given <script type="math/tex">A ≤ O</script>, property (o4) implies
+<script type="math/tex">A+(−A) ≤ O +(−A)</script>, which yields <script type="math/tex">O ≤ −A.</script>)</p>
+<p>
+<script type="math/tex; mode=display"> 
+AB = \begin{cases}
+    \text{ as given } &\text{if } A ≥ O \text{ and } B ≥ O\\
+    -[A(-B)] &\text{if } A ≥ O \text{ and } B < O\\
+    -[(-A)B] &\text{if } A < O \text{ and } B ≥ O\\
+    (-A)(-B) &\text{if } A < O \text{ and } B < O\\
+\end{cases} 
+</script>
+</p>
+<h3 id="least-upper-bounds">Least Upper Bounds</h3>
+<h3 id="definition-866">Definition 8.6.6.</h3>
+<p>A set <script type="math/tex">\mathcal{A} ⊆ R</script> is bounded above if there exists a <script type="math/tex">B ∈ R</script> such that <script type="math/tex">A ≤ B</script> for all <script type="math/tex">A ∈ \mathcal{A}</script>. The number <script type="math/tex">B</script>
+is called an upper bound for <script type="math/tex">\mathcal{A}</script>.</p>
+<p>A real number <script type="math/tex">S ∈ R</script> is the least upper bound for a set
+<script type="math/tex">\mathcal{A} ⊆ R</script> if it meets the following two criteria</p>
+<p>(i) <script type="math/tex">S</script> is an upper bound for <script type="math/tex">\mathcal{A}</script> and</p>
+<p>(ii) if <script type="math/tex">B</script> is any upper bound for <script type="math/tex">\mathcal{A}</script>, then <script type="math/tex">S ≤ B</script>.</p>
+<h3 id="exercise-868">Exercise 8.6.8.</h3>
+<p>Let <script type="math/tex">\mathcal{A} ⊆ R</script> be nonempty and bounded above, and let
+<script type="math/tex">S</script> be the union of all <script type="math/tex">A ∈ \mathcal{A}</script>.</p>
+<p>(a) First, prove that <script type="math/tex">S ∈ \mathbf{R}</script> by showing that it is a cut.</p>
+<p><strong>Proof</strong>:</p>
+<p>(c1) <script type="math/tex">\mathcal{A}</script> is not empty and <script type="math/tex">A \in \mathcal{A}</script>.
+<script type="math/tex">A</script> is not empty, and <script type="math/tex">A \subseteq S</script>. So <script type="math/tex">S</script> is not empty.</p>
+<p>
+<script type="math/tex">\mathcal{A}</script> is bounded above, so we can find <script type="math/tex">B</script> such that
+<script type="math/tex">A ≤ B</script> for all <script type="math/tex">A ∈ \mathcal{A}</script>.</p>
+<p>
+<script type="math/tex">B</script> is a cut so we can find <script type="math/tex">c \not \in B</script>. If <script type="math/tex">c \in A</script> for some
+<script type="math/tex">A</script>, then <script type="math/tex">c \in A \subseteq B</script>. We have a contradiction.
+So <script type="math/tex">c \not \in A</script> for all <script type="math/tex">A ∈ \mathcal{A}</script>. Then
+<script type="math/tex">c \not \in S</script>, so <script type="math/tex">S \neq \mathbf{Q}</script>.</p>
+<p>(c2) if <script type="math/tex">r \in S</script> and <script type="math/tex">s < r</script>. Then we can find <script type="math/tex">A</script> such that
+<script type="math/tex">r \in A</script>. Since <script type="math/tex">s < r</script>, then <script type="math/tex">s \in A</script>. So <script type="math/tex">s \in S</script>.</p>
+<p>(c3) Similarly, assume <script type="math/tex">a \in S</script>, then <script type="math/tex">a \in A</script> for some <script type="math/tex">A</script>.
+then we can find <script type="math/tex">b \in A</script>, such that <script type="math/tex">a < b</script>.
+Since <script type="math/tex">b \in A</script>, then <script type="math/tex">S</script> does not have a maximum.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now, show that <script type="math/tex">S</script> is the least upper bound for <script type="math/tex">\mathcal{A}</script>.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">A \in \mathcal{A}</script>, <script type="math/tex">A \subseteq S</script>, i.e.
+<script type="math/tex">A \leq S</script>. So <script type="math/tex">S</script> is an upper bound of <script type="math/tex">\mathcal{A}</script>.</p>
+<p>Let <script type="math/tex">B</script> be an upper bound. Given <script type="math/tex">a \in S</script>, we can find <script type="math/tex">A</script>
+such that <script type="math/tex">a \in A</script>. Then <script type="math/tex">a \in A \subseteq B</script>, so <script type="math/tex">S \subseteq B</script>.</p>
+<p>So <script type="math/tex">S</script> is the least upper bound for <script type="math/tex">\mathcal{A}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-869">Exercise 8.6.9.</h3>
+<p>Consider the collection of so-called “rational” cuts of the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+C_r = \{t \in \mathbf{Q} : t < r\}
+</script>
+</p>
+<p>where <script type="math/tex">r \in \mathbf{Q}</script>.</p>
+<p>(a) Show that <script type="math/tex">C_{r} + C_{s} = C_{r+s}</script> for all <script type="math/tex">r,s ∈ \mathbf{Q}</script>. Verify <script type="math/tex">C_{r} C_{s} =  C_{rs}</script> for the case when <script type="math/tex">r,s ≥ 0</script>.</p>
+<p><strong>Proof</strong>: Given <script type="math/tex">a \in C_r, b \in C_s</script>, we have
+<script type="math/tex">a < r, b < s</script>. Then <script type="math/tex">a + b < r + s</script>.
+So <script type="math/tex">C_{r} + C_{s} \leq C_{r+s}</script>.</p>
+<p>Given <script type="math/tex">c \in C_{r+s}</script>, then <script type="math/tex">c < r + s</script>. Let
+<script type="math/tex">e = \frac{r+s-c}{2} > 0</script>
+and <script type="math/tex">a = r-e, b = s - e</script>.</p>
+<p>Then <script type="math/tex">a+b = (r-e) + (s - e) = (r+s) - 2e = c</script>.
+So <script type="math/tex">C_{r} + C_{s} \geq C_{r+s}</script>.</p>
+<p>In summary, we have <script type="math/tex">C_{r} + C_{s} = C_{r+s}</script>.</p>
+<p>If <script type="math/tex">r = 0</script>, <script type="math/tex">C_r = O</script>. <script type="math/tex">rs = 0</script>, then <script type="math/tex">C_{rs} = O</script>.
+We just need to prove <script type="math/tex">O C_s = O</script>.</p>
+<p>Note <script type="math/tex">O C_s = \{q ∈ Q : q < 0\} = O</script>.</p>
+<p>Same thing for <script type="math/tex">s = 0</script>.</p>
+<p>Next we only need to prove <script type="math/tex">r > 0, s > 0</script>.</p>
+<p>Given <script type="math/tex">0 < c = ab < rs \in C_{rs}</script>.</p>
+<p>On the other hand, give <script type="math/tex">0 < c < rs</script>.
+Let <script type="math/tex">d = \sqrt[]{\frac{c}{rs}} < 1</script>.
+Let <script type="math/tex">a = dr < r, b = ds < s</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+ab = d^2 rs = c
+</script>
+</p>
+<p>So <script type="math/tex">c \in C_r C_s</script>.</p>
+<p>We have <script type="math/tex">C_{r} C_{s} =  C_{rs}</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">C_r ≤ C_s</script> if and only if <script type="math/tex">r ≤ s</script> in <script type="math/tex">\mathbf{Q}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">r \leq s</script>, <script type="math/tex">a in C_r</script>, so <script type="math/tex">a < r \leq s</script>. <script type="math/tex">a \in C_s</script>.</p>
+<p>if <script type="math/tex">C_r \leq C_s</script> and <script type="math/tex">r > s</script>. Consider <script type="math/tex">r > \frac{r+s}{2} > s</script>,
+then <script type="math/tex">\frac{r+s}{2} \not\in C_s</script>, but <script type="math/tex">\frac{r+s}{2} \in C_r</script>.
+We got a contradiction.</p>
+<p>So <script type="math/tex">r \leq s</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="cantors-approach">Cantor’s Approach</h3>
+<p>Cantor’s idea was essentially to define a real number to be the
+entire Cauchy sequence. The first problem one encounters with 
+this approach is the realization that two diﬀerent Cauchy 
+sequences can converge to the same real number. For this reason, 
+the elements in R are more appropriately defined
+as equivalence classes of Cauchy sequences where two sequences 
+<script type="math/tex">(x_n)</script> and <script type="math/tex">(y_n)</script> are in the same equivalence class if and
+only if <script type="math/tex">(x_n−y_n) → 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
