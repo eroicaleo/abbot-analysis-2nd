@@ -154,4 +154,5 @@ $$
 \int_{-\pi}^{\pi} h(x) \cos (nx)
 $$
 
-converges uniformly.
+converges uniformly. Note that this can be done through integral
+by part.

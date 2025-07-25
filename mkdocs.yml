@@ -15,11 +15,14 @@ nav:
   - Chapter 07 Notes: ch07notes.md
   - Chapter 07 Exercises: ch07ex.md
   - Chapter 08 Exercises: ch08ex.md
+  - Chapter 0802 Exercises: ch0802ex.md
+  - Chapter 0806 Exercises: ch0806ex.md
   - Misc info: misc.md
   - Unsolved Problems: unsolved.md
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # - javascripts/config.js
 
 # extra_javascript:
 #   - javascripts/mathjax.js
