@@ -178,6 +178,54 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#76-lebesgues-criterion-for-riemann-integrability">7.6 Lebesgue’s Criterion for Riemann Integrability</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#riemann-integrable-functions-with-infinite-discontinuities">Riemann-integrable Functions with Infinite Discontinuities</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-761">Exercise 7.6.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-762">Exercise 7.6.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sets-of-measure-zero">Sets of Measure Zero</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-761-measure-zero">Definition 7.6.1. Measure zero</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-762">Example 7.6.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-763">Exercise 7.6.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-764">Exercise 7.6.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-765">Exercise 7.6.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-continuity">α-Continuity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-763">Definition 7.6.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-766">Exercise 7.6.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-767">Exercise 7.6.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-768">Exercise 7.6.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#uniformly-continuous">uniformly α-continuous</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compactness-revisited">Compactness Revisited</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-764">Theorem 7.6.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lebesgues-theorem">Lebesgue’s Theorem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-765-lebesgues-theorem">Theorem 7.6.5 (Lebesgue’s Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-769">Exercise 7.6.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-7610">Exercise 7.6.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-7611">Exercise 7.6.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-7612">Exercise 7.6.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-7613">Exercise 7.6.13.</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#7614">7.6.14.</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#7615">7.6.15.</a>
@@ -197,6 +245,14 @@
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../ch08ex/">Chapter 08 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch0802ex/">Chapter 0802 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch0806ex/">Chapter 0806 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -1710,6 +1766,501 @@ at all <script type="math/tex">r_n</script> which is <script type="math/tex">\ma
 <script type="math/tex">\square</script>
 </p>
 <h2 id="76-lebesgues-criterion-for-riemann-integrability">7.6 Lebesgue’s Criterion for Riemann Integrability</h2>
+<h3 id="riemann-integrable-functions-with-infinite-discontinuities">Riemann-integrable Functions with Infinite Discontinuities</h3>
+<p>Recall from Section 4.1 that Thomae’s function</p>
+<p>
+<script type="math/tex; mode=display"> 
+t(x) = \begin{cases}
+    1 &\text{if } x = 0 \\
+    1/n &\text{if } x = m/n \in \mathbf{Q} \backslash \{0\} \\
+    0 &\text{if } x \not\in \mathbf{Q} \\
+\end{cases} 
+</script>
+</p>
+<p>is continuous on the set of irrationals and has 
+discontinuities at every rational
+point. Let’s prove that Thomae’s function is 
+integrable on <script type="math/tex">[0,1]</script> with <script type="math/tex">\int_{0}^{1} t = 0</script>.</p>
+<h3 id="exercise-761">Exercise 7.6.1.</h3>
+<p>(a) First, argue that <script type="math/tex">L(t,P) = 0</script> for any partition 
+<script type="math/tex">P</script> of <script type="math/tex">[0,1]</script>.</p>
+<p>Proof: this is because in every partition we can
+find an irrational number.</p>
+<p>(b) Consider the set of points
+<script type="math/tex">D_{ϵ/2} = \{x : t(x) ≥ ϵ/2\}</script>. How big is <script type="math/tex">D_{ϵ/2}</script>.</p>
+<p><strong>Solution</strong>: Let <script type="math/tex">n</script> be the biggest integer such
+that <script type="math/tex">1/n \geq ϵ/2</script>. So the size of <script type="math/tex">D_{ϵ/2}</script>
+is less than <script type="math/tex">\sum_{k=1}^{n}k = \frac{n(n+1)}{2}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) To complete the argument, explain how to 
+construct a partition <script type="math/tex">P_ϵ</script> of <script type="math/tex">[0,1]</script>
+so that <script type="math/tex">U(t,P_ϵ) < ϵ</script>.</p>
+<p><strong>Proof</strong>: We construct a partition such that
+the point in <script type="math/tex">D_{ϵ/2}</script> fall in an interval whose
+length is less than <script type="math/tex">(ϵ/2)/(n(n+1)/2)</script>.</p>
+<p>In those intervals, the partial sum is less than
+<script type="math/tex">ϵ/2</script>. In other intervals, the partial sum is also
+less than <script type="math/tex">ϵ/2</script>. So <script type="math/tex">U(t,P_ϵ) < ϵ</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-762">Exercise 7.6.2.</h3>
+<p>Define</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{if } x \not\in C\\
+\end{cases} 
+</script>
+</p>
+<p>Prove the following</p>
+<p>(a) Show <script type="math/tex">h</script> has discontinuities at each point of 
+<script type="math/tex">C</script> and is continuous at every point of the 
+complement of <script type="math/tex">C</script>. Thus, <script type="math/tex">h</script> is not continuous on an 
+uncountably infinite set.</p>
+<p><strong>Proof</strong>: Assume <script type="math/tex">x \not\in C</script>, then assume
+<script type="math/tex">x \in C_n</script> but <script type="math/tex">x \not\in C_{n+1}</script>. Since only
+open set was removed, <script type="math/tex">x</script> is removed with an open
+set. So <script type="math/tex">h(x)</script> is continuous at <script type="math/tex">x</script>.</p>
+<p>If <script type="math/tex">x \in C</script>, given any neighborhood of <script type="math/tex">V_{\epsilon}(x)</script>, we can find <script type="math/tex">n</script> such that
+<script type="math/tex">\frac{1}{3^n} < \epsilon</script>. Since the next step
+will take out an open internal of
+<script type="math/tex">\frac{1}{3^{n+1}}</script>. And this interval is
+within <script type="math/tex">V_{\epsilon}(x)</script>, so its value is <script type="math/tex">1</script>.
+<script type="math/tex">h(x)</script> is not continuous at <script type="math/tex">x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Now prove that <script type="math/tex">h</script> is integrable on [0,1].</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">P_n</script> be <script type="math/tex">C_n</script>.
+The length of all the intervals containing <script type="math/tex">C</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+1 - \frac{1}{3} - \frac{2}{9} - \frac{4}{27} -
+\cdots \frac{1}{3} (\frac{2}{3})^n \\
+1 - \frac{1}{3} (1 + \frac{2}{3} + \cdots + (\frac{2}{3})^n) \\
+1 - 3 (1 - (\frac{2}{3})^{n+1}) \\
+3 \left( \frac{2}{3} \right)^{n+1}
+</script>
+</p>
+<p>The upper sum of these intervals is
+<script type="math/tex">3 \left( \frac{2}{3} \right)^{n+1}</script>, in other
+intervals the upper sum is <script type="math/tex">0</script>.</p>
+<p>So <script type="math/tex">\lim_{n \to \infty} U(h, P_n) = 0</script>.
+so <script type="math/tex">h</script> is integrable on [0,1].</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="sets-of-measure-zero">Sets of Measure Zero</h3>
+<h3 id="definition-761-measure-zero">Definition 7.6.1. Measure zero</h3>
+<p>A set <script type="math/tex">A ⊆ \mathbf{R}</script> has <em>measure zero</em> if,
+for all <script type="math/tex">ϵ > 0</script>, there exists a countable collection 
+of open intervals <script type="math/tex">O_n</script> with the property that <script type="math/tex">A</script> 
+is contained in the union of all of the intervals
+<script type="math/tex">O_n</script> and the sum of the lengths of all of the
+intervals is less than or equal to <script type="math/tex">ϵ</script>.
+More precisely, if <script type="math/tex">|O_n|</script> refers to the length of
+the interval <script type="math/tex">O_n</script>, then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+A \subseteq \bigcup_{n=1}^{\infty} O_n
+\text{ and }
+\sum_{n = 1}^{\infty} |O_n| \leq \epsilon
+</script>
+</p>
+<h3 id="example-762">Example 7.6.2.</h3>
+<p>Consider a finite set <script type="math/tex">A= \{a_1,a_2,...,a_N\}</script>. To show that <script type="math/tex">A</script> has measure zero, let <script type="math/tex">ϵ > 0</script> be 
+arbitrary. For each <script type="math/tex">1 ≤ n ≤ N</script>, construct the
+interval</p>
+<p>
+<script type="math/tex; mode=display"> 
+G_n = \left( 
+a_n - \frac{ϵ}{2N},
+a_n + \frac{ϵ}{2N}
+\right).
+</script>
+</p>
+<p>Clearly, <script type="math/tex">A</script> is contained in the union of these intervals, and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{N} |G_n| =
+\sum_{n = 1}^{N} \frac{ϵ}{N} = \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-763">Exercise 7.6.3.</h3>
+<p>Show that any countable set has measure zero.</p>
+<p><strong>Proof</strong>: Given a countable set</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = \{r_1, r_2, r_3, \cdots, r_n \cdots \}
+</script>
+</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+G_n = \left( 
+r_n - \frac{ϵ}{2^{n+1}},
+r_n + \frac{ϵ}{2^{n+1}}
+\right).
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty} |G_n| =
+\sum_{n = 1}^{\infty} \frac{ϵ}{2^n} = \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-764">Exercise 7.6.4.</h3>
+<p>Prove that the Cantor set has measure zero.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">C_1</script> can be coverd by 2 segments of <script type="math/tex">3/8</script>.
+<script type="math/tex">C_2</script> can be coverd by 4 segments of <script type="math/tex">1/8</script>.
+<script type="math/tex">C_3</script> can be coverd by 8 segments of <script type="math/tex">1/24</script>.
+<script type="math/tex">C_n</script> can be coverd by <script type="math/tex">\frac{3}{4} \cdot (\frac{2}{3})^{n-1}</script> .
+So the Cantor set has measure zero.</p>
+<h3 id="exercise-765">Exercise 7.6.5.</h3>
+<p>Show that if two sets <script type="math/tex">A</script> and <script type="math/tex">B</script> each have measure 
+zero, then <script type="math/tex">A∪B</script> has measure zero as well. In 
+addition, discuss the proof of the stronger
+statement that the countable union of sets of 
+measure zero also has measure zero. (This second 
+statement is true, but a completely rigorous proof 
+requires a result about double summations discussed 
+in Section 2.8.)</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = \{a_1, a_2, a_3, \cdots, a_n \cdots \}
+\text{ and }
+B = \{b_1, b_2, b_3, \cdots, b_n \cdots \}
+</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+G_n = \left(
+a_n - \frac{ϵ}{2^{n+2}},
+a_n + \frac{ϵ}{2^{n+2}}
+\right)
+\text{ and }
+H_n = \left(
+b_n - \frac{ϵ}{2^{n+2}},
+b_n + \frac{ϵ}{2^{n+2}}
+\right).
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n = 1}^{\infty} |G_n| + |H_n| =
+\sum_{n = 1}^{\infty}
+\frac{ϵ}{2^{n+1}} + \frac{ϵ}{2^{n+1}}
+=
+\sum_{n = 1}^{\infty}
+\frac{ϵ}{2^{n}}
+= \epsilon
+</script>
+</p>
+<p>Now consider we have <script type="math/tex">A_1, A_2, A_3, \cdots, A_n, \cdots</script> countable sets. Each of them has countable
+elements. We list them in double array</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1n} & \cdots \\
+a_{21} & a_{22} & \cdots & a_{2n} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+</script>
+</p>
+<p>For each of them, we assign an open interval of
+certain length listed as following</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{matrix}
+ϵ/4 & ϵ/8  & \cdots & ϵ/2^{n+1} & \cdots \\
+ϵ/8 & ϵ/16 & \cdots & ϵ/2^{n+2} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+ϵ/2^{n+1} & ϵ/2^{n+2} & \cdots & ϵ/2^{n+n} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+</script>
+</p>
+<p>Then we can see</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|a_{ij}|
+</script>
+</p>
+<p>converges. In fact, it converges to</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|a_{ij}| = ϵ
+</script>
+</p>
+<p>Now if we have a countable of measure zero set,
+each length is </p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{matrix}
+|O_{11}| & |O_{12}| & \cdots & |O_{1n}| & \cdots \\
+|O_{21}| & |O_{22}| & \cdots & |O_{2n}| & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+|O_{n1}| & |O_{n2}| & \cdots & |O_{nn}| & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+</script>
+</p>
+<p>We can let </p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{j = 1}^{\infty} |O_{ij}| < \frac{\epsilon }{2^{i+1}}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|O_{ij}| < \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="-continuity">α-Continuity</h3>
+<h3 id="definition-763">Definition 7.6.3.</h3>
+<p>Let <script type="math/tex">f</script> be defined on <script type="math/tex">[a,b]</script>, and let <script type="math/tex">α > 0</script>. The 
+function <script type="math/tex">f</script> is <script type="math/tex">α</script>-continuous at <script type="math/tex">x ∈ [a,b]</script> if 
+there exists <script type="math/tex">δ > 0</script> such that for all
+<script type="math/tex">y,z ∈ (x−δ,x+δ)</script> it follows that <script type="math/tex">|f(y)−f(z)| < α</script>.</p>
+<p>Let <script type="math/tex">f</script> be a bounded function on <script type="math/tex">[a,b]</script>. For each
+<script type="math/tex">α > 0</script>, define <script type="math/tex">D^α</script> to be the set of points in
+<script type="math/tex">[a,b]</script> where the function <script type="math/tex">f</script> fails to be 
+<script type="math/tex">α</script>-continuous; that is,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{1}
+D^α =
+\{x \in [a,b] :
+f \text{ is not } α-\text{continuous at } x.
+\}
+</script>
+</p>
+<h3 id="exercise-766">Exercise 7.6.6.</h3>
+<p>If <script type="math/tex">α < α'</script>, show that <script type="math/tex">D_f^{α'} ⊆ D_f^{α}</script>.</p>
+<p>Proof: 
+This is exercise 4.6.9.
+If <script type="math/tex">x \in D_f^{α'}</script>, then given <script type="math/tex">\delta</script>, we can 
+find <script type="math/tex">y, z \in V_{\delta}(x)</script> such that <script type="math/tex">|f(y) - f(z)| > \alpha' > \alpha</script>. So <script type="math/tex">x \in D_f^{α}</script>. Then <script type="math/tex">D_f^{α'} ⊆ D_f^{α}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>Now, let</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{2}
+D =
+\{x \in [a,b] :
+f \text{ is not continuous at } x.
+\}
+</script>
+</p>
+<h3 id="exercise-767">Exercise 7.6.7.</h3>
+<p>(a) Let <script type="math/tex">α > 0</script> be given. Show that if <script type="math/tex">f</script> is continuous at <script type="math/tex">x</script>, then it is <script type="math/tex">α</script>-continuous at <script type="math/tex">x</script> as well. Explain how it follows that <script type="math/tex">D^α ⊆ D</script>.</p>
+<p><strong>Proof</strong>: This is exercise 4.6.10.</p>
+<p>If <script type="math/tex">f</script> is continuous at <script type="math/tex">x</script>, then we can find a <script type="math/tex">U_{\delta}(x) = (x−δ, x+δ)</script> such that <script type="math/tex">|y-x| < \alpha /2</script> and <script type="math/tex">|z-x| < \alpha /2</script>. Then <script type="math/tex">|y-z| < \alpha</script>. So <script type="math/tex">f</script> is <script type="math/tex">α</script>-continuous at <script type="math/tex">x</script> as well.</p>
+<p>Then given <script type="math/tex">x \in D^{α}</script>, <script type="math/tex">f</script> has to be discontinuous at <script type="math/tex">x</script>, so <script type="math/tex">x \in D</script>. Then <script type="math/tex">D^{α} ⊆ D</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">f</script> is not continuous at <script type="math/tex">x</script>, then <script type="math/tex">f</script> is not <script type="math/tex">α</script>-continuous for some <script type="math/tex">α</script> &gt; 0. Now explain why this guarantees that</p>
+<p>
+<script type="math/tex; mode=display"> 
+D = \bigcup_{n = 1}^{\infty} D^{\alpha_n}
+</script>
+</p>
+<p>where <script type="math/tex">α_n = 1/n</script>.</p>
+<p><strong>Proof</strong>: This is exercise 4.6.11.</p>
+<p>If <script type="math/tex">f</script> is not continuous at <script type="math/tex">x</script>, then exists <script type="math/tex">\epsilon</script>, given any <script type="math/tex">\delta</script>, we can find <script type="math/tex">y \in U_{\delta}(x)</script> such that <script type="math/tex">|f(y)-f(x)| >= \epsilon</script>. So <script type="math/tex">f</script>
+is not <script type="math/tex">\epsilon</script>-continuous at <script type="math/tex">x</script>. We can find
+<script type="math/tex">n</script> such that <script type="math/tex">1/n < \epsilon</script>.</p>
+<p>According to 4.6.9, <script type="math/tex">x \in D^{\epsilon} ⊆ D^{1/n}</script>.
+Then it follows:</p>
+<p>
+<script type="math/tex; mode=display"> 
+D = \bigcup_{n = 1}^{\infty} D^{\alpha_n}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-768">Exercise 7.6.8.</h3>
+<p>Prove that, for a fixed <script type="math/tex">α > 0</script>, the set <script type="math/tex">D^α</script> is closed.</p>
+<p><strong>Proof</strong>: This is exercise 4.6.8.</p>
+<p>Let <script type="math/tex">x</script> be a limit point of <script type="math/tex">D^α</script>. Given any <script type="math/tex">\delta</script>, we can find <script type="math/tex">a \in U_{\delta}(x)</script> such that <script type="math/tex">a \in D^α</script>, since <script type="math/tex">U_{\delta}(x)</script> is open, we can find
+<script type="math/tex">U_{\zeta}(a) \subset U_{\delta}(x)</script>. Since <script type="math/tex">a \in D^α</script>, we can find <script type="math/tex">y, z \in U_{\zeta}(a)</script> with <script type="math/tex">|f(y) − f(z)| \ge α</script>. Since <script type="math/tex">y, z \in U_{\delta}(x)</script>, <script type="math/tex">x</script> is also not
+<script type="math/tex">α</script>-continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="uniformly-continuous">uniformly α-continuous</h3>
+<p>For a fixed <script type="math/tex">α > 0</script>, a function <script type="math/tex">f : A → \mathbf{R}</script> is uniformly 
+<script type="math/tex">α</script>-continuous on <script type="math/tex">A</script> if there exists a <script type="math/tex">δ > 0</script> such that 
+whenever <script type="math/tex">x</script> and <script type="math/tex">y</script> are points in <script type="math/tex">A</script> satisfying
+<script type="math/tex">|x− y| < δ</script>, it follows that <script type="math/tex">|f(x)− f(y)| < α</script>. By imitating 
+the proof of Theorem 4.4.7, it is completely straight forward to 
+show that if <script type="math/tex">f</script> is <script type="math/tex">α</script>-continuous at every point on some compact 
+set <script type="math/tex">K</script>, then <script type="math/tex">f</script> is uniformly <script type="math/tex">α</script>-continuous on <script type="math/tex">K</script>.</p>
+<h3 id="compactness-revisited">Compactness Revisited</h3>
+<h3 id="theorem-764">Theorem 7.6.4.</h3>
+<p>Let <script type="math/tex">K ⊆ R</script>. The following three statements are all equivalent,
+in the sense that if any one is true, then so are the two others.</p>
+<p>(i) Every sequence contained in <script type="math/tex">K</script> has a convergent subsequence that converges to a limit in <script type="math/tex">K</script>.</p>
+<p>(ii) <script type="math/tex">K</script> is closed and bounded.</p>
+<p>(iii) Given a collection of open intervals <script type="math/tex">\{G_λ : λ ∈ Λ\}</script> that 
+covers <script type="math/tex">K</script> (that is, <script type="math/tex">K \subseteq \cup_{λ ∈ Λ} G_λ</script>
+there exists a finite subcollection
+<script type="math/tex">\{G_{λ_1}, G_{λ_2}, G_{λ_3}, \cdots, G_{λ_n}\}</script>
+of the original set that also covers <script type="math/tex">K</script>.</p>
+<h3 id="lebesgues-theorem">Lebesgue’s Theorem</h3>
+<h3 id="theorem-765-lebesgues-theorem">Theorem 7.6.5 (Lebesgue’s Theorem).</h3>
+<p>Let <script type="math/tex">f</script> be a bounded function defined on the interval <script type="math/tex">[a,b]</script>. 
+Then, <script type="math/tex">f</script> is Riemann-integrable if and only if the set of
+points where <script type="math/tex">f</script> is not continuous has measure zero.</p>
+<p><strong>Proof</strong>. Let <script type="math/tex">M > 0</script> satisfy <script type="math/tex">|f(x)| ≤ M</script> for all <script type="math/tex">x ∈ [a,b]</script>, 
+and let <script type="math/tex">D</script> and <script type="math/tex">D^α</script> be defined as in the preceding equations 
+(1) and (2). Let’s first assume that <script type="math/tex">D</script> has
+measure zero and prove that our function is integrable.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> Let <script type="math/tex">\epsilon > 0</script> and set</p>
+<p>
+<script type="math/tex; mode=display"> 
+\alpha = \frac{\epsilon}{2(b-a)}
+</script>
+</p>
+<h3 id="exercise-769">Exercise 7.6.9.</h3>
+<p>Show that there exists a finite collection of disjoint open
+intervals <script type="math/tex">{G_1,G_2,...,G_N}</script> whose union contains <script type="math/tex">D_α</script> and that 
+satisfies</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{n=1}^{N} |G_n| < \frac{\epsilon }{4M}
+</script>
+</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">D</script> is measure zero, we can find a countable
+of open set <script type="math/tex">\{O_n\}</script> such that <script type="math/tex">D \subseteq \cup O_n</script>.</p>
+<p>Since <script type="math/tex">D^α \subseteq D</script> and it's closed, so we can find
+a finite number of <script type="math/tex">O_n</script> such that
+<script type="math/tex">D^α \subseteq \cup_{i=1}^{n} O_n</script>.
+Then we can combine those open sets which have intersection.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-7610">Exercise 7.6.10.</h3>
+<p>Let <script type="math/tex">K</script> be what remains of the interval <script type="math/tex">[a,b]</script> after the open
+intervals <script type="math/tex">G_n</script> are all removed; that is,
+<script type="math/tex">K = [a,b] \backslash \cup_{n=1}^N G_n</script>.
+Argue that <script type="math/tex">f</script> is uniformly <script type="math/tex">α</script>-continuous on <script type="math/tex">K</script>.</p>
+<p><strong>Proof</strong>: If <script type="math/tex">x</script> is not <script type="math/tex">α</script>-continuous, then <script type="math/tex">x \in D^α</script>.
+Then it's in one of <script type="math/tex">G_n</script>. So if <script type="math/tex">x \in K</script>, then
+<script type="math/tex">x</script> is <script type="math/tex">α</script>-continuous. Furthermore, <script type="math/tex">K</script> is a finite union of
+closed intervals, so it is uniformly <script type="math/tex">α</script>-continuous in each
+of the intervals, then it has to be uniformly <script type="math/tex">α</script>-continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-7611">Exercise 7.6.11.</h3>
+<p>Finish the proof in this direction by explaining how to
+construct a partition <script type="math/tex">P_ϵ</script> of <script type="math/tex">[a,b]</script> such that
+<script type="math/tex">U(f, P_ϵ) - L(f, P_ϵ) \leq \epsilon</script>.
+It will be helpful to break the sum</p>
+<p>
+<script type="math/tex; mode=display"> 
+U(f, P_ϵ) - L(f, P_ϵ) =
+\sum_{k=1}^{n} (M_k - m_k) \triangle x_k
+</script>
+</p>
+<p>into two parts—one over those subintervals that contain points of 
+<script type="math/tex">D^α</script> and the other over subintervals that do not.</p>
+<p><strong>Proof</strong>: We use <script type="math/tex">G_k</script> to do the partition.
+In <script type="math/tex">G_k</script>, the partial sum is <script type="math/tex">2M \times \frac{\epsilon }{4M} = \epsilon / 2</script>.</p>
+<p>In other intervals, the partial sum is less than
+<script type="math/tex">α \times (b-a) = \epsilon / 2</script>.</p>
+<p>In summary, the partial sum is less than <script type="math/tex">\epsilon / 2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>For the other direction, assume <script type="math/tex">f</script> is Riemann-integrable. We 
+must argue that the set <script type="math/tex">D</script> of discontinuities of <script type="math/tex">f</script> has measure 
+zero.</p>
+<p>Let <script type="math/tex">ϵ > 0</script> be arbitrary, and fix <script type="math/tex">α > 0</script>. Because <script type="math/tex">f</script> is 
+Riemann-integrable, there exists a partition <script type="math/tex">P_ϵ</script> of <script type="math/tex">[a,b]</script> 
+such that <script type="math/tex">U(f,P_ϵ)−L(f,P_ϵ) < αϵ</script>.</p>
+<h3 id="exercise-7612">Exercise 7.6.12.</h3>
+<p>(a) Prove that <script type="math/tex">D^α</script> has measure zero. Point out that it is
+possible to choose a cover for <script type="math/tex">D^α</script> that consists of a finite number of open intervals.</p>
+<p><strong>Proof</strong>: We consider <script type="math/tex">P_ϵ</script>. For those intervals such that
+<script type="math/tex">M_k - m_k \geq \alpha</script>, their total length should less than
+<script type="math/tex">\epsilon</script>. Assume their total length is <script type="math/tex">\epsilon'</script>,
+and <script type="math/tex">d = \epsilon - \epsilon'</script>. Assume there are only <script type="math/tex">N</script> segments that satisfy <script type="math/tex">M_k - m_k \geq \alpha</script>.
+We can use <script type="math/tex">2N</script> open intervals with length <script type="math/tex">\frac{d}{4N}</script>.
+So the total length is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\epsilon' + 2N \cdot \frac{d}{4N} = \epsilon' + \frac{d}{2}
+< \epsilon' + d = \epsilon.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show how this implies that <script type="math/tex">D</script> has measure zero.</p>
+<p><strong>Proof</strong>: This is because <script type="math/tex">D</script> is a countable union of
+measure zero set.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-7613">Exercise 7.6.13.</h3>
+<p>(a) Show that if <script type="math/tex">f</script> and <script type="math/tex">g</script> are integrable on <script type="math/tex">[a,b]</script>, then so is
+the product <script type="math/tex">fg</script>. (This result was requested in Exercise 7.4.6, 
+but notice how much easier the argument is now.)</p>
+<p><strong>Proof</strong>: Consider <script type="math/tex">D_f</script> and <script type="math/tex">D_g</script> which are measure zero,
+and <script type="math/tex">D_{fg} = D_f \cup D_g</script>.
+So it is measure zero too.</p>
+<p>Then <script type="math/tex">fg</script> is integrable.</p>
+<p>(b) Show that if <script type="math/tex">g</script> is integrable on <script type="math/tex">[a,b]</script> and <script type="math/tex">f</script> is 
+continuous on the range of <script type="math/tex">g</script>, then the composition <script type="math/tex">f◦g</script> is 
+integrable on <script type="math/tex">[a,b]</script>.</p>
+<p><strong>Proof</strong>: If <script type="math/tex">g</script> is continuous at <script type="math/tex">x</script>, then <script type="math/tex">f◦g</script> is also
+continuous at <script type="math/tex">x</script>. So if <script type="math/tex">x \in D_{f◦g}</script> then <script type="math/tex">x \in D_g</script>.
+That is <script type="math/tex">D_{f◦g} \subseteq D_g</script>. Since <script type="math/tex">D_g</script> is measure zero,
+so is <script type="math/tex">D_{f◦g}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="7614">7.6.14.</h3>
 <p>(a) Find <script type="math/tex">g'(0)</script>.</p>
 <p><strong>Solution</strong>:</p>

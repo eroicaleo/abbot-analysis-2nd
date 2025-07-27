@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 0802 Exercises - Understanding Analysis by Stephen Abbot (2nd Ed)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 0802 Exercises";
+        var mkdocs_page_input_path = "ch0802ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Understanding Analysis by Stephen Abbot (2nd Ed)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05notes/">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06notes/">Chapter 06 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch06ex/">Chapter 06 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch07notes/">Chapter 07 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch07ex/">Chapter 07 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch08ex/">Chapter 08 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 0802 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#82-metric-spaces-and-the-baire-category-theorem">8.2 Metric Spaces and the Baire Category Theorem</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-821">Definition 8.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-821">Exercise 8.2.1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-822">Exercise 8.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-823">Exercise 8.2.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-822">Definition 8.2.2.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-823">Definition 8.2.3.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-824">Exercise 8.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-824">Definition 8.2.4.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-825">Exercise 8.2.5.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-825-continuous-function">Definition 8.2.5 (Continuous function).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-826">Exercise 8.2.6.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#topology-on-metric-spaces">Topology on Metric Spaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-827">Exercise 8.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#open-sets-limit-points-and-closed-sets">open sets, limit points, and closed sets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-828">Exercise 8.2.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-829">Exercise 8.2.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-827">Definition 8.2.7.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8210">Exercise 8.2.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-828">Definition 8.2.8.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8211">Exercise 8.2.11.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8212">Exercise 8.2.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-829">Definition 8.2.9.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8213">Exercise 8.2.13.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-baire-category-theorem">The Baire Category Theorem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-8210">Theorem 8.2.10.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8214">Exercise 8.2.14.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-8211-baire-category-theorem">Theorem 8.2.11 (Baire Category Theorem).</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8215">Exercise 8.2.15.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-8212">Theorem 8.2.12.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8216">Exercise 8.2.16.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8217">Exercise 8.2.17.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercise-8218">Exercise 8.2.18.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch0806ex/">Chapter 0806 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">Unsolved Problems</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Understanding Analysis by Stephen Abbot (2nd Ed)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 0802 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/abbot-analysis-2nd/blob/main/docs/ch0802ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-08-additional-topics">Chapter 08 Additional Topics</h1>
+<h2 id="82-metric-spaces-and-the-baire-category-theorem">8.2 Metric Spaces and the Baire Category Theorem</h2>
+<h3 id="definition-821">Definition 8.2.1.</h3>
+<p>Given a set <script type="math/tex">X</script>, a function <script type="math/tex">d : X × X → R</script> is a metric on <script type="math/tex">X</script>
+if for all <script type="math/tex">x,y ∈ X</script>:</p>
+<p>(i) <script type="math/tex">d(x,y) ≥ 0</script> with <script type="math/tex">d(x,y) = 0</script> if and only if <script type="math/tex">x = y</script>,</p>
+<p>(ii) <script type="math/tex">d(x,y) = d(y,x)</script>, and</p>
+<p>(iii) for all <script type="math/tex">z ∈ X</script>, <script type="math/tex">d(x,y) ≤ d(x,z)+d(z,y)</script>.</p>
+<p>A metric space is a set <script type="math/tex">X</script> together with a metric 
+<script type="math/tex">d</script>.</p>
+<h3 id="exercise-821">Exercise 8.2.1.</h3>
+<p>Decide which of the following are metrics on
+<script type="math/tex">X = R^2</script>. For each, we let <script type="math/tex">x = (x_1,x_2)</script> and
+<script type="math/tex">y = (y_1,y_2)</script> be points in the plane.</p>
+<p>(a) <script type="math/tex">d(x,y) = \sqrt[]{(x_1−y_1)^2 +(x_2−y_2)^2}</script>.</p>
+<p><strong>Proof</strong>: Yes.</p>
+<p>(i)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sqrt[]{(x_1−y_1)^2 +(x_2−y_2)^2} \geq 0
+</script>
+</p>
+<p>It's equal to <script type="math/tex">0</script>, only when <script type="math/tex">x_1 = y_1, x_2 = y_2</script>.</p>
+<p>(ii) yes.</p>
+<p>(iii) Yes. It's easier to see with a plot.
+Triangle 2 edges are longer than 1 edge.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">d(x,y) = \max \{|x_1−y_1|,|x_2−y_2|\}.</script>
+</p>
+<p>(i) yes.</p>
+<p>(ii) yes.</p>
+<p>(iii)</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x, z) + d(z,y) =
+\max \{|x_1 - z_1|,|x_2 - z_2|\} +
+\max \{|y_1 - z_1|,|y_2 - z_2|\} \\
+\geq
+\max \{
+|x_1 - z_1| + |y_1 - z_1|,
+|x_2 - z_2| + |y_2 - z_2|
+\} \\
+\geq
+\max \{
+|x_1 - y_1|,
+|x_2 - y_2|
+\} = d(x,y)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) <script type="math/tex">d(x,y) = |x_1 x_2 +y_1 y_2|</script>.</p>
+<p>(i) No, Consider <script type="math/tex">x = (1, 1), y = (1, -1)</script>.
+<script type="math/tex">x_1 x_2 +y_1 y_2 = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-822">Exercise 8.2.2.</h3>
+<p>Let <script type="math/tex">C[0,1]</script> be the collection of continuous functions
+on the closed interval <script type="math/tex">[0,1]</script>. Decide which of the following are metrics on <script type="math/tex">C[0,1]</script>.</p>
+<p>(a) <script type="math/tex">d(f,g) = \sup \{|f(x)−g(x)| : x ∈ [0,1]\}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>(i) <script type="math/tex">d(f,g) \geq 0</script>. If <script type="math/tex">d(f,g) = 0</script>, then
+<script type="math/tex">\sup \{|f(x)−g(x)| : x ∈ [0,1]\} = 0</script>, that means
+<script type="math/tex">|f(x) - g(x)| = 0</script> for all <script type="math/tex">x \in [0,1]</script>.</p>
+<p>(ii) <script type="math/tex">d(f,g) = d(g,f)</script>
+</p>
+<p>(iii)</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(f,h) + d(h, g) =
+\sup \{|f(x)−h(x)| : x ∈ [0,1]\} +
+\sup \{|h(x)−g(x)| : x ∈ [0,1]\} \\
+\geq
+\sup \{
+|f(x)−h(x)| + |h(x)−g(x)| : x ∈ [0,1]
+\} \\
+\geq
+\sup \{
+|f(x)−g(x)| : x ∈ [0,1]
+\} \\
+= d(f,g)
+</script>
+</p>
+<p>So yes.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">d(f,g) = |f(1)−g(1)|</script>.</p>
+<p>(i) it does not hold. So it's not a metric.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) <script type="math/tex">d(f,g) = \int_{0}^{1} |f-g|</script>
+</p>
+<p>(i) <script type="math/tex">\int_{0}^{1} |f-g| \geq 0</script>. If <script type="math/tex">\int_{0}^{1} |f-g| = 0</script>,
+since <script type="math/tex">f, g</script> are continuous functions,
+then <script type="math/tex">f-g = 0</script>, i.e. <script type="math/tex">f = g</script>.</p>
+<p>(ii) <script type="math/tex">\int_{0}^{1} |f-g| = \int_{0}^{1} |g-f|</script>
+</p>
+<p>(iii)</p>
+<p>
+<script type="math/tex; mode=display">
+\int_{0}^{1} |f - g| \leq
+\int_{0}^{1} |f-h| + |h-g|
+=
+\int_{0}^{1} |f-h| + \int_{0}^{1} |h - g|
+= d(f,h) + d(h, g)
+</script>
+</p>
+<p>So yes.</p>
+<p>The following distance function is called the discrete metric and 
+can be defined on any set <script type="math/tex">X</script>. For any <script type="math/tex">x,y ∈ X</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+ρ(x,y) =
+\begin{cases}
+    1 &\text{if } x \neq y\\
+    0 &\text{if } x = y \\
+\end{cases} 
+</script>
+</p>
+<h3 id="exercise-823">Exercise 8.2.3.</h3>
+<p>Verify that the discrete metric is actually a metric.</p>
+<p><strong>Proof</strong>:</p>
+<p>(i) <script type="math/tex">d(x,y) \geq 0</script>. Also if <script type="math/tex">d(x,y) = 0</script>, then <script type="math/tex">x = y</script>.</p>
+<p>(ii) if <script type="math/tex">x = y</script>, then <script type="math/tex">d(x,y) = d(x, x) = 0 = d(y, y) = d(y,x)</script>.</p>
+<p>If <script type="math/tex">x \neq y</script>, then <script type="math/tex">d(x,y) = 1 = d(y,x)</script>.</p>
+<p>(iii) <script type="math/tex">d(x,y) \leq 1</script>, <script type="math/tex">d(x,z) + d(z,y) \geq 1</script>,
+<script type="math/tex">d(x,y) \leq d(x,z) + d(z,y)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-822">Definition 8.2.2.</h3>
+<p>Let <script type="math/tex">(X,d)</script> be a metric space. A sequence <script type="math/tex">(x_n) ⊆ X</script> converges
+to an element <script type="math/tex">x ∈ X</script> if for all <script type="math/tex">ϵ > 0</script> there exists an <script type="math/tex">N ∈ \mathbf{N}</script> such that <script type="math/tex">d(x_n,x) < ϵ</script> whenever <script type="math/tex">n ≥ N</script>.</p>
+<h3 id="definition-823">Definition 8.2.3.</h3>
+<p>A sequence <script type="math/tex">(x_n)</script> in a metric space <script type="math/tex">(X,d)</script> is a Cauchy sequence
+if for all <script type="math/tex">ϵ > 0</script> there exists an <script type="math/tex">N ∈ \mathbf{N}</script> such that
+<script type="math/tex">d(x_m,x_n) < ϵ</script> whenever <script type="math/tex">m,n ≥ N</script>.</p>
+<h3 id="exercise-824">Exercise 8.2.4.</h3>
+<p>Show that a convergent sequence is Cauchy.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x_m,x_n) \leq d(x_m,x) + (x,x_n) \leq \epsilon /2 + \epsilon /2
+= \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-824">Definition 8.2.4.</h3>
+<p>A metric space <script type="math/tex">(X,d)</script> is complete if every Cauchy sequence
+in <script type="math/tex">X</script> converges to an element of <script type="math/tex">X</script>.</p>
+<h3 id="exercise-825">Exercise 8.2.5.</h3>
+<p>(a) Consider <script type="math/tex">\mathbf{R}^2</script> with the discrete metric <script type="math/tex">ρ(x,y)</script> 
+examined in Exercise 8.2.3. What do Cauchy sequences look like in 
+this space? Is <script type="math/tex">\mathbf{R}^2</script> complete with respect to this metric?</p>
+<p><strong>Proof</strong>: Cauchy sequences will eventually become a constant.
+Yes, it's complete.</p>
+<p>(b) Show that <script type="math/tex">C[0,1]</script> is complete with respect to the metric in Exercise 8.2.2 (a).</p>
+<p><strong>Proof</strong>:</p>
+<p>Given a cauchy function sequence <script type="math/tex">(f_n(x))</script>,
+and given <script type="math/tex">\epsilon</script>, we can find <script type="math/tex">N</script>, and <script type="math/tex">m,n > N</script>,
+<script type="math/tex">d(f_m, f_n) < \epsilon</script>.</p>
+<p>Since <script type="math/tex">d(f_m, f_n) = \sup \{|f_m(x) - f_n(x)| : x \in [0,1]\}</script>,
+then <script type="math/tex">|f_m(x) - f_n(x)| < \epsilon</script> for <script type="math/tex">x \in [0,1]</script>.
+Then we can apply Theorem 6.2.5 (Cauchy Criterion for Uniform Convergence), to get <script type="math/tex">f(x)</script> is also continuous.
+Then <script type="math/tex">f(x) \in C[0,1]</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Define <script type="math/tex">C^1[0,1]</script> to be the collection of diﬀerentiable 
+functions on <script type="math/tex">[0,1]</script> whose derivatives are also continuous. Is
+<script type="math/tex">C^1[0,1]</script> complete with respect to the metric defined in Exercise 
+8.2.2 (a)?</p>
+<p><strong>Proof</strong>:</p>
+<p>Let's consider the following function sequence we encounter
+in the end of chapter 5.4</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \sum_{k = 0}^{n} (\frac{1}{2})^k \cos (2^k x)
+</script>
+</p>
+<p>where <script type="math/tex">x \in [0,1]</script>.</p>
+<p>This is a Cauchy sequence, because</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f_m(x) - f_n(x) \right| \leq 
+\left| 
+(\frac{1}{2})^{m+1} + \cdots + (\frac{1}{2})^n
+ \right| < \frac{1}{2^m}
+</script>
+</p>
+<p>So it converges uniformly to a function <script type="math/tex">f</script> which is continuous.</p>
+<p>However, from the discussion at the end of chapter 5.4, the results
+from G.H. Hardy show since <script type="math/tex">ab = (\frac{1}{2}) \cdot 2 = 1</script>, then
+<script type="math/tex">f(x)</script> is a nowhere-differentiable function. That is
+<script type="math/tex">f \not\in C^1[0,1]</script>. So it's not complete w.r.t.
+to the metric defined in Exercise 8.2.2 (a).</p>
+<p>Another example I asked Google AI mode is similar to
+exercise 8.5.4 (b), which uses <script type="math/tex">\sin</script> and <script type="math/tex">\cos</script> function
+to approximate <script type="math/tex">f(x) = |x|</script>. Again, the convergence is uniform,
+(see my solution on that one),
+so it's a Cauchy sequence, but <script type="math/tex">|x|</script> is not differentiable at 0.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Because completeness is a prerequisite for doing anything 
+significant in the way of analysis, the metric in Exercise
+8.2.2 (a) is the most natural metric to
+consider when working with <script type="math/tex">C[0,1]</script>. The notation</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| f-g \right\|_{\infty} =
+d(f,g) = \sup \{|f(x)−g(x)| : x ∈ [0,1]\}
+</script>
+</p>
+<p>is standard, and setting <script type="math/tex">g = 0</script> gives the so-called “sup norm”</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left\| f \right\|_{\infty} =
+d(f,0) = \sup \{|f(x)| : x ∈ [0,1]\}
+</script>
+</p>
+<p>In all upcoming discussions, it is assumed that the space <script type="math/tex">C[0,1]</script> 
+is endowed with this metric unless otherwise specified.</p>
+<h3 id="definition-825-continuous-function">Definition 8.2.5 (Continuous function).</h3>
+<p>Let <script type="math/tex">(X,d_1)</script> and <script type="math/tex">(Y,d_2)</script> be metric spaces. A function <script type="math/tex">f :
+X → Y</script> is continuous at <script type="math/tex">x ∈ X</script> if for all <script type="math/tex">ϵ > 0</script> there exists a 
+<script type="math/tex">δ > 0</script> such that <script type="math/tex">d_2(f(x),f(y)) < ϵ</script> whenever <script type="math/tex">d_1(x,y) < δ</script>.</p>
+<h3 id="exercise-826">Exercise 8.2.6.</h3>
+<p>Which of these functions from <script type="math/tex">C[0,1]</script> to <script type="math/tex">\mathbf{R}</script> (with the usual metric) are continuous?</p>
+<p>(a) <script type="math/tex">g(f) = \int_{0}^{1}fk</script> where <script type="math/tex">k</script> is some fixed function in
+<script type="math/tex">C[0,1]</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(f_1) - f(f_2) =
+\int_{0}^{1} f_1 k - \int_{0}^{1} f_2 k \\
+= \int_{0}^{1} (f_1 - f_2) k
+</script>
+</p>
+<p>Since <script type="math/tex">k</script> is a fixed function in <script type="math/tex">C[0,1]</script>, then it's continuous.
+We can assume <script type="math/tex">|k| \leq M</script>. Then if <script type="math/tex">d_1(f_1, f_2) < \epsilon / M</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g(f_1) - f(f_2)| =
+\left| \int_{0}^{1} (f_1 - f_2) k \right|
+\leq 
+\int_{0}^{1} | (f_1 - f_2) k | < \int_{0}^{1} \epsilon / M \cdot M
+= \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">g</script> is continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">g(f) = f(1/2)</script>.</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">d_1(f_1, f_2) < \epsilon</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+|g(f_1) - g(f_2)| = |f_1(1/2) - f_2(1/2)|
+\leq d_1(f_1, f_2) < \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) <script type="math/tex">g(f) = f(1/2)</script>, but this time with respect to the metric on
+<script type="math/tex">C[0,1]</script> from  Exercise 8.2.2 (c).</p>
+<p><strong>Proof</strong>: Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n(x) = \begin{cases}
+    nx - n(1/2 - 1/n) &\text{if } 1/2 - 1/n \leq x \leq 1/2 \\
+    -n x + n (1/2 + 1/n) &\text{if } 1/2 \leq x \leq 1/2 + 1/n \\
+    0 & \text{otherwise }
+\end{cases} 
+</script>
+</p>
+<p>Note the <script type="math/tex">f_n</script>'s shape is a triangle centered at <script type="math/tex">1/2</script> with a height
+of <script type="math/tex">n</script>.</p>
+<p>Let <script type="math/tex">f = 0</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+d_1(f_n, f) = \int_{0}^{1} | f_n - f |
+= \int_{0}^{1} f_n = \frac{1}{n} \rightarrow 0
+</script>
+</p>
+<p>But <script type="math/tex">g(f_n) - g(f) = f_n(1/2) - f(1/2) = 1 - 0 = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="topology-on-metric-spaces">Topology on Metric Spaces</h3>
+<p><strong><em>Definition 8.2.6.</em></strong> Given <script type="math/tex">ϵ > 0</script> and an element <script type="math/tex">x</script> in the metric 
+space <script type="math/tex">(X,d)</script>, the <script type="math/tex">ϵ</script>-neighborhood of <script type="math/tex">x</script> is the set
+<script type="math/tex">V_ϵ(x) = \{y ∈ X : d(x,y) < ϵ\}</script>.</p>
+<h3 id="exercise-827">Exercise 8.2.7.</h3>
+<p>Describe the <script type="math/tex">ϵ</script>-neighborhoods in <script type="math/tex">\mathbf{R}^2</script> for each of the 
+diﬀerent metrics described in Exercise 8.2.1. How about for the 
+discrete metric?</p>
+<p><strong>Solution</strong>:</p>
+<p>(a) <script type="math/tex">d(x,y) = \sqrt[]{(x_1−y_1)^2 +(x_2−y_2)^2}</script>.</p>
+<p>The <script type="math/tex">ϵ</script>-neighborhood of <script type="math/tex">x</script> is a cicle of radius <script type="math/tex">\epsilon</script> centered
+at <script type="math/tex">x</script>.</p>
+<p>(b) <script type="math/tex">d(x,y) = \max \{|x_1−y_1|,|x_2−y_2|\}.</script>
+</p>
+<p>The <script type="math/tex">ϵ</script>-neighborhood of <script type="math/tex">x</script> is a square with edge length <script type="math/tex">2 \epsilon</script> centered
+at <script type="math/tex">x</script>.</p>
+<p>(c) the discrete metric.</p>
+<p>The <script type="math/tex">ϵ</script>-neighborhood of <script type="math/tex">x</script> is only itself if <script type="math/tex">ϵ < 1</script>.
+It's <script type="math/tex">X</script> if <script type="math/tex">ϵ \geq 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="open-sets-limit-points-and-closed-sets"><em>open sets</em>, <em>limit points</em>, and <em>closed sets</em></h3>
+<p>With the definition of an <script type="math/tex">ϵ</script>-neighborhood, we can now define open 
+sets, limit points, and closed sets exactly as we did before.</p>
+<ul>
+<li>A set <script type="math/tex">O ⊆ X</script> is open if for every <script type="math/tex">x ∈ O</script> we can find a 
+  neighborhood <script type="math/tex">V_ϵ(x) ⊆ O</script>.</li>
+<li>A point <script type="math/tex">x</script> is a limit point of a set <script type="math/tex">A</script> if every <script type="math/tex">V_ϵ(x)</script> 
+  intersects <script type="math/tex">A</script> in some point other than <script type="math/tex">x</script>.</li>
+<li>A set <script type="math/tex">C</script> is closed if it contains its limit points.</li>
+</ul>
+<h3 id="exercise-828">Exercise 8.2.8.</h3>
+<p>Let <script type="math/tex">(X,d)</script> be a metric space.</p>
+<p>(a) Verify that a typical <script type="math/tex">ϵ</script>-neighborhood <script type="math/tex">V_ϵ(x)</script> is an open set.
+Is the set</p>
+<p>
+<script type="math/tex; mode=display"> 
+C_{\epsilon}(x) = \{y \in X: d(x,y) \leq \epsilon \}
+</script>
+</p>
+<p>a closed set</p>
+<p><strong>Proof</strong>: Let <script type="math/tex">y \in V_{\epsilon}(x)</script>, and <script type="math/tex">\delta = \epsilon - d(x,y) > 0</script>. Consider <script type="math/tex">z \in V_{\delta}(y)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(z, x) \leq d(z, y) + d(y, x)
+\leq \delta + d(y,x) = \epsilon - d(y,x) + d(y,x) = \epsilon
+</script>
+</p>
+<p>So <script type="math/tex">z \in V_{\epsilon}(x)</script>, so <script type="math/tex">V_{\delta}(y) \subseteq V_{\epsilon}(x)</script>, then <script type="math/tex">V_{\epsilon}(x)</script> is an open set.</p>
+<p>Assume <script type="math/tex">d(x,y) > \epsilon</script>, we want to show <script type="math/tex">y</script> is not a limit point 
+of <script type="math/tex">C_{\epsilon}(x)</script>.</p>
+<p>Let <script type="math/tex">\delta = \frac{d(x,y)-\epsilon }{2}</script>, consider
+<script type="math/tex">V_{\delta}(y)</script>, and let <script type="math/tex">z \in V_{\delta}(y)</script>.</p>
+<p>if <script type="math/tex">z \in C_{\epsilon}(x)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x, y) \leq d(x,z) + d(z,y) \leq \epsilon + \delta
+< \epsilon + 2 \delta  = d(x,y)
+</script>
+</p>
+<p>We got a contradiction. So <script type="math/tex">z \not\in C_{\epsilon}(x)</script>.
+Then <script type="math/tex">V_{\delta}(y) \cap C_{\epsilon}(x) = \emptyset</script>, i.e.
+<script type="math/tex">y</script> is not a limit point of <script type="math/tex">C_{\epsilon}(x)</script>.
+So <script type="math/tex">C_{\epsilon}(x)</script> is a closed set.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that a set <script type="math/tex">E ⊆ X</script> is open if and only if its complement is closed.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">E</script> is open, and <script type="math/tex">x \in E</script>.
+Then we can find <script type="math/tex">V_{\epsilon}(x) \subseteq E</script>.
+So <script type="math/tex">V_{\epsilon}(x) \cap E^c = \emptyset</script>, so <script type="math/tex">x</script> is
+not a limit point of <script type="math/tex">E^c</script>. That means <script type="math/tex">E</script> does not 
+contain any limit point of <script type="math/tex">E^c</script>. So <script type="math/tex">E^c</script> contains
+all its limit point. So <script type="math/tex">E^c</script> is closed.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> Assume <script type="math/tex">E^c</script> is closed. And <script type="math/tex">x \in E</script>.
+Since it's not a limit point of <script type="math/tex">E^c</script>, we can find
+<script type="math/tex">V_{\epsilon}(x) \cap E^c = \emptyset</script>.
+So <script type="math/tex">V_{\epsilon}(x) \subseteq E</script>.
+Then <script type="math/tex">E</script> is open.</p>
+<h3 id="exercise-829">Exercise 8.2.9.</h3>
+<p>(a) Show that the set <script type="math/tex">Y= \{f ∈ C[0,1] : |f|_∞ ≤ 1\}</script> 
+is closed in <script type="math/tex">C[0,1]</script>.</p>
+<p><strong>Proof</strong>: we can see that <script type="math/tex">Y = C_{1}(0)</script>, so it's closed.</p>
+<p>(b) Is the set <script type="math/tex">T= \{f ∈ C[0,1] : f(0) = 0\}</script> open, 
+closed, or neither in <script type="math/tex">C[0,1]</script>?</p>
+<p><strong>Proof</strong>:</p>
+<p>It's not open. Given <script type="math/tex">f \in T</script>, and <script type="math/tex">\epsilon > 0</script>.
+Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+g = f + \frac{\epsilon}{2}(x-1)
+</script>
+</p>
+<p>Then <script type="math/tex">d(f,g) = \sup \{ |\frac{\epsilon}{2}(x-1)| : x \in 
+[0, 1] \} = \frac{\epsilon }{2}</script>.</p>
+<p>So <script type="math/tex">g \in V_{\epsilon}(f)</script>, but <script type="math/tex">g \not\in T</script>.</p>
+<p>On the other hand, it <script type="math/tex">g</script> is a limit point of <script type="math/tex">T</script>,
+then given <script type="math/tex">\epsilon</script>,
+<script type="math/tex">|g(0)| \leq \sup \{ |f(x) - g(x)| : x \in [0,1]\} < \epsilon</script>.
+So <script type="math/tex">g(0) = 0</script>, then <script type="math/tex">g \in T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-827">Definition 8.2.7.</h3>
+<p>A subset <script type="math/tex">K</script> of a metric space <script type="math/tex">(X,d)</script> is compact if every
+sequence in <script type="math/tex">K</script> has a convergent subsequence that 
+converges to a limit in <script type="math/tex">K</script>.</p>
+<h3 id="exercise-8210">Exercise 8.2.10.</h3>
+<p>(a) Supply a definition for bounded subsets of a metric
+space <script type="math/tex">(X,d)</script>.</p>
+<p><strong>Solution</strong>: If a non empty subset <script type="math/tex">S</script> of <script type="math/tex">(X,d)</script> is
+bounded, we can find <script type="math/tex">x \in S</script> and a real number <script type="math/tex">d > 0</script>,
+such that <script type="math/tex">S \subseteq V_{d}(x)</script>.</p>
+<p>(b) Show that if <script type="math/tex">K</script> is a compact subset of the metric 
+space <script type="math/tex">(X,d)</script>, then <script type="math/tex">K</script> is closed and bounded.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">K</script> is not bounded, and let <script type="math/tex">x \in K</script>.
+Let <script type="math/tex">x_{n} \in K</script>, such that <script type="math/tex">d(x_n, x) > n</script>.</p>
+<p>We can find a subsequence of <script type="math/tex">(x_n)</script> such that
+<script type="math/tex">(x_{n_k})</script> converges to <script type="math/tex">y \in K</script>.
+Let <script type="math/tex">d = d(x, y)</script>, we can find <script type="math/tex">n_k</script>, such that
+<script type="math/tex">n_k > d + 1</script> and <script type="math/tex">d(y, x_{n_k}) < 1</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+d(x_{n_k}, x) \leq d(x_{n_k}, y) + d(y, x)
+< 1 + d < n_k
+</script>
+</p>
+<p>On the other hand, <script type="math/tex">d(x_{n_k}, x) > n_k</script>.
+We have a contradiction.</p>
+<p>So <script type="math/tex">K</script> is bounded.</p>
+<p>Assume <script type="math/tex">x \in K</script> is a limit point of <script type="math/tex">K</script>.
+Let <script type="math/tex">x_n \in K \cap V_{1/n}(x)</script>. So <script type="math/tex">(x_n) \rightarrow x</script>.
+On the other hand, a subsequence <script type="math/tex">(x_{n_k}) \rightarrow c \in K</script>, so <script type="math/tex">c = x</script>. <script type="math/tex">x \in K</script>.</p>
+<p>So K is closed.</p>
+<p>(c) Show that <script type="math/tex">Y ⊆ C[0,1]</script> from Exercise 8.2.9 (a) is 
+closed and bounded but not compact.</p>
+<p><strong>Solution</strong>: Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_n = x^n
+</script>
+</p>
+<p>
+<script type="math/tex">(f_n) \rightarrow f</script> is not continuous. So <script type="math/tex">Y</script> is
+not compact.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-828">Definition 8.2.8.</h3>
+<p>Given a subset <script type="math/tex">E</script> of a metric space <script type="math/tex">(X,d)</script>, the closure 
+<script type="math/tex">E</script> is the union of <script type="math/tex">E</script> together with its limit points. 
+The interior of <script type="math/tex">E</script> is denoted by
+<script type="math/tex">E^◦</script> and is defined as</p>
+<p>
+<script type="math/tex; mode=display"> 
+E^◦
+=
+\{x ∈ E : \text{ there exists }V_ϵ(x) ⊆ E\}.
+</script>
+</p>
+<h3 id="exercise-8211">Exercise 8.2.11.</h3>
+<p>(a) Show that <script type="math/tex">E</script> is closed if and only if <script type="math/tex">E = \overline{E}</script>. Show that <script type="math/tex">E</script> is open if and only if <script type="math/tex">E^o = E</script>.</p>
+<p><strong>Proof</strong>: </p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+<script type="math/tex">E</script> is closed.
+Apparantly, <script type="math/tex">\overline{E} \supseteq E</script>.
+Since <script type="math/tex">E</script> has all its limit points, so
+<script type="math/tex">\overline{E} \subseteq E</script>. So <script type="math/tex">\overline{E} = E</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> if <script type="math/tex">x</script> is a limit point of <script type="math/tex">E</script>,
+then <script type="math/tex">x \in \overline{E} = E</script>. so <script type="math/tex">E</script> is closed.</p>
+<p>The second part.</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+<script type="math/tex">E</script> is open.
+Apparantly, <script type="math/tex">E^o \subseteq E</script>. If <script type="math/tex">x \in E</script>, then
+we can find <script type="math/tex">V_ϵ(x) ⊆ E</script>. Then <script type="math/tex">x \in E^o</script>.
+So <script type="math/tex">E^o \supseteq E</script>. Then <script type="math/tex">E^o = E</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> If <script type="math/tex">x \in E = E^o</script>, we can find
+<script type="math/tex">V_ϵ(x) ⊆ E</script>. So <script type="math/tex">E</script> is open.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">\overline{E}^c = (E^c)^o</script>,
+and similarly that <script type="math/tex">(E^o)^c = \overline{E^c}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First part.</p>
+<ul>
+<li>
+<script type="math/tex">\overline{E}^c \subseteq (E^c)^o</script>.</li>
+</ul>
+<p>
+<script type="math/tex">x \in \overline{E}^c</script>, then <script type="math/tex">x \in E^c</script> and is not a limit point of <script type="math/tex">E</script>. So we can find
+<script type="math/tex">V_ϵ(x) \cap E = \emptyset</script>, i.e.
+<script type="math/tex">V_ϵ(x) ⊆ E^c</script>. So <script type="math/tex">x \in (E^c)^o</script>.</p>
+<ul>
+<li>
+<script type="math/tex">\overline{E}^c \supseteq (E^c)^o</script>.</li>
+</ul>
+<p>
+<script type="math/tex">x \in (E^c)^o</script>. Then we can find <script type="math/tex">V_ϵ(x) ⊆ E^c</script>. So
+<script type="math/tex">x</script> is not a limit point of <script type="math/tex">E</script>. Also <script type="math/tex">(E^c)^o ⊆ E^c</script>,
+so <script type="math/tex">x \not\in E</script>. then <script type="math/tex">x \not\in \overline{E}</script>.
+Then <script type="math/tex">x \in (\overline{E})^c</script>. </p>
+<p>Second part.</p>
+<ul>
+<li>
+<script type="math/tex">(E^o)^c \subseteq \overline{E^c}</script>.</li>
+</ul>
+<p>
+<script type="math/tex">x \in (E^o)^c</script>, then <script type="math/tex">x \not\in E^o</script>. For any
+<script type="math/tex">V_ϵ(x)</script>, <script type="math/tex">V_ϵ(x) \not \subseteq E</script>, i.e.
+<script type="math/tex">V_ϵ(x) \cap E^c \neq \emptyset</script>, then either <script type="math/tex">x \in E^c</script>,
+or <script type="math/tex">x</script> is a limit point of <script type="math/tex">E^c</script>. Either way,
+<script type="math/tex">x \in \overline{E^c}</script>.
+Then <script type="math/tex">(E^o)^c \subseteq \overline{E^c}</script>.</p>
+<ul>
+<li>
+<script type="math/tex">(E^o)^c \supseteq \overline{E^c}</script>.</li>
+</ul>
+<p>
+<script type="math/tex">x</script> in <script type="math/tex">\overline{E^c}</script>. If <script type="math/tex">x \in E^c</script>, then <script type="math/tex">x \not\in E</script>, so <script type="math/tex">x \not\in E^o</script>. So <script type="math/tex">x \in (E^o)^c</script>.</p>
+<p>If <script type="math/tex">x</script> is a limit point of <script type="math/tex">E^c</script>. Then for all
+<script type="math/tex">V_ϵ(x)</script>, <script type="math/tex">V_ϵ(x) \cap E^c \neq \emptyset</script>. Then
+<script type="math/tex">V_ϵ(x) \not \subseteq E</script>. So
+<script type="math/tex">x \not\in E^o</script>. Then <script type="math/tex">x \in (E^o)^c</script>.
+Then <script type="math/tex">(E^o)^c \supseteq \overline{E^c}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8212">Exercise 8.2.12.</h3>
+<p>(a) Show</p>
+<p>
+<script type="math/tex; mode=display"> 
+\overline{V_ϵ(x)} \subseteq
+\{
+y \in X : d(x,y) \leq \epsilon
+\},
+</script>
+</p>
+<p>in an arbitrary metric space <script type="math/tex">(X,d)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">A = \{y \in X : d(x,y) \leq \epsilon\}</script>.
+If <script type="math/tex">x \in V_ϵ(x)</script>, then <script type="math/tex">d(x,y) < \epsilon \subseteq A</script>.</p>
+<p>If <script type="math/tex">x</script> is a limit point of <script type="math/tex">V_ϵ(x)</script>. Then it's a limit
+point of <script type="math/tex">A</script>. We have proved in exercise 8.2.8 (a),
+that <script type="math/tex">A</script> is a closed set. So <script type="math/tex">x \in A</script>.
+That means <script type="math/tex">\overline{V_ϵ(x)} \subseteq A</script>.</p>
+<p>(b) To keep things from sounding too familiar, find an 
+example of a specific metric space where</p>
+<p>
+<script type="math/tex; mode=display"> 
+\overline{V_ϵ(x)} \neq 
+\{
+y \in X : d(x,y) \leq \epsilon
+\}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the discrete metric. <script type="math/tex">V_1(x) = \{x\}</script>.
+But <script type="math/tex">\{y \in X : d(x,y) \leq \epsilon\} = X</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="definition-829">Definition 8.2.9.</h3>
+<p>A set <script type="math/tex">A ⊆ X</script> is dense in the metric space <script type="math/tex">(X,d)</script> if
+<script type="math/tex">\overline{A} = X</script>.
+A subset <script type="math/tex">E</script> of a metric space <script type="math/tex">(X,d)</script> is nowhere-dense in 
+<script type="math/tex">X</script> if <script type="math/tex">E^o</script> is empty.</p>
+<h3 id="exercise-8213">Exercise 8.2.13.</h3>
+<p>If <script type="math/tex">E</script> is a subset of a metric space <script type="math/tex">(X,d)</script>, show that <script type="math/tex">E</script> is nowhere-dense in <script type="math/tex">X</script> if and only if <script type="math/tex">\overline{E}^c</script> is dense in <script type="math/tex">X</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> Assume <script type="math/tex">E</script> is nowhere-dense in <script type="math/tex">X</script>.</p>
+<p>So <script type="math/tex">\overline{E}^o = \emptyset</script>, then <script type="math/tex">(\overline{E}^o)^c = X</script>.</p>
+<p>From exercise 8.2.11,
+<script type="math/tex">(\overline{E}^o)^c = \overline{(\overline{E}^c)}</script>.</p>
+<p>So we have <script type="math/tex">\overline{E}^c</script> is dense.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> Assume <script type="math/tex">\overline{E}^c</script> is dense in X.</p>
+<p>Then <script type="math/tex">\overline{(\overline{E}^c)} = X</script>, so
+<script type="math/tex">(\overline{E}^o)^c = X</script>, then <script type="math/tex">\overline{E}^o</script> is
+empty. So <script type="math/tex">E</script> is nowhere-dense in <script type="math/tex">X</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="the-baire-category-theorem">The Baire Category Theorem</h3>
+<h3 id="theorem-8210">Theorem 8.2.10.</h3>
+<p>Let <script type="math/tex">(X,d)</script> be a complete metric space, and let <script type="math/tex">{O_n}</script> be a
+countable collection of dense, open subsets of <script type="math/tex">X</script>. Then,
+<script type="math/tex">\cap_{n=1}^{\infty} O_n</script> is not empty.</p>
+<p><strong>Proof</strong>:</p>
+<p>Pick <script type="math/tex">x_1 \in O_1</script>.
+Because <script type="math/tex">O_1</script> is open, there exists an <script type="math/tex">ϵ_1 > 0</script> such that
+<script type="math/tex">V_{ϵ_1} (x_1) ⊆ O_1</script>.</p>
+<h3 id="exercise-8214">Exercise 8.2.14.</h3>
+<p>(a) Give the details for why we know there exists a point
+<script type="math/tex">x_2 \in V_{ϵ_1} (x_1) \cap O_2</script> and an <script type="math/tex">ϵ_2 > 0</script>
+satisfying <script type="math/tex">ϵ_2 < ϵ_1/2</script> with <script type="math/tex">V_{ϵ_2} (x_2)</script> contained
+in <script type="math/tex">O_2</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\overline{V_{ϵ_2} (x_2)} \subseteq V_{ϵ_1} (x_1).
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">O_2</script> is dense, then <script type="math/tex">\overline{O_2} = X</script>.
+Assume <script type="math/tex">V_{ϵ_1} (x_1) \cap O_2 = \emptyset</script>, and
+let <script type="math/tex">x_2</script> be an arbitrary point in <script type="math/tex">V_{ϵ_1} (x_1)</script>.
+Then <script type="math/tex">x_2</script> is a limit point of <script type="math/tex">O_2</script>, for every
+<script type="math/tex">V_{ϵ_2} (x_2)</script>, <script type="math/tex">V_{ϵ_2} (x_2) \cap O_2 \neq \emptyset</script>.</p>
+<p>But since <script type="math/tex">x_2 \in V_{ϵ_1} (x_1)</script> and
+<script type="math/tex">V_{ϵ_1} (x_1) \cap O_2 = \emptyset</script>, so we can find
+a <script type="math/tex">V_{ϵ_2} (x_2)</script>, <script type="math/tex">V_{ϵ_2} (x_2) \cap O_2 = \emptyset</script>.</p>
+<p>We have a contradiction.</p>
+<p>Since both <script type="math/tex">O_2, V_{ϵ_1} (x_1)</script> are open,
+we have <script type="math/tex">O_2 \cap V_{ϵ_1} (x_1)</script> is open. So we can find
+<script type="math/tex">V_{ϵ_2'} (x_2) \subseteq O_2 \cap V_{ϵ_1} (x_1)</script>.</p>
+<p>Let <script type="math/tex">ϵ_2 = ϵ_2'/2</script>. From exercise 8.2.12 (a)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\overline{V_{ϵ_2} (x_2)} \subseteq
+C_{ϵ_2} (x_2) \subseteq V_{ϵ_2'} (x_2)
+\subseteq O_2 \cap V_{ϵ_1} (x_1)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Proceed along this line and use the completeness of
+<script type="math/tex">(X,d)</script> to produce a single point <script type="math/tex">x ∈ O_n</script> for every
+<script type="math/tex">n ∈ N</script>.</p>
+<p><strong>Proof</strong>: We produced a sequence of closed set</p>
+<p>
+<script type="math/tex; mode=display"> 
+\overline{V_{ϵ_1} (x_1)} \supseteq
+\overline{V_{ϵ_2} (x_2)} \supseteq
+\overline{V_{ϵ_3} (x_3)} \supseteq
+\cdots
+</script>
+</p>
+<p>Consider the sequence <script type="math/tex">(x_n)</script>. It's a Cauchy sequence,
+since <script type="math/tex">ϵ_{n+1} < ϵ_n / 2</script>.
+Then <script type="math/tex">(x_n) \rightarrow x</script>, so <script type="math/tex">x</script> is a limit point of
+all <script type="math/tex">V_{ϵ_n} (x_n)</script>, then
+<script type="math/tex">x \in \overline{V_{ϵ_n} (x_n)} \subseteq O_n</script> for every
+<script type="math/tex">n ∈ N</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="theorem-8211-baire-category-theorem">Theorem 8.2.11 (Baire Category Theorem).</h3>
+<p>A complete metric space is not the union of a countable 
+collection of nowhere-dense sets.</p>
+<h3 id="exercise-8215">Exercise 8.2.15.</h3>
+<p>Complete the proof of the theorem.</p>
+<p><strong>Proof</strong>: Consider <script type="math/tex">\{E_n\}</script> is a countable 
+collection of nowhere-dense sets.</p>
+<p>We consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+O_n = (E_n^c)^o
+</script>
+</p>
+<p>From exercise 8.2.11, <script type="math/tex">(E_n^c)^o = \overline{E_n}^c</script>.
+From exercise 8.2.13, since <script type="math/tex">E_n</script> is nowhere dense in
+<script type="math/tex">X</script>, then <script type="math/tex">\overline{E_n}^c</script> is dense in <script type="math/tex">X</script>.
+That is <script type="math/tex">O_n</script> is dense. Since it's also open,
+we can apply exercise 8.2.14., there exists <script type="math/tex">x \in O_n</script>
+for all <script type="math/tex">n \in \mathbf{N}</script>.
+Then <script type="math/tex">x \not\in \cup E_n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>This result is called the Baire Category Theorem 
+because it creates two categories of size for subsets in 
+a metric space. A set of “first category” is one
+that can be written as a countable union of nowhere-dense 
+sets. These are the small, intuitively thin subsets of a 
+metric space. We now see that if our metric
+space is complete, then it is necessarily of “second 
+category,” meaning it cannot
+be written as a countable union of nowhere-dense sets.</li>
+</ul>
+<h3 id="theorem-8212">Theorem 8.2.12.</h3>
+<p>The set </p>
+<p>
+<script type="math/tex; mode=display"> 
+D = \{
+f \in C[0,1]: f'(x) \text{ exists for some } x \in [0,1]
+\}
+</script>
+</p>
+<p>is a set of first category in <script type="math/tex">C[0,1]</script>.</p>
+<p><strong>Proof</strong>: For each pair of natural numbers <script type="math/tex">m,n</script>, define</p>
+<p>
+<script type="math/tex; mode=display"> 
+A_{m,n} =
+\left\{ 
+f \in C[0,1] : \text{ there exists } x \in [0,1]
+\text{ where }
+\left| 
+  \frac{f(x) - f(t)}{x-t} \leq n
+ \right| 
+\text{ whenever }
+0 < |x-t| < \frac{1}{m}
+\right\} 
+</script>
+</p>
+<p>The set <script type="math/tex">A_{m,n}</script> contains any function in <script type="math/tex">C[0,1]</script> for 
+which it is possible to find at least one point <script type="math/tex">x</script> where 
+the slopes through <script type="math/tex">(x,f(x))</script> and points on the function
+nearby—within <script type="math/tex">1/m</script> to be precise—are bounded by <script type="math/tex">n</script>.</p>
+<h3 id="exercise-8216">Exercise 8.2.16.</h3>
+<p>Show that if <script type="math/tex">f ∈ C[0,1]</script> is diﬀerentiable at a point
+<script type="math/tex">x ∈ [0,1]</script>, then <script type="math/tex">f ∈ A_{m,n}</script> for some pair <script type="math/tex">m,n ∈ \mathbf{N}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">f</script> is differentiable at <script type="math/tex">x</script>, then let <script type="math/tex">f'(x) = c</script>.
+pick <script type="math/tex">n > |c|</script> and <script type="math/tex">d = n - |c|</script>, we can find <script type="math/tex">\delta</script>
+such that if <script type="math/tex">|t-x| < \delta</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\left| 
+  \frac{f(t)-f(x)}{t-x} - c
+\right| < d
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(t)-f(x)}{t-x}
+\right| < d+|c| = n
+</script>
+</p>
+<p>Also let <script type="math/tex">1/m < \delta</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>Fix <script type="math/tex">m</script> and <script type="math/tex">n</script>. The first order of business is to 
+prove that <script type="math/tex">A_{m,n}</script> is a closed set. To this end, let <script type="math/tex">(f_k)</script> be a sequence in <script type="math/tex">A_{m,n}</script> and assume
+<script type="math/tex">(f_k) \rightarrow f \in C[0,1]</script>. We need to show
+<script type="math/tex">f ∈ A_{m,n}</script>.</li>
+<li>Because <script type="math/tex">f_k \in A_{m,n}</script> then for each <script type="math/tex">k ∈ N</script> there exists a point <script type="math/tex">x_k ∈ [0,1]</script> where</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{
+  f_k(x_k) - f_k(t)
+}{x_k - t}
+ \right| \leq n
+\text{ for all }
+0 < |x_k - t| < 1/m
+</script>
+</p>
+<h3 id="exercise-8217">Exercise 8.2.17.</h3>
+<p>(a) The sequence <script type="math/tex">(x_k)</script> does not necessarily converge, but explain why there exists a subsequence
+<script type="math/tex">(x_{k_l})</script> that is convergent. Let
+<script type="math/tex">x = \lim(x_{k_l}).</script>
+</p>
+<p><strong>Proof</strong>: This is because <script type="math/tex">(x_k)</script> is bounded, so it must
+have convergent subsequence.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">f_{k_l}(x_{k_l}) \rightarrow f(x)</script>.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">(f_k) \rightarrow f</script>, we can find
+<script type="math/tex">N_1</script>, if <script type="math/tex">k_l > N_1</script>, <script type="math/tex">d(f_{k_l}, f) < \epsilon / 2</script>.
+Since <script type="math/tex">(x_{k_l}) \rightarrow x</script>, and <script type="math/tex">f</script> is continuous,
+we can find <script type="math/tex">N_2</script>, if <script type="math/tex">k_l > N_2</script>, then
+<script type="math/tex">|f(x_{k_l}) - f(x)| < \epsilon / 2</script>.
+Then let <script type="math/tex">N = \max \{N_1, N_2\}</script>. If <script type="math/tex">k_l > N</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+|f_{k_l}(x_{k_l}) - f(x)|
+\leq |f_{k_l}(x_{k_l}) - f(x_{k_l})| +
+|f(x_{k_l}) - f(x)|
+< \epsilon / 2 + \epsilon / 2 = \epsilon
+</script>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Now finish the proof that <script type="math/tex">A_{m,n}</script> is closed.</p>
+<p><strong>Proof</strong>:</p>
+<p>Fix <script type="math/tex">t</script>, such that <script type="math/tex">0 < |x-t| < 1/m</script>. We can find <script type="math/tex">N</script>,
+such that <script type="math/tex">k_l > N</script>, then <script type="math/tex">0 < |x_{k_l} - t | < 1/m</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| 
+\frac{f(x_{k_l}) - f(t)}{x_{k_l}-t}\right| \leq n
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\lim_{k_l \to \infty}
+\left| 
+\frac{f(x_{k_l}) - f(t)}{x_{k_l}-t}
+\right| =
+\left| 
+\frac{f(x) - f(t)}{x-t}
+\right|
+\leq n
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="exercise-8218">Exercise 8.2.18.</h3>
+<p>A continuous function is called polygonal if its graph 
+consists of a finite number of line segments.</p>
+<p>(a) Show that there exists a polygonal function
+<script type="math/tex">p \in C[0,1]</script> satisfying
+<script type="math/tex">\left\| f-p \right\|_{\infty} < \epsilon / 2</script>.</p>
+<p><strong>Proof</strong>: We have proved a similar result in
+exercise 6.7.2. So we just copy the proof here and
+replace <script type="math/tex">[a,b]</script> with <script type="math/tex">[0,1]</script>.</p>
+<p>Since <script type="math/tex">f</script> is continuous on <script type="math/tex">[0, 1]</script>, then <script type="math/tex">f</script> is uniformly
+continuous on <script type="math/tex">[0, 1]</script>, so we can find <script type="math/tex">\delta</script>, as long as
+<script type="math/tex">\left| x - y \right| < \delta</script>, <script type="math/tex">\left| f(x) - f(y) \right| < \epsilon/4</script>.</p>
+<p>Then we can find </p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = x_0 < x_1 < x_2 < \cdots < x_{n} = 1
+</script>
+</p>
+<p>such that <script type="math/tex">x_{i+1} - x_i < \delta</script>
+</p>
+<p>Assume <script type="math/tex">c \in [x_{i}, x_{i+1}]</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| f(c) - p (c) \right| \leq 
+|f(c) - f(x_i)| + |f(x_i) - p (x_i)| + |p (x_i) - p (c)|
+\leq \\
+|f(c) - f(x_i)| + |f(x_i) - p (x_i)| + |p (x_i) - p (x_{i+1})| \\
+= |f(c) - f(x_i)| + 0 + |f(x_i) - f(x_{i+1})| \\
+< \epsilon /2 + 0 + \epsilon / 2 = \epsilon 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if <script type="math/tex">h</script> is any function in <script type="math/tex">C[0,1]</script> that is bounded by <script type="math/tex">1</script>, then the function</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(x) = p(x) + \frac{\epsilon }{2} h(x)
+</script>
+</p>
+<p>satisfies <script type="math/tex">g ∈ V_ϵ(f)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left| g(x) - f(x) \right| =
+\left| p(x) + \frac{\epsilon }{2} h(x) -f(x) \right|
+\leq
+\left| f(x) - p(x) \right| + \left| \frac{\epsilon }{2} h(x) \right|
+\\
+< \epsilon / 2 + \epsilon / 2 = \epsilon
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Construct a polygonal function <script type="math/tex">h(x)</script> in <script type="math/tex">C[0,1]</script> that is 
+bounded by <script type="math/tex">1</script> and leads to the conclusion <script type="math/tex">g \not\in A_{m,n}</script>,
+where <script type="math/tex">g</script> is defined as in (b).
+Explain how this completes the argument for Theorem 8.2.12.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">p</script> is polygonal, then assume <script type="math/tex">p</script> can be divided to <script type="math/tex">n</script>
+segments,</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = x_0 < x_1 < x_2 < \cdots < x_{n} = 1
+</script>
+</p>
+<p>In each segment, <script type="math/tex">p(x) = a_i x + b_i</script>. Choose an even integer
+<script type="math/tex">r \in \mathbf{N}</script>, such that <script type="math/tex">\frac{\epsilon}{2} \cdot r - |a_i| > n</script>.
+Then construct a periodic triangle function with period of
+<script type="math/tex">2/r</script>. This is the first period.</p>
+<p>
+<script type="math/tex; mode=display"> 
+h(x) = \begin{cases}
+  rx &\text{if } 0 \leq x < 1/r \\
+  -rx + 2 &\text{if } 1/r \leq x < 2/r \\
+\end{cases} 
+</script>
+</p>
+<p>Then in each segment of <script type="math/tex">[x_{i-1}, x_i]</script>, the slop is either
+<script type="math/tex">\frac{\epsilon}{2} \cdot r + a_i</script> or
+<script type="math/tex">-\frac{\epsilon}{2} \cdot r - a_i</script>.
+In any case, the slop is bigger than <script type="math/tex">n</script>.</p>
+<p>So <script type="math/tex">g \not\in A_{m,n}</script>.</p>
+<p>If <script type="math/tex">f \in A_{m,n}</script>, then <script type="math/tex">f \not\in A_{m,n}^o</script>, because
+for any <script type="math/tex">V_ϵ(f)</script>, we can find <script type="math/tex">g \in V_ϵ(f)</script>, such that
+<script type="math/tex">g \not\in A_{m,n}</script>. So <script type="math/tex">A_{m,n}^o</script> is an empty set.
+Also since <script type="math/tex">A_{m,n} = \overline{A_{m,n}}</script>, then
+<script type="math/tex">\overline{A_{m,n}}^o</script> is empty.
+So <script type="math/tex">A_{m,n}</script> is nowhere dense. Together with Exercise 8.2.16.,
+<script type="math/tex">D</script> is the union a countable union of nowhere-dense sets.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch08ex/" class="btn btn-neutral float-left" title="Chapter 08 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch0806ex/" class="btn btn-neutral float-right" title="Chapter 0806 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch08ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch0806ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

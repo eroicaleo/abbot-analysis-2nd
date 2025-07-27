@@ -208,6 +208,14 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch0802ex/">Chapter 0802 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch0806ex/">Chapter 0806 Exercises</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../misc/">Misc info</a>
                 </li>
               </ul>
@@ -1042,7 +1050,8 @@ B = [1, \infty)
 <p>Prove that, for a fixed <script type="math/tex">α > 0</script>, the set <script type="math/tex">D_f^α</script> is closed.</p>
 <p>Proof: Let <script type="math/tex">x</script> be a limit point of <script type="math/tex">D_f^α</script>. Given any <script type="math/tex">\delta</script>, we can find <script type="math/tex">a \in U_{\delta}(x)</script> such that <script type="math/tex">a \in D_f^α</script>, since <script type="math/tex">U_{\delta}(x)</script> is open, we can find
 <script type="math/tex">U_{\zeta}(a) \subset U_{\delta}(x)</script>. Since <script type="math/tex">a \in D_f^α</script>, we can find <script type="math/tex">y, z \in U_{\zeta}(a)</script> with <script type="math/tex">|f(y) − f(z)| \ge α</script>. Since <script type="math/tex">y, z \in U_{\delta}(x)</script>, <script type="math/tex">x</script> is also not
-<script type="math/tex">α</script>-continuous.
+<script type="math/tex">α</script>-continuous.</p>
+<p>
 <script type="math/tex">\square</script>
 </p>
 <h3 id="469">4.6.9.</h3>
@@ -1054,7 +1063,7 @@ find <script type="math/tex">y, z \in V_{\delta}(x)</script> such that <script t
 <h3 id="4610">4.6.10.</h3>
 <p>Let <script type="math/tex">α > 0</script> be given. Show that if <script type="math/tex">f</script> is continuous at <script type="math/tex">x</script>, then it is <script type="math/tex">α</script>-continuous at <script type="math/tex">x</script> as well. Explain how it follows that <script type="math/tex">D_f^α ⊆ D_f</script>.</p>
 <p>Proof: If <script type="math/tex">f</script> is continuous at <script type="math/tex">x</script>, then we can find a <script type="math/tex">U_{\delta}(x) = (x−δ, x+δ)</script> such that <script type="math/tex">|y-x| < \alpha /2</script> and <script type="math/tex">|z-x| < \alpha /2</script>. Then <script type="math/tex">|y-z| < \alpha</script>. So <script type="math/tex">f</script> is <script type="math/tex">α</script>-continuous at <script type="math/tex">x</script> as well.</p>
-<p>Then given <script type="math/tex">x \in D_f^{α'}</script>, <script type="math/tex">f</script> has to be discontinuous at <script type="math/tex">x</script>, so <script type="math/tex">x \in D_f^{α}</script>. Then <script type="math/tex">D_f^{α'} ⊆ D_f^{α}</script>.</p>
+<p>Then given <script type="math/tex">x \in D_f^{α}</script>, <script type="math/tex">f</script> has to be discontinuous at <script type="math/tex">x</script>, so <script type="math/tex">x \in D_f</script>. Then <script type="math/tex">D_f^{α} ⊆ D_f</script>.</p>
 <h3 id="4611">4.6.11.</h3>
 <p>Show that if <script type="math/tex">f</script> is not continuous at <script type="math/tex">x</script>, then <script type="math/tex">f</script> is not <script type="math/tex">α</script>-continuous for some <script type="math/tex">α</script> &gt; 0. Now explain why this guarantees that</p>
 <p>
