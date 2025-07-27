@@ -1645,6 +1645,560 @@ $\square$
 
 ## 7.6 Lebesgue’s Criterion for Riemann Integrability
 
+### Riemann-integrable Functions with Infinite Discontinuities
+
+Recall from Section 4.1 that Thomae’s function
+
+$$ 
+t(x) = \begin{cases}
+    1 &\text{if } x = 0 \\
+    1/n &\text{if } x = m/n \in \mathbf{Q} \backslash \{0\} \\
+    0 &\text{if } x \not\in \mathbf{Q} \\
+\end{cases} 
+$$
+
+is continuous on the set of irrationals and has 
+discontinuities at every rational
+point. Let’s prove that Thomae’s function is 
+integrable on $[0,1]$ with $\int_{0}^{1} t = 0$.
+
+### Exercise 7.6.1.
+
+(a) First, argue that $L(t,P) = 0$ for any partition 
+$P$ of $[0,1]$.
+
+Proof: this is because in every partition we can
+find an irrational number.
+
+(b) Consider the set of points
+$D_{ϵ/2} = \{x : t(x) ≥ ϵ/2\}$. How big is $D_{ϵ/2}$.
+
+**Solution**: Let $n$ be the biggest integer such
+that $1/n \geq ϵ/2$. So the size of $D_{ϵ/2}$
+is less than $\sum_{k=1}^{n}k = \frac{n(n+1)}{2}$.
+
+$\square$
+
+(c) To complete the argument, explain how to 
+construct a partition $P_ϵ$ of $[0,1]$
+so that $U(t,P_ϵ) < ϵ$.
+
+**Proof**: We construct a partition such that
+the point in $D_{ϵ/2}$ fall in an interval whose
+length is less than $(ϵ/2)/(n(n+1)/2)$.
+
+In those intervals, the partial sum is less than
+$ϵ/2$. In other intervals, the partial sum is also
+less than $ϵ/2$. So $U(t,P_ϵ) < ϵ$.
+
+$\square$
+
+### Exercise 7.6.2.
+
+Define
+
+$$ 
+h(x) =
+\begin{cases}
+    1 &\text{if } x \in C\\
+    0 &\text{if } x \not\in C\\
+\end{cases} 
+$$
+
+Prove the following
+
+(a) Show $h$ has discontinuities at each point of 
+$C$ and is continuous at every point of the 
+complement of $C$. Thus, $h$ is not continuous on an 
+uncountably infinite set.
+
+**Proof**: Assume $x \not\in C$, then assume
+$x \in C_n$ but $x \not\in C_{n+1}$. Since only
+open set was removed, $x$ is removed with an open
+set. So $h(x)$ is continuous at $x$.
+
+If $x \in C$, given any neighborhood of $V_{\epsilon}(x)$, we can find $n$ such that
+$\frac{1}{3^n} < \epsilon$. Since the next step
+will take out an open internal of
+$\frac{1}{3^{n+1}}$. And this interval is
+within $V_{\epsilon}(x)$, so its value is $1$.
+$h(x)$ is not continuous at $x$.
+
+$\square$
+
+(b) Now prove that $h$ is integrable on [0,1].
+
+**Proof**: Let $P_n$ be $C_n$.
+The length of all the intervals containing $C$ is
+
+$$ 
+1 - \frac{1}{3} - \frac{2}{9} - \frac{4}{27} -
+\cdots \frac{1}{3} (\frac{2}{3})^n \\
+1 - \frac{1}{3} (1 + \frac{2}{3} + \cdots + (\frac{2}{3})^n) \\
+1 - 3 (1 - (\frac{2}{3})^{n+1}) \\
+3 \left( \frac{2}{3} \right)^{n+1}
+$$
+
+The upper sum of these intervals is
+$3 \left( \frac{2}{3} \right)^{n+1}$, in other
+intervals the upper sum is $0$.
+
+So $\lim_{n \to \infty} U(h, P_n) = 0$.
+so $h$ is integrable on [0,1].
+
+$\square$
+
+### Sets of Measure Zero
+
+### Definition 7.6.1. Measure zero
+
+A set $A ⊆ \mathbf{R}$ has *measure zero* if,
+for all $ϵ > 0$, there exists a countable collection 
+of open intervals $O_n$ with the property that $A$ 
+is contained in the union of all of the intervals
+$O_n$ and the sum of the lengths of all of the
+intervals is less than or equal to $ϵ$.
+More precisely, if $|O_n|$ refers to the length of
+the interval $O_n$, then we have
+
+$$ 
+A \subseteq \bigcup_{n=1}^{\infty} O_n
+\text{ and }
+\sum_{n = 1}^{\infty} |O_n| \leq \epsilon
+$$
+
+### Example 7.6.2.
+
+Consider a finite set $A= \{a_1,a_2,...,a_N\}$. To show that $A$ has measure zero, let $ϵ > 0$ be 
+arbitrary. For each $1 ≤ n ≤ N$, construct the
+interval
+
+$$ 
+G_n = \left( 
+a_n - \frac{ϵ}{2N},
+a_n + \frac{ϵ}{2N}
+\right).
+$$
+
+Clearly, $A$ is contained in the union of these intervals, and
+
+$$ 
+\sum_{n = 1}^{N} |G_n| =
+\sum_{n = 1}^{N} \frac{ϵ}{N} = \epsilon
+$$
+
+$\square$
+
+### Exercise 7.6.3.
+
+Show that any countable set has measure zero.
+
+**Proof**: Given a countable set
+
+$$ 
+A = \{r_1, r_2, r_3, \cdots, r_n \cdots \}
+$$
+
+Consider
+
+$$ 
+G_n = \left( 
+r_n - \frac{ϵ}{2^{n+1}},
+r_n + \frac{ϵ}{2^{n+1}}
+\right).
+$$
+
+$$ 
+\sum_{n = 1}^{\infty} |G_n| =
+\sum_{n = 1}^{\infty} \frac{ϵ}{2^n} = \epsilon
+$$
+
+$\square$
+
+### Exercise 7.6.4.
+Prove that the Cantor set has measure zero.
+
+**Proof**:
+
+$C_1$ can be coverd by 2 segments of $3/8$.
+$C_2$ can be coverd by 4 segments of $1/8$.
+$C_3$ can be coverd by 8 segments of $1/24$.
+$C_n$ can be coverd by $\frac{3}{4} \cdot (\frac{2}{3})^{n-1}$ .
+So the Cantor set has measure zero.
+
+### Exercise 7.6.5.
+
+Show that if two sets $A$ and $B$ each have measure 
+zero, then $A∪B$ has measure zero as well. In 
+addition, discuss the proof of the stronger
+statement that the countable union of sets of 
+measure zero also has measure zero. (This second 
+statement is true, but a completely rigorous proof 
+requires a result about double summations discussed 
+in Section 2.8.)
+
+**Proof**:
+
+Let
+
+$$ 
+A = \{a_1, a_2, a_3, \cdots, a_n \cdots \}
+\text{ and }
+B = \{b_1, b_2, b_3, \cdots, b_n \cdots \}
+$$
+
+Let
+
+$$ 
+G_n = \left(
+a_n - \frac{ϵ}{2^{n+2}},
+a_n + \frac{ϵ}{2^{n+2}}
+\right)
+\text{ and }
+H_n = \left(
+b_n - \frac{ϵ}{2^{n+2}},
+b_n + \frac{ϵ}{2^{n+2}}
+\right).
+$$
+
+So
+
+$$ 
+\sum_{n = 1}^{\infty} |G_n| + |H_n| =
+\sum_{n = 1}^{\infty}
+\frac{ϵ}{2^{n+1}} + \frac{ϵ}{2^{n+1}}
+=
+\sum_{n = 1}^{\infty}
+\frac{ϵ}{2^{n}}
+= \epsilon
+$$
+
+Now consider we have $A_1, A_2, A_3, \cdots, A_n, \cdots$ countable sets. Each of them has countable
+elements. We list them in double array
+
+$$ 
+\begin{matrix}
+a_{11} & a_{12} & \cdots & a_{1n} & \cdots \\
+a_{21} & a_{22} & \cdots & a_{2n} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+$$
+
+For each of them, we assign an open interval of
+certain length listed as following
+
+$$ 
+\begin{matrix}
+ϵ/4 & ϵ/8  & \cdots & ϵ/2^{n+1} & \cdots \\
+ϵ/8 & ϵ/16 & \cdots & ϵ/2^{n+2} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+ϵ/2^{n+1} & ϵ/2^{n+2} & \cdots & ϵ/2^{n+n} & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+$$
+
+Then we can see
+
+$$ 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|a_{ij}|
+$$
+
+converges. In fact, it converges to
+
+$$ 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|a_{ij}| = ϵ
+$$
+
+Now if we have a countable of measure zero set,
+each length is 
+
+$$ 
+\begin{matrix}
+|O_{11}| & |O_{12}| & \cdots & |O_{1n}| & \cdots \\
+|O_{21}| & |O_{22}| & \cdots & |O_{2n}| & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+|O_{n1}| & |O_{n2}| & \cdots & |O_{nn}| & \cdots \\
+\vdots & \vdots & \ddots & \vdots & \cdots \\
+\end{matrix}
+$$
+
+We can let 
+
+$$ 
+\sum_{j = 1}^{\infty} |O_{ij}| < \frac{\epsilon }{2^{i+1}}
+$$
+
+So
+
+$$ 
+\sum_{i = 1}^{\infty}
+\sum_{j = 1}^{\infty}
+|O_{ij}| < \epsilon
+$$
+
+$\square$
+
+### α-Continuity
+
+### Definition 7.6.3.
+
+Let $f$ be defined on $[a,b]$, and let $α > 0$. The 
+function $f$ is $α$-continuous at $x ∈ [a,b]$ if 
+there exists $δ > 0$ such that for all
+$y,z ∈ (x−δ,x+δ)$ it follows that $|f(y)−f(z)| < α$.
+
+Let $f$ be a bounded function on $[a,b]$. For each
+$α > 0$, define $D^α$ to be the set of points in
+$[a,b]$ where the function $f$ fails to be 
+$α$-continuous; that is,
+
+$$ 
+\tag{1}
+D^α =
+\{x \in [a,b] :
+f \text{ is not } α-\text{continuous at } x.
+\}
+$$
+
+### Exercise 7.6.6.
+
+If $α < α'$, show that $D_f^{α'} ⊆ D_f^{α}$.
+
+Proof: 
+This is exercise 4.6.9.
+If $x \in D_f^{α'}$, then given $\delta$, we can 
+find $y, z \in V_{\delta}(x)$ such that $|f(y) - f(z)| > \alpha' > \alpha$. So $x \in D_f^{α}$. Then $D_f^{α'} ⊆ D_f^{α}$.
+
+$\square$
+
+* Now, let
+
+$$ 
+\tag{2}
+D =
+\{x \in [a,b] :
+f \text{ is not continuous at } x.
+\}
+$$
+
+### Exercise 7.6.7.
+
+(a) Let $α > 0$ be given. Show that if $f$ is continuous at $x$, then it is $α$-continuous at $x$ as well. Explain how it follows that $D^α ⊆ D$.
+
+**Proof**: This is exercise 4.6.10.
+
+If $f$ is continuous at $x$, then we can find a $U_{\delta}(x) = (x−δ, x+δ)$ such that $|y-x| < \alpha /2$ and $|z-x| < \alpha /2$. Then $|y-z| < \alpha$. So $f$ is $α$-continuous at $x$ as well.
+
+Then given $x \in D^{α}$, $f$ has to be discontinuous at $x$, so $x \in D$. Then $D^{α} ⊆ D$.
+
+$\square$
+
+(b) Show that if $f$ is not continuous at $x$, then $f$ is not $α$-continuous for some $α$ > 0. Now explain why this guarantees that
+
+$$ 
+D = \bigcup_{n = 1}^{\infty} D^{\alpha_n}
+$$
+
+where $α_n = 1/n$.
+
+**Proof**: This is exercise 4.6.11.
+
+If $f$ is not continuous at $x$, then exists $\epsilon$, given any $\delta$, we can find $y \in U_{\delta}(x)$ such that $|f(y)-f(x)| >= \epsilon$. So $f$
+is not $\epsilon$-continuous at $x$. We can find
+$n$ such that $1/n < \epsilon$.
+
+According to 4.6.9, $x \in D^{\epsilon} ⊆ D^{1/n}$.
+Then it follows:
+
+$$ 
+D = \bigcup_{n = 1}^{\infty} D^{\alpha_n}
+$$
+
+$\square$
+
+### Exercise 7.6.8.
+
+Prove that, for a fixed $α > 0$, the set $D^α$ is closed.
+
+**Proof**: This is exercise 4.6.8.
+
+Let $x$ be a limit point of $D^α$. Given any $\delta$, we can find $a \in U_{\delta}(x)$ such that $a \in D^α$, since $U_{\delta}(x)$ is open, we can find
+$U_{\zeta}(a) \subset U_{\delta}(x)$. Since $a \in D^α$, we can find $y, z \in U_{\zeta}(a)$ with $|f(y) − f(z)| \ge α$. Since $y, z \in U_{\delta}(x)$, $x$ is also not
+$α$-continuous.
+
+$\square$
+
+### uniformly α-continuous
+
+For a fixed $α > 0$, a function $f : A → \mathbf{R}$ is uniformly 
+$α$-continuous on $A$ if there exists a $δ > 0$ such that 
+whenever $x$ and $y$ are points in $A$ satisfying
+$|x− y| < δ$, it follows that $|f(x)− f(y)| < α$. By imitating 
+the proof of Theorem 4.4.7, it is completely straight forward to 
+show that if $f$ is $α$-continuous at every point on some compact 
+set $K$, then $f$ is uniformly $α$-continuous on $K$.
+
+### Compactness Revisited
+
+### Theorem 7.6.4.
+
+Let $K ⊆ R$. The following three statements are all equivalent,
+in the sense that if any one is true, then so are the two others.
+
+(i) Every sequence contained in $K$ has a convergent subsequence that converges to a limit in $K$.
+
+(ii) $K$ is closed and bounded.
+
+(iii) Given a collection of open intervals $\{G_λ : λ ∈ Λ\}$ that 
+covers $K$ (that is, $K \subseteq \cup_{λ ∈ Λ} G_λ$
+there exists a finite subcollection
+$\{G_{λ_1}, G_{λ_2}, G_{λ_3}, \cdots, G_{λ_n}\}$
+of the original set that also covers $K$.
+
+### Lebesgue’s Theorem
+
+### Theorem 7.6.5 (Lebesgue’s Theorem).
+
+Let $f$ be a bounded function defined on the interval $[a,b]$. 
+Then, $f$ is Riemann-integrable if and only if the set of
+points where $f$ is not continuous has measure zero.
+
+**Proof**. Let $M > 0$ satisfy $|f(x)| ≤ M$ for all $x ∈ [a,b]$, 
+and let $D$ and $D^α$ be defined as in the preceding equations 
+(1) and (2). Let’s first assume that $D$ has
+measure zero and prove that our function is integrable.
+
+$\Leftarrow$ Let $\epsilon > 0$ and set
+
+$$ 
+\alpha = \frac{\epsilon}{2(b-a)}
+$$
+
+### Exercise 7.6.9.
+
+Show that there exists a finite collection of disjoint open
+intervals ${G_1,G_2,...,G_N}$ whose union contains $D_α$ and that 
+satisfies
+
+$$ 
+\sum_{n=1}^{N} |G_n| < \frac{\epsilon }{4M}
+$$
+
+**Proof**: Since $D$ is measure zero, we can find a countable
+of open set $\{O_n\}$ such that $D \subseteq \cup O_n$.
+
+Since $D^α \subseteq D$ and it's closed, so we can find
+a finite number of $O_n$ such that
+$D^α \subseteq \cup_{i=1}^{n} O_n$.
+Then we can combine those open sets which have intersection.
+
+$\square$
+
+### Exercise 7.6.10.
+
+Let $K$ be what remains of the interval $[a,b]$ after the open
+intervals $G_n$ are all removed; that is,
+$K = [a,b] \backslash \cup_{n=1}^N G_n$.
+Argue that $f$ is uniformly $α$-continuous on $K$.
+
+**Proof**: If $x$ is not $α$-continuous, then $x \in D^α$.
+Then it's in one of $G_n$. So if $x \in K$, then
+$x$ is $α$-continuous. Furthermore, $K$ is a finite union of
+closed intervals, so it is uniformly $α$-continuous in each
+of the intervals, then it has to be uniformly $α$-continuous.
+
+$\square$
+
+### Exercise 7.6.11.
+
+Finish the proof in this direction by explaining how to
+construct a partition $P_ϵ$ of $[a,b]$ such that
+$U(f, P_ϵ) - L(f, P_ϵ) \leq \epsilon$.
+It will be helpful to break the sum
+
+$$ 
+U(f, P_ϵ) - L(f, P_ϵ) =
+\sum_{k=1}^{n} (M_k - m_k) \triangle x_k
+$$
+
+into two parts—one over those subintervals that contain points of 
+$D^α$ and the other over subintervals that do not.
+
+**Proof**: We use $G_k$ to do the partition.
+In $G_k$, the partial sum is $2M \times \frac{\epsilon }{4M} = \epsilon / 2$.
+
+In other intervals, the partial sum is less than
+$α \times (b-a) = \epsilon / 2$.
+
+In summary, the partial sum is less than $\epsilon / 2$.
+
+$\square$
+
+$\Rightarrow$
+
+For the other direction, assume $f$ is Riemann-integrable. We 
+must argue that the set $D$ of discontinuities of $f$ has measure 
+zero.
+
+Let $ϵ > 0$ be arbitrary, and fix $α > 0$. Because $f$ is 
+Riemann-integrable, there exists a partition $P_ϵ$ of $[a,b]$ 
+such that $U(f,P_ϵ)−L(f,P_ϵ) < αϵ$.
+
+### Exercise 7.6.12.
+
+(a) Prove that $D^α$ has measure zero. Point out that it is
+possible to choose a cover for $D^α$ that consists of a finite number of open intervals.
+
+**Proof**: We consider $P_ϵ$. For those intervals such that
+$M_k - m_k \geq \alpha$, their total length should less than
+$\epsilon$. Assume their total length is $\epsilon'$,
+and $d = \epsilon - \epsilon'$. Assume there are only $N$ segments that satisfy $M_k - m_k \geq \alpha$.
+We can use $2N$ open intervals with length $\frac{d}{4N}$.
+So the total length is
+
+$$ 
+\epsilon' + 2N \cdot \frac{d}{4N} = \epsilon' + \frac{d}{2}
+< \epsilon' + d = \epsilon.
+$$
+
+$\square$
+
+(b) Show how this implies that $D$ has measure zero.
+
+**Proof**: This is because $D$ is a countable union of
+measure zero set.
+
+$\square$
+
+### Exercise 7.6.13.
+
+(a) Show that if $f$ and $g$ are integrable on $[a,b]$, then so is
+the product $fg$. (This result was requested in Exercise 7.4.6, 
+but notice how much easier the argument is now.)
+
+**Proof**: Consider $D_f$ and $D_g$ which are measure zero,
+and $D_{fg} = D_f \cup D_g$.
+So it is measure zero too.
+
+Then $fg$ is integrable.
+
+(b) Show that if $g$ is integrable on $[a,b]$ and $f$ is 
+continuous on the range of $g$, then the composition $f◦g$ is 
+integrable on $[a,b]$.
+
+**Proof**: If $g$ is continuous at $x$, then $f◦g$ is also
+continuous at $x$. So if $x \in D_{f◦g}$ then $x \in D_g$.
+That is $D_{f◦g} \subseteq D_g$. Since $D_g$ is measure zero,
+so is $D_{f◦g}$.
+
+$\square$
+
 ### 7.6.14.
 
 (a) Find $g'(0)$.

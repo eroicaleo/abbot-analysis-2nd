@@ -1035,6 +1035,7 @@ Prove that, for a fixed $α > 0$, the set $D_f^α$ is closed.
 Proof: Let $x$ be a limit point of $D_f^α$. Given any $\delta$, we can find $a \in U_{\delta}(x)$ such that $a \in D_f^α$, since $U_{\delta}(x)$ is open, we can find
 $U_{\zeta}(a) \subset U_{\delta}(x)$. Since $a \in D_f^α$, we can find $y, z \in U_{\zeta}(a)$ with $|f(y) − f(z)| \ge α$. Since $y, z \in U_{\delta}(x)$, $x$ is also not
 $α$-continuous.
+
 $\square$
 
 ### 4.6.9.
@@ -1051,7 +1052,7 @@ Let $α > 0$ be given. Show that if $f$ is continuous at $x$, then it is $α$-co
 
 Proof: If $f$ is continuous at $x$, then we can find a $U_{\delta}(x) = (x−δ, x+δ)$ such that $|y-x| < \alpha /2$ and $|z-x| < \alpha /2$. Then $|y-z| < \alpha$. So $f$ is $α$-continuous at $x$ as well.
 
-Then given $x \in D_f^{α'}$, $f$ has to be discontinuous at $x$, so $x \in D_f^{α}$. Then $D_f^{α'} ⊆ D_f^{α}$.
+Then given $x \in D_f^{α}$, $f$ has to be discontinuous at $x$, so $x \in D_f$. Then $D_f^{α} ⊆ D_f$.
 
 ### 4.6.11.
 
